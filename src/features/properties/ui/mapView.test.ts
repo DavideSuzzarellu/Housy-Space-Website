@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
+import { MAX_APPROXIMATE_OFFSET_M } from "../domain/property";
 import { getMapView, MIN_AREA_RADIUS_M } from "./mapView";
+
+it("draws circles wide enough to always contain the property despite the centre offset", () => {
+  expect(MIN_AREA_RADIUS_M).toBeGreaterThan(MAX_APPROXIMATE_OFFSET_M);
+});
 
 describe("getMapView", () => {
   it("always shows an area (circle) around the zone centre, never a pin", () => {

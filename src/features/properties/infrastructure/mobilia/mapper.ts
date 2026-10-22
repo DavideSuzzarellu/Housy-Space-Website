@@ -2,6 +2,7 @@ import { LOCALES, type Locale } from "@/shared/i18n/config";
 import {
   ENERGY_GRADES,
   toAgentId,
+  toApproximateCentre,
   toAreaM2,
   toIsoDateTime,
   toPriceEUR,
@@ -167,15 +168,16 @@ function nonEmpty(value: string | null | undefined): string | undefined {
 
 /**
  * Privacy (AGENTS.md §5): always the Mobilia zone, even when `mostrarDireccionExacta` is true.
- * Exact coordinates and the address are not even parsed (see `schemas.ts`).
+ * Exact coordinates and the address are not even parsed (see `schemas.ts`). The zone itself is
+ * often the building (same values as `latitud`/`longitud`), so its centre is snapped to the
+ * approximate grid before it reaches the data store.
  */
 function locationOf(raw: MobiliaInmueble): PropertyLocation | undefined {
   const latitude = coordinate(raw.latitudZona, 90);
   const longitude = coordinate(raw.longitudZona, 180);
   if (latitude === undefined || longitude === undefined) return undefined;
   return {
-    latitude,
-    longitude,
+    ...toApproximateCentre({ latitude, longitude }),
     radiusM: typeof raw.radioZona === "number" && raw.radioZona > 0 ? raw.radioZona : 0,
     zone: nonEmpty(raw.nombreZona) ?? nonEmpty(raw.nombreGrupoZona),
     city: nonEmpty(raw.poblacion),

@@ -60,11 +60,11 @@ export interface PropertyPhoto {
 }
 
 /**
- * Privacy (§5): ALWAYS the approximate Mobilia zone (centre + radius), never the building.
+ * Privacy (§5): ALWAYS an approximate zone (centre + radius), never the building.
  * There is deliberately no exact variant, so no map or markup can ever show it.
  */
 export interface PropertyLocation {
-  /** Zone centre. */
+  /** Approximate centre from `toApproximateCentre`, never Mobilia's raw coordinates. */
   readonly latitude: number;
   readonly longitude: number;
   readonly radiusM: number;
@@ -110,6 +110,31 @@ export type Property = {
   readonly updatedAt: IsoDateTime;
   readonly listedAt?: IsoDateTime | undefined;
 };
+
+/**
+ * Approximate-centre grid (§5): ≈ 556 m (latitude) × ≈ 543 m (longitude at Barcelona) cells.
+ * Mobilia's "zone" coordinates can be the building itself, so a circle centred on them would
+ * point at the address. The centre is snapped to its cell centre instead: deterministic (it
+ * cannot be averaged across builds) and shared by every point in the cell.
+ */
+const ZONE_GRID_DEG = { latitude: 0.005, longitude: 0.0065 } as const;
+
+/** Largest distance from a property to its approximate centre (cell half-diagonal, rounded up). */
+export const MAX_APPROXIMATE_OFFSET_M = 400;
+
+const COORDINATE_DECIMALS = 1e6;
+
+export function toApproximateCentre(point: {
+  readonly latitude: number;
+  readonly longitude: number;
+}): { readonly latitude: number; readonly longitude: number } {
+  const snap = (value: number, step: number): number =>
+    Math.round((Math.floor(value / step) + 0.5) * step * COORDINATE_DECIMALS) / COORDINATE_DECIMALS;
+  return {
+    latitude: snap(point.latitude, ZONE_GRID_DEG.latitude),
+    longitude: snap(point.longitude, ZONE_GRID_DEG.longitude),
+  };
+}
 
 export function toPropertyRef(raw: string): PropertyRef {
   const ref = raw.trim().toLowerCase();

@@ -14,8 +14,11 @@ import { mobiliaInmuebleSchema, type MobiliaInmueble } from "./schemas";
 
 export const LAST_SYNC_KEY = "lastSync";
 export const SCHEMA_VERSION_KEY = "schemaVersion";
-/** Bump when the stored `Property` shape changes: forces one full sync. */
-export const SCHEMA_VERSION = "2";
+/**
+ * Bump when the stored `Property` shape or the mapping of its values changes: forces one full
+ * sync (unchanged listings are otherwise never re-mapped). "3": approximate zone centres.
+ */
+export const SCHEMA_VERSION = "3";
 /** Overlap between syncs to tolerate clock skew between this machine and Mobilia. */
 const CLOCK_SKEW_MS = 5 * 60_000;
 

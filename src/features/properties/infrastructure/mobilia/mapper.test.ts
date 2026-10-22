@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import inmueblesFixture from "../../../../../tests/fixtures/mobilia/inmuebles.json";
+import { toApproximateCentre } from "../../domain/property";
 import { isPublishable, mapInmueble, stripTrackingParams } from "./mapper";
 import { mobiliaInmuebleSchema, type MobiliaInmueble } from "./schemas";
 
@@ -145,8 +146,7 @@ describe("mapInmueble", () => {
         parsed("1001", { latitud: "41.4000001", longitud: "2.1900001", mostrarDireccionExacta }),
       );
       expect(property.location).toEqual({
-        latitude: 41.409,
-        longitude: 2.188,
+        ...toApproximateCentre({ latitude: 41.409, longitude: 2.188 }),
         radiusM: 250,
         zone: "El Clot",
         city: "Barcelona",
@@ -155,6 +155,14 @@ describe("mapInmueble", () => {
       expect(json).not.toContain("41.4000001");
       expect(json).not.toContain("Exemple");
     }
+  });
+
+  it("never centres the zone on the coordinates Mobilia sends (its zone is the building)", () => {
+    const property = mapInmueble(parsed("1001"));
+    expect(property.location).toBeDefined();
+    expect(property.location?.latitude).not.toBe(41.409);
+    expect(property.location?.longitude).not.toBe(2.188);
+    expect(JSON.stringify(property)).not.toMatch(/41\.409[^0-9]|2\.188[^0-9]/);
   });
 
   it("has no location when Mobilia sends no zone, never falling back to exact coordinates", () => {

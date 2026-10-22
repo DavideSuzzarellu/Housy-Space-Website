@@ -6,11 +6,53 @@ import {
   getPrimaryOperation,
   getPropertyTitle,
   localize,
+  MAX_APPROXIMATE_OFFSET_M,
   selectFeatured,
+  toApproximateCentre,
   toIsoDateTime,
   toPropertyRef,
   type Property,
 } from "./property";
+
+/** Great-circle distance in metres (haversine), independent of the code under test. */
+function distanceM(a: { latitude: number; longitude: number }, b: typeof a): number {
+  const rad = Math.PI / 180;
+  const dLat = (b.latitude - a.latitude) * rad;
+  const dLng = (b.longitude - a.longitude) * rad;
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(a.latitude * rad) * Math.cos(b.latitude * rad) * Math.sin(dLng / 2) ** 2;
+  return 2 * 6371000 * Math.asin(Math.sqrt(h));
+}
+
+describe("toApproximateCentre", () => {
+  // Mobilia sends the building's own coordinates as the "zone" (seen in real responses).
+  const building = { latitude: 41.410491, longitude: 2.190669 };
+
+  it("never returns the building's coordinates", () => {
+    const centre = toApproximateCentre(building);
+    expect(centre).not.toEqual(building);
+    expect(distanceM(centre, building)).toBeGreaterThan(0);
+  });
+
+  it("keeps the building within the maximum offset (inside any circle of that radius)", () => {
+    for (let i = 0; i < 2000; i += 1) {
+      const point = {
+        latitude: 41.32 + ((i * 7919) % 1000) / 6000,
+        longitude: 2.05 + ((i * 104729) % 1000) / 4000,
+      };
+      expect(distanceM(toApproximateCentre(point), point)).toBeLessThanOrEqual(
+        MAX_APPROXIMATE_OFFSET_M,
+      );
+    }
+  });
+
+  it("is deterministic and shared by neighbours, so it cannot be averaged back to the building", () => {
+    const centre = toApproximateCentre(building);
+    expect(toApproximateCentre(building)).toEqual(centre);
+    expect(toApproximateCentre({ latitude: 41.411, longitude: 2.1915 })).toEqual(centre);
+  });
+});
 
 function makeProperty(overrides: Partial<Property> = {}): Property {
   return {
