@@ -51,7 +51,7 @@ Load for any styling work. Brand values live in AGENTS.md §11; this skill defin
 4. Add visible focus styles (`focus-visible:` ring using a brand token with sufficient contrast on that background).
 5. Graphic resource lines (38.6°) and photo tints: implement once as a component/utility in `shared/ui`, low presence.
 6. Check: `rg -n "#[0-9a-fA-F]{3,8}\b" src --glob '!src/styles/global.css'` returns nothing new; `rg -n "\[#" src` returns nothing.
-7. Run `pnpm lint`, `pnpm check`; visually verify at 320px, 768px, 1280px.
+7. Run `bun run lint`, `bun run check`; visually verify at 320px, 768px, 1280px.
 
 ## Output Contract
 

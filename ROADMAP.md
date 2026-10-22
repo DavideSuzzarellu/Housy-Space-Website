@@ -7,7 +7,7 @@
 
 | # | Input | Unblocks | Status |
 |---|-------|----------|--------|
-| I1 | Mobilia connection credentials in `.env` | Phase 1, `pnpm build`/`check` | ✅ sync OK (`astro check` 2026-10-22: 4 properties, 2 agents) |
+| I1 | Mobilia connection credentials in `.env` | Phase 1, `bun run build`/`check` | ✅ sync OK (`astro check` 2026-10-22: 4 properties, 2 agents) |
 | I19 | Fill `tituloWeb` (web title) in Mobilia for every property, in es/en/it/ca | Property titles and slugs | ⏳ pending |
 | I2 | **Hosting provider** (Vercel / Netlify / Node server) | 301 redirects, form endpoint, Google reviews, scheduled rebuilds, launch | ⏳ pending |
 | I3 | Email address that receives form submissions | Phase 4 | ⏳ pending |
@@ -57,7 +57,7 @@
 - [ ] Confirm the white logo derived from the official SVG
 
 ### Phase 3 — Catalog & property detail
-- [~] Catalog with URL-synced filters, sort, list/map view, clustered Leaflet map (ICGC tiles) — implemented + unit tests; `tests/e2e/catalog.spec.ts` and the catalog performance budget still to run against a build (🔒 I1 for `pnpm build`). Map-area search ("buscar en esta zona") and district/barrio filters wait for Phase 5 geo data
+- [~] Catalog with URL-synced filters, sort, list/map view, clustered Leaflet map (ICGC tiles) — implemented + unit tests; `tests/e2e/catalog.spec.ts` and the catalog performance budget still to run against a build (🔒 I1 for `bun run build`). Map-area search ("buscar en esta zona") and district/barrio filters wait for Phase 5 geo data
 - [x] Property card → detail shared-element morph (image, title, price)
 - [~] Detail: gallery, facts, energy rating, virtual tour, approximate map, agent, similar properties, JSON-LD done — LeadForm 🔒 I3, I2
 - [ ] Contact page (detail "request a viewing" CTA links to it, currently 404)
@@ -66,7 +66,7 @@
 - [ ] Lighthouse CI (`@lhci/cli`, proposed, needs approval) once CI exists 🔒 I2
 - [ ] Localized slugs + 301 rules 🔒 I2
 - [ ] Rental-ad legal info 🔒 I12
-- [~] Property PDF sheet (A4) — HTML source page per locale × property × operation (`src/pages/property-sheet-source/`), printed to `/pdf/housyspace-{ref}-{op}-{locale}.pdf` by `scripts/build-property-sheets.ts` after `astro build`; "Download sheet (PDF)" button on the detail. QR code + "View online" CTA open the property page in the sheet's language (decoded from the printed PDFs in es and en). Unit tests + layout checked by printing the 4 real properties from `astro dev`. Still to do: run `pnpm build` + `tests/e2e/property-detail.spec.ts` (needs `pnpm exec playwright install chromium`); hosting must run Chromium at build or CI must build (🔒 I2); en/it/ca sheet texts (disclaimer, documentation) machine-translated, pending client review
+- [~] Property PDF sheet (A4) — HTML source page per locale × property × operation (`src/pages/property-sheet-source/`), printed to `/pdf/housyspace-{ref}-{op}-{locale}.pdf` by `scripts/build-property-sheets.ts` after `astro build`; "Download sheet (PDF)" button on the detail. QR code + "View online" CTA open the property page in the sheet's language (decoded from the printed PDFs in es and en). Unit tests + layout checked by printing the 4 real properties from `astro dev`. Still to do: run `bun run build` + `tests/e2e/property-detail.spec.ts` (needs `bunx playwright install chromium`); hosting must run Chromium at build or CI must build (🔒 I2); en/it/ca sheet texts (disclaimer, documentation) machine-translated, pending client review
 
 ### Phase 4 — Leads & forms 🔒 I3, I2
 - [ ] Shared `LeadForm` schema (client + server), honeypot, rate limit
@@ -132,3 +132,4 @@
 | 2026-10-22 | Approved dep: `qrcode` (+ `@types/qrcode`) for the sheet QR. Only its encoder is used; the SVG is drawn by `QrCode.astro` with brand tokens |
 | 2026-10-22 | Fix: Mobilia `latitudZona`/`longitudZona` equal the exact building coordinates for all 4 live properties, so circles were centred on the building. Centres are now snapped to a ≈ 550 m grid (`toApproximateCentre`) in the mapper; real coordinates removed from the test fixtures |
 | 2026-10-22 | Property sheet: HTML is the source of truth, printed to a real PDF at build time (Playwright Chromium, already a devDependency); direct download via `<a download>`, no print dialog. Runtime PDF generation rejected (needs hosting). Static map for print: ICGC tiles + SVG circle computed at build (`staticMap.ts`), no Leaflet |
+| 2026-10-22 | Package manager: bun replaces pnpm (`bun.lock`, `bun run <script>`; `bun test` is NOT Vitest). Scripts keep running on Node. LF line endings enforced by `.gitattributes`. Git repo created; client PDFs, local agent state and `.env*` stay out of it |

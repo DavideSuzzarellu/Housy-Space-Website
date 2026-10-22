@@ -47,8 +47,8 @@ Note: the redirect rows for detail pages need per-request logic or generated red
    - Property detail: `Residence` (or a more specific type if mapped) + `Offer` with `price`/`priceCurrency` only when price is public; omit price when `precio*AConsultar` is true. Never include private address when `mostrarDireccionExacta` is false.
 4. Sitemap: `@astrojs/sitemap` with `i18n: { defaultLocale: "es", locales: { es: "es-ES", en: "en", it: "it-IT", ca: "ca-ES" } }`; exclude API routes and redirect-only paths.
 5. `robots.txt` references the sitemap index; do not block assets needed for rendering.
-6. After `pnpm build`, inspect generated head of one page per locale and the sitemap for alternates.
-7. Run `pnpm test`, `pnpm test:e2e`, `pnpm build`.
+6. After `bun run build`, inspect generated head of one page per locale and the sitemap for alternates.
+7. Run `bun run test`, `bun run test:e2e`, `bun run build`.
 
 ## Output Contract
 

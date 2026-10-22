@@ -43,7 +43,7 @@ Load for any navigation, animation, persisted element, or client `<script>` work
 6. Locale switcher navigates to `getLocalizedPath(routeKey, targetLocale, params)`; after the swap assert `<html lang>` and `hreflang` links reflect the new page.
 7. Accessibility: every page has a unique `<title>` (ClientRouter's route announcer reads it, then the first `<h1>`); verify focus lands sensibly after navigation.
 8. Playwright checks (4 locales): morph target exists on both pages; header element is the same node after navigation; `lang` updates; form submit stays on page and shows translated status; run once with `reducedMotion: "reduce"` and assert content swaps without errors; no console errors.
-9. Run `pnpm test`, `pnpm test:e2e`, `pnpm check`.
+9. Run `bun run test`, `bun run test:e2e`, `bun run check`.
 
 ## Output Contract
 

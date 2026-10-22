@@ -43,8 +43,8 @@ Load for architecture-level Astro decisions: rendering, hydration, config, env, 
 2. Choose rendering mode and hydration from the table; record why in the commit body if not the default.
 3. Endpoints: parse input with the shared Zod schema (same as client), honeypot + rate limit, return typed JSON, never echo CRM/internal errors (§6, §8). Lead destination is `TODO` (§6): do not wire any Mobilia write endpoint.
 4. Images: local assets imported from `src/assets/`; remote via authorized domains; meaningful localized `alt`; `priority` only on the LCP image.
-5. Performance budget (§8): Lighthouse mobile ≥ 90, LCP < 2.5 s, no CLS from images or transitions. Check JS shipped per page after `pnpm build` (no unexpected island bundles).
-6. Run `pnpm check`, `pnpm test`, `pnpm build`.
+5. Performance budget (§8): Lighthouse mobile ≥ 90, LCP < 2.5 s, no CLS from images or transitions. Check JS shipped per page after `bun run build` (no unexpected island bundles).
+6. Run `bun run check`, `bun run test`, `bun run build`.
 
 ## Output Contract
 

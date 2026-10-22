@@ -47,7 +47,7 @@ Kept on purpose:
 
 ## Performance budget (automated)
 
-`tests/e2e/performance.spec.ts` runs with `pnpm test:e2e` against the production build. It uses a phone viewport and no extra dependencies: Resource Timing, LCP and Layout Shift observers. It checks:
+`tests/e2e/performance.spec.ts` runs with `bun run test:e2e` against the production build. It uses a phone viewport and no extra dependencies: Resource Timing, LCP and Layout Shift observers. It checks:
 
 - Initial-load encoded bytes: total, JS and images. It also checks font file count and request count.
 - LCP < 2.5 s and CLS < 0.1. These are local, unthrottled sanity limits; Lighthouse is the real gate.
@@ -78,8 +78,8 @@ Hosting is still `TODO` (AGENTS.md §2). Whichever provider is chosen:
 ## How to re-measure
 
 ```bash
-pnpm build
-pnpm preview --port 4410 --ignore-lock
+bun run build
+bun run preview --port 4410 --ignore-lock
 # in another shell, 3 runs per page, take the median:
 npx -y lighthouse@13.5.0 http://localhost:4410/es \
   --only-categories=performance --form-factor=mobile \

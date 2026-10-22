@@ -31,7 +31,7 @@
 | Analytics           | `TODO`                                                                        | Only after cookie consent                                                    |
 | Testing             | Vitest + Playwright + `@axe-core/playwright`                                  | Required by section 8                                                        |
 | Formatting          | Prettier + `prettier-plugin-tailwindcss`                                      | Automatic Tailwind class ordering                                            |
-| Package manager     | pnpm                                                                          |                                                                              |
+| Package manager     | bun (`bun.lock`)                                                              | Run scripts with `bun run <script>`: `bun test` is Bun's own runner, not Vitest. Scripts run on Node (Astro, Playwright) |
 
 Do not add dependencies outside this table without asking.
 
@@ -298,12 +298,13 @@ Every value is typed from the moment it enters the system until it reaches the H
 ## 10. Commands
 
 ```bash
-pnpm dev
-pnpm test         # Vitest
-pnpm test:e2e     # Playwright
-pnpm lint
-pnpm check        # astro check (types)
-pnpm build
+bun install
+bun run dev
+bun run test         # Vitest (never `bun test`: that is Bun's own test runner)
+bun run test:e2e     # Playwright (first time: bunx playwright install chromium)
+bun run lint
+bun run check        # astro check (types)
+bun run build        # astro build + property sheet PDFs (needs Chromium)
 ```
 
 ## 11. Brand & design (source: HousySpace brand manual 2026)

@@ -41,8 +41,8 @@ Load whenever a route is added, renamed, or removed. Also load `seo-multilingual
 5. Route file under `src/pages/[locale]/...` with `getStaticPaths()` emitting one path per locale using the route map's translated segment; read data through an application use case (`getPageByRouteKey(routeKey, locale)`), never `getCollection()` in the page body directly if a use case exists.
 6. Head: pass `routeKey`, `locale`, params to the shared SEO component so it emits self canonical, 4 `hreflang` alternates, and `x-default` → `es` URL (skill `seo-multilingual`).
 7. Navigation/footer: add the link via `getLocalizedPath`; verify the locale switcher resolves the counterpart page.
-8. Sitemap: confirm the 4 URLs appear in the `@astrojs/sitemap` output with alternates after `pnpm build`.
-9. Run `pnpm test`, `pnpm test:e2e`, `pnpm check`, `pnpm build`.
+8. Sitemap: confirm the 4 URLs appear in the `@astrojs/sitemap` output with alternates after `bun run build`.
+9. Run `bun run test`, `bun run test:e2e`, `bun run check`, `bun run build`.
 
 ## Output Contract
 

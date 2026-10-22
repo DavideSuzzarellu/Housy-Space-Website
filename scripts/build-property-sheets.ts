@@ -4,7 +4,7 @@
  *
  * Chromium (Playwright) loads each page from `dist` through request interception on a fake
  * origin, so no server is needed; only remote resources (ICGC tiles) hit the network.
- * Requires the Chromium build: `pnpm exec playwright install chromium`.
+ * Requires the Chromium build: `bunx playwright install chromium`.
  */
 import { existsSync, statSync } from "node:fs";
 import { mkdir, readdir, rm } from "node:fs/promises";
@@ -101,7 +101,7 @@ async function main(): Promise<void> {
 
   const browser = await chromium.launch().catch((error: unknown) => {
     throw new Error(
-      "[property-sheets] Chromium is not available. Install it with `pnpm exec playwright install chromium`.",
+      "[property-sheets] Chromium is not available. Install it with `bunx playwright install chromium`.",
       { cause: error },
     );
   });

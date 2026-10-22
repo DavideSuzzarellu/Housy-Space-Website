@@ -28,7 +28,6 @@ playwright/.cache/
 # logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
 
 # OS / editors
 .DS_Store

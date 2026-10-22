@@ -56,7 +56,7 @@ Load before creating or changing any visual element. Also load `tailwind-css` an
    - [ ] No copy-pasted class string from another file.
    - [ ] No repeated formatting/URL/transition-name logic.
    - [ ] Shared Zod schema reused for client + server validation (forms).
-8. Run `pnpm test`, `pnpm lint`, `pnpm check`.
+8. Run `bun run test`, `bun run lint`, `bun run check`.
 
 ## Output Contract
 

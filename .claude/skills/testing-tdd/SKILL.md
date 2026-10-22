@@ -42,7 +42,7 @@ Load with every code change (AGENTS.md §8, §12). Tests and code ship together 
 4. Playwright: parameterize over `["es", "en", "it", "ca"]`; navigate with paths from the route map, not hard-coded strings where avoidable.
 5. A11y checks in Playwright: one `<h1>`, `<html lang>` correct, accessible names via `getByRole`, keyboard-only flow for forms (Tab order, Enter submits), focus visible, run a project with `reducedMotion: "reduce"`. Run an automated `@axe-core/playwright` scan on every page type in every locale; zero serious/critical violations.
 6. Lead form flow: client validation errors translated, honeypot rejected, success state shown without router navigation, endpoint mocked or pointed to a test destination (real destination is `TODO`, §6).
-7. Run `pnpm test` (and `pnpm test:e2e` for UI/route changes), plus `pnpm lint`, `pnpm check` before commit (§9).
+7. Run `bun run test` (and `bun run test:e2e` for UI/route changes), plus `bun run lint`, `bun run check` before commit (§9).
 
 ## Output Contract
 

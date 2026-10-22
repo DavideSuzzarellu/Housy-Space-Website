@@ -30,7 +30,7 @@ Without that file, every build is a full sync. That is correct, just slower and 
 
 ## Caching on CI
 
-Persist **`node_modules/.astro/`** between builds. Restore it before `pnpm build` and save it afterwards.
+Persist **`node_modules/.astro/`** between builds. Restore it before `bun run build` and save it afterwards.
 
 Generic example (GitHub Actions):
 
@@ -44,7 +44,7 @@ Generic example (GitHub Actions):
 
 Notes:
 
-- Restore the cache **after** `pnpm install`, or make sure install does not delete `node_modules/.astro`.
+- Restore the cache **after** `bun install`, or make sure install does not delete `node_modules/.astro`.
 - The cache holds public listing data only. It never contains credentials: `CLIENT_ID` and `CLIENT_SECRET` come from the CI secret store.
 - To force a full sync, drop the cache or delete `node_modules/.astro/data-store.json`.
 
@@ -73,5 +73,5 @@ Mobilia has not published rate limits for the Public API (ROADMAP input I16), an
 
 ## Local troubleshooting
 
-- `pnpm astro sync` runs the loaders without a full build. The log line `Mobilia full|incremental sync: N upserted, N removed, N skipped` shows what happened.
+- `bunx astro sync` runs the loaders without a full build. The log line `Mobilia full|incremental sync: N upserted, N removed, N skipped` shows what happened.
 - Invalid items are skipped with a warning naming only their reference. Raw payloads are never logged.

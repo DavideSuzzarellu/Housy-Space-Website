@@ -1,0 +1,8 @@
+# LF everywhere (Prettier's endOfLine), whatever core.autocrlf says on Windows.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.webm binary
+*.pdf binary

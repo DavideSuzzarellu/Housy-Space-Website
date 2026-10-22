@@ -23,7 +23,7 @@ export default defineConfig({
   ],
   // Tests run against the production build served by `astro preview`.
   webServer: {
-    command: `pnpm build && pnpm preview --port ${PORT} --ignore-lock`,
+    command: `bun run build && bun run preview --port ${PORT} --ignore-lock`,
     url: `http://localhost:${PORT}/es`,
     reuseExistingServer: !isCI,
     timeout: 180_000,

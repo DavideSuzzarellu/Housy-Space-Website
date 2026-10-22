@@ -44,7 +44,7 @@ Load before touching `mobiliaPropertiesLoader()`, the `agents` loader, Mobilia s
 6. Loader object: `{ name, load, schema } satisfies Loader` (`import type { Loader } from "astro/loaders"`, `import { z } from "astro/zod"`). In `load({ store, meta, parseData, generateDigest, logger })`: `const data = await parseData({ id, data: mapped })`, `store.set({ id, data, digest: generateDigest(data) })`, then `meta.set("lastSync", startedAtIso)` only after success.
 7. Fixtures: record real responses once into `tests/fixtures/mobilia/`, then strip tokens, owner/contact data, `direccionPrivada`, `archivos`, personal names/emails/phones, and exact coordinates of hidden-address listings. Review the diff before committing.
 8. Tests (Vitest, `fetch` mocked with fixtures): token cache reuse and expiry, paging stop condition, `publicarEnWeb/activo` filter, incremental call includes `FechaUltimaModificacion`, desactivados deletion, privacy (no `direccionPrivada`, approximate coords), null handling, locale mapping, `referencia` lowercased.
-9. Run `pnpm test`, `pnpm check`.
+9. Run `bun run test`, `bun run check`.
 
 ## Output Contract
 
