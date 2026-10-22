@@ -386,6 +386,7 @@ No other color combinations for the logo.
 | `astro-best-practices` | Rendering mode, islands, images, env, endpoints, performance |
 | `seo-multilingual` | Metadata, canonical, hreflang, JSON-LD, sitemap, redirects |
 | `testing-tdd` | Writing tests (Vitest, Playwright) — always, with any code change |
+| `commit-per-task` | Finishing any task: one conventional commit per tested task, explaining what and why |
 
 - Third-party skills: read the full content first (never import unreviewed scripts), then copy the folder into `.claude/skills/` or install via `/plugin marketplace add <owner/repo>` + `/plugin install <plugin>@<marketplace>` with project scope. Record the source in the skills index.
 - Claude Code entry point: `CLAUDE.md` contains `@AGENTS.md` so this file stays the single source of truth.

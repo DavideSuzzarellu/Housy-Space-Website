@@ -12,6 +12,7 @@ Skills for agents working on the HousySpace website. `AGENTS.md` is the single s
 | [`astro-best-practices`](astro-best-practices/SKILL.md) | Zero-JS islands, static vs on-demand rendering, `astro:env` secrets, `Image`/`Picture`, collections via use cases, endpoints, performance | project-authored |
 | [`seo-multilingual`](seo-multilingual/SKILL.md) | Metadata, canonical, hreflang + x-default, JSON-LD, i18n sitemap, slug and 301 rules | project-authored |
 | [`testing-tdd`](testing-tdd/SKILL.md) | Red/green/refactor with Vitest (domain, application, loaders, components) and Playwright (4-locale flows, a11y) | project-authored |
+| [`commit-per-task`](commit-per-task/SKILL.md) | Close every finished, tested task with one conventional commit explaining what and why; check gate chained to the commit; never-commit list | project-authored |
 
 ## Importing third-party skills
 
