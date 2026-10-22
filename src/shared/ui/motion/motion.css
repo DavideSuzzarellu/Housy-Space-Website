@@ -141,3 +141,40 @@
   height: 100%;
   object-fit: cover;
 }
+
+/*
+ * Gallery lightbox (PropertyGallery.astro). The page photo (cropped) morphs into the full
+ * lightbox photo: crop both snapshots while the box resizes, like the card → detail morph.
+ */
+::view-transition-image-pair(gallery-zoom) {
+  overflow: hidden;
+}
+
+::view-transition-old(gallery-zoom),
+::view-transition-new(gallery-zoom) {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The dialog and its backdrop fade in and out (also the fallback when there is no morph).
+   Reduced motion: the global rule in global.css collapses these durations. */
+.gallery-dialog,
+.gallery-dialog::backdrop {
+  opacity: 0;
+  transition:
+    opacity 350ms var(--ease-brand),
+    overlay 350ms allow-discrete,
+    display 350ms allow-discrete;
+}
+
+.gallery-dialog[open],
+.gallery-dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .gallery-dialog[open],
+  .gallery-dialog[open]::backdrop {
+    opacity: 0;
+  }
+}

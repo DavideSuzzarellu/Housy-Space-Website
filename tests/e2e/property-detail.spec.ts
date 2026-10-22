@@ -195,11 +195,22 @@ test("gallery lightbox works with the keyboard (open, arrows, Escape)", async ({
   const count = await slides.count();
   expect(count).toBeGreaterThan(0);
 
+  const decoded = (index: number) =>
+    slides
+      .nth(index)
+      .locator("img")
+      .evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0);
+  // Lightbox photos cost nothing until the visitor shows intent.
+  expect(await decoded(count - 1)).toBe(false);
+
   await opener.focus();
   await page.keyboard.press("Enter");
   await expect(dialog).toBeVisible();
   await expect(slides.nth(0)).toBeVisible();
   await expect(dialog.locator("[data-gallery-close]")).toBeFocused();
+  // Next and previous photos are preloaded on open: stepping never waits on the network.
+  await expect.poll(() => decoded(1 % count)).toBe(true);
+  await expect.poll(() => decoded(count - 1)).toBe(true);
 
   if (count > 1) {
     await page.keyboard.press("ArrowRight");

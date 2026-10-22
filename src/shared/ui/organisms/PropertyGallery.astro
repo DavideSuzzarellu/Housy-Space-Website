@@ -8,6 +8,9 @@ import { morph } from "@/shared/ui/motion/transitions";
  * Photo gallery with a keyboard-accessible lightbox (native modal `<dialog>`: focus is
  * trapped, Escape closes, arrows move, focus returns to the opener). The first photo is the
  * LCP image and can carry a shared-element transition name (card → detail morph).
+ * Lightbox motion: the clicked photo morphs into the lightbox and back (same-document view
+ * transition, CSS fade fallback); slides cross-fade; photos are preloaded and decoded before
+ * they are shown (lazy in the HTML, so the page itself downloads none of them).
  * Business-agnostic: photos and labels arrive as props.
  */
 export interface GalleryPhoto {
@@ -132,7 +135,7 @@ const CONTROL =
     <dialog
       data-gallery-dialog
       aria-label={labels.dialog}
-      class="m-0 h-dvh max-h-none w-screen max-w-none bg-ink/96 p-0 text-fg backdrop:bg-ink/80"
+      class="gallery-dialog m-0 h-dvh max-h-none w-screen max-w-none bg-ink/96 p-0 text-fg backdrop:bg-ink/80"
     >
       <div
         data-gallery-stage
@@ -161,63 +164,178 @@ const CONTROL =
             </button>
           </>
         )}
-        {photos.map((photo, index) => (
-          <figure data-slide hidden class="m-0 flex max-h-full flex-col items-center gap-4">
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              inferSize
-              widths={[960, 1600]}
-              sizes="100vw"
-              class="max-h-[78svh] w-auto max-w-full object-contain"
-            />
-            <figcaption class="text-sm text-muted" aria-live="polite">
-              {formatMessage(labels.counter, { index: index + 1, count })}
-            </figcaption>
-          </figure>
-        ))}
+        <!-- Slides share one grid cell and cross-fade; inactive ones are invisible (not in the
+             accessibility tree) once their fade-out ends. -->
+        <div class="grid max-h-full place-items-center">
+          {photos.map((photo, index) => (
+            <figure
+              data-slide
+              class="invisible m-0 flex max-h-full flex-col items-center gap-4 opacity-0 transition-[opacity,visibility] duration-400 ease-brand [grid-area:1/1] data-active:visible data-active:opacity-100"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                inferSize
+                widths={[960, 1600]}
+                sizes="100vw"
+                class="max-h-[78svh] w-auto max-w-full object-contain"
+              />
+              <figcaption class="text-sm text-muted" aria-live="polite">
+                {formatMessage(labels.counter, { index: index + 1, count })}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </dialog>
   )}
 </div>
 
 <script>
-  import { stepIndex } from "./gallery";
+  import { preloadOrder, stepIndex } from "./gallery";
+
+  /** Temporary name of the photo that morphs between the page and the lightbox. */
+  const ZOOM_NAME = "gallery-zoom";
+  /** Never wait longer than this for a photo before showing it (slow network). */
+  const DECODE_TIMEOUT_MS = 2500;
+  /** Photos loaded right away on open/step: current, next, previous. */
+  const NEIGHBOURS = 3;
+
+  const motionAllowed = (): boolean =>
+    window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+
+  /** Same-document view transition when supported and motion is allowed. */
+  async function withViewTransition(update: () => void): Promise<void> {
+    if (typeof document.startViewTransition !== "function" || !motionAllowed()) {
+      update();
+      return;
+    }
+    await document.startViewTransition(update).finished.catch(() => undefined);
+  }
+
+  function isVisible(image: HTMLImageElement | null): image is HTMLImageElement {
+    return image !== null && image.getClientRects().length > 0;
+  }
 
   function bindGallery(gallery: HTMLElement): void {
     const dialog = gallery.querySelector<HTMLDialogElement>("[data-gallery-dialog]");
     if (dialog === null || gallery.dataset["bound"] === "true") return;
     gallery.dataset["bound"] = "true";
     const slides = [...dialog.querySelectorAll<HTMLElement>("[data-slide]")];
+    const slideImages = slides.map((slide) => slide.querySelector("img"));
+    const openers = [...gallery.querySelectorAll<HTMLElement>("[data-gallery-open]")];
     let current = 0;
+    let request = 0;
+    let preloadScheduled = false;
 
-    const show = (index: number): void => {
-      current = stepIndex(index, 0, slides.length);
-      slides.forEach((slide, slideIndex) => {
-        slide.hidden = slideIndex !== current;
-      });
+    /** Starts downloading a slide photo (lazy in the HTML) and resolves once it is decoded. */
+    const load = async (index: number): Promise<void> => {
+      const image = slideImages[index];
+      if (image === null || image === undefined) return;
+      image.loading = "eager";
+      await image.decode().catch(() => undefined);
     };
 
-    for (const trigger of gallery.querySelectorAll<HTMLElement>("[data-gallery-open]")) {
-      trigger.addEventListener("click", () => {
-        show(Number(trigger.dataset["galleryOpen"] ?? "0"));
-        dialog.showModal();
+    const loadWithTimeout = (index: number): Promise<void> =>
+      Promise.race([
+        load(index),
+        new Promise<void>((resolve) => setTimeout(resolve, DECODE_TIMEOUT_MS)),
+      ]);
+
+    /** Neighbours now; every other photo when the browser is idle, nearest first. */
+    const preloadAround = (index: number): void => {
+      const order = preloadOrder(index, slides.length);
+      for (const slideIndex of order.slice(0, NEIGHBOURS)) void load(slideIndex);
+      if (preloadScheduled) return;
+      preloadScheduled = true;
+      const rest = (): void => {
+        for (const slideIndex of order.slice(NEIGHBOURS)) void load(slideIndex);
+      };
+      if ("requestIdleCallback" in window) window.requestIdleCallback(rest);
+      else setTimeout(rest, 300);
+    };
+
+    /** Activates a slide once its photo is decoded (no half-painted frame); CSS cross-fades. */
+    const show = async (index: number): Promise<void> => {
+      const target = stepIndex(index, 0, slides.length);
+      const ticket = (request += 1);
+      await loadWithTimeout(target);
+      if (ticket !== request) return; // a newer step won (fast arrow presses)
+      current = target;
+      slides.forEach((slide, slideIndex) => {
+        slide.toggleAttribute("data-active", slideIndex === current);
       });
+      preloadAround(current);
+    };
+
+    /** Page photo for a slide (hero or thumbnail), when it is on screen. */
+    const pagePhoto = (index: number): HTMLImageElement | null => {
+      const opener = openers.find(
+        (candidate) =>
+          candidate.dataset["galleryOpen"] === String(index) && candidate.querySelector("img"),
+      );
+      const image = opener?.querySelector("img") ?? null;
+      return isVisible(image) ? image : null;
+    };
+
+    /** Morphs `from` into `to` around a DOM update (both named in turn, never at once). */
+    const morph = async (
+      from: HTMLImageElement | null,
+      to: HTMLImageElement | null | undefined,
+      update: () => void,
+    ): Promise<void> => {
+      if (from === null || to === null || to === undefined) {
+        update(); // dialog fade-in/out comes from CSS (.gallery-dialog)
+        return;
+      }
+      from.style.viewTransitionName = ZOOM_NAME;
+      await withViewTransition(() => {
+        from.style.viewTransitionName = "";
+        to.style.viewTransitionName = ZOOM_NAME;
+        update();
+      });
+      to.style.viewTransitionName = "";
+    };
+
+    const open = async (index: number): Promise<void> => {
+      await show(index);
+      await morph(pagePhoto(current), slideImages[current], () => dialog.showModal());
+    };
+
+    const close = async (): Promise<void> => {
+      if (!dialog.open) return;
+      const shown = slideImages[current] ?? null;
+      await morph(isVisible(shown) ? shown : null, pagePhoto(current), () => dialog.close());
+    };
+
+    for (const trigger of openers) {
+      const index = Number(trigger.dataset["galleryOpen"] ?? "0");
+      // Intent: start loading before the click lands.
+      const warm = (): void => void load(index);
+      trigger.addEventListener("pointerenter", warm, { once: true });
+      trigger.addEventListener("focus", warm, { once: true });
+      trigger.addEventListener("touchstart", warm, { once: true, passive: true });
+      trigger.addEventListener("click", () => void open(index));
     }
     for (const control of dialog.querySelectorAll<HTMLElement>("[data-gallery-step]")) {
       control.addEventListener("click", () => {
-        show(stepIndex(current, Number(control.dataset["galleryStep"]), slides.length));
+        void show(stepIndex(current, Number(control.dataset["galleryStep"]), slides.length));
       });
     }
-    dialog.querySelector("[data-gallery-close]")?.addEventListener("click", () => dialog.close());
+    dialog.querySelector("[data-gallery-close]")?.addEventListener("click", () => void close());
+    // Escape: animate the close instead of the browser's instant one.
+    dialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      void close();
+    });
     dialog.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowRight") show(stepIndex(current, 1, slides.length));
-      else if (event.key === "ArrowLeft") show(stepIndex(current, -1, slides.length));
+      if (event.key === "ArrowRight") void show(stepIndex(current, 1, slides.length));
+      else if (event.key === "ArrowLeft") void show(stepIndex(current, -1, slides.length));
     });
     // A click on the empty stage around the photo closes the lightbox.
     const stage = dialog.querySelector("[data-gallery-stage]");
     dialog.addEventListener("click", (event) => {
-      if (event.target === dialog || event.target === stage) dialog.close();
+      if (event.target === dialog || event.target === stage) void close();
     });
   }
 
