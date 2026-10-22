@@ -103,10 +103,19 @@ test("map view loads Leaflet only on demand and draws the listings", async ({ pa
 test("the map never reveals an exact location: only wide zones", async ({ page }) => {
   await page.goto(`${getLocalizedPath("sale", "es")}?vista=mapa`);
   test.skip((await cards(page).count()) === 0, "No sale listings published");
-  await expect(page.locator("[data-catalog-map].leaflet-container")).toBeVisible();
+  const map = page.locator("[data-catalog-map].leaflet-container");
+  await expect(map).toBeVisible();
+  await map.scrollIntoViewIfNeeded();
   // Zoom in as far as allowed: listings show as zone circles, never as a precise pin.
+  // Leaflet drops clicks during a zoom animation, so wait for each one to end. `force`: the
+  // control disables itself exactly when the last zoom ends, racing the enabled check.
   const zoomIn = page.locator(".leaflet-control-zoom-in");
-  while (!(await zoomIn.getAttribute("class"))?.includes("leaflet-disabled")) await zoomIn.click();
+  for (let step = 0; step < 10; step += 1) {
+    if ((await zoomIn.getAttribute("aria-disabled")) === "true") break;
+    await zoomIn.click({ force: true });
+    await expect(map.locator(".leaflet-zoom-anim")).toHaveCount(0);
+  }
+  await expect(zoomIn).toHaveAttribute("aria-disabled", "true");
   await expect(page.locator("path.property-map-area").first()).toBeAttached();
   const payload = await page.locator("script[data-catalog-entries]").textContent();
   expect(payload ?? "").not.toMatch(/"(address|precision|latitud|longitud)"/);
@@ -119,6 +128,8 @@ test("search in this map area filters by the visible zone and can be removed", a
   const searchArea = page.locator("[data-catalog-search-area]");
   await expect(searchArea).toBeHidden();
 
+  // The map starts below the fold: drag inside the viewport, not at off-screen coordinates.
+  await map.scrollIntoViewIfNeeded();
   const box = await map.boundingBox();
   if (box === null) throw new Error("map has no box");
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
