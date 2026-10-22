@@ -1,0 +1,36 @@
+---
+/** Native select styled for dark backgrounds. Label it with `FormField` or a `<label for>`. */
+export interface SelectOption {
+  readonly value: string;
+  readonly label: string;
+}
+
+interface Props {
+  id: string;
+  name: string;
+  options: readonly SelectOption[];
+  /** Initially selected value. */
+  value?: string;
+  /** Associates the control with a form outside its ancestors. */
+  form?: string;
+  class?: string;
+}
+
+const { id, name, options, value, form, class: className } = Astro.props;
+---
+
+<select
+  id={id}
+  name={name}
+  form={form}
+  class:list={[
+    "min-h-11 w-full border border-line bg-bg-deep px-3.5 py-2.5 text-sm text-fg transition-colors hover:border-muted",
+    className,
+  ]}
+>
+  {options.map((option) => (
+    <option value={option.value} selected={option.value === value}>
+      {option.label}
+    </option>
+  ))}
+</select>

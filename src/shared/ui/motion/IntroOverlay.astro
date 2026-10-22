@@ -1,0 +1,33 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Logo from "@/shared/ui/atoms/Logo.astro";
+
+/**
+ * Brand intro overlay. Hidden unless <html> has `intro-active` (set by IntroGate before paint).
+ * aria-hidden: content underneath stays available to search engines and screen readers.
+ * Skippable by click/tap anywhere or Escape; ends automatically (intro.ts).
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+---
+
+<div
+  data-intro
+  aria-hidden="true"
+  class="fixed inset-0 z-100 hidden cursor-pointer flex-col items-center justify-center gap-4.5 bg-ink p-6 text-center text-fg transition-[opacity,visibility] duration-800 in-[.intro-active]:flex data-[done=true]:invisible data-[done=true]:opacity-0"
+>
+  <Logo variant="negative" alt="" class="h-auto w-[min(78vw,28.75rem)] animate-intro-logo" />
+  <span class="block h-px w-0 animate-intro-line bg-turquoise"></span>
+  <button
+    type="button"
+    tabindex="-1"
+    class="absolute top-5 right-5 cursor-pointer border border-fg/40 px-4 py-2.5 text-xs tracking-[0.14em] uppercase hover:border-turquoise hover:text-turquoise"
+  >
+    {t.a11y.skipIntro}
+  </button>
+</div>

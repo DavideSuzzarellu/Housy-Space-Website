@@ -1,0 +1,32 @@
+---
+import type { DetailOperation, Property } from "@/features/properties/domain/property";
+import type { Locale } from "@/shared/i18n/config";
+import PropertyCard from "./PropertyCard.astro";
+
+/**
+ * Responsive grid of property cards with staggered scroll reveal (home featured, similar
+ * properties). Each ref must appear once per page (shared-element transition names).
+ */
+interface Props {
+  locale: Locale;
+  properties: readonly Property[];
+  ctaLabel: string;
+  /** Cards link to this operation's detail (e.g. the operation of the current page). */
+  operation?: DetailOperation;
+}
+
+const { locale, properties, ctaLabel, operation } = Astro.props;
+---
+
+<ul class="grid gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7.5">
+  {properties.map((property, index) => (
+    <li data-reveal style={`--reveal-delay: ${index * 0.1}s`} class="flex">
+      <PropertyCard
+        property={property}
+        locale={locale}
+        ctaLabel={ctaLabel}
+        {...(operation === undefined ? {} : { operation })}
+      />
+    </li>
+  ))}
+</ul>

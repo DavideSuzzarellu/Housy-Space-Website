@@ -1,0 +1,130 @@
+---
+import { Picture } from "astro:assets";
+import { presentEnergyRating } from "@/features/properties/application/propertyFacts";
+import { getPropertyDetailPath } from "@/features/properties/application/propertyPaths";
+import {
+  getCoverPhoto,
+  getLocationLabel,
+  getOperationPrice,
+  getPrimaryOperation,
+  getPropertyTitle,
+  type DetailOperation,
+  type Property,
+} from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { formatMessage, formatNumber } from "@/shared/lib/format";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import {
+  PROPERTY_IMAGE_TRANSITION_CLASS,
+  propertyTransitionNames,
+} from "@/shared/lib/transitionNames";
+import ArrowLabel from "@/shared/ui/atoms/ArrowLabel.astro";
+import Badge from "@/shared/ui/atoms/Badge.astro";
+import FactList, { type Fact } from "@/shared/ui/molecules/FactList.astro";
+import PriceTag from "@/shared/ui/molecules/PriceTag.astro";
+import { morph } from "@/shared/ui/motion/transitions";
+
+/**
+ * Listing card. Image, title and price carry the shared-element transition names
+ * (AGENTS.md §3.3): render each ref at most once per page.
+ */
+interface Props {
+  property: Property;
+  locale: Locale;
+  ctaLabel: string;
+  /** Above-the-fold card: load its photo eagerly. */
+  priority?: boolean;
+  /** Link to (and price for) this operation's detail; defaults to the primary operation. */
+  operation?: DetailOperation;
+}
+
+const { property, locale, ctaLabel, priority = false, operation: forOperation } = Astro.props;
+const t = getDictionary(locale).property;
+
+const title =
+  getPropertyTitle(property, locale) ?? formatMessage(t.reference, { ref: property.ref });
+const href =
+  getPropertyDetailPath(property, locale, forOperation) ?? getLocalizedPath("sale", locale);
+const operation = forOperation ?? getPrimaryOperation(property);
+const price = operation === undefined ? undefined : getOperationPrice(property, operation);
+const cover = getCoverPhoto(property);
+const location = getLocationLabel(property);
+const names = propertyTransitionNames(property.ref);
+
+const facts: Fact[] = [];
+if (property.builtArea !== undefined) {
+  facts.push({ value: formatNumber(property.builtArea, locale), label: t.areaUnit });
+}
+if (property.bedrooms !== undefined && property.bedrooms > 0) {
+  facts.push({ value: formatNumber(property.bedrooms, locale), label: t.bedrooms });
+}
+if (property.bathrooms !== undefined && property.bathrooms > 0) {
+  facts.push({
+    value: formatNumber(property.bathrooms, locale),
+    label: property.bathrooms === 1 ? t.bathroomsOne : t.bathroomsOther,
+  });
+}
+---
+
+<a
+  href={href}
+  data-property-card
+  data-ref={property.ref}
+  data-morph-ref={property.ref}
+  data-astro-prefetch="viewport"
+  class="group flex flex-col bg-card text-inherit no-underline transition-colors duration-400 hover:bg-bg-dark-3 focus-visible:bg-bg-dark-3"
+>
+  <div
+    class="relative aspect-4/3 overflow-hidden bg-bg-deep"
+    transition:name={names.image}
+    transition:animate={morph}
+    style={`view-transition-class: ${PROPERTY_IMAGE_TRANSITION_CLASS}`}
+  >
+    {cover !== undefined && (
+      <Picture
+        {...PHOTO_PICTURE}
+        src={cover.url}
+        alt={formatMessage(t.photoAlt, { title })}
+        width={800}
+        height={600}
+        widths={[480, 800]}
+        sizes="(min-width: 1000px) 22rem, (min-width: 640px) 50vw, 100vw"
+        priority={priority}
+        class="block size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105 group-focus-visible:scale-105"
+      />
+    )}
+    <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+      {operation !== undefined && <Badge>{t.operations[operation]}</Badge>}
+      {property.status === "reserved" && <Badge tone="accent">{t.reserved}</Badge>}
+    </div>
+  </div>
+  <div class="flex flex-1 flex-col gap-1.5 px-6.5 pt-6 pb-7">
+    {location !== undefined && (
+      <p class="text-[0.6875rem] tracking-[0.14em] text-turquoise uppercase">{location}</p>
+    )}
+    <h3
+      class="mt-1 mb-1.5 text-[clamp(1.4375rem,2.1vw,1.6875rem)] leading-[1.12]"
+      transition:name={names.title}
+      transition:animate={morph}
+    >
+      {title}
+    </h3>
+    {price !== undefined && (
+      <div transition:name={names.price} transition:animate={morph}>
+        <PriceTag locale={locale} price={price} perMonth={operation === "rent"} />
+      </div>
+    )}
+    <FactList facts={facts} class="mt-2.5 mb-2" />
+    {property.energyRating !== undefined && (
+      <p class="text-xs text-muted">
+        {t.energyRating}:{" "}
+        <span class="font-medium text-fg">
+          {presentEnergyRating(property.energyRating, locale)}
+        </span>
+      </p>
+    )}
+    <ArrowLabel class="mt-auto">{ctaLabel}</ArrowLabel>
+  </div>
+</a>

@@ -1,0 +1,56 @@
+---
+/**
+ * Link styled as a button (all CTAs navigate). Turquoise fill sweeps in on hover/focus.
+ * Only for dark backgrounds (turquoise/fg on dark, AGENTS.md §8).
+ */
+interface Props {
+  href: string;
+  variant?: "outline" | "solid";
+  size?: "md" | "lg";
+  /** Opens in a new tab; `newTabLabel` is announced to screen readers. */
+  external?: boolean;
+  newTabLabel?: string;
+  /** Downloads the (same-origin) target instead of opening it; the value is the file name. */
+  download?: string;
+  class?: string;
+}
+
+const {
+  href,
+  variant = "outline",
+  size = "md",
+  external = false,
+  newTabLabel,
+  download,
+  class: className,
+} = Astro.props;
+
+const VARIANTS = {
+  outline: "border-current text-inherit",
+  solid: "border-fg bg-fg text-ink",
+} as const;
+
+const SIZES = {
+  md: "px-6.5 py-4 text-xs",
+  lg: "px-10 py-5 text-[0.8125rem] leading-snug",
+} as const;
+---
+
+<a
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  download={download}
+  data-astro-prefetch={download === undefined ? undefined : "false"}
+  class:list={[
+    "relative isolate inline-flex min-h-11 items-center justify-center overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
+    "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-turquoise before:transition-transform before:duration-450 before:ease-brand",
+    "hover:border-turquoise hover:text-ink hover:before:scale-x-100 focus-visible:border-turquoise focus-visible:text-ink focus-visible:before:scale-x-100",
+    VARIANTS[variant],
+    SIZES[size],
+    className,
+  ]}
+>
+  <slot />
+  {external && newTabLabel !== undefined && <span class="sr-only">{newTabLabel}</span>}
+</a>

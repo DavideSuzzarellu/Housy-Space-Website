@@ -1,0 +1,56 @@
+---
+import { LOCALE_META, type Locale } from "@/shared/i18n/config";
+import type { Alternate } from "@/shared/i18n/routes";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  /** From `getAlternates()`; omit on pages that must not be indexed (e.g. 404). */
+  alternates?: readonly Alternate[];
+  /** Open Graph image: root-relative path (PNG) or absolute URL. */
+  ogImagePath?: string;
+  noindex?: boolean;
+}
+
+const {
+  locale,
+  title,
+  description,
+  alternates = [],
+  ogImagePath = "/brand/housyspace-logo-oficial-fondo-blanco-3000.png",
+  noindex = false,
+} = Astro.props;
+
+const site = Astro.site ?? new URL(Astro.url.origin);
+const toAbsolute = (path: string): string => new URL(path, site).href;
+
+const canonicalAlternate = alternates.find(
+  (alternate) => alternate.hreflang !== "x-default" && alternate.locale === locale,
+);
+const canonicalUrl = canonicalAlternate ? toAbsolute(canonicalAlternate.path) : undefined;
+const ogLocale = LOCALE_META[locale].ogLocale;
+const ogLocaleAlternates = alternates
+  .filter((alternate) => alternate.hreflang !== "x-default" && alternate.locale !== locale)
+  .map((alternate) => LOCALE_META[alternate.locale].ogLocale);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex,follow" />}
+{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+{alternates.map((alternate) => (
+  <link rel="alternate" hreflang={alternate.hreflang} href={toAbsolute(alternate.path)} />
+))}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HousySpace" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:locale" content={ogLocale} />
+{ogLocaleAlternates.map((alternate) => (
+  <meta property="og:locale:alternate" content={alternate} />
+))}
+{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+<meta property="og:image" content={toAbsolute(ogImagePath)} />
+<meta name="twitter:card" content="summary_large_image" />

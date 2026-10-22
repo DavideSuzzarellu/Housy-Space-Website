@@ -1,0 +1,24 @@
+---
+import { INTRO_ACTIVE_CLASS, INTRO_SEEN_KEY } from "./intro";
+
+/**
+ * Pre-paint decision for the brand intro (rendered in <head> on the home page only).
+ * Same rule as `shouldPlayIntro()` in intro.ts: first hard load of the session, motion allowed,
+ * not after a client-side navigation (`window.__hsBooted`). Storage errors never break the page.
+ */
+---
+
+<script is:inline define:vars={{ seenKey: INTRO_SEEN_KEY, activeClass: INTRO_ACTIVE_CLASS }}>
+  (function () {
+    let seen;
+    try {
+      seen = sessionStorage.getItem(seenKey) !== null;
+    } catch {
+      seen = false;
+    }
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!seen && !reduce && !window.__hsBooted) {
+      document.documentElement.classList.add(activeClass);
+    }
+  })();
+</script>

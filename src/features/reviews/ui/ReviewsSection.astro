@@ -1,0 +1,70 @@
+---
+import type { ReviewsSummary } from "@/features/reviews/domain/review";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { formatMessage, formatNumber } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+
+/**
+ * 05 Google reviews. Renders NOTHING without real data (AGENTS.md §6.1 fallback: no empty
+ * stars, no fake reviews). The Places API integration is pending (ROADMAP I6, I2).
+ */
+interface Props {
+  locale: Locale;
+  summary?: ReviewsSummary | undefined;
+}
+
+const { locale, summary } = Astro.props;
+const t = getDictionary(locale);
+const copy = t.home.reviews;
+const hasReviews = summary !== undefined && summary.reviews.length > 0;
+const stars = (rating: number) => "★".repeat(Math.round(rating)).padEnd(5, "☆");
+---
+
+{hasReviews && (
+  <Section id="resenas" labelledBy="reviews-heading" name="reviews">
+    <div class="mb-7.5 flex flex-wrap items-end justify-between gap-x-10 gap-y-4.5">
+      <SectionHeading id="reviews-heading" number="05" tag={copy.eyebrow} heading={copy.heading} />
+      <p class="flex items-baseline gap-3.5 text-sm text-muted">
+        <b class="font-serif text-[2.75rem] font-normal whitespace-nowrap text-fg">
+          {formatMessage(copy.ratingOutOf, {
+            rating: summary.rating.toLocaleString(locale, { maximumFractionDigits: 1 }),
+          })}
+        </b>
+        <span>
+          {formatMessage(copy.reviewCount, { count: formatNumber(summary.totalCount, locale) })}
+        </span>
+      </p>
+    </div>
+    <ul class="grid gap-5.5 md:grid-cols-3">
+      {summary.reviews.map((review) => (
+        <li class="flex min-h-52.5 flex-col gap-3 bg-card px-6.5 pt-6.5 pb-5.5">
+          <p class="text-turquoise" aria-label={`${review.rating} / 5`}>
+            <span aria-hidden="true">{stars(review.rating)}</span>
+          </p>
+          <p class="text-[0.9375rem] text-fg/90">{review.text}</p>
+          <p class="mt-auto flex flex-wrap gap-x-2.5 gap-y-1 text-[0.8125rem] text-muted">
+            {review.authorUrl !== undefined ? (
+              <a href={review.authorUrl} class="font-medium text-fg" rel="noopener noreferrer">
+                {review.authorName}
+              </a>
+            ) : (
+              <b class="font-medium text-fg">{review.authorName}</b>
+            )}
+            <span>{review.relativePublishTime}</span>
+          </p>
+        </li>
+      ))}
+    </ul>
+    {summary.attributions.length > 0 && (
+      <p class="mt-4 text-xs text-muted">{summary.attributions.join(" · ")}</p>
+    )}
+    <div class="mt-6">
+      <Button href={summary.mapsUrl} external newTabLabel={t.a11y.opensInNewTab}>
+        {copy.viewOnGoogle}
+      </Button>
+    </div>
+  </Section>
+)}

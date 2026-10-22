@@ -1,0 +1,32 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Button from "@/shared/ui/atoms/Button.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+
+/**
+ * 07 Blog teaser. No articles exist yet (blog collection is ROADMAP Phase 7): empty state only,
+ * never placeholder articles.
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = getDictionary(locale).home.blog;
+---
+
+<Section id="blog" labelledBy="blog-heading" name="blog">
+  <div class="mb-6.5 flex flex-wrap items-end justify-between gap-x-7.5 gap-y-4.5">
+    <SectionHeading id="blog-heading" number="07" tag={copy.eyebrow} heading={copy.heading} />
+    <Button href={getLocalizedPath("blog", locale)}>{copy.allArticles}</Button>
+  </div>
+  <p
+    data-blog-empty
+    class="max-w-[68ch] border-l-2 border-turquoise-deep py-1 pl-3 text-sm text-muted"
+  >
+    {copy.empty}
+  </p>
+</Section>

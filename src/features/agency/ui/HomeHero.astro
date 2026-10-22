@@ -1,0 +1,183 @@
+---
+import { getImage } from "astro:assets";
+import posterLandscape from "@/assets/home/hero-poster.jpg";
+import posterPortrait from "@/assets/home/hero-poster-v.jpg";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
+
+/**
+ * 01 Hero: looping muted Barcelona video over an optimized poster (the LCP image).
+ * AI-generated placeholder media (docs/media-credits.md): the credit line stays visible.
+ */
+interface Props {
+  locale: Locale;
+  /** Id of the section the scroll cue jumps to. */
+  nextSectionId: string;
+}
+
+const { locale, nextSectionId } = Astro.props;
+const t = getDictionary(locale);
+
+// Poster = LCP image: AVIF first (smallest), WebP fallback; portrait cut for phones.
+const [landscape, portrait, landscapeAvif, portraitAvif] = await Promise.all([
+  getImage({ src: posterLandscape, format: "webp", width: 1280 }),
+  getImage({ src: posterPortrait, format: "webp", width: 720 }),
+  getImage({ src: posterLandscape, format: "avif", width: 1280 }),
+  getImage({ src: posterPortrait, format: "avif", width: 720 }),
+]);
+const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
+
+/** Static files in public/media/hero (videos cannot go through the image pipeline). */
+const VIDEO_SOURCES = {
+  landscape: { webm: "/media/hero/hero-1280.webm", mp4: "/media/hero/hero-1280.mp4" },
+  portrait: { webm: "/media/hero/hero-720v.webm", mp4: "/media/hero/hero-720v.mp4" },
+} as const;
+---
+
+<section
+  id="hero"
+  aria-label={t.home.hero.label}
+  data-section="hero"
+  data-hero
+  class="group/hero relative h-svh min-h-120 overflow-hidden text-white md:min-h-130"
+>
+  <div class="absolute inset-0 [mask-image:linear-gradient(180deg,black_0%,black_62%,rgb(0_0_0/0.55)_82%,transparent_100%)]">
+    <picture>
+      <source media={PORTRAIT_MEDIA} srcset={portraitAvif.src} type="image/avif" />
+      <source media={PORTRAIT_MEDIA} srcset={portrait.src} type="image/webp" />
+      <source srcset={landscapeAvif.src} type="image/avif" />
+      <img
+        src={landscape.src}
+        width={landscape.attributes["width"]}
+        height={landscape.attributes["height"]}
+        alt=""
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        class="absolute inset-0 size-full origin-[60%_40%] animate-kenburns object-cover group-data-[playing=true]/hero:[animation-play-state:paused]"
+      />
+    </picture>
+    <video
+      data-hero-video
+      data-landscape-webm={VIDEO_SOURCES.landscape.webm}
+      data-landscape-mp4={VIDEO_SOURCES.landscape.mp4}
+      data-portrait-webm={VIDEO_SOURCES.portrait.webm}
+      data-portrait-mp4={VIDEO_SOURCES.portrait.mp4}
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-hidden="true"
+      tabindex="-1"
+      class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1600 group-data-[playing=true]/hero:opacity-100"
+    ></video>
+  </div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 bg-linear-to-b from-ink/50 via-ink/0 via-55% to-ink/25"
+  ></div>
+  <p class="absolute right-4 bottom-4 z-2 max-w-[min(35rem,70vw)] text-right max-md:right-4 max-md:bottom-3 max-md:left-4 max-md:max-w-none max-md:text-left">
+    <MediaCredit tone="onImage">{t.home.hero.videoCredit}</MediaCredit>
+  </p>
+  <a
+    href={`#${nextSectionId}`}
+    aria-label={t.a11y.scrollDown}
+    class="absolute bottom-14.5 left-1/2 z-2 -ml-3.5 h-13.5 w-7 md:bottom-5.5"
+  >
+    <span class="absolute top-0 left-3.25 h-13.5 w-px overflow-hidden bg-white/35">
+      <span class="absolute top-0 left-0 h-4 w-px animate-scroll-cue bg-turquoise"></span>
+    </span>
+  </a>
+</section>
+
+<script>
+  import { heroVideoSourceKey, shouldStreamHeroVideo } from "./heroVideo";
+
+  /**
+   * Progressive enhancement over the poster (the LCP image). The video never competes with the
+   * critical path: it starts only after the `load` event and an idle period. Never downloaded
+   * under reduced motion, Save-Data or 2G (heroVideo.ts). Pauses when off-screen or hidden.
+   */
+  let bound = false;
+
+  function heroElements() {
+    const hero = document.querySelector<HTMLElement>("[data-hero]");
+    const video = hero?.querySelector<HTMLVideoElement>("[data-hero-video]") ?? null;
+    return hero === null || video === null ? undefined : { hero, video };
+  }
+
+  function connectionInfo(): { saveData: boolean; effectiveType: string | undefined } {
+    const connection: unknown = Reflect.get(navigator, "connection");
+    if (typeof connection !== "object" || connection === null) {
+      return { saveData: false, effectiveType: undefined };
+    }
+    const saveData = "saveData" in connection && connection.saveData === true;
+    const effectiveType =
+      "effectiveType" in connection && typeof connection.effectiveType === "string"
+        ? connection.effectiveType
+        : undefined;
+    return { saveData, effectiveType };
+  }
+
+  /** Runs `task` once the page has loaded and the main thread is idle. */
+  function afterLoadAndIdle(task: () => void): void {
+    const idle = (): void => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(task, { timeout: 2000 });
+      } else {
+        // Safari: no requestIdleCallback.
+        setTimeout(task, 200);
+      }
+    };
+    if (document.readyState === "complete") idle();
+    else window.addEventListener("load", idle, { once: true });
+  }
+
+  function syncPlayback(): void {
+    const elements = heroElements();
+    if (elements === undefined || elements.video.getAttribute("src") === null) return;
+    const { hero, video } = elements;
+    const visible = hero.getBoundingClientRect().bottom > 0 && !document.hidden;
+    if (visible) {
+      void video.play().catch(() => undefined);
+    } else {
+      video.pause();
+    }
+  }
+
+  function startVideo(video: HTMLVideoElement, hero: HTMLElement): void {
+    // The visitor may have navigated away (ClientRouter) before the idle callback fired.
+    if (!video.isConnected || video.getAttribute("src") !== null) return;
+    const key = heroVideoSourceKey({
+      portrait: matchMedia("(max-aspect-ratio: 4/5)").matches,
+      webm: video.canPlayType('video/webm; codecs="vp9"') !== "",
+    });
+    const source = video.dataset[key];
+    if (source === undefined) return;
+    video.src = source;
+    void video.play().catch(() => {
+      hero.dataset["playing"] = "false";
+    });
+    if (!bound) {
+      bound = true;
+      window.addEventListener("scroll", syncPlayback, { passive: true });
+      document.addEventListener("visibilitychange", syncPlayback);
+    }
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    const elements = heroElements();
+    if (elements === undefined) return;
+    const { hero, video } = elements;
+    video.addEventListener("playing", () => {
+      hero.dataset["playing"] = "true";
+    });
+    const stream = shouldStreamHeroVideo({
+      reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches,
+      ...connectionInfo(),
+    });
+    if (!stream) return;
+    afterLoadAndIdle(() => startVideo(video, hero));
+  });
+</script>

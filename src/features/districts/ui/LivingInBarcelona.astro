@@ -1,0 +1,79 @@
+---
+import facade from "@/assets/home/facade-1400.jpg";
+import portal from "@/assets/home/portal-1400.jpg";
+import { DISTRICTS, getDistrict } from "@/features/districts/domain/districts";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import DistrictCard from "./DistrictCard.astro";
+
+/** 06 Living in Barcelona: two highlighted districts + links to all 10 district pages. */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const copy = t.home.living;
+const districtPath = (slug: string) => getLocalizedPath("district", locale, { district: slug });
+
+const highlights = [
+  { slug: "eixample", text: copy.highlights.eixample, image: facade, shape: "landscape" },
+  { slug: "gracia", text: copy.highlights.gracia, image: portal, shape: "portrait" },
+] as const;
+---
+
+<Section id="descubre" labelledBy="living-heading" name="living">
+  <div class="mb-6.5 flex flex-wrap items-end justify-between gap-x-7.5 gap-y-4.5">
+    <SectionHeading id="living-heading" number="06" tag={copy.eyebrow} heading={copy.heading} />
+    <Button href={getLocalizedPath("living", locale)}>{copy.mapCta}</Button>
+  </div>
+
+  <div class="mt-2 grid gap-5.5 md:grid-cols-[7fr_5fr] md:items-end">
+    {highlights.map((highlight, index) => {
+      const district = getDistrict(highlight.slug);
+      if (district === undefined) return null;
+      return (
+        <DistrictCard
+          href={districtPath(district.slug)}
+          name={district.name}
+          tag={formatMessage(copy.districtTag, { count: district.barrioCount })}
+          text={highlight.text}
+          ctaLabel={copy.districtCta}
+          image={highlight.image}
+          imageAlt={formatMessage(t.media.conceptualImageAlt, {
+            subject: formatMessage(copy.districtSubject, { name: district.name }),
+          })}
+          credit={t.media.conceptualImage}
+          shape={highlight.shape}
+          revealDelay={index * 0.12}
+        />
+      );
+    })}
+  </div>
+
+  <div class="mt-[clamp(3.125rem,7vw,5.625rem)] grid gap-10 lg:grid-cols-[5fr_6fr] lg:gap-17.5">
+    <p data-reveal class="m-0 max-w-[60ch] text-lg text-fg/85">
+      {copy.lead}
+    </p>
+    <ul data-reveal class="grid grid-cols-1 gap-x-6.5 border-t border-line min-[481px]:grid-cols-2">
+      {DISTRICTS.map((district) => (
+        <li>
+          <a
+            href={districtPath(district.slug)}
+            class="flex items-baseline justify-between gap-2.5 border-b border-line py-2.75 font-serif text-xl no-underline transition-[color,padding] duration-350 ease-brand hover:pl-2 hover:text-turquoise focus-visible:pl-2 focus-visible:text-turquoise"
+          >
+            {district.name}
+            <small class="font-sans text-[0.625rem] font-medium tracking-[0.12em] text-muted">
+              {formatMessage(copy.barrioCount, { count: district.barrioCount })}
+            </small>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Section>

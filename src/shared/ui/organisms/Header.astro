@@ -1,0 +1,200 @@
+---
+import type { Locale } from "@/shared/i18n/config";
+import { getDictionary } from "@/shared/i18n";
+import { getLocalizedPath, type Alternate } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
+import { getMainNavigation } from "@/shared/lib/navigation";
+import { SITE_HEADER_TRANSITION_NAME } from "@/shared/lib/transitionNames";
+import Logo from "@/shared/ui/atoms/Logo.astro";
+import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
+
+interface Props {
+  locale: Locale;
+  alternates: readonly Alternate[];
+  /** Transparent over a full-bleed hero until the page scrolls (home). */
+  overlay?: boolean;
+}
+
+const { locale, alternates, overlay = false } = Astro.props;
+const t = getDictionary(locale);
+const items = getMainNavigation(locale);
+const lastIndex = items.length - 1;
+---
+
+<!-- Own snapshot without cross-fade: the fixed header never flickers between pages (§3.3). -->
+<header
+  transition:name={SITE_HEADER_TRANSITION_NAME}
+  transition:animate="none"
+  data-header
+  data-overlay={overlay ? "true" : "false"}
+  data-theme={overlay ? "overlay" : "light"}
+  class:list={[
+    "group/header fixed inset-x-0 top-0 z-60 transition-[background-color,box-shadow,color] duration-400",
+    "bg-white/98 text-petrol-dark shadow-lg shadow-black/20 backdrop-blur-md",
+    "data-[theme=overlay]:bg-transparent data-[theme=overlay]:text-fg data-[theme=overlay]:shadow-none data-[theme=overlay]:backdrop-blur-none",
+    // Soft gradient keeps the negative logo legible over the video.
+    "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+4.375rem)] before:bg-linear-to-b before:from-ink/65 before:via-ink/30 before:to-ink/0 before:opacity-0 before:transition-opacity data-[theme=overlay]:before:opacity-100",
+  ]}
+>
+  <div class="flex h-19 items-center gap-5 px-[clamp(1.125rem,3.2vw,3.25rem)] md:h-23">
+    <a
+      href={getLocalizedPath("home", locale)}
+      aria-label={t.a11y.homeLink}
+      class="relative block flex-none"
+    >
+      <Logo
+        alt=""
+        class="h-13.5 w-auto transition-opacity duration-450 group-data-[theme=overlay]/header:opacity-0 md:h-17"
+      />
+      <Logo
+        variant="negative"
+        alt=""
+        class="absolute inset-0 h-13.5 w-auto opacity-0 transition-opacity duration-450 group-data-[theme=overlay]/header:opacity-100 md:h-17"
+      />
+    </a>
+
+    <nav aria-label={t.a11y.mainNavigation} class="ml-auto hidden flex-none 2xl:block">
+      <ul class="flex items-center gap-[clamp(1rem,1.5vw,1.625rem)] whitespace-nowrap">
+        {items.map((item, index) => {
+          const submenuId = `submenu-${index}`;
+          return (
+            <li class="group/item relative flex items-center" data-nav-item>
+              <a
+                href={item.href}
+                class:list={[
+                  "border-b border-transparent py-3 text-[0.6875rem] leading-none font-medium tracking-[0.08em] uppercase no-underline transition-colors",
+                  "hover:border-petrol hover:text-petrol focus-visible:text-petrol group-data-[theme=overlay]/header:hover:border-turquoise group-data-[theme=overlay]/header:hover:text-turquoise group-data-[theme=overlay]/header:focus-visible:text-turquoise",
+                  index === lastIndex && "border border-current px-4 py-2.75",
+                ]}
+              >
+                {item.label}
+              </a>
+              {item.children.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    data-submenu-toggle
+                    aria-expanded="false"
+                    aria-controls={submenuId}
+                    aria-label={formatMessage(t.a11y.openSubmenu, { label: item.label })}
+                    class="ml-0.5 grid h-8 w-6 cursor-pointer place-items-center text-current"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="size-1.5 -translate-y-0.5 rotate-45 border-r-[1.4px] border-b-[1.4px] border-current transition-transform duration-350 ease-brand group-data-[open=true]/item:translate-y-0.5 group-data-[open=true]/item:-rotate-135"
+                    />
+                  </button>
+                  <div
+                    id={submenuId}
+                    class="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 translate-y-2.5 pt-3.5 opacity-0 transition-[opacity,translate,visibility] duration-400 ease-brand group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100 group-data-[open=true]/item:visible group-data-[open=true]/item:translate-y-0 group-data-[open=true]/item:opacity-100"
+                  >
+                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-turquoise/20 bg-bg-dark-1/95 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
+                      {item.children.map((child, childIndex) => (
+                        <li>
+                          <a
+                            href={child.href}
+                            class:list={[
+                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/7 hover:pl-7 hover:text-turquoise focus-visible:text-turquoise",
+                              childIndex === 0 && "font-medium text-white",
+                            ]}
+                          >
+                            {child.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    {alternates.length > 0 && (
+      <div class="ml-auto hidden sm:block 2xl:ml-2">
+        <LanguageSwitcher locale={locale} alternates={alternates} label={t.a11y.languageSwitcher} />
+      </div>
+    )}
+
+    <button
+      type="button"
+      data-menu-button
+      aria-expanded="false"
+      aria-controls="site-drawer"
+      class:list={[
+        "flex min-h-11.5 flex-none cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors",
+        "hover:border-petrol hover:text-petrol group-data-[theme=overlay]/header:hover:border-turquoise group-data-[theme=overlay]/header:hover:text-turquoise",
+        alternates.length === 0 && "ml-auto",
+        "max-sm:ml-auto",
+      ]}
+    >
+      <span>{t.a11y.openMenu}</span>
+      <span aria-hidden="true" class="h-2.5 w-4.5 border-y-[1.5px] border-current"></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const SCROLLED_PX = 24;
+  let frame = 0;
+  let scrollBound = false;
+
+  function syncScrollState(): void {
+    frame = 0;
+    const header = document.querySelector<HTMLElement>("[data-header]");
+    if (header?.dataset["overlay"] === "true") {
+      header.dataset["theme"] = window.scrollY > SCROLLED_PX ? "light" : "overlay";
+    }
+    const bar = document.querySelector<HTMLElement>("[data-quick-actions]");
+    if (bar !== null) {
+      const visible = window.scrollY > window.innerHeight * 0.7;
+      bar.dataset["visible"] = String(visible);
+      bar.inert = !visible;
+    }
+  }
+
+  function closeSubmenus(except?: Element): void {
+    for (const item of document.querySelectorAll<HTMLElement>(
+      "[data-nav-item][data-open='true']",
+    )) {
+      if (item === except) continue;
+      item.dataset["open"] = "false";
+      item.querySelector("[data-submenu-toggle]")?.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    for (const toggle of document.querySelectorAll<HTMLButtonElement>("[data-submenu-toggle]")) {
+      toggle.addEventListener("click", () => {
+        const item = toggle.closest<HTMLElement>("[data-nav-item]");
+        if (item === null) return;
+        const open = item.dataset["open"] !== "true";
+        closeSubmenus(item);
+        item.dataset["open"] = String(open);
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+    }
+    if (!scrollBound) {
+      scrollBound = true;
+      const schedule = () => {
+        if (frame === 0) frame = requestAnimationFrame(syncScrollState);
+      };
+      window.addEventListener("scroll", schedule, { passive: true });
+      window.addEventListener("resize", schedule, { passive: true });
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const open = document.querySelector<HTMLElement>("[data-nav-item][data-open='true']");
+        closeSubmenus();
+        open?.querySelector<HTMLButtonElement>("[data-submenu-toggle]")?.focus();
+      });
+      document.addEventListener("click", (event) => {
+        if (event.target instanceof Element && event.target.closest("[data-nav-item]") === null) {
+          closeSubmenus();
+        }
+      });
+    }
+    syncScrollState();
+  });
+</script>

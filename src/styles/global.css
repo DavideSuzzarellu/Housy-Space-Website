@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "../shared/ui/motion/motion.css";
+
+/*
+ * Brand tokens — defined ONCE here (AGENTS.md §11 and §11.1).
+ * The default Tailwind palette is reset so only brand colors exist.
+ */
+@theme {
+  --color-*: initial;
+
+  /* §11 brand colors */
+  --color-petrol-dark: #14282b;
+  --color-petrol: #0f5a5e;
+  --color-green-grey: #58706f;
+  --color-grey: #918f8f;
+  --color-turquoise: #21cec5;
+  --color-turquoise-deep: #058c93;
+  --color-bg-dark-1: #1a2a2d;
+  --color-bg-dark-2: #22363a;
+  --color-bg-dark-3: #2a4044;
+
+  /* §11.1 UI proposal tokens */
+  --color-bg-deep: #102124;
+  --color-bg-soft: #182e31;
+  --color-card: #1b3336;
+  --color-line: #2f494c;
+  --color-fg: #f7f5f1;
+  --color-muted: #b4bfbe;
+  --color-ink: #0b1214;
+  --color-teal: #08777b;
+  --color-stone: #ebe5dc;
+  --color-taupe: #a99f92;
+
+  /* Neutrals declared explicitly (logo backgrounds, overlays). */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Typography: font files are self-hosted by the Astro Fonts API (astro.config.ts). */
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant-garamond), ui-serif, Georgia, serif;
+
+  /* Motion (§11.1): shared easing and UI micro-transition durations. */
+  --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --default-transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --default-transition-duration: 300ms;
+}
+
+@layer base {
+  html {
+    @apply scroll-pt-28 bg-bg-deep font-sans text-fg antialiased;
+  }
+
+  body {
+    @apply bg-linear-165 from-bg-deep via-petrol-dark to-bg-soft bg-fixed text-base/[1.7];
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif leading-[1.08] font-normal text-balance;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-turquoise;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/*
+ * Property map (PropertyMap.astro): Leaflet paths take brand tokens instead of inline colours.
+ * Unlayered on purpose: leaflet.css is unlayered and would otherwise win.
+ */
+.property-map.leaflet-container {
+  background: var(--color-bg-deep);
+}
+
+/* Shared by the detail and catalog maps: the approximate zone of a listing (§5). */
+.property-map-area {
+  stroke: var(--color-petrol);
+  stroke-width: 2;
+  fill: var(--color-turquoise);
+  fill-opacity: 0.22;
+}
+
+/* Catalog map (catalogMap.client.ts): pins, clusters and popups in brand tokens. */
+.catalog-map.leaflet-container {
+  background: var(--color-bg-deep);
+  font-family: var(--font-sans);
+}
+
+/* Hollow ring at the zone centre: opens the popup, visibly not a precise position. */
+.catalog-pin {
+  border-radius: 9999px;
+  border: 3px solid var(--color-petrol);
+  background: transparent;
+  box-shadow: 0 0 0 2px var(--color-white);
+}
+
+.catalog-legend-area {
+  border: 2px solid var(--color-petrol);
+  background: color-mix(in srgb, var(--color-turquoise) 22%, transparent);
+}
+
+.catalog-cluster {
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  border: 2px solid var(--color-white);
+  background: var(--color-petrol);
+  color: var(--color-white);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.catalog-pin:focus-visible,
+.catalog-cluster:focus-visible {
+  outline: 2px solid var(--color-turquoise-deep);
+  outline-offset: 2px;
+}
+
+.catalog-popup a {
+  color: var(--color-petrol);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
+
+.catalog-popup p {
+  margin: 0.375rem 0 0;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.catalog-popup-list {
+  display: grid;
+  gap: 0.75rem;
+  max-height: 14rem;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

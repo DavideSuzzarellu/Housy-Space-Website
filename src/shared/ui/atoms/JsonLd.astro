@@ -1,0 +1,12 @@
+---
+import { serializeJsonLd, type JsonLdObject } from "@/shared/lib/seo/jsonLd";
+
+/** Structured data block; the serializer escapes `<` so CRM text cannot break out. */
+interface Props {
+  data: JsonLdObject;
+}
+
+const { data } = Astro.props;
+---
+
+<script is:inline type="application/ld+json" set:html={serializeJsonLd(data)} />

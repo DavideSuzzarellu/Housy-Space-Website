@@ -1,0 +1,18 @@
+---
+/** Small caption labelling placeholder media (e.g. "Imagen conceptual (IA)", AGENTS.md §11). */
+interface Props {
+  tone?: "muted" | "onImage";
+  class?: string;
+}
+
+const { tone = "muted", class: className } = Astro.props;
+
+const TONES = {
+  muted: "text-muted",
+  onImage: "text-white/75 [text-shadow:0_1px_6px_rgb(0_0_0/0.6)]",
+} as const;
+---
+
+<span class:list={["text-[0.65625rem] leading-snug", TONES[tone], className]}>
+  <slot />
+</span>

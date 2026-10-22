@@ -1,0 +1,43 @@
+---
+/** Breadcrumb trail; the last item is the current page (no link). */
+export interface Crumb {
+  readonly label: string;
+  readonly href?: string;
+}
+
+interface Props {
+  items: readonly Crumb[];
+  /** Accessible name of the navigation landmark (i18n). */
+  label: string;
+  class?: string;
+}
+
+const { items, label, class: className } = Astro.props;
+const lastIndex = items.length - 1;
+---
+
+<nav aria-label={label} class={className}>
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-[0.06em] text-muted">
+    {items.map((item, index) => (
+      <li class="flex items-center gap-2">
+        {index < lastIndex && item.href !== undefined ? (
+          <a
+            href={item.href}
+            class="text-muted no-underline hover:text-turquoise focus-visible:text-turquoise"
+          >
+            {item.label}
+          </a>
+        ) : (
+          <span aria-current={index === lastIndex ? "page" : undefined} class="text-fg">
+            {item.label}
+          </span>
+        )}
+        {index < lastIndex && (
+          <span aria-hidden="true" class="opacity-50">
+            ›
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

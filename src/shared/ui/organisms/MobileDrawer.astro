@@ -1,0 +1,223 @@
+---
+import type { Locale } from "@/shared/i18n/config";
+import { getDictionary } from "@/shared/i18n";
+import { getLocalizedPath, type Alternate } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
+import { getMainNavigation } from "@/shared/lib/navigation";
+import Logo from "@/shared/ui/atoms/Logo.astro";
+import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
+import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
+
+/** Navigation drawer (all breakpoints): modal dialog with focus trap, Escape to close. */
+interface Props {
+  locale: Locale;
+  alternates: readonly Alternate[];
+}
+
+const { locale, alternates } = Astro.props;
+const t = getDictionary(locale);
+const items = getMainNavigation(locale);
+---
+
+<div
+  id="site-drawer"
+  data-drawer
+  data-open="false"
+  role="dialog"
+  aria-modal="true"
+  aria-label={t.a11y.menuDialog}
+  hidden
+  class="group/drawer fixed inset-0 z-95 flex justify-end"
+>
+  <div
+    data-drawer-backdrop
+    class="absolute inset-0 bg-ink/55 opacity-0 transition-opacity duration-500 group-data-[open=true]/drawer:opacity-100"
+  ></div>
+  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain border-l border-turquoise/15 bg-bg-dark-1/95 px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-fg shadow-2xl shadow-black/40 backdrop-blur-xl transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
+    <div class="flex min-h-16 items-center justify-between gap-4 border-b border-line pb-2.5">
+      <a href={getLocalizedPath("home", locale)} aria-label={t.a11y.homeLink}>
+        <Logo variant="negative" alt="" class="h-12 w-auto" />
+      </a>
+      <button
+        type="button"
+        data-drawer-close
+        class="inline-flex min-h-12 cursor-pointer items-center gap-3 border border-fg/40 px-4 text-xs font-medium tracking-[0.14em] uppercase transition-colors hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise"
+      >
+        <span>{t.a11y.closeMenu}</span>
+        <span
+          aria-hidden="true"
+          class="relative size-4 before:absolute before:top-1.75 before:-left-px before:h-[1.5px] before:w-4.5 before:rotate-45 before:bg-current after:absolute after:top-1.75 after:-left-px after:h-[1.5px] after:w-4.5 after:-rotate-45 after:bg-current"
+        ></span>
+      </button>
+    </div>
+
+    <nav aria-label={t.a11y.drawerNavigation}>
+      <ul class="mt-2.5">
+        {items.map((item, index) => {
+          const groupId = `drawer-group-${index}`;
+          return (
+            <li class="group/item border-b border-line" data-drawer-item data-expanded="false">
+              <div class="flex items-center justify-between gap-2.5">
+                <a
+                  href={item.href}
+                  class="block min-h-15 flex-1 py-3.75 font-serif text-[clamp(1.6875rem,7.4vw,2.125rem)] leading-tight text-fg no-underline transition-colors hover:text-turquoise focus-visible:text-turquoise"
+                >
+                  {item.label}
+                </a>
+                {item.children.length > 0 && (
+                  <button
+                    type="button"
+                    data-drawer-group-toggle
+                    aria-expanded="false"
+                    aria-controls={groupId}
+                    aria-label={formatMessage(t.a11y.toggleGroup, { label: item.label })}
+                    class="grid size-12 flex-none cursor-pointer place-items-center border border-line transition-colors aria-expanded:border-turquoise aria-expanded:bg-turquoise/10"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="relative size-3.5 before:absolute before:top-1.5 before:left-0 before:h-[1.5px] before:w-3.5 before:bg-current after:absolute after:top-1.5 after:left-0 after:h-[1.5px] after:w-3.5 after:rotate-90 after:bg-current after:transition-transform group-data-[expanded=true]/item:after:rotate-0"
+                    />
+                  </button>
+                )}
+              </div>
+              {item.children.length > 0 && (
+                <div
+                  id={groupId}
+                  class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-brand group-data-[expanded=true]/item:grid-rows-[1fr]"
+                >
+                  <ul class="invisible min-h-0 overflow-hidden pl-0.5 group-data-[expanded=true]/item:visible group-data-[expanded=true]/item:pb-3.5">
+                    {item.children.map((child) => (
+                      <li>
+                        <a
+                          href={child.href}
+                          class="block min-h-11 border-l border-line py-2.75 pl-4.5 text-[0.9375rem] leading-snug text-fg/85 no-underline transition-colors hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise"
+                        >
+                          {child.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    {alternates.length > 0 && (
+      <div class="mt-6">
+        <LanguageSwitcher
+          locale={locale}
+          alternates={alternates}
+          label={t.a11y.languageSwitcher}
+          tone="dark"
+        />
+      </div>
+    )}
+
+    <div class="mt-auto pt-7.5">
+      <p class="mb-3.5 text-[0.8125rem] text-muted">{t.contact.drawerIntro}</p>
+      <ContactActions locale={locale} variant="drawer" />
+    </div>
+  </div>
+</div>
+
+<script>
+  const FOCUSABLE =
+    'a[href]:not([tabindex="-1"]), button:not([disabled]):not([tabindex="-1"]), [tabindex]:not([tabindex="-1"])';
+  const CLOSE_MS = 600;
+  let lastTrigger: HTMLElement | null = null;
+  let documentBound = false;
+
+  const drawer = (): HTMLElement | null => document.querySelector<HTMLElement>("[data-drawer]");
+
+  function visibleFocusables(root: HTMLElement): HTMLElement[] {
+    return [...root.querySelectorAll<HTMLElement>(FOCUSABLE)].filter(
+      (element) =>
+        element.getClientRects().length > 0 && getComputedStyle(element).visibility !== "hidden",
+    );
+  }
+
+  function setMenuExpanded(expanded: boolean): void {
+    document.querySelector("[data-menu-button]")?.setAttribute("aria-expanded", String(expanded));
+  }
+
+  function open(trigger: HTMLElement): void {
+    const root = drawer();
+    if (root === null) return;
+    lastTrigger = trigger;
+    root.hidden = false;
+    document.documentElement.classList.add("overflow-hidden");
+    setMenuExpanded(true);
+    requestAnimationFrame(() => {
+      root.dataset["open"] = "true";
+      root.querySelector<HTMLElement>("[data-drawer-close]")?.focus();
+    });
+  }
+
+  function close(): void {
+    const root = drawer();
+    if (root === null || root.hidden) return;
+    root.dataset["open"] = "false";
+    setMenuExpanded(false);
+    document.documentElement.classList.remove("overflow-hidden");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.setTimeout(
+      () => {
+        if (root.dataset["open"] === "false") root.hidden = true;
+      },
+      reduce ? 0 : CLOSE_MS,
+    );
+    lastTrigger?.focus();
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    const root = drawer();
+    if (root === null) return;
+    document
+      .querySelector<HTMLElement>("[data-menu-button]")
+      ?.addEventListener("click", (event) => {
+        if (event.currentTarget instanceof HTMLElement) open(event.currentTarget);
+      });
+    root.querySelector("[data-drawer-close]")?.addEventListener("click", close);
+    root.querySelector("[data-drawer-backdrop]")?.addEventListener("click", close);
+    for (const toggle of root.querySelectorAll<HTMLButtonElement>("[data-drawer-group-toggle]")) {
+      toggle.addEventListener("click", () => {
+        const item = toggle.closest<HTMLElement>("[data-drawer-item]");
+        if (item === null) return;
+        const expanded = item.dataset["expanded"] !== "true";
+        item.dataset["expanded"] = String(expanded);
+        toggle.setAttribute("aria-expanded", String(expanded));
+      });
+    }
+
+    if (documentBound) return;
+    documentBound = true;
+    document.addEventListener("keydown", (event) => {
+      const current = drawer();
+      if (current === null || current.hidden) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusables = visibleFocusables(current);
+      const first = focusables[0];
+      const last = focusables.at(-1);
+      if (first === undefined || last === undefined) return;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+    // Navigating from inside the drawer: make sure the next page starts unlocked.
+    document.addEventListener("astro:before-swap", () => {
+      document.documentElement.classList.remove("overflow-hidden");
+    });
+  });
+</script>

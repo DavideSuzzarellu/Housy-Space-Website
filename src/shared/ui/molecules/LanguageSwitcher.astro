@@ -1,0 +1,49 @@
+---
+import type { Locale } from "@/shared/i18n/config";
+import { getDictionary } from "@/shared/i18n";
+import type { Alternate } from "@/shared/i18n/routes";
+
+interface Props {
+  locale: Locale;
+  /** Counterpart URLs of the current page, from `getAlternates()`. */
+  alternates: readonly Alternate[];
+  label: string;
+  /**
+   * `header`: follows the header state (light bar → ink/petrol; over the hero → fg/turquoise).
+   * `dark`: always on a dark surface (drawer).
+   */
+  tone?: "header" | "dark";
+}
+
+const { locale, alternates, label, tone = "header" } = Astro.props;
+const { languageNames } = getDictionary(locale);
+const links = alternates.filter((alternate) => alternate.hreflang !== "x-default");
+
+const TONES = {
+  header:
+    "text-current aria-[current=page]:text-petrol group-data-[theme=overlay]/header:aria-[current=page]:text-turquoise",
+  dark: "text-fg aria-[current=page]:text-turquoise",
+} as const;
+---
+
+<nav aria-label={label}>
+  <ul class="flex items-center gap-1 text-xs">
+    {links.map((alternate) => (
+      <li>
+        <a
+          href={alternate.path}
+          hreflang={alternate.hreflang}
+          lang={alternate.hreflang}
+          aria-current={alternate.locale === locale ? "page" : undefined}
+          class:list={[
+            "inline-flex min-h-6 min-w-6 items-center justify-center px-1.5 py-1 font-medium tracking-widest uppercase underline-offset-4 hover:underline aria-[current=page]:underline",
+            TONES[tone],
+          ]}
+        >
+          <span aria-hidden="true">{alternate.locale}</span>
+          <span class="sr-only">{languageNames[alternate.locale]}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

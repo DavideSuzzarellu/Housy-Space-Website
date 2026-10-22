@@ -1,0 +1,143 @@
+/*
+ * Motion presets — defined ONCE here (AGENTS.md §3.3, §11.1). Imported by src/styles/global.css.
+ * Shared easing: --ease-brand. Everything degrades to static content under reduced motion.
+ */
+
+@theme {
+  --animate-kenburns: kenburns 24s ease-in-out infinite alternate;
+  --animate-scroll-cue: scroll-cue 2.2s ease-in-out infinite;
+  --animate-intro-logo: intro-fade 1.4s 0.3s both;
+  --animate-intro-line: intro-line 1.6s 0.9s forwards;
+
+  @keyframes kenburns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes scroll-cue {
+    from {
+      transform: translateY(-16px);
+    }
+    to {
+      transform: translateY(54px);
+    }
+  }
+
+  @keyframes intro-fade {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes intro-line {
+    from {
+      width: 0;
+    }
+    to {
+      width: 7.5rem;
+    }
+  }
+}
+
+@layer components {
+  /* Scroll progress bar (ScrollProgress.astro): transform only, no layout work. */
+  .scroll-progress {
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+  }
+
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .scroll-progress[data-mode="css"] {
+        animation: scroll-progress-grow linear both;
+      }
+
+      /* Separate rule on purpose: the CSS minifier would otherwise fold the timeline into the
+         `animation` shorthand, which browsers reject. Must come after the shorthand. */
+      [data-scroll-progress][data-mode="css"] {
+        animation-timeline: scroll(root block);
+      }
+    }
+  }
+
+  @keyframes scroll-progress-grow {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Scroll reveal (reveal.ts). Hidden states require html.motion-ready AND allowed motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .motion-ready [data-reveal] {
+      transition:
+        opacity 0.9s var(--ease-brand),
+        transform 0.9s var(--ease-brand);
+      transition-delay: var(--reveal-delay, 0s);
+    }
+
+    .motion-ready [data-reveal]:not(.is-revealed) {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .motion-ready [data-reveal="fade"]:not(.is-revealed) {
+      transform: none;
+    }
+
+    /* Line-by-line heading: each [data-line] slides up inside its overflow-hidden mask. */
+    .motion-ready [data-reveal="lines"]:not(.is-revealed) {
+      opacity: 1;
+      transform: none;
+    }
+
+    .motion-ready [data-reveal="lines"] [data-line] {
+      transition: transform 1.2s var(--ease-brand);
+      transition-delay: calc(var(--line-index, 0) * 0.14s);
+    }
+
+    .motion-ready [data-reveal="lines"]:not(.is-revealed) [data-line] {
+      transform: translateY(112%);
+    }
+
+    /* Accent rule under section headings grows when the heading is revealed. */
+    .motion-ready [data-reveal] [data-accent] {
+      transition: transform 1.2s var(--ease-brand) 0.35s;
+    }
+
+    .motion-ready [data-reveal]:not(.is-revealed) [data-accent] {
+      transform: scaleX(0);
+    }
+  }
+}
+
+/*
+ * View transitions (AGENTS.md §3.3): calm shared-element morphs with the brand easing, same
+ * duration as the `morph` preset (transitions.ts). Only when motion is allowed: ClientRouter
+ * already disables every view-transition animation under prefers-reduced-motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(*) {
+    animation-duration: 350ms;
+    animation-timing-function: var(--ease-brand);
+  }
+}
+
+/* Card (4:3) and hero (16:10) differ in aspect ratio: keep the photo covering while it morphs. */
+::view-transition-image-pair(*.property-image) {
+  overflow: hidden;
+}
+
+::view-transition-old(*.property-image),
+::view-transition-new(*.property-image) {
+  height: 100%;
+  object-fit: cover;
+}

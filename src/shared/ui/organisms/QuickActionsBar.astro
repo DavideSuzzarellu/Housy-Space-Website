@@ -1,0 +1,26 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
+
+/**
+ * Mobile-only bottom bar with the contact CTAs. Slides in after scrolling past the first
+ * screen (Header script toggles `data-visible` and `inert`).
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+---
+
+<nav
+  aria-label={t.a11y.quickActions}
+  data-quick-actions
+  data-visible="false"
+  inert
+  class="fixed inset-x-0 bottom-0 z-58 translate-y-[110%] pb-[env(safe-area-inset-bottom)] transition-transform duration-500 ease-brand data-[visible=true]:translate-y-0 md:hidden in-[.overflow-hidden]:translate-y-[110%]"
+>
+  <ContactActions locale={locale} variant="bar" />
+</nav>

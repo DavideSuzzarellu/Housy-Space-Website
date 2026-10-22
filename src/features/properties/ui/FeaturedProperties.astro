@@ -1,0 +1,35 @@
+---
+import type { Property } from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Button from "@/shared/ui/atoms/Button.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import PropertyGrid from "./PropertyGrid.astro";
+
+/** 03 Featured properties: real Mobilia listings (`portadaWeb`, else latest). */
+interface Props {
+  locale: Locale;
+  properties: readonly Property[];
+}
+
+const { locale, properties } = Astro.props;
+const copy = getDictionary(locale).home.featured;
+---
+
+<Section id="propiedades" labelledBy="featured-heading" name="featured">
+  <div class="mb-6.5">
+    <SectionHeading id="featured-heading" number="03" tag={copy.eyebrow} heading={copy.heading} />
+  </div>
+  {properties.length > 0 ? (
+    <PropertyGrid locale={locale} properties={properties} ctaLabel={copy.cardCta} />
+  ) : (
+    <p class="border-l-2 border-turquoise-deep py-1 pl-3 text-sm text-muted">{copy.empty}</p>
+  )}
+  <div class="mt-10.5 flex justify-center">
+    <Button href={getLocalizedPath("sale", locale)} variant="solid" size="lg">
+      {copy.more}
+    </Button>
+  </div>
+</Section>

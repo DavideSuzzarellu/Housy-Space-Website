@@ -1,0 +1,52 @@
+---
+import type { GetStaticPaths } from "astro";
+import BlogTeaser from "@/features/blog/ui/BlogTeaser.astro";
+import HomeHero from "@/features/agency/ui/HomeHero.astro";
+import HomePresentation from "@/features/agency/ui/HomePresentation.astro";
+import ServicesShowcase from "@/features/agency/ui/ServicesShowcase.astro";
+import LivingInBarcelona from "@/features/districts/ui/LivingInBarcelona.astro";
+import { getFeaturedProperties } from "@/features/properties/application";
+import FeaturedProperties from "@/features/properties/ui/FeaturedProperties.astro";
+import ReviewsSection from "@/features/reviews/ui/ReviewsSection.astro";
+import ValuationExplainer from "@/features/valuation/ui/ValuationExplainer.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDictionary } from "@/shared/i18n";
+import { LOCALES, type Locale } from "@/shared/i18n/config";
+import { getAlternates } from "@/shared/i18n/routes";
+import IntroGate from "@/shared/ui/motion/IntroGate.astro";
+import IntroOverlay from "@/shared/ui/motion/IntroOverlay.astro";
+
+export const getStaticPaths = (() =>
+  LOCALES.map((locale) => ({ params: { locale }, props: { locale } }))) satisfies GetStaticPaths;
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const alternates = getAlternates("home");
+const featured = await getFeaturedProperties();
+const PRESENTATION_ID = "presentacion";
+---
+
+<BaseLayout
+  locale={locale}
+  title={t.home.metaTitle}
+  description={t.home.metaDescription}
+  alternates={alternates}
+  headerOverlay
+  preloadSerif={false}
+>
+  <IntroGate slot="head" />
+  <IntroOverlay locale={locale} />
+  <HomeHero locale={locale} nextSectionId={PRESENTATION_ID} />
+  <HomePresentation locale={locale} id={PRESENTATION_ID} />
+  <ServicesShowcase locale={locale} />
+  <FeaturedProperties locale={locale} properties={featured} />
+  <ValuationExplainer locale={locale} />
+  {/* Google reviews: no loader yet (ROADMAP I6, I2), so the section stays hidden (§6.1). */}
+  <ReviewsSection locale={locale} />
+  <LivingInBarcelona locale={locale} />
+  <BlogTeaser locale={locale} />
+</BaseLayout>

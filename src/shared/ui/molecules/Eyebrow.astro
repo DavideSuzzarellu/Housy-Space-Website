@@ -1,0 +1,35 @@
+---
+/** Numbered section eyebrow: "01 —— TAG" (UI proposal). */
+interface Props {
+  number?: string;
+  tag: string;
+  tone?: "accent" | "light";
+  class?: string;
+}
+
+const { number, tag, tone = "accent", class: className } = Astro.props;
+
+const TONES = {
+  accent: "text-turquoise",
+  light: "text-fg",
+} as const;
+---
+
+<div class:list={["flex items-center gap-3.5", className]}>
+  {number !== undefined && (
+    <span
+      aria-hidden="true"
+      class="font-serif text-[0.9375rem] tracking-[0.06em] text-taupe after:ml-3 after:inline-block after:h-px after:w-8.5 after:bg-taupe after:align-middle after:opacity-70"
+    >
+      {number}
+    </span>
+  )}
+  <p
+    class:list={[
+      "text-[0.625rem] tracking-[0.14em] uppercase sm:text-[0.6875rem] sm:tracking-[0.16em]",
+      TONES[tone],
+    ]}
+  >
+    {tag}
+  </p>
+</div>

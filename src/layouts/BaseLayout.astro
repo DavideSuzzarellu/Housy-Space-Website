@@ -1,0 +1,109 @@
+---
+import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
+import { COMPANY } from "@/features/agency/domain/company";
+import { getDictionary } from "@/shared/i18n";
+import { LOCALE_META, type Locale } from "@/shared/i18n/config";
+import type { Alternate } from "@/shared/i18n/routes";
+import { MOTION_READY_CLASS } from "@/shared/ui/motion/reveal";
+import ScrollProgress from "@/shared/ui/motion/ScrollProgress.astro";
+import Footer from "@/shared/ui/organisms/Footer.astro";
+import Header from "@/shared/ui/organisms/Header.astro";
+import MobileDrawer from "@/shared/ui/organisms/MobileDrawer.astro";
+import QuickActionsBar from "@/shared/ui/organisms/QuickActionsBar.astro";
+import SeoHead from "@/shared/ui/organisms/SeoHead.astro";
+import "@/styles/global.css";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  /** From `getAlternates(routeKey, params)`; drives canonical, hreflang and the language switcher. */
+  alternates?: readonly Alternate[];
+  noindex?: boolean;
+  /** The page starts with a full-bleed hero: the header floats over it (home). */
+  headerOverlay?: boolean;
+  /** Open Graph image: root-relative path or absolute URL (e.g. the first property photo). */
+  ogImage?: string;
+  /**
+   * Preload the serif (Cormorant Garamond) file: only when serif text is above the fold
+   * (e.g. a detail page `<h1>`). The home opens on a full-bleed hero without serif text, so
+   * preloading it there would only compete with the LCP poster.
+   */
+  preloadSerif?: boolean;
+}
+
+const {
+  locale,
+  title,
+  description,
+  alternates = [],
+  noindex = false,
+  headerOverlay = false,
+  ogImage,
+  preloadSerif = true,
+} = Astro.props;
+const t = getDictionary(locale);
+---
+
+<!doctype html>
+<html lang={LOCALE_META[locale].langTag}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Preload only the latin files used above the fold; latin-ext loads on demand. -->
+    <Font
+      cssVariable="--font-montserrat"
+      preload={[
+        { weight: "400", style: "normal", subset: "latin" },
+        { weight: "500", style: "normal", subset: "latin" },
+      ]}
+    />
+    <Font
+      cssVariable="--font-cormorant-garamond"
+      preload={preloadSerif ? [{ weight: "400", style: "normal", subset: "latin" }] : false}
+    />
+    <SeoHead
+      locale={locale}
+      title={title}
+      description={description}
+      alternates={alternates}
+      noindex={noindex}
+      {...(ogImage === undefined ? {} : { ogImagePath: ogImage })}
+    />
+    <!-- Pre-paint: enable scroll-reveal hidden states only when motion is allowed (reveal.ts). -->
+    <script is:inline define:vars={{ motionClass: MOTION_READY_CLASS }}>
+      if (
+        "IntersectionObserver" in window &&
+        window.matchMedia("(prefers-reduced-motion: no-preference)").matches
+      ) {
+        document.documentElement.classList.add(motionClass);
+      }
+    </script>
+    <slot name="head" />
+    <ClientRouter />
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <a
+      href="#main-content"
+      class="sr-only z-200 bg-fg px-4 py-2.5 text-[0.8125rem] font-medium text-ink focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+    >
+      {t.a11y.skipToContent}
+    </a>
+    <ScrollProgress />
+    <Header locale={locale} alternates={alternates} overlay={headerOverlay} />
+    <MobileDrawer locale={locale} alternates={alternates} />
+    <main
+      id="main-content"
+      tabindex="-1"
+      class:list={["flex-1 focus:outline-none", !headerOverlay && "pt-19 md:pt-23"]}
+    >
+      <slot />
+    </main>
+    <Footer locale={locale} company={COMPANY} />
+    <QuickActionsBar locale={locale} />
+    <script>
+      import "@/shared/ui/motion/init";
+    </script>
+  </body>
+</html>

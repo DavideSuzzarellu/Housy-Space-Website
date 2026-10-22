@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDictionary } from "@/shared/i18n";
+import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+
+// Static output serves one 404 document; it is rendered in the default locale with
+// links to every locale's home. Per-locale 404 bodies need on-demand rendering (adapter TODO).
+const t = getDictionary(DEFAULT_LOCALE);
+const homeLinks = LOCALES.map((locale) => ({
+  locale,
+  href: getLocalizedPath("home", locale),
+  label: getDictionary(locale).notFound.backHome,
+  langTag: LOCALE_META[locale].langTag,
+}));
+---
+
+<BaseLayout
+  locale={DEFAULT_LOCALE}
+  title={t.notFound.metaTitle}
+  description={t.notFound.metaDescription}
+  noindex
+>
+  <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-medium text-fg sm:text-5xl">{t.notFound.heading}</h1>
+    <p class="mt-6 max-w-2xl text-lg text-muted">{t.notFound.body}</p>
+    <ul class="mt-8 flex flex-wrap gap-4">
+      {homeLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            hreflang={link.langTag}
+            lang={link.langTag}
+            class="text-turquoise underline underline-offset-4 hover:text-fg"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

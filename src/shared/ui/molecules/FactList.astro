@@ -1,0 +1,53 @@
+---
+/**
+ * Key facts. `inline`: "**148** m² · **3** hab. · **2** baños" (cards).
+ * `grid`: value over label tiles (property detail).
+ * `tone="light"`: grid tiles for white backgrounds (property sheet PDF).
+ */
+export interface Fact {
+  readonly value: string;
+  readonly label: string;
+}
+
+interface Props {
+  facts: readonly Fact[];
+  variant?: "inline" | "grid";
+  tone?: "dark" | "light";
+  class?: string;
+}
+
+const { facts, variant = "inline", tone = "dark", class: className } = Astro.props;
+
+const TILE_TONES = {
+  dark: { tile: "bg-card", label: "text-muted", value: "text-fg" },
+  light: { tile: "bg-stone", label: "text-petrol", value: "text-ink" },
+} as const;
+const tile = TILE_TONES[tone];
+---
+
+{facts.length > 0 &&
+  (variant === "inline" ? (
+    <ul
+      class:list={[
+        "flex flex-wrap gap-x-5.5 gap-y-1.5 border-t border-line pt-3 text-sm text-muted",
+        className,
+      ]}
+    >
+      {facts.map((fact) => (
+        <li>
+          <b class="font-medium text-fg">{fact.value}</b> {fact.label}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <dl class:list={["grid grid-cols-2 gap-2.5 sm:grid-cols-3", className]}>
+      {facts.map((fact) => (
+        <div class:list={["flex flex-col-reverse px-4 py-3.5", tile.tile]}>
+          <dt class:list={["text-xs", tile.label]}>{fact.label}</dt>
+          <dd class:list={["font-serif text-[1.625rem] leading-tight", tile.value]}>
+            {fact.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  ))}

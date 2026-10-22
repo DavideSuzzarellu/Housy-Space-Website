@@ -1,0 +1,32 @@
+---
+import Container from "@/shared/ui/atoms/Container.astro";
+
+/** Page section: vertical rhythm + centered container, labelled by its heading. */
+interface Props {
+  id: string;
+  labelledBy: string;
+  /** Stable hook for tests/analytics (e.g. "services"). */
+  name: string;
+  spacing?: "default" | "spacious";
+  class?: string;
+}
+
+const { id, labelledBy, name, spacing = "default", class: className } = Astro.props;
+
+const SPACING = {
+  default: "py-13.5 md:py-19",
+  spacious: "py-[clamp(5.625rem,11vw,9.375rem)]",
+} as const;
+---
+
+<section
+  id={id}
+  aria-labelledby={labelledBy}
+  data-section={name}
+  class:list={["relative isolate", SPACING[spacing], className]}
+>
+  <slot name="background" />
+  <Container>
+    <slot />
+  </Container>
+</section>

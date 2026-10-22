@@ -1,0 +1,120 @@
+---
+import {
+  CONTACT_PHONE,
+  phoneDisplay,
+  telHref,
+  whatsappHref,
+} from "@/features/agency/domain/contact";
+import type { Company } from "@/features/agency/domain/company";
+import type { Locale } from "@/shared/i18n/config";
+import { getDictionary } from "@/shared/i18n";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { getFooterNavigation } from "@/shared/lib/navigation";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Logo from "@/shared/ui/atoms/Logo.astro";
+import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
+
+interface Props {
+  locale: Locale;
+  company: Company;
+}
+
+const { locale, company } = Astro.props;
+const t = getDictionary(locale);
+const columns = getFooterNavigation(locale);
+const year = new Date().getFullYear();
+// Confirmed company data only (AGENTS.md §1, §7). Phone is TODO(I4) in contact.ts.
+---
+
+<footer class="bg-linear-to-b from-bg-deep/0 via-bg-deep/75 to-bg-deep pt-20 pb-10 text-[0.8125rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
+  <Container>
+    <section
+      aria-labelledby="contact-block-heading"
+      data-contact-block
+      class="mb-9.5 flex flex-wrap items-center justify-between gap-x-10 gap-y-5 border-b border-line pb-8.5"
+    >
+      <div>
+        <h2 id="contact-block-heading" class="mb-1 text-[clamp(1.75rem,3.4vw,2.5rem)] text-fg">
+          {t.footer.ctaHeading}
+        </h2>
+        <p class="text-sm text-muted">{t.footer.ctaText}</p>
+      </div>
+      <ContactActions locale={locale} variant="footer" />
+    </section>
+
+    <div class="grid gap-8.5 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div>
+        <a
+          href={getLocalizedPath("home", locale)}
+          aria-label={t.a11y.homeLink}
+          class="inline-block"
+        >
+          <Logo variant="negative" alt="" class="mb-3.5 h-14 w-auto" />
+        </a>
+        <dl class="grid gap-1">
+          <div>
+            <dt class="sr-only">{t.footer.companyLabel}</dt>
+            <dd>{company.legalName}</dd>
+          </div>
+          <div class="flex gap-1">
+            <dt>{t.footer.taxIdLabel}</dt>
+            <dd>{company.taxId}</dd>
+          </div>
+          <div>
+            <dt class="sr-only">{t.footer.addressLabel}</dt>
+            <dd>
+              <address class="not-italic">
+                {company.address.street}
+                <br />
+                {company.address.postalCode}
+                {company.address.city}
+              </address>
+            </dd>
+          </div>
+          <div class="flex gap-1">
+            <dt>{t.footer.aicatLabel}</dt>
+            <dd>{company.aicatNumber}</dd>
+          </div>
+        </dl>
+        <p class="mt-3 grid gap-1">
+          <a href={telHref(CONTACT_PHONE)} class="hover:text-turquoise">
+            {phoneDisplay(CONTACT_PHONE)}
+          </a>
+          <a
+            href={whatsappHref(CONTACT_PHONE, t.contact.whatsappMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-turquoise"
+          >
+            {t.contact.whatsapp}
+            <span class="sr-only"> {t.a11y.opensInNewTab}</span>
+          </a>
+        </p>
+      </div>
+
+      {columns.map((column) => (
+        <div>
+          <h2 class="mb-3 font-sans text-[0.6875rem] font-medium tracking-[0.16em] text-fg uppercase">
+            {column.title}
+          </h2>
+          <ul class="grid gap-1.5">
+            {column.links.map((link) => (
+              <li>
+                <a href={link.href} class="no-underline hover:text-turquoise">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8.5 grid gap-1 border-t border-line pt-5 text-xs">
+      <p>
+        © {year} {company.brandName}. {t.footer.rights}
+      </p>
+      <p>{t.footer.aiImagery}</p>
+    </div>
+  </Container>
+</footer>

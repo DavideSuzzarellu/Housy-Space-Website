@@ -1,0 +1,103 @@
+---
+import {
+  CONTACT_PHONE,
+  phoneDisplay,
+  telHref,
+  whatsappHref,
+} from "@/features/agency/domain/contact";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+
+/**
+ * The three contact CTAs (tap-to-call, WhatsApp with prefilled localized message, private
+ * consultation), shared by the drawer, the footer block and the mobile quick-action bar.
+ */
+interface Props {
+  locale: Locale;
+  /** `stack`: full-width column (property detail contact card). */
+  variant: "drawer" | "footer" | "bar" | "stack";
+  /** Overrides the default prefilled WhatsApp message (e.g. with a property reference). */
+  whatsappMessage?: string;
+  /** Overrides the consultation CTA (e.g. "Request a viewing" with the reference). */
+  consultation?: { readonly href: string; readonly label: string };
+  class?: string;
+}
+
+const {
+  locale,
+  variant,
+  whatsappMessage,
+  consultation: consultationOverride,
+  class: className,
+} = Astro.props;
+const { contact, a11y } = getDictionary(locale);
+
+const call = {
+  href: telHref(CONTACT_PHONE),
+  long: formatMessage(contact.callWithNumber, { phone: phoneDisplay(CONTACT_PHONE) }),
+};
+const whatsapp = whatsappHref(CONTACT_PHONE, whatsappMessage ?? contact.whatsappMessage);
+const consultation = consultationOverride ?? {
+  href: getLocalizedPath("contact", locale),
+  label: contact.consultation,
+};
+
+const TILE =
+  "flex min-h-12.5 items-center justify-center px-2.5 text-center text-[0.6875rem] font-medium tracking-[0.12em] uppercase no-underline transition-colors";
+const DRAWER_LINK = `${TILE} border border-line text-fg hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise`;
+const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
+---
+
+{variant === "stack" ? (
+  <div class:list={["flex flex-col gap-2.5", className]}>
+    <Button href={consultation.href} variant="solid">
+      {consultation.label}
+    </Button>
+    <Button href={whatsapp} external newTabLabel={a11y.opensInNewTab}>
+      {contact.whatsapp}
+    </Button>
+    <Button href={call.href}>{call.long}</Button>
+  </div>
+) : variant === "footer" ? (
+  <div class:list={["flex flex-wrap gap-3", className]}>
+    <Button href={call.href} variant="solid">
+      {call.long}
+    </Button>
+    <Button href={whatsapp} external newTabLabel={a11y.opensInNewTab}>
+      {contact.whatsapp}
+    </Button>
+    <Button href={consultation.href}>{consultation.label}</Button>
+  </div>
+) : variant === "drawer" ? (
+  <div class:list={["grid grid-cols-2 gap-2.5", className]}>
+    <a href={call.href} class={DRAWER_LINK}>
+      {call.long}
+    </a>
+    <a href={whatsapp} target="_blank" rel="noopener noreferrer" class={DRAWER_LINK}>
+      {contact.whatsapp}
+      <span class="sr-only">{a11y.opensInNewTab}</span>
+    </a>
+    <a
+      href={consultation.href}
+      class={`${TILE} col-span-2 border border-turquoise bg-turquoise text-ink hover:border-fg hover:bg-fg`}
+    >
+      {consultation.label}
+    </a>
+  </div>
+) : (
+  <div class:list={["grid grid-cols-[1fr_1fr_1.5fr] gap-px bg-line", className]}>
+    <a href={call.href} class={BAR_LINK}>
+      {contact.call}
+    </a>
+    <a href={whatsapp} target="_blank" rel="noopener noreferrer" class={BAR_LINK}>
+      {contact.whatsapp}
+      <span class="sr-only">{a11y.opensInNewTab}</span>
+    </a>
+    <a href={consultation.href} class={`${TILE} bg-turquoise text-ink`}>
+      {consultation.label}
+    </a>
+  </div>
+)}
