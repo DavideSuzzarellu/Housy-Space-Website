@@ -166,6 +166,8 @@ const ca = {
       consultationHeading: "Una consulta privada.",
       consultationText:
         "Indica la referència {ref}: un assessor d'HousySpace et respondrà personalment.",
+      viewOnline: "Veure al web",
+      qrLabel: "Escaneja per veure l'immoble al web",
       disclaimer: "Fitxa informativa sense valor contractual. Dades subjectes a verificació.",
       mapAttribution:
         "Cartografia: © Institut Cartogràfic i Geològic de Catalunya (ICGC), CC BY 4.0.",

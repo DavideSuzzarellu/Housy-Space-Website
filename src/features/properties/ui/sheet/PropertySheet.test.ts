@@ -1,5 +1,6 @@
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { beforeAll, describe, expect, it } from "vitest";
+import { toQrSvgPath } from "@/shared/lib/qr";
 import { toAreaM2 } from "../../domain/property";
 import { amount, approximateIn, makeProperty } from "../../testing/makeProperty";
 import PropertySheet from "./PropertySheet.astro";
@@ -32,11 +33,17 @@ beforeAll(async () => {
   container = await AstroContainer.create();
 });
 
-async function render(overrides = property, operation: "sale" | "rent" = "sale"): Promise<string> {
+async function render(
+  overrides = property,
+  operation: "sale" | "rent" = "sale",
+  locale: "es" | "en" = "es",
+): Promise<string> {
   return container.renderToString(PropertySheet, {
-    props: { locale: "es", property: overrides, operation, site: SITE },
+    props: { locale, property: overrides, operation, site: SITE },
   });
 }
+
+const DETAIL_ES = "https://www.housyspace.com/es/venta/piso-senorial-con-balcon-demo-001";
 
 describe("PropertySheet", () => {
   it("shows the real Mobilia data: reference, title, zone, price, facts and description", async () => {
@@ -57,7 +64,7 @@ describe("PropertySheet", () => {
     const html = await render();
     expect(html).toContain("/mapa-base/wmts/estandard/MON3857NW/14/");
     expect(html).toMatch(/<circle[^>]*class="property-map-area"[^>]*r="69\.76"/);
-    expect(html).not.toMatch(/leaflet|marker-icon|<path/i);
+    expect(html).not.toMatch(/leaflet|marker-icon/i);
     expect(html).toContain("Ubicación aproximada");
     expect(html).toContain("© Institut Cartogràfic i Geològic de Catalunya (ICGC), CC BY 4.0.");
   });
@@ -79,12 +86,34 @@ describe("PropertySheet", () => {
 
   it("links every CTA to absolute URLs (they must work from the downloaded PDF)", async () => {
     const html = await render();
-    expect(html).toMatch(
-      /href="https:\/\/www\.housyspace\.com\/es\/venta\/piso-senorial-con-balcon-demo-001#detail-contact"/,
-    );
+    expect(html).toContain(`href="${DETAIL_ES}#detail-contact"`);
     expect(html).toContain('href="tel:+34613084804"');
     expect(html).toMatch(/href="https:\/\/wa\.me\/34613084804\?text=[^"]*DEMO-001/i);
-    expect(html).toContain('href="https://www.housyspace.com/es"');
+    // The web CTA opens this property, not the home page.
+    expect(html).toContain(`href="${DETAIL_ES}"`);
+    expect(html).not.toContain('href="https://www.housyspace.com/es"');
+  });
+
+  it("prints a QR code that opens this property's page", async () => {
+    const html = await render();
+    expect(html).toMatch(
+      /<svg[^>]*role="img"[^>]*aria-label="Escanea para ver el inmueble en la web"[^>]*>\s*<path d="M\d/,
+    );
+    expect(html).toContain(`d="${toQrSvgPath(DETAIL_ES).path}"`);
+  });
+
+  it("is fully in the requested language, with links to that language's page", async () => {
+    const html = await render(
+      makeProperty("DEMO-001", { ...property, title: { es: "Piso", en: "Stately flat" } }),
+      "sale",
+      "en",
+    );
+    expect(html).toContain("Property sheet");
+    expect(html).toContain("Stately flat");
+    expect(html).not.toContain("Ficha del inmueble");
+    const detailEn = "https://www.housyspace.com/en/sale/stately-flat-demo-001";
+    expect(html).toContain(`d="${toQrSvgPath(detailEn).path}"`);
+    expect(html).toContain(`href="${detailEn}"`);
   });
 
   it("shows the energy scale, company data with AICAT and the disclaimer, without demo notices", async () => {

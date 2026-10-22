@@ -1,0 +1,28 @@
+---
+import { toQrSvgPath } from "@/shared/lib/qr";
+
+/**
+ * QR code as inline SVG (no client JS): dark modules in `ink` on a white quiet zone, so it scans
+ * on any background, printed or on screen. `crispEdges` keeps module edges sharp in PDFs.
+ */
+interface Props {
+  /** Encoded text, usually an absolute URL. */
+  value: string;
+  /** Accessible name (what scanning opens). */
+  label: string;
+  class?: string;
+}
+
+const { value, label, class: className } = Astro.props;
+const qr = toQrSvgPath(value);
+---
+
+<svg
+  role="img"
+  aria-label={label}
+  viewBox={qr.viewBox}
+  shape-rendering="crispEdges"
+  class:list={["block bg-white fill-ink", className]}
+>
+  <path d={qr.path}></path>
+</svg>

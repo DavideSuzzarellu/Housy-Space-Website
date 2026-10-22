@@ -66,7 +66,7 @@
 - [ ] Lighthouse CI (`@lhci/cli`, proposed, needs approval) once CI exists 🔒 I2
 - [ ] Localized slugs + 301 rules 🔒 I2
 - [ ] Rental-ad legal info 🔒 I12
-- [~] Property PDF sheet (A4) — HTML source page per locale × property × operation (`src/pages/property-sheet-source/`), printed to `/pdf/housyspace-{ref}-{op}-{locale}.pdf` by `scripts/build-property-sheets.ts` after `astro build`; "Download sheet (PDF)" button on the detail. Unit tests + layout checked by printing the 4 real properties from `astro dev`. Still to do: run `pnpm build` + `tests/e2e/property-detail.spec.ts` (needs `pnpm exec playwright install chromium`); hosting must run Chromium at build or CI must build (🔒 I2); en/it/ca sheet texts (disclaimer, documentation) machine-translated, pending client review
+- [~] Property PDF sheet (A4) — HTML source page per locale × property × operation (`src/pages/property-sheet-source/`), printed to `/pdf/housyspace-{ref}-{op}-{locale}.pdf` by `scripts/build-property-sheets.ts` after `astro build`; "Download sheet (PDF)" button on the detail. QR code + "View online" CTA open the property page in the sheet's language (decoded from the printed PDFs in es and en). Unit tests + layout checked by printing the 4 real properties from `astro dev`. Still to do: run `pnpm build` + `tests/e2e/property-detail.spec.ts` (needs `pnpm exec playwright install chromium`); hosting must run Chromium at build or CI must build (🔒 I2); en/it/ca sheet texts (disclaimer, documentation) machine-translated, pending client review
 
 ### Phase 4 — Leads & forms 🔒 I3, I2
 - [ ] Shared `LeadForm` schema (client + server), honeypot, rate limit
@@ -129,5 +129,6 @@
 | 2026-10-22 | Map clustering: own pure `clusterPoints` instead of Leaflet.markercluster (its UMD needs a global `L` and mutates the frozen ESM namespace; ~10 KB). AGENTS.md §2 stack table still lists markercluster — pending approval to update it |
 | 2026-10-22 | Catalog map: approximate listings = hollow pin at the Mobilia zone centre (never the building); exact = solid pin |
 | 2026-10-22 | Supersedes the two map rows above: location is ALWAYS approximate (zone circle ≥ 500 m, max zoom 16, no exact variant in the domain), on every map, the PDF sheet and JSON-LD. Maps always in colour (ICGC "estandard") |
+| 2026-10-22 | Approved dep: `qrcode` (+ `@types/qrcode`) for the sheet QR. Only its encoder is used; the SVG is drawn by `QrCode.astro` with brand tokens |
 | 2026-10-22 | Fix: Mobilia `latitudZona`/`longitudZona` equal the exact building coordinates for all 4 live properties, so circles were centred on the building. Centres are now snapped to a ≈ 550 m grid (`toApproximateCentre`) in the mapper; real coordinates removed from the test fixtures |
 | 2026-10-22 | Property sheet: HTML is the source of truth, printed to a real PDF at build time (Playwright Chromium, already a devDependency); direct download via `<a download>`, no print dialog. Runtime PDF generation rejected (needs hosting). Static map for print: ICGC tiles + SVG circle computed at build (`staticMap.ts`), no Leaflet |

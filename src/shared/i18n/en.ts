@@ -165,6 +165,8 @@ const en = {
         "Documents available on request. Land registry extracts and private third-party documents are not published by default.",
       consultationHeading: "A private consultation.",
       consultationText: "Quote reference {ref}: a HousySpace advisor will reply to you personally.",
+      viewOnline: "View online",
+      qrLabel: "Scan to view the property online",
       disclaimer: "Information sheet with no contractual value. Details subject to verification.",
       mapAttribution:
         "Cartography: © Institut Cartogràfic i Geològic de Catalunya (ICGC), CC BY 4.0.",

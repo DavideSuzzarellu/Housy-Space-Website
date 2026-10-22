@@ -22,6 +22,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath, withUrlExtras } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import Logo from "@/shared/ui/atoms/Logo.astro";
+import QrCode from "@/shared/ui/atoms/QrCode.astro";
 import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
 import FactList from "@/shared/ui/molecules/FactList.astro";
 import PriceTag from "@/shared/ui/molecules/PriceTag.astro";
@@ -61,10 +62,11 @@ const photos = splitSheetPhotos(presentPhotos(property, title, locale));
 
 const absolute = (path: string): string => new URL(path, site).href;
 const detailPath = getPropertyDetailPath(property, locale, operation);
-const homeUrl = absolute(getLocalizedPath("home", locale));
+/** This property's page in the sheet's language: target of the QR code and the web CTA. */
+const propertyUrl = absolute(detailPath ?? getLocalizedPath("home", locale));
 const visitUrl =
   detailPath === undefined
-    ? homeUrl
+    ? propertyUrl
     : absolute(withUrlExtras(detailPath, { hash: "detail-contact" }));
 const whatsappMessage = formatMessage(d.whatsappMessage, { ref: property.ref, title });
 const companyLine = [
@@ -222,7 +224,7 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
           </DetailBlock>
         )}
 
-        <div class="break-before-page">
+        <div>
           {property.location !== undefined && (
             <DetailBlock id="sheet-location" heading={d.locationHeading} class="break-inside-avoid">
               <StaticZoneMap
@@ -263,21 +265,30 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
             <p class="max-w-[140mm] text-sm text-ink">{s.documentationText}</p>
           </DetailBlock>
 
-          <section class="mt-8 break-inside-avoid bg-petrol-dark p-[6mm] text-fg">
-            <h2 class="text-[2.25rem]">{s.consultationHeading}</h2>
-            <p class="mt-2 text-sm text-muted">
-              {formatMessage(s.consultationText, { ref: property.ref })}
-            </p>
+          <section class="mt-6 grid break-inside-avoid grid-cols-[minmax(0,1fr)_26mm] items-center gap-x-[6mm] gap-y-[4mm] bg-petrol-dark px-[6mm] py-[5mm] text-fg">
+            <div>
+              <h2 class="text-[2rem]">{s.consultationHeading}</h2>
+              <p class="mt-2 text-sm text-muted">
+                {formatMessage(s.consultationText, { ref: property.ref })}
+              </p>
+            </div>
+            <figure>
+              <a href={propertyUrl} class="block">
+                <QrCode value={propertyUrl} label={s.qrLabel} class="w-full" />
+              </a>
+              <figcaption class="mt-1.5 text-center text-[0.5625rem] leading-snug text-muted">
+                {s.qrLabel}
+              </figcaption>
+            </figure>
             <ContactActions
               locale={locale}
               variant="footer"
               whatsappMessage={whatsappMessage}
-              consultation={{ href: homeUrl, label: site.host }}
-              class="mt-[6mm]"
+              consultation={{ href: propertyUrl, label: s.viewOnline }}
+              class="col-span-2"
             />
+            <p class="col-span-2 mt-[-2mm] text-[0.5625rem] text-muted">{s.disclaimer}</p>
           </section>
-
-          <p class="mt-3 text-right text-[0.625rem] text-green-grey">{s.disclaimer}</p>
         </div>
       </td>
     </tr>
