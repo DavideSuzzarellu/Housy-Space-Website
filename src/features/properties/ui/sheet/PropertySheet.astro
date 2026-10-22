@@ -1,0 +1,285 @@
+---
+import { Image } from "astro:assets";
+import { COMPANY } from "@/features/agency/domain/company";
+import { CONTACT_PHONE, phoneDisplay } from "@/features/agency/domain/contact";
+import {
+  presentDescription,
+  presentKeyFacts,
+  presentMetaLine,
+  presentPhotos,
+} from "@/features/properties/application/propertyFacts";
+import { getPropertyDetailPath } from "@/features/properties/application/propertyPaths";
+import { splitSheetPhotos } from "@/features/properties/application/propertySheet";
+import {
+  getLocationLabel,
+  getOperationPrice,
+  getPropertyTitle,
+  type DetailOperation,
+  type Property,
+} from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath, withUrlExtras } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
+import Logo from "@/shared/ui/atoms/Logo.astro";
+import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
+import FactList from "@/shared/ui/molecules/FactList.astro";
+import PriceTag from "@/shared/ui/molecules/PriceTag.astro";
+import DetailBlock from "../DetailBlock.astro";
+import EnergyRatingScale from "../EnergyRatingScale.astro";
+import StaticZoneMap from "./StaticZoneMap.astro";
+
+/**
+ * Property sheet (AGENTS.md §6 item 24): A4, light, printed to PDF at build time
+ * (`scripts/build-property-sheets.ts`). Same Mobilia data and presenters as the detail page.
+ * Layout: cover (photos, title, price, facts) → description, features, gallery → location,
+ * energy certificate, documentation, private consultation. Header and footer sit in the
+ * table's thead/tfoot, which Chromium repeats on every printed page.
+ * Links are absolute: they must work from the downloaded file.
+ */
+interface Props {
+  locale: Locale;
+  property: Property;
+  operation: DetailOperation;
+  /** Site origin for absolute links. */
+  site: URL;
+}
+
+const { locale, property, operation, site } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.property;
+const d = t.detail;
+const s = t.sheet;
+
+const reference = formatMessage(t.reference, { ref: property.ref });
+const title = getPropertyTitle(property, locale) ?? reference;
+const price = getOperationPrice(property, operation) ?? { kind: "onRequest" as const };
+const location = getLocationLabel(property);
+const facts = presentKeyFacts(property, locale);
+const paragraphs = presentDescription(property, locale);
+const photos = splitSheetPhotos(presentPhotos(property, title, locale));
+
+const absolute = (path: string): string => new URL(path, site).href;
+const detailPath = getPropertyDetailPath(property, locale, operation);
+const homeUrl = absolute(getLocalizedPath("home", locale));
+const visitUrl =
+  detailPath === undefined
+    ? homeUrl
+    : absolute(withUrlExtras(detailPath, { hash: "detail-contact" }));
+const whatsappMessage = formatMessage(d.whatsappMessage, { ref: property.ref, title });
+const companyLine = [
+  COMPANY.legalName,
+  `${dictionary.footer.taxIdLabel} ${COMPANY.taxId}`,
+  `${dictionary.footer.aicatLabel} ${COMPANY.aicatNumber}`,
+  COMPANY.address.city,
+].join(" · ");
+
+/** Content width of an A4 page with 15 mm side margins (180 mm), in CSS pixels. */
+const MAP_SIZE = { width: 680, height: 280 } as const;
+// JPEG passes into the PDF without re-encoding. Eager: print never scrolls, so lazy images
+// below the first page would never load and print blank.
+const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
+---
+
+<table class="w-full border-collapse">
+  <thead>
+    <tr>
+      <td class="px-[15mm] pt-[9mm] pb-[6mm]">
+        <div class="flex items-end justify-between border-b border-stone pb-[4mm]">
+          <Logo alt={dictionary.a11y.logoAlt} class="h-[11mm] w-auto" />
+          <p class="text-right text-[0.625rem] leading-relaxed tracking-[0.2em] text-green-grey uppercase">
+            <span class="block text-ink">{reference}</span>
+            {s.label}
+          </p>
+        </div>
+      </td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td class="px-[15mm] pt-[5mm] pb-[8mm]">
+        <div class="flex justify-between gap-6 border-t border-stone pt-[3mm] text-[0.5625rem] text-green-grey">
+          <p>{companyLine}</p>
+          <p class="shrink-0">
+            {site.host} · {phoneDisplay(CONTACT_PHONE)}
+          </p>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td class="px-[15mm] align-top">
+        <section class="break-after-page">
+          {photos.cover !== undefined && (
+            <div class="grid h-[92mm] grid-cols-[2fr_1fr] gap-[2mm]">
+              <Image
+                {...PHOTO}
+                src={photos.cover.src}
+                alt={photos.cover.alt}
+                width={1100}
+                height={900}
+                class:list={["size-full object-cover", photos.side.length === 0 && "col-span-2"]}
+              />
+              {photos.side.length > 0 && (
+                <div class="grid min-h-0 gap-[2mm]">
+                  {photos.side.map((photo) => (
+                    <Image
+                      {...PHOTO}
+                      src={photo.src}
+                      alt={photo.alt}
+                      width={600}
+                      height={450}
+                      class="size-full min-h-0 object-cover"
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          <div class="mt-[7mm] grid grid-cols-[minmax(0,1fr)_72mm] items-start gap-[8mm]">
+            <div>
+              {location !== undefined && (
+                <p class="text-[0.625rem] tracking-[0.18em] text-petrol uppercase">{location}</p>
+              )}
+              <h1 class="mt-2 text-[2.125rem] text-ink">{title}</h1>
+              <p class="mt-2 text-xs text-green-grey">
+                {presentMetaLine(property, operation, locale)}
+              </p>
+              {property.status === "reserved" && (
+                <p class="mt-3 w-fit bg-petrol px-2.5 py-1 text-[0.625rem] tracking-[0.14em] text-white uppercase">
+                  {t.reserved}
+                </p>
+              )}
+            </div>
+            <div class="bg-petrol-dark p-[6mm] text-fg">
+              <PriceTag
+                locale={locale}
+                price={price}
+                perMonth={operation === "rent"}
+                class="text-[1.75rem]"
+              />
+              <p class="mt-1.5 text-[0.625rem] text-muted">{reference}</p>
+              <ContactActions
+                locale={locale}
+                variant="stack"
+                whatsappMessage={whatsappMessage}
+                consultation={{ href: visitUrl, label: d.requestVisit }}
+                class="mt-[5mm]"
+              />
+            </div>
+          </div>
+
+          {facts.length > 0 && (
+            <FactList variant="grid" tone="light" facts={facts} class="mt-[7mm]" />
+          )}
+        </section>
+
+        {paragraphs.length > 0 && (
+          <DetailBlock
+            id="sheet-description"
+            heading={d.descriptionHeading}
+            class="break-inside-avoid"
+          >
+            <div class="flex max-w-[150mm] flex-col gap-3 text-sm leading-relaxed">
+              {paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+          </DetailBlock>
+        )}
+
+        {property.features.length > 0 && (
+          <DetailBlock id="sheet-features" heading={d.featuresHeading} class="break-inside-avoid">
+            <ul class="grid list-disc grid-cols-2 gap-x-8 gap-y-1 pl-4.5 text-sm marker:text-petrol">
+              {property.features.map((feature) => (
+                <li>{t.featureNames[feature]}</li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
+        {photos.gallery.length > 0 && (
+          <DetailBlock id="sheet-gallery" heading={s.galleryHeading} class="break-inside-avoid">
+            <div class="grid grid-cols-2 gap-[2mm]">
+              {photos.gallery.map((photo, index) => (
+                <Image
+                  {...PHOTO}
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={1200}
+                  height={750}
+                  class:list={[
+                    "block w-full object-cover",
+                    index === 0 && photos.gallery.length % 2 === 1
+                      ? "col-span-2 h-[95mm]"
+                      : "h-[55mm]",
+                  ]}
+                />
+              ))}
+            </div>
+          </DetailBlock>
+        )}
+
+        <div class="break-before-page">
+          {property.location !== undefined && (
+            <DetailBlock id="sheet-location" heading={d.locationHeading} class="break-inside-avoid">
+              <StaticZoneMap
+                location={property.location}
+                label={d.mapLabel}
+                width={MAP_SIZE.width}
+                height={MAP_SIZE.height}
+              />
+              <p class="mt-2.5 border-l-2 border-petrol pl-2.5 text-xs text-ink">
+                {d.mapApproximate}
+              </p>
+              <p class="mt-1 text-[0.5625rem] text-green-grey">{s.mapAttribution}</p>
+            </DetailBlock>
+          )}
+
+          <DetailBlock id="sheet-energy" heading={d.energyHeading} class="break-inside-avoid">
+            <div class="grid grid-cols-2 gap-6">
+              <EnergyRatingScale
+                locale={locale}
+                tone="light"
+                label={d.energyConsumption}
+                rating={property.energyRating}
+              />
+              <EnergyRatingScale
+                locale={locale}
+                tone="light"
+                label={d.energyEmissions}
+                rating={property.emissionsRating}
+              />
+            </div>
+          </DetailBlock>
+
+          <DetailBlock
+            id="sheet-documentation"
+            heading={s.documentationHeading}
+            class="break-inside-avoid"
+          >
+            <p class="max-w-[140mm] text-sm text-ink">{s.documentationText}</p>
+          </DetailBlock>
+
+          <section class="mt-8 break-inside-avoid bg-petrol-dark p-[6mm] text-fg">
+            <h2 class="text-[2.25rem]">{s.consultationHeading}</h2>
+            <p class="mt-2 text-sm text-muted">
+              {formatMessage(s.consultationText, { ref: property.ref })}
+            </p>
+            <ContactActions
+              locale={locale}
+              variant="footer"
+              whatsappMessage={whatsappMessage}
+              consultation={{ href: homeUrl, label: site.host }}
+              class="mt-[6mm]"
+            />
+          </section>
+
+          <p class="mt-3 text-right text-[0.625rem] text-green-grey">{s.disclaimer}</p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

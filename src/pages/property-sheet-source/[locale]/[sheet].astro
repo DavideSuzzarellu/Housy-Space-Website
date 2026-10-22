@@ -1,0 +1,62 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getPropertyByRef, listProperties } from "@/features/properties/application";
+import {
+  getPropertySheetPdfPath,
+  getPropertySheetRouteParams,
+} from "@/features/properties/application/propertySheet";
+import { PROPERTY_SHEET_PDF_META } from "@/features/properties/application/propertySheetBuild";
+import {
+  getDetailOperations,
+  getPropertyTitle,
+  type DetailOperation,
+} from "@/features/properties/domain/property";
+import PropertySheet from "@/features/properties/ui/sheet/PropertySheet.astro";
+import PrintLayout from "@/layouts/PrintLayout.astro";
+import { getDictionary } from "@/shared/i18n";
+import { LOCALES, type Locale } from "@/shared/i18n/config";
+import { formatMessage } from "@/shared/lib/format";
+
+// Internal source of the property sheet PDFs (AGENTS.md §6 item 24): one A4 page per
+// locale × property × listed operation. `scripts/build-property-sheets.ts` prints each one
+// to the path in the PDF meta tag, then deletes this folder from `dist`. Not in the sitemap.
+export const getStaticPaths = (async () => {
+  const properties = await listProperties();
+  return LOCALES.flatMap((locale) =>
+    properties.flatMap((property) =>
+      getDetailOperations(property).map((operation) => ({
+        params: getPropertySheetRouteParams(property, operation, locale),
+        props: { locale, ref: property.ref, operation },
+      })),
+    ),
+  );
+}) satisfies GetStaticPaths;
+
+interface Props {
+  locale: Locale;
+  ref: string;
+  operation: DetailOperation;
+}
+
+const { locale, ref, operation } = Astro.props;
+const lookup = await getPropertyByRef(ref);
+if (!lookup.ok) throw new Error(`Property ${ref} vanished between getStaticPaths and render`);
+const { property } = lookup;
+
+const t = getDictionary(locale).property;
+const title =
+  getPropertyTitle(property, locale) ?? formatMessage(t.reference, { ref: property.ref });
+const site = Astro.site ?? new URL(Astro.url.origin);
+---
+
+<PrintLayout
+  locale={locale}
+  title={formatMessage(t.sheet.documentTitle, { ref: property.ref, title })}
+>
+  <meta
+    slot="head"
+    name={PROPERTY_SHEET_PDF_META}
+    content={getPropertySheetPdfPath(property, operation, locale)}
+  />
+  <PropertySheet locale={locale} property={property} operation={operation} site={site} />
+</PrintLayout>

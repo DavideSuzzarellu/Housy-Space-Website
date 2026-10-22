@@ -1,0 +1,54 @@
+---
+import type { PropertyLocation } from "../../domain/property";
+import { getMapView } from "../mapView";
+import { buildStaticMap, TILE_SIZE } from "../staticMap";
+
+/**
+ * Script-free location map for print (property sheet PDF): ICGC colour tiles + the approximate
+ * zone circle, from the same view rules as the interactive maps (AGENTS.md §5: never a pin,
+ * radius ≥ MIN_AREA_RADIUS_M). Tile offsets are layout values, hence the inline styles.
+ */
+interface Props {
+  location: PropertyLocation;
+  label: string;
+  /** Frame size in CSS pixels. */
+  width: number;
+  height: number;
+}
+
+const { location, label, width, height } = Astro.props;
+const map = buildStaticMap(getMapView(location), { width, height });
+---
+
+<div
+  role="img"
+  aria-label={label}
+  class="relative overflow-hidden bg-stone"
+  style={`width: ${map.width}px; height: ${map.height}px;`}
+>
+  {map.tiles.map((tile) => (
+    <img
+      src={tile.url}
+      alt=""
+      width={TILE_SIZE}
+      height={TILE_SIZE}
+      class="absolute block max-w-none"
+      style={`left: ${tile.left}px; top: ${tile.top}px;`}
+    />
+  ))}
+  <svg
+    aria-hidden="true"
+    class="absolute inset-0"
+    width={map.width}
+    height={map.height}
+    viewBox={`0 0 ${map.width} ${map.height}`}
+  >
+    <circle
+      class="property-map-area"
+      cx={map.circle.cx}
+      cy={map.circle.cy}
+      r={map.circle.r}
+      stroke-dasharray="6 5"
+    />
+  </svg>
+</div>

@@ -1,0 +1,43 @@
+---
+import { Font } from "astro:assets";
+import { LOCALE_META, type Locale } from "@/shared/i18n/config";
+import "@/styles/global.css";
+
+/**
+ * Bare A4 document for pages printed to PDF at build time (property sheet). No header, footer,
+ * router or scripts, never indexed. Light background: overrides the dark site canvas.
+ */
+interface Props {
+  locale: Locale;
+  title: string;
+}
+
+const { locale, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang={LOCALE_META[locale].langTag} class="bg-white">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title}</title>
+    <Font cssVariable="--font-montserrat" />
+    <Font cssVariable="--font-cormorant-garamond" />
+    <slot name="head" />
+  </head>
+  <body class="bg-white bg-none text-ink">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html {
+    print-color-adjust: exact;
+  }
+</style>
