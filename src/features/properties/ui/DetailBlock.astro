@@ -1,0 +1,17 @@
+---
+/** One titled block of the property detail (description, features, map...). */
+interface Props {
+  id: string;
+  heading: string;
+  class?: string;
+}
+
+const { id, heading, class: className } = Astro.props;
+---
+
+<section aria-labelledby={id} class:list={["mt-11", className]}>
+  <h2 id={id} class="mb-4 text-[clamp(1.625rem,3vw,2.125rem)]">
+    {heading}
+  </h2>
+  <slot />
+</section>

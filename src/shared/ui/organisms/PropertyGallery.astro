@@ -1,0 +1,227 @@
+---
+import { Image, Picture } from "astro:assets";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import { formatMessage } from "@/shared/lib/format";
+import { morph } from "@/shared/ui/motion/transitions";
+
+/**
+ * Photo gallery with a keyboard-accessible lightbox (native modal `<dialog>`: focus is
+ * trapped, Escape closes, arrows move, focus returns to the opener). The first photo is the
+ * LCP image and can carry a shared-element transition name (card → detail morph).
+ * Business-agnostic: photos and labels arrive as props.
+ */
+export interface GalleryPhoto {
+  readonly src: string;
+  readonly alt: string;
+}
+
+export interface GalleryLabels {
+  /** `{index}` and `{count}` placeholders. */
+  readonly openPhoto: string;
+  /** `{count}` placeholder. */
+  readonly showAll: string;
+  readonly dialog: string;
+  readonly close: string;
+  readonly previous: string;
+  readonly next: string;
+  /** `{index}` and `{count}` placeholders. */
+  readonly counter: string;
+  readonly empty: string;
+}
+
+interface Props {
+  photos: readonly GalleryPhoto[];
+  labels: GalleryLabels;
+  /** Shared-element transition name of the hero photo frame. */
+  heroTransitionName: string;
+  /** `view-transition-class` of the hero (shared morph styling, see motion.css). */
+  heroTransitionClass: string;
+}
+
+const { photos, labels, heroTransitionName, heroTransitionClass } = Astro.props;
+const count = photos.length;
+const [hero, ...rest] = photos;
+const thumbs = rest.slice(0, 2);
+const openLabel = (index: number) => formatMessage(labels.openPhoto, { index: index + 1, count });
+const CONTROL =
+  "grid min-h-11 min-w-11 cursor-pointer place-items-center border border-fg/40 bg-ink/60 px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase transition-colors hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise";
+---
+
+<div data-gallery class="mb-8">
+  <div class:list={["grid gap-2", thumbs.length > 0 && "md:grid-cols-[2fr_1fr] md:grid-rows-2"]}>
+    <div
+      class="relative aspect-16/10 overflow-hidden bg-bg-deep md:row-span-2 md:aspect-auto md:min-h-110"
+      transition:name={heroTransitionName}
+      transition:animate={morph}
+      style={`view-transition-class: ${heroTransitionClass}`}
+    >
+      {hero === undefined ? (
+        <p class="grid size-full min-h-60 place-items-center p-6 text-center text-sm text-muted">
+          {labels.empty}
+        </p>
+      ) : (
+        <button
+          type="button"
+          data-gallery-open="0"
+          aria-label={openLabel(0)}
+          aria-haspopup="dialog"
+          class="block size-full cursor-zoom-in"
+        >
+          <Picture
+            {...PHOTO_PICTURE}
+            src={hero.src}
+            alt={hero.alt}
+            width={1400}
+            height={875}
+            widths={[640, 828, 1000, 1400]}
+            sizes="(min-width: 1120px) 46rem, (min-width: 768px) 66vw, 100vw"
+            priority
+            class="block size-full object-cover"
+          />
+        </button>
+      )}
+      <div class="pointer-events-none absolute top-3 left-3 flex flex-wrap gap-1.5">
+        <slot name="overlay" />
+      </div>
+    </div>
+    {thumbs.map((photo, offset) => {
+      const index = offset + 1;
+      const isLast = offset === thumbs.length - 1 && count > 2;
+      const showAllText = formatMessage(labels.showAll, { count });
+      // The visible "View all N photos" text must start the accessible name (WCAG 2.5.3).
+      const label = isLast ? `${showAllText}, ${openLabel(index)}` : openLabel(index);
+      return (
+        <button
+          type="button"
+          data-gallery-open={String(index)}
+          aria-label={label}
+          aria-haspopup="dialog"
+          class="relative hidden aspect-4/3 cursor-zoom-in overflow-hidden bg-bg-deep md:block md:aspect-auto"
+        >
+          <Picture
+            {...PHOTO_PICTURE}
+            src={photo.src}
+            alt={photo.alt}
+            width={720}
+            height={540}
+            widths={[360, 720]}
+            sizes="(min-width: 1120px) 23rem, 33vw"
+            class="block size-full object-cover"
+          />
+          {isLast && (
+            <span class="absolute right-2.5 bottom-2.5 bg-ink/85 px-2.5 py-1.5 text-xs tracking-[0.06em] text-fg">
+              {showAllText}
+            </span>
+          )}
+        </button>
+      );
+    })}
+  </div>
+  {count > 1 && (
+    <button
+      type="button"
+      data-gallery-open="0"
+      aria-haspopup="dialog"
+      class="mt-2 min-h-11 w-full border border-line px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise md:hidden"
+    >
+      {formatMessage(labels.showAll, { count })}
+    </button>
+  )}
+
+  {count > 0 && (
+    <dialog
+      data-gallery-dialog
+      aria-label={labels.dialog}
+      class="m-0 h-dvh max-h-none w-screen max-w-none bg-ink/96 p-0 text-fg backdrop:bg-ink/80"
+    >
+      <div
+        data-gallery-stage
+        class="relative flex h-full flex-col items-center justify-center px-4 py-18 sm:px-20"
+      >
+        <button type="button" data-gallery-close class:list={[CONTROL, "absolute top-4 right-4"]}>
+          {labels.close}
+        </button>
+        {count > 1 && (
+          <>
+            <button
+              type="button"
+              data-gallery-step="-1"
+              aria-label={labels.previous}
+              class:list={[CONTROL, "absolute top-1/2 left-2 -translate-y-1/2 sm:left-4"]}
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button
+              type="button"
+              data-gallery-step="1"
+              aria-label={labels.next}
+              class:list={[CONTROL, "absolute top-1/2 right-2 -translate-y-1/2 sm:right-4"]}
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </>
+        )}
+        {photos.map((photo, index) => (
+          <figure data-slide hidden class="m-0 flex max-h-full flex-col items-center gap-4">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              inferSize
+              widths={[960, 1600]}
+              sizes="100vw"
+              class="max-h-[78svh] w-auto max-w-full object-contain"
+            />
+            <figcaption class="text-sm text-muted" aria-live="polite">
+              {formatMessage(labels.counter, { index: index + 1, count })}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </dialog>
+  )}
+</div>
+
+<script>
+  import { stepIndex } from "./gallery";
+
+  function bindGallery(gallery: HTMLElement): void {
+    const dialog = gallery.querySelector<HTMLDialogElement>("[data-gallery-dialog]");
+    if (dialog === null || gallery.dataset["bound"] === "true") return;
+    gallery.dataset["bound"] = "true";
+    const slides = [...dialog.querySelectorAll<HTMLElement>("[data-slide]")];
+    let current = 0;
+
+    const show = (index: number): void => {
+      current = stepIndex(index, 0, slides.length);
+      slides.forEach((slide, slideIndex) => {
+        slide.hidden = slideIndex !== current;
+      });
+    };
+
+    for (const trigger of gallery.querySelectorAll<HTMLElement>("[data-gallery-open]")) {
+      trigger.addEventListener("click", () => {
+        show(Number(trigger.dataset["galleryOpen"] ?? "0"));
+        dialog.showModal();
+      });
+    }
+    for (const control of dialog.querySelectorAll<HTMLElement>("[data-gallery-step]")) {
+      control.addEventListener("click", () => {
+        show(stepIndex(current, Number(control.dataset["galleryStep"]), slides.length));
+      });
+    }
+    dialog.querySelector("[data-gallery-close]")?.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") show(stepIndex(current, 1, slides.length));
+      else if (event.key === "ArrowLeft") show(stepIndex(current, -1, slides.length));
+    });
+    // A click on the empty stage around the photo closes the lightbox.
+    const stage = dialog.querySelector("[data-gallery-stage]");
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog || event.target === stage) dialog.close();
+    });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll<HTMLElement>("[data-gallery]").forEach(bindGallery);
+  });
+</script>

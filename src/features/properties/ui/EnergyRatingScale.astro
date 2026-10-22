@@ -1,0 +1,64 @@
+---
+import { presentEnergyRating } from "@/features/properties/application/propertyFacts";
+import { ENERGY_GRADES, type EnergyRating } from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { formatMessage } from "@/shared/lib/format";
+
+/**
+ * Energy certificate (AGENTS.md §7): A–G scale with the certified grade highlighted, or the
+ * "pending certification" / "exempt" / "not available" label. Brand tokens only: the
+ * official certificate colours are not part of the brand palette (§11).
+ * `tone="light"`: for white backgrounds (property sheet PDF).
+ */
+interface Props {
+  locale: Locale;
+  label: string;
+  rating: EnergyRating | undefined;
+  tone?: "dark" | "light";
+}
+
+const { locale, label, rating, tone = "dark" } = Astro.props;
+const t = getDictionary(locale).property.detail;
+
+const TONES = {
+  dark: {
+    label: "text-muted",
+    value: "text-fg",
+    selected: "bg-turquoise text-ink outline-fg",
+    grade: "bg-card text-muted",
+  },
+  light: {
+    label: "text-petrol",
+    value: "text-ink",
+    selected: "bg-turquoise text-ink outline-ink",
+    grade: "bg-stone text-petrol",
+  },
+} as const;
+const colors = TONES[tone];
+---
+
+<div class="flex flex-col gap-2">
+  <p class:list={["text-sm", colors.label]}>{label}</p>
+  {rating?.kind === "grade" ? (
+    <div>
+      <p class="sr-only">{formatMessage(t.energyScale, { grade: rating.grade })}</p>
+      <ol aria-hidden="true" class="flex max-w-md gap-1">
+        {ENERGY_GRADES.map((grade) => (
+          <li
+            class:list={[
+              "flex-1 py-1.5 text-center text-xs font-medium",
+              grade === rating.grade
+                ? ["outline-2 outline-offset-2", colors.selected]
+                : colors.grade,
+            ]}
+          >
+            {grade}
+          </li>
+        ))}
+      </ol>
+    </div>
+  ) : (
+    <p class:list={["font-medium", colors.value]}>{presentEnergyRating(rating, locale)}</p>
+  )}
+</div>

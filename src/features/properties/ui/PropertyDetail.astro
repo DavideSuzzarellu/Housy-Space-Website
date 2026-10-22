@@ -1,0 +1,242 @@
+---
+import type { ListingAgent } from "@/features/agency/application/agentQueries";
+import {
+  presentDescription,
+  presentKeyFacts,
+  presentMetaLine,
+  presentPhotos,
+} from "@/features/properties/application/propertyFacts";
+import {
+  getPropertySheetFileName,
+  getPropertySheetPdfPath,
+} from "@/features/properties/application/propertySheet";
+import {
+  getLocationLabel,
+  getOperationPrice,
+  getPropertyTitle,
+  type DetailOperation,
+  type Property,
+} from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath, withUrlExtras } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
+import {
+  PROPERTY_IMAGE_TRANSITION_CLASS,
+  propertyTransitionNames,
+} from "@/shared/lib/transitionNames";
+import Badge from "@/shared/ui/atoms/Badge.astro";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
+import FactList from "@/shared/ui/molecules/FactList.astro";
+import PriceTag from "@/shared/ui/molecules/PriceTag.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import { morph } from "@/shared/ui/motion/transitions";
+import PropertyGallery from "@/shared/ui/organisms/PropertyGallery.astro";
+import DetailBlock from "./DetailBlock.astro";
+import EnergyRatingScale from "./EnergyRatingScale.astro";
+import PropertyGrid from "./PropertyGrid.astro";
+import PropertyMap from "./PropertyMap.astro";
+
+/**
+ * Property detail (AGENTS.md §6 item 3), rebuilt from the UI proposal layout. The hero photo,
+ * title and price carry the same transition names as `PropertyCard` (card ↔ detail morph);
+ * similar properties never include this ref, so names stay unique on the page.
+ */
+interface Props {
+  locale: Locale;
+  property: Property;
+  operation: DetailOperation;
+  agent: ListingAgent | undefined;
+  similar: readonly Property[];
+}
+
+const { locale, property, operation, agent, similar } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.property;
+const d = t.detail;
+
+const reference = formatMessage(t.reference, { ref: property.ref });
+const title = getPropertyTitle(property, locale) ?? reference;
+const names = propertyTransitionNames(property.ref);
+const price = getOperationPrice(property, operation) ?? { kind: "onRequest" as const };
+const location = getLocationLabel(property);
+const facts = presentKeyFacts(property, locale);
+const paragraphs = presentDescription(property, locale);
+const photos = presentPhotos(property, title, locale);
+const listingKey = operation === "sale" ? "sale" : "rent";
+const crumbs = [
+  { label: d.home, href: getLocalizedPath("home", locale) },
+  {
+    label: operation === "sale" ? dictionary.nav.forSale : dictionary.nav.forRent,
+    href: getLocalizedPath(listingKey, locale),
+  },
+  { label: title },
+];
+const visitHref = withUrlExtras(getLocalizedPath("contact", locale), {
+  query: { ref: property.ref },
+});
+const whatsappMessage = formatMessage(d.whatsappMessage, { ref: property.ref, title });
+const metaLine = presentMetaLine(property, operation, locale);
+---
+
+<article data-property-detail data-morph-ref={property.ref} data-ref={property.ref}>
+  <Container class="pt-7 pb-6 md:pt-9">
+    <Breadcrumbs items={crumbs} label={d.breadcrumb} class="mb-6" />
+    <PropertyGallery
+      photos={photos}
+      heroTransitionName={names.image}
+      heroTransitionClass={PROPERTY_IMAGE_TRANSITION_CLASS}
+      labels={{
+        openPhoto: d.openPhoto,
+        showAll: d.showAll,
+        dialog: d.galleryDialog,
+        close: d.close,
+        previous: d.previous,
+        next: d.next,
+        counter: d.counter,
+        empty: d.noPhotos,
+      }}
+    >
+      <Fragment slot="overlay">
+        <Badge>{t.operations[operation]}</Badge>
+        {property.status === "reserved" && <Badge tone="accent">{t.reserved}</Badge>}
+      </Fragment>
+    </PropertyGallery>
+
+    <div class="grid gap-9 lg:grid-cols-[minmax(0,1fr)_21.25rem] lg:items-start">
+      <div>
+        {location !== undefined && (
+          <p class="text-[0.6875rem] tracking-[0.14em] text-turquoise uppercase">{location}</p>
+        )}
+        <h1
+          class="mt-2 mb-2.5 text-[clamp(2.125rem,5vw,3.5rem)]"
+          transition:name={names.title}
+          transition:animate={morph}
+        >
+          {title}
+        </h1>
+        <p class="text-sm text-muted">{metaLine}</p>
+        <div class="mt-5 w-fit" transition:name={names.price} transition:animate={morph}>
+          <PriceTag
+            locale={locale}
+            price={price}
+            perMonth={operation === "rent"}
+            class="text-[2.5rem]"
+          />
+        </div>
+
+        {facts.length > 0 && (
+          <DetailBlock id="detail-facts" heading={d.factsHeading}>
+            <FactList variant="grid" facts={facts} />
+          </DetailBlock>
+        )}
+
+        {paragraphs.length > 0 && (
+          <DetailBlock id="detail-description" heading={d.descriptionHeading}>
+            <div class="flex max-w-[68ch] flex-col gap-4 text-fg/90">
+              {paragraphs.map((paragraph) => (
+                <p class="whitespace-pre-line">{paragraph}</p>
+              ))}
+            </div>
+          </DetailBlock>
+        )}
+
+        {property.features.length > 0 && (
+          <DetailBlock id="detail-features" heading={d.featuresHeading}>
+            <ul class="grid list-disc gap-x-8 gap-y-1.5 pl-4.5 text-muted marker:text-turquoise sm:grid-cols-2">
+              {property.features.map((feature) => (
+                <li>{t.featureNames[feature]}</li>
+              ))}
+            </ul>
+          </DetailBlock>
+        )}
+
+        <DetailBlock id="detail-energy" heading={d.energyHeading}>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <EnergyRatingScale
+              locale={locale}
+              label={d.energyConsumption}
+              rating={property.energyRating}
+            />
+            <EnergyRatingScale
+              locale={locale}
+              label={d.energyEmissions}
+              rating={property.emissionsRating}
+            />
+          </div>
+        </DetailBlock>
+
+        {property.virtualTourUrl !== undefined && (
+          <DetailBlock id="detail-tour" heading={d.virtualTourHeading}>
+            <Button
+              href={property.virtualTourUrl}
+              external
+              newTabLabel={dictionary.a11y.opensInNewTab}
+            >
+              {d.virtualTourCta}
+            </Button>
+          </DetailBlock>
+        )}
+
+        {property.location !== undefined && (
+          <DetailBlock id="detail-location" heading={d.locationHeading}>
+            <PropertyMap
+              location={property.location}
+              label={d.mapLabel}
+              approximateNote={d.mapApproximate}
+              loadingText={d.mapLoading}
+            />
+          </DetailBlock>
+        )}
+      </div>
+
+      <aside
+        aria-labelledby="detail-contact"
+        data-property-contact
+        class="bg-card p-6.5 lg:sticky lg:top-28"
+      >
+        <h2 id="detail-contact" class="text-[1.875rem]">
+          {d.contactHeading}
+        </h2>
+        <p class="mt-2 text-sm text-muted">{d.contactText}</p>
+        <p class="mt-4 text-sm">
+          <span class="text-muted">{d.advisorLabel}:</span>{" "}
+          <span class="font-medium text-fg">{agent?.name ?? d.advisorFallback}</span>
+        </p>
+        <p class="mt-1 text-sm text-muted">{reference}</p>
+        <ContactActions
+          locale={locale}
+          variant="stack"
+          whatsappMessage={whatsappMessage}
+          consultation={{ href: visitHref, label: d.requestVisit }}
+          class="mt-5"
+        />
+        <!-- Generated at build time from the property sheet page (scripts/build-property-sheets.ts). -->
+        <Button
+          href={getPropertySheetPdfPath(property, operation, locale)}
+          download={getPropertySheetFileName(property)}
+          class="mt-2.5 w-full"
+        >
+          {t.sheet.download}
+        </Button>
+      </aside>
+    </div>
+  </Container>
+
+  {similar.length > 0 && (
+    <Section id="similares" labelledBy="similar-heading" name="similar">
+      <h2 id="similar-heading" class="mb-7 text-[clamp(1.75rem,4vw,2.5rem)]">
+        {d.similarHeading}
+      </h2>
+      <PropertyGrid
+        locale={locale}
+        properties={similar}
+        ctaLabel={d.similarCta}
+        operation={operation}
+      />
+    </Section>
+  )}
+</article>

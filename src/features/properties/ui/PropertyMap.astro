@@ -1,0 +1,35 @@
+---
+import type { PropertyLocation } from "@/features/properties/domain/property";
+
+/**
+ * Location map: always a circle of the approximate zone, never a pin (AGENTS.md §5).
+ * ICGC colour base map with its CC BY attribution (§2).
+ */
+interface Props {
+  location: PropertyLocation;
+  label: string;
+  /** Shown under the map: the circle is an area, not the address. */
+  approximateNote: string;
+  /** Placeholder text until Leaflet loads (on visibility). */
+  loadingText: string;
+}
+
+const { location, label, approximateNote, loadingText } = Astro.props;
+---
+
+<div
+  data-property-map
+  data-lat={String(location.latitude)}
+  data-lng={String(location.longitude)}
+  data-radius={String(location.radiusM)}
+  role="region"
+  aria-label={label}
+  class="property-map relative isolate z-0 h-75 bg-bg-deep md:h-90"
+>
+  <p class="grid h-full place-items-center p-6 text-center text-sm text-muted">{loadingText}</p>
+</div>
+<p class="mt-3 text-sm text-muted">{approximateNote}</p>
+
+<script>
+  import "./propertyMap.client";
+</script>

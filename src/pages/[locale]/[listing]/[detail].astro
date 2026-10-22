@@ -1,0 +1,107 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getListingAgent } from "@/features/agency/application";
+import { COMPANY } from "@/features/agency/domain/company";
+import {
+  getPropertyByRef,
+  getSimilarProperties,
+  listProperties,
+} from "@/features/properties/application";
+import {
+  getDetailRouteParams,
+  getPropertyAlternates,
+} from "@/features/properties/application/propertyPaths";
+import { buildPropertyJsonLd } from "@/features/properties/application/propertyJsonLd";
+import {
+  getCoverPhoto,
+  getDetailOperations,
+  getPropertyTitle,
+  localize,
+  type DetailOperation,
+} from "@/features/properties/domain/property";
+import PropertyDetail from "@/features/properties/ui/PropertyDetail.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDictionary } from "@/shared/i18n";
+import { LOCALES, type Locale } from "@/shared/i18n/config";
+import { formatMessage } from "@/shared/lib/format";
+import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
+
+// Property detail: `/{locale}/{venta|sale|vendita|venda}/{slug}-{ref}` and the rent
+// counterpart (AGENTS.md §4.1). One static page per locale × listed operation; params come
+// from the route map via getDetailRouteParams. Data is the `properties` collection entry.
+export const getStaticPaths = (async () => {
+  const properties = await listProperties();
+  return LOCALES.flatMap((locale) =>
+    properties.flatMap((property) =>
+      getDetailOperations(property).map((operation) => ({
+        params: getDetailRouteParams(property, operation, locale),
+        props: { locale, ref: property.ref, operation },
+      })),
+    ),
+  );
+}) satisfies GetStaticPaths;
+
+interface Props {
+  locale: Locale;
+  ref: string;
+  operation: DetailOperation;
+}
+
+const META_DESCRIPTION_MAX = 155;
+
+const { locale, ref, operation } = Astro.props;
+const lookup = await getPropertyByRef(ref);
+if (!lookup.ok) throw new Error(`Property ${ref} vanished between getStaticPaths and render`);
+const { property } = lookup;
+
+const t = getDictionary(locale).property;
+const reference = formatMessage(t.reference, { ref: property.ref });
+const title = getPropertyTitle(property, locale) ?? reference;
+const summary = localize(property.summary, locale);
+const description =
+  summary === undefined
+    ? formatMessage(t.detail.metaDescriptionFallback, {
+        title,
+        operation: t.operations[operation],
+        ref: property.ref,
+      })
+    : summary.length > META_DESCRIPTION_MAX
+      ? `${summary.slice(0, META_DESCRIPTION_MAX - 1).trimEnd()}…`
+      : summary;
+
+const alternates = getPropertyAlternates(property, operation);
+const site = Astro.site ?? new URL(Astro.url.origin);
+const canonicalPath = alternates.find((alternate) => alternate.locale === locale)?.path;
+const canonicalUrl = new URL(canonicalPath ?? Astro.url.pathname, site).href;
+const jsonLd = buildPropertyJsonLd({
+  property,
+  operation,
+  locale,
+  url: canonicalUrl,
+  siteUrl: site.origin,
+  company: COMPANY,
+});
+
+const [agent, similar] = await Promise.all([
+  getListingAgent(property.agentId),
+  getSimilarProperties(property.ref, operation),
+]);
+const cover = getCoverPhoto(property);
+---
+
+<BaseLayout
+  locale={locale}
+  title={formatMessage(t.detail.metaTitle, { title, ref: property.ref })}
+  description={description}
+  alternates={alternates}
+  {...(cover === undefined ? {} : { ogImage: cover.url })}
+>
+  <JsonLd slot="head" data={jsonLd} />
+  <PropertyDetail
+    locale={locale}
+    property={property}
+    operation={operation}
+    agent={agent}
+    similar={similar}
+  />
+</BaseLayout>
