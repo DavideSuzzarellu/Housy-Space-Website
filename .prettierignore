@@ -1,0 +1,15 @@
+dist/
+.astro/
+node_modules/
+pnpm-lock.yaml
+playwright-report/
+test-results/
+coverage/
+public/
+logo/
+.claude/
+.atl/
+AGENTS.md
+CLAUDE.md
+ROADMAP.md
+*.pdf

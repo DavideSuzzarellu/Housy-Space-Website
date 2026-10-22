@@ -1,0 +1,74 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# environment (secrets)
+.env
+.env.*
+!.env.example
+
+# client documents kept out of the repo (demo sheets, brand manual): binaries, not source
+/*.pdf
+
+# local AI-agent state (per developer): Claude Code permissions/worktrees, SDD registry cache
+.claude/settings.local.json
+.claude/worktrees/
+.atl/
+
+# test artifacts
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# local tooling indexes
+.codegraph/
+
+# secrets and credentials (never commit)
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.jks
+*.keystore
+credentials*.json
+service-account*.json
+secrets/
+.secrets/
+.npmrc.local
+*.local
+
+# raw API recordings: only sanitized fixtures under tests/fixtures/ may be committed
+tests/fixtures/**/raw/
+*.raw.json
+
+# hosting/provider local state
+.vercel/
+.netlify/
+.wrangler/
+
+# astro content-layer cache (data store with fetched listings; rebuilt from Mobilia)
+.astro/data-store.json
+
+# editors / OS / misc
+*.swp
+*~
+Thumbs.db
+*.tsbuildinfo
+.eslintcache
