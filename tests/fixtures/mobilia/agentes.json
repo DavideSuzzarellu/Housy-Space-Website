@@ -1,0 +1,19 @@
+{
+  "elementos": [
+    {
+      "idAgente": 5754280,
+      "nombreUsuario": "Agent 1 (redacted)",
+      "email": "agent1@example.com",
+      "roles": ["Gestión", "Agente"]
+    },
+    {
+      "idAgente": 5754264,
+      "nombreUsuario": "Agent 2 (redacted)",
+      "email": "agent2@example.com",
+      "roles": ["Admins", "Gestión", "Master"]
+    }
+  ],
+  "totalElementos": 2,
+  "pagina": 1,
+  "tamanoPagina": 100
+}
