@@ -1,0 +1,143 @@
+---
+import type { CatalogModel } from "@/features/properties/application/catalog";
+import { CATALOG_PARAMS } from "@/features/properties/application/catalogQuery";
+import { getListingPath } from "@/features/properties/application/propertyPaths";
+import { DETAIL_OPERATIONS, type DetailOperation } from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { formatMessage } from "@/shared/lib/format";
+import NumberInput from "@/shared/ui/atoms/NumberInput.astro";
+import Select, { type SelectOption } from "@/shared/ui/atoms/Select.astro";
+import FormField from "@/shared/ui/molecules/FormField.astro";
+
+/**
+ * Catalog search form. Control names are the URL params (`catalogQuery.ts`), so the island
+ * reads the form and the URL with the same parser. Extra filters sit in a native <details>
+ * (no JS needed to open it). Without JS the full listing stays visible.
+ */
+interface Props {
+  locale: Locale;
+  operation: DetailOperation;
+  options: CatalogModel["options"];
+  formId: string;
+}
+
+const { locale, operation, options, formId } = Astro.props;
+const t = getDictionary(locale).catalog;
+
+const MAX_ROOMS = 5;
+const roomOptions: SelectOption[] = [
+  { value: "", label: t.any },
+  ...Array.from({ length: MAX_ROOMS }, (_, index) => ({
+    value: String(index + 1),
+    label: formatMessage(t.atLeast, { count: index + 1 }),
+  })),
+];
+const priceStep = operation === "rent" ? 100 : 10000;
+const fieldId = (name: string) => `${formId}-${name}`;
+---
+
+<form
+  id={formId}
+  data-catalog-form
+  role="search"
+  aria-label={t.searchLabel}
+  class="border border-line bg-bg-soft/80 p-5 md:p-6"
+>
+  <div class="grid gap-4 md:grid-cols-[auto_minmax(0,1fr)_minmax(0,1fr)] md:items-end">
+    <div class="flex flex-col gap-1.5">
+      <p id={fieldId("operation")} class="text-xs tracking-[0.08em] text-muted">
+        {t.operationLabel}
+      </p>
+      <div role="group" aria-labelledby={fieldId("operation")} class="flex border border-line">
+        {DETAIL_OPERATIONS.map((candidate) => (
+          <a
+            href={getListingPath(candidate, locale)}
+            aria-current={candidate === operation ? "page" : undefined}
+            class="flex min-h-11 flex-1 items-center justify-center px-5 text-xs tracking-[0.12em] text-muted uppercase no-underline transition-colors hover:text-fg aria-[current=page]:bg-fg aria-[current=page]:text-ink"
+          >
+            {t.operations[candidate]}
+          </a>
+        ))}
+      </div>
+    </div>
+    <FormField label={t.zone} controlId={fieldId("zone")}>
+      <Select
+        id={fieldId("zone")}
+        name={CATALOG_PARAMS.zone}
+        options={[{ value: "", label: t.anyZone }, ...options.zones]}
+      />
+    </FormField>
+    <FormField label={t.type} controlId={fieldId("type")}>
+      <Select
+        id={fieldId("type")}
+        name={CATALOG_PARAMS.type}
+        options={[{ value: "", label: t.anyType }, ...options.types]}
+      />
+    </FormField>
+  </div>
+
+  <details class="group/more mt-5 border-t border-line pt-4">
+    <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 text-xs tracking-[0.12em] uppercase marker:hidden">
+      {t.moreFilters}
+      <span aria-hidden="true" class="transition-transform group-open/more:rotate-180">
+        ⌄
+      </span>
+    </summary>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <FormField label={t.priceMin} controlId={fieldId("price-min")}>
+        <NumberInput
+          id={fieldId("price-min")}
+          name={CATALOG_PARAMS.priceMin}
+          step={priceStep}
+          placeholder={t.noMin}
+        />
+      </FormField>
+      <FormField label={t.priceMax} controlId={fieldId("price-max")}>
+        <NumberInput
+          id={fieldId("price-max")}
+          name={CATALOG_PARAMS.priceMax}
+          step={priceStep}
+          placeholder={t.noMax}
+        />
+      </FormField>
+      <FormField label={t.bedrooms} controlId={fieldId("bedrooms")}>
+        <Select id={fieldId("bedrooms")} name={CATALOG_PARAMS.bedrooms} options={roomOptions} />
+      </FormField>
+      <FormField label={t.areaMin} controlId={fieldId("area-min")}>
+        <NumberInput id={fieldId("area-min")} name={CATALOG_PARAMS.areaMin} placeholder={t.noMin} />
+      </FormField>
+      <FormField label={t.areaMax} controlId={fieldId("area-max")}>
+        <NumberInput id={fieldId("area-max")} name={CATALOG_PARAMS.areaMax} placeholder={t.noMax} />
+      </FormField>
+      <FormField label={t.bathrooms} controlId={fieldId("bathrooms")}>
+        <Select id={fieldId("bathrooms")} name={CATALOG_PARAMS.bathrooms} options={roomOptions} />
+      </FormField>
+    </div>
+    {options.features.length > 0 && (
+      <fieldset class="mt-5">
+        <legend class="mb-2.5 text-xs tracking-[0.08em] text-muted">{t.features}</legend>
+        <div class="flex flex-wrap gap-x-5 gap-y-2">
+          {options.features.map((feature) => (
+            <label class="flex min-h-11 items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                name={CATALOG_PARAMS.features}
+                value={feature.value}
+                class="size-4 accent-turquoise"
+              />
+              {feature.label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    )}
+    <button
+      type="button"
+      data-catalog-clear
+      class="mt-5 min-h-11 border border-line px-5 text-xs tracking-[0.12em] uppercase transition-colors hover:border-turquoise hover:text-turquoise"
+    >
+      {t.clear}
+    </button>
+  </details>
+</form>

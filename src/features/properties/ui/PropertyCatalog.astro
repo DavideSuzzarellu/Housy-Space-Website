@@ -1,0 +1,168 @@
+---
+import type { CatalogModel } from "@/features/properties/application/catalog";
+import {
+  CATALOG_PARAMS,
+  CATALOG_VIEWS,
+  SORT_PARAM_VALUES,
+} from "@/features/properties/application/catalogQuery";
+import { CATALOG_SORTS } from "@/features/properties/domain/catalog";
+import type { DetailOperation } from "@/features/properties/domain/property";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { formatMessage } from "@/shared/lib/format";
+import { serializeJsonForScript } from "@/shared/lib/seo/jsonLd";
+import Select from "@/shared/ui/atoms/Select.astro";
+import CatalogFilters from "./CatalogFilters.astro";
+import PropertyCard from "./PropertyCard.astro";
+
+/**
+ * Property catalog (AGENTS.md §6 item 18): filters, sort, list / list + map / map views.
+ * Every listing is rendered server-side (zero JS needed to browse); the island filters and
+ * reorders those cards from the URL and loads the map only when a map view is chosen.
+ * Each ref appears once, so the card ↔ detail transition names stay unique.
+ */
+interface Props {
+  locale: Locale;
+  operation: DetailOperation;
+  model: CatalogModel;
+}
+
+const { locale, operation, model } = Astro.props;
+const t = getDictionary(locale).catalog;
+const FORM_ID = "catalog-filters";
+
+const total = model.entries.length;
+const countText = total === 1 ? t.countOne : formatMessage(t.countOther, { count: total });
+const sortOptions = CATALOG_SORTS.map((sort) => ({
+  value: SORT_PARAM_VALUES[sort],
+  label: t.sort[sort],
+}));
+---
+
+<div
+  data-catalog
+  data-view="list"
+  data-count-one={t.countOne}
+  data-count-other={t.countOther}
+  data-cluster-label={t.clusterLabel}
+  data-approximate-label={t.approximateSuffix}
+  class="group/catalog"
+>
+  <CatalogFilters locale={locale} operation={operation} options={model.options} formId={FORM_ID} />
+
+  <div class="mt-8 flex flex-wrap items-center gap-3 border-b border-line pb-4">
+    <p data-catalog-count aria-live="polite" class="mr-auto text-sm text-muted">
+      {countText}
+    </p>
+    <button
+      type="button"
+      data-catalog-clear-area
+      hidden
+      class="min-h-11 border border-turquoise-deep px-4 text-xs tracking-[0.12em] uppercase transition-colors hover:border-turquoise hover:text-turquoise"
+    >
+      {t.areaChip} <span aria-hidden="true">✕</span>
+    </button>
+    <label for="catalog-sort" class="sr-only">
+      {t.sortLabel}
+    </label>
+    <Select
+      id="catalog-sort"
+      name={CATALOG_PARAMS.sort}
+      form={FORM_ID}
+      options={sortOptions}
+      value={SORT_PARAM_VALUES.recent}
+      class="w-auto"
+    />
+    <div role="group" aria-label={t.viewLabel} class="flex border border-line">
+      {CATALOG_VIEWS.map((view) => (
+        <button
+          type="button"
+          data-catalog-view={view}
+          aria-pressed={view === "list" ? "true" : "false"}
+          class="min-h-11 px-4 text-xs tracking-[0.12em] text-muted uppercase transition-colors hover:text-fg aria-pressed:bg-fg aria-pressed:text-ink"
+        >
+          {t.views[view]}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <div class="mt-7 grid gap-7 lg:group-data-[view=split]/catalog:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+    <div class="group-data-[view=map]/catalog:hidden">
+      {total === 0 ? (
+        <p class="border-l-2 border-turquoise-deep py-1 pl-3 text-sm text-muted">
+          {t.emptyCatalog}
+        </p>
+      ) : (
+        <ul
+          data-catalog-list
+          class="grid gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:group-data-[view=split]/catalog:grid-cols-1 xl:group-data-[view=split]/catalog:grid-cols-2"
+        >
+          {model.properties.map((property, index) => (
+            <li data-catalog-ref={property.ref} class="flex">
+              <PropertyCard
+                property={property}
+                locale={locale}
+                ctaLabel={t.cardCta}
+                operation={operation}
+                priority={index === 0}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+      <div data-catalog-empty hidden class="flex flex-col items-start gap-4 py-6">
+        <p class="text-muted">{t.empty}</p>
+        <button
+          type="button"
+          data-catalog-clear
+          class="min-h-11 border border-line px-5 text-xs tracking-[0.12em] uppercase transition-colors hover:border-turquoise hover:text-turquoise"
+        >
+          {t.clear}
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden self-start group-data-[view=map]/catalog:block group-data-[view=split]/catalog:block lg:group-data-[view=split]/catalog:sticky lg:group-data-[view=split]/catalog:top-28">
+      <div class="relative isolate">
+        <div
+          data-catalog-map
+          role="region"
+          aria-label={t.mapLabel}
+          class="catalog-map relative z-0 h-[65vh] min-h-80 bg-bg-deep lg:group-data-[view=split]/catalog:h-[calc(100vh-9rem)]"
+        >
+          <p class="grid h-full place-items-center p-6 text-center text-sm text-muted">
+            {t.mapLoading}
+          </p>
+        </div>
+        <button
+          type="button"
+          data-catalog-search-area
+          hidden
+          class="absolute top-3 left-1/2 z-10 min-h-11 -translate-x-1/2 bg-fg px-5 text-xs font-medium tracking-[0.12em] text-ink uppercase shadow-lg transition-colors hover:bg-turquoise"
+        >
+          {t.searchArea}
+        </button>
+      </div>
+      <p class="mt-3 flex items-center gap-2 text-xs text-muted">
+        <span
+          aria-hidden="true"
+          class="catalog-legend-area inline-block size-3.5 rounded-full"
+        ></span>
+        {t.mapApproximate}
+      </p>
+      <p class="mt-2 text-xs text-muted">{t.mapNote}</p>
+    </div>
+  </div>
+
+  <script
+    is:inline
+    type="application/json"
+    data-catalog-entries
+    set:html={serializeJsonForScript(model.entries)}
+  />
+</div>
+
+<script>
+  import "./catalog.client";
+</script>

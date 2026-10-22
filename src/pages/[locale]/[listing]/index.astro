@@ -1,0 +1,58 @@
+---
+import type { GetStaticPaths } from "astro";
+import { listProperties } from "@/features/properties/application";
+import { buildCatalog } from "@/features/properties/application/catalog";
+import {
+  getListingAlternates,
+  getListingRouteParams,
+} from "@/features/properties/application/propertyPaths";
+import { DETAIL_OPERATIONS, type DetailOperation } from "@/features/properties/domain/property";
+import PropertyCatalog from "@/features/properties/ui/PropertyCatalog.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDictionary } from "@/shared/i18n";
+import { LOCALES, type Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import Eyebrow from "@/shared/ui/molecules/Eyebrow.astro";
+
+// Catalog: `/{locale}/{venta|sale|vendita|venda}` and the rent counterpart (AGENTS.md §4.1).
+// Static: every listing is rendered; filters live in query params handled by the island, and
+// the canonical URL is always the unfiltered listing.
+export const getStaticPaths = (() =>
+  LOCALES.flatMap((locale) =>
+    DETAIL_OPERATIONS.map((operation) => ({
+      params: getListingRouteParams(operation, locale),
+      props: { locale, operation },
+    })),
+  )) satisfies GetStaticPaths;
+
+interface Props {
+  locale: Locale;
+  operation: DetailOperation;
+}
+
+const { locale, operation } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.catalog;
+const model = buildCatalog(await listProperties({ operation }), operation, locale);
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: operation === "sale" ? dictionary.nav.forSale : dictionary.nav.forRent },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  title={t.metaTitle[operation]}
+  description={t.metaDescription[operation]}
+  alternates={getListingAlternates(operation)}
+>
+  <Container class="pt-7 pb-16 md:pt-9 md:pb-22">
+    <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-8" />
+    <Eyebrow tag={t.eyebrow} />
+    <h1 class="mt-4 text-[clamp(2.375rem,6vw,4rem)]">{t.heading[operation]}</h1>
+    <p class="mt-4 mb-9 max-w-[60ch] text-muted">{t.lead}</p>
+    <PropertyCatalog locale={locale} operation={operation} model={model} />
+  </Container>
+</BaseLayout>
