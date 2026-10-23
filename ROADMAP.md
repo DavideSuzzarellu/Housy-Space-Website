@@ -25,7 +25,9 @@
 | I15 | Confirm `reformas-interiorismo` service page is a leftover | Phase 7 | ⏳ pending |
 | I16 | Mobilia API rate limits (ask Mobilia) | Rebuild frequency | ⏳ pending |
 | I17 | Analytics tool choice | Phase 9 | ⏳ pending |
-| I18 | Domain DNS access (housyspace.com) | Launch | ⏳ pending |
+| I18 | Domain DNS access (housyspace.com). Registrar and DNS: **Webempresa** (`ns50041/ns50042.webempresa.eu`). At launch change ONLY the `@` and `www` records to the new host; never touch MX (email, see I21) | Launch | ⏳ pending |
+| I20 | ⚠️ **Renew housyspace.com before 2026-12-19** (expiry date per the .com registry): confirm auto-renewal at Webempresa. If it lapses, website and email go down | Everything | ⏳ urgent |
+| I21 | Email (`mail.housyspace.com`) is hosted on the Webempresa plan of the old WordPress: keep that plan for email, or migrate email first. Never cancel the hosting before deciding | Retiring the old WordPress | ⏳ pending |
 
 ## B. Phases
 
