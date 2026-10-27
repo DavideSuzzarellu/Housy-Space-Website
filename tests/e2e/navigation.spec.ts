@@ -48,6 +48,38 @@ test.describe("mobile drawer", () => {
   });
 });
 
+test.describe("header menu fits the available width", () => {
+  test("shows the menu inline when it fits and the Menu button only when it does not", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1920, height: 900 });
+    await page.goto(getLocalizedPath("sale", "es"));
+    const header = page.locator("[data-header]");
+    const nav = page.getByRole("navigation", { name: "Navegación principal" });
+    const menuButton = page.locator("[data-menu-button]");
+    await expect(header).toHaveAttribute("data-nav", "full");
+    await expect(nav).toBeVisible();
+    await expect(menuButton).toBeHidden();
+
+    // Narrower window: the menu no longer fits beside the logo, so it moves behind the button.
+    await page.setViewportSize({ width: 900, height: 900 });
+    await expect(header).toHaveAttribute("data-nav", "compact");
+    await expect(nav).toBeHidden();
+    await expect(menuButton).toBeVisible();
+
+    // The inline menu never overflows into the actions next to it.
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await expect(header).not.toHaveAttribute("data-nav", "compact");
+    const overflow = await nav.evaluate((element) => {
+      const list = element.querySelector(":scope > ul");
+      return list === null
+        ? 0
+        : list.getBoundingClientRect().right - element.getBoundingClientRect().right;
+    });
+    expect(overflow).toBeLessThanOrEqual(1);
+  });
+});
+
 test.describe("desktop main menu", () => {
   test.use({ viewport: { width: 1600, height: 900 } });
 

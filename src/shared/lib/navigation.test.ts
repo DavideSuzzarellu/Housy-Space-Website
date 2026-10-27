@@ -32,6 +32,14 @@ describe("getMainNavigation", () => {
     ]);
   });
 
+  it("marks About, Blog and Contact as secondary (one smaller row in the drawer)", () => {
+    expect(
+      getMainNavigation("es")
+        .filter((item) => item.secondary)
+        .map((item) => item.label),
+    ).toEqual(["Nosotros", "Blog", "Contacto"]);
+  });
+
   it.each(LOCALES)("only builds localized internal links (%s)", (locale) => {
     const links = getMainNavigation(locale).flatMap((item) => [item, ...item.children]);
     for (const link of links) {

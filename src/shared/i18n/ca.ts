@@ -56,6 +56,7 @@ const ca = {
     callWithNumber: "Truca · {phone}",
     whatsapp: "WhatsApp",
     consultation: "Consulta privada",
+    letsTalk: "Parlem",
     drawerIntro: "Explica'ns què necessites. T'atendrà personalment un assessor d'HousySpace.",
     whatsappMessage: "Hola, m'agradaria rebre informació.",
   },

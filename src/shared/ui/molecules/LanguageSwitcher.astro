@@ -9,10 +9,10 @@ interface Props {
   alternates: readonly Alternate[];
   label: string;
   /**
-   * `header`: follows the header state (light bar → ink/petrol; over the hero → fg/turquoise).
-   * `dark`: always on a dark surface (drawer).
+   * `header`: on the petrol header bar or over the hero (current locale in turquoise).
+   * `light`: on a light surface (drawer); small text uses teal, not turquoise (§8 contrast).
    */
-  tone?: "header" | "dark";
+  tone?: "header" | "light";
 }
 
 const { locale, alternates, label, tone = "header" } = Astro.props;
@@ -20,9 +20,8 @@ const { languageNames } = getDictionary(locale);
 const links = alternates.filter((alternate) => alternate.hreflang !== "x-default");
 
 const TONES = {
-  header:
-    "text-current aria-[current=page]:text-petrol group-data-[theme=overlay]/header:aria-[current=page]:text-turquoise",
-  dark: "text-fg aria-[current=page]:text-turquoise",
+  header: "text-current aria-[current=page]:text-turquoise",
+  light: "text-petrol-dark aria-[current=page]:text-teal",
 } as const;
 ---
 

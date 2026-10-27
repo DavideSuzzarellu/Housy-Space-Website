@@ -47,7 +47,8 @@ const consultation = consultationOverride ?? {
 
 const TILE =
   "flex min-h-12.5 items-center justify-center px-2.5 text-center text-[0.6875rem] font-medium tracking-[0.12em] uppercase no-underline transition-colors";
-const DRAWER_LINK = `${TILE} border border-line text-fg hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise`;
+// The drawer is a light panel (UI proposal v3): teal for text on light, never turquoise (§8).
+const DRAWER_LINK = `${TILE} border border-petrol-dark/20 text-petrol-dark hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal`;
 const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
 ---
 
@@ -82,7 +83,7 @@ const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
     </a>
     <a
       href={consultation.href}
-      class={`${TILE} col-span-2 border border-turquoise bg-turquoise text-ink hover:border-fg hover:bg-fg`}
+      class={`${TILE} col-span-2 border border-petrol-dark bg-petrol-dark text-fg hover:border-turquoise hover:bg-turquoise hover:text-ink focus-visible:border-turquoise focus-visible:bg-turquoise focus-visible:text-ink`}
     >
       {consultation.label}
     </a>

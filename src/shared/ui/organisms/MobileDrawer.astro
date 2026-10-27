@@ -8,7 +8,11 @@ import Logo from "@/shared/ui/atoms/Logo.astro";
 import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
 import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
 
-/** Navigation drawer (all breakpoints): modal dialog with focus trap, Escape to close. */
+/**
+ * Navigation drawer (compact header only, see Header.astro): light panel from the right (UI
+ * proposal v3), modal dialog with focus trap, Escape to close. Secondary entries (About, Blog,
+ * Contact) share one smaller row.
+ */
 interface Props {
   locale: Locale;
   alternates: readonly Alternate[];
@@ -31,17 +35,17 @@ const items = getMainNavigation(locale);
 >
   <div
     data-drawer-backdrop
-    class="absolute inset-0 bg-ink/55 opacity-0 transition-opacity duration-500 group-data-[open=true]/drawer:opacity-100"
+    class="absolute inset-0 bg-ink/40 opacity-0 transition-opacity duration-500 group-data-[open=true]/drawer:opacity-100"
   ></div>
-  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain border-l border-turquoise/15 bg-bg-dark-1/95 px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-fg shadow-2xl shadow-black/40 backdrop-blur-xl transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
-    <div class="flex min-h-16 items-center justify-between gap-4 border-b border-line pb-2.5">
+  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain bg-paper px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-petrol-dark shadow-2xl shadow-ink/25 transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
+    <div class="flex min-h-15 items-center justify-between gap-4 border-b border-petrol-dark/10 pb-3">
       <a href={getLocalizedPath("home", locale)} aria-label={t.a11y.homeLink}>
-        <Logo variant="negative" alt="" class="h-12 w-auto" />
+        <Logo alt="" class="h-10 w-auto" />
       </a>
       <button
         type="button"
         data-drawer-close
-        class="inline-flex min-h-12 cursor-pointer items-center gap-3 border border-fg/40 px-4 text-xs font-medium tracking-[0.14em] uppercase transition-colors hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise"
+        class="inline-flex min-h-11 cursor-pointer items-center gap-3 border border-petrol-dark/20 px-3.5 text-xs font-medium tracking-[0.14em] uppercase transition-colors hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal"
       >
         <span>{t.a11y.closeMenu}</span>
         <span
@@ -52,15 +56,29 @@ const items = getMainNavigation(locale);
     </div>
 
     <nav aria-label={t.a11y.drawerNavigation}>
-      <ul class="mt-2.5">
+      <ul class="mt-1.5 flex flex-wrap">
         {items.map((item, index) => {
           const groupId = `drawer-group-${index}`;
           return (
-            <li class="group/item border-b border-line" data-drawer-item data-expanded="false">
+            <li
+              class:list={[
+                "group/item",
+                item.secondary
+                  ? "mt-3.5 mr-6.5 flex-none"
+                  : "basis-full border-b border-petrol-dark/10",
+              ]}
+              data-drawer-item
+              data-expanded="false"
+            >
               <div class="flex items-center justify-between gap-2.5">
                 <a
                   href={item.href}
-                  class="block min-h-15 flex-1 py-3.75 font-serif text-[clamp(1.6875rem,7.4vw,2.125rem)] leading-tight text-fg no-underline transition-colors hover:text-turquoise focus-visible:text-turquoise"
+                  class:list={[
+                    "block no-underline transition-colors hover:text-teal focus-visible:text-teal",
+                    item.secondary
+                      ? "min-h-11 py-3 text-xs leading-snug font-medium tracking-[0.14em] uppercase"
+                      : "min-h-15 flex-1 py-3.75 font-serif text-[clamp(1.6875rem,7.4vw,2.125rem)] leading-tight",
+                  ]}
                 >
                   {item.label}
                 </a>
@@ -71,7 +89,7 @@ const items = getMainNavigation(locale);
                     aria-expanded="false"
                     aria-controls={groupId}
                     aria-label={formatMessage(t.a11y.toggleGroup, { label: item.label })}
-                    class="grid size-12 flex-none cursor-pointer place-items-center border border-line transition-colors aria-expanded:border-turquoise aria-expanded:bg-turquoise/10"
+                    class="grid size-12 flex-none cursor-pointer place-items-center border border-petrol-dark/10 transition-colors aria-expanded:border-turquoise-deep aria-expanded:bg-turquoise/10"
                   >
                     <span
                       aria-hidden="true"
@@ -90,7 +108,7 @@ const items = getMainNavigation(locale);
                       <li>
                         <a
                           href={child.href}
-                          class="block min-h-11 border-l border-line py-2.75 pl-4.5 text-[0.9375rem] leading-snug text-fg/85 no-underline transition-colors hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise"
+                          class="block min-h-11 border-l border-petrol-dark/10 py-2.75 pl-4.5 text-[0.9375rem] leading-snug text-petrol-dark/85 no-underline transition-colors hover:border-turquoise-deep hover:text-teal focus-visible:border-turquoise-deep focus-visible:text-teal"
                         >
                           {child.label}
                         </a>
@@ -111,13 +129,13 @@ const items = getMainNavigation(locale);
           locale={locale}
           alternates={alternates}
           label={t.a11y.languageSwitcher}
-          tone="dark"
+          tone="light"
         />
       </div>
     )}
 
-    <div class="mt-auto pt-7.5">
-      <p class="mb-3.5 text-[0.8125rem] text-muted">{t.contact.drawerIntro}</p>
+    <div class="mt-auto border-t border-petrol-dark/10 pt-6.5">
+      <p class="mt-4.5 mb-3.5 text-[0.8125rem] text-green-grey">{t.contact.drawerIntro}</p>
       <ContactActions locale={locale} variant="drawer" />
     </div>
   </div>
@@ -215,6 +233,8 @@ const items = getMainNavigation(locale);
         first.focus();
       }
     });
+    // The header shows the menu inline again (wider window): the drawer has no place there.
+    document.addEventListener("site:nav-inline", close);
     // Navigating from inside the drawer: make sure the next page starts unlocked.
     document.addEventListener("astro:before-swap", () => {
       document.documentElement.classList.remove("overflow-hidden");

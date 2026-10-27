@@ -56,6 +56,7 @@ const en = {
     callWithNumber: "Call · {phone}",
     whatsapp: "WhatsApp",
     consultation: "Private consultation",
+    letsTalk: "Let's talk",
     drawerIntro: "Tell us what you need. A HousySpace advisor will assist you personally.",
     whatsappMessage: "Hello, I would like some information.",
   },

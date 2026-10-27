@@ -12,6 +12,8 @@ export interface NavLink {
 export interface NavItem extends NavLink {
   /** Submenu links; empty for plain entries. */
   readonly children: readonly NavLink[];
+  /** Shown as one smaller row at the end of the drawer (UI proposal v3); the header lists it as usual. */
+  readonly secondary: boolean;
 }
 
 export interface NavColumn {
@@ -34,6 +36,7 @@ export function getMainNavigation(locale: Locale): NavItem[] {
         { label: nav.forRent, href: getLocalizedPath("rent", locale) },
         { label: nav.onMap, href: withUrlExtras(sale, { query: { vista: "mapa" } }) },
       ],
+      secondary: false,
     },
     {
       label: nav.services,
@@ -47,6 +50,7 @@ export function getMainNavigation(locale: Locale): NavItem[] {
           }),
         })),
       ],
+      secondary: false,
     },
     {
       label: nav.living,
@@ -56,12 +60,23 @@ export function getMainNavigation(locale: Locale): NavItem[] {
         { label: nav.districtsAndBarrios, href: withUrlExtras(living, { hash: "distritos" }) },
         { label: nav.barrioComparator, href: withUrlExtras(living, { hash: "comparador" }) },
       ],
+      secondary: false,
     },
-    { label: nav.sell, href: getLocalizedPath("sell", locale), children: [] },
-    { label: nav.valuation, href: getLocalizedPath("valuation", locale), children: [] },
-    { label: nav.about, href: getLocalizedPath("about", locale), children: [] },
-    { label: nav.blog, href: getLocalizedPath("blog", locale), children: [] },
-    { label: nav.contact, href: getLocalizedPath("contact", locale), children: [] },
+    { label: nav.sell, href: getLocalizedPath("sell", locale), children: [], secondary: false },
+    {
+      label: nav.valuation,
+      href: getLocalizedPath("valuation", locale),
+      children: [],
+      secondary: false,
+    },
+    { label: nav.about, href: getLocalizedPath("about", locale), children: [], secondary: true },
+    { label: nav.blog, href: getLocalizedPath("blog", locale), children: [], secondary: true },
+    {
+      label: nav.contact,
+      href: getLocalizedPath("contact", locale),
+      children: [],
+      secondary: true,
+    },
   ];
 }
 

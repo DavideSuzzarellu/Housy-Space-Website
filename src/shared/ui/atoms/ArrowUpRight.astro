@@ -1,0 +1,17 @@
+---
+/** North-east arrow that follows the text colour (CTA links and buttons). Decorative. */
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 12 12"
+  aria-hidden="true"
+  focusable="false"
+  class:list={["size-2.75 flex-none fill-none stroke-current stroke-[1.4]", className]}
+>
+  <path d="M2 10 10 2M3.5 2H10v6.5"></path>
+</svg>

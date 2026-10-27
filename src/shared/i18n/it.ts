@@ -56,6 +56,7 @@ const it = {
     callWithNumber: "Chiama · {phone}",
     whatsapp: "WhatsApp",
     consultation: "Consulenza privata",
+    letsTalk: "Parliamone",
     drawerIntro:
       "Raccontaci di cosa hai bisogno. Ti seguirà personalmente un consulente HousySpace.",
     whatsappMessage: "Buongiorno, vorrei ricevere informazioni.",

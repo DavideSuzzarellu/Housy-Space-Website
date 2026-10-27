@@ -5,9 +5,16 @@ import { getLocalizedPath, type Alternate } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import { getMainNavigation } from "@/shared/lib/navigation";
 import { SITE_HEADER_TRANSITION_NAME } from "@/shared/lib/transitionNames";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
 import Logo from "@/shared/ui/atoms/Logo.astro";
 import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
 
+/**
+ * Site header (UI proposal v3). A petrol bar with the negative logo; transparent over a full-bleed
+ * hero until the page scrolls (home). The horizontal menu shows whenever it fits beside the logo
+ * and actions, measured in three densities (`navFit.ts`); otherwise it moves behind the "Menu"
+ * button (drawer). Before the script measures (`data-nav="auto"`), CSS falls back to `xl`.
+ */
 interface Props {
   locale: Locale;
   alternates: readonly Alternate[];
@@ -19,6 +26,10 @@ const { locale, alternates, overlay = false } = Astro.props;
 const t = getDictionary(locale);
 const items = getMainNavigation(locale);
 const lastIndex = items.length - 1;
+
+/** Visible while the horizontal menu is shown (a density, or the `xl` fallback before measuring). */
+const SHOW_WITH_NAV =
+  "group-data-[nav=auto]/header:xl:block group-data-[nav=full]/header:block group-data-[nav=tight]/header:block group-data-[nav=xtight]/header:block";
 ---
 
 <!-- Own snapshot without cross-fade: the fixed header never flickers between pages (§3.3). -->
@@ -27,11 +38,12 @@ const lastIndex = items.length - 1;
   transition:animate="none"
   data-header
   data-overlay={overlay ? "true" : "false"}
-  data-theme={overlay ? "overlay" : "light"}
+  data-theme={overlay ? "overlay" : "solid"}
+  data-nav="auto"
   class:list={[
-    "group/header fixed inset-x-0 top-0 z-60 transition-[background-color,box-shadow,color] duration-400",
-    "bg-white/98 text-petrol-dark shadow-lg shadow-black/20 backdrop-blur-md",
-    "data-[theme=overlay]:bg-transparent data-[theme=overlay]:text-fg data-[theme=overlay]:shadow-none data-[theme=overlay]:backdrop-blur-none",
+    "group/header fixed inset-x-0 top-0 z-60 text-fg transition-[background-color,border-color] duration-400",
+    "border-b border-stone/16 bg-bg-dark-1",
+    "data-[theme=overlay]:border-transparent data-[theme=overlay]:bg-transparent",
     // Soft gradient keeps the negative logo legible over the video.
     "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+4.375rem)] before:bg-linear-to-b before:from-ink/65 before:via-ink/30 before:to-ink/0 before:opacity-0 before:transition-opacity data-[theme=overlay]:before:opacity-100",
   ]}
@@ -42,19 +54,15 @@ const lastIndex = items.length - 1;
       aria-label={t.a11y.homeLink}
       class="relative block flex-none"
     >
-      <Logo
-        alt=""
-        class="h-13.5 w-auto transition-opacity duration-450 group-data-[theme=overlay]/header:opacity-0 md:h-17"
-      />
-      <Logo
-        variant="negative"
-        alt=""
-        class="absolute inset-0 h-13.5 w-auto opacity-0 transition-opacity duration-450 group-data-[theme=overlay]/header:opacity-100 md:h-17"
-      />
+      <Logo variant="negative" alt="" class="h-13.5 w-auto md:h-17" />
     </a>
 
-    <nav aria-label={t.a11y.mainNavigation} class="ml-auto hidden flex-none 2xl:block">
-      <ul class="flex items-center gap-[clamp(1rem,1.5vw,1.625rem)] whitespace-nowrap">
+    <nav
+      data-main-nav
+      aria-label={t.a11y.mainNavigation}
+      class:list={["hidden min-w-0 flex-1", SHOW_WITH_NAV]}
+    >
+      <ul class="ml-auto flex w-max items-center gap-[clamp(1rem,1.5vw,1.625rem)] whitespace-nowrap group-data-[nav=tight]/header:gap-3.25 group-data-[nav=xtight]/header:gap-2.5">
         {items.map((item, index) => {
           const submenuId = `submenu-${index}`;
           return (
@@ -62,9 +70,13 @@ const lastIndex = items.length - 1;
               <a
                 href={item.href}
                 class:list={[
-                  "border-b border-transparent py-3 text-[0.6875rem] leading-none font-medium tracking-[0.08em] uppercase no-underline transition-colors",
-                  "hover:border-petrol hover:text-petrol focus-visible:text-petrol group-data-[theme=overlay]/header:hover:border-turquoise group-data-[theme=overlay]/header:hover:text-turquoise group-data-[theme=overlay]/header:focus-visible:text-turquoise",
-                  index === lastIndex && "border border-current px-4 py-2.75",
+                  "text-[0.6875rem] leading-none font-medium tracking-[0.1em] uppercase no-underline transition-colors",
+                  "group-data-[nav=tight]/header:tracking-[0.05em] group-data-[nav=xtight]/header:text-[0.65625rem] group-data-[nav=xtight]/header:tracking-[0.03em]",
+                  "hover:border-turquoise hover:text-turquoise focus-visible:text-turquoise",
+                  // The last entry (Contact) is outlined: it closes the inline menu like a button.
+                  index === lastIndex
+                    ? "border border-current px-4 py-2.75 group-data-[nav=xtight]/header:px-2.75 group-data-[nav=xtight]/header:py-2.5"
+                    : "border-b border-transparent py-3",
                 ]}
               >
                 {item.label}
@@ -77,7 +89,7 @@ const lastIndex = items.length - 1;
                     aria-expanded="false"
                     aria-controls={submenuId}
                     aria-label={formatMessage(t.a11y.openSubmenu, { label: item.label })}
-                    class="ml-0.5 grid h-8 w-6 cursor-pointer place-items-center text-current"
+                    class="ml-0.5 grid h-8 w-6 cursor-pointer place-items-center text-current group-data-[nav=xtight]/header:ml-px group-data-[nav=xtight]/header:w-4"
                   >
                     <span
                       aria-hidden="true"
@@ -88,7 +100,7 @@ const lastIndex = items.length - 1;
                     id={submenuId}
                     class="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 translate-y-2.5 pt-3.5 opacity-0 transition-[opacity,translate,visibility] duration-400 ease-brand group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100 group-data-[open=true]/item:visible group-data-[open=true]/item:translate-y-0 group-data-[open=true]/item:opacity-100"
                   >
-                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-turquoise/20 bg-bg-dark-1/95 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
+                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-turquoise/20 bg-bg-dark-1/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
                       {item.children.map((child, childIndex) => (
                         <li>
                           <a
@@ -112,40 +124,54 @@ const lastIndex = items.length - 1;
       </ul>
     </nav>
 
-    {alternates.length > 0 && (
-      <div class="ml-auto hidden sm:block 2xl:ml-2">
-        <LanguageSwitcher locale={locale} alternates={alternates} label={t.a11y.languageSwitcher} />
-      </div>
-    )}
+    <div class="ml-auto flex flex-none items-center gap-3 md:gap-4">
+      {alternates.length > 0 && (
+        <div class="hidden sm:block">
+          <LanguageSwitcher
+            locale={locale}
+            alternates={alternates}
+            label={t.a11y.languageSwitcher}
+          />
+        </div>
+      )}
 
-    <button
-      type="button"
-      data-menu-button
-      aria-expanded="false"
-      aria-controls="site-drawer"
-      class:list={[
-        "flex min-h-11.5 flex-none cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors",
-        "hover:border-petrol hover:text-petrol group-data-[theme=overlay]/header:hover:border-turquoise group-data-[theme=overlay]/header:hover:text-turquoise",
-        alternates.length === 0 && "ml-auto",
-        "max-sm:ml-auto",
-      ]}
-    >
-      <span>{t.a11y.openMenu}</span>
-      <span aria-hidden="true" class="h-2.5 w-4.5 border-y-[1.5px] border-current"></span>
-    </button>
+      <!-- Only beside the "Menu" button: the inline menu already ends in Contact. -->
+      <a
+        href={getLocalizedPath("contact", locale)}
+        class="hidden min-h-11.5 items-center gap-3 border border-fg bg-fg px-5 text-xs leading-none font-medium tracking-[0.14em] text-ink uppercase no-underline transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-turquoise hover:bg-turquoise focus-visible:border-turquoise focus-visible:bg-turquoise min-[35rem]:inline-flex"
+      >
+        {t.contact.letsTalk}
+        <ArrowUpRight />
+      </a>
+
+      <button
+        type="button"
+        data-menu-button
+        aria-expanded="false"
+        aria-controls="site-drawer"
+        class="flex min-h-11.5 cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-turquoise hover:text-turquoise"
+      >
+        <span>{t.a11y.openMenu}</span>
+        <span aria-hidden="true" class="h-2.5 w-4.5 border-y-[1.5px] border-current"></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <script>
+  import { chooseNavMode, type NavDensity } from "./navFit";
+
   const SCROLLED_PX = 24;
   let frame = 0;
-  let scrollBound = false;
+  let documentBound = false;
+
+  const currentHeader = (): HTMLElement | null =>
+    document.querySelector<HTMLElement>("[data-header]");
 
   function syncScrollState(): void {
-    frame = 0;
-    const header = document.querySelector<HTMLElement>("[data-header]");
+    const header = currentHeader();
     if (header?.dataset["overlay"] === "true") {
-      header.dataset["theme"] = window.scrollY > SCROLLED_PX ? "light" : "overlay";
+      header.dataset["theme"] = window.scrollY > SCROLLED_PX ? "solid" : "overlay";
     }
     const bar = document.querySelector<HTMLElement>("[data-quick-actions]");
     if (bar !== null) {
@@ -165,6 +191,45 @@ const lastIndex = items.length - 1;
     }
   }
 
+  /**
+   * Measures the menu in each density against the space the header leaves it (the nav is
+   * `flex-1`, so its width does not depend on its content) and keeps the roomiest that fits.
+   */
+  function fitNav(): void {
+    const header = currentHeader();
+    const nav = header?.querySelector<HTMLElement>("[data-main-nav]");
+    const list = nav?.querySelector<HTMLElement>(":scope > ul");
+    if (header === null || header === undefined || nav === null || nav === undefined) return;
+    if (list === null || list === undefined) return;
+    const previous = header.dataset["nav"];
+    const widthIn = (density: NavDensity): number => {
+      header.dataset["nav"] = density;
+      return list.offsetWidth;
+    };
+    header.dataset["nav"] = "full";
+    const available = nav.clientWidth;
+    const mode = chooseNavMode(available, {
+      full: widthIn("full"),
+      tight: widthIn("tight"),
+      xtight: widthIn("xtight"),
+    });
+    header.dataset["nav"] = mode;
+    if (mode !== previous) {
+      closeSubmenus();
+      // The drawer only belongs to the compact header.
+      if (mode !== "compact") document.dispatchEvent(new CustomEvent("site:nav-inline"));
+    }
+  }
+
+  function schedule(): void {
+    if (frame !== 0) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      syncScrollState();
+      fitNav();
+    });
+  }
+
   document.addEventListener("astro:page-load", () => {
     for (const toggle of document.querySelectorAll<HTMLButtonElement>("[data-submenu-toggle]")) {
       toggle.addEventListener("click", () => {
@@ -176,13 +241,12 @@ const lastIndex = items.length - 1;
         toggle.setAttribute("aria-expanded", String(open));
       });
     }
-    if (!scrollBound) {
-      scrollBound = true;
-      const schedule = () => {
-        if (frame === 0) frame = requestAnimationFrame(syncScrollState);
-      };
+    if (!documentBound) {
+      documentBound = true;
       window.addEventListener("scroll", schedule, { passive: true });
       window.addEventListener("resize", schedule, { passive: true });
+      // Web fonts change the menu width: measure again once they are in.
+      void document.fonts.ready.then(fitNav);
       document.addEventListener("keydown", (event) => {
         if (event.key !== "Escape") return;
         const open = document.querySelector<HTMLElement>("[data-nav-item][data-open='true']");
@@ -196,5 +260,6 @@ const lastIndex = items.length - 1;
       });
     }
     syncScrollState();
+    fitNav();
   });
 </script>

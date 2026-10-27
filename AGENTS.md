@@ -348,9 +348,10 @@ No other color combinations for the logo.
 
 ### 11.1 UI proposal (visual reference)
 
-- Source: https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8 (approved prototype; its listings, photos, reviews, and copy are placeholders — never reuse them as real content).
+- Source (current, **v3**): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk — the site is being restyled to it in phases (ROADMAP). Its demo listings, photos and placeholder copy are never real content.
+- Previous reference (v1, superseded as each phase lands): https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8.
 - Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
-- **Look:** dark-first editorial design on petrol dark, warm off-white text, Cormorant Garamond headings + Montserrat body, numbered sections (01–07), large imagery.
+- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark petrol blocks (header bar, valuation, reviews, footer, text over photos), Cormorant Garamond headings + Montserrat body, large imagery. (v1 was dark-first: pages not yet migrated still are.)
 - **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):
 
 | Token | HEX | Use |
@@ -365,9 +366,10 @@ No other color combinations for the logo.
 | `teal` | `#08777B` | Intermediate accent |
 | `stone` | `#EBE5DC` | Light warm sections |
 | `taupe` | `#A99F92` | Warm muted detail |
+| `paper` | `#FCFBF8` | v3 light background (menu drawer; light sections as they migrate) |
 
 - **Motion:** shared easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade/translate) on section content and line-by-line reveal on the hero heading, via ONE IntersectionObserver utility initialized on `astro:page-load`; slow image zoom on hover (≈1.2–1.6s); UI micro-transitions 250–350ms. All disabled under `prefers-reduced-motion`.
-- **Header:** logo, main menu with dropdowns, phone/WhatsApp/consultation CTAs, mobile drawer, skip-to-content link.
+- **Header (v3):** petrol bar with the negative logo (transparent over the home hero until scroll), main menu with dropdowns, language switcher, skip-to-content link. The menu stays **inline whenever it fits** (measured in three densities, `shared/ui/organisms/navFit.ts`, never by a fixed breakpoint, never clipped); only when it does not fit does it move behind the "Menu" button (light drawer from the right), shown together with the "Let's talk" CTA.
 - **Home sections:** 01 Hero (video + poster) · 02 Services (6 cards) · 03 Featured properties (Mobilia `portadaWeb`) · 04 Valuation explainer · 05 Google reviews · 06 Living in Barcelona (10 districts) · 07 Blog · Contact block · Footer (company data + AICAT).
 - **Scope:** EVERYTHING in the proposal is in scope (confirmed). See section 6 for the full feature list.
 

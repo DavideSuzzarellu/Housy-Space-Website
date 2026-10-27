@@ -31,6 +31,9 @@
   --color-stone: #ebe5dc;
   --color-taupe: #a99f92;
 
+  /* UI proposal v3 (light surfaces): warm paper background (menu drawer). */
+  --color-paper: #fcfbf8;
+
   /* Neutrals declared explicitly (logo backgrounds, overlays). */
   --color-white: #ffffff;
   --color-black: #000000;
