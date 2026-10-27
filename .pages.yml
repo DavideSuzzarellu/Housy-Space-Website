@@ -1,0 +1,199 @@
+# Pages CMS (https://pagescms.org): the client edits the site's editorial content here.
+# Listings come from Mobilia and are NOT edited here. Every field below is validated by the
+# Zod schemas in src/features/*/infrastructure (a field the site does not know fails the build).
+#
+# Media:
+# - Images go to src/assets so Astro optimizes them. Their path is written RELATIVE to the
+#   content file, which is why every CMS content file lives two folders below src/
+#   (src/content/<collection>/<file>.json): keep that depth for new collections.
+# - Videos go to public/media and are served as they are (compress before uploading).
+media:
+  - name: images
+    label: Imágenes
+    input: src/assets
+    output: ../../assets
+    categories: [image]
+    rename: safe
+  - name: videos
+    label: Vídeos
+    input: public/media
+    output: /media
+    categories: [video]
+    rename: safe
+
+content:
+  - name: home-es
+    label: Inicio (ES)
+    type: file
+    path: src/content/home/es.json
+    format: json
+    fields: &home_fields
+      - name: hero
+        label: Portada (vídeo)
+        type: object
+        fields:
+          - {
+              name: videoLandscape,
+              label: Vídeo horizontal (ordenador),
+              type: file,
+              required: true,
+              options: { media: videos },
+            }
+          - {
+              name: videoPortrait,
+              label: Vídeo vertical (móvil),
+              type: file,
+              required: true,
+              options: { media: videos },
+            }
+          - {
+              name: posterLandscape,
+              label: Imagen de respaldo horizontal,
+              type: image,
+              required: true,
+              options: { media: images },
+            }
+          - {
+              name: posterPortrait,
+              label: Imagen de respaldo vertical,
+              type: image,
+              required: true,
+              options: { media: images },
+            }
+      - name: presentation
+        label: Presentación
+        type: object
+        fields:
+          - { name: eyebrow, label: Antetítulo, type: string, required: true }
+          - { name: headingFirst, label: Titular · primera línea, type: string, required: true }
+          - { name: headingSecond, label: Titular · segunda línea, type: string, required: true }
+          - { name: text, label: Texto, type: text, required: true }
+          - { name: linkLabel, label: Enlace a Nosotros, type: string, required: true }
+      - name: featured
+        label: Inmuebles destacados
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte en cursiva.",
+            }
+          - { name: ctaLabel, label: Botón al catálogo, type: string, required: true }
+      - name: valuation
+        label: Valoración
+        type: object
+        fields:
+          - {
+              name: image,
+              label: Fotografía,
+              type: image,
+              required: true,
+              options: { media: images },
+            }
+          - {
+              name: imageAlt,
+              label: Descripción de la fotografía (accesibilidad),
+              type: string,
+              required: true,
+            }
+          - { name: cardTag, label: Tarjeta · etiqueta, type: string, required: true }
+          - { name: cardTitle, label: Tarjeta · título, type: string, required: true }
+          - { name: cardText, label: Tarjeta · texto, type: text, required: true }
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte en cursiva.",
+            }
+          - { name: lead, label: Entradilla, type: text, required: true }
+          - { name: step1, label: Paso 1, type: string, required: true }
+          - { name: step2, label: Paso 2, type: string, required: true }
+          - { name: step3, label: Paso 3, type: string, required: true }
+          - { name: ctaLabel, label: Botón al valorador, type: string, required: true }
+      - name: services
+        label: Servicios
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte en cursiva.",
+            }
+      - name: collaborators
+        label: Colaboradores
+        type: object
+        fields:
+          - { name: text, label: Texto, type: string, required: true }
+          - { name: names, label: Colaboradores, type: string, list: true, required: true }
+          - { name: ctaLabel, label: Botón a Nosotros, type: string, required: true }
+      - name: philosophy
+        label: Filosofía
+        type: object
+        fields:
+          - { name: quoteFirst, label: Cita · primera línea, type: string, required: true }
+          - { name: quoteSecond, label: Cita · segunda línea, type: string, required: true }
+          - { name: subLead, label: Subtítulo · primera parte, type: string, required: true }
+          - { name: sub, label: Subtítulo · segunda parte, type: string, required: true }
+          - { name: primaryCta, label: Botón principal, type: string, required: true }
+          - { name: secondaryCta, label: Botón secundario, type: string, required: true }
+      - name: reviews
+        label: Reseñas
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte en cursiva.",
+            }
+          - { name: lead, label: Entradilla, type: text, required: true }
+          - { name: ctaLabel, label: Botón a Google, type: string, required: true }
+      - name: districts
+        label: Distritos
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte en cursiva.",
+            }
+          - { name: lead, label: Entradilla, type: text, required: true }
+          - { name: ctaLabel, label: Botón al mapa, type: string, required: true }
+      - name: blog
+        label: Blog
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte en cursiva.",
+            }
+          - { name: ctaLabel, label: Botón al blog, type: string, required: true }
+  - name: home-en
+    label: Inicio (EN)
+    type: file
+    path: src/content/home/en.json
+    format: json
+    fields: *home_fields
+  - name: home-it
+    label: Inicio (IT)
+    type: file
+    path: src/content/home/it.json
+    format: json
+    fields: *home_fields
+  - name: home-ca
+    label: Inicio (CA)
+    type: file
+    path: src/content/home/ca.json
+    format: json
+    fields: *home_fields

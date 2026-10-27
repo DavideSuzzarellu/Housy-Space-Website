@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "videoLandscape": "/media/hero/hero-1280.mp4",
+    "videoPortrait": "/media/hero/hero-720v.mp4",
+    "posterLandscape": "../../assets/home/hero-poster.jpg",
+    "posterPortrait": "../../assets/home/hero-poster-v.jpg"
+  },
+  "presentation": {
+    "eyebrow": "HousySpace · Property Solutions",
+    "headingFirst": "Cada rincón tiene una historia.",
+    "headingSecond": "Cada persona, un nuevo comienzo.",
+    "text": "Somos HousySpace, una consultoría inmobiliaria boutique en Barcelona. Llevamos 9 años ayudando a nuestros clientes a comprar, vender y tomar decisiones inmobiliarias con criterio, cercanía y un asesoramiento totalmente personalizado.",
+    "linkLabel": "Conócenos"
+  },
+  "featured": {
+    "heading": "Tres inmuebles que *representan lo que hacemos*.",
+    "ctaLabel": "Ver más inmuebles"
+  },
+  "valuation": {
+    "image": "../../assets/home/det-balcon-1400.jpg",
+    "imageAlt": "Fachada con balcones de una finca",
+    "cardTag": "Informe de valoración",
+    "cardTitle": "Al momento.",
+    "cardText": "Introduce los datos de tu vivienda en nuestro valorador y recibe tu informe de valoración en ese mismo instante.",
+    "heading": "La próxima propiedad *podría ser la tuya*.",
+    "lead": "Descubre el valor real de tu vivienda con un análisis inmobiliario profesional, basado en el mercado y las características de tu propiedad.",
+    "step1": "Introduce los datos de tu vivienda en nuestro valorador",
+    "step2": "Recibe al momento tu informe de valoración",
+    "step3": "Si lo deseas, un asesor de HousySpace lo revisa contigo y te orienta sobre la mejor estrategia",
+    "ctaLabel": "Solicitar valoración de mi vivienda"
+  },
+  "services": {
+    "heading": "Un servicio integral para *cada momento de tu vivienda*."
+  },
+  "collaborators": {
+    "text": "Nos rodeamos de los mejores para ofrecerte mucho más.",
+    "names": ["ADV Advocats", "Maria Guimerà Arquitectura", "Asesoría Edac"],
+    "ctaLabel": "Conoce a nuestros colaboradores"
+  },
+  "philosophy": {
+    "quoteFirst": "No te preocupes,",
+    "quoteSecond": "yo me encargo.",
+    "subLead": "No es solo una frase.",
+    "sub": "Es nuestra forma de trabajar.",
+    "primaryCta": "Descubre nuestra filosofía",
+    "secondaryCta": "Testimonios de clientes"
+  },
+  "reviews": {
+    "heading": "Lo que dicen *de HousySpace*.",
+    "lead": "Opiniones reales de nuestros clientes en Google. Se actualizan solas cada vez que alguien nos deja una reseña.",
+    "ctaLabel": "Ver reseñas en Google"
+  },
+  "districts": {
+    "heading": "Descubre la ciudad, *distrito a distrito*.",
+    "lead": "Los 10 distritos y 73 barrios de la ciudad, vistos desde lo residencial, lo arquitectónico y lo inmobiliario. Elige uno en el mapa para abrir su ficha.",
+    "ctaLabel": "Explorar el mapa interactivo"
+  },
+  "blog": {
+    "heading": "Barrios, arquitectura *y mercado*.",
+    "ctaLabel": "Ver todos los artículos"
+  }
+}
