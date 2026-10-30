@@ -26,7 +26,7 @@ const year = new Date().getFullYear();
 // Confirmed company data only (AGENTS.md §1, §7). Phone is TODO(I4) in contact.ts.
 ---
 
-<footer class="bg-linear-to-b from-bg-deep/0 via-bg-deep/75 to-bg-deep pt-20 pb-10 text-[0.8125rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
+<footer class="surface-dark bg-canvas pt-[clamp(3rem,5vw,4rem)] pb-10 text-[0.8125rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
   <Container>
     <section
       aria-labelledby="contact-block-heading"
@@ -34,10 +34,12 @@ const year = new Date().getFullYear();
       class="mb-9.5 flex flex-wrap items-center justify-between gap-x-10 gap-y-5 border-b border-line pb-8.5"
     >
       <div>
-        <h2 id="contact-block-heading" class="mb-1 text-[clamp(1.75rem,3.4vw,2.5rem)] text-fg">
+        <h2
+          id="contact-block-heading"
+          class="text-[clamp(2.875rem,7.2vw,6.5rem)] leading-[0.95] text-fg"
+        >
           {t.footer.ctaHeading}
         </h2>
-        <p class="text-sm text-muted">{t.footer.ctaText}</p>
       </div>
       <ContactActions locale={locale} variant="footer" />
     </section>
@@ -66,25 +68,20 @@ const year = new Date().getFullYear();
               <address class="not-italic">
                 {company.address.street}
                 <br />
-                {company.address.postalCode}
-                {company.address.city}
+                {company.address.postalCode} {company.address.city}
               </address>
             </dd>
           </div>
-          <div class="flex gap-1">
-            <dt>{t.footer.aicatLabel}</dt>
-            <dd>{company.aicatNumber}</dd>
-          </div>
         </dl>
         <p class="mt-3 grid gap-1">
-          <a href={telHref(CONTACT_PHONE)} class="hover:text-turquoise">
+          <a href={telHref(CONTACT_PHONE)} class="hover:text-accent">
             {phoneDisplay(CONTACT_PHONE)}
           </a>
           <a
             href={whatsappHref(CONTACT_PHONE, t.contact.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-turquoise"
+            class="hover:text-accent"
           >
             {t.contact.whatsapp}
             <span class="sr-only"> {t.a11y.opensInNewTab}</span>
@@ -100,7 +97,7 @@ const year = new Date().getFullYear();
           <ul class="grid gap-1.5">
             {column.links.map((link) => (
               <li>
-                <a href={link.href} class="no-underline hover:text-turquoise">
+                <a href={link.href} class="no-underline hover:text-accent">
                   {link.label}
                 </a>
               </li>
@@ -110,7 +107,12 @@ const year = new Date().getFullYear();
       ))}
     </div>
 
-    <div class="mt-8.5 grid gap-1 border-t border-line pt-5 text-xs">
+    <dl class="mt-8.5 border-t border-line pt-6.5">
+      <dt class="text-[0.6875rem] font-medium tracking-[0.14em] text-fg">{t.footer.aicatLabel}</dt>
+      <dd class="mt-1 text-fg">{company.aicatNumber}</dd>
+    </dl>
+
+    <div class="mt-6.5 grid gap-1 border-t border-line pt-5 text-xs">
       <p>
         © {year} {company.brandName}. {t.footer.rights}
       </p>

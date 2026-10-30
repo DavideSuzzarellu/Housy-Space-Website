@@ -1,7 +1,7 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
 
-/** Eyebrow + editorial h2 with the growing turquoise accent rule. */
+/** Eyebrow + editorial h2. */
 interface Props {
   id: string;
   number: string;
@@ -23,8 +23,8 @@ const {
 } = Astro.props;
 
 const SIZES = {
-  md: "text-[clamp(2rem,5.4vw,3.375rem)]",
-  lg: "text-[clamp(2.25rem,5.8vw,4.625rem)] leading-[1.04]",
+  md: "text-[clamp(1.5rem,3.6vw,2.5rem)]",
+  lg: "text-[clamp(1.75rem,4.2vw,3.5rem)] leading-[1.04]",
 } as const;
 ---
 
@@ -32,10 +32,5 @@ const SIZES = {
   <Eyebrow number={number} tag={tag} tone={eyebrowTone} />
   <h2 id={id} data-reveal class:list={["mt-3", SIZES[size]]}>
     {heading}
-    <span
-      aria-hidden="true"
-      data-accent
-      class="mt-4 block h-0.5 w-16 origin-left bg-turquoise"
-    ></span>
   </h2>
 </div>

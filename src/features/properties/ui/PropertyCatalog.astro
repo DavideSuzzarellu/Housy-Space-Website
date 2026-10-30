@@ -58,7 +58,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
       type="button"
       data-catalog-clear-area
       hidden
-      class="min-h-11 border border-turquoise-deep px-4 text-xs tracking-[0.12em] uppercase transition-colors hover:border-turquoise hover:text-turquoise"
+      class="min-h-11 border border-turquoise-deep px-4 text-xs tracking-[0.12em] uppercase transition-colors hover:border-accent hover:text-accent"
     >
       {t.areaChip} <span aria-hidden="true">✕</span>
     </button>
@@ -79,7 +79,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
           type="button"
           data-catalog-view={view}
           aria-pressed={view === "list" ? "true" : "false"}
-          class="min-h-11 px-4 text-xs tracking-[0.12em] text-muted uppercase transition-colors hover:text-fg aria-pressed:bg-fg aria-pressed:text-ink"
+          class="min-h-11 px-4 text-xs tracking-[0.12em] text-muted uppercase transition-colors hover:text-fg aria-pressed:bg-fg aria-pressed:text-canvas"
         >
           {t.views[view]}
         </button>
@@ -116,7 +116,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
         <button
           type="button"
           data-catalog-clear
-          class="min-h-11 border border-line px-5 text-xs tracking-[0.12em] uppercase transition-colors hover:border-turquoise hover:text-turquoise"
+          class="min-h-11 border border-line px-5 text-xs tracking-[0.12em] uppercase transition-colors hover:border-accent hover:text-accent"
         >
           {t.clear}
         </button>
@@ -139,7 +139,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
           type="button"
           data-catalog-search-area
           hidden
-          class="absolute top-3 left-1/2 z-10 min-h-11 -translate-x-1/2 bg-fg px-5 text-xs font-medium tracking-[0.12em] text-ink uppercase shadow-lg transition-colors hover:bg-turquoise"
+          class="absolute top-3 left-1/2 z-10 min-h-11 -translate-x-1/2 bg-fg px-5 text-xs font-medium tracking-[0.12em] text-canvas uppercase shadow-lg transition-colors hover:bg-turquoise"
         >
           {t.searchArea}
         </button>

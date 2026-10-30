@@ -37,7 +37,7 @@ const items = getMainNavigation(locale);
     data-drawer-backdrop
     class="absolute inset-0 bg-ink/40 opacity-0 transition-opacity duration-500 group-data-[open=true]/drawer:opacity-100"
   ></div>
-  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain bg-paper px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-petrol-dark shadow-2xl shadow-ink/25 transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
+  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain bg-canvas px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-petrol-dark shadow-2xl shadow-ink/25 transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
     <div class="flex min-h-15 items-center justify-between gap-4 border-b border-petrol-dark/10 pb-3">
       <a href={getLocalizedPath("home", locale)} aria-label={t.a11y.homeLink}>
         <Logo alt="" class="h-10 w-auto" />

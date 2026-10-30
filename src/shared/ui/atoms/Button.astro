@@ -1,7 +1,7 @@
 ---
 /**
  * Link styled as a button (all CTAs navigate). Turquoise fill sweeps in on hover/focus.
- * Only for dark backgrounds (turquoise/fg on dark, AGENTS.md §8).
+ * Follows the surface roles: dark ink on light sections, light on `.surface-dark` (§8).
  */
 interface Props {
   href: string;
@@ -27,7 +27,7 @@ const {
 
 const VARIANTS = {
   outline: "border-current text-inherit",
-  solid: "border-fg bg-fg text-ink",
+  solid: "border-fg bg-fg text-canvas",
 } as const;
 
 const SIZES = {

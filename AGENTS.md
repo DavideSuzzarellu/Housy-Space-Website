@@ -353,22 +353,23 @@ No other color combinations for the logo.
 - Source (current, **v3**): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk — the site is being restyled to it in phases (ROADMAP). Its demo listings, photos and placeholder copy are never real content.
 - Previous reference (v1, superseded as each phase lands): https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8.
 - Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
-- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark petrol blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery. (v1 was dark-first: pages not yet migrated still are.)
+- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark `#162B2A` blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery.
 - **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):
 
 | Token | HEX | Use |
 |-------|-----|-----|
-| `bg-deep` | `#102124` | Deepest background |
-| `bg-soft` | `#182E31` | Alternate sections |
-| `card` | `#1B3336` | Cards on dark |
-| `line` | `#2F494C` | Borders/dividers on dark |
-| `fg` | `#F7F5F1` | Main text on dark |
-| `muted` | `#B4BFBE` | Secondary text on dark |
-| `ink` | `#0B1214` | Text on light |
+| `canvas` | `#FCFBF8` | Page background (role) |
+| `bg-deep` / `bg-soft` | `#EDEAE3` / `#F3F1EB` | Placeholders, alternate fills (role) |
+| `card` / `card-hover` | `#F3F1EB` / `#ECE8DF` | Cards (role) |
+| `line` | `rgb(23 43 43 / .12)` | Borders/dividers (role) |
+| `fg` / `muted` | `#172B2B` / `#67716F` | Main / secondary text (role) |
+| `accent` | `#08777B` | Accent text and links (role) |
+| `ink` | `#0B1214` | Fixed dark ink (overlays, text on turquoise) |
 | `teal` | `#08777B` | Intermediate accent |
 | `stone` | `#EBE5DC` | Light warm sections |
 | `taupe` | `#A99F92` | Warm muted detail |
-| `paper` | `#FCFBF8` | v3 light background (menu drawer; light sections as they migrate) |
+
+Role tokens are redefined by `.surface-dark` (canvas `#162B2A`, fg `#F7F5F1`, muted `#B4BFBE`, accent `#21CEC5`) and `.surface-stone` (canvas `#EBE5DC`, darker muted and accent for AA). Components use the roles and never branch on the theme.
 
 - **Motion:** shared easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade/translate) on section content and line-by-line reveal on the hero heading, via ONE IntersectionObserver utility initialized on `astro:page-load`; slow image zoom on hover (≈1.2–1.6s); UI micro-transitions 250–350ms. All disabled under `prefers-reduced-motion`.
 - **Header (v3):** petrol bar with the negative logo (transparent over the home hero until scroll), main menu with dropdowns, language switcher, skip-to-content link. The menu stays **inline whenever it fits** (measured in three densities, `shared/ui/organisms/navFit.ts`, never by a fixed breakpoint, never clipped); only when it does not fit does it move behind the "Menu" button (light drawer from the right), shown together with the "Let's talk" CTA.

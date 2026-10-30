@@ -19,20 +19,23 @@
   --color-bg-dark-2: #22363a;
   --color-bg-dark-3: #2a4044;
 
-  /* §11.1 UI proposal tokens */
-  --color-bg-deep: #102124;
-  --color-bg-soft: #182e31;
-  --color-card: #1b3336;
-  --color-line: #2f494c;
-  --color-fg: #f7f5f1;
-  --color-muted: #b4bfbe;
+  /*
+   * §11.1 role tokens, light by default. `.surface-dark` and `.surface-stone` redefine them for a
+   * block and everything inside it, so components never branch on the theme.
+   */
+  --color-canvas: #fcfbf8;
+  --color-bg-deep: #edeae3;
+  --color-bg-soft: #f3f1eb;
+  --color-card: #f3f1eb;
+  --color-card-hover: #ece8df;
+  --color-line: rgb(23 43 43 / 0.12);
+  --color-fg: #172b2b;
+  --color-muted: #67716f;
+  --color-accent: #08777b;
   --color-ink: #0b1214;
   --color-teal: #08777b;
   --color-stone: #ebe5dc;
   --color-taupe: #a99f92;
-
-  /* UI proposal v3 (light surfaces): warm paper background (menu drawer). */
-  --color-paper: #fcfbf8;
 
   /* Neutrals declared explicitly (logo backgrounds, overlays). */
   --color-white: #ffffff;
@@ -49,11 +52,11 @@
 
 @layer base {
   html {
-    @apply scroll-pt-28 bg-bg-deep font-sans tracking-[0.02em] text-fg uppercase antialiased;
+    @apply scroll-pt-28 bg-canvas font-sans tracking-[0.02em] text-fg uppercase antialiased;
   }
 
   body {
-    @apply bg-linear-165 from-bg-deep via-petrol-dark to-bg-soft bg-fixed text-base/[1.7];
+    @apply bg-canvas text-base/[1.7];
   }
 
   /* Proposal v3: Montserrat only, all caps, no italics. Weight carries the emphasis. */
@@ -90,7 +93,7 @@
   }
 
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-turquoise;
+    @apply outline-2 outline-offset-2 outline-accent;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -103,6 +106,32 @@
       scroll-behavior: auto !important;
     }
   }
+}
+
+/* Header bar, footer, text over photos: only the roles change, as in proposal v3. */
+.surface-dark {
+  --color-canvas: #162b2a;
+  --color-bg-deep: #102221;
+  --color-bg-soft: #1b3331;
+  --color-card: #1d3533;
+  --color-card-hover: #23403d;
+  --color-line: rgb(169 190 188 / 0.28);
+  --color-fg: #f7f5f1;
+  --color-muted: #b4bfbe;
+  --color-accent: #21cec5;
+  color: var(--color-fg);
+  color-scheme: dark;
+}
+
+/* Alternate light sections. Muted and accent are darker: the light values fail AA on stone (§8). */
+.surface-stone {
+  --color-canvas: #ebe5dc;
+  --color-bg-soft: #fcfbf8;
+  --color-card: #fcfbf8;
+  --color-card-hover: #fffefb;
+  --color-line: rgb(23 43 43 / 0.14);
+  --color-muted: #525c5a;
+  --color-accent: #0f5a5e;
 }
 
 /*

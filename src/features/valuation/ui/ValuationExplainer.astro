@@ -62,7 +62,7 @@ const steps = [copy.steps.first, copy.steps.second, copy.steps.third];
       <ol data-reveal class="mt-7 mb-8.5 grid max-w-140 border-t border-fg/20">
         {steps.map((step, index) => (
           <li class="flex items-baseline gap-4.5 border-b border-fg/20 py-3.75 text-base text-fg/95">
-            <b aria-hidden="true" class="min-w-7.5 text-[1.375rem] font-normal text-turquoise">
+            <b aria-hidden="true" class="min-w-7.5 text-[1.375rem] font-normal text-accent">
               {String(index + 1).padStart(2, "0")}
             </b>
             <span>{step}</span>

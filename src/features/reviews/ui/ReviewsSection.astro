@@ -41,7 +41,7 @@ const stars = (rating: number) => "â˜…".repeat(Math.round(rating)).padEnd(5, "â˜
     <ul class="grid gap-5.5 md:grid-cols-3">
       {summary.reviews.map((review) => (
         <li class="flex min-h-52.5 flex-col gap-3 bg-card px-6.5 pt-6.5 pb-5.5">
-          <p class="text-turquoise" aria-label={`${review.rating} / 5`}>
+          <p class="text-accent" aria-label={`${review.rating} / 5`}>
             <span aria-hidden="true">{stars(review.rating)}</span>
           </p>
           <p class="text-[0.9375rem] text-fg/90">{review.text}</p>

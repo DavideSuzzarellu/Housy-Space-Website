@@ -109,7 +109,7 @@ const metaLine = presentMetaLine(property, operation, locale);
     <div class="grid gap-9 lg:grid-cols-[minmax(0,1fr)_21.25rem] lg:items-start">
       <div>
         {location !== undefined && (
-          <p class="text-[0.6875rem] tracking-[0.14em] text-turquoise uppercase">{location}</p>
+          <p class="text-[0.6875rem] tracking-[0.14em] text-accent uppercase">{location}</p>
         )}
         <h1
           class="mt-2 mb-2.5 text-[clamp(2.125rem,5vw,3.5rem)]"
@@ -146,7 +146,7 @@ const metaLine = presentMetaLine(property, operation, locale);
 
         {property.features.length > 0 && (
           <DetailBlock id="detail-features" heading={d.featuresHeading}>
-            <ul class="grid list-disc gap-x-8 gap-y-1.5 pl-4.5 text-muted marker:text-turquoise sm:grid-cols-2">
+            <ul class="grid list-disc gap-x-8 gap-y-1.5 pl-4.5 text-muted marker:text-accent sm:grid-cols-2">
               {property.features.map((feature) => (
                 <li>{t.featureNames[feature]}</li>
               ))}

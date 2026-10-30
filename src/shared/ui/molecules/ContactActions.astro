@@ -83,13 +83,13 @@ const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
     </a>
     <a
       href={consultation.href}
-      class={`${TILE} col-span-2 border border-petrol-dark bg-petrol-dark text-fg hover:border-turquoise hover:bg-turquoise hover:text-ink focus-visible:border-turquoise focus-visible:bg-turquoise focus-visible:text-ink`}
+      class={`${TILE} col-span-2 surface-dark border border-petrol-dark bg-petrol-dark hover:border-accent hover:bg-turquoise hover:text-ink focus-visible:border-accent focus-visible:bg-turquoise focus-visible:text-ink`}
     >
       {consultation.label}
     </a>
   </div>
 ) : (
-  <div class:list={["grid grid-cols-[1fr_1fr_1.5fr] gap-px bg-line", className]}>
+  <div class:list={["surface-dark grid grid-cols-[1fr_1fr_1.5fr] gap-px bg-line", className]}>
     <a href={call.href} class={BAR_LINK}>
       {contact.call}
     </a>

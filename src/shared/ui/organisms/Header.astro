@@ -41,6 +41,7 @@ const SHOW_WITH_NAV =
   data-theme={overlay ? "overlay" : "solid"}
   data-nav="auto"
   class:list={[
+    "surface-dark",
     "group/header fixed inset-x-0 top-0 z-60 text-fg transition-[background-color,border-color] duration-400",
     "border-b border-stone/16 bg-bg-dark-1",
     "data-[theme=overlay]:border-transparent data-[theme=overlay]:bg-transparent",
@@ -72,7 +73,7 @@ const SHOW_WITH_NAV =
                 class:list={[
                   "text-[0.6875rem] leading-none font-medium tracking-[0.1em] uppercase no-underline transition-colors",
                   "group-data-[nav=tight]/header:tracking-[0.05em] group-data-[nav=xtight]/header:text-[0.65625rem] group-data-[nav=xtight]/header:tracking-[0.03em]",
-                  "hover:border-turquoise hover:text-turquoise focus-visible:text-turquoise",
+                  "hover:border-accent hover:text-accent focus-visible:text-accent",
                   // The last entry (Contact) is outlined: it closes the inline menu like a button.
                   index === lastIndex
                     ? "border border-current px-4 py-2.75 group-data-[nav=xtight]/header:px-2.75 group-data-[nav=xtight]/header:py-2.5"
@@ -100,13 +101,13 @@ const SHOW_WITH_NAV =
                     id={submenuId}
                     class="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 translate-y-2.5 pt-3.5 opacity-0 transition-[opacity,translate,visibility] duration-400 ease-brand group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100 group-data-[open=true]/item:visible group-data-[open=true]/item:translate-y-0 group-data-[open=true]/item:opacity-100"
                   >
-                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-turquoise/20 bg-bg-dark-1/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
+                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-accent/20 bg-bg-dark-1/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
                       {item.children.map((child, childIndex) => (
                         <li>
                           <a
                             href={child.href}
                             class:list={[
-                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/7 hover:pl-7 hover:text-turquoise focus-visible:text-turquoise",
+                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/7 hover:pl-7 hover:text-accent focus-visible:text-accent",
                               childIndex === 0 && "font-medium text-white",
                             ]}
                           >
@@ -138,7 +139,7 @@ const SHOW_WITH_NAV =
       <!-- Only beside the "Menu" button: the inline menu already ends in Contact. -->
       <a
         href={getLocalizedPath("contact", locale)}
-        class="hidden min-h-11.5 items-center gap-3 border border-fg bg-fg px-5 text-xs leading-none font-medium tracking-[0.14em] text-ink uppercase no-underline transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-turquoise hover:bg-turquoise focus-visible:border-turquoise focus-visible:bg-turquoise min-[35rem]:inline-flex"
+        class="hidden min-h-11.5 items-center gap-3 border border-fg bg-fg px-5 text-xs leading-none font-medium tracking-[0.14em] text-ink uppercase no-underline transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-accent hover:bg-turquoise focus-visible:border-accent focus-visible:bg-turquoise min-[35rem]:inline-flex"
       >
         {t.contact.letsTalk}
         <ArrowUpRight />
@@ -149,7 +150,7 @@ const SHOW_WITH_NAV =
         data-menu-button
         aria-expanded="false"
         aria-controls="site-drawer"
-        class="flex min-h-11.5 cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-turquoise hover:text-turquoise"
+        class="flex min-h-11.5 cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-accent hover:text-accent"
       >
         <span>{t.a11y.openMenu}</span>
         <span aria-hidden="true" class="h-2.5 w-4.5 border-y-[1.5px] border-current"></span>

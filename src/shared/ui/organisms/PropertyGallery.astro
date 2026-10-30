@@ -47,7 +47,7 @@ const [hero, ...rest] = photos;
 const thumbs = rest.slice(0, 2);
 const openLabel = (index: number) => formatMessage(labels.openPhoto, { index: index + 1, count });
 const CONTROL =
-  "grid min-h-11 min-w-11 cursor-pointer place-items-center border border-fg/40 bg-ink/60 px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase transition-colors hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise focus-visible:text-turquoise";
+  "surface-dark grid min-h-11 min-w-11 cursor-pointer place-items-center border border-fg/40 bg-ink/60 px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase transition-colors hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent";
 ---
 
 <div data-gallery class="mb-8">
@@ -112,7 +112,7 @@ const CONTROL =
             class="block size-full object-cover"
           />
           {isLast && (
-            <span class="absolute right-2.5 bottom-2.5 bg-ink/85 px-2.5 py-1.5 text-xs tracking-[0.06em] text-fg">
+            <span class="absolute right-2.5 bottom-2.5 surface-dark bg-ink/85 px-2.5 py-1.5 text-xs tracking-[0.06em]">
               {showAllText}
             </span>
           )}
@@ -125,7 +125,7 @@ const CONTROL =
       type="button"
       data-gallery-open="0"
       aria-haspopup="dialog"
-      class="mt-2 min-h-11 w-full border border-line px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-turquoise hover:text-turquoise focus-visible:border-turquoise md:hidden"
+      class="mt-2 min-h-11 w-full border border-line px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-accent hover:text-accent focus-visible:border-accent md:hidden"
     >
       {formatMessage(labels.showAll, { count })}
     </button>
@@ -135,7 +135,7 @@ const CONTROL =
     <dialog
       data-gallery-dialog
       aria-label={labels.dialog}
-      class="gallery-dialog m-0 h-dvh max-h-none w-screen max-w-none bg-ink/96 p-0 text-fg backdrop:bg-ink/80"
+      class="gallery-dialog m-0 h-dvh max-h-none w-screen max-w-none surface-dark bg-ink/96 p-0 backdrop:bg-ink/80"
     >
       <div
         data-gallery-stage

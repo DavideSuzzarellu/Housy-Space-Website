@@ -16,13 +16,13 @@ const { locale, price, perMonth = false, class: className } = Astro.props;
 const t = getDictionary(locale).property;
 ---
 
-<p class:list={["text-[2rem] leading-none", className]}>
+<p class:list={["text-2xl leading-none", className]}>
   {price.kind === "amount" ? (
     <>
       {formatPrice(price.amount, locale)}
       {perMonth && <small class="font-sans text-sm text-muted">{t.perMonth}</small>}
     </>
   ) : (
-    <span class="text-2xl">{t.priceOnRequest}</span>
+    <span class="text-xl">{t.priceOnRequest}</span>
   )}
 </p>

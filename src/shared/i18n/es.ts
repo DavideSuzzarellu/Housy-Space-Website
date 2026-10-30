@@ -245,8 +245,7 @@ const es = {
     aicatLabel: "Registro AICAT",
     addressLabel: "Oficina",
     rights: "Todos los derechos reservados.",
-    ctaHeading: "Una consulta privada.",
-    ctaText: "Cuéntanos qué buscas o qué quieres vender. Un asesor te responderá personalmente.",
+    ctaHeading: "¡Hablemos!",
     columns: {
       explore: "Explorar",
       owners: "Propietarios",

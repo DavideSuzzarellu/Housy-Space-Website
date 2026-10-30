@@ -240,9 +240,7 @@ const it = {
     aicatLabel: "Registro AICAT",
     addressLabel: "Ufficio",
     rights: "Tutti i diritti riservati.",
-    ctaHeading: "Una consulenza privata.",
-    ctaText:
-      "Raccontaci cosa cerchi o cosa vuoi vendere. Un consulente ti risponderà personalmente.",
+    ctaHeading: "Parliamone!",
     columns: {
       explore: "Esplora",
       owners: "Proprietari",

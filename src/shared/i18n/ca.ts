@@ -239,8 +239,7 @@ const ca = {
     aicatLabel: "Registre AICAT",
     addressLabel: "Oficina",
     rights: "Tots els drets reservats.",
-    ctaHeading: "Una consulta privada.",
-    ctaText: "Explica'ns què busques o què vols vendre. Un assessor et respondrà personalment.",
+    ctaHeading: "Parlem!",
     columns: {
       explore: "Explora",
       owners: "Propietaris",

@@ -238,9 +238,7 @@ const en = {
     aicatLabel: "AICAT registration",
     addressLabel: "Office",
     rights: "All rights reserved.",
-    ctaHeading: "A private consultation.",
-    ctaText:
-      "Tell us what you are looking for or what you want to sell. An advisor will reply to you personally.",
+    ctaHeading: "Let's talk!",
     columns: {
       explore: "Explore",
       owners: "Owners",
