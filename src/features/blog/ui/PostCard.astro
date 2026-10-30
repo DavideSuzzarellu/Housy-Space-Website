@@ -1,0 +1,43 @@
+---
+import { Picture } from "astro:assets";
+import type { BlogPost } from "@/features/blog/application/posts";
+import { formatDate } from "@/shared/lib/format";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+
+/** Article card of the home teaser and the blog index. */
+interface Props {
+  post: BlogPost;
+  locale: Locale;
+}
+
+const { post, locale } = Astro.props;
+---
+
+<a
+  href={getLocalizedPath("blogPost", locale, { slug: post.id })}
+  data-post-card
+  data-category={post.data.category}
+  class="group block text-inherit no-underline"
+>
+  <div class="aspect-4/3 overflow-hidden bg-bg-deep">
+    <Picture
+      {...PHOTO_PICTURE}
+      src={post.data.image}
+      alt={post.data.imageAlt}
+      widths={[480, 800]}
+      sizes="(min-width: 768px) 24rem, 100vw"
+      class="size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105"
+    />
+  </div>
+  <p class="mt-4 flex flex-wrap gap-x-3.5 gap-y-1 text-[0.6875rem] tracking-[0.14em]">
+    <span class="text-accent">{post.data.category}</span>
+    <time datetime={post.data.date.toISOString()} class="text-muted">
+      {formatDate(post.data.date, locale)}
+    </time>
+  </p>
+  <h3 lang={post.data.language} class="mt-2 text-[clamp(1.125rem,1.7vw,1.375rem)]">
+    {post.data.title}
+  </h3>
+</a>

@@ -1,4 +1,5 @@
 ---
+import type { BlogPost } from "@/features/blog/application/posts";
 import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
@@ -6,25 +7,32 @@ import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
+import PostCard from "./PostCard.astro";
 
-/**
- * Blog teaser. No articles exist yet (blog collection is ROADMAP Phase 7): empty state only,
- * never placeholder articles.
- */
+/** Latest articles from Pages CMS; an empty state, never placeholders, until the first one. */
 interface Props {
   locale: Locale;
   content: HomeContent["blog"];
+  posts: readonly BlogPost[];
 }
 
-const { locale, content } = Astro.props;
+const { locale, content, posts } = Astro.props;
 const copy = getDictionary(locale).home.blog;
 ---
 
 <Section id="blog" labelledBy="blog-heading" name="blog">
   <SectionHeading id="blog-heading" heading={content.heading} class="mb-5" />
-  <p data-blog-empty class="max-w-[68ch] border-l-2 border-accent py-1 pl-3 text-sm text-muted">
-    {copy.empty}
-  </p>
+  {posts.length > 0 ? (
+    <div class="grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <PostCard post={post} locale={locale} />
+      ))}
+    </div>
+  ) : (
+    <p data-blog-empty class="max-w-[68ch] border-l-2 border-accent py-1 pl-3 text-sm text-muted">
+      {copy.empty}
+    </p>
+  )}
   <div class="mt-[clamp(1.875rem,3.6vw,2.875rem)] flex justify-center">
     <Button href={getLocalizedPath("blog", locale)} variant="solid" size="lg" arrow>
       {content.ctaLabel}

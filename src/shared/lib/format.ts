@@ -49,3 +49,8 @@ export function formatMessage(
 export function figureFormat(locale: string): Intl.NumberFormat {
   return new Intl.NumberFormat(locale, { useGrouping: "always" });
 }
+
+/** "1 de agosto de 2026", in the locale of the page. */
+export function formatDate(date: Date, locale: Locale): string {
+  return new Intl.DateTimeFormat(LOCALE_META[locale].langTag, { dateStyle: "long" }).format(date);
+}

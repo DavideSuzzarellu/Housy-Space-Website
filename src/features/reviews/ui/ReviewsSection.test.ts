@@ -51,7 +51,7 @@ describe("ReviewsSection", () => {
               authorName: "Test Author",
               rating: 5,
               text: "Texto de prueba",
-              relativePublishTime: "hace 1 mes",
+              publishTime: "2026-08-01T10:00:00Z",
             },
           ],
         },
@@ -61,5 +61,6 @@ describe("ReviewsSection", () => {
     expect(html).toContain("Texto de prueba");
     expect(html).toContain('aria-label="5 / 5"');
     expect(html).toContain("https://maps.google.com/?cid=1");
+    expect(html).toContain("ordenadas por Google");
   });
 });

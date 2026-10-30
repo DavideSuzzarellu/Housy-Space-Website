@@ -186,3 +186,51 @@ content:
     path: src/content/home/ca.json
     format: json
     fields: *home_fields
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title, category, language, date, draft]
+      sort: [date, title]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Titular, type: string, required: true }
+      - { name: description, label: Entradilla (también para Google), type: text, required: true }
+      - { name: date, label: Fecha de publicación, type: date, required: true }
+      - {
+          name: category,
+          label: Categoría,
+          type: select,
+          required: true,
+          options:
+            {
+              values: [Actualidad y normativa, Consejos, Mercado, Reformas y arquitectura, Barrios],
+            },
+        }
+      - {
+          name: language,
+          label: Idioma del artículo,
+          type: select,
+          required: true,
+          default: es,
+          options: { values: [es, en, it, ca] },
+        }
+      - {
+          name: image,
+          label: Imagen principal,
+          type: image,
+          required: true,
+          options: { media: images },
+        }
+      - {
+          name: imageAlt,
+          label: Descripción de la imagen (accesibilidad),
+          type: string,
+          required: true,
+        }
+      - { name: draft, label: Borrador (no se publica), type: boolean, default: false }
+      - { name: body, label: Texto, type: rich-text, required: true, options: { media: images } }

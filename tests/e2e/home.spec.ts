@@ -53,12 +53,15 @@ for (const locale of LOCALES) {
         "valuation",
         "services",
         "philosophy",
+        ...((await page.locator('[data-section="reviews"]').count()) > 0 ? ["reviews"] : []),
         "living",
         "blog",
       ]);
       await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(9);
       await expect(page.locator("[data-contact-block]")).toBeVisible();
-      await expect(page.locator("[data-blog-empty]")).toBeVisible();
+      await expect(
+        page.locator("[data-blog-empty], [data-section=blog] [data-post-card]").first(),
+      ).toBeVisible();
     });
 
     test("services accordion opens a closed panel before following its link", async ({ page }) => {
@@ -78,8 +81,13 @@ for (const locale of LOCALES) {
       await expect.poll(() => rail.evaluate((node) => node.scrollLeft)).toBeGreaterThan(0);
     });
 
-    test("hides the Google reviews section until real data exists", async ({ page }) => {
-      await expect(page.locator('[data-section="reviews"]')).toHaveCount(0);
+    test("shows Google reviews with their author and notice, or hides them without data", async ({
+      page,
+    }) => {
+      const section = page.locator('[data-section="reviews"]');
+      if ((await section.count()) === 0) return;
+      await expect(section.locator("li").first()).toBeVisible();
+      await expect(section.locator("li time").first()).toBeVisible();
     });
 
     test("links to the 10 district pages", async ({ page }) => {

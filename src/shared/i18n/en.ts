@@ -287,6 +287,8 @@ const en = {
       caption: "Conceptual AI-generated image.",
     },
     reviews: {
+      viewReview: "See this review on Google",
+      orderNotice: "Reviews selected and ordered by Google by relevance.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} reviews on Google",
     },
@@ -299,6 +301,11 @@ const en = {
     blog: {
       empty: "No articles have been published yet.",
     },
+  },
+  blog: {
+    all: "All",
+    filterLabel: "Filter by category",
+    back: "Back to the blog",
   },
   zones: {
     saleLabel: "Sale price",

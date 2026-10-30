@@ -2,8 +2,10 @@ import { marketSchema } from "./features/districts/infrastructure/marketSchema";
 import { pageSchema } from "./features/pages/infrastructure/pageSchema";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
-import { CLIENT_ID, CLIENT_SECRET } from "astro:env/server";
+import { CLIENT_ID, CLIENT_SECRET, GOOGLE_PLACE_ID, GOOGLE_PLACES_API_KEY } from "astro:env/server";
 import { homeContentSchema } from "@/features/agency/infrastructure/homeContentSchema";
+import { blogSchema } from "@/features/blog/infrastructure/blogSchema";
+import { reviewsLoader } from "@/features/reviews/infrastructure/reviewsLoader";
 import { createMobiliaLoaders } from "@/features/properties/infrastructure/mobilia/loaders";
 
 // Build-time collections backed by the read-only Mobilia CRM (AGENTS.md §3.2, §5).
@@ -13,6 +15,13 @@ const mobilia = createMobiliaLoaders({ clientId: CLIENT_ID, clientSecret: CLIENT
 export const collections = {
   properties: defineCollection({ loader: mobilia.properties }),
   agents: defineCollection({ loader: mobilia.agents }),
+  reviews: defineCollection({
+    loader: reviewsLoader({ apiKey: GOOGLE_PLACES_API_KEY, placeId: GOOGLE_PLACE_ID }),
+  }),
+  blog: defineCollection({
+    loader: glob({ pattern: "*.md", base: "./src/content/blog" }),
+    schema: ({ image }) => blogSchema(image),
+  }),
   // Editorial content edited by the client in Pages CMS (`.pages.yml`): one file per locale,
   // the entry id is the locale (`es`, `en`, `it`, `ca`).
   pages: defineCollection({

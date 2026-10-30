@@ -1,5 +1,8 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { getPosts, type BlogPost } from "@/features/blog/application/posts";
+import BlogIndex from "@/features/blog/ui/BlogIndex.astro";
+import PostView from "@/features/blog/ui/PostView.astro";
 import { getMarket } from "@/features/districts/application/market";
 import type {
   MarketBarrio,
@@ -31,11 +34,13 @@ type View =
   | { readonly view: "editorial"; readonly key: EditorialKey }
   | { readonly view: "service"; readonly service: ServiceKey }
   | { readonly view: "living" }
+  | { readonly view: "post"; readonly post: BlogPost }
   | { readonly view: "district"; readonly district: MarketDistrict }
   | { readonly view: "barrio"; readonly barrio: MarketBarrio };
 
 export const getStaticPaths = (async () => {
   const market = await getMarket();
+  const posts = await getPosts();
   const paramOf = (path: string, locale: Locale) => path.slice(`/${locale}/`.length);
   return LOCALES.flatMap((locale) => {
     const entry = (path: string, view: View) => ({
@@ -49,6 +54,9 @@ export const getStaticPaths = (async () => {
           getLocalizedPath("serviceDetail", locale, { service: getServiceSlug(service, locale) }),
           { view: "service", service },
         ),
+      ),
+      ...posts.map((post) =>
+        entry(getLocalizedPath("blogPost", locale, { slug: post.id }), { view: "post", post }),
       ),
       entry(getLocalizedPath("living", locale), { view: "living" }),
       ...market.districts.map((district) =>
@@ -76,6 +84,7 @@ const { locale, target } = Astro.props;
 const dictionary = getDictionary(locale);
 const home = { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) };
 const market = await getMarket();
+const posts = await getPosts();
 const zones = dictionary.zones;
 const isSpanish = locale === DEFAULT_LOCALE;
 
@@ -107,6 +116,13 @@ function metaOf(): {
       })),
     };
   }
+  if (target.view === "post") {
+    return {
+      title: `${target.post.data.title} · HousySpace`,
+      description: target.post.data.description,
+      alternates: getAlternates("blogPost", { slug: target.post.id }),
+    };
+  }
   if (target.view === "district") {
     return {
       title: `${target.district.name} · ${dictionary.nav.living} · HousySpace`,
@@ -135,7 +151,8 @@ const meta = metaOf();
 // Prose not translated yet: shown in Spanish, kept out of the index until it is (see ROADMAP).
 const proseFallback =
   (editorial?.fallback ?? false) ||
-  (!isSpanish && (target.view === "district" || target.view === "living"));
+  (!isSpanish && (target.view === "district" || target.view === "living")) ||
+  (target.view === "post" && target.post.data.language !== locale);
 const serviceCrumb =
   target.view === "service" ? dictionary.serviceNames[target.service] : undefined;
 const crumbs = [
@@ -154,14 +171,22 @@ const crumbs = [
   alternates={meta.alternates}
   noindex={proseFallback}
 >
-  {editorial !== undefined && (
-    <PageView
-      locale={locale}
-      content={editorial.content}
-      crumbs={crumbs}
-      fallback={editorial.fallback}
-    />
+  {target.view === "editorial" &&
+  target.key === "blog" &&
+  posts.length > 0 &&
+  editorial !== undefined ? (
+    <BlogIndex locale={locale} content={editorial.content} posts={posts} crumbs={crumbs} />
+  ) : (
+    editorial !== undefined && (
+      <PageView
+        locale={locale}
+        content={editorial.content}
+        crumbs={crumbs}
+        fallback={editorial.fallback}
+      />
+    )
   )}
+  {target.view === "post" && <PostView post={target.post} locale={locale} />}
   {target.view === "service" && <OtherServices locale={locale} current={target.service} />}
   {target.view === "living" && <LivingView locale={locale} market={market} fallback={!isSpanish} />}
   {target.view === "district" && (

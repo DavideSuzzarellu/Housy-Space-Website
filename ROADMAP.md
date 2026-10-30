@@ -29,6 +29,7 @@
 | I20 | ⚠️ **Renew housyspace.com before 2026-12-19** (expiry date per the .com registry): confirm auto-renewal at Webempresa. If it lapses, website and email go down | Everything | ⏳ urgent |
 | I21 | Email (`mail.housyspace.com`) is hosted on the Webempresa plan of the old WordPress: keep that plan for email, or migrate email first. Never cancel the hosting before deciding | Retiring the old WordPress | ⏳ pending |
 | I22 | Put the repo on GitHub (private), install the Pages CMS GitHub App on it and invite the client by email at app.pagescms.org | Client editing | ⏳ pending (repo push not authorized yet) |
+| I24 | ⚠️ Decide before launch: reviews are stored at build time with a 24 h cache, but Google's policy forbids storing Places content except place IDs. Options: accept the risk, fetch at request time (needs I2), or use a Google widget | Launch | ⏳ pending |
 | I23 | Confirm the company facts taken from proposal v3: "9 years" of activity, partners (ADV Advocats, Maria Guimerà Arquitectura, Asesoría Edac), APEI membership no. 3261, services list (adds legal/tax and financial advice). en/it/ca of the v3 home copy are machine translations | Home copy | ⏳ pending |
 
 ## B. Phases
@@ -93,13 +94,13 @@
 - [x] Service pages (no index: Services links to the home accordion, as the proposal)
 - [ ] About / team 🔒 I14, Sell your property, Contact
 - [ ] International guide
-- [ ] Blog collection (index, article, empty state)
+- [x] Blog collection (index, article, empty state), edited in Pages CMS
 - [ ] Data sources page
 - [ ] Translations en / it / ca of `src/content/pages` and district prose (only UI, home and barrio pages are translated)
 - [ ] Add `pages` to `.pages.yml` so the client can edit them
 
 ### Phase 8 — Integrations
-- [ ] Google reviews (Places API, max 5, attributions, graceful fallback) 🔒 I6, I2
+- [x] Google reviews (Places API, max 5, attributions, graceful fallback), build-time with 24 h cache; see I24
 - [ ] Valuator iframe embed (origin-checked postMessage, CSP, consent) 🔒 I7
 
 ### Phase 9 — Compliance, SEO, performance

@@ -1,0 +1,88 @@
+---
+import type { BlogPost } from "@/features/blog/application/posts";
+import { BLOG_CATEGORIES } from "@/features/blog/infrastructure/blogSchema";
+import type { PageContent } from "@/features/pages/application/pages";
+import { groupItems } from "@/features/pages/application/pages";
+import PageItems from "@/features/pages/ui/PageItems.astro";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import PostCard from "./PostCard.astro";
+
+/** Blog with real articles: head from the page content, category filter, grid and newsletter. */
+interface Props {
+  locale: Locale;
+  content: PageContent;
+  posts: readonly BlogPost[];
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+}
+
+const { locale, content, posts, crumbs } = Astro.props;
+const t = getDictionary(locale);
+const lead = content.head.items.find((item) => item.kind === "lead");
+const newsletter = content.sections.filter((section) => section.id === "newsletter");
+const categories = BLOG_CATEGORIES.filter((category) =>
+  posts.some((post) => post.data.category === category),
+);
+const CHIP =
+  "min-h-11 cursor-pointer border border-line px-4 text-xs tracking-[0.08em] text-muted hover:text-fg aria-pressed:bg-fg aria-pressed:text-canvas";
+---
+
+<section class="bg-canvas pt-8 pb-8">
+  <Container>
+    <Breadcrumbs items={crumbs} label={t.property.detail.breadcrumb} class="mb-7" />
+    <h1 class="text-[clamp(1.875rem,4.8vw,3.5rem)]">{content.head.heading}</h1>
+    {lead !== undefined && <p class="mt-4 max-w-[62ch] text-muted">{lead.text}</p>}
+    {categories.length > 1 && (
+      <div
+        role="group"
+        aria-label={t.blog.filterLabel}
+        data-blog-filter
+        class="mt-6 flex flex-wrap gap-2"
+      >
+        <button type="button" data-filter="" aria-pressed="true" class={CHIP}>
+          {t.blog.all}
+        </button>
+        {categories.map((category) => (
+          <button type="button" data-filter={category} aria-pressed="false" class={CHIP}>
+            {category}
+          </button>
+        ))}
+      </div>
+    )}
+  </Container>
+</section>
+
+<section class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+  <Container>
+    <div class="grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <PostCard post={post} locale={locale} />
+      ))}
+    </div>
+  </Container>
+</section>
+
+{newsletter.map((section) => (
+  <section id={section.id} class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+    <Container>
+      <PageItems locale={locale} units={groupItems(section.items)} />
+    </Container>
+  </section>
+))}
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>("[data-blog-filter] button")];
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset["filter"] ?? "";
+        buttons.forEach((other) => other.setAttribute("aria-pressed", String(other === button)));
+        document.querySelectorAll<HTMLElement>("[data-post-card]").forEach((card) => {
+          card.hidden = category !== "" && card.dataset["category"] !== category;
+        });
+      });
+    });
+  });
+</script>

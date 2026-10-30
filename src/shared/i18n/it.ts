@@ -289,6 +289,8 @@ const it = {
       caption: "Immagine concettuale generata con IA.",
     },
     reviews: {
+      viewReview: "Vedi questa recensione su Google",
+      orderNotice: "Recensioni selezionate e ordinate da Google per pertinenza.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} recensioni su Google",
     },
@@ -301,6 +303,11 @@ const it = {
     blog: {
       empty: "Non ci sono ancora articoli pubblicati.",
     },
+  },
+  blog: {
+    all: "Tutte",
+    filterLabel: "Filtra per categoria",
+    back: "Torna al blog",
   },
   zones: {
     saleLabel: "Prezzo di vendita",

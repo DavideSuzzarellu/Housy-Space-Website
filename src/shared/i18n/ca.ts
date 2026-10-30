@@ -288,6 +288,8 @@ const ca = {
       caption: "Imatge conceptual generada amb IA.",
     },
     reviews: {
+      viewReview: "Veure aquesta ressenya a Google",
+      orderNotice: "Ressenyes seleccionades i ordenades per Google segons la rellevància.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} ressenyes a Google",
     },
@@ -300,6 +302,11 @@ const ca = {
     blog: {
       empty: "Encara no hi ha articles publicats.",
     },
+  },
+  blog: {
+    all: "Totes",
+    filterLabel: "Filtra per categoria",
+    back: "Tornar al blog",
   },
   zones: {
     saleLabel: "Preu de compravenda",

@@ -294,6 +294,8 @@ const es = {
       caption: "Imagen conceptual generada con IA.",
     },
     reviews: {
+      viewReview: "Ver esta reseña en Google",
+      orderNotice: "Reseñas seleccionadas y ordenadas por Google según su relevancia.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} reseñas en Google",
     },
@@ -306,6 +308,11 @@ const es = {
     blog: {
       empty: "Todavía no hay artículos publicados.",
     },
+  },
+  blog: {
+    all: "Todas",
+    filterLabel: "Filtrar por categoría",
+    back: "Volver al blog",
   },
   zones: {
     saleLabel: "Precio de compraventa",

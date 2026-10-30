@@ -1,0 +1,61 @@
+---
+import { Picture } from "astro:assets";
+import { render } from "astro:content";
+import type { BlogPost } from "@/features/blog/application/posts";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { formatDate } from "@/shared/lib/format";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+
+/** One article. `lang` marks its real language when it differs from the page's locale. */
+interface Props {
+  post: BlogPost;
+  locale: Locale;
+}
+
+const { post, locale } = Astro.props;
+const dictionary = getDictionary(locale);
+const { Content } = await render(post);
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: dictionary.nav.blog, href: getLocalizedPath("blog", locale) },
+  { label: post.data.title },
+];
+---
+
+<article lang={post.data.language} data-post>
+  <header class="bg-canvas pt-8 pb-8">
+    <Container>
+      <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-7" />
+      <p class="flex flex-wrap gap-x-3.5 text-[0.6875rem] tracking-[0.14em]">
+        <span class="text-accent">{post.data.category}</span>
+        <time datetime={post.data.date.toISOString()} class="text-muted">
+          {formatDate(post.data.date, locale)}
+        </time>
+      </p>
+      <h1 class="mt-3 max-w-[24ch] text-[clamp(1.75rem,4.4vw,3.25rem)]">{post.data.title}</h1>
+      <p class="mt-4 max-w-[62ch] text-muted">{post.data.description}</p>
+    </Container>
+  </header>
+  <Container>
+    <Picture
+      {...PHOTO_PICTURE}
+      src={post.data.image}
+      alt={post.data.imageAlt}
+      widths={[800, 1400]}
+      sizes="(min-width: 1120px) 70rem, 100vw"
+      priority
+      class="aspect-16/9 w-full object-cover"
+    />
+    <div class="blog-body mx-auto max-w-180 py-[clamp(2.25rem,5vw,3.5rem)]">
+      <Content />
+    </div>
+    <div class="mx-auto max-w-180 pb-[clamp(2.75rem,5vw,4.125rem)]">
+      <Button href={getLocalizedPath("blog", locale)}>{dictionary.blog.back}</Button>
+    </div>
+  </Container>
+</article>
