@@ -138,13 +138,31 @@ function buildPath(
  * Builds the localized path for a route: `/{locale}/{translated segments}`,
  * never with a trailing slash. The only allowed way to build internal URLs.
  */
+// export function getLocalizedPath<K extends RouteKey>(
+//   routeKey: K,
+//   locale: Locale,
+//   ...args: ParamsArgs<K>
+// ): string {
+//   const [params] = args;
+//   return buildPath(routeKey, locale, params ?? {});
+// }
+
 export function getLocalizedPath<K extends RouteKey>(
   routeKey: K,
   locale: Locale,
   ...args: ParamsArgs<K>
 ): string {
   const [params] = args;
-  return buildPath(routeKey, locale, params ?? {});
+  const path = buildPath(routeKey, locale, params ?? {});
+
+  // Limpiamos el BASE_URL por si viene con una barra al final
+  const base = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+
+  // Si el path ya tiene el base (raro, pero por las dudas), lo devolvemos
+  if (base && path.startsWith(base)) return path;
+
+  // Le pegamos el nombre del repo adelante a TODOS los links
+  return `${base}${path}`;
 }
 
 export interface Alternate {

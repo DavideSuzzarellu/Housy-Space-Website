@@ -26,8 +26,11 @@ export default defineConfig({
   // `/` → `/es`. Without an adapter or host-level redirect rules, a static build emits a
   // meta-refresh page here, NOT a real HTTP 301 (AGENTS.md §4.1). Replace with an adapter
   // or host redirect rule once hosting is decided.
+  // redirects: {
+  //   "/": `/${DEFAULT_LOCALE}`,
+  // },
   redirects: {
-    "/": `/${DEFAULT_LOCALE}`,
+    "/": `/Housy-Space-Website/${DEFAULT_LOCALE}/`,
   },
 
   image: {
