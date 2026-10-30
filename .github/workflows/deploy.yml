@@ -16,11 +16,14 @@ jobs:
         steps:
             - name: Checkout del código
               uses: actions/checkout@v4
-
-            # ESTE ES EL PASO NUEVO QUE FALTABA
+            # INSTALAMOS BUN PRIMERO
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v2
+            # AHORA SÍ, DESCARGAMOS CHROMIUM
             - name: Instalar Chromium para generar PDFs
               run: bunx playwright install chromium
 
+            # COMPILAMOS ASTRO
             - name: Instalar, buildear y subir el sitio
               uses: withastro/action@v3
               with:
