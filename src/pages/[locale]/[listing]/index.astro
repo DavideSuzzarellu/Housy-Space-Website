@@ -12,7 +12,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { LOCALES, type Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import Container from "@/shared/ui/atoms/Container.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import Eyebrow from "@/shared/ui/molecules/Eyebrow.astro";
 
@@ -48,11 +47,10 @@ const crumbs = [
   description={t.metaDescription[operation]}
   alternates={getListingAlternates(operation)}
 >
-  <Container class="pt-7 pb-16 md:pt-9 md:pb-22">
+  <PropertyCatalog locale={locale} operation={operation} model={model}>
     <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-8" />
     <Eyebrow tag={t.eyebrow} />
-    <h1 class="mt-4 text-[clamp(2.375rem,6vw,4rem)]">{t.heading[operation]}</h1>
-    <p class="mt-4 mb-9 max-w-[60ch] text-muted">{t.lead}</p>
-    <PropertyCatalog locale={locale} operation={operation} model={model} />
-  </Container>
+    <h1 class="mt-4 text-[clamp(2rem,4.8vw,3.5rem)]">{t.heading[operation]}</h1>
+    <p class="mt-4 mb-9 max-w-[60ch] text-fg/90">{t.lead}</p>
+  </PropertyCatalog>
 </BaseLayout>

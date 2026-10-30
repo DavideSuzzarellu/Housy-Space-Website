@@ -362,7 +362,7 @@ No other color combinations for the logo.
 | `bg-deep` / `bg-soft` | `#EDEAE3` / `#F3F1EB` | Placeholders, alternate fills (role) |
 | `card` / `card-hover` | `#F3F1EB` / `#ECE8DF` | Cards (role) |
 | `line` | `rgb(23 43 43 / .12)` | Borders/dividers (role) |
-| `fg` / `muted` | `#172B2B` / `#67716F` | Main / secondary text (role) |
+| `fg` / `muted` | `#172B2B` / `#5F6967` | Main / secondary text (role) |
 | `accent` | `#08777B` | Accent text and links (role) |
 | `ink` | `#0B1214` | Fixed dark ink (overlays, text on turquoise) |
 | `teal` | `#08777B` | Intermediate accent |
