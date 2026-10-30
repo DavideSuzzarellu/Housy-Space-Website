@@ -3,13 +3,12 @@ import { LOCALES } from "@/shared/i18n/config";
 import { getFooterNavigation, getMainNavigation } from "./navigation";
 
 describe("getMainNavigation", () => {
-  it("lists the 8 main entries of the UI proposal in order (es)", () => {
+  it("lists the 7 main entries of the UI proposal in order (es)", () => {
     expect(getMainNavigation("es").map((item) => item.label)).toEqual([
       "Propiedades",
       "Servicios",
       "Vivir en Barcelona",
-      "Vende tu inmueble",
-      "Valorador",
+      "Busco vivienda",
       "Nosotros",
       "Blog",
       "Contacto",
@@ -25,11 +24,9 @@ describe("getMainNavigation", () => {
       "Ver en el mapa",
     ]);
     expect(services?.children).toHaveLength(9);
-    expect(living?.children.map((link) => link.href)).toEqual([
-      "/es/vivir-en-barcelona",
-      "/es/vivir-en-barcelona#distritos",
-      "/es/vivir-en-barcelona#comparador",
-    ]);
+    expect(living?.children).toHaveLength(11);
+    expect(living?.children[0]?.href).toBe("/es/vivir-en-barcelona");
+    expect(living?.children[2]?.href).toBe("/es/vivir-en-barcelona/eixample");
   });
 
   it("marks About, Blog and Contact as secondary (one smaller row in the drawer)", () => {

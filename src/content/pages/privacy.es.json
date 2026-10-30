@@ -1,0 +1,234 @@
+{
+  "title": "Política de privacidad · HousySpace",
+  "description": "Política de privacidad de HousySpace (pendiente).",
+  "head": {
+    "heading": "Política de privacidad",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Texto en borrador, pendiente de aprobación.** Está redactado para el formulario «Busco vivienda», los consentimientos de marketing y la newsletter. La asesoría jurídica de HousySpace debe revisarlo antes de publicar la web. Lo que HousySpace tiene que confirmar está señalado al final."
+        },
+        {
+          "kind": "note",
+          "text": "Última actualización: 28 de octubre de 2026 (borrador)"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Quién es el responsable"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.** CIF B26903419 Registro de Agentes Inmobiliarios de Cataluña: AICAT nº 14032 Correo electrónico: [info@housyspace.com](mailto:info@housyspace.com) Teléfono: 613 084 804 Domicilio y datos registrales: pendientes de completar."
+        },
+        {
+          "kind": "h2",
+          "text": "2. Qué datos tratamos"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Datos de contacto:** nombre, apellidos, teléfono, correo electrónico, idioma y canal o franja horaria que prefieras."
+            },
+            {
+              "title": "",
+              "text": "**Datos de tu búsqueda** (formulario «Busco vivienda»): operación (compra o alquiler), tipo de inmueble, zonas, presupuesto, superficie, dormitorios, baños, características, plazos y, si nos lo cuentas, tu situación de financiación o de venta de tu vivienda actual."
+            },
+            {
+              "title": "",
+              "text": "**Datos de tu vivienda** si pides una valoración o quieres venderla: dirección o barrio, tipología, superficie y estado."
+            },
+            {
+              "title": "",
+              "text": "**El texto que escribes en el asistente de búsqueda**, que se guarda en tus comentarios si envías la búsqueda, y la ficha que sale de él."
+            },
+            {
+              "title": "",
+              "text": "**Tus comentarios** y los datos que decidas incluir en ellos. No incluyas datos que no sean necesarios, como datos de salud o de otras personas."
+            },
+            {
+              "title": "",
+              "text": "**Prueba de tus consentimientos:** texto que aceptaste, versión del texto y fecha."
+            },
+            {
+              "title": "",
+              "text": "**Datos de navegación** mediante cookies: se explican en la [política de cookies](route:cookies)."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Los datos nos los das tú. No pedimos datos especialmente protegidos."
+        },
+        {
+          "kind": "h2",
+          "text": "3. Para qué los usamos y con qué base jurídica"
+        },
+        {
+          "kind": "table",
+          "head": ["Finalidad", "Base jurídica", "Cuánto tiempo"],
+          "rows": [
+            [
+              "Atender tus consultas y solicitudes de contacto (formulario de Contacto, correo, WhatsApp o teléfono).",
+              "Tu consentimiento (art. 6.1.a RGPD) y la aplicación de medidas precontractuales a petición tuya (art. 6.1.b).",
+              "El tiempo necesario para atenderte. Después, bloqueados mientras puedan surgir responsabilidades legales."
+            ],
+            [
+              "Valorar tu vivienda (valorador y solicitud de valoración presencial).",
+              "Tu consentimiento (art. 6.1.a) y medidas precontractuales a petición tuya (art. 6.1.b).",
+              "El tiempo necesario para la valoración y su seguimiento. Después, bloqueados el tiempo que exija la ley."
+            ],
+            [
+              "Mantener tu búsqueda de vivienda en nuestra base de datos de demandantes (formulario «Busco vivienda» y «Búsqueda a medida»), cruzarla con los inmuebles disponibles, avisarte de los que encajan y contactar contigo.",
+              "Tu consentimiento (art. 6.1.a), que prestas marcando la casilla del formulario.",
+              "Mientras tu búsqueda esté activa y, como máximo, 12 meses desde nuestro último contacto contigo. (Plazo pendiente de confirmar por HousySpace.)"
+            ],
+            [
+              "Prestar los servicios que contrates (intermediación, asesoramiento, gestión de alquiler…) y cumplir las obligaciones legales asociadas.",
+              "Ejecución del contrato (art. 6.1.b) y cumplimiento de obligaciones legales (art. 6.1.c), por ejemplo las fiscales y las de prevención del blanqueo de capitales.",
+              "Mientras dure la relación y, después, los plazos que fije la ley para cada obligación."
+            ],
+            [
+              "Enviarte comunicaciones comerciales sobre inmuebles, servicios y novedades por correo electrónico, WhatsApp o teléfono, según el canal que elijas.",
+              "Tu consentimiento (art. 6.1.a RGPD) y la autorización expresa que exige el art. 21 de la LSSI. Es voluntario y no afecta a tu búsqueda.",
+              "Hasta que retires tu consentimiento o te des de baja."
+            ],
+            [
+              "Enviarte la newsletter y los artículos de HousySpace por correo electrónico.",
+              "Tu consentimiento (art. 6.1.a RGPD) y la autorización expresa que exige el art. 21 de la LSSI. Es voluntario e independiente de los demás.",
+              "Hasta que te des de baja con el enlace de cada envío o escribiendo a info@housyspace.com."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Cada consentimiento es independiente y puedes retirarlo en cualquier momento, sin que afecte a la licitud del tratamiento anterior. Las casillas de comunicaciones comerciales y de newsletter vienen sin marcar y no marcarlas no afecta a tu búsqueda."
+        },
+        {
+          "kind": "h2",
+          "text": "4. Quién recibe tus datos"
+        },
+        {
+          "kind": "p",
+          "text": "No cedemos tus datos a terceros, salvo obligación legal (por ejemplo, a la Administración tributaria o a las autoridades competentes)."
+        },
+        {
+          "kind": "p",
+          "text": "Si solicitas un servicio que requiere la intervención de otros profesionales, como asesoramiento financiero o jurídico, una reforma, una notaría o un registro, te lo diremos y solo compartiremos tus datos con ellos con tu conocimiento y, cuando proceda, tu consentimiento."
+        },
+        {
+          "kind": "p",
+          "text": "Para prestarte el servicio, pueden tratar datos por nuestra cuenta y con contrato, como encargados del tratamiento, los proveedores que dan soporte al alojamiento de la web, a la base de datos o CRM, al correo electrónico y al envío de la newsletter, y a la mensajería (por ejemplo, WhatsApp cuando eliges ese canal). Lista definitiva pendiente de confirmar."
+        },
+        {
+          "kind": "p",
+          "text": "**Valorador online.** El valorador de la página «Valorador» lo presta un proveedor externo, Lystos, y se muestra dentro de nuestra página. Los datos que introduzcas en él los recibe ese proveedor y los trata según su información de privacidad, que te recomendamos leer; no es el formulario de «Solicitar valoración» de HousySpace. Función de Lystos, datos que recibimos, plazo de conservación y cookies pendientes de confirmar."
+        },
+        {
+          "kind": "h2",
+          "text": "5. Transferencias internacionales"
+        },
+        {
+          "kind": "p",
+          "text": "Algunos proveedores (por ejemplo, de mensajería o de mapas) pueden tratar datos fuera del Espacio Económico Europeo. En ese caso, se hace con las garantías que exige el RGPD, como una decisión de adecuación de la Comisión Europea o cláusulas contractuales tipo. Pendiente de confirmar según los proveedores definitivos."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Tus derechos"
+        },
+        {
+          "kind": "p",
+          "text": "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tus consentimientos, escribiendo a [info@housyspace.com](mailto:info@housyspace.com) e indicando qué derecho quieres ejercer. Para atenderte bien, podemos pedirte que acredites tu identidad. Respondemos en el plazo de un mes."
+        },
+        {
+          "kind": "p",
+          "text": "Para darte de baja de la newsletter o de las comunicaciones comerciales, puedes usar el enlace de baja de cada correo o escribirnos."
+        },
+        {
+          "kind": "p",
+          "text": "Si crees que no tratamos tus datos conforme a la ley, puedes presentar una reclamación ante la Agencia Española de Protección de Datos ([www.aepd.es](https://www.aepd.es); C/ Jorge Juan, 6, 28001 Madrid)."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Menores de edad"
+        },
+        {
+          "kind": "p",
+          "text": "Nuestros formularios son solo para mayores de 18 años. No recogemos a sabiendas datos de menores."
+        },
+        {
+          "kind": "h2",
+          "text": "8. Seguridad"
+        },
+        {
+          "kind": "p",
+          "text": "Aplicamos medidas técnicas y organizativas adecuadas para proteger tus datos frente a accesos no autorizados, pérdida o alteración."
+        },
+        {
+          "kind": "h2",
+          "text": "9. Cambios en esta política"
+        },
+        {
+          "kind": "p",
+          "text": "Si cambiamos esta política, publicaremos aquí la nueva versión con su fecha. Si el cambio afecta a las finalidades para las que nos diste tu consentimiento, te lo volveremos a pedir."
+        },
+        {
+          "kind": "h2",
+          "text": "Pendiente de confirmar por HousySpace"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Domicilio fiscal y datos del Registro Mercantil."
+            },
+            {
+              "title": "",
+              "text": "Plazo de conservación de los datos de la base de datos de demandantes (propuesta: 12 meses desde el último contacto)."
+            },
+            {
+              "title": "",
+              "text": "Lista definitiva de proveedores que tratan datos (alojamiento web, base de datos o CRM, correo y newsletter, mensajería) y su ubicación."
+            },
+            {
+              "title": "",
+              "text": "Herramienta de newsletter que se contratará, con envío de confirmación de la suscripción y enlace de baja en cada correo."
+            },
+            {
+              "title": "",
+              "text": "Si hay transferencias de datos fuera del Espacio Económico Europeo y con qué garantías."
+            },
+            {
+              "title": "",
+              "text": "Valorador online de Lystos: si Lystos actúa como responsable o como encargado del tratamiento, contrato o condiciones con HousySpace, ubicación del tratamiento, qué datos recibe HousySpace del valorador, plazo de conservación y qué cookies o tecnologías similares instala (para la política de cookies y el aviso de cookies)."
+            },
+            {
+              "title": "",
+              "text": "Si HousySpace debe nombrar un delegado de protección de datos o llevar registro de actividades de tratamiento (art. 30 RGPD)."
+            },
+            {
+              "title": "",
+              "text": "Que no se toman decisiones automatizadas con efectos jurídicos sobre las personas."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

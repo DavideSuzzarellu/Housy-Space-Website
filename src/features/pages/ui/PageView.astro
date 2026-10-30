@@ -1,0 +1,99 @@
+---
+import { Picture } from "astro:assets";
+import { groupItems, type PageContent, type PageItem } from "@/features/pages/application/pages";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Container from "@/shared/ui/atoms/Container.astro";
+import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import PageItems from "./PageItems.astro";
+
+/** An editorial page: photo or plain head, then its sections on their surfaces (proposal v3). */
+interface Props {
+  locale: Locale;
+  content: PageContent;
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+  /** Untranslated page: marks the Spanish text for screen readers and translators. */
+  fallback?: boolean;
+}
+
+const { locale, content, crumbs, fallback = false } = Astro.props;
+const t = getDictionary(locale);
+const image = content.head.items.find((item) => item.kind === "image");
+const headItems = content.head.items.filter(
+  (item): item is PageItem & typeof item => item.kind !== "image",
+);
+const hasPhoto = content.head.photo && image !== undefined;
+const SURFACES = {
+  paper: "bg-canvas",
+  stone: "surface-stone bg-canvas",
+  dark: "surface-dark bg-canvas",
+} as const;
+---
+
+<div lang={fallback ? "es" : undefined} data-page-view>
+  <section
+    data-page-head
+    class:list={[
+      "relative isolate overflow-hidden pt-8 pb-[clamp(2.75rem,6vw,4.5rem)]",
+      hasPhoto
+        ? "surface-dark flex min-h-[clamp(24rem,50vw,34rem)] flex-col justify-end bg-canvas"
+        : "bg-canvas",
+    ]}
+  >
+    {hasPhoto && (
+      <>
+        <Picture
+          {...PHOTO_PICTURE}
+          src={image.src}
+          alt=""
+          widths={[800, 1400]}
+          sizes="100vw"
+          priority
+          class="absolute inset-0 -z-20 size-full object-cover"
+        />
+        <span
+          aria-hidden="true"
+          class="absolute inset-0 -z-10 bg-linear-to-b from-ink/55 to-ink/80"
+        ></span>
+        <MediaCredit tone="onImage" class="absolute right-4 bottom-2">
+          {t.media.conceptualImage}
+        </MediaCredit>
+      </>
+    )}
+    <Container>
+      <Breadcrumbs items={crumbs} label={t.property.detail.breadcrumb} class="mb-7" />
+      {headItems
+        .filter((item) => item.kind === "tag")
+        .map((item) => (
+          <p class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">
+            {item.kind === "tag" && item.text}
+          </p>
+        ))}
+      <h1 class="max-w-[22ch] text-[clamp(1.875rem,4.8vw,3.5rem)]">{content.head.heading}</h1>
+      <div class="mt-4 max-w-[62ch] text-fg/90">
+        <PageItems
+          locale={locale}
+          units={groupItems(headItems.filter((item) => item.kind !== "tag"))}
+        />
+      </div>
+    </Container>
+  </section>
+
+  {content.sections.map((section) => (
+    <section
+      id={section.id}
+      class:list={[
+        "py-[clamp(2.75rem,5vw,4.125rem)]",
+        section.band
+          ? "surface-dark bg-canvas py-[clamp(3.5rem,8vw,6.5rem)] text-center"
+          : SURFACES[section.surface],
+      ]}
+    >
+      <Container>
+        <PageItems locale={locale} units={groupItems(section.items)} />
+      </Container>
+    </section>
+  ))}
+</div>

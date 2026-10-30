@@ -1,0 +1,238 @@
+{
+  "title": "Blog y noticias · HousySpace",
+  "description": "Blog de HousySpace sobre barrios, arquitectura, mercado y normativa inmobiliaria en Barcelona.",
+  "head": {
+    "heading": "Blog y noticias",
+    "photo": false,
+    "items": [
+      {
+        "kind": "p",
+        "text": "Blog y noticias"
+      },
+      {
+        "kind": "p",
+        "text": "HousySpace · Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Barrios, arquitectura, mercado y normativa, explicados con calma por quienes trabajan cada día en la ciudad."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-balcon-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Tema principal"
+            },
+            {
+              "kind": "p",
+              "text": "Reformas y arquitectura"
+            },
+            {
+              "kind": "p",
+              "text": "Fecha pendiente"
+            },
+            {
+              "kind": "h2",
+              "text": "Reformar una finca regia sin perder su carácter"
+            },
+            {
+              "kind": "p",
+              "text": "Arquitectura, reformas e interiorismo. Tema propuesto, pendiente de redactar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-cielo-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Mercado"
+            },
+            {
+              "kind": "p",
+              "text": "Fecha pendiente"
+            },
+            {
+              "kind": "h2",
+              "text": "El mercado residencial de Barcelona este trimestre"
+            },
+            {
+              "kind": "p",
+              "text": "Cómo se mueven precios y demanda en la ciudad. Tema propuesto, pendiente de redactar."
+            }
+          ]
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-terraza-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Barrios"
+            },
+            {
+              "kind": "p",
+              "text": "Fecha pendiente"
+            },
+            {
+              "kind": "h2",
+              "text": "Cómo elegir barrio en Barcelona"
+            },
+            {
+              "kind": "p",
+              "text": "Información de interés sobre barrios y distritos. Tema propuesto, pendiente de redactar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "En preparación"
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "p",
+              "text": "01"
+            },
+            {
+              "kind": "p",
+              "text": "Consejos"
+            },
+            {
+              "kind": "p",
+              "text": "Fecha pendiente"
+            },
+            {
+              "kind": "h2",
+              "text": "Qué conviene preparar antes de vender tu vivienda"
+            },
+            {
+              "kind": "p",
+              "text": "Consejos prácticos para propietarios y compradores. Tema propuesto, pendiente de redactar."
+            },
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-salon-1400.jpg"
+            }
+          ]
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "p",
+              "text": "02"
+            },
+            {
+              "kind": "p",
+              "text": "Actualidad y normativa"
+            },
+            {
+              "kind": "p",
+              "text": "Fecha pendiente"
+            },
+            {
+              "kind": "h2",
+              "text": "Normativa inmobiliaria: lo que conviene saber al comprar o vender"
+            },
+            {
+              "kind": "p",
+              "text": "Novedades legales explicadas con claridad. Tema propuesto, pendiente de redactar."
+            },
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-hierro-720.jpg"
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Las entradas se publicarán desde el CMS, con imagen, titular, categoría, fecha y autor. No hay artículos reales todavía: estos son los temas propuestos."
+        }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Newsletter"
+        },
+        {
+          "kind": "h2",
+          "text": "Recibe los artículos en tu correo"
+        },
+        {
+          "kind": "p",
+          "text": "Mercado inmobiliario de Barcelona, consejos para comprar, vender y alquilar, y novedades de HousySpace."
+        },
+        {
+          "kind": "form",
+          "id": "newsletter",
+          "fields": [
+            {
+              "name": "email",
+              "label": "Correo electrónico",
+              "required": true,
+              "full": false,
+              "type": "email",
+              "placeholder": "Tu correo electrónico",
+              "kind": "field"
+            },
+            {
+              "kind": "submit",
+              "label": "Suscribirme"
+            },
+            {
+              "name": "consent",
+              "label": "**Quiero recibir la newsletter y los artículos de HousySpace por correo electrónico.** He leído la [política de privacidad](route:privacy).",
+              "required": true,
+              "full": false,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "**Información básica.** Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: enviarte la newsletter y los artículos. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal; los proveedores de correo actúan por nuestra cuenta. Derechos: acceso, rectificación, supresión, oposición, limitación y portabilidad, y darte de baja cuando quieras con el enlace de cada correo o escribiendo a [info@housyspace.com](mailto:info@housyspace.com). Más información en la [política de privacidad](route:privacy). (Borrador: aún no hay herramienta de newsletter conectada; al pulsar se abrirá tu correo con la solicitud ya escrita y no estarás suscrito/a hasta que la envíes.)"
+            }
+          ],
+          "mode": "email"
+        }
+      ]
+    }
+  ]
+}

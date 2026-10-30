@@ -8,6 +8,8 @@ Source for all placeholders: the approved UI proposal (AGENTS.md §11.1), artifa
 
 ## Home
 
+Also from proposal v3, same status: `oficina-1672.jpg` (about; shows a recreated logo), `salon-1400.jpg`, `det-terraza-1400.jpg`, `sky-1400.jpg`, `services/legal-tax.webp`, `services/financial.webp`. Seals `src/assets/brand/aicat.png` and `apei.png` come from the proposal: confirm them with the client (I23).
+
 Added 2026-10-30 from proposal v3 (artifact `9boSsZEnH16FUL5ATJ78Pk`), same AI-generated placeholder status: `src/assets/home/services/*.webp` (services accordion, `assets/img/servicios/cine-*-640.webp`), `src/assets/home/districts/*.webp` (districts carousel, `assets/img/distritos/carrusel/*`), `src/assets/home/det-ventanal-1400.jpg` (valuation banner). `services/advisory.webp` shows a recreated logo on a wall: replace it first (§11).
 
 | File                                                | Proposal path                     | Used in                                     | Status                                           |

@@ -1,0 +1,204 @@
+---
+import type { ImageMetadata } from "astro";
+import { Picture } from "astro:assets";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+
+/**
+ * Photo accordion: one panel open at a time, advancing on its own (paused on hover, focus,
+ * off-screen and reduced motion). Plain links, so every panel stays reachable without JS.
+ */
+export interface AccordionPanel {
+  readonly number: string;
+  readonly title: string;
+  readonly tag?: string | undefined;
+  readonly text?: string | undefined;
+  readonly href: string;
+  readonly image: ImageMetadata;
+}
+
+interface Props {
+  label: string;
+  panels: readonly AccordionPanel[];
+}
+
+const { label, panels } = Astro.props;
+---
+
+<ul
+  data-services-accordion
+  aria-label={label}
+  class="flex h-110 gap-2 overflow-x-auto [scrollbar-width:none] md:h-130 md:gap-3 md:overflow-visible"
+>
+  {panels.map((panel, index) => {
+    return (
+      <li
+        data-panel
+        data-active={index === 0 ? "true" : "false"}
+        class="group/panel surface-dark relative w-9 shrink-0 overflow-hidden rounded-[1.25rem] bg-ink data-[active=true]:w-[calc(100%-5.5rem)] md:w-auto md:min-w-0 md:flex-1 md:shrink md:transition-[flex-grow] md:duration-700 md:ease-brand md:data-[active=true]:w-auto md:data-[active=true]:grow-7"
+      >
+        <a
+          href={panel.href}
+          class="block size-full text-white no-underline focus-visible:-outline-offset-4"
+        >
+          <Picture
+            {...PHOTO_PICTURE}
+            src={panel.image}
+            alt=""
+            widths={[400, 640]}
+            sizes="(min-width: 768px) 40rem, 100vw"
+            draggable="false"
+            class="absolute inset-0 size-full scale-125 object-cover transition-transform duration-1200 ease-brand group-data-[active=true]/panel:scale-100"
+          />
+          <span
+            aria-hidden="true"
+            class="absolute inset-0 bg-ink/55 transition-opacity duration-700 group-data-[active=true]/panel:opacity-0"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="absolute inset-0 bg-linear-to-t from-ink/95 via-ink/35 to-transparent opacity-0 transition-opacity duration-700 group-data-[active=true]/panel:opacity-100"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="absolute inset-x-6 top-5 h-0.5 overflow-hidden rounded-full bg-white/20 opacity-0 group-data-[active=true]/panel:opacity-100 motion-reduce:hidden"
+          >
+            <span data-progress class="service-progress block h-full w-0 bg-taupe"></span>
+          </span>
+          <span
+            aria-hidden="true"
+            class="absolute inset-0 flex flex-col items-center justify-between py-6 transition-opacity delay-200 duration-300 group-data-[active=true]/panel:opacity-0 group-data-[active=true]/panel:delay-0"
+          >
+            <span class="text-[0.6875rem] font-bold text-taupe">{panel.number}</span>
+            <span class="max-h-[calc(100%-2.5rem)] rotate-180 overflow-hidden text-[0.8125rem] font-bold whitespace-nowrap [writing-mode:vertical-rl] md:text-base">
+              {panel.title}
+            </span>
+          </span>
+          <span class="absolute bottom-0 left-0 w-[calc(100vw-7rem)] translate-y-5 p-5 pr-16 opacity-0 transition-[translate,opacity] duration-500 ease-brand group-data-[active=true]/panel:translate-y-0 group-data-[active=true]/panel:opacity-100 group-data-[active=true]/panel:delay-250 md:w-[min(38rem,62vw)] md:p-8 md:pr-22">
+            <span
+              aria-hidden="true"
+              class="mb-2 flex items-center gap-2.5 text-[0.6875rem] font-bold tracking-[0.18em] text-taupe"
+            >
+              {panel.number}
+              <span class="h-px w-6 bg-taupe"></span>
+              {panel.tag}
+            </span>
+            <h3 class="text-[clamp(1.25rem,2.4vw,2rem)] leading-[1.1] font-extrabold text-white">
+              {panel.title}
+            </h3>
+            {panel.text !== undefined && (
+              <span class="mt-2.5 block max-w-120 text-[0.8125rem] leading-normal text-white/80">
+                {panel.text}
+              </span>
+            )}
+          </span>
+          <span
+            aria-hidden="true"
+            class="absolute right-4.5 bottom-5.5 grid size-10 place-items-center rounded-full bg-taupe text-petrol-dark opacity-0 transition-[opacity,rotate,background-color] duration-300 group-hover/panel:bg-stone group-data-[active=true]/panel:opacity-100 md:right-8 md:bottom-8 md:size-11"
+          >
+            <ArrowUpRight class="size-3" />
+          </span>
+        </a>
+      </li>
+    );
+  })}
+</ul>
+
+<script>
+  import { wrapIndex } from "./accordionRail";
+
+  document.addEventListener("astro:page-load", () => {
+    const root = document.querySelector<HTMLElement>("[data-services-accordion]");
+    if (root === null) return;
+    const panels = [...root.querySelectorAll<HTMLElement>("[data-panel]")];
+    const abort = new AbortController();
+    const { signal } = abort;
+    document.addEventListener("astro:before-swap", () => abort.abort(), { once: true });
+
+    let current = 0;
+    let hovered = -1;
+    let focused = false;
+    let visible = false;
+
+    const syncHold = (): void => {
+      const held = hovered === current || focused || !visible || document.hidden;
+      root.toggleAttribute("data-held", held);
+    };
+
+    const activate = (index: number, scrollRow: boolean): void => {
+      current = index;
+      panels.forEach((panel, position) => {
+        panel.dataset["active"] = String(position === index);
+      });
+      syncHold();
+      const panel = panels[index];
+      // Phones: the row scrolls on its own; never the page.
+      if (scrollRow && panel !== undefined && root.scrollWidth > root.clientWidth) {
+        root.scrollTo({ left: panel.offsetLeft - root.offsetLeft - 44, behavior: "smooth" });
+      }
+    };
+
+    panels.forEach((panel, index) => {
+      panel.addEventListener(
+        "pointerenter",
+        (event) => {
+          if (event.pointerType !== "mouse") return;
+          hovered = index;
+          activate(index, false);
+        },
+        { signal },
+      );
+      panel.addEventListener(
+        "pointerleave",
+        () => {
+          hovered = -1;
+          syncHold();
+        },
+        { signal },
+      );
+      panel.addEventListener(
+        "focusin",
+        (event) => {
+          // Keyboard only: a tap also focuses the link, and would open the panel before its click.
+          if (!(event.target instanceof Element) || !event.target.matches(":focus-visible")) return;
+          focused = true;
+          activate(index, true);
+        },
+        { signal },
+      );
+      panel.addEventListener(
+        "focusout",
+        () => {
+          focused = false;
+          syncHold();
+        },
+        { signal },
+      );
+      // Touch: the first tap opens a closed panel, the second follows its link.
+      panel.addEventListener(
+        "click",
+        (event) => {
+          if (index === current) return;
+          event.preventDefault();
+          activate(index, true);
+        },
+        { signal },
+      );
+    });
+
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      root.addEventListener(
+        "animationend",
+        () => activate(wrapIndex(current, 1, panels.length), true),
+        { signal },
+      );
+    }
+    document.addEventListener("visibilitychange", syncHold, { signal });
+    const observer = new IntersectionObserver((entries) => {
+      visible = entries.some((entry) => entry.isIntersecting);
+      syncHold();
+    });
+    observer.observe(root);
+    signal.addEventListener("abort", () => observer.disconnect());
+    syncHold();
+  });
+</script>

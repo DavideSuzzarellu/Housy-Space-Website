@@ -1,3 +1,4 @@
+import { DISTRICTS } from "@/features/districts/domain/districts";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath, withUrlExtras } from "@/shared/i18n/routes";
@@ -40,32 +41,30 @@ export function getMainNavigation(locale: Locale): NavItem[] {
     },
     {
       label: nav.services,
-      href: getLocalizedPath("services", locale),
-      children: [
-        { label: nav.allServices, href: getLocalizedPath("services", locale) },
-        ...SERVICE_KEYS.map((service) => ({
-          label: serviceNames[service],
-          href: getLocalizedPath("serviceDetail", locale, {
-            service: getServiceSlug(service, locale),
-          }),
-        })),
-      ],
+      href: withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" }),
+      children: SERVICE_KEYS.map((service) => ({
+        label: serviceNames[service],
+        href: getLocalizedPath("serviceDetail", locale, {
+          service: getServiceSlug(service, locale),
+        }),
+      })),
       secondary: false,
     },
     {
       label: nav.living,
       href: living,
       children: [
-        { label: nav.interactiveMap, href: living },
-        { label: nav.districtsAndBarrios, href: withUrlExtras(living, { hash: "distritos" }) },
-        { label: nav.barrioComparator, href: withUrlExtras(living, { hash: "comparador" }) },
+        { label: nav.neighbourhoodSearch, href: living },
+        ...DISTRICTS.map((district) => ({
+          label: district.name,
+          href: getLocalizedPath("district", locale, { district: district.slug }),
+        })),
       ],
       secondary: false,
     },
-    { label: nav.sell, href: getLocalizedPath("sell", locale), children: [], secondary: false },
     {
-      label: nav.valuation,
-      href: getLocalizedPath("valuation", locale),
+      label: nav.homeSearch,
+      href: getLocalizedPath("homeSearch", locale),
       children: [],
       secondary: false,
     },
@@ -87,16 +86,24 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
       title: footer.columns.explore,
       links: [
         { label: nav.properties, href: getLocalizedPath("sale", locale) },
-        { label: nav.services, href: getLocalizedPath("services", locale) },
+        {
+          label: nav.services,
+          href: withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" }),
+        },
         { label: nav.living, href: getLocalizedPath("living", locale) },
+        { label: nav.homeSearch, href: getLocalizedPath("homeSearch", locale) },
         { label: footer.links.blog, href: getLocalizedPath("blog", locale) },
       ],
     },
     {
       title: footer.columns.owners,
       links: [
-        { label: nav.sell, href: getLocalizedPath("sell", locale) },
-        { label: nav.valuation, href: getLocalizedPath("valuation", locale) },
+        {
+          label: nav.sell,
+          href: getLocalizedPath("serviceDetail", locale, {
+            service: getServiceSlug("saleBrokerage", locale),
+          }),
+        },
         { label: footer.links.customSearch, href: getLocalizedPath("customSearch", locale) },
         {
           label: footer.links.internationalBuyers,

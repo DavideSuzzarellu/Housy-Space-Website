@@ -1,0 +1,181 @@
+{
+  "title": "Contacto · HousySpace",
+  "description": "Contacta con HousySpace: teléfono, WhatsApp y consulta privada.",
+  "head": {
+    "heading": "Hablemos",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Contacto"
+      },
+      {
+        "kind": "lead",
+        "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-salon-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "#formulario",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "Cuéntanos qué necesitas"
+        },
+        {
+          "kind": "lead",
+          "text": "Te atenderá personalmente un asesor de HousySpace."
+        },
+        {
+          "kind": "form",
+          "id": "cf",
+          "intro": "Hola, me gustaría hacer una consulta.",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nombre y apellidos",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Teléfono",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Correo electrónico",
+              "required": false,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "interes",
+              "label": "¿En qué podemos ayudarte?",
+              "required": false,
+              "full": true,
+              "type": "select",
+              "options": [
+                "Comprar una vivienda",
+                "Vender mi vivienda",
+                "Alquilar mi vivienda",
+                "Buscar un alquiler",
+                "Valorar mi vivienda",
+                "Reformas e interiorismo",
+                "Financiación o hipoteca",
+                "Otra consulta"
+              ],
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Tu consulta",
+              "required": true,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Quiero recibir comunicaciones comerciales de HousySpace sobre inmuebles, servicios y novedades, por correo electrónico, WhatsApp o teléfono. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Quiero suscribirme a la newsletter y a los artículos de HousySpace por correo electrónico. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Enviar consulta"
+            },
+            {
+              "kind": "note",
+              "text": "Todavía no hay un sistema que reciba el formulario (CRM pendiente). Al pulsar, se abrirá WhatsApp con tu solicitud ya escrita para que la envíes tú; hasta que no la envíes allí, no habrá llegado a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "h2",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "kind": "faq",
+          "q": "¿Cuáles son vuestros honorarios?",
+          "a": "Respuesta pendiente de HousySpace."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Cuánto tarda una venta?",
+          "a": "Respuesta pendiente de HousySpace."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Cómo solicito una visita?",
+          "a": "Respuesta pendiente de HousySpace."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Atendéis en otros idiomas?",
+          "a": "Respuesta pendiente de HousySpace."
+        }
+      ]
+    }
+  ]
+}

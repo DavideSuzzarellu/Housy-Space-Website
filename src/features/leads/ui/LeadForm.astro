@@ -1,0 +1,126 @@
+---
+import { COMPANY_EMAIL, CONTACT_PHONE, whatsappHref } from "@/features/agency/domain/contact";
+import type { FormField } from "@/features/pages/infrastructure/pageSchema";
+import type { Locale } from "@/shared/i18n/config";
+import { getDictionary } from "@/shared/i18n";
+import LeadField from "./LeadField.astro";
+
+/**
+ * The one lead form: fields come from content. Until the CRM receives forms (ROADMAP I3) it opens
+ * WhatsApp or the mail client with the request already written; the visitor sends it.
+ */
+interface Props {
+  locale: Locale;
+  id: string;
+  mode: "whatsapp" | "email";
+  intro?: string | undefined;
+  fields: readonly FormField[];
+}
+
+const { locale, id, mode, intro, fields } = Astro.props;
+const t = getDictionary(locale).forms;
+const target = mode === "whatsapp" ? whatsappHref(CONTACT_PHONE) : `mailto:${COMPANY_EMAIL}`;
+const isGrouped = fields.some((field) => field.kind === "group");
+---
+
+<form
+  id={id}
+  data-lead-form
+  data-mode={mode}
+  data-target={target}
+  data-intro={intro}
+  data-subject={t.emailSubject}
+  data-sent={mode === "whatsapp" ? t.sentWhatsapp : t.sentEmail}
+  novalidate
+  class:list={["mt-6 grid gap-5", !isGrouped && "sm:grid-cols-2"]}
+>
+  {fields.map((field) =>
+    field.kind === "group" ? (
+      <fieldset class="grid gap-4 border-t border-line pt-6 sm:grid-cols-2">
+        <legend class="float-left mb-1 w-full text-base font-bold text-fg sm:col-span-2">
+          {field.title}
+          {field.hint !== undefined && (
+            <small class="mt-1 block text-xs font-normal tracking-[0.04em] text-muted">
+              {field.hint}
+            </small>
+          )}
+        </legend>
+        {field.fields.map((leaf) => (
+          <LeadField locale={locale} field={leaf} />
+        ))}
+      </fieldset>
+    ) : (
+      <LeadField locale={locale} field={field} />
+    ),
+  )}
+  <p
+    data-lead-status
+    role="status"
+    aria-live="polite"
+    hidden
+    class="border-l-2 border-accent py-1 pl-3 text-sm sm:col-span-2"
+  ></p>
+</form>
+
+<script>
+  import {
+    buildLeadMessage,
+    mailtoHref,
+    type LeadEntry,
+  } from "@/features/leads/domain/leadMessage";
+
+  function entriesOf(form: HTMLFormElement): LeadEntry[] {
+    const entries: LeadEntry[] = [];
+    form.querySelectorAll<HTMLElement>("[data-lead-field]").forEach((node) => {
+      if (node.closest("[hidden]") !== null) return;
+      const label = node.dataset["label"] ?? "";
+      const controls = [...node.querySelectorAll<HTMLInputElement>("input, select, textarea")];
+      const checkable = controls.filter(
+        (control) => control.type === "checkbox" || control.type === "radio",
+      );
+      const value =
+        checkable.length > 0
+          ? checkable
+              .filter((control) => control.checked)
+              .map((control) => control.dataset["label"] ?? control.value)
+              .join(", ")
+          : (controls[0]?.value ?? "");
+      entries.push({ label, value });
+    });
+    return entries;
+  }
+
+  function syncConditional(form: HTMLFormElement): void {
+    const chosen = new Set(
+      [...form.querySelectorAll<HTMLInputElement>('input[name="distrito"]:checked')].map(
+        (input) => input.value,
+      ),
+    );
+    form.querySelectorAll<HTMLElement>("[data-when]").forEach((node) => {
+      node.hidden = !chosen.has(node.dataset["when"] ?? "");
+    });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll<HTMLFormElement>("[data-lead-form]").forEach((form) => {
+      syncConditional(form);
+      form.addEventListener("change", () => syncConditional(form));
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const message = buildLeadMessage(form.dataset["intro"], entriesOf(form));
+        const target = form.dataset["target"] ?? "";
+        const href =
+          form.dataset["mode"] === "whatsapp"
+            ? `${target}?text=${encodeURIComponent(message)}`
+            : mailtoHref(target.replace("mailto:", ""), form.dataset["subject"] ?? "", message);
+        window.open(href, "_blank", "noopener");
+        const status = form.querySelector<HTMLElement>("[data-lead-status]");
+        if (status !== null) {
+          status.textContent = form.dataset["sent"] ?? "";
+          status.hidden = false;
+        }
+      });
+    });
+  });
+</script>

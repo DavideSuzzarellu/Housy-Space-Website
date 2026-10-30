@@ -1,0 +1,388 @@
+{
+  "title": "Asesoramiento jurídico y fiscal · HousySpace",
+  "description": "Cuando la operación lo requiere, coordinamos la consulta con profesionales independientes de confianza.",
+  "head": {
+    "heading": "Asesoramiento jurídico y fiscal",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-hierro-720.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Cuando la operación lo requiere, coordinamos la consulta con profesionales independientes de confianza."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Cada paso, correcto y seguro."
+        },
+        {
+          "kind": "p",
+          "text": "Comprar, vender, heredar o alquilar una vivienda tiene consecuencias legales y fiscales. Las revisamos con el despacho de abogados y la asesoría fiscal con los que colaboramos, te explicamos las opciones con palabras claras y nos aseguramos de que todo esté en orden antes de firmar."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "En qué te ayudamos"
+        },
+        {
+          "kind": "h2",
+          "text": "Según el momento en que estés"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Comprar o vender"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Nota simple, cargas y situación registral"
+                },
+                {
+                  "title": "",
+                  "text": "Contrato de arras y de compraventa"
+                },
+                {
+                  "title": "",
+                  "text": "Revisión de la escritura antes de la notaría"
+                },
+                {
+                  "title": "",
+                  "text": "Impuestos de la operación"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Heredar una vivienda"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Documentación para aceptar o renunciar a la herencia"
+                },
+                {
+                  "title": "",
+                  "text": "Impuesto de sucesiones y plusvalía municipal"
+                },
+                {
+                  "title": "",
+                  "text": "Inscripción en el Registro de la Propiedad"
+                },
+                {
+                  "title": "",
+                  "text": "Acuerdos entre herederos para vender o repartir"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Alquilar"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Contrato de arrendamiento"
+                },
+                {
+                  "title": "",
+                  "text": "Fianza y garantías"
+                },
+                {
+                  "title": "",
+                  "text": "Impagos y desahucios"
+                },
+                {
+                  "title": "",
+                  "text": "Las rentas en la declaración"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Empresas y negocios"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Contratos mercantiles"
+                },
+                {
+                  "title": "",
+                  "text": "Sociedades patrimoniales"
+                },
+                {
+                  "title": "",
+                  "text": "Alquiler de locales"
+                },
+                {
+                  "title": "",
+                  "text": "Licencias y permisos"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Fiscalidad"
+        },
+        {
+          "kind": "h2",
+          "text": "Los impuestos de la vivienda, por administración"
+        },
+        {
+          "kind": "lead",
+          "text": "Quién cobra cada impuesto y cuándo aparece en una operación."
+        },
+        {
+          "kind": "h3",
+          "text": "Ayuntamiento"
+        },
+        {
+          "kind": "p",
+          "text": "Impuestos municipales"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Plusvalía municipal",
+              "text": "Al vender, heredar o donar."
+            },
+            {
+              "title": "IBI",
+              "text": "Cada año, como propietario."
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Generalitat"
+        },
+        {
+          "kind": "p",
+          "text": "Agència Tributària de Catalunya"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Transmisiones patrimoniales",
+              "text": "Al comprar una vivienda de segunda mano."
+            },
+            {
+              "title": "Actos jurídicos documentados",
+              "text": "Al comprar obra nueva o firmar una hipoteca."
+            },
+            {
+              "title": "Sucesiones y donaciones",
+              "text": "Al heredar o recibir una vivienda."
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Estado"
+        },
+        {
+          "kind": "p",
+          "text": "Agencia Tributaria"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "IRPF: ganancia patrimonial",
+              "text": "Al vender con beneficio."
+            },
+            {
+              "title": "IRPF: rendimientos",
+              "text": "Si alquilas la vivienda."
+            },
+            {
+              "title": "Patrimonio",
+              "text": "Según el valor de tu patrimonio."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Paso a paso"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Cuéntanos qué te preocupa",
+              "text": "Hablamos con calma de tu operación y de tus dudas."
+            },
+            {
+              "title": "Estudiamos tu caso",
+              "text": "Lo revisamos con los especialistas y te explicamos las opciones."
+            },
+            {
+              "title": "Decidimos juntos",
+              "text": "Qué haremos, cómo y cuándo."
+            },
+            {
+              "title": "Lo coordinamos",
+              "text": "Nos aseguramos de que todo sea correcto y seguro hasta la firma."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Con quién lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Trabajamos con ADV Advocats y Asesoría Edac"
+        },
+        {
+          "kind": "lead",
+          "text": "Un despacho de abogados y una asesoría fiscal de Barcelona con los que revisamos los aspectos legales y fiscales de nuestras operaciones."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Conoce a nuestros colaboradores",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Despacho jurídico y fiscal Despacho de abogados en Barcelona: herencias, renta e impuestos, derecho civil, laboral y de empresa. [Visitar advadvocats.cat](https://advadvocats.cat/es/)"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Asesoría fiscal Asesoría fiscal, contable y laboral en Barcelona: impuestos, declaraciones y trámites con Hacienda. [Visitar serviciosdac.com](https://www.serviciosdac.com/)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

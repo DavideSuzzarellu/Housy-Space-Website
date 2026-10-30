@@ -1,0 +1,47 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { figureFormat, formatMessage } from "@/shared/lib/format";
+
+/** Headline figures with their year, comparisons and rank. Every figure shows its year (§6.2). */
+export interface Kpi {
+  readonly label: string;
+  readonly value: number;
+  readonly unit: string;
+  readonly comparisons: readonly { readonly diff: number; readonly against: string }[];
+  readonly rank: string;
+}
+
+interface Props {
+  locale: Locale;
+  items: readonly Kpi[];
+}
+
+const { locale, items } = Astro.props;
+const t = getDictionary(locale).zones;
+const format = figureFormat(locale);
+const signed = (diff: number) => `${diff > 0 ? "+" : "−"}${Math.abs(diff)} %`;
+---
+
+<div class="grid gap-4 md:grid-cols-3">
+  {items.map((item) => (
+    <div class="bg-card p-5">
+      <p class="text-xs tracking-[0.06em] text-muted">{item.label}</p>
+      <p class="mt-2 text-[clamp(1.75rem,3.2vw,2.5rem)] leading-none font-extrabold">
+        {format.format(item.value)}
+      </p>
+      <p class="mt-1 text-xs text-muted">{item.unit}</p>
+      {item.comparisons.map((comparison) => (
+        <p
+          class:list={[
+            "mt-2 text-xs font-medium",
+            comparison.diff >= 0 ? "text-accent" : "text-fg",
+          ]}
+        >
+          {formatMessage(t.versus, { diff: signed(comparison.diff), against: comparison.against })}
+        </p>
+      ))}
+      <p class="mt-3 text-[0.6875rem] text-muted">{item.rank}</p>
+    </div>
+  ))}
+</div>

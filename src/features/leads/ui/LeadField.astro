@@ -1,0 +1,117 @@
+---
+import type { FormLeaf } from "@/features/pages/infrastructure/pageSchema";
+import type { Locale } from "@/shared/i18n/config";
+import { plainInline } from "@/shared/lib/inline";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** One control of a `LeadForm`. `data-lead-field` marks what goes into the message. */
+interface Props {
+  locale: Locale;
+  field: FormLeaf;
+}
+
+const { locale, field } = Astro.props;
+const CONTROL =
+  "min-h-11 w-full border border-line bg-canvas px-3.5 py-2.5 text-sm text-fg transition-colors hover:border-muted";
+const LABEL = "flex flex-col gap-1.5 text-xs tracking-[0.06em] text-muted";
+const CHIP =
+  "relative flex min-h-11 cursor-pointer flex-col justify-center border border-line px-3.5 py-2 text-xs transition-colors hover:border-muted has-checked:border-fg has-checked:bg-fg has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-accent";
+---
+
+{field.kind === "field" && field.type === "consent" && (
+  <label
+    data-lead-field
+    data-label={plainInline(field.label)}
+    class="flex items-start gap-2.5 text-xs text-muted sm:col-span-2"
+  >
+    <input
+      type="checkbox"
+      name={field.name}
+      required={field.required}
+      class="mt-0.5 size-4 shrink-0"
+    />
+    <span>
+      <Inline text={field.label} locale={locale} />
+    </span>
+  </label>
+)}
+{field.kind === "field" && field.type !== "consent" && (
+  <label
+    data-lead-field
+    data-label={field.label}
+    class:list={[LABEL, field.full && "sm:col-span-2"]}
+  >
+    <span>
+      {field.label}
+      {field.required && " *"}
+    </span>
+    {field.type === "select" ? (
+      <select name={field.name} required={field.required} class={CONTROL}>
+        <option value=""></option>
+        {(field.options ?? []).map((option) => (
+          <option>{option}</option>
+        ))}
+      </select>
+    ) : field.type === "textarea" ? (
+      <textarea name={field.name} rows="4" required={field.required} class={CONTROL}></textarea>
+    ) : (
+      <input
+        type={field.type}
+        name={field.name}
+        required={field.required}
+        placeholder={field.placeholder}
+        class={CONTROL}
+      />
+    )}
+  </label>
+)}
+{field.kind === "chips" && (
+  <div
+    data-lead-field
+    data-label={field.label ?? field.name}
+    data-when={field.when}
+    hidden={field.when !== undefined}
+    class="sm:col-span-2"
+  >
+    {field.label !== undefined && <p class="mb-2 text-xs text-muted">{field.label}</p>}
+    <div class="flex flex-wrap gap-2">
+      {field.options.map((option) => (
+        <label class={CHIP}>
+          <input
+            type={field.radio ? "radio" : "checkbox"}
+            name={field.name}
+            value={option.value}
+            data-label={option.label}
+            required={field.required}
+            class="absolute size-px opacity-0"
+          />
+          <b class="font-semibold">{option.label}</b>
+          {option.hint !== undefined && <small class="opacity-80">{option.hint}</small>}
+        </label>
+      ))}
+    </div>
+  </div>
+)}
+{field.kind === "note" && (
+  <p class="text-xs text-muted sm:col-span-2">
+    <Inline text={field.text} locale={locale} />
+  </p>
+)}
+{field.kind === "details" && (
+  <details class="text-xs text-muted sm:col-span-2">
+    <summary class="cursor-pointer font-medium text-accent">{field.summary}</summary>
+    <p class="mt-2">
+      <Inline text={field.text} locale={locale} />
+    </p>
+  </details>
+)}
+{field.kind === "submit" && (
+  <div class="sm:col-span-2">
+    <button
+      type="submit"
+      class="min-h-11 cursor-pointer border border-fg bg-fg px-10 py-4 text-[0.8125rem] font-medium tracking-[0.12em] text-canvas transition-colors hover:border-turquoise hover:bg-turquoise hover:text-ink"
+    >
+      {field.label}
+    </button>
+  </div>
+)}

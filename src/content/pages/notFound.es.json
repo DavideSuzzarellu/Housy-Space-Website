@@ -1,0 +1,41 @@
+{
+  "title": "Página no encontrada · HousySpace",
+  "description": "Página no encontrada.",
+  "head": {
+    "heading": "Esta página no existe",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Error 404"
+      },
+      {
+        "kind": "lead",
+        "text": "Puede que el inmueble ya no esté disponible o que el enlace haya cambiado."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Ver propiedades",
+              "href": "route:sale",
+              "solid": true
+            },
+            {
+              "label": "Ir al inicio",
+              "href": "route:home",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

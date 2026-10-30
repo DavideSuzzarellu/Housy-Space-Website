@@ -48,6 +48,7 @@ export default defineConfig({
         access: "public",
         optional: true,
         url: true,
+        default: "https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31",
       }),
     },
   },

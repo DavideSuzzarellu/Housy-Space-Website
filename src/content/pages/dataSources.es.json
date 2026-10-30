@@ -1,0 +1,83 @@
+{
+  "title": "Estado de los datos · HousySpace",
+  "description": "Estado de las fuentes oficiales y de la actualización de las estadísticas.",
+  "head": {
+    "heading": "Estado de los datos",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Transparencia"
+      },
+      {
+        "kind": "lead",
+        "text": "De dónde salen los datos de los barrios de Barcelona y cuándo se comprobaron por última vez."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Cobertura actual"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Población y densidad por barrio (Padró municipal, Open Data BCN): 73 de 73 barrios."
+            },
+            {
+              "title": "",
+              "text": "Precio medio de compraventa (Portal de Dades del Ajuntament, Consejo General del Notariado): 73 de 73 barrios."
+            },
+            {
+              "title": "",
+              "text": "Alquiler medio (Portal de Dades del Ajuntament, fianzas del INCASÒL): 73 de 73 barrios."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "Fuentes y última comprobación"
+        },
+        {
+          "kind": "table",
+          "head": ["Fuente", "Última ejecución", "Fecha", "Última correcta", "Detalle"],
+          "rows": [
+            [
+              "Ajuntament de Barcelona · Open Data BCN (API CKAN)",
+              "sin ejecuciones todavía",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · CartoBCN (límits administratius)",
+              "sin ejecuciones todavía",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · Portal Barcelona Dades (mercado de la vivienda)",
+              "ok",
+              "20/10/2026",
+              "20/10/2026",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "El sistema consulta las fuentes cada 6 horas. Si una fuente falla, se conservan los últimos datos válidos y, tras tres fallos seguidos, se avisa al equipo. Generado: 20/10/2026."
+        }
+      ]
+    }
+  ]
+}

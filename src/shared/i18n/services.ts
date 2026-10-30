@@ -3,13 +3,14 @@ import type { Locale } from "./config";
 /** Services offered (AGENTS.md §6 item 17). Labels live in the dictionaries (`serviceNames`). */
 export const SERVICE_KEYS = [
   "saleBrokerage",
-  "rentalManagement",
-  "personalShopper",
-  "renovations",
-  "interiorDesign",
-  "advisory",
-  "investment",
   "valuation",
+  "legalTax",
+  "renovations",
+  "advisory",
+  "financial",
+  "personalShopper",
+  "investment",
+  "rentalManagement",
 ] as const;
 
 export type ServiceKey = (typeof SERVICE_KEYS)[number];
@@ -24,7 +25,8 @@ const SERVICE_SLUGS_ES = {
   rentalManagement: "alquiler-gestion",
   personalShopper: "personal-shopper",
   renovations: "reformas-obras",
-  interiorDesign: "interiorismo",
+  legalTax: "asesoramiento-juridico-fiscal",
+  financial: "asesoramiento-financiero",
   advisory: "asesoramiento",
   investment: "inversion-inmobiliaria",
   valuation: "valoracion",
@@ -39,4 +41,9 @@ const SERVICE_SLUGS = {
 
 export function getServiceSlug(service: ServiceKey, locale: Locale): string {
   return SERVICE_SLUGS[locale][service];
+}
+
+/** Service of a content link target (`service:{es slug}`). */
+export function getServiceKeyBySlug(slug: string): ServiceKey | undefined {
+  return SERVICE_KEYS.find((service) => SERVICE_SLUGS_ES[service] === slug);
 }

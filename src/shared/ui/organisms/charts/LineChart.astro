@@ -1,0 +1,118 @@
+---
+import { figureFormat } from "@/shared/lib/format";
+/** Typed SVG line chart (AGENTS.md §2: no chart library, no client JS). */
+export interface LineSeries {
+  readonly name: string;
+  readonly points: readonly (readonly [number, number])[];
+  /** Current year, drawn dashed and labelled as provisional (§6.2). */
+  readonly provisional?: { readonly x: number; readonly y: number } | null | undefined;
+  readonly tone: "main" | "second" | "third";
+}
+
+interface Props {
+  title: string;
+  unit: string;
+  series: readonly LineSeries[];
+  provisionalLabel: string;
+  source: string;
+  sourceUrl?: string | undefined;
+  locale: string;
+}
+
+const { title, unit, series, provisionalLabel, source, sourceUrl, locale } = Astro.props;
+
+const W = 560;
+const H = 260;
+const PAD = { top: 12, right: 12, bottom: 26, left: 46 };
+const all = series.flatMap((line) => [
+  ...line.points,
+  ...(line.provisional ? ([[line.provisional.x, line.provisional.y]] as const) : []),
+]);
+const xs = all.map(([x]) => x);
+const ys = all.map(([, y]) => y);
+const minX = Math.min(...xs);
+const maxX = Math.max(...xs);
+const maxY = Math.ceil(Math.max(...ys) / 1000) * 1000;
+const x = (value: number) =>
+  PAD.left + ((value - minX) / (maxX - minX || 1)) * (W - PAD.left - PAD.right);
+const y = (value: number) => H - PAD.bottom - (value / maxY) * (H - PAD.top - PAD.bottom);
+const path = (points: readonly (readonly [number, number])[]) =>
+  points
+    .map(([px, py], index) => `${index === 0 ? "M" : "L"}${x(px).toFixed(1)} ${y(py).toFixed(1)}`)
+    .join("");
+const TONES = {
+  main: "stroke-accent",
+  second: "stroke-taupe",
+  third: "stroke-green-grey",
+} as const;
+const SWATCH = { main: "bg-accent", second: "bg-taupe", third: "bg-green-grey" } as const;
+const GRID = [0, 0.25, 0.5, 0.75, 1].map((step) => Math.round(maxY * step));
+const YEARS = [minX, Math.round((minX + maxX) / 2), maxX];
+const hasProvisional = series.some((line) => line.provisional);
+const format = figureFormat(locale);
+const latest = series
+  .map((line) => `${line.name}: ${format.format(line.points.at(-1)?.[1] ?? 0)} ${unit}`)
+  .join(", ");
+---
+
+<figure class="m-0 border border-line bg-canvas p-4">
+  <figcaption class="mb-2 text-xs font-bold tracking-[0.04em]">{title}</figcaption>
+  <svg
+    viewBox={`0 0 ${W} ${H}`}
+    role="img"
+    aria-label={`${title}. ${latest}`}
+    class="block h-auto w-full"
+  >
+    {GRID.map((value) => (
+      <>
+        <line x1={PAD.left} x2={W - PAD.right} y1={y(value)} y2={y(value)} class="stroke-line" />
+        <text x={PAD.left - 6} y={y(value) + 3} text-anchor="end" class="fill-muted text-[10px]">
+          {format.format(value)}
+        </text>
+      </>
+    ))}
+    {YEARS.map((year) => (
+      <text x={x(year)} y={H - 8} text-anchor="middle" class="fill-muted text-[10px]">
+        {year}
+      </text>
+    ))}
+    {series.map((line) => {
+      const last = line.points.at(-1);
+      return (
+        <>
+          <path d={path(line.points)} class:list={["fill-none stroke-2", TONES[line.tone]]} />
+          {line.provisional && last && (
+            <path
+              d={path([last, [line.provisional.x, line.provisional.y]])}
+              stroke-dasharray="4 4"
+              class:list={["fill-none stroke-2", TONES[line.tone]]}
+            />
+          )}
+        </>
+      );
+    })}
+  </svg>
+  <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[0.6875rem] text-muted">
+    {series.map((line) => (
+      <li class="flex items-center gap-1.5">
+        <span aria-hidden="true" class:list={["h-0.5 w-4", SWATCH[line.tone]]}></span>
+        {line.name}
+      </li>
+    ))}
+    {hasProvisional && <li>{provisionalLabel}</li>}
+  </ul>
+  <p class="mt-2 text-[0.625rem] text-muted">
+    {sourceUrl === undefined ? (
+      source
+    ) : (
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline underline-offset-2"
+      >
+        {source}
+      </a>
+    )}
+  </p>
+</figure>

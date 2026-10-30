@@ -1,0 +1,65 @@
+{
+  "title": "Compradores internacionales · HousySpace",
+  "description": "Guía para comprar vivienda en Barcelona desde el extranjero.",
+  "head": {
+    "heading": "Comprar en Barcelona desde el extranjero",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Guía"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "NIE e identificación"
+            },
+            {
+              "kind": "p",
+              "text": "Qué necesitas antes de comprar."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Impuestos y gastos"
+            },
+            {
+              "kind": "p",
+              "text": "Los costes de la compra, explicados con claridad."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Financiación"
+            },
+            {
+              "kind": "p",
+              "text": "Opciones de hipoteca para residentes y no residentes."
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido pendiente de redactar y de revisión por el fiscalista y el despacho jurídico colaboradores antes de publicarse."
+        }
+      ]
+    }
+  ]
+}

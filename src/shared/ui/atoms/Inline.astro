@@ -1,0 +1,26 @@
+---
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import { parseInline } from "@/shared/lib/inline";
+
+/** Renders editable text with its `**bold**` and `[links](target)` (shared/lib/inline.ts). */
+interface Props {
+  text: string;
+  locale: Locale;
+}
+
+const { text, locale } = Astro.props;
+---
+
+{parseInline(text).map((segment) => {
+  if (segment.type === "text") return segment.text;
+  if (segment.type === "strong") return <strong class="font-semibold">{segment.text}</strong>;
+  return (
+    <a
+      href={resolveContentHref(segment.target, locale)}
+      class="text-accent underline underline-offset-4 hover:text-fg"
+    >
+      {segment.text}
+    </a>
+  );
+})}

@@ -1,0 +1,309 @@
+{
+  "title": "Reformas e interiorismo · HousySpace",
+  "description": "Reformas para todo tipo de inmueble: proyecto, interiorismo y obra con un solo interlocutor.",
+  "head": {
+    "heading": "Reformas e interiorismo",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Reformas para todo tipo de inmueble: proyecto, interiorismo y obra con un solo interlocutor."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-ventanal-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Una reforma, un solo interlocutor."
+        },
+        {
+          "kind": "p",
+          "text": "Hacemos reformas para todo tipo de inmueble. Pensamos la reforma y el interiorismo a la vez, para que la distribución, los materiales y la luz estén decididos antes de empezar la obra. Después coordinamos a los profesionales y seguimos plazos y presupuesto hasta la entrega."
+        },
+        {
+          "kind": "p",
+          "text": "El proyecto lo desarrollamos con el estudio de arquitectura e interiorismo con el que colaboramos, y tú tienes siempre a la misma persona de referencia."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Las fases"
+        },
+        {
+          "kind": "h2",
+          "text": "Del primer boceto a la entrega de llaves"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Visita y necesidades",
+              "text": "Vemos el espacio y entendemos cómo quieres vivirlo."
+            },
+            {
+              "title": "Proyecto e interiorismo",
+              "text": "Distribución, materiales, iluminación y mobiliario, en un mismo proyecto."
+            },
+            {
+              "title": "Presupuesto",
+              "text": "Un presupuesto detallado antes de empezar, para decidir sin sorpresas."
+            },
+            {
+              "title": "Licencias y permisos",
+              "text": "Tramitamos los permisos de obra que pida el Ayuntamiento."
+            },
+            {
+              "title": "Obra",
+              "text": "Coordinamos a los gremios y seguimos plazos y presupuesto en obra."
+            },
+            {
+              "title": "Acabados y entrega",
+              "text": "Revisamos cada detalle contigo y te entregamos el inmueble terminado."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interiorismo",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Interiorismo"
+        },
+        {
+          "kind": "h2",
+          "text": "La vivienda se elige también con las manos"
+        },
+        {
+          "kind": "lead",
+          "text": "Definimos contigo el estilo, los materiales, las texturas y los acabados para que cada estancia funcione y se sienta tuya."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Madera natural",
+              "text": "Suelos, carpintería y mobiliario"
+            },
+            {
+              "title": "Piedra y mármol",
+              "text": "Encimeras, baños y detalles"
+            },
+            {
+              "title": "Microcemento",
+              "text": "Continuidad en suelos y paredes"
+            },
+            {
+              "title": "Lino y algodón",
+              "text": "Textiles y cortinas"
+            },
+            {
+              "title": "Latón",
+              "text": "Iluminación y herrajes"
+            },
+            {
+              "title": "Verde profundo",
+              "text": "Color y contraste"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Qué incluye"
+        },
+        {
+          "kind": "h2",
+          "text": "Todo el proyecto, en las mismas manos"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "01DistribuciónCómo se mueve la luz y cómo te mueves tú por la casa."
+            },
+            {
+              "title": "",
+              "text": "02Materiales y acabadosUna paleta coherente para toda la vivienda."
+            },
+            {
+              "title": "",
+              "text": "03IluminaciónLuz natural y artificial pensadas para cada estancia."
+            },
+            {
+              "title": "",
+              "text": "04Mobiliario a medidaDiseño, selección y compra del mobiliario y los detalles."
+            },
+            {
+              "title": "",
+              "text": "05Licencias y gremiosPermisos, albañiles, instaladores y carpinteros, coordinados por nosotros."
+            },
+            {
+              "title": "",
+              "text": "06Seguimiento de obraPlazos, presupuesto y calidad controlados hasta el último detalle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cuándo reformar"
+        },
+        {
+          "kind": "h2",
+          "text": "Una reforma para cada momento"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "01Antes de venderPresupuestos de obra para el comprador o pequeñas mejoras que ayudan a vender. [Ver compraventa](service:venta-estrategica)."
+            },
+            {
+              "title": "",
+              "text": "02Al comprarLa reforma estudiada antes de comprar y hecha por nosotros. [Ver Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "",
+              "text": "03Para alquilarPuesta a punto para alquilar antes y mejor."
+            },
+            {
+              "title": "",
+              "text": "04Para invertirReformas que suman valor y rentabilidad, con los números delante."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "bandQuote",
+          "text": "«No te preocupes, yo me encargo.»"
+        },
+        {
+          "kind": "p",
+          "text": "Licencias, gremios, imprevistos de obra: los gestionamos nosotros para que tú solo tengas que decidir."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Con quién lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Proyectos con Maria Guimerà Arquitectura"
+        },
+        {
+          "kind": "lead",
+          "text": "Para el proyecto, el interiorismo y la dirección de las reformas colaboramos con un estudio de arquitectura e interiorismo de Barcelona."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Conoce a nuestros colaboradores",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Arquitectura e interiorismo Estudio de arquitectura e interiorismo en Barcelona, con reformas integrales de viviendas y pisos del Eixample. [Visitar mariaguimera.com](https://mariaguimera.com/es/inicio/)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

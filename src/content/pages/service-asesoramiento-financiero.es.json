@@ -1,0 +1,290 @@
+{
+  "title": "Asesoramiento financiero · HousySpace",
+  "description": "Hipoteca y financiación estudiadas con números reales, junto a nuestro bróker financiero.",
+  "head": {
+    "heading": "Asesoramiento financiero",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Hipoteca y financiación estudiadas con números reales, junto a nuestro bróker financiero."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "La hipoteca, estudiada antes de enamorarte de un piso."
+        },
+        {
+          "kind": "p",
+          "text": "Saber cuánto puedes financiar, con qué cuota y en qué condiciones te ahorra disgustos. Lo estudiamos contigo y con nuestro bróker financiero, que compara las condiciones de distintas entidades."
+        },
+        {
+          "kind": "p",
+          "text": "Y cuando vendes, comprobamos que el comprador puede pagar, para que la operación no se caiga por la financiación."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Para quién"
+        },
+        {
+          "kind": "h2",
+          "text": "Financiación en cada tipo de operación"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Si compras"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Cuánto te pueden prestar y con qué cuota"
+                },
+                {
+                  "title": "",
+                  "text": "Ahorro necesario para la entrada, los gastos y los impuestos"
+                },
+                {
+                  "title": "",
+                  "text": "Comparación de ofertas de distintas entidades"
+                },
+                {
+                  "title": "",
+                  "text": "Tasación y documentación hasta la firma"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Si vendes"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Estudio de la viabilidad del comprador"
+                },
+                {
+                  "title": "",
+                  "text": "Plazos de la hipoteca coordinados con el contrato de arras"
+                },
+                {
+                  "title": "",
+                  "text": "Menos riesgo de que la venta se caiga"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Si inviertes"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Financiación de la compra y de la reforma"
+                },
+                {
+                  "title": "",
+                  "text": "Números de la inversión con la cuota incluida"
+                },
+                {
+                  "title": "",
+                  "text": "Ver [inversión inmobiliaria](service:inversion-inmobiliaria)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Paso a paso"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversación",
+              "text": "Nos cuentas tu situación y la operación que tienes en mente."
+            },
+            {
+              "title": "Estudio de viabilidad",
+              "text": "Ingresos, ahorro, gastos de la compra: los números reales."
+            },
+            {
+              "title": "Ofertas",
+              "text": "El bróker busca y compara condiciones entre entidades."
+            },
+            {
+              "title": "Tasación y documentación",
+              "text": "Coordinamos la tasación y preparamos lo que pide el banco."
+            },
+            {
+              "title": "Firma",
+              "text": "Revisamos las condiciones finales y te acompañamos a la notaría."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "kind": "h2",
+          "text": "Lo que suelen preguntarnos"
+        },
+        {
+          "kind": "faq",
+          "q": "¿Cuánto necesito tener ahorrado?",
+          "a": "Depende del precio, de la tasación y de tu perfil. Además de la parte que no financia el banco, hay que contar con los impuestos y los gastos de la compra. Te lo calculamos con números reales antes de empezar a buscar."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Quién me asesora en la hipoteca?",
+          "a": "Nuestro bróker financiero, con el que trabajamos en las operaciones con financiación. Nosotros coordinamos todo el proceso contigo."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Me sirve si ya he encontrado el piso?",
+          "a": "Sí. Cuanto antes lo estudiemos, mejor: así sabrás qué condiciones puedes firmar en el contrato de arras."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Con quién lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Financiación con un especialista"
+        },
+        {
+          "kind": "lead",
+          "text": "Las operaciones con financiación las estudiamos junto a un bróker financiero de confianza."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Conoce a nuestros colaboradores",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Bróker financiero",
+              "text": "Financiación Estudia la viabilidad de cada operación con financiación y compara las condiciones de distintas entidades."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

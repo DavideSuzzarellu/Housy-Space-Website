@@ -1,0 +1,192 @@
+{
+  "title": "Búsqueda a medida · HousySpace",
+  "description": "Búsqueda personalizada de vivienda en Barcelona.",
+  "head": {
+    "heading": "Búsqueda a medida",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Compradores"
+      },
+      {
+        "kind": "lead",
+        "text": "Cuéntanos qué buscas y lo buscamos por ti, con un asesor de referencia."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Tu búsqueda"
+        },
+        {
+          "kind": "lead",
+          "text": "Cuanto más nos cuentes, mejor podremos buscar por ti. Un asesor te llamará para afinar los detalles."
+        },
+        {
+          "kind": "form",
+          "id": "bf",
+          "intro": "Hola, quiero una búsqueda a medida.",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nombre y apellidos",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Teléfono",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Correo electrónico",
+              "required": false,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "operacion",
+              "label": "¿Comprar o alquilar?",
+              "required": false,
+              "full": false,
+              "type": "select",
+              "options": ["Comprar", "Alquilar"],
+              "kind": "field"
+            },
+            {
+              "name": "presupuesto",
+              "label": "Presupuesto máximo",
+              "required": false,
+              "full": false,
+              "type": "text",
+              "placeholder": "Ej.: 650.000 €",
+              "kind": "field"
+            },
+            {
+              "name": "zonas",
+              "label": "Zonas o barrios que te interesan",
+              "required": false,
+              "full": true,
+              "type": "text",
+              "placeholder": "Ej.: Sant Gervasi, Eixample, Gràcia",
+              "kind": "field"
+            },
+            {
+              "name": "hab",
+              "label": "Dormitorios",
+              "required": false,
+              "full": false,
+              "type": "number",
+              "kind": "field"
+            },
+            {
+              "name": "m2",
+              "label": "Superficie mínima (m²)",
+              "required": false,
+              "full": false,
+              "type": "number",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Lo que no puede faltar (terraza, ascensor, plazos…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Quiero recibir comunicaciones comerciales de HousySpace sobre inmuebles, servicios y novedades, por correo electrónico, WhatsApp o teléfono. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Quiero suscribirme a la newsletter y a los artículos de HousySpace por correo electrónico. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Solicitar búsqueda a medida"
+            },
+            {
+              "kind": "note",
+              "text": "Todavía no hay un sistema que reciba el formulario (CRM pendiente). Al pulsar, se abrirá WhatsApp con tu solicitud ya escrita para que la envíes tú; hasta que no la envíes allí, no habrá llegado a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "h3",
+          "text": "¿Prefieres hablar directamente con un asesor?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20quiero%20una%20b%C3%BAsqueda%20a%20medida.",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Sobre el personal shopper inmobiliario",
+              "href": "service:personal-shopper",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

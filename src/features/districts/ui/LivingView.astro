@@ -1,0 +1,237 @@
+---
+import type { MarketData } from "@/features/districts/infrastructure/marketSchema";
+import shapes from "@/features/districts/infrastructure/shapes.json";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { figureFormat, formatMessage } from "@/shared/lib/format";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import AccordionRail from "@/shared/ui/organisms/AccordionRail.astro";
+import BarrioTable from "./BarrioTable.astro";
+import { DISTRICT_IMAGES } from "./districtImages";
+import { byDescending } from "./marketSources";
+
+/** Living in Barcelona: vector barrio selector (no map tiles), district accordion and search. */
+interface Props {
+  locale: Locale;
+  market: MarketData;
+  /** Spanish district teasers shown on an untranslated locale. */
+  fallback: boolean;
+}
+
+const { locale, market, fallback } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.zones;
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: dictionary.nav.living },
+];
+const METRICS = [
+  { key: "sale", label: t.metricSale, unit: t.saleUnit },
+  { key: "rent", label: t.metricRent, unit: t.rentUnit },
+  { key: "density", label: t.metricDensity, unit: t.densityUnit },
+] as const;
+const barrioShapes: Readonly<Record<string, string>> = shapes.barrios;
+const districtShapes: Readonly<Record<string, string>> = shapes.districts;
+const format = figureFormat(locale);
+const panels = market.districts.flatMap((district, index) => {
+  const image = DISTRICT_IMAGES[district.slug];
+  if (image === undefined) return [];
+  return [
+    {
+      number: String(index + 1).padStart(2, "0"),
+      title: district.name,
+      tag: `${formatMessage(t.barriosShort, { count: district.barrioCount })} · ${format.format(district.sale)} ${t.saleUnit}`,
+      text: district.lead,
+      href: getLocalizedPath("district", locale, { district: district.slug }),
+      image,
+    },
+  ];
+});
+---
+
+<Section id="mapa" labelledBy="living-heading" name="living-map">
+  <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-6" />
+  <div class="mb-6 flex flex-wrap items-end justify-between gap-5">
+    <div>
+      <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{dictionary.nav.living}</p>
+      <h1 id="living-heading" class="text-[clamp(1.875rem,4.8vw,3.5rem)]">
+        {t.livingHeading}
+      </h1>
+      <p class="mt-3 text-muted">{t.livingLead}</p>
+    </div>
+    <div role="group" aria-label={t.metricLabel} class="flex border border-line">
+      {METRICS.map((metric, index) => (
+        <button
+          type="button"
+          data-metric={metric.key}
+          aria-pressed={index === 0 ? "true" : "false"}
+          class="min-h-11 cursor-pointer px-4 text-xs tracking-[0.08em] text-muted hover:text-fg aria-pressed:bg-fg aria-pressed:text-canvas"
+        >
+          {metric.label}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <div data-barrio-map class="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+    <svg
+      viewBox={shapes.viewBox}
+      role="group"
+      aria-label={t.mapLabel}
+      class="block h-auto max-h-[75vh] w-full"
+    >
+      {market.barrios.map((barrio) => {
+        const d = barrioShapes[barrio.slug];
+        return (
+          d !== undefined && (
+            <a
+              href={getLocalizedPath("barrio", locale, {
+                district: barrio.district,
+                barrio: barrio.slug,
+              })}
+              aria-label={barrio.name}
+            >
+              <path
+                d={d}
+                data-slug={barrio.slug}
+                data-name={barrio.name}
+                data-sale={barrio.sale}
+                data-rent={barrio.rent}
+                data-density={barrio.density}
+                class="cursor-pointer stroke-canvas stroke-1 transition-opacity hover:opacity-70"
+              />
+            </a>
+          )
+        );
+      })}
+      {market.districts.map((district) => {
+        const d = districtShapes[district.slug];
+        return (
+          d !== undefined && (
+            <path
+              d={d}
+              aria-hidden="true"
+              class="pointer-events-none fill-none stroke-fg stroke-[1.5]"
+            />
+          )
+        );
+      })}
+    </svg>
+    <aside aria-live="polite" class="self-start bg-card p-6">
+      <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{t.mapTag}</p>
+      <p data-map-name class="mt-2 text-[clamp(1.25rem,2.2vw,1.75rem)] font-extrabold">
+        {market.city.name}
+      </p>
+      <p data-map-value class="mt-2 text-lg font-medium">
+        {format.format(market.city.sale)} {t.saleUnit}
+      </p>
+      <p class="mt-4 text-xs text-muted">{t.mapHint}</p>
+      <div class="mt-5 flex items-center gap-2 text-[0.625rem] text-muted">
+        <span data-map-min></span>
+        <span aria-hidden="true" class="h-2 flex-1 bg-linear-to-r from-stone to-petrol"></span>
+        <span data-map-max></span>
+      </div>
+    </aside>
+  </div>
+  <p class="mt-4 max-w-[90ch] text-xs text-muted">{t.attribution}</p>
+</Section>
+
+<section
+  id="distritos"
+  aria-labelledby="living-districts"
+  class="surface-stone overflow-hidden bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+>
+  <Container>
+    <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.allDistricts}</p>
+    <SectionHeading id="living-districts" heading={t.chooseDistrict} class="mb-6" />
+    <div lang={fallback ? "es" : undefined}>
+      <AccordionRail label={t.allDistricts} panels={panels} />
+    </div>
+  </Container>
+</section>
+
+<Section id="buscar" labelledBy="living-search" name="living-search">
+  <label
+    id="living-search"
+    for="barrio-search"
+    class="mb-3 block text-[clamp(1.25rem,2.2vw,1.75rem)] font-extrabold"
+  >
+    {t.searchLabel}
+  </label>
+  <input
+    id="barrio-search"
+    type="search"
+    data-barrio-search
+    placeholder={t.searchPlaceholder}
+    class="mb-5 min-h-11 w-full border border-line bg-canvas px-3.5 py-2.5 text-sm"
+  />
+  <BarrioTable locale={locale} barrios={byDescending(market.barrios, (b) => b.sale)} searchable />
+</Section>
+
+<script>
+  /** Colour by metric on a stone → petrol scale; numbers come from the server-rendered paths. */
+  const FROM = [235, 229, 220];
+  const TO = [15, 90, 94];
+
+  document.addEventListener("astro:page-load", () => {
+    const map = document.querySelector<HTMLElement>("[data-barrio-map]");
+    if (map === null) return;
+    const paths = [...map.querySelectorAll<SVGPathElement>("path[data-slug]")];
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>("[data-metric]")];
+    const nameNode = map.querySelector("[data-map-name]");
+    const valueNode = map.querySelector("[data-map-value]");
+    const defaults = { name: nameNode?.textContent ?? "", value: valueNode?.textContent ?? "" };
+    const format = new Intl.NumberFormat(document.documentElement.lang, { useGrouping: "always" });
+    let metric = "sale";
+
+    const paint = (): void => {
+      const values = paths.map((path) => Number(path.dataset[metric]));
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      paths.forEach((path, index) => {
+        const ratio = ((values[index] ?? min) - min) / (max - min || 1);
+        const channel = (position: number) =>
+          Math.round((FROM[position] ?? 0) + ((TO[position] ?? 0) - (FROM[position] ?? 0)) * ratio);
+        path.style.fill = `rgb(${channel(0)} ${channel(1)} ${channel(2)})`;
+      });
+      const minNode = map.querySelector("[data-map-min]");
+      const maxNode = map.querySelector("[data-map-max]");
+      if (minNode !== null) minNode.textContent = format.format(min);
+      if (maxNode !== null) maxNode.textContent = format.format(max);
+    };
+
+    paths.forEach((path) => {
+      const show = (): void => {
+        if (nameNode !== null) nameNode.textContent = path.dataset["name"] ?? "";
+        if (valueNode !== null) valueNode.textContent = format.format(Number(path.dataset[metric]));
+      };
+      path.addEventListener("pointerenter", show);
+      path.parentElement?.addEventListener("focus", show);
+    });
+    map.querySelector("svg")?.addEventListener("pointerleave", () => {
+      if (nameNode !== null) nameNode.textContent = defaults.name;
+      if (valueNode !== null) valueNode.textContent = defaults.value;
+    });
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        metric = button.dataset["metric"] ?? "sale";
+        buttons.forEach((other) => other.setAttribute("aria-pressed", String(other === button)));
+        paint();
+      });
+    });
+    paint();
+
+    const search = document.querySelector<HTMLInputElement>("[data-barrio-search]");
+    const clean = (value: string) => value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+    search?.addEventListener("input", () => {
+      const query = clean(search.value);
+      document.querySelectorAll<HTMLElement>("[data-barrio-row]").forEach((row) => {
+        row.hidden = !clean(row.dataset["barrioRow"] ?? "").includes(query);
+      });
+    });
+  });
+</script>

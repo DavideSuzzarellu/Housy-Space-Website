@@ -1,0 +1,244 @@
+{
+  "title": "Personal Shopper inmobiliario · HousySpace",
+  "description": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también lo reformamos.",
+  "head": {
+    "heading": "Personal Shopper inmobiliario",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también lo reformamos."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Buscamos por ti, visitamos contigo y te entregamos las llaves."
+        },
+        {
+          "kind": "p",
+          "text": "Defines lo que necesitas y nosotros hacemos el resto: buscamos, filtramos y visitamos contigo solo lo que encaja. Antes de que decidas, estudiamos a fondo el inmueble para que compres sin sorpresas."
+        },
+        {
+          "kind": "p",
+          "text": "Y si el piso que te gusta necesita una reforma, también la hacemos nosotros."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "De la búsqueda a las llaves"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Perfil de búsqueda",
+              "text": "Zona, tipología, presupuesto y prioridades: lo que buscas y lo que no."
+            },
+            {
+              "title": "Búsqueda activa",
+              "text": "Rastreamos el mercado según tus criterios, también lo que aún no está publicado."
+            },
+            {
+              "title": "Selección",
+              "text": "Te presentamos solo las opciones que merecen una visita."
+            },
+            {
+              "title": "Visitas",
+              "text": "Las organizamos y te acompañamos con mirada técnica."
+            },
+            {
+              "title": "Negociación y compra",
+              "text": "Negociamos el precio y te acompañamos hasta la firma."
+            },
+            {
+              "title": "Reforma",
+              "text": "Si hace falta, proyectamos y hacemos la obra para que entres a vivir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Sin sorpresas"
+        },
+        {
+          "kind": "h2",
+          "text": "Lo que revisamos antes de que compres"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "01El inmuebleEstado real de la vivienda, instalaciones y posibles reformas con su coste."
+            },
+            {
+              "title": "",
+              "text": "02El edificioEstado de la finca, ITE y obras previstas o derramas de la comunidad."
+            },
+            {
+              "title": "",
+              "text": "03La documentaciónNota simple del Registro, cargas, cédula de habitabilidad y certificado energético."
+            },
+            {
+              "title": "",
+              "text": "04El precioComparación con ventas recientes de la zona para no pagar de más."
+            },
+            {
+              "title": "",
+              "text": "05La financiaciónCon nuestro bróker financiero, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero)."
+            },
+            {
+              "title": "",
+              "text": "06El entornoServicios, transporte, ruido y evolución del barrio."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "image",
+          "src": "../../assets/home/det-salon-1400.jpg"
+        },
+        {
+          "kind": "tag",
+          "text": "Reformas"
+        },
+        {
+          "kind": "h2",
+          "text": "¿El piso necesita una reforma? También la hacemos"
+        },
+        {
+          "kind": "p",
+          "text": "Muchas veces la vivienda que encaja necesita obra. En lugar de buscar arquitecto, presupuestos y constructores por tu cuenta, lo hacemos nosotros con el estudio de arquitectura e interiorismo con el que colaboramos."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Presupuesto de la reforma antes de comprar, para decidir con el coste total."
+            },
+            {
+              "title": "",
+              "text": "Proyecto, licencias y obra coordinados por nosotros."
+            },
+            {
+              "title": "",
+              "text": "Seguimiento de plazos y acabados hasta la entrega de llaves."
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Reformas e interiorismo",
+              "href": "service:reformas-obras",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "bandQuote",
+          "text": "«No te preocupes, yo me encargo.»"
+        },
+        {
+          "kind": "p",
+          "text": "Desde la primera visita hasta el día en que entras a vivir, tienes un solo asesor de referencia."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

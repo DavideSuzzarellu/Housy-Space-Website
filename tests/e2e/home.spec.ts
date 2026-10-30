@@ -56,7 +56,7 @@ for (const locale of LOCALES) {
         "living",
         "blog",
       ]);
-      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
+      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(9);
       await expect(page.locator("[data-contact-block]")).toBeVisible();
       await expect(page.locator("[data-blog-empty]")).toBeVisible();
     });

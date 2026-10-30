@@ -1,0 +1,34 @@
+{
+  "title": "Aviso legal · HousySpace",
+  "description": "Aviso legal de HousySpace (pendiente).",
+  "head": {
+    "heading": "Aviso legal",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Texto pendiente de aprobación.** El texto legal definitivo debe redactarlo y aprobarlo HousySpace con su asesoría antes del lanzamiento."
+        },
+        {
+          "kind": "p",
+          "text": "Titular: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro de Agentes Inmobiliarios de Cataluña: AICAT nº 14032 Teléfono 613 084 804"
+        },
+        {
+          "kind": "note",
+          "text": "Pendientes: Domicilio fiscal, Registro Mercantil, Correo electrónico de contacto y de privacidad, Horario y dirección de la oficina."
+        }
+      ]
+    }
+  ]
+}

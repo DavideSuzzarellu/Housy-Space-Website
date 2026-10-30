@@ -1,0 +1,208 @@
+{
+  "title": "Inversión inmobiliaria · HousySpace",
+  "description": "Análisis de oportunidades con números claros: compra, reforma, alquiler y rentabilidad.",
+  "head": {
+    "heading": "Inversión inmobiliaria",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Análisis de oportunidades con números claros: compra, reforma, alquiler y rentabilidad."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "No prometemos rentabilidades: ponemos los números sobre la mesa."
+        },
+        {
+          "kind": "p",
+          "text": "Analizamos oportunidades de inversión residencial con información clara, para que decidas con criterio. Te decimos también cuándo una operación no te conviene."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Qué analizamos"
+        },
+        {
+          "kind": "h2",
+          "text": "Una inversión, mirada desde todos los ángulos"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "01Precio y costes de compraPrecio, impuestos, notaría, registro y gestoría: el coste real de entrar."
+            },
+            {
+              "title": "",
+              "text": "02ReformaQué obra necesita, cuánto cuesta y cuánto valor añade."
+            },
+            {
+              "title": "",
+              "text": "03Renta esperableLo que se paga hoy por viviendas similares en la zona."
+            },
+            {
+              "title": "",
+              "text": "04Rentabilidad estimadaBruta y neta, con gastos, impuestos y periodos sin inquilino."
+            },
+            {
+              "title": "",
+              "text": "05RiesgosEstado de la finca, normativa de alquiler y liquidez de la zona."
+            },
+            {
+              "title": "",
+              "text": "06SalidaQué pasa si quieres vender dentro de unos años."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Paso a paso"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Objetivos",
+              "text": "Definimos qué quieres conseguir, con qué presupuesto y con qué horizonte."
+            },
+            {
+              "title": "Búsqueda y análisis",
+              "text": "Estudiamos opciones y sus cifras."
+            },
+            {
+              "title": "Riesgos",
+              "text": "Revisamos costes, plazos y escenarios."
+            },
+            {
+              "title": "Compra",
+              "text": "Negociamos y te acompañamos hasta la firma."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Una sola puerta"
+        },
+        {
+          "kind": "h2",
+          "text": "Del análisis a la renta, sin cambiar de interlocutor"
+        },
+        {
+          "kind": "lead",
+          "text": "Si lo necesitas, nos ocupamos de cada paso después de la compra."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "",
+              "text": "[Financia**Asesoramiento financiero**](service:asesoramiento-financiero)"
+            },
+            {
+              "title": "",
+              "text": "[Compra**Personal Shopper inmobiliario**](service:personal-shopper)"
+            },
+            {
+              "title": "",
+              "text": "[Reforma**Reformas e interiorismo**](service:reformas-obras)"
+            },
+            {
+              "title": "",
+              "text": "[Alquila**Alquiler y gestión de inmuebles**](service:alquiler-gestion)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

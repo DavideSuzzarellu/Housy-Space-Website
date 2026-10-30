@@ -5,6 +5,9 @@ import {
   telHref,
   whatsappHref,
 } from "@/features/agency/domain/contact";
+import { Image } from "astro:assets";
+import aicatSeal from "@/assets/brand/aicat.png";
+import apeiSeal from "@/assets/brand/apei.png";
 import type { Company } from "@/features/agency/domain/company";
 import type { Locale } from "@/shared/i18n/config";
 import { getDictionary } from "@/shared/i18n";
@@ -107,10 +110,31 @@ const year = new Date().getFullYear();
       ))}
     </div>
 
-    <dl class="mt-8.5 border-t border-line pt-6.5">
-      <dt class="text-[0.6875rem] font-medium tracking-[0.14em] text-fg">{t.footer.aicatLabel}</dt>
-      <dd class="mt-1 text-fg">{company.aicatNumber}</dd>
-    </dl>
+    <div class="mt-8.5 flex flex-wrap gap-x-[clamp(1.75rem,5vw,4rem)] gap-y-4.5 border-t border-line pt-6.5">
+      <div class="flex items-center gap-3.5">
+        <Image
+          src={aicatSeal}
+          alt={t.footer.aicatAlt}
+          height={46}
+          class="h-11.5 w-auto rounded-xs"
+        />
+        <p class="grid gap-0.5 leading-snug">
+          <b class="text-[0.6875rem] font-medium tracking-[0.14em] text-fg">
+            {t.footer.registeredTitle}
+          </b>
+          <span>{t.footer.registeredBody}</span>
+          <span class="text-fg">AICAT nº {company.aicatNumber}</span>
+        </p>
+      </div>
+      <div class="flex items-center gap-3.5">
+        <Image src={apeiSeal} alt={t.footer.apeiAlt} height={48} class="h-12 w-auto opacity-90" />
+        <p class="grid gap-0.5 leading-snug">
+          <b class="text-[0.6875rem] font-medium tracking-[0.14em] text-fg">{t.footer.apeiTitle}</b>
+          <span>{t.footer.apeiBody}</span>
+          <span class="text-fg">{t.footer.apeiNumber}</span>
+        </p>
+      </div>
+    </div>
 
     <div class="mt-6.5 grid gap-1 border-t border-line pt-5 text-xs">
       <p>

@@ -1,0 +1,259 @@
+{
+  "title": "Valoración inmobiliaria · HousySpace",
+  "description": "Una referencia al momento con el valorador o un informe completo con estudio de mercado.",
+  "head": {
+    "heading": "Valoración inmobiliaria",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Una referencia al momento con el valorador o un informe completo con estudio de mercado."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-terraza-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Dos formas de conocer el valor de tu vivienda"
+        },
+        {
+          "kind": "h3",
+          "text": "Al momento"
+        },
+        {
+          "kind": "p",
+          "text": "Con nuestro valorador online."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Introduces los datos de tu vivienda."
+            },
+            {
+              "title": "",
+              "text": "Recibes al momento una referencia orientativa."
+            },
+            {
+              "title": "",
+              "text": "Si quieres, un asesor la revisa contigo."
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Ir al valorador",
+              "href": "route:valuation",
+              "solid": true
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Informe de valoración"
+        },
+        {
+          "kind": "p",
+          "text": "Estudiamos tu vivienda a fondo."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Visitamos el inmueble y revisamos su documentación."
+            },
+            {
+              "title": "",
+              "text": "Analizamos el barrio, el mercado y las ventas recientes."
+            },
+            {
+              "title": "",
+              "text": "Te entregamos el informe y lo comentamos contigo."
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Pedir un informe",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Qué contiene"
+        },
+        {
+          "kind": "h2",
+          "text": "Un informe para decidir con datos"
+        },
+        {
+          "kind": "lead",
+          "text": "Es el mismo informe que preparamos antes de poner una vivienda a la venta."
+        },
+        {
+          "kind": "p",
+          "text": "Informe de valoración"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Localización y barrio",
+              "text": "01 Situación del inmueble e historia del barrio"
+            },
+            {
+              "title": "Datos del barrio",
+              "text": "02 Precio medio por m² de las compraventas, según el Ayuntamiento de Barcelona"
+            },
+            {
+              "title": "Información urbanística y catastral",
+              "text": "03 Referencia catastral, calificación y datos de la finca"
+            },
+            {
+              "title": "Valor de referencia catastral",
+              "text": "04 El valor que fija Catastro para la vivienda"
+            },
+            {
+              "title": "Datos y medidas",
+              "text": "05 Superficies construida y útil, estancia por estancia"
+            },
+            {
+              "title": "Características y estado",
+              "text": "06 Estado de la vivienda y del edificio, instalaciones, orientación"
+            },
+            {
+              "title": "Documentación",
+              "text": "07 Cédula de habitabilidad, certificado energético e ITE"
+            },
+            {
+              "title": "Comparables",
+              "text": "08 Viviendas similares en portales y vendidas en la zona"
+            },
+            {
+              "title": "Estudio de mercado",
+              "text": "09 Oferta actual con la que competirá tu vivienda"
+            },
+            {
+              "title": "Valoración",
+              "text": "10 Valor de mercado, precio por m² y precio aconsejado de salida"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "No es una tasación oficial: es una valoración de mercado para decidir con criterio."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "kind": "h2",
+          "text": "Lo que suelen preguntarnos"
+        },
+        {
+          "kind": "faq",
+          "q": "¿Es lo mismo que una tasación?",
+          "a": "No. La tasación oficial la hace una sociedad de tasación homologada y suele pedirla el banco para una hipoteca. Nuestro informe es una valoración de mercado: te dice a qué precio se vende hoy una vivienda como la tuya."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Para qué me sirve?",
+          "a": "Para decidir si vender y a qué precio, pero también ante una herencia, un divorcio o un reparto entre propietarios, o simplemente para saber cuánto vale tu patrimonio."
+        },
+        {
+          "kind": "faq",
+          "q": "¿El valorador online es suficiente?",
+          "a": "Es una buena primera referencia. Para tomar una decisión importante, te recomendamos el informe completo: tiene en cuenta el estado real de la vivienda y de la finca."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Y si después quiero vender?",
+          "a": "El informe es el primer paso de nuestro servicio de [compraventa](service:venta-estrategica): ya tendrás el precio y la estrategia."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

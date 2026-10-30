@@ -26,3 +26,6 @@ export function whatsappHref(phone: PhoneNumber, message?: string): string {
   if (message !== undefined && message !== "") url.searchParams.set("text", message);
   return url.href;
 }
+
+/** General address published in the proposal; the legal notice data remains pending (I11). */
+export const COMPANY_EMAIL = "info@housyspace.com";

@@ -1,0 +1,178 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getMarket } from "@/features/districts/application/market";
+import type {
+  MarketBarrio,
+  MarketDistrict,
+} from "@/features/districts/infrastructure/marketSchema";
+import BarrioView from "@/features/districts/ui/BarrioView.astro";
+import DistrictView from "@/features/districts/ui/DistrictView.astro";
+import LivingView from "@/features/districts/ui/LivingView.astro";
+import {
+  CONTENT_FILE,
+  EDITORIAL,
+  getPage,
+  type EditorialKey,
+} from "@/features/pages/application/pages";
+import OtherServices from "@/features/pages/ui/OtherServices.astro";
+import PageView from "@/features/pages/ui/PageView.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDictionary } from "@/shared/i18n";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
+import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
+import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
+
+/**
+ * Every page that is not home or a listing: editorial pages from `src/content/pages` and the
+ * Living in Barcelona pages from the market data. One route, so all share layout and SEO.
+ */
+
+type View =
+  | { readonly view: "editorial"; readonly key: EditorialKey }
+  | { readonly view: "service"; readonly service: ServiceKey }
+  | { readonly view: "living" }
+  | { readonly view: "district"; readonly district: MarketDistrict }
+  | { readonly view: "barrio"; readonly barrio: MarketBarrio };
+
+export const getStaticPaths = (async () => {
+  const market = await getMarket();
+  const paramOf = (path: string, locale: Locale) => path.slice(`/${locale}/`.length);
+  return LOCALES.flatMap((locale) => {
+    const entry = (path: string, view: View) => ({
+      params: { locale, page: paramOf(path, locale) },
+      props: { locale, target: view },
+    });
+    return [
+      ...EDITORIAL.map((key) => entry(getLocalizedPath(key, locale), { view: "editorial", key })),
+      ...SERVICE_KEYS.map((service) =>
+        entry(
+          getLocalizedPath("serviceDetail", locale, { service: getServiceSlug(service, locale) }),
+          { view: "service", service },
+        ),
+      ),
+      entry(getLocalizedPath("living", locale), { view: "living" }),
+      ...market.districts.map((district) =>
+        entry(getLocalizedPath("district", locale, { district: district.slug }), {
+          view: "district",
+          district,
+        }),
+      ),
+      ...market.barrios.map((barrio) =>
+        entry(
+          getLocalizedPath("barrio", locale, { district: barrio.district, barrio: barrio.slug }),
+          { view: "barrio", barrio },
+        ),
+      ),
+    ];
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  locale: Locale;
+  target: View;
+}
+
+const { locale, target } = Astro.props;
+const dictionary = getDictionary(locale);
+const home = { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) };
+const market = await getMarket();
+const zones = dictionary.zones;
+const isSpanish = locale === DEFAULT_LOCALE;
+
+const editorial =
+  target.view === "editorial"
+    ? await getPage(CONTENT_FILE[target.key] ?? target.key, locale)
+    : target.view === "service"
+      ? await getPage(`service-${getServiceSlug(target.service, DEFAULT_LOCALE)}`, locale)
+      : undefined;
+
+function metaOf(): {
+  title: string;
+  description: string;
+  alternates: ReturnType<typeof getAlternates>;
+} {
+  if (target.view === "editorial" && editorial !== undefined) {
+    return {
+      title: editorial.content.title,
+      description: editorial.content.description,
+      alternates: getAlternates(target.key),
+    };
+  }
+  if (target.view === "service" && editorial !== undefined) {
+    return {
+      title: editorial.content.title,
+      description: editorial.content.description,
+      alternates: getAlternates("serviceDetail", (candidate) => ({
+        service: getServiceSlug(target.service, candidate),
+      })),
+    };
+  }
+  if (target.view === "district") {
+    return {
+      title: `${target.district.name} · ${dictionary.nav.living} · HousySpace`,
+      description: target.district.lead,
+      alternates: getAlternates("district", { district: target.district.slug }),
+    };
+  }
+  if (target.view === "barrio") {
+    return {
+      title: `${target.barrio.name} · ${zones.barrioMeta} · HousySpace`,
+      description: zones.barrioDescription.replace("{name}", target.barrio.name),
+      alternates: getAlternates("barrio", {
+        district: target.barrio.district,
+        barrio: target.barrio.slug,
+      }),
+    };
+  }
+  return {
+    title: `${zones.livingHeading} · HousySpace`,
+    description: zones.livingLead,
+    alternates: getAlternates("living"),
+  };
+}
+
+const meta = metaOf();
+// Prose not translated yet: shown in Spanish, kept out of the index until it is (see ROADMAP).
+const proseFallback =
+  (editorial?.fallback ?? false) ||
+  (!isSpanish && (target.view === "district" || target.view === "living"));
+const serviceCrumb =
+  target.view === "service" ? dictionary.serviceNames[target.service] : undefined;
+const crumbs = [
+  home,
+  ...(serviceCrumb === undefined
+    ? []
+    : [{ label: dictionary.nav.services, href: `${getLocalizedPath("home", locale)}#servicios` }]),
+  { label: serviceCrumb ?? editorial?.content.head.heading ?? "" },
+];
+---
+
+<BaseLayout
+  locale={locale}
+  title={meta.title}
+  description={meta.description}
+  alternates={meta.alternates}
+  noindex={proseFallback}
+>
+  {editorial !== undefined && (
+    <PageView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
+  )}
+  {target.view === "service" && <OtherServices locale={locale} current={target.service} />}
+  {target.view === "living" && <LivingView locale={locale} market={market} fallback={!isSpanish} />}
+  {target.view === "district" && (
+    <DistrictView
+      locale={locale}
+      district={target.district}
+      market={market}
+      fallback={!isSpanish}
+    />
+  )}
+  {target.view === "barrio" && (
+    <BarrioView locale={locale} barrio={target.barrio} market={market} />
+  )}
+</BaseLayout>

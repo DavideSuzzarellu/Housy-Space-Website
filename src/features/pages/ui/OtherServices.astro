@@ -1,0 +1,40 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+
+/** Links to the other services, closing each service page. */
+interface Props {
+  locale: Locale;
+  current: ServiceKey;
+}
+
+const { locale, current } = Astro.props;
+const t = getDictionary(locale);
+---
+
+<nav aria-labelledby="other-services" class="bg-canvas pb-[clamp(2.75rem,5vw,4.125rem)]">
+  <Container>
+    <p id="other-services" class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">
+      {t.nav.otherServices}
+    </p>
+    <ul class="grid gap-x-8 sm:grid-cols-2">
+      {SERVICE_KEYS.filter((service) => service !== current).map((service) => (
+        <li>
+          <a
+            href={getLocalizedPath("serviceDetail", locale, {
+              service: getServiceSlug(service, locale),
+            })}
+            class="flex items-center justify-between gap-3 border-b border-line py-3 text-sm no-underline hover:text-accent"
+          >
+            {t.serviceNames[service]}
+            <ArrowUpRight />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Container>
+</nav>

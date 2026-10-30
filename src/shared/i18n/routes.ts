@@ -74,6 +74,12 @@ export const routes = {
     it: "ricerca-su-misura",
     ca: "cerca-a-mida",
   },
+  homeSearch: {
+    es: "busco-vivienda",
+    en: "find-a-home",
+    it: "cerco-casa",
+    ca: "busco-habitatge",
+  },
   internationalGuide: {
     es: "guia-internacional",
     en: "international-guide",

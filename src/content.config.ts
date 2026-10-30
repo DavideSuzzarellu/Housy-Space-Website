@@ -1,3 +1,5 @@
+import { marketSchema } from "./features/districts/infrastructure/marketSchema";
+import { pageSchema } from "./features/pages/infrastructure/pageSchema";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 import { CLIENT_ID, CLIENT_SECRET } from "astro:env/server";
@@ -13,6 +15,19 @@ export const collections = {
   agents: defineCollection({ loader: mobilia.agents }),
   // Editorial content edited by the client in Pages CMS (`.pages.yml`): one file per locale,
   // the entry id is the locale (`es`, `en`, `it`, `ca`).
+  pages: defineCollection({
+    loader: glob({
+      pattern: "*.json",
+      base: "./src/content/pages",
+      // `{key}.{locale}`: the default id generator would drop the dot.
+      generateId: ({ entry }) => entry.replace(/\.json$/, ""),
+    }),
+    schema: ({ image }) => pageSchema(image),
+  }),
+  market: defineCollection({
+    loader: glob({ pattern: "*.json", base: "./src/content/market" }),
+    schema: marketSchema,
+  }),
   home: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/home" }),
     schema: ({ image }) => homeContentSchema(image),

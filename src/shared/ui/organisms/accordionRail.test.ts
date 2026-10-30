@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { wrapIndex } from "./servicesAccordion";
+import { wrapIndex } from "./accordionRail";
 
 describe("wrapIndex", () => {
   it("moves to the next panel", () => {

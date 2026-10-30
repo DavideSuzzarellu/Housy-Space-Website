@@ -44,3 +44,8 @@ export function formatMessage(
     return String(value);
   });
 }
+
+/** Figures always grouped: Spanish locale data would otherwise print `2736` next to `56.992`. */
+export function figureFormat(locale: string): Intl.NumberFormat {
+  return new Intl.NumberFormat(locale, { useGrouping: "always" });
+}

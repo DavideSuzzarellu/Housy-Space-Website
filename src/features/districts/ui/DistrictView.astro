@@ -1,0 +1,269 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { percentDiff, rankOf } from "@/features/districts/domain/marketStats";
+import type { MarketData, MarketDistrict } from "@/features/districts/infrastructure/marketSchema";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { figureFormat, formatMessage } from "@/shared/lib/format";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import BarChart from "@/shared/ui/organisms/charts/BarChart.astro";
+import LineChart from "@/shared/ui/organisms/charts/LineChart.astro";
+import BarrioTable from "./BarrioTable.astro";
+import { DISTRICT_IMAGES } from "./districtImages";
+import { byDescending, SOURCES } from "./marketSources";
+import MarketKpis from "./MarketKpis.astro";
+
+/** A district: history, official figures, landmarks and its barrios. */
+interface Props {
+  locale: Locale;
+  district: MarketDistrict;
+  market: MarketData;
+  /** Spanish prose shown on an untranslated locale. */
+  fallback: boolean;
+}
+
+const { locale, district, market, fallback } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.zones;
+const city = market.city;
+const barrios = byDescending(
+  market.barrios.filter((b) => b.district === district.slug),
+  (b) => b.sale,
+);
+const image: ImageMetadata | undefined = DISTRICT_IMAGES[district.slug];
+const kpis = [
+  { label: t.saleLabel, key: "sale", unit: `${t.saleUnit} · 2025`, cityValue: city.sale },
+  { label: t.rentLabel, key: "rent", unit: `${t.rentUnit} · 2025`, cityValue: city.rent },
+  {
+    label: t.densityLabel,
+    key: "density",
+    unit: `${t.densityUnit} · 2026`,
+    cityValue: city.density,
+  },
+] as const;
+const format = figureFormat(locale);
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: dictionary.nav.living, href: getLocalizedPath("living", locale) },
+  { label: district.name },
+];
+---
+
+<section class="surface-dark relative isolate flex min-h-[clamp(24rem,50vw,34rem)] flex-col justify-end overflow-hidden bg-canvas pt-8 pb-[clamp(2.75rem,6vw,4.5rem)]">
+  {image !== undefined && (
+    <Picture
+      {...PHOTO_PICTURE}
+      src={image}
+      alt=""
+      widths={[560]}
+      sizes="100vw"
+      priority
+      class="absolute inset-0 -z-20 size-full object-cover"
+    />
+  )}
+  <span
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 bg-linear-to-b from-ink/55 to-ink/80"
+  ></span>
+  <MediaCredit tone="onImage" class="absolute right-4 bottom-2">
+    {dictionary.media.conceptualImage}
+  </MediaCredit>
+  <Container>
+    <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-6" />
+    <p class="text-[0.6875rem] tracking-[0.16em] text-accent">
+      {formatMessage(t.districtTag, { count: district.barrioCount })}
+    </p>
+    <h1 class="mt-3 text-[clamp(1.875rem,4.8vw,3.5rem)]">{district.name}</h1>
+    <p lang={fallback ? "es" : undefined} class="mt-4 max-w-[62ch] text-fg/90">
+      {district.lead}
+    </p>
+  </Container>
+</section>
+
+<Section id="historia" labelledBy="district-history" name="district-history">
+  <div class="grid gap-6 lg:grid-cols-[1fr_2fr]">
+    <div>
+      <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{district.name}</p>
+      <SectionHeading id="district-history" heading={t.historyHeading} />
+    </div>
+    <div lang={fallback ? "es" : undefined}>
+      {district.history.map((paragraph) => (
+        <p class="mb-3.5 max-w-[72ch]">{paragraph}</p>
+      ))}
+    </div>
+  </div>
+</Section>
+
+<Section id="datos" labelledBy="district-data" name="district-data" surface="stone">
+  <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.officialData}</p>
+  <SectionHeading id="district-data" heading={t.marketHeading} class="mb-3" />
+  <p lang={fallback ? "es" : undefined} class="mb-6 max-w-[80ch] text-muted">
+    {district.summary}
+  </p>
+  <MarketKpis
+    locale={locale}
+    items={kpis.map((kpi) => ({
+      label: kpi.label,
+      value: district[kpi.key],
+      unit: kpi.unit,
+      comparisons: [{ diff: percentDiff(district[kpi.key], kpi.cityValue), against: city.name }],
+      rank: formatMessage(t.rankDistrict, {
+        rank: rankOf(
+          district[kpi.key],
+          market.districts.map((d) => d[kpi.key]),
+        ),
+        total: market.districts.length,
+      }),
+    }))}
+  />
+  <dl class="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="border-t border-line pt-2.5">
+      <dt class="text-xs text-muted">{t.population}</dt>
+      <dd class="font-semibold">
+        {format.format(district.population)} {t.inhabitants}
+      </dd>
+    </div>
+    <div class="border-t border-line pt-2.5">
+      <dt class="text-xs text-muted">{t.area}</dt>
+      <dd class="font-semibold">{format.format(district.area)} km²</dd>
+    </div>
+    <div class="border-t border-line pt-2.5">
+      <dt class="text-xs text-muted">{t.barriosLabel}</dt>
+      <dd class="font-semibold">{district.barrioCount}</dd>
+    </div>
+    <div class="border-t border-line pt-2.5">
+      <dt class="text-xs text-muted">{t.rentPerM2}</dt>
+      <dd class="font-semibold">
+        {format.format(district.rentPerM2)} {t.saleUnit} · 2025
+      </dd>
+    </div>
+  </dl>
+  <div class="mt-7 grid gap-5 lg:grid-cols-2">
+    <LineChart
+      title={t.saleChart}
+      unit={t.saleUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      series={[
+        { name: district.name, points: district.saleSeries, tone: "main" },
+        { name: city.name, points: city.saleSeries, tone: "third" },
+      ]}
+    />
+    <LineChart
+      title={t.rentChart}
+      unit={t.rentUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      source={SOURCES.rent(t)}
+      sourceUrl={SOURCES.rentUrl}
+      series={[
+        { name: district.name, points: district.rentSeries, tone: "main" },
+        { name: city.name, points: city.rentSeries, tone: "third" },
+      ]}
+    />
+    <BarChart
+      title={t.saleBars}
+      unit={t.saleUnit}
+      locale={locale}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      items={[
+        ...barrios.map((b) => ({ label: b.name, value: b.sale })),
+        { label: city.name, value: city.sale, tone: "third" as const },
+      ]}
+    />
+    <BarChart
+      title={t.densityBars}
+      unit={t.densityUnit}
+      locale={locale}
+      source={t.densitySource}
+      items={[
+        ...byDescending(barrios, (b) => b.density).map((b) => ({
+          label: b.name,
+          value: b.density,
+        })),
+        { label: city.name, value: city.density, tone: "third" as const },
+      ]}
+    />
+  </div>
+  <p class="mt-4 max-w-[90ch] text-xs text-muted">{t.methodNote}</p>
+</Section>
+
+<Section id="lugares" labelledBy="district-places" name="district-places">
+  <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.placesTag}</p>
+  <SectionHeading
+    id="district-places"
+    heading={formatMessage(t.placesHeading, { name: district.name })}
+    class="mb-6"
+  />
+  <ol lang={fallback ? "es" : undefined} class="grid gap-x-8 gap-y-5 md:grid-cols-2">
+    {district.landmarks.map((landmark, index) => (
+      <li class="grid grid-cols-[auto_1fr] gap-4 border-t border-line pt-3">
+        <b aria-hidden="true" class="text-xs text-accent">
+          {String(index + 1).padStart(2, "0")}
+        </b>
+        <div>
+          <h3 class="text-base">{landmark.name}</h3>
+          <p class="text-xs text-muted">{landmark.where}</p>
+          <p class="mt-1 text-sm">{landmark.text}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</Section>
+
+<Section id="barrios" labelledBy="district-barrios" name="district-barrios" surface="stone">
+  <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.barriosTag}</p>
+  <SectionHeading
+    id="district-barrios"
+    heading={formatMessage(t.barriosCountOf, { count: district.barrioCount, name: district.name })}
+    class="mb-5"
+  />
+  <BarrioTable locale={locale} barrios={barrios} />
+</Section>
+
+<Section id="vivir" labelledBy="district-cta" name="district-cta">
+  <div class="grid gap-8 lg:grid-cols-2">
+    <div>
+      <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">
+        {formatMessage(t.livingIn, { name: district.name })}
+      </p>
+      <SectionHeading id="district-cta" heading={t.ctaHeading} class="mb-3" />
+      <p class="mb-5 text-muted">{t.ctaText}</p>
+      <div class="flex flex-wrap gap-3">
+        <Button href={getLocalizedPath("valuation", locale)} variant="solid" arrow>
+          {t.valueHere}
+        </Button>
+        <Button href={getLocalizedPath("sale", locale)} arrow>
+          {t.searchHere}
+        </Button>
+      </div>
+    </div>
+    <nav aria-label={t.allDistricts}>
+      <p class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">{t.allDistricts}</p>
+      <ul class="grid gap-x-6 gap-y-1.5 sm:grid-cols-2">
+        {market.districts.map((other) => (
+          <li>
+            <a
+              href={getLocalizedPath("district", locale, { district: other.slug })}
+              aria-current={other.slug === district.slug ? "page" : undefined}
+              class="text-sm hover:text-accent aria-[current=page]:font-bold"
+            >
+              {other.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</Section>

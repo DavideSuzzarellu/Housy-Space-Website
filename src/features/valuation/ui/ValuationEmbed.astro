@@ -1,0 +1,35 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+
+/**
+ * The external valuator (Lystos). It computes and returns prices itself: this site never
+ * calculates, stores or alters valuation figures (AGENTS.md §6 item 12).
+ */
+interface Props {
+  url: string | undefined;
+  title: string;
+  locale: Locale;
+}
+
+const { url, title, locale } = Astro.props;
+const t = getDictionary(locale).forms;
+---
+
+{url !== undefined && (
+  <>
+    <iframe
+      src={url}
+      title={title}
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+      class="mt-5 h-[min(90vh,50rem)] w-full border border-line bg-white"
+    ></iframe>
+    <p class="mt-3 text-xs text-muted">
+      <a href={url} target="_blank" rel="noopener noreferrer" class="underline underline-offset-2">
+        {t.openValuator}
+      </a>
+    </p>
+  </>
+)}

@@ -1,0 +1,92 @@
+---
+import { figureFormat } from "@/shared/lib/format";
+import type { MarketBarrio } from "@/features/districts/infrastructure/marketSchema";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+
+/** Comparison table of barrios, with optional highlighted and reference rows. */
+interface Props {
+  locale: Locale;
+  barrios: readonly MarketBarrio[];
+  current?: string | undefined;
+  references?: readonly {
+    readonly label: string;
+    readonly sale: number;
+    readonly rent: number;
+    readonly density: number;
+    readonly href?: string | undefined;
+  }[];
+  /** Adds the `data-barrio-row` hook used by the barrio search. */
+  searchable?: boolean;
+}
+
+const { locale, barrios, current, references = [], searchable = false } = Astro.props;
+const t = getDictionary(locale).zones;
+const format = figureFormat(locale);
+const CELL = "border-b border-line p-2 text-right whitespace-nowrap";
+---
+
+<div class="overflow-x-auto">
+  <table class="w-full min-w-120 border-collapse text-sm">
+    <thead>
+      <tr class="text-xs">
+        <th scope="col" class="border-b-2 border-fg p-2 text-left">
+          {t.barrio}
+        </th>
+        <th scope="col" class="border-b-2 border-fg p-2 text-right">
+          {t.saleColumn}
+        </th>
+        <th scope="col" class="border-b-2 border-fg p-2 text-right">
+          {t.rentColumn}
+        </th>
+        <th scope="col" class="border-b-2 border-fg p-2 text-right">
+          {t.densityColumn}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {barrios.map((barrio) => (
+        <tr
+          data-barrio-row={searchable ? barrio.name : undefined}
+          class={barrio.slug === current ? "bg-card font-semibold" : undefined}
+        >
+          <th scope="row" class="border-b border-line p-2 text-left font-medium">
+            {barrio.slug === current ? (
+              barrio.name
+            ) : (
+              <a
+                href={getLocalizedPath("barrio", locale, {
+                  district: barrio.district,
+                  barrio: barrio.slug,
+                })}
+                class="underline-offset-4 hover:text-accent hover:underline"
+              >
+                {barrio.name}
+              </a>
+            )}
+          </th>
+          <td class={CELL}>{format.format(barrio.sale)}</td>
+          <td class={CELL}>{format.format(barrio.rent)}</td>
+          <td class={CELL}>{format.format(barrio.density)}</td>
+        </tr>
+      ))}
+      {references.map((reference) => (
+        <tr class="font-semibold">
+          <th scope="row" class="border-b border-line p-2 text-left">
+            {reference.href === undefined ? (
+              reference.label
+            ) : (
+              <a href={reference.href} class="hover:text-accent">
+                {reference.label}
+              </a>
+            )}
+          </th>
+          <td class={CELL}>{format.format(reference.sale)}</td>
+          <td class={CELL}>{format.format(reference.rent)}</td>
+          <td class={CELL}>{format.format(reference.density)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

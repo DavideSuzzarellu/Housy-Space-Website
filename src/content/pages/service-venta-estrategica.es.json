@@ -1,0 +1,357 @@
+{
+  "title": "Compraventa e intermediación inmobiliaria · HousySpace",
+  "description": "Valoración, preparación, comercialización, negociación y acompañamiento hasta la firma.",
+  "head": {
+    "heading": "Compraventa e intermediación inmobiliaria",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Valoración, preparación, comercialización, negociación y acompañamiento hasta la firma."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Vender una vivienda no es solo publicarla."
+        },
+        {
+          "kind": "p",
+          "text": "Como consultores inmobiliarios, primero te decimos con honestidad si te conviene vender, cómo hacerlo y cuándo. Después estudiamos a fondo el inmueble y su documentación, para que no haya sorpresas en el momento de firmar."
+        },
+        {
+          "kind": "p",
+          "text": "Todo empieza con un [informe de valoración](service:valoracion): el valor de mercado, el precio aconsejado de salida y la estrategia para llegar a él."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Ocho pasos, un solo asesor"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Valoración",
+              "text": "Estudiamos el inmueble, el barrio y el mercado para fijar un precio justo y competitivo."
+            },
+            {
+              "title": "Preparación",
+              "text": "Reunimos y revisamos toda la documentación necesaria para vender."
+            },
+            {
+              "title": "Publicación",
+              "text": "Presentamos la vivienda en nuestra web y en los principales portales inmobiliarios."
+            },
+            {
+              "title": "Seguimiento",
+              "text": "Cada dos semanas te informamos de las gestiones y de cómo responde el mercado."
+            },
+            {
+              "title": "Visitas",
+              "text": "Organizamos y acompañamos las visitas con compradores interesados de verdad."
+            },
+            {
+              "title": "Negociación",
+              "text": "Negociamos en tu nombre. La decisión de aceptar una oferta es siempre tuya."
+            },
+            {
+              "title": "Firma",
+              "text": "Revisamos la documentación del cierre y te acompañamos hasta la notaría."
+            },
+            {
+              "title": "Después de la venta",
+              "text": "Cambiamos la titularidad de los suministros y nos ocupamos de liquidar los impuestos de la venta."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Qué incluye"
+        },
+        {
+          "kind": "h2",
+          "text": "Todo lo que hace falta para vender"
+        },
+        {
+          "kind": "lead",
+          "text": "Lo que incluye nuestro servicio de intermediación en una venta."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Valoración actualizada",
+              "text": "Precio de mercado y precio aconsejado de salida, con estudio de comparables."
+            },
+            {
+              "title": "Lectura del mercado",
+              "text": "Cómo está la demanda en tu zona y qué esperar de los próximos meses."
+            },
+            {
+              "title": "Marketing y publicidad",
+              "text": "Anuncio en portales inmobiliarios, en nuestra web y en otros canales."
+            },
+            {
+              "title": "Reportaje fotográfico y tour virtual",
+              "text": "Un fotógrafo profesional y un recorrido virtual que filtra las visitas por curiosidad."
+            },
+            {
+              "title": "Documentación técnica",
+              "text": "Nuestro arquitecto tramita la cédula de habitabilidad y el certificado energético, y hace el plano de la vivienda."
+            },
+            {
+              "title": "Presupuestos de obra",
+              "text": "Si la vivienda necesita reforma, el comprador sabe desde el principio cuánto le costará."
+            },
+            {
+              "title": "Gestión de visitas",
+              "text": "Las organizamos y supervisamos nosotros."
+            },
+            {
+              "title": "Negociación y cierre",
+              "text": "Defendemos tu precio y tus condiciones hasta la firma."
+            },
+            {
+              "title": "Asesoramiento legal y fiscal",
+              "text": "Cada paso de la venta revisado en lo legal y lo fiscal por especialistas. [Ver asesoramiento jurídico y fiscal](service:asesoramiento-juridico-fiscal)."
+            },
+            {
+              "title": "Financiación del comprador",
+              "text": "Nuestro bróker financiero comprueba que el comprador puede pagar, para que la venta no se caiga por la hipoteca."
+            },
+            {
+              "title": "Vaciado de la vivienda",
+              "text": "Te ayudamos a planificar y organizar el vaciado antes de la entrega."
+            },
+            {
+              "title": "Suministros e impuestos",
+              "text": "Después de la firma, cambio de titularidad de luz, agua y gas, y liquidación de los impuestos de la venta."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Contrato de intermediación"
+        },
+        {
+          "kind": "h2",
+          "text": "¿Por qué en exclusiva?"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Sin carreras entre inmobiliarias"
+            },
+            {
+              "kind": "p",
+              "text": "Cuando varias inmobiliarias venden el mismo piso, la venta se convierte en una carrera por adjudicársela. Se trabaja deprisa y peor: prima la rapidez y quedan en segundo plano la solidez de la operación y el precio de venta. Con la exclusiva, trabajamos tu vivienda con calma y con criterio, para venderla bien y al precio que merece."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Qué ganas tú"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Dedicación completa a tu vivienda durante todo el contrato."
+                },
+                {
+                  "title": "",
+                  "text": "Un marketing más cuidado, porque solo una inmobiliaria la presenta."
+                },
+                {
+                  "title": "",
+                  "text": "Una negociación más firme: conocemos tu vivienda a fondo."
+                },
+                {
+                  "title": "",
+                  "text": "Más seguridad: nadie más negocia en tu nombre."
+                },
+                {
+                  "title": "",
+                  "text": "Menos complicaciones y una comunicación clara con los compradores."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "bandQuote",
+          "text": "«No te preocupes, yo me encargo.»"
+        },
+        {
+          "kind": "p",
+          "text": "Muchas ventas se caen por un imprevisto: una cédula que falta, una hipoteca que no llega, una documentación incompleta. Nos adelantamos a ellos y, cuando aparecen, los resolvemos."
+        }
+      ]
+    },
+    {
+      "id": "valoracion",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Valoración"
+        },
+        {
+          "kind": "h2",
+          "text": "¿Cuánto vale tu vivienda?"
+        },
+        {
+          "kind": "p",
+          "text": "Pide tu valoración como prefieras: online, al momento, o presencial, con un asesor que estudia tu vivienda a fondo."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "p",
+              "text": "Online"
+            },
+            {
+              "kind": "h3",
+              "text": "Al momento"
+            },
+            {
+              "kind": "p",
+              "text": "Introduce los datos de tu vivienda en nuestro valorador y recibe una referencia orientativa de su valor."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valoración online",
+                  "href": "route:valuation#informe",
+                  "solid": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "p",
+              "text": "Presencial"
+            },
+            {
+              "kind": "h3",
+              "text": "Con un asesor"
+            },
+            {
+              "kind": "p",
+              "text": "Visitamos tu vivienda, revisamos su documentación y estudiamos el mercado de tu barrio para darte un informe completo."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valoración presencial",
+                  "href": "route:valuation#solicitud",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

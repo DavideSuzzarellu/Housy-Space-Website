@@ -92,6 +92,8 @@ All content — remote and local — is accessed through Astro Content Collectio
   - Zod `schema` validates and maps Mobilia fields to the domain `Property` (locales flattened to `{ es, en, it, ca }`). Pages only see the mapped shape.
 - **`agents`** (build-time): custom loader over `GET /api/v1/agentes` for team pages and listing contacts.
 - **`pages`** (build-time, `glob()` loader): Markdown/MDX in `src/content/pages/{locale}/` for Services, Living in Barcelona, About us, and legal pages. Frontmatter schema includes `routeKey`, `title`, `description`, `locale`.
+- **`pages`** (build-time, `glob()` over `src/content/pages/{key}.{locale}.json`): every editorial page as a head plus sections of flat items (`features/pages/infrastructure/pageSchema.ts`). A missing locale falls back to Spanish with `lang="es"` and `noindex`.
+- **`market`** (build-time, `src/content/market/barcelona.json`): official figures of the 10 districts and 73 barrios.
 - **`home`** (build-time, `glob()` over `src/content/home/{locale}.json`): editorial copy and media of the home page (UI proposal v3), edited in Pages CMS. Schema: `features/agency/infrastructure/homeContentSchema.ts` (strict); read via `getHomeContent(locale)`.
 - **CMS-editable content (Pages CMS):** one file per locale; every CMS content file lives at `src/content/<collection>/<file>` (two folders below `src/`), because images are written as `../../assets/...` relative to the file so Astro's `image()` optimizes them; videos go to `public/media`. Headings mark their light-weight part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML. Fixed parts of a layout are named fields (`step1`…`step3`), not lists. Every form field in `.pages.yml` must match the schema (tested). UI labels (buttons, aria, legal) stay in the i18n dictionaries.
 - Query only with `getCollection()` / `getEntry()` wrapped in application use cases (`features/*/application`), never directly inside UI components.
@@ -158,6 +160,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | service detail      | `/es/servicios/{service}` | `/en/services/{service}` | `/it/servizi/{service}` | `/ca/serveis/{service}` |
 | custom search       | `/es/busqueda-a-medida`  | `/en/property-search-service` | `/it/ricerca-su-misura` | `/ca/cerca-a-mida`  |
 | international guide | `/es/guia-internacional` | `/en/international-guide` | `/it/guida-internazionale` | `/ca/guia-internacional` |
+| home search         | `/es/busco-vivienda`     | `/en/find-a-home`         | `/it/cerco-casa`           | `/ca/busco-habitatge`    |
 | data sources        | `/es/datos`              | `/en/data`                | `/it/dati`                 | `/ca/dades`              |
 
 `{service}`, `{district}`, `{barrio}`, `{municipio}` slugs are localized where a translation exists (official Catalan place names stay as-is, ASCII-slugified).

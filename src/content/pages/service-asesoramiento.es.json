@@ -1,0 +1,202 @@
+{
+  "title": "Asesoramiento inmobiliario personalizado · HousySpace",
+  "description": "Orientación clara, a tu medida, antes de tomar cualquier decisión.",
+  "head": {
+    "heading": "Asesoramiento inmobiliario personalizado",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-cielo-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Orientación clara, a tu medida, antes de tomar cualquier decisión."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "¿No sabes por dónde empezar? Empieza aquí."
+        },
+        {
+          "kind": "p",
+          "text": "Antes de comprar, vender, alquilar o invertir, conviene hablar. Como consultores inmobiliarios, te decimos con honestidad si te conviene hacerlo, cómo y cuándo, y te proponemos una hoja de ruta clara."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Lo que te ayudamos a decidir"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Si",
+              "text": "Si te conviene Te decimos con honestidad si te conviene comprar, vender o esperar."
+            },
+            {
+              "title": "Cómo",
+              "text": "Cómo hacerlo La estrategia adecuada para tu operación y tu situación."
+            },
+            {
+              "title": "Cuándo",
+              "text": "Cuándo es el momento El momento oportuno según el mercado y tus plazos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Situaciones habituales"
+        },
+        {
+          "kind": "h2",
+          "text": "Puede que estés aquí"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "[**¿Vendo o alquilo?**Comparamos las dos opciones con números: precio de venta, renta esperable, impuestos y gastos.Compraventa e intermediación inmobiliaria →](service:venta-estrategica)"
+            },
+            {
+              "title": "",
+              "text": "[**¿Compro ahora o espero?**Vemos el mercado de tu zona y lo que puedes financiar hoy.Asesoramiento financiero →](service:asesoramiento-financiero)"
+            },
+            {
+              "title": "",
+              "text": "[**He heredado una vivienda**Qué trámites hay, qué impuestos pagar y qué hacer con ella.Asesoramiento jurídico y fiscal →](service:asesoramiento-juridico-fiscal)"
+            },
+            {
+              "title": "",
+              "text": "[**¿Reformo antes de vender?**Qué obra suma valor y cuál no merece la pena.Reformas e interiorismo →](service:reformas-obras)"
+            },
+            {
+              "title": "",
+              "text": "[**Quiero cambiar de casa**Cómo coordinar la venta de la tuya y la compra de la nueva.Personal Shopper inmobiliario →](service:personal-shopper)"
+            },
+            {
+              "title": "",
+              "text": "[**Quiero invertir en vivienda**Qué comprar, con qué números y qué rentabilidad esperar de verdad.Inversión inmobiliaria →](service:inversion-inmobiliaria)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Paso a paso"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversación",
+              "text": "Hablamos de tu situación y de lo que quieres conseguir."
+            },
+            {
+              "title": "Análisis",
+              "text": "Estudiamos el inmueble, la zona y las alternativas."
+            },
+            {
+              "title": "Hoja de ruta",
+              "text": "Te proponemos los pasos, los plazos y los costes."
+            },
+            {
+              "title": "Acompañamiento",
+              "text": "Te ayudamos a decidir y, si quieres, a ejecutarlo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "bandQuote",
+          "text": "«No te preocupes, yo me encargo.»"
+        },
+        {
+          "kind": "p",
+          "text": "Un asesor de referencia y una red de profesionales de confianza: una sola puerta para todo lo que tenga que ver con tu vivienda."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+---
+import { Picture } from "astro:assets";
+import { PUBLIC_VALUATOR_URL } from "astro:env/client";
+import type { PageItem, RenderUnit } from "@/features/pages/application/pages";
+import LeadForm from "@/features/leads/ui/LeadForm.astro";
+import ValuationEmbed from "@/features/valuation/ui/ValuationEmbed.astro";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import { groupItems } from "@/features/pages/application/pages";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** Renders the flat item list of a section; cards and articles recurse. */
+interface Props {
+  locale: Locale;
+  units: readonly RenderUnit<PageItem>[];
+}
+
+const { locale, units } = Astro.props;
+const NOTE = "mt-3 text-xs text-muted";
+---
+
+{units.map((unit) => {
+  if (unit.type === "group") {
+    if (unit.kind === "faq") {
+      return (
+        <div class="mt-4 grid max-w-200 border-t border-line">
+          {unit.items.map(
+            (item) =>
+              item.kind === "faq" && (
+                <details class="border-b border-line py-3.5">
+                  <summary class="cursor-pointer text-sm font-semibold">{item.q}</summary>
+                  <p class="mt-2 text-sm text-muted">
+                    <Inline text={item.a} locale={locale} />
+                  </p>
+                </details>
+              ),
+          )}
+        </div>
+      );
+    }
+    return (
+      <div class="mt-6 grid gap-5 md:grid-cols-2">
+        {unit.items.map(
+          (item) =>
+            (item.kind === "card" || item.kind === "article") && (
+              <article class="bg-card p-[clamp(1.25rem,2.4vw,1.875rem)]">
+                <Astro.self locale={locale} units={groupItems(item.items)} />
+              </article>
+            ),
+        )}
+      </div>
+    );
+  }
+  const item = unit.item;
+  switch (item.kind) {
+    case "tag":
+      return <p class="mt-1 mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{item.text}</p>;
+    case "h2":
+      return <h2 class="mb-4 text-[clamp(1.5rem,3.6vw,2.5rem)]">{item.text}</h2>;
+    case "h3":
+      return <h3 class="mt-5 mb-2 text-[clamp(1.0625rem,1.7vw,1.375rem)]">{item.text}</h3>;
+    case "p":
+      return (
+        <p class="mb-3.5 max-w-[72ch]">
+          <Inline text={item.text} locale={locale} />
+        </p>
+      );
+    case "lead":
+      return (
+        <p class="mb-4 max-w-[62ch] text-[clamp(1rem,1.3vw,1.125rem)] text-muted">
+          <Inline text={item.text} locale={locale} />
+        </p>
+      );
+    case "big":
+      return (
+        <p class="mb-5 max-w-[40ch] text-[clamp(1.125rem,2.2vw,1.75rem)] leading-[1.25] font-medium">
+          <Inline text={item.text} locale={locale} />
+        </p>
+      );
+    case "bandQuote":
+      return (
+        <p class="mx-auto mb-5 max-w-[24ch] text-[clamp(1.5rem,3.8vw,3rem)] leading-[1.08] font-black">
+          <Inline text={item.text} locale={locale} />
+        </p>
+      );
+    case "quote":
+      return (
+        <blockquote class="my-6 max-w-[52ch] border-l-2 border-accent pl-4 text-[clamp(1.0625rem,1.7vw,1.375rem)] font-medium">
+          <Inline text={item.text} locale={locale} />
+        </blockquote>
+      );
+    case "note":
+      return (
+        <p class={NOTE}>
+          <Inline text={item.text} locale={locale} />
+        </p>
+      );
+    case "pending":
+      return (
+        <p class="my-4 border-l-2 border-accent bg-card p-4 text-sm">
+          <Inline text={item.text} locale={locale} />
+        </p>
+      );
+    case "list":
+      return (
+        <ul
+          class:list={[
+            "mt-3 mb-5 grid gap-x-8",
+            item.items.some((entry) => entry.title !== "") ? "gap-y-4 md:grid-cols-2" : "gap-y-2",
+          ]}
+        >
+          {item.items.map((entry) => (
+            <li class="border-t border-line pt-3 text-sm">
+              {entry.title !== "" && <b class="mb-1 block font-bold">{entry.title}</b>}
+              <span class="text-muted">
+                <Inline text={entry.text} locale={locale} />
+              </span>
+            </li>
+          ))}
+        </ul>
+      );
+    case "steps":
+      return (
+        <ol class="mt-6 grid gap-x-6 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+          {item.items.map((entry, index) => (
+            <li class="border-t-2 border-fg pt-3">
+              <b aria-hidden="true" class="text-[0.6875rem] font-bold text-accent">
+                {String(index + 1).padStart(2, "0")}
+              </b>
+              <h3 class="mt-1 mb-1.5 text-[clamp(0.9375rem,1.2vw,1.0625rem)]">{entry.title}</h3>
+              <p class="text-sm text-muted">
+                <Inline text={entry.text} locale={locale} />
+              </p>
+            </li>
+          ))}
+        </ol>
+      );
+    case "buttons":
+      return (
+        <div class="mt-5 mb-3 flex flex-wrap gap-3 data-center:justify-center">
+          {item.items.map((button) => (
+            <Button
+              href={resolveContentHref(button.href, locale)}
+              variant={button.solid ? "solid" : "outline"}
+              external={button.href.startsWith("https://")}
+              arrow={button.solid}
+            >
+              {button.label}
+            </Button>
+          ))}
+        </div>
+      );
+    case "table":
+      return (
+        <div class="my-4 overflow-x-auto">
+          <table class="w-full min-w-120 border-collapse text-left text-sm">
+            <thead>
+              <tr>
+                {item.head.map((cell) => (
+                  <th scope="col" class="border-b-2 border-fg p-2 text-xs">
+                    {cell}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {item.rows.map((row) => (
+                <tr>
+                  {row.map((cell) => (
+                    <td class="border-b border-line p-2 text-muted">
+                      <Inline text={cell} locale={locale} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    case "image":
+      return (
+        <Picture
+          {...PHOTO_PICTURE}
+          src={item.src}
+          alt=""
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 768px) 40rem, 100vw"
+          class="my-4 aspect-4/3 w-full object-cover"
+        />
+      );
+    case "valuator":
+      return <ValuationEmbed url={PUBLIC_VALUATOR_URL} title={item.title} locale={locale} />;
+    case "form":
+      return (
+        <LeadForm
+          locale={locale}
+          id={item.id}
+          mode={item.mode}
+          intro={item.intro}
+          fields={item.fields}
+        />
+      );
+    default:
+      return null;
+  }
+})}

@@ -1,0 +1,246 @@
+{
+  "title": "Alquiler y gestión de inmuebles · HousySpace",
+  "description": "Comercialización, selección de arrendatarios y gestión del alquiler.",
+  "head": {
+    "heading": "Alquiler y gestión de inmuebles",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicio"
+      },
+      {
+        "kind": "lead",
+        "text": "Comercialización, selección de arrendatarios y gestión del alquiler."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Alquilar con tranquilidad empieza por elegir bien al inquilino."
+        },
+        {
+          "kind": "p",
+          "text": "Para propietarios que quieren alquilar sin preocupaciones: comercializamos el inmueble, seleccionamos con cuidado a los arrendatarios y te acompañamos en el contrato. Si lo prefieres, también gestionamos el alquiler durante todo el contrato."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Dos formas de trabajar"
+        },
+        {
+          "kind": "h2",
+          "text": "Tú eliges hasta dónde llegamos"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Te encontramos inquilino"
+            },
+            {
+              "kind": "p",
+              "text": "De la publicación a la entrega de llaves."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Preparación y publicación del anuncio"
+                },
+                {
+                  "title": "",
+                  "text": "Atención a candidatos y visitas"
+                },
+                {
+                  "title": "",
+                  "text": "Estudio de solvencia y documentación"
+                },
+                {
+                  "title": "",
+                  "text": "Contrato de arrendamiento y depósito de la fianza"
+                },
+                {
+                  "title": "",
+                  "text": "Inventario y entrega de llaves"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Y gestionamos el alquiler"
+            },
+            {
+              "kind": "p",
+              "text": "Durante el contrato, según lo acordado."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Atención al inquilino e incidencias"
+                },
+                {
+                  "title": "",
+                  "text": "Coordinación de reparaciones"
+                },
+                {
+                  "title": "",
+                  "text": "Seguimiento de pagos y suministros"
+                },
+                {
+                  "title": "",
+                  "text": "Renovaciones, actualizaciones y fin de contrato"
+                },
+                {
+                  "title": "",
+                  "text": "Revisión del piso a la salida"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo lo hacemos"
+        },
+        {
+          "kind": "h2",
+          "text": "Paso a paso"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversación inicial",
+              "text": "Entendemos el inmueble y las condiciones que buscas."
+            },
+            {
+              "title": "Puesta a punto",
+              "text": "Revisamos la documentación y, si hace falta, el estado del piso."
+            },
+            {
+              "title": "Comercialización",
+              "text": "Presentamos la propiedad y atendemos a los interesados."
+            },
+            {
+              "title": "Selección",
+              "text": "Revisamos los candidatos contigo. La decisión es tuya."
+            },
+            {
+              "title": "Contrato y gestión",
+              "text": "Formalizamos el contrato y, si lo eliges, gestionamos el alquiler."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "kind": "h2",
+          "text": "Lo que suelen preguntarnos"
+        },
+        {
+          "kind": "faq",
+          "q": "¿Qué documentos necesito para alquilar?",
+          "a": "En Cataluña, la cédula de habitabilidad y el certificado de eficiencia energética. Si no los tienes, nuestro arquitecto los tramita."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Cómo elegís al inquilino?",
+          "a": "Revisamos su solvencia y su documentación, y te presentamos los candidatos que encajan. Siempre decides tú."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Os ocupáis del contrato y de la fianza?",
+          "a": "Sí. Preparamos el contrato y gestionamos el depósito de la fianza en el INCASÒL, como marca la normativa catalana."
+        },
+        {
+          "kind": "faq",
+          "q": "¿Y si hay un problema durante el contrato?",
+          "a": "Si contratas la gestión, nos ocupamos de las incidencias. Y si surge un conflicto legal, lo coordinamos con el despacho jurídico con el que trabajamos. [Ver asesoramiento jurídico y fiscal](service:asesoramiento-juridico-fiscal)."
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Hablemos"
+        },
+        {
+          "kind": "lead",
+          "text": "Toda buena decisión empieza con una conversación. Hablemos de la tuya."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+        }
+      ]
+    }
+  ]
+}

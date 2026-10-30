@@ -1,0 +1,245 @@
+---
+import { flatReferencePrice, percentDiff, rankOf } from "@/features/districts/domain/marketStats";
+import type { MarketBarrio, MarketData } from "@/features/districts/infrastructure/marketSchema";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { figureFormat, formatMessage, formatPrice } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import BarChart from "@/shared/ui/organisms/charts/BarChart.astro";
+import LineChart from "@/shared/ui/organisms/charts/LineChart.astro";
+import BarrioTable from "./BarrioTable.astro";
+import { byDescending, SOURCES } from "./marketSources";
+import MarketKpis from "./MarketKpis.astro";
+
+/** A barrio's official figures, charts and comparison with its district and the city. */
+interface Props {
+  locale: Locale;
+  barrio: MarketBarrio;
+  market: MarketData;
+}
+
+const { locale, barrio, market } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.zones;
+const district = market.districts.find((candidate) => candidate.slug === barrio.district);
+if (district === undefined) throw new Error(`Barrio without district: ${barrio.slug}`);
+const siblings = byDescending(
+  market.barrios.filter((candidate) => candidate.district === barrio.district),
+  (b) => b.sale,
+);
+const format = figureFormat(locale);
+const city = market.city;
+const districtPath = getLocalizedPath("district", locale, { district: district.slug });
+const metrics = [
+  {
+    label: t.saleLabel,
+    key: "sale",
+    unit: `${t.saleUnit} · ${barrio.saleYear}`,
+    cityValue: city.sale,
+    districtValue: district.sale,
+  },
+  {
+    label: t.rentLabel,
+    key: "rent",
+    unit: `${t.rentUnit} · ${barrio.rentYear}`,
+    cityValue: city.rent,
+    districtValue: district.rent,
+  },
+  {
+    label: t.densityLabel,
+    key: "density",
+    unit: `${t.densityUnit} · ${barrio.densityYear}`,
+    cityValue: city.density,
+    districtValue: district.density,
+  },
+] as const;
+const kpis = metrics.map((metric) => {
+  const value = barrio[metric.key];
+  const inCity = rankOf(
+    value,
+    market.barrios.map((b) => b[metric.key]),
+  );
+  const inDistrict = rankOf(
+    value,
+    siblings.map((b) => b[metric.key]),
+  );
+  return {
+    label: metric.label,
+    value,
+    unit: metric.unit,
+    comparisons: [
+      { diff: percentDiff(value, metric.cityValue), against: city.name },
+      { diff: percentDiff(value, metric.districtValue), against: district.name },
+    ],
+    rank: formatMessage(t.rankBarrio, {
+      rank: inCity,
+      total: market.barrios.length,
+      districtRank: inDistrict,
+      districtTotal: siblings.length,
+      district: district.name,
+    }),
+  };
+});
+const facts = [
+  { label: t.population, value: `${format.format(barrio.population)} ${t.inhabitants}` },
+  { label: t.area, value: `${format.format(barrio.area)} km²` },
+  {
+    label: t.rentPerM2,
+    value: `${format.format(barrio.rentPerM2)} ${t.saleUnit} · ${barrio.rentYear}`,
+  },
+  { label: t.income, value: `${formatPrice(barrio.income, locale)} · 2023` },
+  { label: t.flat80, value: formatPrice(flatReferencePrice(barrio.sale), locale) },
+];
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: dictionary.nav.living, href: getLocalizedPath("living", locale) },
+  { label: district.name, href: districtPath },
+  { label: barrio.name },
+];
+const districtLabel = formatMessage(t.districtSuffix, { name: district.name });
+---
+
+<section class="bg-canvas pt-8 pb-10">
+  <Container>
+    <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-6" />
+    <p class="text-[0.6875rem] tracking-[0.16em] text-accent">
+      {formatMessage(t.barrioTag, { district: district.name })}
+    </p>
+    <h1 class="mt-3 text-[clamp(1.875rem,4.8vw,3.5rem)]">{barrio.name}</h1>
+    <p class="mt-4 max-w-[62ch] text-muted">
+      {formatMessage(t.barrioLead, { district: district.name })}
+    </p>
+  </Container>
+</section>
+
+<Section id="datos" labelledBy="barrio-figures" name="barrio-figures" surface="stone">
+  <h2 id="barrio-figures" class="sr-only">
+    {t.officialData}
+  </h2>
+  <MarketKpis locale={locale} items={kpis} />
+  <dl class="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+    {facts.map((fact) => (
+      <div class="border-t border-line pt-2.5">
+        <dt class="text-xs text-muted">{fact.label}</dt>
+        <dd class="font-semibold">{fact.value}</dd>
+      </div>
+    ))}
+  </dl>
+  <div class="mt-7 flex flex-wrap gap-3">
+    <Button href={getLocalizedPath("valuation", locale)} variant="solid" arrow>
+      {t.valueHere}
+    </Button>
+    <Button href={getLocalizedPath("sale", locale)} arrow>
+      {t.searchHere}
+    </Button>
+    <Button href={districtPath} arrow>
+      {formatMessage(t.discover, { name: district.name })}
+    </Button>
+  </div>
+</Section>
+
+<Section id="graficos" labelledBy="barrio-charts" name="barrio-charts">
+  <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.chartsTag}</p>
+  <SectionHeading id="barrio-charts" heading={t.chartsHeading} class="mb-6" />
+  <div class="grid gap-5 lg:grid-cols-2">
+    <LineChart
+      title={t.saleChart}
+      unit={t.saleUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      series={[
+        {
+          name: barrio.name,
+          points: barrio.saleSeries,
+          provisional: barrio.saleProvisional,
+          tone: "main",
+        },
+        { name: district.name, points: district.saleSeries, tone: "second" },
+        { name: city.name, points: city.saleSeries, tone: "third" },
+      ]}
+    />
+    <LineChart
+      title={t.rentChart}
+      unit={t.rentUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      source={SOURCES.rent(t)}
+      sourceUrl={SOURCES.rentUrl}
+      series={[
+        {
+          name: barrio.name,
+          points: barrio.rentSeries,
+          provisional: barrio.rentProvisional,
+          tone: "main",
+        },
+        { name: district.name, points: district.rentSeries, tone: "second" },
+        { name: city.name, points: city.rentSeries, tone: "third" },
+      ]}
+    />
+    <BarChart
+      title={formatMessage(t.saleBarsIn, { name: district.name })}
+      unit={t.saleUnit}
+      locale={locale}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      items={[
+        ...siblings.map((b) => ({
+          label: b.name,
+          value: b.sale,
+          tone: b.slug === barrio.slug ? ("main" as const) : undefined,
+        })),
+        { label: districtLabel, value: district.sale, tone: "second" as const },
+        { label: city.name, value: city.sale, tone: "third" as const },
+      ]}
+    />
+    <BarChart
+      title={formatMessage(t.densityBarsIn, { name: district.name })}
+      unit={t.densityUnit}
+      locale={locale}
+      source={t.densitySource}
+      items={[
+        ...byDescending(siblings, (b) => b.density).map((b) => ({
+          label: b.name,
+          value: b.density,
+          tone: b.slug === barrio.slug ? ("main" as const) : undefined,
+        })),
+        { label: districtLabel, value: district.density, tone: "second" as const },
+        { label: city.name, value: city.density, tone: "third" as const },
+      ]}
+    />
+  </div>
+</Section>
+
+<Section id="comparativa" labelledBy="barrio-compare" name="barrio-compare" surface="stone">
+  <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.compareTag}</p>
+  <SectionHeading
+    id="barrio-compare"
+    heading={formatMessage(t.barriosOf, { name: district.name })}
+    class="mb-5"
+  />
+  <BarrioTable
+    locale={locale}
+    barrios={siblings}
+    current={barrio.slug}
+    references={[
+      {
+        label: districtLabel,
+        sale: district.sale,
+        rent: district.rent,
+        density: district.density,
+        href: districtPath,
+      },
+      { label: city.name, sale: city.sale, rent: city.rent, density: city.density },
+    ]}
+  />
+  <p class="mt-4 max-w-[90ch] text-xs text-muted">
+    {t.methodNote} {t.flat80Note}
+  </p>
+</Section>

@@ -1,0 +1,345 @@
+{
+  "title": "Nosotros · HousySpace",
+  "description": "HousySpace, consultores inmobiliarios en Barcelona: nos implicamos en cada operación, con un trato cercano, transparente y personalizado.",
+  "head": {
+    "heading": "Mucho más que una inmobiliaria",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Nosotros"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "historia",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "01"
+        },
+        {
+          "kind": "h2",
+          "text": "Nuestra historia"
+        },
+        {
+          "kind": "p",
+          "text": "Una forma diferente de entender el sector inmobiliario."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "9",
+              "text": "años de experiencia en el sector inmobiliario"
+            },
+            {
+              "title": "5",
+              "text": "años desde que nació HousySpace"
+            },
+            {
+              "title": "Hoy",
+              "text": "seguimos creciendo con quienes vuelven a elegirnos y nos recomiendan"
+            }
+          ]
+        },
+        {
+          "kind": "big",
+          "text": "HousySpace nació hace cinco años de una convicción muy sencilla: **las personas deben estar siempre en el centro de cada operación inmobiliaria.**"
+        },
+        {
+          "kind": "p",
+          "text": "Después de varios años de experiencia en el sector, conocíamos bien sus dinámicas, sus exigencias y también aquello que, desde nuestro punto de vista, podía hacerse de otra manera."
+        },
+        {
+          "kind": "p",
+          "text": "Queríamos crear un espacio donde la cercanía fuera sincera, la atención verdaderamente personalizada y cada cliente sintiera que sus preocupaciones también eran las nuestras."
+        },
+        {
+          "kind": "p",
+          "text": "Así nació HousySpace. No con la intención de ser una inmobiliaria más, sino de construir un proyecto fiel a nuestra manera de entender esta profesión: con empatía, honestidad, dedicación y un compromiso que va mucho más allá de cerrar una operación."
+        },
+        {
+          "kind": "quote",
+          "text": "Porque detrás de cada inmueble hay una historia, una decisión importante y personas que depositan su confianza en nosotros."
+        },
+        {
+          "kind": "p",
+          "text": "Y pocas cosas nos satisfacen tanto como compartir la ilusión de alguien que encuentra su primer hogar, ayudar a una familia a comenzar una nueva etapa o saber que hemos acompañado a un cliente a tomar la decisión correcta."
+        },
+        {
+          "kind": "p",
+          "text": "Cinco años después, seguimos creciendo gracias a esa misma filosofía y, sobre todo, a la confianza de quienes vuelven a elegirnos y nos recomiendan."
+        }
+      ]
+    },
+    {
+      "id": "filosofia",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "02"
+        },
+        {
+          "kind": "h2",
+          "text": "Nuestra filosofía"
+        },
+        {
+          "kind": "p",
+          "text": "Consultores inmobiliarios, no solo vendedores."
+        },
+        {
+          "kind": "big",
+          "text": "Te asesoramos sobre cómo hacerlo, si te conviene hacerlo y cuándo es el mejor momento, y nos aseguramos de que todo lo que haces sea correcto y seguro."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Cómo",
+              "text": "La estrategia adecuada para tu operación."
+            },
+            {
+              "title": "Si",
+              "text": "Te decimos con honestidad si te conviene comprar, vender o esperar."
+            },
+            {
+              "title": "Cuándo",
+              "text": "El momento oportuno según el mercado y tu situación."
+            },
+            {
+              "title": "Con seguridad",
+              "text": "Cada paso revisado para que sea correcto y seguro."
+            },
+            {
+              "title": "Sin sorpresas",
+              "text": "Estudio a fondo del inmueble antes de comprar o vender."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Siempre una milla más:** todo lo que hace una inmobiliaria, y todo lo que hace falta además."
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "03"
+        },
+        {
+          "kind": "h2",
+          "text": "Cómo trabajamos"
+        },
+        {
+          "kind": "p",
+          "text": "No buscamos gestionar el mayor número de inmuebles."
+        },
+        {
+          "kind": "big",
+          "text": "Preferimos dedicar a cada cliente el tiempo, la atención y el esfuerzo que merece, ofreciendo un trato **cercano, transparente y verdaderamente personalizado**."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Tiempo",
+              "text": "01"
+            },
+            {
+              "title": "Atención",
+              "text": "02"
+            },
+            {
+              "title": "Esfuerzo",
+              "text": "03"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "El camino recorrido"
+        },
+        {
+          "kind": "p",
+          "text": "Somos una inmobiliaria que entiende el éxito de una forma sencilla: **hacer bien nuestro trabajo** y conseguir que nuestros clientes se sientan satisfechos con el camino recorrido."
+        },
+        {
+          "kind": "p",
+          "text": "De principio a fin"
+        },
+        {
+          "kind": "p",
+          "text": "**Nos apasiona lo que hacemos.** Nos implicamos en cada operación, buscamos soluciones cuando surgen dificultades y acompañamos a nuestros clientes desde el primer momento hasta el final del proceso."
+        }
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "04"
+        },
+        {
+          "kind": "h2",
+          "text": "Colaboraciones con profesionales del sector"
+        },
+        {
+          "kind": "p",
+          "text": "Rodearnos de los mejores también forma parte de nuestra filosofía."
+        },
+        {
+          "kind": "big",
+          "text": "A lo largo de los años hemos construido una red de profesionales especializados en asesoramiento jurídico, arquitectura, interiorismo, reformas y otros ámbitos relacionados con la vivienda y el patrimonio."
+        },
+        {
+          "kind": "p",
+          "text": "Cada colaboración nace de la experiencia, la confianza y una misma forma de entender el trabajo: **ofrecer un servicio cercano, riguroso y comprometido con cada cliente.**"
+        },
+        {
+          "kind": "p",
+          "text": "Nuestro criterio es sencillo: **trabajamos con profesionales en quienes nosotros mismos confiaríamos.**"
+        },
+        {
+          "kind": "p",
+          "text": "Gracias a ellos, podemos ofrecer soluciones integrales y acompañarte mucho más allá de una operación inmobiliaria. Porque para nosotros, decir «No te preocupes, yo me encargo» significa tener las personas, los conocimientos y la voluntad necesarios para hacerlo realidad."
+        }
+      ]
+    },
+    {
+      "id": "equipo",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "05"
+        },
+        {
+          "kind": "h2",
+          "text": "Equipo"
+        },
+        {
+          "kind": "pending",
+          "text": "Nombre, cargo, fotografía, breve presentación, idiomas y correo directo de cada persona: pendientes de recibir. No se publican personas ni fotografías que no sean reales."
+        }
+      ]
+    },
+    {
+      "id": "opiniones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "06"
+        },
+        {
+          "kind": "h2",
+          "text": "Qué dicen nuestros clientes"
+        },
+        {
+          "kind": "pending",
+          "text": "**Integración pendiente.** Reseñas reales del perfil de Google de HousySpace, cargadas automáticamente con una solución autorizada."
+        },
+        {
+          "kind": "p",
+          "text": "[Ver reseñas en la portada](route:home#resenas)"
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "image",
+          "src": "../../assets/home/facade-1400.jpg"
+        },
+        {
+          "kind": "big",
+          "text": "Porque nuestra mayor satisfacción es saber que quienes han confiado en nosotros **volverían a hacerlo**."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace. Property Solutions."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Hablar con HousySpace",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Ver los servicios",
+              "href": "route:home#servicios",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h3",
+          "text": "Datos de la empresa"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro de Agentes Inmobiliarios de Cataluña: AICAT nº 14032 Teléfono [613 084 804](tel:+34613084804) www.housyspace.com"
+        },
+        {
+          "kind": "note",
+          "text": "Pendientes de recibir:"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Domicilio fiscal"
+            },
+            {
+              "title": "",
+              "text": "Registro Mercantil"
+            },
+            {
+              "title": "",
+              "text": "Correo electrónico de contacto y de privacidad"
+            },
+            {
+              "title": "",
+              "text": "Horario y dirección de la oficina"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

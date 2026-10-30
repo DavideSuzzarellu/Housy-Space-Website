@@ -1,0 +1,165 @@
+{
+  "title": "Valorador · HousySpace",
+  "description": "Solicita la valoración profesional de tu vivienda en Barcelona.",
+  "head": {
+    "heading": "La próxima propiedad podría ser la tuya",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Valoración inmobiliaria"
+      },
+      {
+        "kind": "lead",
+        "text": "Descubre el valor real de tu vivienda con un análisis inmobiliario profesional, basado en el mercado y las características de tu propiedad."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Tu informe de valoración, al momento"
+        },
+        {
+          "kind": "lead",
+          "text": "Introduce los datos de tu vivienda en el valorador y recibirás al instante tu informe de valoración. Si lo deseas, un asesor lo revisa después contigo."
+        },
+        {
+          "kind": "valuator",
+          "title": "Valorador online de HousySpace"
+        },
+        {
+          "kind": "p",
+          "text": "¿No se ve el valorador? [Ábrelo en una pestaña nueva](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) o pide la valoración a un asesor con el [formulario de abajo](#solicitud)."
+        },
+        {
+          "kind": "note",
+          "text": "La estimación del valorador es orientativa; no es una tasación oficial. El valorador lo presta un proveedor externo, Lystos: los datos que introduzcas en él se tratarán según su información de privacidad y la de HousySpace (texto legal pendiente de aprobación)."
+        }
+      ]
+    },
+    {
+      "id": "solicitud",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "¿Prefieres que te llame un asesor?"
+        },
+        {
+          "kind": "lead",
+          "text": "Déjanos tus datos y un asesor de HousySpace se pondrá en contacto contigo para valorar tu vivienda en persona."
+        },
+        {
+          "kind": "form",
+          "id": "vf",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nombre y apellidos",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Teléfono",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Correo electrónico",
+              "required": true,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "direccion",
+              "label": "Dirección o barrio de la vivienda",
+              "required": true,
+              "full": true,
+              "type": "text",
+              "placeholder": "Calle y número, o barrio",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Cuéntanos algo más (estado, reformas, plazos…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Quiero recibir comunicaciones comerciales de HousySpace sobre inmuebles, servicios y novedades, por correo electrónico, WhatsApp o teléfono. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Quiero suscribirme a la newsletter y a los artículos de HousySpace por correo electrónico. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Solicitar valoración"
+            },
+            {
+              "kind": "note",
+              "text": "Todavía no hay un sistema que reciba el formulario (CRM pendiente). Al pulsar, se abrirá WhatsApp con tu solicitud ya escrita para que la envíes tú; hasta que no la envíes allí, no habrá llegado a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Sobre el servicio de valoración",
+              "href": "service:valoracion",
+              "solid": false
+            },
+            {
+              "label": "Hablar con un asesor",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
