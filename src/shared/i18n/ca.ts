@@ -288,10 +288,8 @@ const ca = {
       caption: "Imatge conceptual generada amb IA.",
     },
     reviews: {
-      viewReview: "Veure aquesta ressenya a Google",
-      orderNotice: "Ressenyes seleccionades i ordenades per Google segons la rellevància.",
-      ratingOutOf: "{rating} / 5",
-      reviewCount: "{count} ressenyes a Google",
+      orderNotice:
+        "Opinions de clients publicades a Google: mostrem les més recents. Llegeix-les totes a la nostra fitxa.",
     },
     living: {
       barrioCount: "{count} barris",

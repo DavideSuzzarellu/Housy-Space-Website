@@ -1,104 +1,52 @@
 ---
 import type { HomeContent } from "@/features/agency/application/homeContent";
-import type { ReviewsSummary } from "@/features/reviews/domain/review";
+import type { Testimonial } from "@/features/reviews/domain/review";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
-import { formatDate, formatMessage, formatNumber } from "@/shared/lib/format";
+import { formatDate } from "@/shared/lib/format";
 import Button from "@/shared/ui/atoms/Button.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
 
-/**
- * Google reviews. Renders NOTHING without real data (AGENTS.md §6.1 fallback: no empty
- * stars, no fake reviews). The Places API integration is pending (ROADMAP I6, I2).
- */
+/** Latest client reviews from Pages CMS. Renders nothing without any: never fake reviews. */
 interface Props {
   locale: Locale;
   content: HomeContent["reviews"];
-  summary?: ReviewsSummary | undefined;
+  testimonials: readonly Testimonial[];
 }
 
-const { locale, content, summary } = Astro.props;
+const { locale, content, testimonials } = Astro.props;
 const t = getDictionary(locale);
 const copy = t.home.reviews;
-const hasReviews = summary !== undefined && summary.reviews.length > 0;
-const stars = (rating: number) => "★".repeat(Math.round(rating)).padEnd(5, "☆");
+const stars = (rating: number) => "★".repeat(rating).padEnd(5, "☆");
 ---
 
-{hasReviews && (
+{testimonials.length > 0 && (
   <Section id="resenas" labelledBy="reviews-heading" name="reviews" surface="dark">
     <div class="mb-7.5 flex flex-wrap items-end justify-between gap-x-10 gap-y-4.5">
       <SectionHeading id="reviews-heading" heading={content.heading} />
-      <p class="flex items-baseline gap-3.5 text-sm text-muted">
-        <b class="text-[2.75rem] font-normal whitespace-nowrap text-fg">
-          {formatMessage(copy.ratingOutOf, {
-            rating: summary.rating.toLocaleString(locale, { maximumFractionDigits: 1 }),
-          })}
-        </b>
-        <span>
-          {formatMessage(copy.reviewCount, { count: formatNumber(summary.totalCount, locale) })}
-        </span>
-      </p>
+      <Button href={content.mapsUrl} external newTabLabel={t.a11y.opensInNewTab}>
+        {content.ctaLabel}
+      </Button>
     </div>
-    <ul class="-mx-5.5 flex snap-x gap-4 overflow-x-auto px-5.5 pb-2 [scrollbar-width:thin]">
-      {summary.reviews.map((review) => (
-        <li class="flex w-[min(80vw,21rem)] shrink-0 snap-start flex-col gap-3 bg-white p-6 text-ink">
-          <p class="text-petrol" aria-label={`${review.rating} / 5`}>
-            <span aria-hidden="true">{stars(review.rating)}</span>
+    <ul class="grid gap-4 md:grid-cols-3">
+      {testimonials.map((testimonial) => (
+        <li class="flex flex-col gap-3 bg-white p-6 text-ink">
+          <p role="img" class="text-petrol" aria-label={`${testimonial.rating} / 5`}>
+            <span aria-hidden="true">{stars(testimonial.rating)}</span>
           </p>
-          <p class="text-[0.9375rem] normal-case">{review.text}</p>
-          <div class="mt-auto flex items-center gap-3 border-t border-ink/10 pt-4">
-            {review.authorPhotoUrl !== undefined && (
-              <img
-                src={review.authorPhotoUrl}
-                alt=""
-                width="34"
-                height="34"
-                loading="lazy"
-                referrerpolicy="no-referrer"
-                class="size-8.5 rounded-full"
-              />
-            )}
-            <p class="grid text-[0.8125rem]">
-              {review.authorUrl !== undefined ? (
-                <a
-                  href={review.authorUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="font-medium underline-offset-2 hover:underline"
-                >
-                  {review.authorName}
-                </a>
-              ) : (
-                <b class="font-medium">{review.authorName}</b>
-              )}
-              <time datetime={review.publishTime} class="text-xs text-ink/70">
-                {formatDate(new Date(review.publishTime), locale)}
-              </time>
-            </p>
-          </div>
-          {review.reviewUrl !== undefined && (
-            <a
-              href={review.reviewUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-xs text-petrol underline underline-offset-2"
-            >
-              {copy.viewReview}
-              <span class="sr-only"> {t.a11y.opensInNewTab}</span>
-            </a>
-          )}
+          <p lang={testimonial.language} class="text-[0.9375rem] whitespace-pre-line normal-case">
+            {testimonial.text}
+          </p>
+          <p class="mt-auto grid border-t border-ink/10 pt-4 text-[0.8125rem]">
+            <b class="font-medium">{testimonial.author}</b>
+            <time datetime={testimonial.date.toISOString()} class="text-xs text-ink/70">
+              {formatDate(testimonial.date, locale)}
+            </time>
+          </p>
         </li>
       ))}
     </ul>
     <p class="mt-4 text-xs text-muted">{copy.orderNotice}</p>
-    {summary.attributions.length > 0 && (
-      <p class="mt-4 text-xs text-muted">{summary.attributions.join(" · ")}</p>
-    )}
-    <div class="mt-6">
-      <Button href={summary.mapsUrl} external newTabLabel={t.a11y.opensInNewTab}>
-        {content.ctaLabel}
-      </Button>
-    </div>
   </Section>
 )}

@@ -1,25 +1,23 @@
 /**
- * Google reviews (AGENTS.md §6.1). Filled by the `reviews` collection loader
- * (Places API, max 5 reviews). Never edited, translated, filtered or reordered.
+ * Client reviews typed by hand in Pages CMS (AGENTS.md §6.1). Nothing comes from a Google API.
+ * Text is copied word for word, never improved.
  */
-export interface Review {
-  readonly authorName: string;
-  readonly authorUrl?: string | undefined;
-  readonly authorPhotoUrl?: string | undefined;
-  /** 1–5 stars as returned by Google. */
+export interface Testimonial {
+  readonly author: string;
+  /** 1–5 stars, as the client gave them. */
   readonly rating: number;
   readonly text: string;
-  /** ISO date from Google, formatted per locale. */
-  readonly publishTime: string;
-  /** The review on Google Maps (required by Google's display policy). */
-  readonly reviewUrl?: string | undefined;
+  readonly date: Date;
+  readonly language: string;
 }
 
-export interface ReviewsSummary {
-  readonly rating: number;
-  readonly totalCount: number;
-  readonly reviews: readonly Review[];
-  readonly mapsUrl: string;
-  /** Attributions returned by the API; rendered as-is. */
-  readonly attributions: readonly string[];
+/** How many the home shows. */
+export const LATEST_TESTIMONIALS = 3;
+
+/** Newest first, limited to `limit`. */
+export function latestTestimonials<T extends { readonly data: { readonly date: Date } }>(
+  entries: readonly T[],
+  limit: number,
+): T[] {
+  return [...entries].sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, limit);
 }

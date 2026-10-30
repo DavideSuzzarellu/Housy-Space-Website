@@ -53,7 +53,7 @@ for (const locale of LOCALES) {
         "valuation",
         "services",
         "philosophy",
-        ...((await page.locator('[data-section="reviews"]').count()) > 0 ? ["reviews"] : []),
+        "reviews",
         "living",
         "blog",
       ]);
@@ -81,13 +81,10 @@ for (const locale of LOCALES) {
       await expect.poll(() => rail.evaluate((node) => node.scrollLeft)).toBeGreaterThan(0);
     });
 
-    test("shows Google reviews with their author and notice, or hides them without data", async ({
-      page,
-    }) => {
+    test("shows the 3 latest client reviews, newest first", async ({ page }) => {
       const section = page.locator('[data-section="reviews"]');
-      if ((await section.count()) === 0) return;
-      await expect(section.locator("li").first()).toBeVisible();
-      await expect(section.locator("li time").first()).toBeVisible();
+      await expect(section.locator("li")).toHaveCount(3);
+      await expect(section.locator("li").first()).toContainText("Bruno S.");
     });
 
     test("links to the 10 district pages", async ({ page }) => {

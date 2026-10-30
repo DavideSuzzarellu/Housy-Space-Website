@@ -37,12 +37,6 @@ export default defineConfig({
     schema: {
       CLIENT_ID: envField.string({ context: "server", access: "secret" }),
       CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
-      GOOGLE_PLACES_API_KEY: envField.string({
-        context: "server",
-        access: "secret",
-        optional: true,
-      }),
-      GOOGLE_PLACE_ID: envField.string({ context: "server", access: "secret", optional: true }),
       PUBLIC_VALUATOR_URL: envField.string({
         context: "client",
         access: "public",

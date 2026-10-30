@@ -294,10 +294,8 @@ const es = {
       caption: "Imagen conceptual generada con IA.",
     },
     reviews: {
-      viewReview: "Ver esta reseña en Google",
-      orderNotice: "Reseñas seleccionadas y ordenadas por Google según su relevancia.",
-      ratingOutOf: "{rating} / 5",
-      reviewCount: "{count} reseñas en Google",
+      orderNotice:
+        "Opiniones de clientes publicadas en Google: mostramos las más recientes. Lee todas en nuestra ficha.",
     },
     living: {
       barrioCount: "{count} barrios",

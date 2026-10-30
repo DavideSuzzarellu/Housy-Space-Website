@@ -38,7 +38,8 @@
   },
   "reviews": {
     "heading": "Cosa dicono *di HousySpace*",
-    "ctaLabel": "Vedi le recensioni su Google"
+    "ctaLabel": "Vedi le recensioni su Google",
+    "mapsUrl": "https://maps.app.goo.gl/9icgw2apDPv4Fy7J9"
   },
   "districts": {
     "heading": "Scopri Barcellona *quartiere per quartiere*",

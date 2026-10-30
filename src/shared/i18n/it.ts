@@ -289,10 +289,8 @@ const it = {
       caption: "Immagine concettuale generata con IA.",
     },
     reviews: {
-      viewReview: "Vedi questa recensione su Google",
-      orderNotice: "Recensioni selezionate e ordinate da Google per pertinenza.",
-      ratingOutOf: "{rating} / 5",
-      reviewCount: "{count} recensioni su Google",
+      orderNotice:
+        "Recensioni di clienti pubblicate su Google: mostriamo le più recenti. Leggile tutte sulla nostra scheda.",
     },
     living: {
       barrioCount: "{count} quartieri",

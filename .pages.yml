@@ -144,6 +144,7 @@ content:
               description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: ctaLabel, label: Botón a Google, type: string, required: true }
+          - { name: mapsUrl, label: Enlace a la ficha de Google, type: string, required: true }
       - name: districts
         label: Distritos
         type: object
@@ -234,3 +235,27 @@ content:
         }
       - { name: draft, label: Borrador (no se publica), type: boolean, default: false }
       - { name: body, label: Texto, type: rich-text, required: true, options: { media: images } }
+  - name: testimonials
+    label: Reseñas de clientes
+    type: collection
+    path: src/content/testimonials
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: author
+      fields: [author, rating, date]
+      sort: [date, author]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: author, label: Autor, type: string, required: true }
+      - { name: rating, label: Estrellas (1 a 5), type: number, required: true, default: 5 }
+      - { name: text, label: Texto (copiado tal cual), type: text, required: true }
+      - { name: date, label: Fecha de la reseña, type: date, required: true }
+      - {
+          name: language,
+          label: Idioma de la reseña,
+          type: select,
+          required: true,
+          default: es,
+          options: { values: [es, en, it, ca] },
+        }

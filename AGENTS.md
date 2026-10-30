@@ -25,7 +25,7 @@
 | Navigation & motion | Astro View Transitions (`<ClientRouter />` from `astro:transitions`)          | See section 3.3                                                              |
 | Interactive islands | Vanilla TypeScript (no UI framework)                                          | Gallery, map, drawer, filters, forms                                         |
 | Data source         | Mobilia CRM Public API v1                                                     | See section 5                                                                |
-| Reviews             | Google Places API (New) — Place Details                                       | See section 6.1                                                              |
+| Reviews             | Typed by hand in Pages CMS                                                    | See section 6.1                                                              |
 | Maps                | Leaflet + own clustering (`features/properties/ui/mapClusters.ts`), ICGC WMTS colour tiles ("estandard") | No Leaflet.markercluster (UMD needs a global `L`). Listings = approximate zone circles only (§5); attribution "© ICGC (CC BY 4.0)" |
 | Charts              | Own typed SVG chart components (no chart library)                             | Line + bar charts for market data                                            |
 | Hosting + adapter   | `TODO` (Vercel / Netlify / Node) — not decided                                | Keep code adapter-agnostic: no provider-specific APIs outside `astro.config` |
@@ -251,15 +251,13 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
 - Attributions (CC BY) are rendered wherever data or boundaries are shown, and listed on the data sources page.
 - If a metric is unavailable, show "not available" — never estimate or interpolate.
 
-### 6.1 Google reviews
+### 6.1 Client reviews
 
-- Source: Google Places API (New) — Place Details with field mask `rating,userRatingCount,reviews,googleMapsUri`. Returns at most 5 reviews (sorted by relevance); this is a Google limit.
-- Server-side only: `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID` via `astro:env` (server, secret). The key is restricted to the Places API. Never call Google from the browser.
-- Access through a `reviews` collection loader in `features/reviews/infrastructure/`, same hexagonal rules as Mobilia.
-- Display rules (Google policy): author (avatar, name, profile link) next to each review, the attributions returned by the API, a link to each review and to the place on Google Maps, and a notice of how they are ordered. Never edit, translate, filter out, or reorder reviews to hide negative ones.
-- Caching: the `reviews` loader stores the reviews at build time and calls Google at most once every 24 h (`REVIEWS_CACHE_MS`), as the client asked. Google's policy says "You must not pre-fetch, cache, or store Places API content beyond the allowed exceptions" (only place IDs are exempt), so this must be reviewed before launch (ROADMAP I24). The loader is the only place to change.
-- Fallback: if the API fails, hide the section gracefully (no empty stars, no fake reviews).
-- More than 5 reviews would require the Google Business Profile API (owner OAuth + Google access approval) — not planned.
+- Decision (client, 2026-10-30): reviews are typed by hand in Pages CMS (`testimonials` collection, one JSON file each in `src/content/testimonials`), so nothing is fetched from or stored through a Google API. Google's Places policy forbids storing its API content, which ruled out a cached API integration.
+- The home shows the latest 3 (`LATEST_TESTIMONIALS`) with a notice of that criterion and a link to the Google profile (`home.reviews.mapsUrl`), where all of them can be read.
+- Copy each text word for word, never improve it. Newest first, never picked to hide negative ones.
+- Author as first name and surname initial, no photos: personal data minimised, pending lawyer review (I24).
+- No reviews → the section hides. Never fake reviews.
 
 ## 7. Legal & compliance (Spain / Catalonia) — verify with the client's lawyer
 

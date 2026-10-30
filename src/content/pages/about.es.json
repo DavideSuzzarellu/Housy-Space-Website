@@ -259,10 +259,6 @@
           "text": "Qué dicen nuestros clientes"
         },
         {
-          "kind": "pending",
-          "text": "**Integración pendiente.** Reseñas reales del perfil de Google de HousySpace, cargadas automáticamente con una solución autorizada."
-        },
-        {
           "kind": "p",
           "text": "[Ver reseñas en la portada](route:home#resenas)"
         }

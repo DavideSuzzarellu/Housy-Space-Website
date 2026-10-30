@@ -287,10 +287,8 @@ const en = {
       caption: "Conceptual AI-generated image.",
     },
     reviews: {
-      viewReview: "See this review on Google",
-      orderNotice: "Reviews selected and ordered by Google by relevance.",
-      ratingOutOf: "{rating} / 5",
-      reviewCount: "{count} reviews on Google",
+      orderNotice:
+        "Client reviews published on Google: we show the most recent. Read them all on our profile.",
     },
     living: {
       barrioCount: "{count} neighbourhoods",

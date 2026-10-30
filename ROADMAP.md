@@ -13,7 +13,7 @@
 | I3 | Email address that receives form submissions | Phase 4 | ⏳ pending |
 | I4 | Company phone + WhatsApp (confirm 613 084 804 is the general number) | Header CTAs, contact | ⏳ pending |
 | I5 | Confirm `isotipo.svg` / `logo-blanco.svg` from the UI proposal are official | Favicon, map marker | ⏳ pending |
-| I6 | Google Places API key + Place ID (in `.env`) | Phase 8 reviews | ⏳ pending |
+| I6 | ~~Google Places API key~~: not needed, reviews are typed in Pages CMS | — | ✅ dropped |
 | I7 | Valuator: Lystos, URL taken from proposal v3. Pending: `?lang=` support and whether it sets cookies | Phase 8 valuator | 🟡 URL known |
 | I8 | Exact datasets (Portal de Dades, Open Data BCN, INCASÒL, INE, Idescat) + reuse licenses | Phases 5–6 | ⏳ pending |
 | I9 | Page content (Services ×9, About, Living in Barcelona texts, Sell) in es (+ translations or approval to translate) | Phase 7 | ⏳ client has it |
@@ -29,7 +29,7 @@
 | I20 | ⚠️ **Renew housyspace.com before 2026-12-19** (expiry date per the .com registry): confirm auto-renewal at Webempresa. If it lapses, website and email go down | Everything | ⏳ urgent |
 | I21 | Email (`mail.housyspace.com`) is hosted on the Webempresa plan of the old WordPress: keep that plan for email, or migrate email first. Never cancel the hosting before deciding | Retiring the old WordPress | ⏳ pending |
 | I22 | Put the repo on GitHub (private), install the Pages CMS GitHub App on it and invite the client by email at app.pagescms.org | Client editing | ⏳ pending (repo push not authorized yet) |
-| I24 | ⚠️ Decide before launch: reviews are stored at build time with a 24 h cache, but Google's policy forbids storing Places content except place IDs. Options: accept the risk, fetch at request time (needs I2), or use a Google widget | Launch | ⏳ pending |
+| I24 | Lawyer: confirm publishing client reviews with first name + initial on the website, and any consumer-law notice required | Launch | ⏳ pending |
 | I23 | Confirm the company facts taken from proposal v3: "9 years" of activity, partners (ADV Advocats, Maria Guimerà Arquitectura, Asesoría Edac), APEI membership no. 3261, services list (adds legal/tax and financial advice). en/it/ca of the v3 home copy are machine translations | Home copy | ⏳ pending |
 
 ## B. Phases
@@ -100,7 +100,7 @@
 - [ ] Add `pages` to `.pages.yml` so the client can edit them
 
 ### Phase 8 — Integrations
-- [x] Google reviews (Places API, max 5, attributions, graceful fallback), build-time with 24 h cache; see I24
+- [x] Client reviews typed in Pages CMS, latest 3 on the home; see I24
 - [ ] Valuator iframe embed (origin-checked postMessage, CSP, consent) 🔒 I7
 
 ### Phase 9 — Compliance, SEO, performance
@@ -143,6 +143,7 @@
 | 2026-10-27 | UI restyle to proposal v3 (https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk), in phases: 1) header + navigation ✅, 2) light theme (role tokens + dark blocks) and footer ✅, 3) home sections ✅, 4) catalog and detail ✅ (2026-10-30). Header menu inline whenever it fits (measured), "Menu" button + light drawer only when it does not; "Let's talk" CTA only beside the button |
 | 2026-10-27 | Content editing: **Pages CMS** (free, hosted, client invited by email, no GitHub account) over JSON files in the repo; one file per locale; images in `src/assets` (Astro-optimized, relative paths), videos in `public/media`. Rejected: Sveltia (GitHub account + own OAuth worker), Tina (2 free users), Sanity (content outside the repo; kept as the option if the client handles many videos), WordPress headless (Elementor content unusable headless, no i18n). First collection: `home` (v3 copy), consumed by the v3 home in phase 3 |
 | 2026-10-30 | All proposal pages built, on the client's instruction to match the proposal: services (9, adding legal/tax and financial; interior design folds into renovations), about, contact, home search, custom search, valuator (Lystos iframe), blog, guide, data, legal, 10 districts and 73 barrios. Editorial pages are block JSON in `src/content/pages/{key}.{locale}.json`; figures in `src/content/market/barcelona.json`, extracted from the proposal. Supersedes the earlier footer and accordion omissions (APEI seal, 9 services) |
+| 2026-10-30 | Reviews typed by hand in Pages CMS instead of the Places API: its policy forbids storing content, and this needs no key, requests or hosting. Supersedes the 2026-10-20 reviews decision |
 | 2026-10-30 | Forms open WhatsApp or email with the request written, as the proposal does, until I3 and the CRM exist: nothing is stored or sent by the site. Legal drafts stay marked as pending exactly as in the proposal (I11) |
 | 2026-10-30 | Prose exists in Spanish only: other locales show it with `lang="es"` and `noindex` until translated. Barrio pages are fully translated |
 | 2026-10-30 | Typography follows the live proposal v3, overriding the brand manual: Montserrat only, one variable file (400–900), all site text uppercase, no italics. Cormorant Garamond removed. The property PDF sheet stays in sentence case |

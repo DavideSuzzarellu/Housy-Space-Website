@@ -60,7 +60,7 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
           primaryCta: text,
         })
         .strict(),
-      reviews: z.object({ heading, ctaLabel: text }).strict(),
+      reviews: z.object({ heading, ctaLabel: text, mapsUrl: z.url() }).strict(),
       districts: z.object({ heading, ctaLabel: text }).strict(),
       blog: z.object({ heading, ctaLabel: text }).strict(),
     })

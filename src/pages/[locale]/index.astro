@@ -7,7 +7,7 @@ import HomePresentation from "@/features/agency/ui/HomePresentation.astro";
 import HomePhilosophy from "@/features/agency/ui/HomePhilosophy.astro";
 import ServicesAccordion from "@/features/agency/ui/ServicesAccordion.astro";
 import LivingInBarcelona from "@/features/districts/ui/LivingInBarcelona.astro";
-import { getReviewsSummary } from "@/features/reviews/application/reviews";
+import { getLatestTestimonials } from "@/features/reviews/application/testimonials";
 import { getPosts } from "@/features/blog/application/posts";
 import { getFeaturedProperties } from "@/features/properties/application";
 import FeaturedProperties from "@/features/properties/ui/FeaturedProperties.astro";
@@ -32,7 +32,7 @@ const t = getDictionary(locale);
 const alternates = getAlternates("home");
 const featured = await getFeaturedProperties();
 const content = await getHomeContent(locale);
-const reviews = await getReviewsSummary();
+const testimonials = (await getLatestTestimonials()).map((entry) => entry.data);
 const posts = (await getPosts()).slice(0, 3);
 const PRESENTATION_ID = "presentacion";
 ---
@@ -56,7 +56,7 @@ const PRESENTATION_ID = "presentacion";
     collaborators={content.collaborators}
   />
   <HomePhilosophy locale={locale} content={content.philosophy} />
-  <ReviewsSection locale={locale} content={content.reviews} summary={reviews} />
+  <ReviewsSection locale={locale} content={content.reviews} testimonials={testimonials} />
   <LivingInBarcelona locale={locale} content={content.districts} />
   <BlogTeaser locale={locale} content={content.blog} posts={posts} />
 </BaseLayout>
