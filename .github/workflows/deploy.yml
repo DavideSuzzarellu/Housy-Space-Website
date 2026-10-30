@@ -22,6 +22,7 @@ jobs:
               with:
                   # Le forzamos a usar bun por las dudas, aunque suele autodetectarlo
                   package-manager: bun
+                  node-version: 22
     deploy:
         needs: build
         runs-on: ubuntu-latest

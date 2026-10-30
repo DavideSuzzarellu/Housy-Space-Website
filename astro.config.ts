@@ -15,7 +15,6 @@ export default defineConfig({
   base: "/Housy-Space-Website",
   output: "static",
   trailingSlash: "never",
-
   i18n: {
     locales: [...LOCALES],
     defaultLocale: DEFAULT_LOCALE,
@@ -64,7 +63,10 @@ export default defineConfig({
       fallbacks: ["ui-sans-serif", "system-ui", "sans-serif"],
     },
   ],
-
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
   integrations: [
     sitemap({
       // Property sheet sources are internal: printed to PDF and removed after the build.
