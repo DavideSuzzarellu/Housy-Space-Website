@@ -1,11 +1,8 @@
 name: Deploy to GitHub Pages
 on:
-    # Se ejecuta cada vez que hacés push a la rama main
     push:
         branches: [main]
-    # Te permite ejecutarlo manualmente desde la pestaña Actions en GitHub
     workflow_dispatch:
-# Permisos necesarios para que GitHub Actions pueda publicar la página
 permissions:
     contents: read
     pages: write
@@ -20,10 +17,13 @@ jobs:
             - name: Checkout del código
               uses: actions/checkout@v4
 
+            # ESTE ES EL PASO NUEVO QUE FALTABA
+            - name: Instalar Chromium para generar PDFs
+              run: bunx playwright install chromium
+
             - name: Instalar, buildear y subir el sitio
               uses: withastro/action@v3
               with:
-                  # Le forzamos a usar bun por las dudas, aunque suele autodetectarlo
                   package-manager: bun
                   node-version: 22
     deploy:
