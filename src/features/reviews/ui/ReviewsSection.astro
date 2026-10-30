@@ -1,4 +1,5 @@
 ---
+import type { HomeContent } from "@/features/agency/application/homeContent";
 import type { ReviewsSummary } from "@/features/reviews/domain/review";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
@@ -8,15 +9,16 @@ import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
 
 /**
- * 05 Google reviews. Renders NOTHING without real data (AGENTS.md §6.1 fallback: no empty
+ * Google reviews. Renders NOTHING without real data (AGENTS.md §6.1 fallback: no empty
  * stars, no fake reviews). The Places API integration is pending (ROADMAP I6, I2).
  */
 interface Props {
   locale: Locale;
+  content: HomeContent["reviews"];
   summary?: ReviewsSummary | undefined;
 }
 
-const { locale, summary } = Astro.props;
+const { locale, content, summary } = Astro.props;
 const t = getDictionary(locale);
 const copy = t.home.reviews;
 const hasReviews = summary !== undefined && summary.reviews.length > 0;
@@ -24,9 +26,9 @@ const stars = (rating: number) => "★".repeat(Math.round(rating)).padEnd(5, "�
 ---
 
 {hasReviews && (
-  <Section id="resenas" labelledBy="reviews-heading" name="reviews">
+  <Section id="resenas" labelledBy="reviews-heading" name="reviews" surface="dark">
     <div class="mb-7.5 flex flex-wrap items-end justify-between gap-x-10 gap-y-4.5">
-      <SectionHeading id="reviews-heading" number="05" tag={copy.eyebrow} heading={copy.heading} />
+      <SectionHeading id="reviews-heading" heading={content.heading} />
       <p class="flex items-baseline gap-3.5 text-sm text-muted">
         <b class="text-[2.75rem] font-normal whitespace-nowrap text-fg">
           {formatMessage(copy.ratingOutOf, {
@@ -63,7 +65,7 @@ const stars = (rating: number) => "★".repeat(Math.round(rating)).padEnd(5, "�
     )}
     <div class="mt-6">
       <Button href={summary.mapsUrl} external newTabLabel={t.a11y.opensInNewTab}>
-        {copy.viewOnGoogle}
+        {content.ctaLabel}
       </Button>
     </div>
   </Section>

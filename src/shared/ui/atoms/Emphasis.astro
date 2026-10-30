@@ -1,0 +1,12 @@
+---
+import { splitEmphasis } from "@/shared/lib/emphasis";
+
+/** Heading text with its `*marked part*` in an `<em>` (light weight, global.css). */
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+{splitEmphasis(text).map((part) => (part.emphasis ? <em>{part.text}</em> : part.text))}

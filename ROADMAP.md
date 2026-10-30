@@ -58,6 +58,7 @@
 - [x] Motion: intro (once per session), scroll progress bar, scroll-reveal, hero line reveal
 - [x] Locale switcher
 - [x] Home page: all 7 sections + contact block, real featured properties, en/it/ca machine-translated (pending client review)
+- [x] Home restyled to proposal v3: order, accordion, carousel, philosophy, copy from Pages CMS. Valuation popup and its form wait for I3; reviews stay hidden until I6; services accordion shows the 8 confirmed services (legal/tax and financial wait for I23)
 - [ ] Confirm the white logo derived from the official SVG
 
 ### Phase 3 — Catalog & property detail

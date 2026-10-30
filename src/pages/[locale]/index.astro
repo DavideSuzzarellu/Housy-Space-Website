@@ -1,9 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { getHomeContent } from "@/features/agency/application/homeContent";
 import BlogTeaser from "@/features/blog/ui/BlogTeaser.astro";
 import HomeHero from "@/features/agency/ui/HomeHero.astro";
 import HomePresentation from "@/features/agency/ui/HomePresentation.astro";
-import ServicesShowcase from "@/features/agency/ui/ServicesShowcase.astro";
+import HomePhilosophy from "@/features/agency/ui/HomePhilosophy.astro";
+import ServicesAccordion from "@/features/agency/ui/ServicesAccordion.astro";
 import LivingInBarcelona from "@/features/districts/ui/LivingInBarcelona.astro";
 import { getFeaturedProperties } from "@/features/properties/application";
 import FeaturedProperties from "@/features/properties/ui/FeaturedProperties.astro";
@@ -27,6 +29,7 @@ const { locale } = Astro.props;
 const t = getDictionary(locale);
 const alternates = getAlternates("home");
 const featured = await getFeaturedProperties();
+const content = await getHomeContent(locale);
 const PRESENTATION_ID = "presentacion";
 ---
 
@@ -39,13 +42,18 @@ const PRESENTATION_ID = "presentacion";
 >
   <IntroGate slot="head" />
   <IntroOverlay locale={locale} />
-  <HomeHero locale={locale} nextSectionId={PRESENTATION_ID} />
-  <HomePresentation locale={locale} id={PRESENTATION_ID} />
-  <ServicesShowcase locale={locale} />
-  <FeaturedProperties locale={locale} properties={featured} />
-  <ValuationExplainer locale={locale} />
+  <HomeHero locale={locale} content={content.hero} nextSectionId={PRESENTATION_ID} />
+  <HomePresentation locale={locale} id={PRESENTATION_ID} content={content.presentation} />
+  <FeaturedProperties locale={locale} properties={featured} content={content.featured} />
+  <ValuationExplainer locale={locale} content={content.valuation} />
+  <ServicesAccordion
+    locale={locale}
+    content={content.services}
+    collaborators={content.collaborators}
+  />
+  <HomePhilosophy locale={locale} content={content.philosophy} />
   {/* Google reviews: no loader yet (ROADMAP I6, I2), so the section stays hidden (§6.1). */}
-  <ReviewsSection locale={locale} />
-  <LivingInBarcelona locale={locale} />
-  <BlogTeaser locale={locale} />
+  <ReviewsSection locale={locale} content={content.reviews} />
+  <LivingInBarcelona locale={locale} content={content.districts} />
+  <BlogTeaser locale={locale} content={content.blog} />
 </BaseLayout>

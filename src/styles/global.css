@@ -134,6 +134,21 @@
   --color-accent: #0f5a5e;
 }
 
+/* Services accordion: the bar's end advances the panel (ServicesAccordion.astro). */
+@keyframes service-progress {
+  to {
+    width: 100%;
+  }
+}
+
+[data-active="true"] .service-progress {
+  animation: service-progress 4500ms linear forwards;
+}
+
+[data-held] .service-progress {
+  animation-play-state: paused;
+}
+
 /*
  * Property map (PropertyMap.astro): Leaflet paths take brand tokens instead of inline colours.
  * Unlayered on purpose: leaflet.css is unlayered and would otherwise win.

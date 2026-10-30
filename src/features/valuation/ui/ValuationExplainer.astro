@@ -1,28 +1,26 @@
 ---
 import { Picture } from "astro:assets";
-import balcon from "@/assets/home/det-balcon-1400.jpg";
+import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import { formatMessage } from "@/shared/lib/format";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
 import Button from "@/shared/ui/atoms/Button.astro";
 import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
-import { PHOTO_PICTURE } from "@/shared/lib/images";
 
 /**
- * 04 Valuation explainer (3 steps + CTA). The valuation itself is an external iframe on the
+ * Valuation banner over a full-bleed photo. The valuation itself is an external iframe on the
  * valuation page: this site never computes figures (AGENTS.md §6 item 12).
  */
 interface Props {
   locale: Locale;
+  content: HomeContent["valuation"];
 }
 
-const { locale } = Astro.props;
-const t = getDictionary(locale);
-const copy = t.home.valuation;
-const steps = [copy.steps.first, copy.steps.second, copy.steps.third];
+const { locale, content } = Astro.props;
+const copy = getDictionary(locale).home.valuation;
 ---
 
 <Section
@@ -30,71 +28,36 @@ const steps = [copy.steps.first, copy.steps.second, copy.steps.third];
   labelledBy="valuation-heading"
   name="valuation"
   spacing="spacious"
-  class="before:pointer-events-none before:absolute before:inset-x-0 before:-inset-y-[22%] before:-z-10 before:bg-[radial-gradient(42%_38%_at_78%_45%,color-mix(in_oklab,var(--color-turquoise)_13%,transparent),transparent_72%),radial-gradient(55%_45%_at_22%_55%,color-mix(in_oklab,var(--color-petrol)_50%,transparent),transparent_72%)]"
+  surface="dark"
+  class="grid min-h-[clamp(27.5rem,50vw,38.75rem)] items-center overflow-hidden"
 >
-  <div
-    slot="background"
-    aria-hidden="true"
-    class="absolute inset-0 -z-10 overflow-hidden [mask-image:linear-gradient(180deg,transparent_0%,black_22%,black_78%,transparent_100%)]"
-  >
+  <figure slot="background" class="absolute inset-0 -z-10 m-0">
     <Picture
       {...PHOTO_PICTURE}
-      src={balcon}
-      alt=""
+      src={content.image}
+      alt={content.imageAlt}
       widths={[800, 1400]}
       sizes="100vw"
-      class="size-full object-cover opacity-13 grayscale-40"
+      class="size-full object-cover"
     />
-  </div>
-  <div class="grid items-center gap-14 lg:grid-cols-[6fr_5fr] lg:gap-20">
-    <div>
-      <SectionHeading
-        id="valuation-heading"
-        number="04"
-        tag={copy.eyebrow}
-        heading={copy.heading}
-        size="lg"
-        eyebrowTone="light"
-      />
-      <p data-reveal class="mt-5 max-w-[52ch] text-lg text-fg/90">
-        {copy.lead}
-      </p>
-      <ol data-reveal class="mt-7 mb-8.5 grid max-w-140 border-t border-fg/20">
-        {steps.map((step, index) => (
-          <li class="flex items-baseline gap-4.5 border-b border-fg/20 py-3.75 text-base text-fg/95">
-            <b aria-hidden="true" class="min-w-7.5 text-[1.375rem] font-normal text-accent">
-              {String(index + 1).padStart(2, "0")}
-            </b>
-            <span>{step}</span>
-          </li>
-        ))}
-      </ol>
-      <div data-reveal>
-        <Button href={getLocalizedPath("valuation", locale)} variant="solid" size="lg">
-          {copy.cta}
-        </Button>
-      </div>
-    </div>
-
-    <figure data-reveal class="relative m-0 max-lg:max-w-130 lg:pb-11">
-      <div class="ml-auto aspect-4/5 w-[84%] overflow-hidden shadow-2xl shadow-black/40 lg:w-[78%]">
-        <Picture
-          {...PHOTO_PICTURE}
-          src={balcon}
-          alt={formatMessage(t.media.conceptualImageAlt, { subject: copy.imageSubject })}
-          widths={[480, 800]}
-          sizes="(min-width: 1024px) 28rem, 84vw"
-          class="size-full object-cover"
-        />
-      </div>
-      <div class="relative mt-[-18%] mr-[14%] grid gap-1.5 bg-stone px-6 py-5.5 text-petrol-dark shadow-2xl shadow-black/45 lg:absolute lg:bottom-[22%] lg:left-0 lg:m-0 lg:w-[66%] lg:min-w-65">
-        <p class="text-[0.6875rem] tracking-[0.16em] text-petrol uppercase">{copy.reportTag}</p>
-        <p class="text-[clamp(1.875rem,3.4vw,2.625rem)] leading-none">{copy.reportTitle}</p>
-        <p class="mt-1 text-sm text-petrol-dark/85">{copy.reportText}</p>
-      </div>
-      <figcaption class="mt-4 lg:absolute lg:bottom-0 lg:left-0 lg:mt-0">
-        <MediaCredit class="text-fg/80">{copy.caption}</MediaCredit>
-      </figcaption>
-    </figure>
+    <span
+      aria-hidden="true"
+      class="absolute inset-0 bg-linear-to-b from-ink/35 to-ink/80 md:bg-linear-to-r md:from-ink/80 md:via-ink/50 md:to-ink/10"
+    ></span>
+    <figcaption class="absolute right-4 bottom-2.5">
+      <MediaCredit tone="onImage">{copy.caption}</MediaCredit>
+    </figcaption>
+  </figure>
+  <SectionHeading id="valuation-heading" heading={content.heading} size="lg" class="max-w-[13em]" />
+  <p
+    data-reveal
+    class="mt-4 mb-[clamp(1.625rem,3vw,2.375rem)] max-w-[34ch] text-[clamp(1rem,1.3vw,1.25rem)] leading-normal text-fg/90"
+  >
+    {content.lead}
+  </p>
+  <div data-reveal>
+    <Button href={getLocalizedPath("valuation", locale)} variant="solid" size="lg" arrow>
+      {content.ctaLabel}
+    </Button>
   </div>
 </Section>

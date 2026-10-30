@@ -266,99 +266,27 @@ const ca = {
       videoCredit:
         "Vídeo conceptual muntat amb imatges generades amb IA. Se substituirà per metratge real de Barcelona amb llicència.",
     },
-    presentation: {
-      eyebrow: "Consultoria immobiliària boutique · Barcelona",
-      headingLine1: "Solucions immobiliàries",
-      headingLine2: "a la teva mida.",
-      lead: "Acompanyem cada pas del teu habitatge, amb atenció personal i sensibilitat per l'arquitectura.",
-      body: "No busquem gestionar el nombre més gran d'immobles. Preferim dedicar a cada client el temps, l'atenció i l'esforç que mereix, oferint un tracte proper, transparent i veritablement personalitzat.",
-      pillars: {
-        closeness: {
-          title: "Proximitat",
-          text: "Un assessor de referència, de la primera conversa al final del procés.",
-        },
-        transparency: {
-          title: "Transparència",
-          text: "Informació clara sobre cada pas, els costos i els terminis.",
-        },
-        commitment: {
-          title: "Compromís",
-          text: "Ens impliquem en cada operació i busquem solucions quan sorgeixen dificultats.",
-        },
-      },
-      ctaAbout: "Coneix HousySpace",
-      ctaConsultation: "Sol·licita una consulta privada",
-      imageMainSubject: "vestíbul d'una finca senyorial",
-      imageSecondarySubject: "saló lluminós",
-    },
     services: {
-      eyebrow: "Els nostres serveis",
-      heading: "Un servei integral per a cada moment del teu habitatge.",
-      lead: "Compravenda, lloguer, cerca personalitzada, reformes, interiorisme i assessorament: t'acompanyem en tot el que envolta el teu habitatge, amb una mateixa persona de referència.",
-      cardCta: "Descobreix el servei",
-      allServices: "Veure tots els serveis",
-      summaries: {
-        saleBrokerage:
-          "Valoració, preparació, comercialització, negociació i acompanyament fins a la signatura.",
-        rentalManagement: "Comercialització, selecció d'arrendataris i gestió del lloguer.",
-        personalShopper: "Cerca personalitzada: seleccionem i visitem amb tu només el que encaixa.",
-        renovations:
-          "Planificació, coordinació i seguiment de l'obra, amb qualitat en els acabats.",
-        interiorDesign: "Disseny d'interiors pensat per a com vius l'espai.",
-        advisory: "Orientació clara, a la teva mida, abans de prendre cap decisió.",
-      },
+      regionLabel: "Els nostres serveis",
     },
     featured: {
-      eyebrow: "Propietats destacades",
-      heading: "Tres immobles que representen el que fem.",
       cardCta: "Consulta la fitxa completa",
-      more: "Veure més immobles",
       empty: "En aquest moment no hi ha immobles destacats publicats.",
     },
     valuation: {
-      eyebrow: "Valoració immobiliària",
-      heading: "La propera propietat podria ser la teva.",
-      lead: "Descobreix el valor real del teu habitatge amb una anàlisi immobiliària professional, basada en el mercat i en les característiques de la teva propietat.",
-      steps: {
-        first: "Introdueix les dades del teu habitatge al nostre valorador",
-        second: "Rep a l'instant el teu informe de valoració",
-        third:
-          "Si ho vols, un assessor d'HousySpace el revisa amb tu i t'orienta sobre la millor estratègia",
-      },
-      cta: "Sol·licita la valoració del meu habitatge",
-      reportTag: "Informe de valoració",
-      reportTitle: "A l'instant.",
-      reportText:
-        "Introdueix les dades del teu habitatge al nostre valorador i rep el teu informe de valoració en aquell mateix moment.",
-      imageSubject: "façana amb balcons d'una finca",
       caption: "Imatge conceptual generada amb IA.",
     },
     reviews: {
-      eyebrow: "Ressenyes de Google",
-      heading: "El que diuen d'HousySpace.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} ressenyes a Google",
-      viewOnGoogle: "Veure el perfil a Google Maps",
     },
     living: {
-      eyebrow: "Viure a Barcelona",
-      heading: "Descobreix la ciutat, districte a districte.",
-      mapCta: "Explora el mapa interactiu",
-      lead: "Els 10 districtes i 73 barris de la ciutat, vistos des del residencial, l'arquitectònic i l'immobiliari. Tria'n un al mapa per obrir-ne la fitxa.",
-      districtTag: "Districte · {count} barris",
       barrioCount: "{count} barris",
-      districtCta: "Descobreix el districte",
-      districtSubject: "Districte {name}",
-      highlights: {
-        eixample:
-          "La trama ortogonal de Cerdà, les finques senyorials, els xamfrans i els vestíbuls amb història.",
-        gracia: "Carrers i places d'escala de barri, vida cultural i edificis amb caràcter.",
-      },
+      previous: "Districtes anteriors",
+      next: "Districtes següents",
+      railLabel: "Els 10 districtes de Barcelona",
     },
     blog: {
-      eyebrow: "Blog i notícies",
-      heading: "Barris, arquitectura i mercat.",
-      allArticles: "Veure tots els articles",
       empty: "Encara no hi ha articles publicats.",
     },
   },

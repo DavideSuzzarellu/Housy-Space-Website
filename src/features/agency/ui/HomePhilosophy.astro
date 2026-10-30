@@ -1,0 +1,42 @@
+---
+import type { HomeContent } from "@/features/agency/application/homeContent";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+
+/** The company's motto, large, with a CTA to the philosophy on the about page. */
+interface Props {
+  locale: Locale;
+  content: HomeContent["philosophy"];
+}
+
+const { locale, content } = Astro.props;
+---
+
+<Section id="filosofia" labelledBy="philosophy-heading" name="philosophy" spacing="spacious">
+  <div class="grid items-center gap-[clamp(1.875rem,4vw,3rem)] lg:grid-cols-[minmax(0,1fr)_auto]">
+    <div>
+      <h2
+        id="philosophy-heading"
+        data-reveal
+        class="text-[clamp(1.75rem,3.8vw,3.375rem)] leading-[1.06] font-black"
+      >
+        <span class="block">{content.quoteFirst}</span>
+        <em class="block">{content.quoteSecond}</em>
+      </h2>
+      <p
+        data-reveal
+        class="mt-[clamp(1.375rem,2.6vw,2rem)] text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.3]"
+      >
+        <span class="block text-muted">{content.subLead}</span>
+        {content.sub}
+      </p>
+    </div>
+    <div data-reveal>
+      <Button href={getLocalizedPath("about", locale)} variant="solid" arrow>
+        {content.primaryCta}
+      </Button>
+    </div>
+  </div>
+</Section>

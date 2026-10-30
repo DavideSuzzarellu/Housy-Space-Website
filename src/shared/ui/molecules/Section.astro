@@ -8,14 +8,28 @@ interface Props {
   /** Stable hook for tests/analytics (e.g. "services"). */
   name: string;
   spacing?: "default" | "spacious";
+  surface?: "paper" | "stone" | "dark";
   class?: string;
 }
 
-const { id, labelledBy, name, spacing = "default", class: className } = Astro.props;
+const {
+  id,
+  labelledBy,
+  name,
+  spacing = "default",
+  surface = "paper",
+  class: className,
+} = Astro.props;
 
 const SPACING = {
-  default: "py-13.5 md:py-19",
-  spacious: "py-[clamp(5.625rem,11vw,9.375rem)]",
+  default: "py-[clamp(2.75rem,5vw,4.125rem)]",
+  spacious: "py-[clamp(4.5rem,8vw,7.5rem)]",
+} as const;
+
+const SURFACES = {
+  paper: "bg-canvas",
+  stone: "surface-stone bg-canvas",
+  dark: "surface-dark bg-canvas",
 } as const;
 ---
 
@@ -23,7 +37,7 @@ const SPACING = {
   id={id}
   aria-labelledby={labelledBy}
   data-section={name}
-  class:list={["relative isolate", SPACING[spacing], className]}
+  class:list={["relative isolate", SPACING[spacing], SURFACES[surface], className]}
 >
   <slot name="background" />
   <Container>

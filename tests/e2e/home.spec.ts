@@ -49,15 +49,33 @@ for (const locale of LOCALES) {
       expect(sections).toEqual([
         "hero",
         "presentation",
-        "services",
         "featured",
         "valuation",
+        "services",
+        "philosophy",
         "living",
         "blog",
       ]);
-      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(6);
+      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
       await expect(page.locator("[data-contact-block]")).toBeVisible();
       await expect(page.locator("[data-blog-empty]")).toBeVisible();
+    });
+
+    test("services accordion opens a closed panel before following its link", async ({ page }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      await expect(panels.first()).toHaveAttribute("data-active", "true");
+      const url = page.url();
+      // A touch tap: no hover first (with a mouse, hover opens the panel and the click navigates).
+      await panels.nth(2).locator("a").dispatchEvent("click");
+      await expect(panels.nth(2)).toHaveAttribute("data-active", "true");
+      expect(page.url()).toBe(url);
+    });
+
+    test("districts carousel moves with its buttons", async ({ page }) => {
+      const rail = page.locator("[data-rail]");
+      await rail.scrollIntoViewIfNeeded();
+      await page.locator('[data-rail-step="1"]').click();
+      await expect.poll(() => rail.evaluate((node) => node.scrollLeft)).toBeGreaterThan(0);
     });
 
     test("hides the Google reviews section until real data exists", async ({ page }) => {

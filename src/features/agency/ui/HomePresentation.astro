@@ -1,111 +1,82 @@
 ---
-import { Picture } from "astro:assets";
-import portal from "@/assets/home/portal-1400.jpg";
-import salon from "@/assets/home/det-salon-720.jpg";
-import { getDictionary } from "@/shared/i18n";
+import type { HomeContent } from "@/features/agency/application/homeContent";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import { formatMessage } from "@/shared/lib/format";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
-import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
-import Eyebrow from "@/shared/ui/molecules/Eyebrow.astro";
-import { PHOTO_PICTURE } from "@/shared/lib/images";
 
-/** 01 Presentation: the page's h1 (line-by-line reveal), values and first CTAs. */
+/** Presentation: the page's h1 over a low-presence grid of chamfered tiles (proposal v3). */
 interface Props {
   locale: Locale;
   id: string;
+  content: HomeContent["presentation"];
 }
 
-const { locale, id } = Astro.props;
-const t = getDictionary(locale);
-const copy = t.home.presentation;
-const lines = [copy.headingLine1, copy.headingLine2];
-const pillars = [copy.pillars.closeness, copy.pillars.transparency, copy.pillars.commitment];
-const conceptualAlt = (subject: string) => formatMessage(t.media.conceptualImageAlt, { subject });
+const { locale, id, content } = Astro.props;
+
+const TILE = 120;
+const tile = (x: number, y: number, size: number, cut: number) =>
+  `M${x + cut} ${y}H${x + size - cut}L${x + size} ${y + cut}V${y + size - cut}L${x + size - cut} ${y + size}H${x + cut}L${x} ${y + size - cut}V${y + cut}Z`;
+const CELLS = Array.from({ length: 66 }, (_, index) => ({
+  x: (index % 11) * TILE,
+  y: Math.floor(index / 11) * TILE,
+  inner: index % 5 === 0,
+  highlight: index === 20,
+}));
 ---
 
 <section
   id={id}
   aria-labelledby="home-heading"
   data-section="presentation"
-  class="pt-[clamp(3.5rem,9vw,7.5rem)] pb-13.5 md:pb-19"
+  class="relative isolate overflow-hidden bg-canvas py-[clamp(4.5rem,10vw,8.5rem)]"
 >
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    viewBox="0 0 1320 720"
+    data-reveal="fade"
+    class="absolute top-1/2 left-1/2 -z-10 hidden w-[min(110vw,103rem)] -translate-x-1/2 -translate-y-1/2 fill-none md:block"
+  >
+    {CELLS.map((cell) => (
+      <>
+        <path
+          d={tile(cell.x + 10, cell.y + 10, 100, 15)}
+          class:list={cell.highlight ? "fill-turquoise/7 stroke-turquoise/60" : "stroke-fg/14"}
+        />
+        {cell.inner && <path d={tile(cell.x + 36, cell.y + 36, 48, 8)} class="stroke-fg/8" />}
+      </>
+    ))}
+  </svg>
   <Container>
-    <div class="max-w-250">
-      <div data-reveal>
-        <Eyebrow number="01" tag={copy.eyebrow} />
-      </div>
+    <div class="text-center">
+      <p
+        data-reveal
+        class="flex items-center justify-center gap-4 text-[0.6875rem] tracking-[0.2em] text-muted before:h-px before:w-8.5 before:bg-taupe after:h-px after:w-8.5 after:bg-taupe max-[479px]:before:hidden max-[479px]:after:hidden"
+      >
+        {content.eyebrow}
+      </p>
       <h1
         id="home-heading"
         data-reveal="lines"
-        class="mt-4.5 text-[clamp(2.875rem,7.6vw,6.75rem)] leading-[0.98] tracking-[-0.005em]"
+        class="mt-[clamp(1.375rem,2.6vw,1.875rem)] text-[clamp(2rem,4.6vw,4.25rem)] leading-[1.06]"
       >
-        {lines.map((line, index) => (
+        {[content.headingFirst, content.headingSecond].map((line, index) => (
           <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
-            <span data-line class="block" style={`--line-index: ${index}`}>
+            <span
+              data-line
+              class:list={["block", index === 0 ? "font-black" : "font-normal text-muted"]}
+              style={`--line-index: ${index}`}
+            >
               {line}
             </span>
           </span>
         ))}
       </h1>
-    </div>
-
-    <div class="mt-[clamp(2.5rem,6vw,4.5rem)] grid items-start gap-12 lg:grid-cols-[6fr_5fr] lg:gap-[clamp(3.5rem,7vw,6.25rem)]">
-      <figure data-reveal="fade" class="relative mb-7 aspect-5/4 max-w-160">
-        <div class="absolute top-0 left-0 h-[88%] w-[80%] overflow-hidden bg-bg-deep shadow-2xl shadow-black/35">
-          <Picture
-            {...PHOTO_PICTURE}
-            src={portal}
-            alt={conceptualAlt(copy.imageMainSubject)}
-            widths={[480, 640, 800, 1120]}
-            sizes="(min-width: 1024px) 32rem, 80vw"
-            class="size-full object-cover"
-          />
-        </div>
-        <div class="absolute right-0 bottom-0 h-[52%] w-[46%] overflow-hidden bg-bg-deep shadow-2xl shadow-black/35 outline-10 outline-bg-dark-2">
-          <Picture
-            {...PHOTO_PICTURE}
-            src={salon}
-            alt={conceptualAlt(copy.imageSecondarySubject)}
-            widths={[360, 720]}
-            sizes="(min-width: 1024px) 18rem, 46vw"
-            class="size-full object-cover"
-          />
-        </div>
-        <figcaption class="absolute -bottom-6.5 left-0">
-          <MediaCredit>{t.media.conceptualImage}</MediaCredit>
-        </figcaption>
-      </figure>
-
-      <div class="lg:pt-[clamp(0rem,3vw,2.5rem)]">
-        <p
-          data-reveal
-          class="mb-5 max-w-[30ch] text-[clamp(1.5rem,2.3vw,1.875rem)] leading-[1.3] text-fg"
-        >
-          {copy.lead}
-        </p>
-        <p data-reveal class="max-w-[64ch] text-[1.03rem] text-fg/85">
-          {copy.body}
-        </p>
-        <ul data-reveal class="mt-7.5 mb-8.5 grid max-w-140 border-t border-line">
-          {pillars.map((pillar) => (
-            <li class="flex flex-col gap-0.5 border-b border-line py-3.5 sm:flex-row sm:items-baseline sm:gap-4.5">
-              <b class="min-w-35 text-2xl font-normal">{pillar.title}</b>
-              <span class="text-sm text-muted">{pillar.text}</span>
-            </li>
-          ))}
-        </ul>
-        <div data-reveal class="flex flex-wrap items-center gap-x-6.5 gap-y-3.5">
-          <Button href={getLocalizedPath("about", locale)}>{copy.ctaAbout}</Button>
-          <a
-            href={getLocalizedPath("contact", locale)}
-            class="border-b border-line pb-0.75 text-[0.8125rem] tracking-[0.06em] text-fg no-underline transition-colors hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent"
-          >
-            {copy.ctaConsultation}
-          </a>
-        </div>
+      <div data-reveal class="mt-[clamp(1.75rem,3vw,2.5rem)]">
+        <Button href={getLocalizedPath("about", locale)} variant="solid" size="lg" arrow>
+          {content.linkLabel}
+        </Button>
       </div>
     </div>
   </Container>

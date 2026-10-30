@@ -1,4 +1,6 @@
 ---
+import ArrowUpRight from "./ArrowUpRight.astro";
+
 /**
  * Link styled as a button (all CTAs navigate). Turquoise fill sweeps in on hover/focus.
  * Follows the surface roles: dark ink on light sections, light on `.surface-dark` (§8).
@@ -7,6 +9,8 @@ interface Props {
   href: string;
   variant?: "outline" | "solid";
   size?: "md" | "lg";
+  /** Trailing up-right arrow (main CTAs of proposal v3). */
+  arrow?: boolean;
   /** Opens in a new tab; `newTabLabel` is announced to screen readers. */
   external?: boolean;
   newTabLabel?: string;
@@ -19,6 +23,7 @@ const {
   href,
   variant = "outline",
   size = "md",
+  arrow = false,
   external = false,
   newTabLabel,
   download,
@@ -43,7 +48,7 @@ const SIZES = {
   download={download}
   data-astro-prefetch={download === undefined ? undefined : "false"}
   class:list={[
-    "relative isolate inline-flex min-h-11 items-center justify-center overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
+    "relative isolate inline-flex min-h-11 items-center justify-center gap-3.5 overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
     "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-turquoise before:transition-transform before:duration-450 before:ease-brand",
     "hover:border-turquoise hover:text-ink hover:before:scale-x-100 focus-visible:border-turquoise focus-visible:text-ink focus-visible:before:scale-x-100",
     VARIANTS[variant],
@@ -52,5 +57,6 @@ const SIZES = {
   ]}
 >
   <slot />
+  {arrow && <ArrowUpRight class="size-2.75" />}
   {external && newTabLabel !== undefined && <span class="sr-only">{newTabLabel}</span>}
 </a>

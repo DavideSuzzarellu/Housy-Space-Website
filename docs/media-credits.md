@@ -8,6 +8,8 @@ Source for all placeholders: the approved UI proposal (AGENTS.md §11.1), artifa
 
 ## Home
 
+Added 2026-10-30 from proposal v3 (artifact `9boSsZEnH16FUL5ATJ78Pk`), same AI-generated placeholder status: `src/assets/home/services/*.webp` (services accordion, `assets/img/servicios/cine-*-640.webp`), `src/assets/home/districts/*.webp` (districts carousel, `assets/img/distritos/carrusel/*`), `src/assets/home/det-ventanal-1400.jpg` (valuation banner). `services/advisory.webp` shows a recreated logo on a wall: replace it first (§11).
+
 | File                                                | Proposal path                     | Used in                                     | Status                                           |
 | --------------------------------------------------- | --------------------------------- | ------------------------------------------- | ------------------------------------------------ |
 | `public/media/hero/hero-1280.mp4`, `hero-1280.webm` | `assets/video/hero-1280.*`        | Hero video (landscape)                      | AI-generated placeholder — replace before launch |

@@ -36,7 +36,6 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
           eyebrow: text,
           headingFirst: text,
           headingSecond: text,
-          text,
           linkLabel: text,
         })
         .strict(),
@@ -45,19 +44,13 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
         .object({
           image: image(),
           imageAlt: text,
-          cardTag: text,
-          cardTitle: text,
-          cardText: text,
           heading,
           lead: text,
-          step1: text,
-          step2: text,
-          step3: text,
           ctaLabel: text,
         })
         .strict(),
       services: z.object({ heading }).strict(),
-      collaborators: z.object({ text, names: z.array(text).min(1), ctaLabel: text }).strict(),
+      collaborators: z.object({ text, ctaLabel: text }).strict(),
       philosophy: z
         .object({
           quoteFirst: text,
@@ -65,11 +58,10 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
           subLead: text,
           sub: text,
           primaryCta: text,
-          secondaryCta: text,
         })
         .strict(),
-      reviews: z.object({ heading, lead: text, ctaLabel: text }).strict(),
-      districts: z.object({ heading, lead: text, ctaLabel: text }).strict(),
+      reviews: z.object({ heading, ctaLabel: text }).strict(),
+      districts: z.object({ heading, ctaLabel: text }).strict(),
       blog: z.object({ heading, ctaLabel: text }).strict(),
     })
     .strict();

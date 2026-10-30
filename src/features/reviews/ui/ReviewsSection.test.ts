@@ -10,7 +10,12 @@ beforeAll(async () => {
 
 describe("ReviewsSection", () => {
   it("renders nothing without real Google data (no empty stars, no fake reviews)", async () => {
-    const html = await container.renderToString(ReviewsSection, { props: { locale: "es" } });
+    const html = await container.renderToString(ReviewsSection, {
+      props: {
+        locale: "es",
+        content: { heading: "Lo que dicen *de HousySpace*", ctaLabel: "Ver reseñas en Google" },
+      },
+    });
     expect(html.trim()).toBe("");
   });
 
@@ -18,6 +23,7 @@ describe("ReviewsSection", () => {
     const html = await container.renderToString(ReviewsSection, {
       props: {
         locale: "es",
+        content: { heading: "Lo que dicen *de HousySpace*", ctaLabel: "Ver reseñas en Google" },
         summary: {
           rating: 4.8,
           totalCount: 0,
@@ -34,6 +40,7 @@ describe("ReviewsSection", () => {
     const html = await container.renderToString(ReviewsSection, {
       props: {
         locale: "es",
+        content: { heading: "Lo que dicen *de HousySpace*", ctaLabel: "Ver reseñas en Google" },
         summary: {
           rating: 4.8,
           totalCount: 12,

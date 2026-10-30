@@ -7,56 +7,45 @@
   },
   "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
-    "headingFirst": "Every corner has a story.",
-    "headingSecond": "Every person, a new beginning.",
-    "text": "We are HousySpace, a boutique real estate consultancy in Barcelona. For 9 years we have been helping our clients buy, sell and make property decisions with sound judgement, closeness and fully personalised advice.",
+    "headingFirst": "Every corner has a story",
+    "headingSecond": "Every person, a new beginning",
     "linkLabel": "Get to know us"
   },
   "featured": {
-    "heading": "Three properties that *show what we do*.",
+    "heading": "Find *your new beginning* here",
     "ctaLabel": "View more properties"
   },
   "valuation": {
-    "image": "../../assets/home/det-balcon-1400.jpg",
-    "imageAlt": "Building façade with balconies",
-    "cardTag": "Valuation report",
-    "cardTitle": "Instantly.",
-    "cardText": "Enter your home's details in our valuation tool and receive your valuation report right away.",
-    "heading": "The next property *could be yours*.",
-    "lead": "Find out the real value of your home with a professional real estate analysis based on the market and the features of your property.",
-    "step1": "Enter your home's details in our valuation tool",
-    "step2": "Receive your valuation report instantly",
-    "step3": "If you wish, a HousySpace advisor reviews it with you and guides you on the best strategy",
-    "ctaLabel": "Request a valuation of my home"
+    "image": "../../assets/home/det-ventanal-1400.jpg",
+    "imageAlt": "Bright living room with French windows onto a balcony",
+    "heading": "Find out what *your home is worth*",
+    "lead": "Instantly online, or with a HousySpace advisor.",
+    "ctaLabel": "Request a valuation"
   },
   "services": {
-    "heading": "A complete service for *every moment of your home*."
+    "heading": "Discover everything *we can do for you*"
   },
   "collaborators": {
     "text": "We surround ourselves with the best to offer you much more.",
-    "names": ["ADV Advocats", "Maria Guimerà Arquitectura", "Asesoría Edac"],
     "ctaLabel": "Meet our partners"
   },
   "philosophy": {
     "quoteFirst": "Don't worry,",
-    "quoteSecond": "I'll take care of it.",
+    "quoteSecond": "I'll take care of it!",
     "subLead": "It is not just a phrase.",
     "sub": "It is how we work.",
-    "primaryCta": "Discover our philosophy",
-    "secondaryCta": "Client testimonials"
+    "primaryCta": "Discover our philosophy"
   },
   "reviews": {
-    "heading": "What people say *about HousySpace*.",
-    "lead": "Real reviews from our clients on Google. They update automatically every time someone leaves us a review.",
+    "heading": "What people say *about HousySpace*",
     "ctaLabel": "See reviews on Google"
   },
   "districts": {
-    "heading": "Discover the city, *district by district*.",
-    "lead": "The city's 10 districts and 73 neighbourhoods, seen from a residential, architectural and real estate perspective. Choose one on the map to open its page.",
+    "heading": "Discover Barcelona *neighbourhood by neighbourhood*",
     "ctaLabel": "Explore the interactive map"
   },
   "blog": {
-    "heading": "Neighbourhoods, architecture *and the market*.",
+    "heading": "Blogs *and news*",
     "ctaLabel": "See all articles"
   }
 }

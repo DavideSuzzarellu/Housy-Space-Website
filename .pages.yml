@@ -67,7 +67,6 @@ content:
           - { name: eyebrow, label: Antetítulo, type: string, required: true }
           - { name: headingFirst, label: Titular · primera línea, type: string, required: true }
           - { name: headingSecond, label: Titular · segunda línea, type: string, required: true }
-          - { name: text, label: Texto, type: text, required: true }
           - { name: linkLabel, label: Enlace a Nosotros, type: string, required: true }
       - name: featured
         label: Inmuebles destacados
@@ -78,7 +77,7 @@ content:
               label: Titular,
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte en cursiva.",
+              description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: ctaLabel, label: Botón al catálogo, type: string, required: true }
       - name: valuation
@@ -98,20 +97,14 @@ content:
               type: string,
               required: true,
             }
-          - { name: cardTag, label: Tarjeta · etiqueta, type: string, required: true }
-          - { name: cardTitle, label: Tarjeta · título, type: string, required: true }
-          - { name: cardText, label: Tarjeta · texto, type: text, required: true }
           - {
               name: heading,
               label: Titular,
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte en cursiva.",
+              description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: lead, label: Entradilla, type: text, required: true }
-          - { name: step1, label: Paso 1, type: string, required: true }
-          - { name: step2, label: Paso 2, type: string, required: true }
-          - { name: step3, label: Paso 3, type: string, required: true }
           - { name: ctaLabel, label: Botón al valorador, type: string, required: true }
       - name: services
         label: Servicios
@@ -122,14 +115,13 @@ content:
               label: Titular,
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte en cursiva.",
+              description: "Pon entre *asteriscos* la parte más fina.",
             }
       - name: collaborators
         label: Colaboradores
         type: object
         fields:
           - { name: text, label: Texto, type: string, required: true }
-          - { name: names, label: Colaboradores, type: string, list: true, required: true }
           - { name: ctaLabel, label: Botón a Nosotros, type: string, required: true }
       - name: philosophy
         label: Filosofía
@@ -140,7 +132,6 @@ content:
           - { name: subLead, label: Subtítulo · primera parte, type: string, required: true }
           - { name: sub, label: Subtítulo · segunda parte, type: string, required: true }
           - { name: primaryCta, label: Botón principal, type: string, required: true }
-          - { name: secondaryCta, label: Botón secundario, type: string, required: true }
       - name: reviews
         label: Reseñas
         type: object
@@ -150,9 +141,8 @@ content:
               label: Titular,
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte en cursiva.",
+              description: "Pon entre *asteriscos* la parte más fina.",
             }
-          - { name: lead, label: Entradilla, type: text, required: true }
           - { name: ctaLabel, label: Botón a Google, type: string, required: true }
       - name: districts
         label: Distritos
@@ -163,9 +153,8 @@ content:
               label: Titular,
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte en cursiva.",
+              description: "Pon entre *asteriscos* la parte más fina.",
             }
-          - { name: lead, label: Entradilla, type: text, required: true }
           - { name: ctaLabel, label: Botón al mapa, type: string, required: true }
       - name: blog
         label: Blog
@@ -176,7 +165,7 @@ content:
               label: Titular,
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte en cursiva.",
+              description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: ctaLabel, label: Botón al blog, type: string, required: true }
   - name: home-en

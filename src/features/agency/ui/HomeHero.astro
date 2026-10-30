@@ -1,7 +1,7 @@
 ---
 import { getImage } from "astro:assets";
-import posterLandscape from "@/assets/home/hero-poster.jpg";
-import posterPortrait from "@/assets/home/hero-poster-v.jpg";
+import { existsSync } from "node:fs";
+import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
@@ -12,27 +12,28 @@ import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
  */
 interface Props {
   locale: Locale;
+  content: HomeContent["hero"];
   /** Id of the section the scroll cue jumps to. */
   nextSectionId: string;
 }
 
-const { locale, nextSectionId } = Astro.props;
+const { locale, content, nextSectionId } = Astro.props;
 const t = getDictionary(locale);
 
 // Poster = LCP image: AVIF first (smallest), WebP fallback; portrait cut for phones.
 const [landscape, portrait, landscapeAvif, portraitAvif] = await Promise.all([
-  getImage({ src: posterLandscape, format: "webp", width: 1280 }),
-  getImage({ src: posterPortrait, format: "webp", width: 720 }),
-  getImage({ src: posterLandscape, format: "avif", width: 1280 }),
-  getImage({ src: posterPortrait, format: "avif", width: 720 }),
+  getImage({ src: content.posterLandscape, format: "webp", width: 1280 }),
+  getImage({ src: content.posterPortrait, format: "webp", width: 720 }),
+  getImage({ src: content.posterLandscape, format: "avif", width: 1280 }),
+  getImage({ src: content.posterPortrait, format: "avif", width: 720 }),
 ]);
 const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
 
-/** Static files in public/media/hero (videos cannot go through the image pipeline). */
-const VIDEO_SOURCES = {
-  landscape: { webm: "/media/hero/hero-1280.webm", mp4: "/media/hero/hero-1280.mp4" },
-  portrait: { webm: "/media/hero/hero-720v.webm", mp4: "/media/hero/hero-720v.mp4" },
-} as const;
+/** A CMS upload is mp4 only: its smaller webm cut is used when one sits next to it in public/. */
+function webmOf(mp4: string): string | undefined {
+  const webm = mp4.replace(/\.mp4$/, ".webm");
+  return existsSync(`public${webm}`) ? webm : undefined;
+}
 ---
 
 <section
@@ -40,9 +41,9 @@ const VIDEO_SOURCES = {
   aria-label={t.home.hero.label}
   data-section="hero"
   data-hero
-  class="group/hero relative h-svh min-h-120 overflow-hidden text-white md:min-h-130"
+  class="group/hero surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas text-white md:min-h-130"
 >
-  <div class="absolute inset-0 [mask-image:linear-gradient(180deg,black_0%,black_62%,rgb(0_0_0/0.55)_82%,transparent_100%)]">
+  <div class="absolute inset-0">
     <picture>
       <source media={PORTRAIT_MEDIA} srcset={portraitAvif.src} type="image/avif" />
       <source media={PORTRAIT_MEDIA} srcset={portrait.src} type="image/webp" />
@@ -60,10 +61,10 @@ const VIDEO_SOURCES = {
     </picture>
     <video
       data-hero-video
-      data-landscape-webm={VIDEO_SOURCES.landscape.webm}
-      data-landscape-mp4={VIDEO_SOURCES.landscape.mp4}
-      data-portrait-webm={VIDEO_SOURCES.portrait.webm}
-      data-portrait-mp4={VIDEO_SOURCES.portrait.mp4}
+      data-landscape-webm={webmOf(content.videoLandscape)}
+      data-landscape-mp4={content.videoLandscape}
+      data-portrait-webm={webmOf(content.videoPortrait)}
+      data-portrait-mp4={content.videoPortrait}
       muted
       loop
       playsinline
@@ -153,7 +154,8 @@ const VIDEO_SOURCES = {
       portrait: matchMedia("(max-aspect-ratio: 4/5)").matches,
       webm: video.canPlayType('video/webm; codecs="vp9"') !== "",
     });
-    const source = video.dataset[key];
+    // Without a webm cut (CMS upload), the mp4 of the same orientation.
+    const source = video.dataset[key] ?? video.dataset[key.replace("Webm", "Mp4")];
     if (source === undefined) return;
     video.src = source;
     void video.play().catch(() => {

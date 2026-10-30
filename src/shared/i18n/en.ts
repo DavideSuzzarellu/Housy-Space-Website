@@ -265,98 +265,27 @@ const en = {
       videoCredit:
         "Conceptual video edited from AI-generated images. It will be replaced by licensed real footage of Barcelona.",
     },
-    presentation: {
-      eyebrow: "Boutique real estate consultancy · Barcelona",
-      headingLine1: "Real estate solutions",
-      headingLine2: "tailored to you.",
-      lead: "We accompany every step of your home, with personal attention and a sensitivity for architecture.",
-      body: "We do not aim to manage the largest number of properties. We prefer to give each client the time, attention and effort they deserve, offering a close, transparent and truly personalised service.",
-      pillars: {
-        closeness: {
-          title: "Closeness",
-          text: "One dedicated advisor, from the first conversation to the end of the process.",
-        },
-        transparency: {
-          title: "Transparency",
-          text: "Clear information about every step, the costs and the timelines.",
-        },
-        commitment: {
-          title: "Commitment",
-          text: "We get involved in every transaction and look for solutions when difficulties arise.",
-        },
-      },
-      ctaAbout: "Discover HousySpace",
-      ctaConsultation: "Request a private consultation",
-      imageMainSubject: "entrance hall of a stately building",
-      imageSecondarySubject: "bright living room",
-    },
     services: {
-      eyebrow: "Our services",
-      heading: "A complete service for every moment of your home.",
-      lead: "Sales, rentals, personalised search, renovations, interior design and advice: we accompany you in everything related to your home, with the same dedicated person.",
-      cardCta: "Discover the service",
-      allServices: "View all services",
-      summaries: {
-        saleBrokerage: "Valuation, preparation, marketing, negotiation and support until signing.",
-        rentalManagement: "Marketing, tenant selection and rental management.",
-        personalShopper: "Personalised search: we select and visit with you only what fits.",
-        renovations: "Planning, coordination and supervision of the works, with quality finishes.",
-        interiorDesign: "Interior design built around how you live the space.",
-        advisory: "Clear guidance, tailored to you, before making any decision.",
-      },
+      regionLabel: "Our services",
     },
     featured: {
-      eyebrow: "Featured properties",
-      heading: "Three properties that represent what we do.",
       cardCta: "View the full listing",
-      more: "View more properties",
       empty: "There are no featured properties published at the moment.",
     },
     valuation: {
-      eyebrow: "Property valuation",
-      heading: "The next property could be yours.",
-      lead: "Discover the real value of your home with a professional real estate analysis, based on the market and your property's features.",
-      steps: {
-        first: "Enter your home's details in our valuation tool",
-        second: "Receive your valuation report instantly",
-        third:
-          "If you wish, a HousySpace advisor will review it with you and guide you on the best strategy",
-      },
-      cta: "Request a valuation of my home",
-      reportTag: "Valuation report",
-      reportTitle: "Instantly.",
-      reportText:
-        "Enter your home's details in our valuation tool and receive your valuation report right away.",
-      imageSubject: "building façade with balconies",
       caption: "Conceptual AI-generated image.",
     },
     reviews: {
-      eyebrow: "Google reviews",
-      heading: "What people say about HousySpace.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} reviews on Google",
-      viewOnGoogle: "View the profile on Google Maps",
     },
     living: {
-      eyebrow: "Living in Barcelona",
-      heading: "Discover the city, district by district.",
-      mapCta: "Explore the interactive map",
-      lead: "The city's 10 districts and 73 neighbourhoods, seen from a residential, architectural and real estate perspective. Choose one on the map to open its profile.",
-      districtTag: "District · {count} neighbourhoods",
       barrioCount: "{count} neighbourhoods",
-      districtCta: "Discover the district",
-      districtSubject: "{name} district",
-      highlights: {
-        eixample:
-          "Cerdà's orthogonal grid, stately buildings, chamfered corners and entrance halls full of history.",
-        gracia:
-          "Neighbourhood-scale streets and squares, cultural life and buildings with character.",
-      },
+      previous: "Previous districts",
+      next: "Next districts",
+      railLabel: "The 10 districts of Barcelona",
     },
     blog: {
-      eyebrow: "Blog and news",
-      heading: "Neighbourhoods, architecture and market.",
-      allArticles: "View all articles",
       empty: "No articles have been published yet.",
     },
   },

@@ -1,26 +1,15 @@
 ---
-import Eyebrow from "./Eyebrow.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 
-/** Eyebrow + editorial h2. */
+/** Editorial h2; `heading` may mark a light-weight part with `*asterisks*`. */
 interface Props {
   id: string;
-  number: string;
-  tag: string;
   heading: string;
   size?: "md" | "lg";
-  eyebrowTone?: "accent" | "light";
   class?: string;
 }
 
-const {
-  id,
-  number,
-  tag,
-  heading,
-  size = "md",
-  eyebrowTone = "accent",
-  class: className,
-} = Astro.props;
+const { id, heading, size = "md", class: className } = Astro.props;
 
 const SIZES = {
   md: "text-[clamp(1.5rem,3.6vw,2.5rem)]",
@@ -28,9 +17,6 @@ const SIZES = {
 } as const;
 ---
 
-<div class:list={["max-w-180", className]}>
-  <Eyebrow number={number} tag={tag} tone={eyebrowTone} />
-  <h2 id={id} data-reveal class:list={["mt-3", SIZES[size]]}>
-    {heading}
-  </h2>
-</div>
+<h2 id={id} data-reveal class:list={[SIZES[size], className]}>
+  <Emphasis text={heading} />
+</h2>

@@ -7,56 +7,45 @@
   },
   "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
-    "headingFirst": "Ogni angolo ha una storia.",
-    "headingSecond": "Ogni persona, un nuovo inizio.",
-    "text": "Siamo HousySpace, una consulenza immobiliare boutique a Barcellona. Da 9 anni aiutiamo i nostri clienti a comprare, vendere e prendere decisioni immobiliari con criterio, vicinanza e una consulenza completamente personalizzata.",
+    "headingFirst": "Ogni angolo ha una storia",
+    "headingSecond": "Ogni persona, un nuovo inizio",
     "linkLabel": "Conoscici"
   },
   "featured": {
-    "heading": "Tre immobili che *rappresentano ciò che facciamo*.",
+    "heading": "Trova qui *il tuo nuovo inizio*",
     "ctaLabel": "Vedi altri immobili"
   },
   "valuation": {
-    "image": "../../assets/home/det-balcon-1400.jpg",
-    "imageAlt": "Facciata di un edificio con balconi",
-    "cardTag": "Rapporto di valutazione",
-    "cardTitle": "Subito.",
-    "cardText": "Inserisci i dati della tua casa nel nostro strumento di valutazione e ricevi subito il tuo rapporto di valutazione.",
-    "heading": "Il prossimo immobile *potrebbe essere il tuo*.",
-    "lead": "Scopri il valore reale della tua casa con un'analisi immobiliare professionale, basata sul mercato e sulle caratteristiche del tuo immobile.",
-    "step1": "Inserisci i dati della tua casa nel nostro strumento di valutazione",
-    "step2": "Ricevi subito il tuo rapporto di valutazione",
-    "step3": "Se lo desideri, un consulente HousySpace lo esamina con te e ti orienta sulla strategia migliore",
-    "ctaLabel": "Richiedi la valutazione della mia casa"
+    "image": "../../assets/home/det-ventanal-1400.jpg",
+    "imageAlt": "Salone luminoso con portefinestre su un balcone",
+    "heading": "Scopri quanto *vale la tua casa*",
+    "lead": "All'istante e online, o con un consulente HousySpace.",
+    "ctaLabel": "Richiedi una valutazione"
   },
   "services": {
-    "heading": "Un servizio completo per *ogni momento della tua casa*."
+    "heading": "Scopri tutto *ciò che possiamo fare per te*"
   },
   "collaborators": {
     "text": "Ci circondiamo dei migliori per offrirti molto di più.",
-    "names": ["ADV Advocats", "Maria Guimerà Arquitectura", "Asesoría Edac"],
     "ctaLabel": "Conosci i nostri collaboratori"
   },
   "philosophy": {
     "quoteFirst": "Non preoccuparti,",
-    "quoteSecond": "ci penso io.",
+    "quoteSecond": "ci penso io!",
     "subLead": "Non è solo una frase.",
     "sub": "È il nostro modo di lavorare.",
-    "primaryCta": "Scopri la nostra filosofia",
-    "secondaryCta": "Testimonianze dei clienti"
+    "primaryCta": "Scopri la nostra filosofia"
   },
   "reviews": {
-    "heading": "Cosa dicono *di HousySpace*.",
-    "lead": "Recensioni reali dei nostri clienti su Google. Si aggiornano da sole ogni volta che qualcuno ci lascia una recensione.",
+    "heading": "Cosa dicono *di HousySpace*",
     "ctaLabel": "Vedi le recensioni su Google"
   },
   "districts": {
-    "heading": "Scopri la città, *distretto per distretto*.",
-    "lead": "I 10 distretti e i 73 quartieri della città, visti dal punto di vista residenziale, architettonico e immobiliare. Scegline uno sulla mappa per aprire la sua scheda.",
+    "heading": "Scopri Barcellona *quartiere per quartiere*",
     "ctaLabel": "Esplora la mappa interattiva"
   },
   "blog": {
-    "heading": "Quartieri, architettura *e mercato*.",
+    "heading": "Blog *e notizie*",
     "ctaLabel": "Vedi tutti gli articoli"
   }
 }

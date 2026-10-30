@@ -267,100 +267,27 @@ const it = {
       videoCredit:
         "Video concettuale montato con immagini generate con IA. Verrà sostituito da riprese reali di Barcellona con licenza.",
     },
-    presentation: {
-      eyebrow: "Consulenza immobiliare boutique · Barcellona",
-      headingLine1: "Soluzioni immobiliari",
-      headingLine2: "su misura.",
-      lead: "Accompagniamo ogni fase della tua casa, con attenzione personale e sensibilità per l'architettura.",
-      body: "Non cerchiamo di gestire il maggior numero di immobili. Preferiamo dedicare a ogni cliente il tempo, l'attenzione e l'impegno che merita, offrendo un rapporto vicino, trasparente e davvero personalizzato.",
-      pillars: {
-        closeness: {
-          title: "Vicinanza",
-          text: "Un consulente di riferimento, dalla prima conversazione alla fine del processo.",
-        },
-        transparency: {
-          title: "Trasparenza",
-          text: "Informazioni chiare su ogni passaggio, sui costi e sui tempi.",
-        },
-        commitment: {
-          title: "Impegno",
-          text: "Ci coinvolgiamo in ogni operazione e cerchiamo soluzioni quando sorgono difficoltà.",
-        },
-      },
-      ctaAbout: "Scopri HousySpace",
-      ctaConsultation: "Richiedi una consulenza privata",
-      imageMainSubject: "androne di un palazzo signorile",
-      imageSecondarySubject: "soggiorno luminoso",
-    },
     services: {
-      eyebrow: "I nostri servizi",
-      heading: "Un servizio completo per ogni momento della tua casa.",
-      lead: "Compravendita, affitto, ricerca personalizzata, ristrutturazioni, interior design e consulenza: ti accompagniamo in tutto ciò che riguarda la tua casa, con un'unica persona di riferimento.",
-      cardCta: "Scopri il servizio",
-      allServices: "Vedi tutti i servizi",
-      summaries: {
-        saleBrokerage:
-          "Valutazione, preparazione, commercializzazione, negoziazione e accompagnamento fino al rogito.",
-        rentalManagement: "Commercializzazione, selezione degli inquilini e gestione dell'affitto.",
-        personalShopper:
-          "Ricerca personalizzata: selezioniamo e visitiamo con te solo ciò che fa per te.",
-        renovations:
-          "Pianificazione, coordinamento e supervisione dei lavori, con finiture di qualità.",
-        interiorDesign: "Progettazione d'interni pensata per come vivi lo spazio.",
-        advisory: "Un orientamento chiaro, su misura, prima di prendere qualsiasi decisione.",
-      },
+      regionLabel: "I nostri servizi",
     },
     featured: {
-      eyebrow: "Immobili in evidenza",
-      heading: "Tre immobili che rappresentano ciò che facciamo.",
       cardCta: "Consulta la scheda completa",
-      more: "Vedi altri immobili",
       empty: "Al momento non ci sono immobili in evidenza pubblicati.",
     },
     valuation: {
-      eyebrow: "Valutazione immobiliare",
-      heading: "La prossima proprietà potrebbe essere la tua.",
-      lead: "Scopri il valore reale della tua casa con un'analisi immobiliare professionale, basata sul mercato e sulle caratteristiche del tuo immobile.",
-      steps: {
-        first: "Inserisci i dati della tua casa nel nostro valutatore",
-        second: "Ricevi subito il tuo rapporto di valutazione",
-        third:
-          "Se lo desideri, un consulente HousySpace lo esamina con te e ti orienta sulla strategia migliore",
-      },
-      cta: "Richiedi la valutazione della mia casa",
-      reportTag: "Rapporto di valutazione",
-      reportTitle: "Subito.",
-      reportText:
-        "Inserisci i dati della tua casa nel nostro valutatore e ricevi il tuo rapporto di valutazione all'istante.",
-      imageSubject: "facciata con balconi di un palazzo",
       caption: "Immagine concettuale generata con IA.",
     },
     reviews: {
-      eyebrow: "Recensioni Google",
-      heading: "Cosa dicono di HousySpace.",
       ratingOutOf: "{rating} / 5",
       reviewCount: "{count} recensioni su Google",
-      viewOnGoogle: "Vedi il profilo su Google Maps",
     },
     living: {
-      eyebrow: "Vivere a Barcellona",
-      heading: "Scopri la città, distretto per distretto.",
-      mapCta: "Esplora la mappa interattiva",
-      lead: "I 10 distretti e i 73 quartieri della città, visti dal punto di vista residenziale, architettonico e immobiliare. Scegline uno sulla mappa per aprire la sua scheda.",
-      districtTag: "Distretto · {count} quartieri",
       barrioCount: "{count} quartieri",
-      districtCta: "Scopri il distretto",
-      districtSubject: "Distretto {name}",
-      highlights: {
-        eixample:
-          "La trama ortogonale di Cerdà, i palazzi signorili, gli angoli smussati e gli androni ricchi di storia.",
-        gracia: "Strade e piazze a misura di quartiere, vita culturale ed edifici di carattere.",
-      },
+      previous: "Distretti precedenti",
+      next: "Distretti successivi",
+      railLabel: "I 10 distretti di Barcellona",
     },
     blog: {
-      eyebrow: "Blog e notizie",
-      heading: "Quartieri, architettura e mercato.",
-      allArticles: "Vedi tutti gli articoli",
       empty: "Non ci sono ancora articoli pubblicati.",
     },
   },

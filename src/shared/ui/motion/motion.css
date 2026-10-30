@@ -107,15 +107,6 @@
     .motion-ready [data-reveal="lines"]:not(.is-revealed) [data-line] {
       transform: translateY(112%);
     }
-
-    /* Accent rule under section headings grows when the heading is revealed. */
-    .motion-ready [data-reveal] [data-accent] {
-      transition: transform 1.2s var(--ease-brand) 0.35s;
-    }
-
-    .motion-ready [data-reveal]:not(.is-revealed) [data-accent] {
-      transform: scaleX(0);
-    }
   }
 }
 
