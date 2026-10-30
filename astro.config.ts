@@ -10,7 +10,9 @@ const sitemapLocales = Object.fromEntries(
 
 // Hosting/adapter is not decided yet (AGENTS.md §2): keep this config adapter-agnostic.
 export default defineConfig({
-  site: "https://www.housyspace.com",
+  site: "https://DavideSuzzarellu.github.io",
+  // Reemplazá con el nombre exacto de tu repositorio
+  base: "/Housy-Space-Website",
   output: "static",
   trailingSlash: "never",
 
