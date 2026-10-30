@@ -61,15 +61,33 @@ export type DetailRouteParams = {
  * Params of `src/pages/[locale]/[listing]/[detail].astro`, derived from the route map
  * (never concatenated by hand) so pages and links can never disagree.
  */
+// export function getDetailRouteParams(
+//   property: Property,
+//   operation: DetailOperation,
+//   locale: Locale,
+// ): DetailRouteParams {
+//   const path = getLocalizedPath(DETAIL_ROUTE[operation], locale, detailParams(property, locale));
+//   const [, prefix, listing, detail, ...rest] = path.split("/");
+//   if (prefix !== locale || listing === undefined || detail === undefined || rest.length > 0) {
+//     throw new RangeError(`Unexpected detail path shape: ${path}`);
+//   }
+//   return { locale, listing, detail };
+// }
+
 export function getDetailRouteParams(
   property: Property,
   operation: DetailOperation,
   locale: Locale,
 ): DetailRouteParams {
   const path = getLocalizedPath(DETAIL_ROUTE[operation], locale, detailParams(property, locale));
-  const [, prefix, listing, detail, ...rest] = path.split("/");
+
+  // Limpiamos el BASE_URL (si existe y no es '/') para que la lógica de split siga funcionando
+  const baseUrl = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+  const cleanPath = baseUrl && path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
+  // Ahora sí cortamos la ruta limpia
+  const [, prefix, listing, detail, ...rest] = cleanPath.split("/");
   if (prefix !== locale || listing === undefined || detail === undefined || rest.length > 0) {
-    throw new RangeError(`Unexpected detail path shape: ${path}`);
+    throw new RangeError(`Unexpected detail path shape: ${path} (clean: ${cleanPath})`);
   }
   return { locale, listing, detail };
 }
@@ -93,14 +111,30 @@ export type ListingRouteParams = {
 };
 
 /** Params of `src/pages/[locale]/[listing]/index.astro`, derived from the route map. */
+// export function getListingRouteParams(
+//   operation: DetailOperation,
+//   locale: Locale,
+// ): ListingRouteParams {
+//   const path = getListingPath(operation, locale);
+//   const [, prefix, listing, ...rest] = path.split("/");
+//   if (prefix !== locale || listing === undefined || rest.length > 0) {
+//     throw new RangeError(`Unexpected listing path shape: ${path}`);
+//   }
+//   return { locale, listing };
+// }
 export function getListingRouteParams(
   operation: DetailOperation,
   locale: Locale,
 ): ListingRouteParams {
   const path = getListingPath(operation, locale);
-  const [, prefix, listing, ...rest] = path.split("/");
+
+  // Limpiamos el BASE_URL (si existe y no es '/')
+  const baseUrl = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+  const cleanPath = baseUrl && path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
+
+  const [, prefix, listing, ...rest] = cleanPath.split("/");
   if (prefix !== locale || listing === undefined || rest.length > 0) {
-    throw new RangeError(`Unexpected listing path shape: ${path}`);
+    throw new RangeError(`Unexpected listing path shape: ${path} (clean: ${cleanPath})`);
   }
   return { locale, listing };
 }
