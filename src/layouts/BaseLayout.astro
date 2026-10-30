@@ -25,12 +25,6 @@ interface Props {
   headerOverlay?: boolean;
   /** Open Graph image: root-relative path or absolute URL (e.g. the first property photo). */
   ogImage?: string;
-  /**
-   * Preload the serif (Cormorant Garamond) file: only when serif text is above the fold
-   * (e.g. a detail page `<h1>`). The home opens on a full-bleed hero without serif text, so
-   * preloading it there would only compete with the LCP poster.
-   */
-  preloadSerif?: boolean;
 }
 
 const {
@@ -41,7 +35,6 @@ const {
   noindex = false,
   headerOverlay = false,
   ogImage,
-  preloadSerif = true,
 } = Astro.props;
 const t = getDictionary(locale);
 ---
@@ -51,17 +44,10 @@ const t = getDictionary(locale);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <!-- Preload only the latin files used above the fold; latin-ext loads on demand. -->
+    <!-- Preload only the latin file; latin-ext loads on demand. -->
     <Font
       cssVariable="--font-montserrat"
-      preload={[
-        { weight: "400", style: "normal", subset: "latin" },
-        { weight: "500", style: "normal", subset: "latin" },
-      ]}
-    />
-    <Font
-      cssVariable="--font-cormorant-garamond"
-      preload={preloadSerif ? [{ weight: "400", style: "normal", subset: "latin" }] : false}
+      preload={[{ weight: "400 900", style: "normal", subset: "latin" }]}
     />
     <SeoHead
       locale={locale}

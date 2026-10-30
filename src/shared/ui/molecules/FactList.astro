@@ -44,9 +44,7 @@ const tile = TILE_TONES[tone];
       {facts.map((fact) => (
         <div class:list={["flex flex-col-reverse px-4 py-3.5", tile.tile]}>
           <dt class:list={["text-xs", tile.label]}>{fact.label}</dt>
-          <dd class:list={["font-serif text-[1.625rem] leading-tight", tile.value]}>
-            {fact.value}
-          </dd>
+          <dd class:list={["text-[1.625rem] leading-tight", tile.value]}>{fact.value}</dd>
         </div>
       ))}
     </dl>

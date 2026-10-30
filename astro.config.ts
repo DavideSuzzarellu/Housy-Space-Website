@@ -58,24 +58,13 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: "Montserrat",
       cssVariable: "--font-montserrat",
-      // Only the weights the UI uses (body 400, `font-medium` 500). Add a weight here before
-      // using it in a class, or the browser falls back to the nearest one.
-      weights: ["400", "500"],
+      // One variable file covers every weight the v3 design uses (400 body to 900 headings).
+      weights: ["400 900"],
       styles: ["normal"],
       // latin-ext covers Catalan/Italian/Spanish edge glyphs; unicode-range means its files are
       // only downloaded when a page actually contains such characters.
       subsets: ["latin", "latin-ext"],
       fallbacks: ["ui-sans-serif", "system-ui", "sans-serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Cormorant Garamond",
-      cssVariable: "--font-cormorant-garamond",
-      // Headings and titles are `font-normal` (global.css): one file covers them all.
-      weights: ["400"],
-      styles: ["normal"],
-      subsets: ["latin", "latin-ext"],
-      fallbacks: ["ui-serif", "Georgia", "serif"],
     },
   ],
 

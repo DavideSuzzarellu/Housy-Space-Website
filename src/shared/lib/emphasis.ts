@@ -1,5 +1,5 @@
 /**
- * Editable headings mark their italic part with asterisks, e.g. `Lo que dicen *de HousySpace*.`
+ * Editable headings mark their light-weight part with asterisks, e.g. `Lo que dicen *de HousySpace*.`
  * (UI proposal v3 emphasises part of each section heading). Content editors type plain text in
  * the CMS; this is the only markup they need, and it never becomes HTML from their input.
  */

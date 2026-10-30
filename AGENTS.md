@@ -93,7 +93,7 @@ All content — remote and local — is accessed through Astro Content Collectio
 - **`agents`** (build-time): custom loader over `GET /api/v1/agentes` for team pages and listing contacts.
 - **`pages`** (build-time, `glob()` loader): Markdown/MDX in `src/content/pages/{locale}/` for Services, Living in Barcelona, About us, and legal pages. Frontmatter schema includes `routeKey`, `title`, `description`, `locale`.
 - **`home`** (build-time, `glob()` over `src/content/home/{locale}.json`): editorial copy and media of the home page (UI proposal v3), edited in Pages CMS. Schema: `features/agency/infrastructure/homeContentSchema.ts` (strict); read via `getHomeContent(locale)`.
-- **CMS-editable content (Pages CMS):** one file per locale; every CMS content file lives at `src/content/<collection>/<file>` (two folders below `src/`), because images are written as `../../assets/...` relative to the file so Astro's `image()` optimizes them; videos go to `public/media`. Headings mark their italic part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML. Fixed parts of a layout are named fields (`step1`…`step3`), not lists. Every form field in `.pages.yml` must match the schema (tested). UI labels (buttons, aria, legal) stay in the i18n dictionaries.
+- **CMS-editable content (Pages CMS):** one file per locale; every CMS content file lives at `src/content/<collection>/<file>` (two folders below `src/`), because images are written as `../../assets/...` relative to the file so Astro's `image()` optimizes them; videos go to `public/media`. Headings mark their light-weight part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML. Fixed parts of a layout are named fields (`step1`…`step3`), not lists. Every form field in `.pages.yml` must match the schema (tested). UI labels (buttons, aria, legal) stay in the i18n dictionaries.
 - Query only with `getCollection()` / `getEntry()` wrapped in application use cases (`features/*/application`), never directly inside UI components.
 - **Freshness:** build-time collections refresh on every build, triggered by a scheduled rebuild/deploy hook (`TODO` frequency, depends on hosting). If near real-time data becomes a requirement, switch `properties` to a live collection (`defineLiveCollection` in `src/live.config.ts`, requires on-demand rendering). The loader stays the only place that changes.
 - Loaders and schemas are covered by Vitest tests using recorded Mobilia fixtures (secrets and personal data stripped).
@@ -328,8 +328,7 @@ No other color combinations for the logo.
 
 **Typography**
 
-- Montserrat — body, buttons, UI (light for presentation headings, regular body, medium emphasis). Loaded weights: 400, 500 (add 300 in `astro.config.ts` before using `font-light`). Cormorant Garamond: 400.
-- Cormorant Garamond — editorial headings, property titles.
+- Montserrat — the ONLY text font (client decision 2026-10-30, overrides the brand manual), one variable file with weights 400–900. All site text is uppercase, tracking 0.02em, never italic. h1/h2 800 (900 when they contain an `em`), h3 700, the `em` part of a heading 400. The property PDF sheet stays in sentence case.
 - Objektiv Mk1 — logo only, never in text (use the SVG logo, never re-typeset it).
 
 **Logo**
@@ -354,7 +353,7 @@ No other color combinations for the logo.
 - Source (current, **v3**): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk — the site is being restyled to it in phases (ROADMAP). Its demo listings, photos and placeholder copy are never real content.
 - Previous reference (v1, superseded as each phase lands): https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8.
 - Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
-- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark petrol blocks (header bar, valuation, reviews, footer, text over photos), Cormorant Garamond headings + Montserrat body, large imagery. (v1 was dark-first: pages not yet migrated still are.)
+- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark petrol blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery. (v1 was dark-first: pages not yet migrated still are.)
 - **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):
 
 | Token | HEX | Use |

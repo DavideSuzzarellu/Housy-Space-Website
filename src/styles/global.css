@@ -40,7 +40,6 @@
 
   /* Typography: font files are self-hosted by the Astro Fonts API (astro.config.ts). */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-cormorant-garamond), ui-serif, Georgia, serif;
 
   /* Motion (§11.1): shared easing and UI micro-transition durations. */
   --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -50,17 +49,44 @@
 
 @layer base {
   html {
-    @apply scroll-pt-28 bg-bg-deep font-sans text-fg antialiased;
+    @apply scroll-pt-28 bg-bg-deep font-sans tracking-[0.02em] text-fg uppercase antialiased;
   }
 
   body {
     @apply bg-linear-165 from-bg-deep via-petrol-dark to-bg-soft bg-fixed text-base/[1.7];
   }
 
+  /* Proposal v3: Montserrat only, all caps, no italics. Weight carries the emphasis. */
+  input,
+  textarea,
+  select,
+  button {
+    text-transform: inherit;
+  }
+
   h1,
   h2,
   h3 {
-    @apply font-serif leading-[1.08] font-normal text-balance;
+    @apply leading-[1.08] tracking-[0.03em] text-balance;
+  }
+
+  h1,
+  h2 {
+    @apply font-extrabold;
+  }
+
+  h3 {
+    @apply font-bold;
+  }
+
+  h1:has(> em),
+  h2:has(> em) {
+    @apply font-black;
+  }
+
+  h1 em,
+  h2 em {
+    @apply font-normal not-italic;
   }
 
   :focus-visible {
@@ -133,7 +159,6 @@
 
 .catalog-popup a {
   color: var(--color-petrol);
-  font-family: var(--font-serif);
   font-size: 1.125rem;
   line-height: 1.2;
 }

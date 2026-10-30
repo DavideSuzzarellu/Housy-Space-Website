@@ -19,7 +19,7 @@ Load for any styling work. Brand values live in AGENTS.md §11; this skill defin
 - Tokens are defined ONCE in `@theme` in `src/styles/global.css`, named exactly as §11. Reset the default palette with `--color-*: initial;` so only brand colors (plus `white`/`black` if needed, declared explicitly) exist.
 - No hex/rgb values in components and no arbitrary color utilities (`bg-[#...]`, `text-[#...]`). Need a new color? Ask; add to §11 first.
 - Contrast (WCAG 2.2 AA, §8): `turquoise` (#21CEC5) only on dark backgrounds (`petrol-dark`, `petrol`, `bg-dark-*`). On light backgrounds: `turquoise-deep` only for large text and non-text UI (4.05:1); normal-size text and links use `petrol` or `teal`. Verify any other new pairing ≥ 4.5:1 (3:1 for large text/UI).
-- Fonts: `font-sans` = Montserrat (body/UI), `font-serif` = Cormorant Garamond (editorial headings, property titles). Never use Objektiv Mk1 in text; the logo is the SVG.
+- Fonts: `font-sans` = Montserrat is the only text font (weights 400–900, all caps, no italics, AGENTS.md §11). Never use Objektiv Mk1 in text; the logo is the SVG.
 - Mobile-first: unprefixed classes for mobile, then `sm:`/`md:`/`lg:`/`xl:`. No horizontal scroll at 320px.
 - Repeated class groups become a component (or a variant), never a copy-pasted string (§3.1).
 
@@ -44,7 +44,6 @@ Load for any styling work. Brand values live in AGENTS.md §11; this skill defin
      --color-turquoise-deep: #058c93;
      /* ...rest of §11, incl. bg-dark-1/2/3 */
      --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-     --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
    }
    ```
 3. Write markup with semantic elements, then mobile classes, then breakpoints.

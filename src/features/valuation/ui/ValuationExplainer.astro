@@ -62,10 +62,7 @@ const steps = [copy.steps.first, copy.steps.second, copy.steps.third];
       <ol data-reveal class="mt-7 mb-8.5 grid max-w-140 border-t border-fg/20">
         {steps.map((step, index) => (
           <li class="flex items-baseline gap-4.5 border-b border-fg/20 py-3.75 text-base text-fg/95">
-            <b
-              aria-hidden="true"
-              class="min-w-7.5 font-serif text-[1.375rem] font-normal text-turquoise"
-            >
+            <b aria-hidden="true" class="min-w-7.5 text-[1.375rem] font-normal text-turquoise">
               {String(index + 1).padStart(2, "0")}
             </b>
             <span>{step}</span>
@@ -92,9 +89,7 @@ const steps = [copy.steps.first, copy.steps.second, copy.steps.third];
       </div>
       <div class="relative mt-[-18%] mr-[14%] grid gap-1.5 bg-stone px-6 py-5.5 text-petrol-dark shadow-2xl shadow-black/45 lg:absolute lg:bottom-[22%] lg:left-0 lg:m-0 lg:w-[66%] lg:min-w-65">
         <p class="text-[0.6875rem] tracking-[0.16em] text-petrol uppercase">{copy.reportTag}</p>
-        <p class="font-serif text-[clamp(1.875rem,3.4vw,2.625rem)] leading-none">
-          {copy.reportTitle}
-        </p>
+        <p class="text-[clamp(1.875rem,3.4vw,2.625rem)] leading-none">{copy.reportTitle}</p>
         <p class="mt-1 text-sm text-petrol-dark/85">{copy.reportText}</p>
       </div>
       <figcaption class="mt-4 lg:absolute lg:bottom-0 lg:left-0 lg:mt-0">

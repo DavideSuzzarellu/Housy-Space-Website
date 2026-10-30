@@ -82,7 +82,7 @@ const conceptualAlt = (subject: string) => formatMessage(t.media.conceptualImage
       <div class="lg:pt-[clamp(0rem,3vw,2.5rem)]">
         <p
           data-reveal
-          class="mb-5 max-w-[30ch] font-serif text-[clamp(1.5rem,2.3vw,1.875rem)] leading-[1.3] text-fg"
+          class="mb-5 max-w-[30ch] text-[clamp(1.5rem,2.3vw,1.875rem)] leading-[1.3] text-fg"
         >
           {copy.lead}
         </p>
@@ -92,7 +92,7 @@ const conceptualAlt = (subject: string) => formatMessage(t.media.conceptualImage
         <ul data-reveal class="mt-7.5 mb-8.5 grid max-w-140 border-t border-line">
           {pillars.map((pillar) => (
             <li class="flex flex-col gap-0.5 border-b border-line py-3.5 sm:flex-row sm:items-baseline sm:gap-4.5">
-              <b class="min-w-35 font-serif text-2xl font-normal">{pillar.title}</b>
+              <b class="min-w-35 text-2xl font-normal">{pillar.title}</b>
               <span class="text-sm text-muted">{pillar.text}</span>
             </li>
           ))}

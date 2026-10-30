@@ -28,7 +28,7 @@ const stars = (rating: number) => "â˜…".repeat(Math.round(rating)).padEnd(5, "â˜
     <div class="mb-7.5 flex flex-wrap items-end justify-between gap-x-10 gap-y-4.5">
       <SectionHeading id="reviews-heading" number="05" tag={copy.eyebrow} heading={copy.heading} />
       <p class="flex items-baseline gap-3.5 text-sm text-muted">
-        <b class="font-serif text-[2.75rem] font-normal whitespace-nowrap text-fg">
+        <b class="text-[2.75rem] font-normal whitespace-nowrap text-fg">
           {formatMessage(copy.ratingOutOf, {
             rating: summary.rating.toLocaleString(locale, { maximumFractionDigits: 1 }),
           })}

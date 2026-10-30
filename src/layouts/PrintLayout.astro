@@ -5,7 +5,7 @@ import "@/styles/global.css";
 
 /**
  * Bare A4 document for pages printed to PDF at build time (property sheet). No header, footer,
- * router or scripts, never indexed. Light background: overrides the dark site canvas.
+ * router or scripts, never indexed. Sentence case: opts out of the all-caps site text.
  */
 interface Props {
   locale: Locale;
@@ -16,14 +16,13 @@ const { locale, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={LOCALE_META[locale].langTag} class="bg-white">
+<html lang={LOCALE_META[locale].langTag} class="bg-white normal-case">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <title>{title}</title>
     <Font cssVariable="--font-montserrat" />
-    <Font cssVariable="--font-cormorant-garamond" />
     <slot name="head" />
   </head>
   <body class="bg-white bg-none text-ink">
