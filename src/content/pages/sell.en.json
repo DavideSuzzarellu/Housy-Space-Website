@@ -1,0 +1,111 @@
+{
+  "title": "Sell your property · HousySpace",
+  "description": "A well-planned sale starts with an honest conversation about value and timing.",
+  "head": {
+    "heading": "Sell your property with judgement.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "For owners"
+      },
+      {
+        "kind": "lead",
+        "text": "A well-planned sale starts with an honest conversation about value and timing."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "como-trabajamos",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "How we work"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "We listen"
+            },
+            {
+              "kind": "p",
+              "text": "A first conversation to understand what you want to sell and why."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "We value"
+            },
+            {
+              "kind": "p",
+              "text": "An instant valuation report and an analysis with an advisor."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "We market"
+            },
+            {
+              "kind": "p",
+              "text": "We prepare and present the property with care."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "We close"
+            },
+            {
+              "kind": "p",
+              "text": "Negotiation and support all the way to signing."
+            }
+          ]
+        },
+        {
+          "kind": "pending",
+          "text": "Pending: fees or how they are calculated, to explain them transparently."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Value your property",
+              "href": "route:valuation",
+              "solid": true
+            },
+            {
+              "label": "Strategic sale service",
+              "href": "service:venta-estrategica",
+              "solid": false
+            },
+            {
+              "label": "Talk to an advisor",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

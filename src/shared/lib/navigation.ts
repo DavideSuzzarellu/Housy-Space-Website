@@ -106,14 +106,7 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
     },
     {
       title: footer.columns.owners,
-      links: [
-        {
-          label: nav.sell,
-          href: getLocalizedPath("serviceDetail", locale, {
-            service: getServiceSlug("saleBrokerage", locale),
-          }),
-        },
-      ],
+      links: [{ label: nav.sell, href: getLocalizedPath("sell", locale) }],
     },
     {
       title: footer.columns.company,

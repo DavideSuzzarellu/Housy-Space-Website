@@ -68,7 +68,7 @@ describe("getFooterNavigation", () => {
       "/es/mi-busqueda",
       "/es/blog",
     ]);
-    expect(columns[1]?.links.map((link) => link.href)).toEqual(["/es/servicios/venta-estrategica"]);
+    expect(columns[1]?.links.map((link) => link.href)).toEqual(["/es/vender"]);
     expect(columns[2]?.links.map((link) => link.href)).toEqual([
       "/es/nosotros",
       "/es/contacto",

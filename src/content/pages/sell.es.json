@@ -1,0 +1,111 @@
+{
+  "title": "Vende tu inmueble · HousySpace",
+  "description": "Una venta bien planteada empieza por una conversación honesta sobre el valor y el momento.",
+  "head": {
+    "heading": "Vende tu inmueble con criterio.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Para propietarios"
+      },
+      {
+        "kind": "lead",
+        "text": "Una venta bien planteada empieza por una conversación honesta sobre el valor y el momento."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "como-trabajamos",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Cómo trabajamos"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Escuchamos"
+            },
+            {
+              "kind": "p",
+              "text": "Una primera conversación para entender qué quieres vender y por qué."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valoramos"
+            },
+            {
+              "kind": "p",
+              "text": "Informe de valoración al momento y análisis con un asesor."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Comercializamos"
+            },
+            {
+              "kind": "p",
+              "text": "Preparamos y presentamos el inmueble con cuidado."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Cerramos"
+            },
+            {
+              "kind": "p",
+              "text": "Negociación y acompañamiento hasta la firma."
+            }
+          ]
+        },
+        {
+          "kind": "pending",
+          "text": "Pendiente: honorarios o forma de calcularlos, para explicarlos con transparencia."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Valora tu propiedad",
+              "href": "route:valuation",
+              "solid": true
+            },
+            {
+              "label": "Servicio de venta estratégica",
+              "href": "service:venta-estrategica",
+              "solid": false
+            },
+            {
+              "label": "Hablar con un asesor",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

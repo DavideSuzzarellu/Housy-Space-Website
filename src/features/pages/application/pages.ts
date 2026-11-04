@@ -13,6 +13,7 @@ export const EDITORIAL = [
   "customSearch",
   "mySearch",
   "valuation",
+  "sell",
   "blog",
 ] as const;
 export type EditorialKey = (typeof EDITORIAL)[number];
