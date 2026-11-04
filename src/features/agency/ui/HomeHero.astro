@@ -5,6 +5,7 @@ import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
+import { withBase } from "@/shared/lib/basePath";
 
 /**
  * 01 Hero: looping muted Barcelona video over an optimized poster (the LCP image).
@@ -32,7 +33,7 @@ const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
 /** A CMS upload is mp4 only: its smaller webm cut is used when one sits next to it in public/. */
 function webmOf(mp4: string): string | undefined {
   const webm = mp4.replace(/\.mp4$/, ".webm");
-  return existsSync(`public${webm}`) ? webm : undefined;
+  return existsSync(`public${webm}`) ? withBase(webm) : undefined;
 }
 ---
 
@@ -62,9 +63,9 @@ function webmOf(mp4: string): string | undefined {
     <video
       data-hero-video
       data-landscape-webm={webmOf(content.videoLandscape)}
-      data-landscape-mp4={content.videoLandscape}
+      data-landscape-mp4={withBase(content.videoLandscape)}
       data-portrait-webm={webmOf(content.videoPortrait)}
-      data-portrait-mp4={content.videoPortrait}
+      data-portrait-mp4={withBase(content.videoPortrait)}
       muted
       loop
       playsinline
