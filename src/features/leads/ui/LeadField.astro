@@ -2,6 +2,7 @@
 import type { FormLeaf } from "@/features/pages/infrastructure/pageSchema";
 import type { Locale } from "@/shared/i18n/config";
 import { plainInline } from "@/shared/lib/inline";
+import Button from "@/shared/ui/atoms/Button.astro";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 
 /** One control of a `LeadForm`. `data-lead-field` marks what goes into the message. */
@@ -107,11 +108,8 @@ const CHIP =
 )}
 {field.kind === "submit" && (
   <div class="sm:col-span-2">
-    <button
-      type="submit"
-      class="min-h-11 cursor-pointer border border-fg bg-fg px-10 py-4 text-[0.8125rem] font-medium tracking-[0.12em] text-canvas transition-colors hover:border-turquoise hover:bg-turquoise hover:text-ink"
-    >
+    <Button type="submit" variant="solid" size="lg">
       {field.label}
-    </button>
+    </Button>
   </div>
 )}

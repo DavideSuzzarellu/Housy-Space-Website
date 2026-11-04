@@ -63,7 +63,7 @@
 - [ ] Confirm the white logo derived from the official SVG
 - [~] Sync with proposal v3 as of 2026-11-02 (`docs/ui-migration.md`): Phase 2 layout
   - [x] Navigation of v3: My search (new `mySearch` route, shows the home search page until Phase 4 merges both searches), Where we are (about `#donde-estamos`, section added in Phase 4), footer columns
-  - [ ] Contact actions with Email, footer (newsletter, hours, email, social links, seals as logos), header without "Let's talk"
+  - [x] Contact actions Call · WhatsApp · Email · Tell us (drawer, footer, mobile bar), footer of v3 (social links, newsletter that opens the visitor's email, hours, email, AICAT white seal and APEI seal with "Experto nº 3261" as logos), header without "Let's talk". Kept against v3 for AA (§8): muted `#5F6967` (v3 `#67716F` fails on cards) and petrol hover on the drawer CTA (v3 taupe hover 3.9:1)
 
 ### Phase 3 — Catalog & property detail
 - [~] Catalog with URL-synced filters, sort, list/map view, clustered Leaflet map (ICGC tiles) — implemented + unit tests; `tests/e2e/catalog.spec.ts` and the catalog performance budget still to run against a build (🔒 I1 for `bun run build`). Map-area search ("buscar en esta zona") and district/barrio filters wait for Phase 5 geo data

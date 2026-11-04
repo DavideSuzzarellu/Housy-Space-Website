@@ -2,25 +2,42 @@
 import ArrowUpRight from "./ArrowUpRight.astro";
 
 /**
- * Link styled as a button (all CTAs navigate). Turquoise fill sweeps in on hover/focus.
+ * Link styled as a button (CTAs navigate), or a form submit button with the same look.
+ * Turquoise fill sweeps in on hover/focus.
  * Follows the surface roles: dark ink on light sections, light on `.surface-dark` (§8).
  */
-interface Props {
-  href: string;
+interface Common {
   variant?: "outline" | "solid";
-  size?: "md" | "lg";
+  /** `sm`: compact control of proposal v3 (newsletter, 34 px). */
+  size?: "sm" | "md" | "lg";
   /** Trailing up-right arrow (main CTAs of proposal v3). */
   arrow?: boolean;
+  class?: string;
+}
+
+interface LinkProps extends Common {
+  href: string;
+  type?: never;
   /** Opens in a new tab; `newTabLabel` is announced to screen readers. */
   external?: boolean;
   newTabLabel?: string;
   /** Downloads the (same-origin) target instead of opening it; the value is the file name. */
   download?: string;
-  class?: string;
 }
+
+interface SubmitProps extends Common {
+  type: "submit";
+  href?: never;
+  external?: never;
+  newTabLabel?: never;
+  download?: never;
+}
+
+type Props = LinkProps | SubmitProps;
 
 const {
   href,
+  type,
   variant = "outline",
   size = "md",
   arrow = false,
@@ -36,27 +53,37 @@ const VARIANTS = {
 } as const;
 
 const SIZES = {
-  md: "px-6.5 py-4 text-xs",
-  lg: "px-10 py-5 text-[0.8125rem] leading-snug",
+  sm: "min-h-8.5 px-4.5 text-[0.625rem]",
+  md: "min-h-11 px-6.5 py-4 text-xs",
+  lg: "min-h-11 px-10 py-5 text-[0.8125rem] leading-snug",
 } as const;
+
+const classes = [
+  "relative isolate inline-flex cursor-pointer items-center justify-center gap-3.5 overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
+  "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-turquoise before:transition-transform before:duration-450 before:ease-brand",
+  "hover:border-turquoise hover:text-ink hover:before:scale-x-100 focus-visible:border-turquoise focus-visible:text-ink focus-visible:before:scale-x-100",
+  VARIANTS[variant],
+  SIZES[size],
+  className,
+];
 ---
 
-<a
-  href={href}
-  target={external ? "_blank" : undefined}
-  rel={external ? "noopener noreferrer" : undefined}
-  download={download}
-  data-astro-prefetch={download === undefined ? undefined : "false"}
-  class:list={[
-    "relative isolate inline-flex min-h-11 items-center justify-center gap-3.5 overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
-    "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-turquoise before:transition-transform before:duration-450 before:ease-brand",
-    "hover:border-turquoise hover:text-ink hover:before:scale-x-100 focus-visible:border-turquoise focus-visible:text-ink focus-visible:before:scale-x-100",
-    VARIANTS[variant],
-    SIZES[size],
-    className,
-  ]}
->
-  <slot />
-  {arrow && <ArrowUpRight class="size-2.75" />}
-  {external && newTabLabel !== undefined && <span class="sr-only">{newTabLabel}</span>}
-</a>
+{type === "submit" ? (
+  <button type="submit" class:list={classes}>
+    <slot />
+    {arrow && <ArrowUpRight class="size-2.75" />}
+  </button>
+) : (
+  <a
+    href={href}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
+    download={download}
+    data-astro-prefetch={download === undefined ? undefined : "false"}
+    class:list={classes}
+  >
+    <slot />
+    {arrow && <ArrowUpRight class="size-2.75" />}
+    {external && newTabLabel !== undefined && <span class="sr-only">{newTabLabel}</span>}
+  </a>
+)}

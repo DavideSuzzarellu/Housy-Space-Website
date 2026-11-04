@@ -1,7 +1,10 @@
 ---
 import {
+  COMPANY_EMAIL,
   CONTACT_PHONE,
+  mailtoHref,
   phoneDisplay,
+  SOCIAL_LINKS,
   telHref,
   whatsappHref,
 } from "@/features/agency/domain/contact";
@@ -10,18 +13,19 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import Button from "@/shared/ui/atoms/Button.astro";
+import SocialLinks from "@/shared/ui/molecules/SocialLinks.astro";
 
 /**
- * The three contact CTAs (tap-to-call, WhatsApp with prefilled localized message, private
- * consultation), shared by the drawer, the footer block and the mobile quick-action bar.
+ * Contact CTAs shared by the drawer, the site footer, the mobile quick-action bar and the property
+ * pages. Proposal v3: Call · WhatsApp · Email · Tell us everywhere, plus the social profiles in the
+ * footer. `stack` (detail contact card) and `row` (property PDF sheet) keep their three actions.
  */
 interface Props {
   locale: Locale;
-  /** `stack`: full-width column (property detail contact card). */
-  variant: "drawer" | "footer" | "bar" | "stack";
+  variant: "drawer" | "footer" | "bar" | "stack" | "row";
   /** Overrides the default prefilled WhatsApp message (e.g. with a property reference). */
   whatsappMessage?: string;
-  /** Overrides the consultation CTA (e.g. "Request a viewing" with the reference). */
+  /** Overrides the consultation CTA of `stack` and `row` (e.g. "Request a viewing"). */
   consultation?: { readonly href: string; readonly label: string };
   class?: string;
 }
@@ -40,16 +44,15 @@ const call = {
   long: formatMessage(contact.callWithNumber, { phone: phoneDisplay(CONTACT_PHONE) }),
 };
 const whatsapp = whatsappHref(CONTACT_PHONE, whatsappMessage ?? contact.whatsappMessage);
-const consultation = consultationOverride ?? {
-  href: getLocalizedPath("contact", locale),
-  label: contact.consultation,
-};
+const email = mailtoHref(COMPANY_EMAIL);
+const contactPage = getLocalizedPath("contact", locale);
+const consultation = consultationOverride ?? { href: contactPage, label: contact.consultation };
 
 const TILE =
-  "flex min-h-12.5 items-center justify-center px-2.5 text-center text-[0.6875rem] font-medium tracking-[0.12em] uppercase no-underline transition-colors";
-// The drawer is a light panel (UI proposal v3): teal for text on light, never turquoise (§8).
-const DRAWER_LINK = `${TILE} border border-petrol-dark/20 text-petrol-dark hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal`;
-const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
+  "flex items-center justify-center text-center font-medium whitespace-nowrap uppercase no-underline transition-colors";
+// Light drawer panel (proposal v3, "without turquoise"): teal for text on light (§8).
+const DRAWER_LINK = `${TILE} min-h-12 px-2.5 text-[0.625rem] tracking-[0.04em] border border-petrol-dark/20 text-petrol-dark hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal`;
+const BAR_LINK = `${TILE} px-1 py-4.25 text-[0.625rem] tracking-[0.06em]`;
 ---
 
 {variant === "stack" ? (
@@ -62,7 +65,7 @@ const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
     </Button>
     <Button href={call.href}>{call.long}</Button>
   </div>
-) : variant === "footer" ? (
+) : variant === "row" ? (
   <div class:list={["flex flex-wrap gap-3", className]}>
     <Button href={call.href} variant="solid">
       {call.long}
@@ -72,33 +75,68 @@ const BAR_LINK = `${TILE} bg-bg-deep text-fg`;
     </Button>
     <Button href={consultation.href}>{consultation.label}</Button>
   </div>
+) : variant === "footer" ? (
+  <div
+    class:list={[
+      "grid grid-cols-2 gap-x-3 gap-y-2.5 min-[561px]:flex min-[561px]:flex-wrap min-[561px]:items-center",
+      className,
+    ]}
+  >
+    <Button href={call.href} variant="solid">
+      {contact.call}
+    </Button>
+    <Button href={whatsapp} external newTabLabel={a11y.opensInNewTab}>
+      {contact.whatsapp}
+    </Button>
+    <Button href={email}>{contact.email}</Button>
+    <Button href={contactPage}>{contact.tellUs}</Button>
+    <SocialLinks
+      links={SOCIAL_LINKS}
+      label={contact.socialLabel}
+      newTabLabel={a11y.opensInNewTab}
+      class="col-span-full mt-1.5 border-t border-line pt-4 min-[561px]:mt-0 min-[561px]:ml-3.5 min-[561px]:border-t-0 min-[561px]:border-l min-[561px]:pt-0 min-[561px]:pl-6"
+    />
+  </div>
 ) : variant === "drawer" ? (
-  <div class:list={["grid grid-cols-2 gap-2.5", className]}>
+  <div class:list={["grid grid-cols-3 gap-2.5", className]}>
     <a href={call.href} class={DRAWER_LINK}>
-      {call.long}
+      {contact.call}
     </a>
     <a href={whatsapp} target="_blank" rel="noopener noreferrer" class={DRAWER_LINK}>
       {contact.whatsapp}
       <span class="sr-only">{a11y.opensInNewTab}</span>
     </a>
+    <a href={email} class={DRAWER_LINK}>
+      {contact.email}
+    </a>
     <a
-      href={consultation.href}
-      class={`${TILE} col-span-2 surface-dark border border-petrol-dark bg-petrol-dark hover:border-accent hover:bg-turquoise hover:text-ink focus-visible:border-accent focus-visible:bg-turquoise focus-visible:text-ink`}
+      href={contactPage}
+      class={`${DRAWER_LINK} col-span-3 border-petrol-dark bg-petrol-dark text-white hover:border-petrol hover:bg-petrol hover:text-white focus-visible:border-petrol focus-visible:bg-petrol focus-visible:text-white`}
     >
-      {consultation.label}
+      {contact.tellUs}
     </a>
   </div>
 ) : (
-  <div class:list={["surface-dark grid grid-cols-[1fr_1fr_1.5fr] gap-px bg-line", className]}>
-    <a href={call.href} class={BAR_LINK}>
+  <div
+    class:list={["surface-dark grid grid-cols-[1fr_1.15fr_1fr_1.25fr] gap-px bg-line", className]}
+  >
+    <a href={call.href} class={`${BAR_LINK} bg-bg-deep text-fg`}>
       {contact.call}
     </a>
-    <a href={whatsapp} target="_blank" rel="noopener noreferrer" class={BAR_LINK}>
+    <a
+      href={whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+      class={`${BAR_LINK} bg-bg-deep text-fg`}
+    >
       {contact.whatsapp}
       <span class="sr-only">{a11y.opensInNewTab}</span>
     </a>
-    <a href={consultation.href} class={`${TILE} bg-turquoise text-ink`}>
-      {consultation.label}
+    <a href={email} class={`${BAR_LINK} bg-bg-deep text-fg`}>
+      {contact.email}
+    </a>
+    <a href={contactPage} class={`${BAR_LINK} bg-canvas text-fg`}>
+      {contact.tellUs}
     </a>
   </div>
 )}

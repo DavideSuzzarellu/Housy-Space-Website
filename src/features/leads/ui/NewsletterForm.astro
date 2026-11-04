@@ -1,0 +1,101 @@
+---
+import { COMPANY_EMAIL, mailtoHref } from "@/features/agency/domain/contact";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { formatMessage } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * Footer newsletter of proposal v3 (2026-10-30). No newsletter tool is connected yet (ROADMAP
+ * I3): like every lead form, it opens the visitor's email with the request written, so nobody is
+ * subscribed until they send it. Shares the lead form behaviour (`leadForm.client.ts`).
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale).newsletter;
+const headingId = "newsletter-heading";
+---
+
+<section
+  aria-labelledby={headingId}
+  class="mb-[clamp(0.875rem,1.8vw,1.25rem)] grid gap-x-8 gap-y-1.5 border-b border-line pb-[clamp(0.625rem,1.2vw,0.875rem)] min-[960px]:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] min-[960px]:items-center"
+>
+  <div>
+    <h2 id={headingId} class="mb-0.75 text-[0.8125rem] font-extrabold tracking-[0.04em] text-fg">
+      {t.heading}
+    </h2>
+    <p class="text-[0.625rem] leading-[1.45]">{t.text}</p>
+  </div>
+
+  <form
+    data-lead-form
+    data-mode="email"
+    data-target={mailtoHref(COMPANY_EMAIL)}
+    data-intro={t.intro}
+    data-subject={t.subject}
+    data-sent={t.sent}
+    novalidate
+    aria-label={t.formLabel}
+  >
+    <div class="flex max-w-130 gap-2">
+      <label data-lead-field data-label={t.emailLabel} class="min-w-0 flex-1">
+        <span class="sr-only">{t.emailLabel}</span>
+        <input
+          type="email"
+          name="email"
+          autocomplete="email"
+          maxlength="120"
+          placeholder={t.emailPlaceholder}
+          required
+          class="min-h-8.5 w-full border border-line bg-transparent px-3 text-[0.6875rem] text-fg placeholder:text-muted"
+        />
+      </label>
+      <Button type="submit" variant="solid" size="sm">
+        {t.submit}
+      </Button>
+    </div>
+
+    <label
+      data-lead-field
+      data-label={t.consentLabel}
+      class="mt-1.5 grid grid-cols-[0.875rem_minmax(0,1fr)] gap-x-2 text-[0.625rem] leading-[1.4]"
+    >
+      <input
+        type="checkbox"
+        name="consent"
+        required
+        data-label={t.consent}
+        class="mt-px size-3.5 accent-accent"
+      />
+      <span>
+        <Inline text={`**${t.consent}** [${t.privacyLink}](route:privacy).`} locale={locale} />
+      </span>
+    </label>
+
+    <details class="group mt-1 text-[0.625rem]">
+      <summary class="inline-block cursor-pointer list-none text-fg/80 underline decoration-taupe underline-offset-3 after:content-['_+'] group-open:after:content-['_−'] [&::-webkit-details-marker]:hidden">
+        {t.infoSummary}
+      </summary>
+      <p class="mt-1.5 leading-normal">
+        <Inline text={formatMessage(t.info, { email: COMPANY_EMAIL })} locale={locale} />
+        <em class="not-italic">{t.draftNote}</em>
+      </p>
+    </details>
+
+    <p
+      data-lead-status
+      role="status"
+      aria-live="polite"
+      hidden
+      class="mt-1.5 border-l-2 border-accent py-0.5 pl-3 text-[0.625rem] text-fg"
+    ></p>
+  </form>
+</section>
+
+<script>
+  import "./leadForm.client";
+</script>
