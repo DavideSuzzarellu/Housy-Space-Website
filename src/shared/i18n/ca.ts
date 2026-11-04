@@ -25,7 +25,8 @@ const ca = {
   },
   nav: {
     otherServices: "Altres serveis",
-    homeSearch: "Busco habitatge",
+    mySearch: "La meva cerca",
+    whereWeAre: "On som",
     neighbourhoodSearch: "Mapa i cercador de barris",
     properties: "Propietats",
     services: "Serveis",
@@ -258,8 +259,6 @@ const ca = {
     },
     links: {
       blog: "Blog i notícies",
-      customSearch: "Cerca a mida",
-      internationalBuyers: "Compradors internacionals",
       dataStatus: "Estat de les dades",
       legalNotice: "Avís legal",
       privacy: "Privacitat",

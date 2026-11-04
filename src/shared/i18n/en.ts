@@ -25,7 +25,8 @@ const en = {
   },
   nav: {
     otherServices: "Other services",
-    homeSearch: "Find a home",
+    mySearch: "My search",
+    whereWeAre: "Where we are",
     neighbourhoodSearch: "Map and neighbourhood search",
     properties: "Properties",
     services: "Services",
@@ -257,8 +258,6 @@ const en = {
     },
     links: {
       blog: "Blog and news",
-      customSearch: "Tailored property search",
-      internationalBuyers: "International buyers",
       dataStatus: "Data status",
       legalNotice: "Legal notice",
       privacy: "Privacy",

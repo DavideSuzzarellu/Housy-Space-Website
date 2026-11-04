@@ -6,7 +6,7 @@ const PAGES = [
   ["/es/servicios/asesoramiento-juridico-fiscal", "Asesoramiento jurídico y fiscal"],
   ["/es/nosotros", "Mucho más que una inmobiliaria"],
   ["/es/contacto", "Hablemos"],
-  ["/es/busco-vivienda", "Busco vivienda"],
+  ["/es/mi-busqueda", "Busco vivienda"],
   ["/es/busqueda-a-medida", "Búsqueda a medida"],
   ["/es/valoracion", "La próxima propiedad podría ser la tuya"],
   ["/es/blog", "Blog y noticias"],
@@ -80,7 +80,7 @@ test("the lead form opens WhatsApp with the request written", async ({ page, con
 });
 
 test("district barrios appear only after choosing the district", async ({ page }) => {
-  await page.goto("/es/busco-vivienda");
+  await page.goto("/es/mi-busqueda");
   const raval = page.locator('input[name="barrio"][value="el-raval"]');
   await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
   await page.locator('input[name="distrito"][value="ciutat-vella"]').check({ force: true });

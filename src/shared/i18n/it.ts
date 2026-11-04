@@ -25,7 +25,8 @@ const it = {
   },
   nav: {
     otherServices: "Altri servizi",
-    homeSearch: "Cerco casa",
+    mySearch: "La mia ricerca",
+    whereWeAre: "Dove siamo",
     neighbourhoodSearch: "Mappa e ricerca quartieri",
     properties: "Immobili",
     services: "Servizi",
@@ -259,8 +260,6 @@ const it = {
     },
     links: {
       blog: "Blog e notizie",
-      customSearch: "Ricerca su misura",
-      internationalBuyers: "Acquirenti internazionali",
       dataStatus: "Stato dei dati",
       legalNotice: "Note legali",
       privacy: "Privacy",

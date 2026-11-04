@@ -74,11 +74,12 @@ export const routes = {
     it: "ricerca-su-misura",
     ca: "cerca-a-mida",
   },
-  homeSearch: {
-    es: "busco-vivienda",
-    en: "find-a-home",
-    it: "cerco-casa",
-    ca: "busco-habitatge",
+  // Proposal v3 merges "home search" and "custom search" into one page (AGENTS.md §6).
+  mySearch: {
+    es: "mi-busqueda",
+    en: "my-search",
+    it: "la-mia-ricerca",
+    ca: "la-meva-cerca",
   },
   internationalGuide: {
     es: "guia-internacional",

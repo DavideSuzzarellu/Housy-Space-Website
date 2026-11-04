@@ -38,6 +38,15 @@ describe("getLocalizedPath", () => {
         ca: "/ca/cerca-a-mida",
       },
     ],
+    [
+      "mySearch",
+      {
+        es: "/es/mi-busqueda",
+        en: "/en/my-search",
+        it: "/it/la-mia-ricerca",
+        ca: "/ca/la-meva-cerca",
+      },
+    ],
     ["dataSources", { es: "/es/datos", en: "/en/data", it: "/it/dati", ca: "/ca/dades" }],
   ] as const)("translates the %s segments for the 4 locales", (key, expected) => {
     for (const locale of LOCALES) {

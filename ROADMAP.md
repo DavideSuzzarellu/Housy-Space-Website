@@ -61,6 +61,9 @@
 - [x] Home page: all 7 sections + contact block, real featured properties, en/it/ca machine-translated (pending client review)
 - [x] Home restyled to proposal v3: order, accordion, carousel, philosophy, copy from Pages CMS. Valuation popup and its form wait for I3; reviews stay hidden until I6; services accordion shows the 8 confirmed services (legal/tax and financial wait for I23)
 - [ ] Confirm the white logo derived from the official SVG
+- [~] Sync with proposal v3 as of 2026-11-02 (`docs/ui-migration.md`): Phase 2 layout
+  - [x] Navigation of v3: My search (new `mySearch` route, shows the home search page until Phase 4 merges both searches), Where we are (about `#donde-estamos`, section added in Phase 4), footer columns
+  - [ ] Contact actions with Email, footer (newsletter, hours, email, social links, seals as logos), header without "Let's talk"
 
 ### Phase 3 — Catalog & property detail
 - [~] Catalog with URL-synced filters, sort, list/map view, clustered Leaflet map (ICGC tiles) — implemented + unit tests; `tests/e2e/catalog.spec.ts` and the catalog performance budget still to run against a build (🔒 I1 for `bun run build`). Map-area search ("buscar en esta zona") and district/barrio filters wait for Phase 5 geo data
