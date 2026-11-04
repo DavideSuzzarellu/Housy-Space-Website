@@ -294,6 +294,7 @@ const es = {
       caption: "Imagen conceptual generada con IA.",
     },
     reviews: {
+      viewReview: "Ver esta reseña en Google",
       orderNotice:
         "Opiniones de clientes publicadas en Google: mostramos las más recientes. Lee todas en nuestra ficha.",
     },

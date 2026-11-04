@@ -256,7 +256,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
 - Decision (client, 2026-10-30): reviews are typed by hand in Pages CMS (`testimonials` collection, one JSON file each in `src/content/testimonials`), so nothing is fetched from or stored through a Google API. Google's Places policy forbids storing its API content, which ruled out a cached API integration.
 - The home shows the latest 3 (`LATEST_TESTIMONIALS`) with a notice of that criterion and a link to the Google profile (`home.reviews.mapsUrl`), where all of them can be read.
 - Copy each text word for word, never improve it. Newest first, never picked to hide negative ones.
-- Author as first name and surname initial, no photos: personal data minimised, pending lawyer review (I24).
+- Author with the name, photo and review link shown on Google (client decision). The photo is linked from Google, never copied, and stops showing if Google changes its URL. These links come from a Places API response, so review them with Google's policy and the lawyer before launch (I24).
 - No reviews → the section hides. Never fake reviews.
 
 ## 7. Legal & compliance (Spain / Catalonia) — verify with the client's lawyer

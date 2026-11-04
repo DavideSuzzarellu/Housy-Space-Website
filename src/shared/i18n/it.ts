@@ -289,6 +289,7 @@ const it = {
       caption: "Immagine concettuale generata con IA.",
     },
     reviews: {
+      viewReview: "Vedi questa recensione su Google",
       orderNotice:
         "Recensioni di clienti pubblicate su Google: mostriamo le più recenti. Leggile tutte sulla nostra scheda.",
     },
