@@ -41,7 +41,7 @@ export function getMainNavigation(locale: Locale): NavItem[] {
     },
     {
       label: nav.services,
-      href: servicesHref(locale),
+      href: getLocalizedPath("services", locale),
       children: SERVICE_KEYS.map((service) => ({
         label: serviceNames[service],
         href: getLocalizedPath("serviceDetail", locale, {
@@ -87,10 +87,6 @@ function whereWeAreHref(locale: Locale): string {
   return withUrlExtras(getLocalizedPath("about", locale), { hash: WHERE_WE_ARE_ID });
 }
 
-function servicesHref(locale: Locale): string {
-  return withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" });
-}
-
 export function getFooterNavigation(locale: Locale): NavColumn[] {
   const { nav, footer } = getDictionary(locale);
   return [
@@ -98,7 +94,7 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
       title: footer.columns.explore,
       links: [
         { label: nav.properties, href: getLocalizedPath("sale", locale) },
-        { label: nav.services, href: servicesHref(locale) },
+        { label: nav.services, href: getLocalizedPath("services", locale) },
         { label: nav.living, href: getLocalizedPath("living", locale) },
         { label: nav.mySearch, href: getLocalizedPath("mySearch", locale) },
         { label: footer.links.blog, href: getLocalizedPath("blog", locale) },

@@ -239,6 +239,11 @@ const en = {
     clusterLabel: "{count} properties: zoom in",
     approximateSuffix: "(approximate location)",
   },
+  servicesIndex: {
+    discover: "Discover the service",
+    othersTag: "We also help you with",
+    othersHeading: "Other services",
+  },
   province: {
     heading: "Province of Barcelona",
     lead: "The 311 municipalities of the province of Barcelona with their official data: comarca, territorial code and area.",

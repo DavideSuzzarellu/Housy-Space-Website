@@ -1,0 +1,39 @@
+{
+  "title": "Serveis · HousySpace",
+  "description": "Compravenda, lloguer, cerca personalitzada, reformes, interiorisme i assessorament. Una mateixa persona de referència, de principi a fi.",
+  "head": {
+    "heading": "Un servei integral per a cada moment del teu habitatge.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Serveis"
+      },
+      {
+        "kind": "lead",
+        "text": "Compravenda, lloguer, cerca personalitzada, reformes, interiorisme i assessorament. Una mateixa persona de referència, de principi a fi."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Ens importa més fer bé cada operació que fer moltes operacions."
+        },
+        {
+          "kind": "p",
+          "text": "Cada servei comença amb una conversa per entendre què necessites. A partir d'aquí t'expliquem amb claredat el procés, els costos i els terminis, i t'acompanyem fins al final."
+        }
+      ]
+    }
+  ]
+}

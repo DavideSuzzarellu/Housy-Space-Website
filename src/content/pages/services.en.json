@@ -1,0 +1,39 @@
+{
+  "title": "Services · HousySpace",
+  "description": "Sales, rentals, personalised search, renovations, interior design and advice. One single point of contact, from start to finish.",
+  "head": {
+    "heading": "A complete service for every moment of your home.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Services"
+      },
+      {
+        "kind": "lead",
+        "text": "Sales, rentals, personalised search, renovations, interior design and advice. One single point of contact, from start to finish."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "We care more about doing each deal well than about doing many deals."
+        },
+        {
+          "kind": "p",
+          "text": "Every service starts with a conversation to understand what you need. From there we explain the process, costs and timelines clearly, and we stay with you until the end."
+        }
+      ]
+    }
+  ]
+}

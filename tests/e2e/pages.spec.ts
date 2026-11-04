@@ -10,6 +10,7 @@ const PAGES = [
   ["/es/busqueda-a-medida", "Búsqueda a medida"],
   ["/es/valoracion", "La próxima propiedad podría ser la tuya"],
   ["/es/vender", "Vende tu inmueble con criterio."],
+  ["/es/servicios", "Un servicio integral para cada momento de tu vivienda."],
   ["/es/provincia-de-barcelona", "Provincia de Barcelona"],
   ["/es/provincia-de-barcelona/abrera", "Abrera"],
   ["/es/blog", "Blog y noticias"],

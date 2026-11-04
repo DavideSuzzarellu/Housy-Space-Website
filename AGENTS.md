@@ -196,7 +196,7 @@ Property detail rules:
 
 ## 6. Pages / features (MVP)
 
-Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the 9 services, no index page: "Services" links to the home `#servicios`); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. "Sell your property" (footer, owners column) links to the sale-brokerage service. "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
+Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. "Sell your property" (footer, owners column) links to the sell page. The services index and the sell page come from the 2026-10-25 design canvas (client decision 2026-11-04: full pages instead of the v3 redirects). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
 
 1. Home — hero (video/photo with negative logo), search, featured properties (`portadaWeb`), CTA valuation
 2. Properties — filters (operation, type, price, rooms, area, zone), list + map, shareable URL params
@@ -225,7 +225,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
 15. Google reviews — see section 6.1.
 16. Contact CTAs — tap-to-call, WhatsApp with prefilled localized message, private consultation (`LeadForm`). Company phone/WhatsApp number: `TODO` confirm.
 
-17. Services — 9 service pages, no index (the home `#servicios` lists them), as in v3: sale brokerage, valuation, legal & tax advice, renovations & interior design, personalised advisory, financial advice, personal shopper, real estate investment, rental & management.
+17. Services — index page (design canvas layout, cards built from each service page) + 9 service pages, as in v3: sale brokerage, valuation, legal & tax advice, renovations & interior design, personalised advisory, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
 20. Barcelona province — index + 311 municipality pages (collection `municipalities`, data from proposal v3: territorial code, comarca and area by the ICGC). Population, density and market data show "not available" until the INE/Idescat datasets (I8) are added.
@@ -354,7 +354,7 @@ No other color combinations for the logo.
 
 - Source (current, **v3**, last updated 2026-11-02): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk (slug `45a50557-4abc-4a6c-80cc-fba1507c81a3`). It is the single reference for **layout, styles and copy** (decision 2026-11-04). Its demo listings, photos and placeholder notes ("demostración", "pendiente", "Prototipo navegable") are never real content.
 - Its styles live in `assets/css/v3.css`, written as dated change blocks (`/* ==== <id>-DDMMYY ==== */`). To sync, read the blocks dated after the last sync recorded in `docs/ui-migration.md`.
-- Not references: the Claude Design canvas "Web HousySpace" (2026-10-25, an earlier iteration the v3 superseded) and v1 (https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8).
+- Not references: the Claude Design canvas "Web HousySpace" (2026-10-25, an earlier iteration the v3 superseded; only its Services and Sell boards are used, for the two pages v3 lacks) and v1 (https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8).
 - Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
 - **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark `#162B2A` blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery.
 - **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):

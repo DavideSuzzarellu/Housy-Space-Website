@@ -1,0 +1,39 @@
+{
+  "title": "Servizi · HousySpace",
+  "description": "Compravendita, affitto, ricerca personalizzata, ristrutturazioni, interior design e consulenza. Un unico referente, dall'inizio alla fine.",
+  "head": {
+    "heading": "Un servizio completo per ogni momento della tua casa.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servizi"
+      },
+      {
+        "kind": "lead",
+        "text": "Compravendita, affitto, ricerca personalizzata, ristrutturazioni, interior design e consulenza. Un unico referente, dall'inizio alla fine."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Ci importa più fare bene ogni operazione che farne molte."
+        },
+        {
+          "kind": "p",
+          "text": "Ogni servizio inizia con una conversazione per capire di cosa hai bisogno. Da lì ti spieghiamo con chiarezza il processo, i costi e i tempi, e ti accompagniamo fino alla fine."
+        }
+      ]
+    }
+  ]
+}

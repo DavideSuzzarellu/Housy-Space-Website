@@ -240,6 +240,11 @@ const it = {
     clusterLabel: "{count} immobili: ingrandisci la mappa",
     approximateSuffix: "(posizione approssimativa)",
   },
+  servicesIndex: {
+    discover: "Scopri il servizio",
+    othersTag: "Ti aiutiamo anche con",
+    othersHeading: "Altri servizi",
+  },
   province: {
     heading: "Provincia di Barcellona",
     lead: "I 311 comuni della provincia di Barcellona con i loro dati ufficiali: comarca, codice territoriale e superficie.",

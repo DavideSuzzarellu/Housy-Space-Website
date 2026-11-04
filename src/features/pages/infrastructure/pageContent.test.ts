@@ -22,8 +22,8 @@ function strings(value: unknown): string[] {
 }
 
 describe("editorial pages", () => {
-  it("has the Spanish source of the 22 editorial pages", () => {
-    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(22);
+  it("has the Spanish source of the 23 editorial pages", () => {
+    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(23);
   });
 
   it.each(files)("%s validates against the schema", (file) => {
