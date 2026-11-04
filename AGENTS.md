@@ -92,7 +92,7 @@ All content — remote and local — is accessed through Astro Content Collectio
   - Zod `schema` validates and maps Mobilia fields to the domain `Property` (locales flattened to `{ es, en, it, ca }`). Pages only see the mapped shape.
 - **`agents`** (build-time): custom loader over `GET /api/v1/agentes` for team pages and listing contacts.
 - **`pages`** (build-time, `glob()` loader): Markdown/MDX in `src/content/pages/{locale}/` for Services, Living in Barcelona, About us, and legal pages. Frontmatter schema includes `routeKey`, `title`, `description`, `locale`.
-- **`pages`** (build-time, `glob()` over `src/content/pages/{key}.{locale}.json`): every editorial page as a head plus sections of flat items (`features/pages/infrastructure/pageSchema.ts`). A missing locale falls back to Spanish with `lang="es"` and `noindex`.
+- **`pages`** (build-time, `glob()` over `src/content/pages/{key}.{locale}.json`): every editorial page as a head plus sections of flat items (`features/pages/infrastructure/pageSchema.ts`). Every page ships in the 4 locales (§4). The Spanish fallback (`lang="es"` + `noindex`) is only a safety net for a file not translated yet, never the intended state.
 - **`market`** (build-time, `src/content/market/barcelona.json`): official figures of the 10 districts and 73 barrios.
 - **`home`** (build-time, `glob()` over `src/content/home/{locale}.json`): editorial copy and media of the home page (UI proposal v3), edited in Pages CMS. Schema: `features/agency/infrastructure/homeContentSchema.ts` (strict); read via `getHomeContent(locale)`.
 - **`blog`** (build-time, `glob()` over `src/content/blog/*.md`, one file per article, created in Pages CMS). Schema: `features/blog/infrastructure/blogSchema.ts`. The file name is the URL slug. An article is served under every locale; only its own `language` is indexed.
@@ -126,6 +126,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 - Every page emits `hreflang` alternates + `x-default`.
 - UI strings live in `shared/i18n/{locale}.ts`; no hardcoded user-facing text. Missing keys fail the type check.
 - Property titles/descriptions come from Mobilia per locale (`txtTituloWeb{Ca|En|It}`, base field = es). Fallback order: requested locale → `es` → `en`.
+- **All site copy is translated into the 4 locales** (decision 2026-11-04): UI dictionaries, `home`, `pages`, district and barrio prose. The Spanish text of the UI proposal (§11.1) is the source; en/it/ca are translations pending client review (ROADMAP). Not translated: Mobilia data (comes per locale), client reviews (verbatim, §6.1) and blog articles (one language each). Legal texts are translated too (client decision 2026-11-04, exception to §13), marked as pending lawyer review (I11); they will be replaced by the validated versions.
 - Localized slugs: yes (see section 4.1).
 
 ### 4.1 URL structure (SEO)
@@ -159,9 +160,8 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | municipalities      | `/es/provincia-de-barcelona` | `/en/barcelona-province` | `/it/provincia-di-barcellona` | `/ca/provincia-de-barcelona` |
 | municipality        | `/es/provincia-de-barcelona/{municipio}` | `/en/barcelona-province/{municipio}` | `/it/provincia-di-barcellona/{municipio}` | `/ca/provincia-de-barcelona/{municipio}` |
 | service detail      | `/es/servicios/{service}` | `/en/services/{service}` | `/it/servizi/{service}` | `/ca/serveis/{service}` |
-| custom search       | `/es/busqueda-a-medida`  | `/en/property-search-service` | `/it/ricerca-su-misura` | `/ca/cerca-a-mida`  |
+| my search           | `/es/mi-busqueda`        | `/en/my-search`           | `/it/la-mia-ricerca`       | `/ca/la-meva-cerca`      |
 | international guide | `/es/guia-internacional` | `/en/international-guide` | `/it/guida-internazionale` | `/ca/guia-internacional` |
-| home search         | `/es/busco-vivienda`     | `/en/find-a-home`         | `/it/cerco-casa`           | `/ca/busco-habitatge`    |
 | data sources        | `/es/datos`              | `/en/data`                | `/it/dati`                 | `/ca/dades`              |
 
 `{service}`, `{district}`, `{barrio}`, `{municipio}` slugs are localized where a translation exists (official Catalan place names stay as-is, ASCII-slugified).
@@ -196,7 +196,7 @@ Property detail rules:
 
 ## 6. Pages / features (MVP)
 
-Main navigation (from brand manual): **Properties · Services · Living in Barcelona · About us · Contact**.
+Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the 9 services, no index page: "Services" links to the home `#servicios`); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. "Sell your property" (footer, owners column) links to the sale-brokerage service. "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
 
 1. Home — hero (video/photo with negative logo), search, featured properties (`portadaWeb`), CTA valuation
 2. Properties — filters (operation, type, price, rooms, area, zone), list + map, shareable URL params
@@ -225,7 +225,7 @@ Main navigation (from brand manual): **Properties · Services · Living in Barce
 15. Google reviews — see section 6.1.
 16. Contact CTAs — tap-to-call, WhatsApp with prefilled localized message, private consultation (`LeadForm`). Company phone/WhatsApp number: `TODO` confirm.
 
-17. Services — index + 9 service pages (rental & management, advisory, interior design, real estate investment, personal shopper, renovations, valuation, strategic sale; `reformas-interiorismo` in the prototype looks like a leftover — `TODO` confirm).
+17. Services — 9 service pages, no index (the home `#servicios` lists them), as in v3: sale brokerage, valuation, legal & tax advice, renovations & interior design, personalised advisory, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
 20. Barcelona province — ~155 municipality pages with official data table (population, area, density, comarca, territorial code) + market data where available.
@@ -352,8 +352,9 @@ No other color combinations for the logo.
 
 ### 11.1 UI proposal (visual reference)
 
-- Source (current, **v3**): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk — the site is being restyled to it in phases (ROADMAP). Its demo listings, photos and placeholder copy are never real content.
-- Previous reference (v1, superseded as each phase lands): https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8.
+- Source (current, **v3**, last updated 2026-11-02): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk (slug `45a50557-4abc-4a6c-80cc-fba1507c81a3`). It is the single reference for **layout, styles and copy** (decision 2026-11-04). Its demo listings, photos and placeholder notes ("demostración", "pendiente", "Prototipo navegable") are never real content.
+- Its styles live in `assets/css/v3.css`, written as dated change blocks (`/* ==== <id>-DDMMYY ==== */`). To sync, read the blocks dated after the last sync recorded in `docs/ui-migration.md`.
+- Not references: the Claude Design canvas "Web HousySpace" (2026-10-25, an earlier iteration the v3 superseded) and v1 (https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8).
 - Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
 - **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark `#162B2A` blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery.
 - **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):
@@ -374,8 +375,9 @@ No other color combinations for the logo.
 Role tokens are redefined by `.surface-dark` (canvas `#162B2A`, fg `#F7F5F1`, muted `#B4BFBE`, accent `#21CEC5`) and `.surface-stone` (canvas `#EBE5DC`, darker muted and accent for AA). Components use the roles and never branch on the theme.
 
 - **Motion:** shared easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade/translate) on section content and line-by-line reveal on the hero heading, via ONE IntersectionObserver utility initialized on `astro:page-load`; slow image zoom on hover (≈1.2–1.6s); UI micro-transitions 250–350ms. All disabled under `prefers-reduced-motion`.
-- **Header (v3):** petrol bar with the negative logo (transparent over the home hero until scroll), main menu with dropdowns, language switcher, skip-to-content link. The menu stays **inline whenever it fits** (measured in three densities, `shared/ui/organisms/navFit.ts`, never by a fixed breakpoint, never clipped); only when it does not fit does it move behind the "Menu" button (light drawer from the right), shown together with the "Let's talk" CTA.
-- **Home sections:** 01 Hero (video + poster) · 02 Services (6 cards) · 03 Featured properties (Mobilia `portadaWeb`) · 04 Valuation explainer · 05 Google reviews · 06 Living in Barcelona (10 districts) · 07 Blog · Contact block · Footer (company data + AICAT).
+- **Header (v3):** petrol bar with the negative logo (transparent over the home hero until scroll, logo slightly larger at the very top), main menu with dropdowns, language switcher, skip-to-content link. The menu stays **inline whenever it fits** (measured in three densities, `shared/ui/organisms/navFit.ts`, never by a fixed breakpoint, never clipped); only when it does not fit does it move behind the "Menu" button (light drawer from the right). No "Let's talk" CTA in the header (v3, 2026-10-30).
+- **Home sections (v3 order):** Hero (video + poster) · Presentation · Featured properties (Mobilia `portadaWeb`) · Valuation · Services (the 9 services) · Philosophy · Google reviews · Living in Barcelona (barrio by barrio) · Blog · Footer.
+- **Footer (v3, 2026-11-02):** "¡Hablemos!" with Call · WhatsApp · Email · "Tell us" buttons and the Instagram and LinkedIn logos; newsletter block (opens the visitor's email with the request written, like the forms, until I3 exists); company data (name, CIF, address, opening hours, phone, WhatsApp, `info@housyspace.com`); columns Explore · Owners · HousySpace; AICAT (white) and APEI seals with "Experto nº 3261". All included as in v3 (client decision 2026-11-04; APEI still to be confirmed under I23).
 - **Scope:** EVERYTHING in the proposal is in scope (confirmed). See section 6 for the full feature list.
 
 ## 12. Agent skills (local)
@@ -402,7 +404,7 @@ Role tokens are redefined by `.surface-dark` (canvas `#162B2A`, fg `#F7F5F1`, mu
 
 - Read this file before any task. If a request conflicts with it, ask.
 - `ROADMAP.md` tracks phases, status, and client inputs. Check it before starting work; update its checkboxes and decisions log when a task lands. Never start work marked 🔒 until its input is resolved.
-- Never invent listings, prices, legal text, company data, or translations of legal text.
+- Never invent listings, prices, legal text, company data, or translations of legal text. Exception (client, 2026-11-04): the legal drafts are machine-translated into en/it/ca and marked as pending lawyer review (§4).
 - Do not change the stack or architecture, or add dependencies, without approval.
 - Small, reviewable changes; tests and code ship together.
 - Never duplicate code: reuse or extend existing components and helpers (section 3.1). Duplicated markup or logic is a defect.
