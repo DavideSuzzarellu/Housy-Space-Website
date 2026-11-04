@@ -1,0 +1,2186 @@
+{
+  "source": {
+    "provider": "Institut Cartogràfic i Geològic de Catalunya (ICGC)",
+    "url": "https://www.icgc.cat/",
+    "license": "CC BY 4.0"
+  },
+  "municipalities": [
+    {
+      "code": "080018",
+      "name": "Abrera",
+      "slug": "abrera",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 19.98
+    },
+    {
+      "code": "080023",
+      "name": "Aguilar de Segarra",
+      "slug": "aguilar-de-segarra",
+      "comarca": "Bages",
+      "areaKm2": 43.26
+    },
+    {
+      "code": "080142",
+      "name": "Aiguafreda",
+      "slug": "aiguafreda",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 7.88
+    },
+    {
+      "code": "080039",
+      "name": "Alella",
+      "slug": "alella",
+      "comarca": "Maresme",
+      "areaKm2": 9.58
+    },
+    {
+      "code": "080044",
+      "name": "Alpens",
+      "slug": "alpens",
+      "comarca": "Lluçanès",
+      "areaKm2": 13.84
+    },
+    {
+      "code": "080060",
+      "name": "Arenys de Mar",
+      "slug": "arenys-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 6.72
+    },
+    {
+      "code": "080076",
+      "name": "Arenys de Munt",
+      "slug": "arenys-de-munt",
+      "comarca": "Maresme",
+      "areaKm2": 21.29
+    },
+    {
+      "code": "080082",
+      "name": "Argençola",
+      "slug": "argencola",
+      "comarca": "Anoia",
+      "areaKm2": 47.13
+    },
+    {
+      "code": "080095",
+      "name": "Argentona",
+      "slug": "argentona",
+      "comarca": "Maresme",
+      "areaKm2": 25.4
+    },
+    {
+      "code": "080109",
+      "name": "Artés",
+      "slug": "artes",
+      "comarca": "Bages",
+      "areaKm2": 17.87
+    },
+    {
+      "code": "080116",
+      "name": "Avià",
+      "slug": "avia",
+      "comarca": "Berguedà",
+      "areaKm2": 27.23
+    },
+    {
+      "code": "080121",
+      "name": "Avinyó",
+      "slug": "avinyo",
+      "comarca": "Bages",
+      "areaKm2": 63.23
+    },
+    {
+      "code": "080137",
+      "name": "Avinyonet del Penedès",
+      "slug": "avinyonet-del-penedes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 29.13
+    },
+    {
+      "code": "080155",
+      "name": "Badalona",
+      "slug": "badalona",
+      "comarca": "Barcelonès",
+      "areaKm2": 21.18
+    },
+    {
+      "code": "089045",
+      "name": "Badia del Vallès",
+      "slug": "badia-del-valles",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 0.93
+    },
+    {
+      "code": "080168",
+      "name": "Bagà",
+      "slug": "baga",
+      "comarca": "Berguedà",
+      "areaKm2": 43.16
+    },
+    {
+      "code": "080174",
+      "name": "Balenyà",
+      "slug": "balenya",
+      "comarca": "Osona",
+      "areaKm2": 17.35
+    },
+    {
+      "code": "080180",
+      "name": "Balsareny",
+      "slug": "balsareny",
+      "comarca": "Bages",
+      "areaKm2": 36.91
+    },
+    {
+      "code": "082520",
+      "name": "Barberà del Vallès",
+      "slug": "barbera-del-valles",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 8.3
+    },
+    {
+      "code": "080193",
+      "name": "Barcelona",
+      "slug": "barcelona",
+      "comarca": "Barcelonès",
+      "areaKm2": 101.67
+    },
+    {
+      "code": "080207",
+      "name": "Begues",
+      "slug": "begues",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 50.44
+    },
+    {
+      "code": "080214",
+      "name": "Bellprat",
+      "slug": "bellprat",
+      "comarca": "Anoia",
+      "areaKm2": 31.14
+    },
+    {
+      "code": "080229",
+      "name": "Berga",
+      "slug": "berga",
+      "comarca": "Berguedà",
+      "areaKm2": 22.57
+    },
+    {
+      "code": "080235",
+      "name": "Bigues i Riells del Fai",
+      "slug": "bigues-i-riells-del-fai",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 28.64
+    },
+    {
+      "code": "080240",
+      "name": "Borredà",
+      "slug": "borreda",
+      "comarca": "Berguedà",
+      "areaKm2": 43.37
+    },
+    {
+      "code": "080288",
+      "name": "Cabrera d'Anoia",
+      "slug": "cabrera-danoia",
+      "comarca": "Anoia",
+      "areaKm2": 17.08
+    },
+    {
+      "code": "080291",
+      "name": "Cabrera de Mar",
+      "slug": "cabrera-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 8.96
+    },
+    {
+      "code": "080305",
+      "name": "Cabrils",
+      "slug": "cabrils",
+      "comarca": "Maresme",
+      "areaKm2": 6.95
+    },
+    {
+      "code": "080312",
+      "name": "Calaf",
+      "slug": "calaf",
+      "comarca": "Anoia",
+      "areaKm2": 9.32
+    },
+    {
+      "code": "080348",
+      "name": "Calders",
+      "slug": "calders",
+      "comarca": "Moianès",
+      "areaKm2": 33.09
+    },
+    {
+      "code": "080327",
+      "name": "Caldes d'Estrac",
+      "slug": "caldes-destrac",
+      "comarca": "Maresme",
+      "areaKm2": 0.87
+    },
+    {
+      "code": "080333",
+      "name": "Caldes de Montbui",
+      "slug": "caldes-de-montbui",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 37.45
+    },
+    {
+      "code": "080351",
+      "name": "Calella",
+      "slug": "calella",
+      "comarca": "Maresme",
+      "areaKm2": 8
+    },
+    {
+      "code": "080370",
+      "name": "Calldetenes",
+      "slug": "calldetenes",
+      "comarca": "Osona",
+      "areaKm2": 5.82
+    },
+    {
+      "code": "080386",
+      "name": "Callús",
+      "slug": "callus",
+      "comarca": "Bages",
+      "areaKm2": 12.5
+    },
+    {
+      "code": "080364",
+      "name": "Calonge de Segarra",
+      "slug": "calonge-de-segarra",
+      "comarca": "Anoia",
+      "areaKm2": 37.11
+    },
+    {
+      "code": "080399",
+      "name": "Campins",
+      "slug": "campins",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 7.29
+    },
+    {
+      "code": "080403",
+      "name": "Canet de Mar",
+      "slug": "canet-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 5.57
+    },
+    {
+      "code": "080410",
+      "name": "Canovelles",
+      "slug": "canovelles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 6.66
+    },
+    {
+      "code": "080425",
+      "name": "Cànoves i Samalús",
+      "slug": "canoves-i-samalus",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 29.18
+    },
+    {
+      "code": "080431",
+      "name": "Canyelles",
+      "slug": "canyelles",
+      "comarca": "Garraf",
+      "areaKm2": 14.22
+    },
+    {
+      "code": "080446",
+      "name": "Capellades",
+      "slug": "capellades",
+      "comarca": "Anoia",
+      "areaKm2": 2.92
+    },
+    {
+      "code": "080459",
+      "name": "Capolat",
+      "slug": "capolat",
+      "comarca": "Berguedà",
+      "areaKm2": 34.15
+    },
+    {
+      "code": "080462",
+      "name": "Cardedeu",
+      "slug": "cardedeu",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 12.1
+    },
+    {
+      "code": "080478",
+      "name": "Cardona",
+      "slug": "cardona",
+      "comarca": "Bages",
+      "areaKm2": 66.7
+    },
+    {
+      "code": "080484",
+      "name": "Carme",
+      "slug": "carme",
+      "comarca": "Anoia",
+      "areaKm2": 11.56
+    },
+    {
+      "code": "080497",
+      "name": "Casserres",
+      "slug": "casserres",
+      "comarca": "Berguedà",
+      "areaKm2": 29.46
+    },
+    {
+      "code": "080575",
+      "name": "Castell de l'Areny",
+      "slug": "castell-de-lareny",
+      "comarca": "Berguedà",
+      "areaKm2": 24.33
+    },
+    {
+      "code": "080522",
+      "name": "Castellar de n'Hug",
+      "slug": "castellar-de-nhug",
+      "comarca": "Berguedà",
+      "areaKm2": 47.11
+    },
+    {
+      "code": "080500",
+      "name": "Castellar del Riu",
+      "slug": "castellar-del-riu",
+      "comarca": "Berguedà",
+      "areaKm2": 32.8
+    },
+    {
+      "code": "080517",
+      "name": "Castellar del Vallès",
+      "slug": "castellar-del-valles",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 44.92
+    },
+    {
+      "code": "080538",
+      "name": "Castellbell i el Vilar",
+      "slug": "castellbell-i-el-vilar",
+      "comarca": "Bages",
+      "areaKm2": 28.52
+    },
+    {
+      "code": "080543",
+      "name": "Castellbisbal",
+      "slug": "castellbisbal",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 30.96
+    },
+    {
+      "code": "080556",
+      "name": "Castellcir",
+      "slug": "castellcir",
+      "comarca": "Moianès",
+      "areaKm2": 34.05
+    },
+    {
+      "code": "080569",
+      "name": "Castelldefels",
+      "slug": "castelldefels",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 12.92
+    },
+    {
+      "code": "080581",
+      "name": "Castellet i la Gornal",
+      "slug": "castellet-i-la-gornal",
+      "comarca": "Alt Penedès",
+      "areaKm2": 47.48
+    },
+    {
+      "code": "080608",
+      "name": "Castellfollit de Riubregós",
+      "slug": "castellfollit-de-riubregos",
+      "comarca": "Anoia",
+      "areaKm2": 26.28
+    },
+    {
+      "code": "080594",
+      "name": "Castellfollit del Boix",
+      "slug": "castellfollit-del-boix",
+      "comarca": "Bages",
+      "areaKm2": 59.03
+    },
+    {
+      "code": "080615",
+      "name": "Castellgalí",
+      "slug": "castellgali",
+      "comarca": "Bages",
+      "areaKm2": 17.24
+    },
+    {
+      "code": "080620",
+      "name": "Castellnou de Bages",
+      "slug": "castellnou-de-bages",
+      "comarca": "Bages",
+      "areaKm2": 29.16
+    },
+    {
+      "code": "080636",
+      "name": "Castellolí",
+      "slug": "castelloli",
+      "comarca": "Anoia",
+      "areaKm2": 25.34
+    },
+    {
+      "code": "080641",
+      "name": "Castellterçol",
+      "slug": "castelltercol",
+      "comarca": "Moianès",
+      "areaKm2": 31.9
+    },
+    {
+      "code": "080654",
+      "name": "Castellví de la Marca",
+      "slug": "castellvi-de-la-marca",
+      "comarca": "Alt Penedès",
+      "areaKm2": 28.4
+    },
+    {
+      "code": "080667",
+      "name": "Castellví de Rosanes",
+      "slug": "castellvi-de-rosanes",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 16.38
+    },
+    {
+      "code": "080673",
+      "name": "Centelles",
+      "slug": "centelles",
+      "comarca": "Osona",
+      "areaKm2": 15.21
+    },
+    {
+      "code": "082687",
+      "name": "Cercs",
+      "slug": "cercs",
+      "comarca": "Berguedà",
+      "areaKm2": 47.12
+    },
+    {
+      "code": "082665",
+      "name": "Cerdanyola del Vallès",
+      "slug": "cerdanyola-del-valles",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 30.57
+    },
+    {
+      "code": "080689",
+      "name": "Cervelló",
+      "slug": "cervello",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 24.1
+    },
+    {
+      "code": "080692",
+      "name": "Collbató",
+      "slug": "collbato",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 18.06
+    },
+    {
+      "code": "080706",
+      "name": "Collsuspina",
+      "slug": "collsuspina",
+      "comarca": "Moianès",
+      "areaKm2": 15.06
+    },
+    {
+      "code": "080713",
+      "name": "Copons",
+      "slug": "copons",
+      "comarca": "Anoia",
+      "areaKm2": 18.69
+    },
+    {
+      "code": "080728",
+      "name": "Corbera de Llobregat",
+      "slug": "corbera-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 18.39
+    },
+    {
+      "code": "080734",
+      "name": "Cornellà de Llobregat",
+      "slug": "cornella-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 6.99
+    },
+    {
+      "code": "080749",
+      "name": "Cubelles",
+      "slug": "cubelles",
+      "comarca": "Garraf",
+      "areaKm2": 13.51
+    },
+    {
+      "code": "080752",
+      "name": "Dosrius",
+      "slug": "dosrius",
+      "comarca": "Maresme",
+      "areaKm2": 40.73
+    },
+    {
+      "code": "080253",
+      "name": "el Bruc",
+      "slug": "el-bruc",
+      "comarca": "Anoia",
+      "areaKm2": 47.25
+    },
+    {
+      "code": "080266",
+      "name": "el Brull",
+      "slug": "el-brull",
+      "comarca": "Osona",
+      "areaKm2": 41.16
+    },
+    {
+      "code": "081189",
+      "name": "el Masnou",
+      "slug": "el-masnou",
+      "comarca": "Maresme",
+      "areaKm2": 3.4
+    },
+    {
+      "code": "081580",
+      "name": "el Papiol",
+      "slug": "el-papiol",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 8.85
+    },
+    {
+      "code": "081640",
+      "name": "el Pla del Penedès",
+      "slug": "el-pla-del-penedes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 9.53
+    },
+    {
+      "code": "081825",
+      "name": "el Pont de Vilomara i Rocafort",
+      "slug": "el-pont-de-vilomara-i-rocafort",
+      "comarca": "Bages",
+      "areaKm2": 27.41
+    },
+    {
+      "code": "081691",
+      "name": "el Prat de Llobregat",
+      "slug": "el-prat-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 33.53
+    },
+    {
+      "code": "081629",
+      "name": "els Hostalets de Pierola",
+      "slug": "els-hostalets-de-pierola",
+      "comarca": "Anoia",
+      "areaKm2": 33.46
+    },
+    {
+      "code": "081705",
+      "name": "els Prats de Rei",
+      "slug": "els-prats-de-rei",
+      "comarca": "Anoia",
+      "areaKm2": 26.01
+    },
+    {
+      "code": "080765",
+      "name": "Esparreguera",
+      "slug": "esparreguera",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 27.31
+    },
+    {
+      "code": "080771",
+      "name": "Esplugues de Llobregat",
+      "slug": "esplugues-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 4.6
+    },
+    {
+      "code": "081347",
+      "name": "Figaró-Montmany",
+      "slug": "figaro-montmany",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 14.87
+    },
+    {
+      "code": "080804",
+      "name": "Fígols",
+      "slug": "figols",
+      "comarca": "Berguedà",
+      "areaKm2": 29.3
+    },
+    {
+      "code": "080826",
+      "name": "Fogars de la Selva",
+      "slug": "fogars-de-la-selva",
+      "comarca": "Selva",
+      "areaKm2": 32.12
+    },
+    {
+      "code": "080811",
+      "name": "Fogars de Montclús",
+      "slug": "fogars-de-montclus",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 39.72
+    },
+    {
+      "code": "080832",
+      "name": "Folgueroles",
+      "slug": "folgueroles",
+      "comarca": "Osona",
+      "areaKm2": 10.47
+    },
+    {
+      "code": "080847",
+      "name": "Fonollosa",
+      "slug": "fonollosa",
+      "comarca": "Bages",
+      "areaKm2": 51.67
+    },
+    {
+      "code": "080850",
+      "name": "Font-rubí",
+      "slug": "font-rubi",
+      "comarca": "Alt Penedès",
+      "areaKm2": 37.44
+    },
+    {
+      "code": "080902",
+      "name": "Gaià",
+      "slug": "gaia",
+      "comarca": "Bages",
+      "areaKm2": 39.48
+    },
+    {
+      "code": "080879",
+      "name": "Gallifa",
+      "slug": "gallifa",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 16.33
+    },
+    {
+      "code": "080898",
+      "name": "Gavà",
+      "slug": "gava",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 30.77
+    },
+    {
+      "code": "080919",
+      "name": "Gelida",
+      "slug": "gelida",
+      "comarca": "Alt Penedès",
+      "areaKm2": 26.7
+    },
+    {
+      "code": "080924",
+      "name": "Gironella",
+      "slug": "gironella",
+      "comarca": "Berguedà",
+      "areaKm2": 6.78
+    },
+    {
+      "code": "080930",
+      "name": "Gisclareny",
+      "slug": "gisclareny",
+      "comarca": "Berguedà",
+      "areaKm2": 36.46
+    },
+    {
+      "code": "080958",
+      "name": "Granera",
+      "slug": "granera",
+      "comarca": "Moianès",
+      "areaKm2": 23.73
+    },
+    {
+      "code": "080961",
+      "name": "Granollers",
+      "slug": "granollers",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 14.92
+    },
+    {
+      "code": "080977",
+      "name": "Gualba",
+      "slug": "gualba",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 23.29
+    },
+    {
+      "code": "080996",
+      "name": "Guardiola de Berguedà",
+      "slug": "guardiola-de-bergueda",
+      "comarca": "Berguedà",
+      "areaKm2": 61.57
+    },
+    {
+      "code": "081000",
+      "name": "Gurb",
+      "slug": "gurb",
+      "comarca": "Osona",
+      "areaKm2": 51.56
+    },
+    {
+      "code": "081022",
+      "name": "Igualada",
+      "slug": "igualada",
+      "comarca": "Anoia",
+      "areaKm2": 8.11
+    },
+    {
+      "code": "081038",
+      "name": "Jorba",
+      "slug": "jorba",
+      "comarca": "Anoia",
+      "areaKm2": 31.09
+    },
+    {
+      "code": "080057",
+      "name": "l'Ametlla del Vallès",
+      "slug": "lametlla-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 14.24
+    },
+    {
+      "code": "080787",
+      "name": "l'Espunyola",
+      "slug": "lespunyola",
+      "comarca": "Berguedà",
+      "areaKm2": 35.46
+    },
+    {
+      "code": "082541",
+      "name": "l'Esquirol",
+      "slug": "lesquirol",
+      "comarca": "Osona",
+      "areaKm2": 61.82
+    },
+    {
+      "code": "080790",
+      "name": "l'Estany",
+      "slug": "lestany",
+      "comarca": "Moianès",
+      "areaKm2": 10.25
+    },
+    {
+      "code": "081017",
+      "name": "l'Hospitalet de Llobregat",
+      "slug": "lhospitalet-de-llobregat",
+      "comarca": "Barcelonès",
+      "areaKm2": 12.48
+    },
+    {
+      "code": "080885",
+      "name": "la Garriga",
+      "slug": "la-garriga",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 18.8
+    },
+    {
+      "code": "080945",
+      "name": "la Granada",
+      "slug": "la-granada",
+      "comarca": "Alt Penedès",
+      "areaKm2": 6.53
+    },
+    {
+      "code": "081043",
+      "name": "la Llacuna",
+      "slug": "la-llacuna",
+      "comarca": "Anoia",
+      "areaKm2": 52.23
+    },
+    {
+      "code": "081056",
+      "name": "la Llagosta",
+      "slug": "la-llagosta",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 3.04
+    },
+    {
+      "code": "081424",
+      "name": "la Nou de Berguedà",
+      "slug": "la-nou-de-bergueda",
+      "comarca": "Berguedà",
+      "areaKm2": 25.2
+    },
+    {
+      "code": "089058",
+      "name": "la Palma de Cervelló",
+      "slug": "la-palma-de-cervello",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 5.48
+    },
+    {
+      "code": "081653",
+      "name": "la Pobla de Claramunt",
+      "slug": "la-pobla-de-claramunt",
+      "comarca": "Anoia",
+      "areaKm2": 18.54
+    },
+    {
+      "code": "081666",
+      "name": "la Pobla de Lillet",
+      "slug": "la-pobla-de-lillet",
+      "comarca": "Berguedà",
+      "areaKm2": 51.48
+    },
+    {
+      "code": "081770",
+      "name": "la Quar",
+      "slug": "la-quar",
+      "comarca": "Berguedà",
+      "areaKm2": 38.25
+    },
+    {
+      "code": "081810",
+      "name": "la Roca del Vallès",
+      "slug": "la-roca-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 36.9
+    },
+    {
+      "code": "082861",
+      "name": "la Torre de Claramunt",
+      "slug": "la-torre-de-claramunt",
+      "comarca": "Anoia",
+      "areaKm2": 14.94
+    },
+    {
+      "code": "080272",
+      "name": "les Cabanyes",
+      "slug": "les-cabanyes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 1.15
+    },
+    {
+      "code": "080863",
+      "name": "les Franqueses del Vallès",
+      "slug": "les-franqueses-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 29.14
+    },
+    {
+      "code": "081167",
+      "name": "les Masies de Roda",
+      "slug": "les-masies-de-roda",
+      "comarca": "Osona",
+      "areaKm2": 16.49
+    },
+    {
+      "code": "081173",
+      "name": "les Masies de Voltregà",
+      "slug": "les-masies-de-voltrega",
+      "comarca": "Osona",
+      "areaKm2": 22.19
+    },
+    {
+      "code": "081075",
+      "name": "Lliçà d'Amunt",
+      "slug": "llica-damunt",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 22.33
+    },
+    {
+      "code": "081081",
+      "name": "Lliçà de Vall",
+      "slug": "llica-de-vall",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 10.83
+    },
+    {
+      "code": "081069",
+      "name": "Llinars del Vallès",
+      "slug": "llinars-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 27.74
+    },
+    {
+      "code": "081094",
+      "name": "Lluçà",
+      "slug": "lluca",
+      "comarca": "Lluçanès",
+      "areaKm2": 52.98
+    },
+    {
+      "code": "081108",
+      "name": "Malgrat de Mar",
+      "slug": "malgrat-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 8.77
+    },
+    {
+      "code": "081115",
+      "name": "Malla",
+      "slug": "malla",
+      "comarca": "Osona",
+      "areaKm2": 11.04
+    },
+    {
+      "code": "081120",
+      "name": "Manlleu",
+      "slug": "manlleu",
+      "comarca": "Osona",
+      "areaKm2": 17.23
+    },
+    {
+      "code": "081136",
+      "name": "Manresa",
+      "slug": "manresa",
+      "comarca": "Bages",
+      "areaKm2": 41.65
+    },
+    {
+      "code": "082423",
+      "name": "Marganell",
+      "slug": "marganell",
+      "comarca": "Bages",
+      "areaKm2": 13.35
+    },
+    {
+      "code": "081141",
+      "name": "Martorell",
+      "slug": "martorell",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 12.7
+    },
+    {
+      "code": "081154",
+      "name": "Martorelles",
+      "slug": "martorelles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 3.57
+    },
+    {
+      "code": "081192",
+      "name": "Masquefa",
+      "slug": "masquefa",
+      "comarca": "Anoia",
+      "areaKm2": 17.14
+    },
+    {
+      "code": "081206",
+      "name": "Matadepera",
+      "slug": "matadepera",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 25.37
+    },
+    {
+      "code": "081213",
+      "name": "Mataró",
+      "slug": "mataro",
+      "comarca": "Maresme",
+      "areaKm2": 22.51
+    },
+    {
+      "code": "081228",
+      "name": "Mediona",
+      "slug": "mediona",
+      "comarca": "Alt Penedès",
+      "areaKm2": 47.72
+    },
+    {
+      "code": "081385",
+      "name": "Moià",
+      "slug": "moia",
+      "comarca": "Moianès",
+      "areaKm2": 75.31
+    },
+    {
+      "code": "081234",
+      "name": "Molins de Rei",
+      "slug": "molins-de-rei",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 15.96
+    },
+    {
+      "code": "081249",
+      "name": "Mollet del Vallès",
+      "slug": "mollet-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 10.8
+    },
+    {
+      "code": "081287",
+      "name": "Monistrol de Calders",
+      "slug": "monistrol-de-calders",
+      "comarca": "Moianès",
+      "areaKm2": 21.97
+    },
+    {
+      "code": "081271",
+      "name": "Monistrol de Montserrat",
+      "slug": "monistrol-de-montserrat",
+      "comarca": "Bages",
+      "areaKm2": 11.91
+    },
+    {
+      "code": "081252",
+      "name": "Montcada i Reixac",
+      "slug": "montcada-i-reixac",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 23.46
+    },
+    {
+      "code": "081304",
+      "name": "Montclar",
+      "slug": "montclar",
+      "comarca": "Berguedà",
+      "areaKm2": 21.9
+    },
+    {
+      "code": "081311",
+      "name": "Montesquiu",
+      "slug": "montesquiu",
+      "comarca": "Osona",
+      "areaKm2": 4.76
+    },
+    {
+      "code": "081265",
+      "name": "Montgat",
+      "slug": "montgat",
+      "comarca": "Maresme",
+      "areaKm2": 2.9
+    },
+    {
+      "code": "081326",
+      "name": "Montmajor",
+      "slug": "montmajor",
+      "comarca": "Berguedà",
+      "areaKm2": 76.71
+    },
+    {
+      "code": "081332",
+      "name": "Montmaneu",
+      "slug": "montmaneu",
+      "comarca": "Anoia",
+      "areaKm2": 13.7
+    },
+    {
+      "code": "081350",
+      "name": "Montmeló",
+      "slug": "montmelo",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 4.01
+    },
+    {
+      "code": "081363",
+      "name": "Montornès del Vallès",
+      "slug": "montornes-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 10.3
+    },
+    {
+      "code": "081379",
+      "name": "Montseny",
+      "slug": "montseny",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 26.67
+    },
+    {
+      "code": "081290",
+      "name": "Muntanyola",
+      "slug": "muntanyola",
+      "comarca": "Osona",
+      "areaKm2": 40.3
+    },
+    {
+      "code": "081398",
+      "name": "Mura",
+      "slug": "mura",
+      "comarca": "Bages",
+      "areaKm2": 47.79
+    },
+    {
+      "code": "081402",
+      "name": "Navarcles",
+      "slug": "navarcles",
+      "comarca": "Bages",
+      "areaKm2": 5.52
+    },
+    {
+      "code": "081419",
+      "name": "Navàs",
+      "slug": "navas",
+      "comarca": "Bages",
+      "areaKm2": 80.62
+    },
+    {
+      "code": "081430",
+      "name": "Òdena",
+      "slug": "odena",
+      "comarca": "Anoia",
+      "areaKm2": 52.35
+    },
+    {
+      "code": "081458",
+      "name": "Olèrdola",
+      "slug": "olerdola",
+      "comarca": "Alt Penedès",
+      "areaKm2": 30.15
+    },
+    {
+      "code": "081461",
+      "name": "Olesa de Bonesvalls",
+      "slug": "olesa-de-bonesvalls",
+      "comarca": "Alt Penedès",
+      "areaKm2": 30.79
+    },
+    {
+      "code": "081477",
+      "name": "Olesa de Montserrat",
+      "slug": "olesa-de-montserrat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 16.63
+    },
+    {
+      "code": "081483",
+      "name": "Olivella",
+      "slug": "olivella",
+      "comarca": "Garraf",
+      "areaKm2": 38.75
+    },
+    {
+      "code": "081496",
+      "name": "Olost",
+      "slug": "olost",
+      "comarca": "Lluçanès",
+      "areaKm2": 29.37
+    },
+    {
+      "code": "081445",
+      "name": "Olvan",
+      "slug": "olvan",
+      "comarca": "Berguedà",
+      "areaKm2": 35.58
+    },
+    {
+      "code": "081509",
+      "name": "Orís",
+      "slug": "oris",
+      "comarca": "Osona",
+      "areaKm2": 27.02
+    },
+    {
+      "code": "081516",
+      "name": "Oristà",
+      "slug": "orista",
+      "comarca": "Lluçanès",
+      "areaKm2": 68.49
+    },
+    {
+      "code": "081521",
+      "name": "Orpí",
+      "slug": "orpi",
+      "comarca": "Anoia",
+      "areaKm2": 15.23
+    },
+    {
+      "code": "081537",
+      "name": "Òrrius",
+      "slug": "orrius",
+      "comarca": "Maresme",
+      "areaKm2": 5.66
+    },
+    {
+      "code": "081542",
+      "name": "Pacs del Penedès",
+      "slug": "pacs-del-penedes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 6.26
+    },
+    {
+      "code": "081555",
+      "name": "Palafolls",
+      "slug": "palafolls",
+      "comarca": "Maresme",
+      "areaKm2": 16.55
+    },
+    {
+      "code": "081568",
+      "name": "Palau-solità i Plegamans",
+      "slug": "palau-solita-i-plegamans",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 14.93
+    },
+    {
+      "code": "081574",
+      "name": "Pallejà",
+      "slug": "palleja",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 8.31
+    },
+    {
+      "code": "081593",
+      "name": "Parets del Vallès",
+      "slug": "parets-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 9.12
+    },
+    {
+      "code": "081607",
+      "name": "Perafita",
+      "slug": "perafita",
+      "comarca": "Lluçanès",
+      "areaKm2": 19.59
+    },
+    {
+      "code": "081614",
+      "name": "Piera",
+      "slug": "piera",
+      "comarca": "Anoia",
+      "areaKm2": 57.19
+    },
+    {
+      "code": "081635",
+      "name": "Pineda de Mar",
+      "slug": "pineda-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 10.72
+    },
+    {
+      "code": "081672",
+      "name": "Polinyà",
+      "slug": "polinya",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 8.79
+    },
+    {
+      "code": "081688",
+      "name": "Pontons",
+      "slug": "pontons",
+      "comarca": "Alt Penedès",
+      "areaKm2": 25.77
+    },
+    {
+      "code": "081712",
+      "name": "Prats de Lluçanès",
+      "slug": "prats-de-llucanes",
+      "comarca": "Lluçanès",
+      "areaKm2": 13.78
+    },
+    {
+      "code": "082303",
+      "name": "Premià de Dalt",
+      "slug": "premia-de-dalt",
+      "comarca": "Maresme",
+      "areaKm2": 6.47
+    },
+    {
+      "code": "081727",
+      "name": "Premià de Mar",
+      "slug": "premia-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 2.19
+    },
+    {
+      "code": "081751",
+      "name": "Puig-reig",
+      "slug": "puig-reig",
+      "comarca": "Berguedà",
+      "areaKm2": 45.75
+    },
+    {
+      "code": "081748",
+      "name": "Puigdàlber",
+      "slug": "puigdalber",
+      "comarca": "Alt Penedès",
+      "areaKm2": 0.63
+    },
+    {
+      "code": "081764",
+      "name": "Pujalt",
+      "slug": "pujalt",
+      "comarca": "Anoia",
+      "areaKm2": 31.43
+    },
+    {
+      "code": "081786",
+      "name": "Rajadell",
+      "slug": "rajadell",
+      "comarca": "Bages",
+      "areaKm2": 45.53
+    },
+    {
+      "code": "081799",
+      "name": "Rellinars",
+      "slug": "rellinars",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 17.79
+    },
+    {
+      "code": "081803",
+      "name": "Ripollet",
+      "slug": "ripollet",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 4.33
+    },
+    {
+      "code": "081831",
+      "name": "Roda de Ter",
+      "slug": "roda-de-ter",
+      "comarca": "Osona",
+      "areaKm2": 2.23
+    },
+    {
+      "code": "081846",
+      "name": "Rubí",
+      "slug": "rubi",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 32.29
+    },
+    {
+      "code": "081859",
+      "name": "Rubió",
+      "slug": "rubio",
+      "comarca": "Anoia",
+      "areaKm2": 48
+    },
+    {
+      "code": "089019",
+      "name": "Rupit i Pruit",
+      "slug": "rupit-i-pruit",
+      "comarca": "Osona",
+      "areaKm2": 49.04
+    },
+    {
+      "code": "081878",
+      "name": "Sabadell",
+      "slug": "sabadell",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 37.78
+    },
+    {
+      "code": "081884",
+      "name": "Sagàs",
+      "slug": "sagas",
+      "comarca": "Berguedà",
+      "areaKm2": 44.6
+    },
+    {
+      "code": "081901",
+      "name": "Saldes",
+      "slug": "saldes",
+      "comarca": "Berguedà",
+      "areaKm2": 66.57
+    },
+    {
+      "code": "081918",
+      "name": "Sallent",
+      "slug": "sallent",
+      "comarca": "Bages",
+      "areaKm2": 65.22
+    },
+    {
+      "code": "081944",
+      "name": "Sant Adrià de Besòs",
+      "slug": "sant-adria-de-besos",
+      "comarca": "Barcelonès",
+      "areaKm2": 3.96
+    },
+    {
+      "code": "081957",
+      "name": "Sant Agustí de Lluçanès",
+      "slug": "sant-agusti-de-llucanes",
+      "comarca": "Lluçanès",
+      "areaKm2": 13.22
+    },
+    {
+      "code": "081960",
+      "name": "Sant Andreu de la Barca",
+      "slug": "sant-andreu-de-la-barca",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 5.62
+    },
+    {
+      "code": "081976",
+      "name": "Sant Andreu de Llavaneres",
+      "slug": "sant-andreu-de-llavaneres",
+      "comarca": "Maresme",
+      "areaKm2": 11.84
+    },
+    {
+      "code": "081982",
+      "name": "Sant Antoni de Vilamajor",
+      "slug": "sant-antoni-de-vilamajor",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 13.7
+    },
+    {
+      "code": "081995",
+      "name": "Sant Bartomeu del Grau",
+      "slug": "sant-bartomeu-del-grau",
+      "comarca": "Lluçanès",
+      "areaKm2": 34.4
+    },
+    {
+      "code": "082009",
+      "name": "Sant Boi de Llobregat",
+      "slug": "sant-boi-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 21.47
+    },
+    {
+      "code": "082016",
+      "name": "Sant Boi de Lluçanès",
+      "slug": "sant-boi-de-llucanes",
+      "comarca": "Lluçanès",
+      "areaKm2": 19.78
+    },
+    {
+      "code": "082037",
+      "name": "Sant Cebrià de Vallalta",
+      "slug": "sant-cebria-de-vallalta",
+      "comarca": "Maresme",
+      "areaKm2": 15.68
+    },
+    {
+      "code": "082021",
+      "name": "Sant Celoni",
+      "slug": "sant-celoni",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 65.18
+    },
+    {
+      "code": "082042",
+      "name": "Sant Climent de Llobregat",
+      "slug": "sant-climent-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 10.81
+    },
+    {
+      "code": "082055",
+      "name": "Sant Cugat del Vallès",
+      "slug": "sant-cugat-del-valles",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 48.3
+    },
+    {
+      "code": "082068",
+      "name": "Sant Cugat Sesgarrigues",
+      "slug": "sant-cugat-sesgarrigues",
+      "comarca": "Alt Penedès",
+      "areaKm2": 6.24
+    },
+    {
+      "code": "082074",
+      "name": "Sant Esteve de Palautordera",
+      "slug": "sant-esteve-de-palautordera",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 10.65
+    },
+    {
+      "code": "082080",
+      "name": "Sant Esteve Sesrovires",
+      "slug": "sant-esteve-sesrovires",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 18.56
+    },
+    {
+      "code": "082107",
+      "name": "Sant Feliu de Codines",
+      "slug": "sant-feliu-de-codines",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 15
+    },
+    {
+      "code": "082114",
+      "name": "Sant Feliu de Llobregat",
+      "slug": "sant-feliu-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 11.82
+    },
+    {
+      "code": "082129",
+      "name": "Sant Feliu Sasserra",
+      "slug": "sant-feliu-sasserra",
+      "comarca": "Lluçanès",
+      "areaKm2": 22.36
+    },
+    {
+      "code": "082093",
+      "name": "Sant Fost de Campsentelles",
+      "slug": "sant-fost-de-campsentelles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 13.15
+    },
+    {
+      "code": "082135",
+      "name": "Sant Fruitós de Bages",
+      "slug": "sant-fruitos-de-bages",
+      "comarca": "Bages",
+      "areaKm2": 22.2
+    },
+    {
+      "code": "082153",
+      "name": "Sant Hipòlit de Voltregà",
+      "slug": "sant-hipolit-de-voltrega",
+      "comarca": "Osona",
+      "areaKm2": 0.92
+    },
+    {
+      "code": "081939",
+      "name": "Sant Iscle de Vallalta",
+      "slug": "sant-iscle-de-vallalta",
+      "comarca": "Maresme",
+      "areaKm2": 17.77
+    },
+    {
+      "code": "082166",
+      "name": "Sant Jaume de Frontanyà",
+      "slug": "sant-jaume-de-frontanya",
+      "comarca": "Berguedà",
+      "areaKm2": 21.3
+    },
+    {
+      "code": "082188",
+      "name": "Sant Joan de Vilatorrada",
+      "slug": "sant-joan-de-vilatorrada",
+      "comarca": "Bages",
+      "areaKm2": 16.42
+    },
+    {
+      "code": "082172",
+      "name": "Sant Joan Despí",
+      "slug": "sant-joan-despi",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 6.17
+    },
+    {
+      "code": "089030",
+      "name": "Sant Julià de Cerdanyola",
+      "slug": "sant-julia-de-cerdanyola",
+      "comarca": "Berguedà",
+      "areaKm2": 11.79
+    },
+    {
+      "code": "082205",
+      "name": "Sant Julià de Vilatorta",
+      "slug": "sant-julia-de-vilatorta",
+      "comarca": "Osona",
+      "areaKm2": 15.98
+    },
+    {
+      "code": "082212",
+      "name": "Sant Just Desvern",
+      "slug": "sant-just-desvern",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 7.82
+    },
+    {
+      "code": "082227",
+      "name": "Sant Llorenç d'Hortons",
+      "slug": "sant-llorenc-dhortons",
+      "comarca": "Alt Penedès",
+      "areaKm2": 19.73
+    },
+    {
+      "code": "082233",
+      "name": "Sant Llorenç Savall",
+      "slug": "sant-llorenc-savall",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 41.11
+    },
+    {
+      "code": "082251",
+      "name": "Sant Martí d'Albars",
+      "slug": "sant-marti-dalbars",
+      "comarca": "Lluçanès",
+      "areaKm2": 14.73
+    },
+    {
+      "code": "082248",
+      "name": "Sant Martí de Centelles",
+      "slug": "sant-marti-de-centelles",
+      "comarca": "Osona",
+      "areaKm2": 25.87
+    },
+    {
+      "code": "082264",
+      "name": "Sant Martí de Tous",
+      "slug": "sant-marti-de-tous",
+      "comarca": "Anoia",
+      "areaKm2": 38.94
+    },
+    {
+      "code": "082270",
+      "name": "Sant Martí Sarroca",
+      "slug": "sant-marti-sarroca",
+      "comarca": "Alt Penedès",
+      "areaKm2": 35.18
+    },
+    {
+      "code": "082286",
+      "name": "Sant Martí Sesgueioles",
+      "slug": "sant-marti-sesgueioles",
+      "comarca": "Anoia",
+      "areaKm2": 3.86
+    },
+    {
+      "code": "082299",
+      "name": "Sant Mateu de Bages",
+      "slug": "sant-mateu-de-bages",
+      "comarca": "Bages",
+      "areaKm2": 102.97
+    },
+    {
+      "code": "082310",
+      "name": "Sant Pere de Ribes",
+      "slug": "sant-pere-de-ribes",
+      "comarca": "Garraf",
+      "areaKm2": 40.79
+    },
+    {
+      "code": "082325",
+      "name": "Sant Pere de Riudebitlles",
+      "slug": "sant-pere-de-riudebitlles",
+      "comarca": "Alt Penedès",
+      "areaKm2": 5.34
+    },
+    {
+      "code": "082331",
+      "name": "Sant Pere de Torelló",
+      "slug": "sant-pere-de-torello",
+      "comarca": "Osona",
+      "areaKm2": 54.96
+    },
+    {
+      "code": "082346",
+      "name": "Sant Pere de Vilamajor",
+      "slug": "sant-pere-de-vilamajor",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 34.71
+    },
+    {
+      "code": "081897",
+      "name": "Sant Pere Sallavinera",
+      "slug": "sant-pere-sallavinera",
+      "comarca": "Anoia",
+      "areaKm2": 22.02
+    },
+    {
+      "code": "082359",
+      "name": "Sant Pol de Mar",
+      "slug": "sant-pol-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 7.5
+    },
+    {
+      "code": "082362",
+      "name": "Sant Quintí de Mediona",
+      "slug": "sant-quinti-de-mediona",
+      "comarca": "Alt Penedès",
+      "areaKm2": 13.84
+    },
+    {
+      "code": "082378",
+      "name": "Sant Quirze de Besora",
+      "slug": "sant-quirze-de-besora",
+      "comarca": "Osona",
+      "areaKm2": 8.13
+    },
+    {
+      "code": "082384",
+      "name": "Sant Quirze del Vallès",
+      "slug": "sant-quirze-del-valles",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 14.06
+    },
+    {
+      "code": "082397",
+      "name": "Sant Quirze Safaja",
+      "slug": "sant-quirze-safaja",
+      "comarca": "Moianès",
+      "areaKm2": 26.01
+    },
+    {
+      "code": "082401",
+      "name": "Sant Sadurní d'Anoia",
+      "slug": "sant-sadurni-danoia",
+      "comarca": "Alt Penedès",
+      "areaKm2": 18.94
+    },
+    {
+      "code": "082418",
+      "name": "Sant Sadurní d'Osormort",
+      "slug": "sant-sadurni-dosormort",
+      "comarca": "Osona",
+      "areaKm2": 30.53
+    },
+    {
+      "code": "080983",
+      "name": "Sant Salvador de Guardiola",
+      "slug": "sant-salvador-de-guardiola",
+      "comarca": "Bages",
+      "areaKm2": 37.15
+    },
+    {
+      "code": "082628",
+      "name": "Sant Vicenç de Castellet",
+      "slug": "sant-vicenc-de-castellet",
+      "comarca": "Bages",
+      "areaKm2": 17.13
+    },
+    {
+      "code": "082649",
+      "name": "Sant Vicenç de Montalt",
+      "slug": "sant-vicenc-de-montalt",
+      "comarca": "Maresme",
+      "areaKm2": 8.06
+    },
+    {
+      "code": "082652",
+      "name": "Sant Vicenç de Torelló",
+      "slug": "sant-vicenc-de-torello",
+      "comarca": "Osona",
+      "areaKm2": 6.56
+    },
+    {
+      "code": "082634",
+      "name": "Sant Vicenç dels Horts",
+      "slug": "sant-vicenc-dels-horts",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 9.12
+    },
+    {
+      "code": "082439",
+      "name": "Santa Cecília de Voltregà",
+      "slug": "santa-cecilia-de-voltrega",
+      "comarca": "Osona",
+      "areaKm2": 8.63
+    },
+    {
+      "code": "082444",
+      "name": "Santa Coloma de Cervelló",
+      "slug": "santa-coloma-de-cervello",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 7.49
+    },
+    {
+      "code": "082457",
+      "name": "Santa Coloma de Gramenet",
+      "slug": "santa-coloma-de-gramenet",
+      "comarca": "Barcelonès",
+      "areaKm2": 7
+    },
+    {
+      "code": "082460",
+      "name": "Santa Eugènia de Berga",
+      "slug": "santa-eugenia-de-berga",
+      "comarca": "Osona",
+      "areaKm2": 6.98
+    },
+    {
+      "code": "082476",
+      "name": "Santa Eulàlia de Riuprimer",
+      "slug": "santa-eulalia-de-riuprimer",
+      "comarca": "Osona",
+      "areaKm2": 13.82
+    },
+    {
+      "code": "082482",
+      "name": "Santa Eulàlia de Ronçana",
+      "slug": "santa-eulalia-de-roncana",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 14.23
+    },
+    {
+      "code": "082495",
+      "name": "Santa Fe del Penedès",
+      "slug": "santa-fe-del-penedes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 3.4
+    },
+    {
+      "code": "082508",
+      "name": "Santa Margarida de Montbui",
+      "slug": "santa-margarida-de-montbui",
+      "comarca": "Anoia",
+      "areaKm2": 27.52
+    },
+    {
+      "code": "082515",
+      "name": "Santa Margarida i els Monjos",
+      "slug": "santa-margarida-i-els-monjos",
+      "comarca": "Alt Penedès",
+      "areaKm2": 17.16
+    },
+    {
+      "code": "082589",
+      "name": "Santa Maria d'Oló",
+      "slug": "santa-maria-dolo",
+      "comarca": "Moianès",
+      "areaKm2": 66.21
+    },
+    {
+      "code": "082536",
+      "name": "Santa Maria de Besora",
+      "slug": "santa-maria-de-besora",
+      "comarca": "Osona",
+      "areaKm2": 24.91
+    },
+    {
+      "code": "082567",
+      "name": "Santa Maria de Martorelles",
+      "slug": "santa-maria-de-martorelles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 4.48
+    },
+    {
+      "code": "082554",
+      "name": "Santa Maria de Merlès",
+      "slug": "santa-maria-de-merles",
+      "comarca": "Lluçanès",
+      "areaKm2": 52.08
+    },
+    {
+      "code": "082573",
+      "name": "Santa Maria de Miralles",
+      "slug": "santa-maria-de-miralles",
+      "comarca": "Anoia",
+      "areaKm2": 25.08
+    },
+    {
+      "code": "082592",
+      "name": "Santa Maria de Palautordera",
+      "slug": "santa-maria-de-palautordera",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 16.93
+    },
+    {
+      "code": "082606",
+      "name": "Santa Perpètua de Mogoda",
+      "slug": "santa-perpetua-de-mogoda",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 15.79
+    },
+    {
+      "code": "082613",
+      "name": "Santa Susanna",
+      "slug": "santa-susanna",
+      "comarca": "Maresme",
+      "areaKm2": 12.61
+    },
+    {
+      "code": "081923",
+      "name": "Santpedor",
+      "slug": "santpedor",
+      "comarca": "Bages",
+      "areaKm2": 16.59
+    },
+    {
+      "code": "082671",
+      "name": "Sentmenat",
+      "slug": "sentmenat",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 28.8
+    },
+    {
+      "code": "082690",
+      "name": "Seva",
+      "slug": "seva",
+      "comarca": "Osona",
+      "areaKm2": 30.46
+    },
+    {
+      "code": "082704",
+      "name": "Sitges",
+      "slug": "sitges",
+      "comarca": "Garraf",
+      "areaKm2": 43.86
+    },
+    {
+      "code": "082711",
+      "name": "Sobremunt",
+      "slug": "sobremunt",
+      "comarca": "Lluçanès",
+      "areaKm2": 13.87
+    },
+    {
+      "code": "082726",
+      "name": "Sora",
+      "slug": "sora",
+      "comarca": "Osona",
+      "areaKm2": 31.48
+    },
+    {
+      "code": "082732",
+      "name": "Subirats",
+      "slug": "subirats",
+      "comarca": "Alt Penedès",
+      "areaKm2": 55.71
+    },
+    {
+      "code": "082747",
+      "name": "Súria",
+      "slug": "suria",
+      "comarca": "Bages",
+      "areaKm2": 23.6
+    },
+    {
+      "code": "082763",
+      "name": "Tagamanent",
+      "slug": "tagamanent",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 43.47
+    },
+    {
+      "code": "082779",
+      "name": "Talamanca",
+      "slug": "talamanca",
+      "comarca": "Bages",
+      "areaKm2": 29.43
+    },
+    {
+      "code": "082785",
+      "name": "Taradell",
+      "slug": "taradell",
+      "comarca": "Osona",
+      "areaKm2": 26.55
+    },
+    {
+      "code": "082750",
+      "name": "Tavèrnoles",
+      "slug": "tavernoles",
+      "comarca": "Osona",
+      "areaKm2": 18.77
+    },
+    {
+      "code": "082802",
+      "name": "Tavertet",
+      "slug": "tavertet",
+      "comarca": "Osona",
+      "areaKm2": 32.49
+    },
+    {
+      "code": "082819",
+      "name": "Teià",
+      "slug": "teia",
+      "comarca": "Maresme",
+      "areaKm2": 6.76
+    },
+    {
+      "code": "082798",
+      "name": "Terrassa",
+      "slug": "terrassa",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 70.19
+    },
+    {
+      "code": "082824",
+      "name": "Tiana",
+      "slug": "tiana",
+      "comarca": "Maresme",
+      "areaKm2": 7.9
+    },
+    {
+      "code": "082830",
+      "name": "Tona",
+      "slug": "tona",
+      "comarca": "Osona",
+      "areaKm2": 16.54
+    },
+    {
+      "code": "082845",
+      "name": "Tordera",
+      "slug": "tordera",
+      "comarca": "Maresme",
+      "areaKm2": 84.14
+    },
+    {
+      "code": "082858",
+      "name": "Torelló",
+      "slug": "torello",
+      "comarca": "Osona",
+      "areaKm2": 13.5
+    },
+    {
+      "code": "082877",
+      "name": "Torrelavit",
+      "slug": "torrelavit",
+      "comarca": "Alt Penedès",
+      "areaKm2": 23.56
+    },
+    {
+      "code": "082883",
+      "name": "Torrelles de Foix",
+      "slug": "torrelles-de-foix",
+      "comarca": "Alt Penedès",
+      "areaKm2": 37.01
+    },
+    {
+      "code": "082896",
+      "name": "Torrelles de Llobregat",
+      "slug": "torrelles-de-llobregat",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 13.56
+    },
+    {
+      "code": "082900",
+      "name": "Ullastrell",
+      "slug": "ullastrell",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 7.34
+    },
+    {
+      "code": "082917",
+      "name": "Vacarisses",
+      "slug": "vacarisses",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 40.67
+    },
+    {
+      "code": "082922",
+      "name": "Vallbona d'Anoia",
+      "slug": "vallbona-danoia",
+      "comarca": "Anoia",
+      "areaKm2": 6.43
+    },
+    {
+      "code": "082938",
+      "name": "Vallcebre",
+      "slug": "vallcebre",
+      "comarca": "Berguedà",
+      "areaKm2": 28.05
+    },
+    {
+      "code": "082943",
+      "name": "Vallgorguina",
+      "slug": "vallgorguina",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 22.15
+    },
+    {
+      "code": "082956",
+      "name": "Vallirana",
+      "slug": "vallirana",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 23.88
+    },
+    {
+      "code": "082969",
+      "name": "Vallromanes",
+      "slug": "vallromanes",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 10.6
+    },
+    {
+      "code": "082975",
+      "name": "Veciana",
+      "slug": "veciana",
+      "comarca": "Anoia",
+      "areaKm2": 38.96
+    },
+    {
+      "code": "082981",
+      "name": "Vic",
+      "slug": "vic",
+      "comarca": "Osona",
+      "areaKm2": 30.57
+    },
+    {
+      "code": "082994",
+      "name": "Vilada",
+      "slug": "vilada",
+      "comarca": "Berguedà",
+      "areaKm2": 22.34
+    },
+    {
+      "code": "083015",
+      "name": "Viladecans",
+      "slug": "viladecans",
+      "comarca": "Baix Llobregat",
+      "areaKm2": 20.38
+    },
+    {
+      "code": "083008",
+      "name": "Viladecavalls",
+      "slug": "viladecavalls",
+      "comarca": "Vallès Occidental",
+      "areaKm2": 20.09
+    },
+    {
+      "code": "083054",
+      "name": "Vilafranca del Penedès",
+      "slug": "vilafranca-del-penedes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 19.65
+    },
+    {
+      "code": "083067",
+      "name": "Vilalba Sasserra",
+      "slug": "vilalba-sasserra",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 5.95
+    },
+    {
+      "code": "083036",
+      "name": "Vilanova de Sau",
+      "slug": "vilanova-de-sau",
+      "comarca": "Osona",
+      "areaKm2": 58.84
+    },
+    {
+      "code": "083020",
+      "name": "Vilanova del Camí",
+      "slug": "vilanova-del-cami",
+      "comarca": "Anoia",
+      "areaKm2": 10.33
+    },
+    {
+      "code": "089024",
+      "name": "Vilanova del Vallès",
+      "slug": "vilanova-del-valles",
+      "comarca": "Vallès Oriental",
+      "areaKm2": 15.21
+    },
+    {
+      "code": "083073",
+      "name": "Vilanova i la Geltrú",
+      "slug": "vilanova-i-la-geltru",
+      "comarca": "Garraf",
+      "areaKm2": 34.07
+    },
+    {
+      "code": "082140",
+      "name": "Vilassar de Dalt",
+      "slug": "vilassar-de-dalt",
+      "comarca": "Maresme",
+      "areaKm2": 8.93
+    },
+    {
+      "code": "082191",
+      "name": "Vilassar de Mar",
+      "slug": "vilassar-de-mar",
+      "comarca": "Maresme",
+      "areaKm2": 3.97
+    },
+    {
+      "code": "083041",
+      "name": "Vilobí del Penedès",
+      "slug": "vilobi-del-penedes",
+      "comarca": "Alt Penedès",
+      "areaKm2": 9.33
+    },
+    {
+      "code": "083089",
+      "name": "Viver i Serrateix",
+      "slug": "viver-i-serrateix",
+      "comarca": "Berguedà",
+      "areaKm2": 66.8
+    }
+  ]
+}

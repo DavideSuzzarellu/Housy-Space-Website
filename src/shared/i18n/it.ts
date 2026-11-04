@@ -240,6 +240,31 @@ const it = {
     clusterLabel: "{count} immobili: ingrandisci la mappa",
     approximateSuffix: "(posizione approssimativa)",
   },
+  province: {
+    heading: "Provincia di Barcellona",
+    lead: "I 311 comuni della provincia di Barcellona con i loro dati ufficiali: comarca, codice territoriale e superficie.",
+    description:
+      "I 311 comuni della provincia di Barcellona: comarca, codice territoriale e superficie ufficiali.",
+    tableCaption: "Comuni della provincia di Barcellona",
+    municipality: "Comune",
+    comarca: "Comarca",
+    code: "Codice territoriale",
+    area: "Superficie",
+    population: "Popolazione",
+    density: "Densità di popolazione",
+    notAvailable: "Non disponibile",
+    municipalityTag: "Comune · {comarca}",
+    municipalityLead:
+      "Dati ufficiali di {name}, comune della comarca di {comarca}, nella provincia di Barcellona.",
+    municipalityDescription:
+      "Comarca, codice territoriale e superficie ufficiali di {name} (provincia di Barcellona).",
+    officialData: "Dati ufficiali",
+    sourceNote:
+      "Comarca, codice territoriale e superficie: [{provider}]({url}), {license}. Popolazione e prezzi delle abitazioni non sono presenti in questa fonte: sono indicati come non disponibili finché non si aggiungono i dati ufficiali dell'INE e di Idescat.",
+    others: "Altri comuni di {comarca}",
+    all: "Tutti i comuni",
+    cityLink: "Barcellona, quartiere per quartiere",
+  },
   newsletter: {
     formLabel: "Iscrizione alla newsletter",
     heading: "Newsletter e articoli",

@@ -6,8 +6,8 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { figureFormat, formatMessage, formatPrice } from "@/shared/lib/format";
 import Button from "@/shared/ui/atoms/Button.astro";
-import Container from "@/shared/ui/atoms/Container.astro";
-import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import FactList from "@/shared/ui/molecules/FactList.astro";
+import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
 import BarChart from "@/shared/ui/organisms/charts/BarChart.astro";
@@ -104,32 +104,20 @@ const crumbs = [
 const districtLabel = formatMessage(t.districtSuffix, { name: district.name });
 ---
 
-<section class="bg-canvas pt-8 pb-10">
-  <Container>
-    <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-6" />
-    <p class="text-[0.6875rem] tracking-[0.16em] text-accent">
-      {formatMessage(t.barrioTag, { district: district.name })}
-    </p>
-    <h1 class="mt-3 text-[clamp(1.875rem,4.8vw,3.5rem)]">{barrio.name}</h1>
-    <p class="mt-4 max-w-[62ch] text-muted">
-      {formatMessage(t.barrioLead, { district: district.name })}
-    </p>
-  </Container>
-</section>
+<PageHeader
+  crumbs={crumbs}
+  breadcrumbLabel={dictionary.property.detail.breadcrumb}
+  tag={formatMessage(t.barrioTag, { district: district.name })}
+  heading={barrio.name}
+  lead={formatMessage(t.barrioLead, { district: district.name })}
+/>
 
 <Section id="datos" labelledBy="barrio-figures" name="barrio-figures" surface="stone">
   <h2 id="barrio-figures" class="sr-only">
     {t.officialData}
   </h2>
   <MarketKpis locale={locale} items={kpis} />
-  <dl class="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-    {facts.map((fact) => (
-      <div class="border-t border-line pt-2.5">
-        <dt class="text-xs text-muted">{fact.label}</dt>
-        <dd class="font-semibold">{fact.value}</dd>
-      </div>
-    ))}
-  </dl>
+  <FactList facts={facts} variant="list" class="mt-6" />
   <div class="mt-7 flex flex-wrap gap-3">
     <Button href={getLocalizedPath("valuation", locale)} variant="solid" arrow>
       {t.valueHere}

@@ -11,6 +11,10 @@ import type {
 import BarrioView from "@/features/districts/ui/BarrioView.astro";
 import DistrictView from "@/features/districts/ui/DistrictView.astro";
 import LivingView from "@/features/districts/ui/LivingView.astro";
+import MunicipalitiesView from "@/features/districts/ui/MunicipalitiesView.astro";
+import MunicipalityView from "@/features/districts/ui/MunicipalityView.astro";
+import { getMunicipalities } from "@/features/districts/application/municipalities";
+import type { Municipality } from "@/features/districts/infrastructure/municipalitySchema";
 import {
   CONTENT_FILE,
   EDITORIAL,
@@ -23,6 +27,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
 import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
+import { formatMessage } from "@/shared/lib/format";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
 
 /**
@@ -36,11 +41,14 @@ type View =
   | { readonly view: "living" }
   | { readonly view: "post"; readonly post: BlogPost }
   | { readonly view: "district"; readonly district: MarketDistrict }
-  | { readonly view: "barrio"; readonly barrio: MarketBarrio };
+  | { readonly view: "barrio"; readonly barrio: MarketBarrio }
+  | { readonly view: "municipalities" }
+  | { readonly view: "municipality"; readonly municipality: Municipality };
 
 export const getStaticPaths = (async () => {
   const market = await getMarket();
   const posts = await getPosts();
+  const { municipalities } = await getMunicipalities();
   const paramOf = (path: string, locale: Locale) => path.slice(`/${locale}/`.length);
   return LOCALES.flatMap((locale) => {
     const entry = (path: string, view: View) => ({
@@ -71,6 +79,13 @@ export const getStaticPaths = (async () => {
           { view: "barrio", barrio },
         ),
       ),
+      entry(getLocalizedPath("municipalities", locale), { view: "municipalities" }),
+      ...municipalities.map((municipality) =>
+        entry(getLocalizedPath("municipality", locale, { municipio: municipality.slug }), {
+          view: "municipality",
+          municipality,
+        }),
+      ),
     ];
   });
 }) satisfies GetStaticPaths;
@@ -86,6 +101,8 @@ const home = { label: dictionary.property.detail.home, href: getLocalizedPath("h
 const market = await getMarket();
 const posts = await getPosts();
 const zones = dictionary.zones;
+const province = dictionary.province;
+const municipalityData = await getMunicipalities();
 const isSpanish = locale === DEFAULT_LOCALE;
 
 const editorial =
@@ -138,6 +155,22 @@ function metaOf(): {
         district: target.barrio.district,
         barrio: target.barrio.slug,
       }),
+    };
+  }
+  if (target.view === "municipalities") {
+    return {
+      title: `${province.heading} · HousySpace`,
+      description: province.description,
+      alternates: getAlternates("municipalities"),
+    };
+  }
+  if (target.view === "municipality") {
+    return {
+      title: `${target.municipality.name} · ${province.heading} · HousySpace`,
+      description: formatMessage(province.municipalityDescription, {
+        name: target.municipality.name,
+      }),
+      alternates: getAlternates("municipality", { municipio: target.municipality.slug }),
     };
   }
   return {
@@ -196,6 +229,12 @@ const crumbs = [
       market={market}
       fallback={!isSpanish}
     />
+  )}
+  {target.view === "municipalities" && (
+    <MunicipalitiesView locale={locale} data={municipalityData} />
+  )}
+  {target.view === "municipality" && (
+    <MunicipalityView locale={locale} data={municipalityData} slug={target.municipality.slug} />
   )}
   {target.view === "barrio" && (
     <BarrioView locale={locale} barrio={target.barrio} market={market} />

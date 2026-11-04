@@ -228,7 +228,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
 17. Services — 9 service pages, no index (the home `#servicios` lists them), as in v3: sale brokerage, valuation, legal & tax advice, renovations & interior design, personalised advisory, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
-20. Barcelona province — ~155 municipality pages with official data table (population, area, density, comarca, territorial code) + market data where available.
+20. Barcelona province — index + 311 municipality pages (collection `municipalities`, data from proposal v3: territorial code, comarca and area by the ICGC). Population, density and market data show "not available" until the INE/Idescat datasets (I8) are added.
 21. Custom search ("búsqueda a medida") — `LeadForm` variant.
 22. International guide — NIE, taxes, financing; content pending review by the partner tax advisor/law firm (`TODO`).
 23. Data sources page — every dataset, provider, license, last update, and link (section 6.2).

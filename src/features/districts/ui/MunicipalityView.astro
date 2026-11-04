@@ -1,0 +1,95 @@
+---
+import { neighboursInComarca } from "@/features/districts/domain/municipalities";
+import type { MunicipalitiesData } from "@/features/districts/infrastructure/municipalitySchema";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { formatMessage, formatNumber } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import FactList from "@/shared/ui/molecules/FactList.astro";
+import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+
+/**
+ * One municipality of the province (AGENTS.md §6 item 20): only the official figures of the
+ * source; population and density stay "not available" until INE/Idescat data exist (§6.2).
+ */
+interface Props {
+  locale: Locale;
+  data: MunicipalitiesData;
+  slug: string;
+}
+
+const { locale, data, slug } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.province;
+const municipality = data.municipalities.find((item) => item.slug === slug);
+if (municipality === undefined) throw new Error(`Unknown municipality "${slug}"`);
+
+const provincePath = getLocalizedPath("municipalities", locale);
+const neighbours = neighboursInComarca(data.municipalities, slug);
+const facts = [
+  { label: t.comarca, value: municipality.comarca },
+  { label: t.code, value: municipality.code },
+  { label: t.area, value: `${formatNumber(municipality.areaKm2, locale)} km²` },
+  { label: t.population, value: t.notAvailable },
+  { label: t.density, value: t.notAvailable },
+];
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: t.heading, href: provincePath },
+  { label: municipality.name },
+];
+---
+
+<PageHeader
+  crumbs={crumbs}
+  breadcrumbLabel={dictionary.property.detail.breadcrumb}
+  tag={formatMessage(t.municipalityTag, { comarca: municipality.comarca })}
+  heading={municipality.name}
+  lead={formatMessage(t.municipalityLead, {
+    name: municipality.name,
+    comarca: municipality.comarca,
+  })}
+/>
+
+<Section id="datos" labelledBy="municipality-figures" name="municipality-figures" surface="stone">
+  <h2 id="municipality-figures" class="sr-only">
+    {t.officialData}
+  </h2>
+  <FactList facts={facts} variant="list" />
+  <p class="mt-6 max-w-[70ch] text-xs text-muted">
+    <Inline text={formatMessage(t.sourceNote, data.source)} locale={locale} />
+  </p>
+  <div class="mt-7 flex flex-wrap gap-3">
+    {slug === "barcelona" && (
+      <Button href={getLocalizedPath("living", locale)} variant="solid" arrow>
+        {t.cityLink}
+      </Button>
+    )}
+    <Button href={provincePath}>{t.all}</Button>
+  </div>
+</Section>
+
+{neighbours.length > 0 && (
+  <Section id="comarca" labelledBy="comarca-heading" name="comarca">
+    <SectionHeading
+      id="comarca-heading"
+      heading={formatMessage(t.others, { comarca: municipality.comarca })}
+    />
+    <ul class="mt-6 columns-2 gap-x-8 text-sm sm:columns-3 lg:columns-4">
+      {neighbours.map((item) => (
+        <li class="break-inside-avoid py-1">
+          <a
+            href={getLocalizedPath("municipality", locale, { municipio: item.slug })}
+            class="hover:text-accent"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Section>
+)}

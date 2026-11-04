@@ -246,6 +246,31 @@ const es = {
     clusterLabel: "{count} inmuebles: acercar el mapa",
     approximateSuffix: "(ubicación aproximada)",
   },
+  province: {
+    heading: "Provincia de Barcelona",
+    lead: "Los 311 municipios de la provincia de Barcelona con sus datos oficiales: comarca, código territorial y superficie.",
+    description:
+      "Los 311 municipios de la provincia de Barcelona: comarca, código territorial y superficie oficiales.",
+    tableCaption: "Municipios de la provincia de Barcelona",
+    municipality: "Municipio",
+    comarca: "Comarca",
+    code: "Código territorial",
+    area: "Superficie",
+    population: "Población",
+    density: "Densidad de población",
+    notAvailable: "No disponible",
+    municipalityTag: "Municipio · {comarca}",
+    municipalityLead:
+      "Datos oficiales de {name}, municipio de la comarca de {comarca}, en la provincia de Barcelona.",
+    municipalityDescription:
+      "Comarca, código territorial y superficie oficiales de {name} (provincia de Barcelona).",
+    officialData: "Datos oficiales",
+    sourceNote:
+      "Comarca, código territorial y superficie: [{provider}]({url}), {license}. La población y los precios de vivienda no figuran en esta fuente: se muestran como no disponibles hasta incorporar los datos oficiales del INE y de Idescat.",
+    others: "Otros municipios de {comarca}",
+    all: "Todos los municipios",
+    cityLink: "Barcelona, barrio a barrio",
+  },
   newsletter: {
     formLabel: "Suscripción a la newsletter",
     heading: "Newsletter y artículos",
