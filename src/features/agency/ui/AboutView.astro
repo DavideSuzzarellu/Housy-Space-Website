@@ -107,7 +107,7 @@ const NAV_SECTIONS = [
   {/* ── IN-PAGE STICKY NAV ───────────────────────────────────────────── */}
   <nav
     id="about-nav"
-    aria-label="Secciones de la página"
+    aria-label={ta.inPageNav.whoWeAre + " · " + ta.inPageNav.whereWeAre}
     class="sticky top-0 z-10 border-b border-line bg-canvas/95 backdrop-blur-sm"
   >
     <Container>
@@ -128,26 +128,22 @@ const NAV_SECTIONS = [
   </nav>
 
   {/* ── QUIÉNES SOMOS: EXPERIENCIA + STATS ──────────────────────────── */}
-  <section
-    id="quienes-somos"
-    aria-labelledby="about-experience-heading"
-    class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
-  >
+  <section id="quienes-somos" class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
     <Container>
       <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
         {ta.inPageNav.experience.toUpperCase()}
       </p>
 
-      {/* Timeline */}
+      {/* Timeline — li uses default stretch so the icon column grows to match the text column */}
       {timelineItem !== undefined && (
         <div class="mb-10">
           <ol class="mt-4 flex flex-col gap-0">
             {timelineItem.items.map((entry, i) => (
-              <li class="relative flex items-start gap-4 pb-6 last:pb-0">
-                <div class="mt-1 flex shrink-0 flex-col items-center">
+              <li class="relative flex gap-4 pb-6 last:pb-0">
+                <div class="flex shrink-0 flex-col items-center pt-1">
                   <span class="flex size-5 items-center justify-center rounded-full border-2 border-accent bg-canvas"></span>
                   {i < timelineItem.items.length - 1 && (
-                    <span class="mt-1 h-full w-px flex-1 bg-line" aria-hidden="true"></span>
+                    <span class="mt-1 w-px flex-1 bg-line" aria-hidden="true"></span>
                   )}
                 </div>
                 <div class="pb-2">
@@ -188,11 +184,7 @@ const NAV_SECTIONS = [
   </section>
 
   {/* ── NUESTRA HISTORIA ─────────────────────────────────────────────── */}
-  <section
-    id="historia"
-    aria-labelledby="about-history-heading"
-    class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
-  >
+  <section id="historia" class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
     <Container>
       <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
         {ta.inPageNav.history.toUpperCase()}
@@ -208,11 +200,7 @@ const NAV_SECTIONS = [
 
   {/* ── NUESTRA FILOSOFÍA ────────────────────────────────────────────── */}
   {filosofiaSection !== undefined && (
-    <section
-      id="filosofia"
-      aria-labelledby="about-philosophy-heading"
-      class="surface-dark bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
-    >
+    <section id="filosofia" class="surface-dark bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
       <Container>
         <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
           {ta.inPageNav.philosophy.toUpperCase()}
@@ -275,9 +263,6 @@ const NAV_SECTIONS = [
             role="listitem"
             class="w-[clamp(14rem,36vw,20rem)] shrink-0 border-t border-line pt-4"
           >
-            <p class="mb-1 text-[0.625rem] font-semibold tracking-[0.14em] text-accent">
-              {t.serviceNames[card.key].split(" ")[0]?.toUpperCase()}
-            </p>
             <h3 class="mb-3 text-[clamp(0.9375rem,1.4vw,1.0625rem)] font-bold leading-tight">
               {card.name}
             </h3>
@@ -310,9 +295,7 @@ const NAV_SECTIONS = [
   >
     <Container>
       <h2 id="about-where-heading" class="mb-8 text-[clamp(1.5rem,3.6vw,2.5rem)]">
-        {ta.whereWeAre.addressLabel !== "Dirección"
-          ? ta.inPageNav.whereWeAre
-          : ta.inPageNav.whereWeAre}
+        {ta.inPageNav.whereWeAre}
       </h2>
       <div class="grid gap-10 md:grid-cols-2">
         <div class="space-y-6">
