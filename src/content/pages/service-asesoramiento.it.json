@@ -1,0 +1,102 @@
+{
+  "title": "Consulenza immobiliare personalizzata · HousySpace",
+  "description": "Orientamento chiaro, su misura, prima di prendere qualsiasi decisione.",
+  "head": {
+    "heading": "Consulenza immobiliare personalizzata",
+    "photo": true,
+    "items": [
+      { "kind": "image", "src": "../../assets/home/det-cielo-1400.jpg" },
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Orientamento chiaro, su misura, prima di prendere qualsiasi decisione." }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Non sai da dove iniziare? Inizia da qui." },
+        { "kind": "p", "text": "Prima di comprare, vendere, affittare o investire, conviene parlarne. Come consulenti immobiliari, ti diciamo onestamente se conviene farlo, come e quando, e ti proponiamo una tabella di marcia chiara." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Cosa ti aiutiamo a decidere" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Se", "text": "Se conviene Ti diciamo onestamente se conviene comprare, vendere o aspettare." },
+            { "title": "Come", "text": "Come farlo La strategia giusta per la tua operazione e la tua situazione." },
+            { "title": "Quando", "text": "Quando è il momento Il momento opportuno in base al mercato e alle tue tempistiche." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Situazioni comuni" },
+        { "kind": "h2", "text": "Potresti essere qui" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "[**Vendo o affitto?**Confrontiamo le due opzioni con i numeri: prezzo di vendita, rendita attesa, tasse e costi.Compravendita e intermediazione immobiliare →](service:venta-estrategica)" },
+            { "title": "", "text": "[**Compro adesso o aspetto?**Guardiamo il mercato nella tua zona e quanto puoi finanziare oggi.Consulenza finanziaria →](service:asesoramiento-financiero)" },
+            { "title": "", "text": "[**Ho ereditato un immobile**Quali pratiche sono necessarie, quali tasse pagare e cosa farne.Consulenza legale e fiscale →](service:asesoramiento-juridico-fiscal)" },
+            { "title": "", "text": "[**Devo ristrutturare prima di vendere?**Quali lavori aggiungono valore e quali non valgono la pena.Ristrutturazioni e interior design →](service:reformas-obras)" },
+            { "title": "", "text": "[**Voglio cambiare casa**Come coordinare la vendita della tua e l'acquisto di quella nuova.Personal Shopper immobiliare →](service:personal-shopper)" },
+            { "title": "", "text": "[**Voglio investire in immobili**Cosa comprare, con quali numeri e quale rendimento aspettarsi davvero.Investimento immobiliare →](service:inversion-inmobiliaria)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Come lo facciamo" },
+        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversazione", "text": "Parliamo della tua situazione e di ciò che vuoi ottenere." },
+            { "title": "Analisi", "text": "Studiamo l'immobile, la zona e le alternative." },
+            { "title": "Tabella di marcia", "text": "Ti proponiamo i passi, le tempistiche e i costi." },
+            { "title": "Accompagnamento", "text": "Ti aiutiamo a decidere e, se vuoi, a realizzarlo." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        { "kind": "p", "text": "Un consulente di riferimento e una rete di professionisti di fiducia: un unico interlocutore per tutto ciò che riguarda il tuo immobile." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

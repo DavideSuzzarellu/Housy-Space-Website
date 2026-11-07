@@ -1,0 +1,116 @@
+{
+  "title": "Personal Shopper immobiliare · HousySpace",
+  "description": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo — e se serve, lo ristrutturiamo anche noi.",
+  "head": {
+    "heading": "Personal Shopper immobiliare",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo — e se serve, lo ristrutturiamo anche noi." },
+      { "kind": "image", "src": "../../assets/home/portal-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Cerchiamo per te, visitiamo insieme e ti consegniamo le chiavi." },
+        { "kind": "p", "text": "Definisci le tue esigenze e noi facciamo il resto: cerchiamo, filtriamo e visitiamo con te solo ciò che corrisponde al tuo profilo. Prima che tu decida, studiamo l'immobile in profondità per farti comprare senza sorprese." },
+        { "kind": "p", "text": "E se l'appartamento che ti piace ha bisogno di ristrutturazione, ce ne occupiamo noi." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Come lo facciamo" },
+        { "kind": "h2", "text": "Dalla ricerca alla consegna delle chiavi" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Profilo di ricerca", "text": "Zona, tipologia, budget e priorità: cosa cerchi e cosa no." },
+            { "title": "Ricerca attiva", "text": "Monitoriamo il mercato secondo i tuoi criteri, anche per immobili non ancora pubblicati." },
+            { "title": "Selezione", "text": "Ti presentiamo solo le opzioni che meritano una visita." },
+            { "title": "Visite", "text": "Le organizziamo e ti accompagniamo con uno sguardo tecnico." },
+            { "title": "Trattativa e acquisto", "text": "Trattiamo il prezzo e ti accompagniamo fino al rogito." },
+            { "title": "Ristrutturazione", "text": "Se necessario, progettiamo ed eseguiamo i lavori per farti entrare direttamente." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Nessuna sorpresa" },
+        { "kind": "h2", "text": "Cosa verifichiamo prima che tu compri" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01L'immobileStato reale dell'abitazione, impianti e possibili lavori con il loro costo." },
+            { "title": "", "text": "02L'edificioStato dell'immobile, ispezione tecnica e lavori previsti o spese condominiali." },
+            { "title": "", "text": "03DocumentazioneVisura catastale, ipoteche, certificato di abitabilità e certificato energetico." },
+            { "title": "", "text": "04Il prezzoConfronto con vendite recenti nella zona per non pagare di più." },
+            { "title": "", "text": "05FinanziamentoConil nostro broker finanziario, il mutuo studiato prima di impegnarsi. [Vedi consulenza finanziaria](service:asesoramiento-financiero)." },
+            { "title": "", "text": "06L'ambienteServizi, trasporti, rumore e evoluzione del quartiere." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "image", "src": "../../assets/home/det-salon-1400.jpg" },
+        { "kind": "tag", "text": "Ristrutturazioni" },
+        { "kind": "h2", "text": "L'appartamento ha bisogno di ristrutturazione? Ce ne occupiamo noi." },
+        { "kind": "p", "text": "Spesso l'immobile giusto ha bisogno di lavori. Invece di cercare architetti, preventivi e imprese per conto tuo, lo facciamo noi con lo studio di architettura e interior design con cui collaboriamo." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Preventivo della ristrutturazione prima dell'acquisto, per decidere con il costo totale." },
+            { "title": "", "text": "Progetto, permessi e lavori coordinati da noi." },
+            { "title": "", "text": "Monitoraggio dei tempi e delle finiture fino alla consegna." }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Ristrutturazioni e interior design", "href": "service:reformas-obras", "solid": false }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        { "kind": "p", "text": "Dalla prima visita al giorno in cui entri a vivere, hai un solo consulente di riferimento." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

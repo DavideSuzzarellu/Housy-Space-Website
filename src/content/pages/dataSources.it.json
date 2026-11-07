@@ -1,0 +1,83 @@
+{
+  "title": "Fonti dei dati · HousySpace",
+  "description": "Stato delle fonti ufficiali e degli aggiornamenti delle statistiche.",
+  "head": {
+    "heading": "Fonti dei dati",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Trasparenza"
+      },
+      {
+        "kind": "lead",
+        "text": "Da dove provengono i dati sui quartieri di Barcellona e quando sono stati verificati per l'ultima volta."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Copertura attuale"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Popolazione e densità per quartiere (Padró municipal, Open Data BCN): 73 su 73 quartieri."
+            },
+            {
+              "title": "",
+              "text": "Prezzo medio di compravendita (Portal de Dades del Ajuntament, Consejo General del Notariado): 73 su 73 quartieri."
+            },
+            {
+              "title": "",
+              "text": "Affitto medio (Portal de Dades del Ajuntament, depositi cauzionali INCASÒL): 73 su 73 quartieri."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "Fonti e ultima verifica"
+        },
+        {
+          "kind": "table",
+          "head": ["Fonte", "Ultima esecuzione", "Data", "Ultima corretta", "Dettaglio"],
+          "rows": [
+            [
+              "Ajuntament de Barcelona · Open Data BCN (API CKAN)",
+              "nessuna esecuzione ancora",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · CartoBCN (confini amministrativi)",
+              "nessuna esecuzione ancora",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · Portal Barcelona Dades (mercato immobiliare)",
+              "ok",
+              "20/10/2026",
+              "20/10/2026",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Il sistema controlla le fonti ogni 6 ore. Se una fonte non risponde, vengono conservati gli ultimi dati validi e, dopo tre errori consecutivi, il team viene avvisato. Generato: 20/10/2026."
+        }
+      ]
+    }
+  ]
+}

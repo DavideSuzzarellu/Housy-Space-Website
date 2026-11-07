@@ -1,0 +1,104 @@
+{
+  "title": "Property valuation service · HousySpace",
+  "description": "An instant reference with the online tool or a comprehensive report with a market study.",
+  "head": {
+    "heading": "Property valuation",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "An instant reference with the online tool or a comprehensive report with a market study." },
+      { "kind": "image", "src": "../../assets/home/det-terraza-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Two ways to know your property's value" },
+        { "kind": "h3", "text": "Instantly" },
+        { "kind": "p", "text": "With our online valuation tool." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "You enter your property details." },
+            { "title": "", "text": "You instantly receive an indicative reference value." },
+            { "title": "", "text": "If you like, an advisor can review it with you." }
+          ]
+        },
+        { "kind": "buttons", "items": [{ "label": "Go to the valuation tool", "href": "route:valuation", "solid": true }] },
+        { "kind": "h3", "text": "Valuation report" },
+        { "kind": "p", "text": "We study your property in depth." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "We visit the property and review its documentation." },
+            { "title": "", "text": "We analyse the neighbourhood, the market and recent sales." },
+            { "title": "", "text": "We deliver the report and discuss it with you." }
+          ]
+        },
+        { "kind": "buttons", "items": [{ "label": "Request a report", "href": "route:contact", "solid": false }] }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "What's included" },
+        { "kind": "h2", "text": "A report to decide with data" },
+        { "kind": "lead", "text": "It's the same report we prepare before listing a property for sale." },
+        { "kind": "p", "text": "Valuation report" },
+        { "kind": "p", "text": "HousySpace" },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            { "title": "Location and neighbourhood", "text": "01 Property situation and neighbourhood history" },
+            { "title": "Neighbourhood data", "text": "02 Average price per m² for sales, according to Barcelona City Council" },
+            { "title": "Planning and cadastral information", "text": "03 Cadastral reference, zoning and property data" },
+            { "title": "Cadastral reference value", "text": "04 The value set by the Cadastre for the property" },
+            { "title": "Data and measurements", "text": "05 Built and usable area, room by room" },
+            { "title": "Features and condition", "text": "06 Condition of the property and building, installations, orientation" },
+            { "title": "Documentation", "text": "07 Habitation certificate, energy certificate and ITE" },
+            { "title": "Comparables", "text": "08 Similar properties on portals and sold in the area" },
+            { "title": "Market study", "text": "09 Current supply your property will compete with" },
+            { "title": "Valuation", "text": "10 Market value, price per m² and recommended asking price" }
+          ]
+        },
+        { "kind": "p", "text": "This is not an official appraisal: it is a market valuation to help you decide with confidence." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Frequently asked questions" },
+        { "kind": "h2", "text": "What people ask us" },
+        { "kind": "faq", "q": "Is it the same as an official appraisal?", "a": "No. An official appraisal is carried out by an accredited valuation firm and is usually required by the bank for a mortgage. Our report is a market valuation: it tells you what a property like yours sells for today." },
+        { "kind": "faq", "q": "What is it useful for?", "a": "To decide whether to sell and at what price, but also when dealing with an inheritance, a divorce or a division between co-owners, or simply to know how much your asset is worth." },
+        { "kind": "faq", "q": "Is the online tool enough?", "a": "It's a good first reference. For an important decision, we recommend the full report: it takes into account the actual condition of the property and the building." },
+        { "kind": "faq", "q": "What if I then want to sell?", "a": "The report is the first step of our [sales service](service:venta-estrategica): you will already have the price and the strategy." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "title": "Política de privacitat · HousySpace",
+  "description": "Política de privacitat de HousySpace (pendent).",
+  "head": {
+    "heading": "Política de privacitat",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Text en esborrany, pendent d'aprovació.** Està redactat per al formulari 'Busco habitatge', els consentiments de màrqueting i el butlletí. L'assessoria jurídica de HousySpace l'ha de revisar abans de publicar el web. Els punts que HousySpace ha de confirmar s'indiquen al final."
+        },
+        {
+          "kind": "note",
+          "text": "Darrera actualització: 28 d'octubre de 2026 (esborrany)"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Qui és el responsable del tractament"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.** CIF B26903419 Registre d'Agents Immobiliaris de Catalunya: AICAT nº 14032 Correu electrònic: [info@housyspace.com](mailto:info@housyspace.com) Telèfon: 613 084 804 Domicili social i dades registrals: pendents de completar."
+        },
+        {
+          "kind": "h2",
+          "text": "2. Quines dades tractem"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Dades de contacte:** nom, cognoms, telèfon, adreça electrònica, idioma i canal o franja horària de preferència."
+            },
+            {
+              "title": "",
+              "text": "**Dades de la teva cerca** (formulari 'Busco habitatge'): operació (compra o lloguer), tipus d'immoble, zones, pressupost, superfície, habitacions, banys, característiques, terminis i, si ens ho expliques, la teva situació de finançament o si estàs venent el teu habitatge actual."
+            },
+            {
+              "title": "",
+              "text": "**Dades del teu immoble** si demanes una valoració o vols vendre'l: adreça o barri, tipologia, superfície i estat."
+            },
+            {
+              "title": "",
+              "text": "**El text que escrius a l'assistent de cerca**, que es desa als teus comentaris si envies la cerca, i el perfil que en surt."
+            },
+            {
+              "title": "",
+              "text": "**Els teus comentaris** i les dades que decideixis incloure-hi. No incloguis dades que no siguin necessàries, com ara dades de salut o de terceres persones."
+            },
+            {
+              "title": "",
+              "text": "**Prova dels teus consentiments:** el text que has acceptat, la versió del text i la data."
+            },
+            {
+              "title": "",
+              "text": "**Dades de navegació** mitjançant cookies: s'expliquen a la [política de cookies](route:cookies)."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Les dades ens les facilites tu. No demanem dades especialment protegides."
+        },
+        {
+          "kind": "h2",
+          "text": "3. Per a quins fins les fem servir i amb quina base jurídica"
+        },
+        {
+          "kind": "table",
+          "head": ["Finalitat", "Base jurídica", "Termini de conservació"],
+          "rows": [
+            [
+              "Atendre les teves consultes i sol·licituds de contacte (formulari de contacte, correu electrònic, WhatsApp o telèfon).",
+              "El teu consentiment (art. 6.1.a RGPD) i l'aplicació de mesures precontractuals a petició teva (art. 6.1.b).",
+              "El temps necessari per atendre't. Després, bloquejades mentre puguin sorgir responsabilitats legals."
+            ],
+            [
+              "Valorar el teu immoble (valorador i sol·licitud de valoració presencial).",
+              "El teu consentiment (art. 6.1.a) i mesures precontractuals a petició teva (art. 6.1.b).",
+              "El temps necessari per a la valoració i el seguiment. Després, bloquejades el temps que exigeixi la llei."
+            ],
+            [
+              "Mantenir la teva cerca d'habitatge a la nostra base de dades de demandants (formularis 'Busco habitatge' i 'Cerca a mida'), creuar-la amb els immobles disponibles, avisar-te dels que encaixen i contactar amb tu.",
+              "El teu consentiment (art. 6.1.a), que prestes marcant la casella del formulari.",
+              "Mentre la teva cerca estigui activa i, com a màxim, 12 mesos des del nostre darrer contacte. (Termini pendent de confirmació per HousySpace.)"
+            ],
+            [
+              "Prestar els serveis que contractis (intermediació, assessorament, gestió del lloguer…) i complir les obligacions legals associades.",
+              "Execució del contracte (art. 6.1.b) i compliment d'obligacions legals (art. 6.1.c), per exemple les fiscals i les de prevenció del blanqueig de capitals.",
+              "Mentre duri la relació i, després, els terminis que fixi la llei per a cada obligació."
+            ],
+            [
+              "Enviar-te comunicacions comercials sobre immobles, serveis i novetats per correu electrònic, WhatsApp o telèfon, segons el canal que triïs.",
+              "El teu consentiment (art. 6.1.a RGPD) i l'autorització expressa que exigeix l'art. 21 de la LSSI. És voluntari i no afecta la teva cerca.",
+              "Fins que retiris el teu consentiment o et donis de baixa."
+            ],
+            [
+              "Enviar-te el butlletí i els articles de HousySpace per correu electrònic.",
+              "El teu consentiment (art. 6.1.a RGPD) i l'autorització expressa que exigeix l'art. 21 de la LSSI. És voluntari i independent dels altres.",
+              "Fins que et donis de baixa amb l'enllaç de cada enviament o escrivint a info@housyspace.com."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Cada consentiment és independent i el pots retirar en qualsevol moment, sense que afecti la licitud del tractament anterior. Les caselles de comunicacions comercials i de butlletí venen sense marcar i no marcar-les no afecta la teva cerca."
+        },
+        {
+          "kind": "h2",
+          "text": "4. Qui rep les teves dades"
+        },
+        {
+          "kind": "p",
+          "text": "No cedim les teves dades a tercers, tret d'obligació legal (per exemple, a l'Administració tributària o a les autoritats competents)."
+        },
+        {
+          "kind": "p",
+          "text": "Si sol·licites un servei que requereix la intervenció d'altres professionals, com ara assessorament financer o jurídic, una obra, un notari o un registre, t'ho comunicarem i només compartirem les teves dades amb ells amb el teu coneixement i, quan escaigui, el teu consentiment."
+        },
+        {
+          "kind": "p",
+          "text": "Per prestar-te el servei, poden tractar dades per compte nostre i amb contracte, com a encarregats del tractament, els proveïdors que donen suport a l'allotjament del web, a la base de dades o CRM, al correu electrònic i a l'enviament del butlletí, i a la missatgeria (per exemple, WhatsApp quan tries aquest canal). Llista definitiva pendent de confirmar."
+        },
+        {
+          "kind": "p",
+          "text": "**Valorador en línia.** El valorador de la pàgina 'Valoració' el presta un proveïdor extern, Lystos, i es mostra dins de la nostra pàgina. Les dades que hi introdueixis les rep aquest proveïdor i les tracta segons la seva informació de privacitat, que et recomanem llegir; no és el formulari 'Sol·licitar valoració' de HousySpace. Funció de Lystos, dades que rebem, termini de conservació i cookies pendents de confirmar."
+        },
+        {
+          "kind": "h2",
+          "text": "5. Transferències internacionals"
+        },
+        {
+          "kind": "p",
+          "text": "Alguns proveïdors (per exemple, de missatgeria o de mapes) poden tractar dades fora de l'Espai Econòmic Europeu. En aquest cas, es fa amb les garanties que exigeix el RGPD, com una decisió d'adequació de la Comissió Europea o clàusules contractuals tipus. Pendent de confirmar segons els proveïdors definitius."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Els teus drets"
+        },
+        {
+          "kind": "p",
+          "text": "Pots exercir els teus drets d'accés, rectificació, supressió, oposició, limitació del tractament i portabilitat, i retirar els teus consentiments, escrivint a [info@housyspace.com](mailto:info@housyspace.com) i indicant quin dret vols exercir. Per atendre't bé, et podem demanar que acreditis la teva identitat. Responem en el termini d'un mes."
+        },
+        {
+          "kind": "p",
+          "text": "Per donar-te de baixa del butlletí o de les comunicacions comercials, pots fer servir l'enllaç de baixa de cada correu o escriure'ns."
+        },
+        {
+          "kind": "p",
+          "text": "Si creus que no tractem les teves dades conforme a la llei, pots presentar una reclamació davant l'Agencia Española de Protección de Datos ([www.aepd.es](https://www.aepd.es); C/ Jorge Juan, 6, 28001 Madrid)."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Menors d'edat"
+        },
+        {
+          "kind": "p",
+          "text": "Els nostres formularis són només per a majors de 18 anys. No recollim consciència de dades de menors."
+        },
+        {
+          "kind": "h2",
+          "text": "8. Seguretat"
+        },
+        {
+          "kind": "p",
+          "text": "Apliquem mesures tècniques i organitzatives adequades per protegir les teves dades davant accessos no autoritzats, pèrdua o alteració."
+        },
+        {
+          "kind": "h2",
+          "text": "9. Canvis en aquesta política"
+        },
+        {
+          "kind": "p",
+          "text": "Si canviem aquesta política, publicarem aquí la nova versió amb la seva data. Si el canvi afecta les finalitats per a les quals ens vas donar el teu consentiment, te'l tornarem a demanar."
+        },
+        {
+          "kind": "h2",
+          "text": "Pendent de confirmar per HousySpace"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Domicili fiscal i dades del Registre Mercantil."
+            },
+            {
+              "title": "",
+              "text": "Termini de conservació de les dades de la base de demandants (proposta: 12 mesos des de l'últim contacte)."
+            },
+            {
+              "title": "",
+              "text": "Llista definitiva de proveïdors que tracten dades (allotjament web, base de dades o CRM, correu i butlletí, missatgeria) i la seva ubicació."
+            },
+            {
+              "title": "",
+              "text": "Eina de butlletí a contractar, amb enviament de confirmació de la subscripció i enllaç de baixa a cada correu."
+            },
+            {
+              "title": "",
+              "text": "Si hi ha transferències de dades fora de l'Espai Econòmic Europeu i amb quines garanties."
+            },
+            {
+              "title": "",
+              "text": "Valorador en línia de Lystos: si Lystos actua com a responsable o encarregat del tractament, contracte o condicions amb HousySpace, ubicació del tractament, quines dades rep HousySpace del valorador, termini de conservació i quines cookies o tecnologies similars instal·la (per a la política de cookies i l'avís de cookies)."
+            },
+            {
+              "title": "",
+              "text": "Si HousySpace ha de nomenar un delegat de protecció de dades o portar un registre d'activitats de tractament (art. 30 RGPD)."
+            },
+            {
+              "title": "",
+              "text": "Que no es prenen decisions automatitzades amb efectes jurídics sobre les persones."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

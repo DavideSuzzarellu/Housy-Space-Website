@@ -1,0 +1,116 @@
+{
+  "title": "Personal Shopper immobiliari · HousySpace",
+  "description": "Busquem i visitem amb tu només el que encaixa — i si cal, també ho reformem.",
+  "head": {
+    "heading": "Personal Shopper immobiliari",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Busquem i visitem amb tu només el que encaixa — i si cal, també ho reformem." },
+      { "kind": "image", "src": "../../assets/home/portal-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Busquem per tu, visitem amb tu i et lliurem les claus." },
+        { "kind": "p", "text": "Defineixes el que necessites i nosaltres fem la resta: busquem, filtrem i visitem amb tu només el que encaixa. Abans que decideixis, estudiem l'immoble a fons perquè compris sense sorpreses." },
+        { "kind": "p", "text": "I si el pis que t'agrada necessita una reforma, també la fem nosaltres." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Com ho fem" },
+        { "kind": "h2", "text": "De la cerca al lliurament de claus" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Perfil de recerca", "text": "Zona, tipologia, pressupost i prioritats: el que busques i el que no." },
+            { "title": "Cerca activa", "text": "Rastrejem el mercat segons els teus criteris, també el que encara no s'ha publicat." },
+            { "title": "Selecció", "text": "Et presentem només les opcions que mereixen una visita." },
+            { "title": "Visites", "text": "Les organitzem i t'acompanyem amb mirada tècnica." },
+            { "title": "Negociació i compra", "text": "Negociem el preu i t'acompanyem fins a la firma." },
+            { "title": "Reforma", "text": "Si cal, projectem i fem l'obra perquè hi puguis entrar a viure." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Sense sorpreses" },
+        { "kind": "h2", "text": "El que revisem abans que compris" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01L'immobileEstat real de l'habitatge, instal·lacions i possibles obres amb el seu cost." },
+            { "title": "", "text": "02L'edificiEstat de la finca, ITE i obres previstes o derrames de la comunitat." },
+            { "title": "", "text": "03DocumentacióNota simple del Registre, càrregues, cèdula d'habitabilitat i certificat energètic." },
+            { "title": "", "text": "04El preuComparació amb vendes recents de la zona per no pagar de més." },
+            { "title": "", "text": "05FinançamentAmb el nostre broker financer, la hipoteca estudiada abans de comprometre't. [Veure assessorament financer](service:asesoramiento-financiero)." },
+            { "title": "", "text": "06L'entornServeis, transport, soroll i evolució del barri." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "image", "src": "../../assets/home/det-salon-1400.jpg" },
+        { "kind": "tag", "text": "Reformes" },
+        { "kind": "h2", "text": "El pis necessita una reforma? També la fem nosaltres." },
+        { "kind": "p", "text": "Moltes vegades l'habitatge que encaixa necessita obra. En lloc de buscar arquitecte, pressupostos i constructors pel teu compte, ho fem nosaltres amb l'estudi d'arquitectura i interiorisme amb qui col·laborem." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Pressupost de la reforma abans de comprar, per decidir amb el cost total." },
+            { "title": "", "text": "Projecte, llicències i obra coordinats per nosaltres." },
+            { "title": "", "text": "Seguiment de terminis i acabats fins al lliurament de claus." }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Reformes i interiorisme", "href": "service:reformas-obras", "solid": false }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        { "kind": "p", "text": "Des de la primera visita fins al dia que hi entres a viure, tens un sol assessor de referència." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

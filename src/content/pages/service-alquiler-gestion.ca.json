@@ -1,0 +1,115 @@
+{
+  "title": "Lloguer i gestió d'immobles · HousySpace",
+  "description": "Comercialització, selecció d'arrendataris i gestió del lloguer.",
+  "head": {
+    "heading": "Lloguer i gestió d'immobles",
+    "photo": true,
+    "items": [
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Comercialització, selecció d'arrendataris i gestió del lloguer." },
+      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Llogar amb tranquil·litat comença per triar bé l'inquilí." },
+        { "kind": "p", "text": "Per a propietaris que volen llogar sense preocupacions: comercialitzem l'immoble, seleccionem amb cura els arrendataris i t'acompanyem en el contracte. Si ho prefereixes, també gestionem el lloguer durant tot el contracte." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Dues formes de treballar" },
+        { "kind": "h2", "text": "Tu tries fins on arribem" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Et trobem un inquilí" },
+            { "kind": "p", "text": "De la publicació al lliurament de claus." },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Preparació i publicació de l'anunci" },
+                { "title": "", "text": "Atenció a candidats i visites" },
+                { "title": "", "text": "Estudi de solvència i documentació" },
+                { "title": "", "text": "Contracte d'arrendament i dipòsit de la fiança" },
+                { "title": "", "text": "Inventari i lliurament de claus" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "I gestionem el lloguer" },
+            { "kind": "p", "text": "Durant el contracte, segons el que s'hagi acordat." },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Atenció a l'inquilí i incidències" },
+                { "title": "", "text": "Coordinació de reparacions" },
+                { "title": "", "text": "Seguiment de pagaments i subministraments" },
+                { "title": "", "text": "Renovacions, actualitzacions i fi de contracte" },
+                { "title": "", "text": "Revisió del pis a la sortida" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Com ho fem" },
+        { "kind": "h2", "text": "Pas a pas" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversa inicial", "text": "Entenem l'immoble i les condicions que busques." },
+            { "title": "Posada a punt", "text": "Revisem la documentació i, si cal, l'estat del pis." },
+            { "title": "Comercialització", "text": "Presentem la propietat i atenem els interessats." },
+            { "title": "Selecció", "text": "Revisem els candidats amb tu. La decisió és teva." },
+            { "title": "Contracte i gestió", "text": "Formalitzem el contracte i, si ho tries, gestionem el lloguer." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Preguntes freqüents" },
+        { "kind": "h2", "text": "El que ens solen preguntar" },
+        { "kind": "faq", "q": "Quins documents necessito per llogar?", "a": "A Catalunya, la cèdula d'habitabilitat i el certificat d'eficiència energètica. Si no els tens, el nostre arquitecte els tramita." },
+        { "kind": "faq", "q": "Com trieu l'inquilí?", "a": "Revisem la seva solvència i la documentació, i et presentem els candidats que encaixen. Sempre decideixes tu." },
+        { "kind": "faq", "q": "Us ocupeu del contracte i de la fiança?", "a": "Sí. Preparem el contracte i gestionem el dipòsit de la fiança a l'INCASÒL, tal com estableix la normativa catalana." },
+        { "kind": "faq", "q": "I si hi ha un problema durant el contracte?", "a": "Si contractes la gestió, ens ocupem de les incidències. I si sorgeix un conflicte legal, el coordinem amb el despatx jurídic amb qui treballem. [Veure assessorament jurídic i fiscal](service:asesoramiento-juridico-fiscal)." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "title": "Compravendita e intermediazione immobiliare · HousySpace",
+  "description": "Valutazione, preparazione, commercializzazione, trattativa e assistenza fino alla firma.",
+  "head": {
+    "heading": "Compravendita e intermediazione immobiliare",
+    "photo": true,
+    "items": [
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Valutazione, preparazione, commercializzazione, trattativa e assistenza fino alla firma." }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Vendere un immobile non significa soltanto pubblicarlo." },
+        { "kind": "p", "text": "Come consulenti immobiliari, prima di tutto ti diciamo onestamente se conviene vendere, come farlo e quando. Poi studiamo l'immobile e la sua documentazione in modo approfondito, per evitare sorprese al momento della firma." },
+        { "kind": "p", "text": "Tutto inizia con una [perizia di valutazione](service:valoracion): il valore di mercato, il prezzo di uscita consigliato e la strategia per raggiungerlo." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Come lo facciamo" },
+        { "kind": "h2", "text": "Otto passi, un solo consulente" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Valutazione", "text": "Studiamo l'immobile, il quartiere e il mercato per fissare un prezzo giusto e competitivo." },
+            { "title": "Preparazione", "text": "Raccogliamo e verifichiamo tutta la documentazione necessaria per la vendita." },
+            { "title": "Pubblicazione", "text": "Presentiamo l'immobile sul nostro sito e sui principali portali immobiliari." },
+            { "title": "Monitoraggio", "text": "Ogni due settimane ti aggiorniamo sulle attività e su come risponde il mercato." },
+            { "title": "Visite", "text": "Organizziamo e accompagniamo le visite con acquirenti davvero interessati." },
+            { "title": "Trattativa", "text": "Trattiamo a tuo nome. La decisione di accettare un'offerta è sempre tua." },
+            { "title": "Firma", "text": "Verifichiamo la documentazione di chiusura e ti accompagniamo dal notaio." },
+            { "title": "Dopo la vendita", "text": "Volturiamo le utenze e gestiamo il pagamento delle imposte sulla vendita." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Cosa è incluso" },
+        { "kind": "h2", "text": "Tutto il necessario per vendere" },
+        { "kind": "lead", "text": "Cosa comprende il nostro servizio di intermediazione in una vendita." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Valutazione aggiornata", "text": "Valore di mercato e prezzo di uscita consigliato, con uno studio dei comparabili." },
+            { "title": "Lettura del mercato", "text": "Come si presenta la domanda nella tua zona e cosa aspettarsi nei prossimi mesi." },
+            { "title": "Marketing e pubblicità", "text": "Annuncio sui portali immobiliari, sul nostro sito e su altri canali." },
+            { "title": "Servizio fotografico e tour virtuale", "text": "Un fotografo professionista e un tour virtuale che filtra le visite per curiosità." },
+            { "title": "Documentazione tecnica", "text": "Il nostro architetto ottiene il certificato di abitabilità e il certificato energetico, e redige la planimetria dell'immobile." },
+            { "title": "Preventivi di ristrutturazione", "text": "Se l'immobile necessita di lavori, l'acquirente sa fin dall'inizio quanto costerà." },
+            { "title": "Gestione delle visite", "text": "Le organizziamo e supervisiamo noi." },
+            { "title": "Trattativa e chiusura", "text": "Difendiamo il tuo prezzo e le tue condizioni fino alla firma." },
+            { "title": "Consulenza legale e fiscale", "text": "Ogni passaggio della vendita verificato legalmente e fiscalmente da specialisti. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal)." },
+            { "title": "Finanziamento dell'acquirente", "text": "Il nostro broker finanziario verifica che l'acquirente possa pagare, per evitare che la vendita salti per il mutuo." },
+            { "title": "Svuotamento dell'immobile", "text": "Ti aiutiamo a pianificare e organizzare lo svuotamento prima della consegna." },
+            { "title": "Utenze e imposte", "text": "Dopo la firma, voltura di luce, acqua e gas, e liquidazione delle imposte sulla vendita." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Contratto di intermediazione" },
+        { "kind": "h2", "text": "Perché in esclusiva?" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Nessuna corsa tra agenzie" },
+            { "kind": "p", "text": "Quando più agenzie vendono lo stesso immobile, la vendita diventa una corsa ad aggiudicarsela. Si lavora in fretta e peggio: conta la rapidità e passano in secondo piano la solidità dell'operazione e il prezzo di vendita. Con l'esclusiva, lavoriamo il tuo immobile con calma e con criterio, per venderlo bene e al prezzo che merita." }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Cosa ci guadagni" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Dedicazione completa al tuo immobile per tutta la durata del contratto." },
+                { "title": "", "text": "Un marketing più curato, perché solo un'agenzia lo presenta." },
+                { "title": "", "text": "Una trattativa più solida: conosciamo il tuo immobile a fondo." },
+                { "title": "", "text": "Più sicurezza: nessun altro tratta a tuo nome." },
+                { "title": "", "text": "Meno complicazioni e una comunicazione chiara con gli acquirenti." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        { "kind": "p", "text": "Molte vendite saltano per un imprevisto: un certificato di abitabilità mancante, un mutuo che non arriva, una documentazione incompleta. Li anticipiamo e, quando si presentano, li risolviamo." }
+      ]
+    },
+    {
+      "id": "valoracion",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Valutazione" },
+        { "kind": "h2", "text": "Quanto vale il tuo immobile?" },
+        { "kind": "p", "text": "Richiedi la tua valutazione come preferisci: online, in tempo reale, o in presenza con un consulente che studia il tuo immobile in profondità." },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "p", "text": "Online" },
+            { "kind": "h3", "text": "In tempo reale" },
+            { "kind": "p", "text": "Inserisci i dati del tuo immobile nel nostro strumento di valutazione e ricevi subito un riferimento indicativo del suo valore." },
+            { "kind": "buttons", "items": [{ "label": "Valutazione online", "href": "route:valuation#informe", "solid": true }] }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "p", "text": "In presenza" },
+            { "kind": "h3", "text": "Con un consulente" },
+            { "kind": "p", "text": "Visitiamo il tuo immobile, ne verifichiamo la documentazione e studiamo il mercato del tuo quartiere per fornirti un rapporto completo." },
+            { "kind": "buttons", "items": [{ "label": "Valutazione in presenza", "href": "route:valuation#solicitud", "solid": false }] }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

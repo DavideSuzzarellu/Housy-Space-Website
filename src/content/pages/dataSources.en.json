@@ -1,0 +1,83 @@
+{
+  "title": "Data sources · HousySpace",
+  "description": "Status of official data sources and statistics updates.",
+  "head": {
+    "heading": "Data sources",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Transparency"
+      },
+      {
+        "kind": "lead",
+        "text": "Where the Barcelona neighbourhood data comes from and when it was last checked."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Current coverage"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Population and density by neighbourhood (Padró municipal, Open Data BCN): 73 of 73 neighbourhoods."
+            },
+            {
+              "title": "",
+              "text": "Average sale price (Portal de Dades del Ajuntament, Consejo General del Notariado): 73 of 73 neighbourhoods."
+            },
+            {
+              "title": "",
+              "text": "Average rent (Portal de Dades del Ajuntament, INCASÒL rental deposits): 73 of 73 neighbourhoods."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "Sources and last check"
+        },
+        {
+          "kind": "table",
+          "head": ["Source", "Last run", "Date", "Last successful", "Detail"],
+          "rows": [
+            [
+              "Ajuntament de Barcelona · Open Data BCN (API CKAN)",
+              "no runs yet",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · CartoBCN (administrative boundaries)",
+              "no runs yet",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · Portal Barcelona Dades (housing market)",
+              "ok",
+              "20/10/2026",
+              "20/10/2026",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "The system checks sources every 6 hours. If a source fails, the last valid data is kept and, after three consecutive failures, the team is alerted. Generated: 20/10/2026."
+        }
+      ]
+    }
+  ]
+}

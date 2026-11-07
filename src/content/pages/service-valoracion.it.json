@@ -1,0 +1,104 @@
+{
+  "title": "Servizio di valutazione immobiliare · HousySpace",
+  "description": "Un riferimento istantaneo con lo strumento online oppure un rapporto completo con studio di mercato.",
+  "head": {
+    "heading": "Valutazione immobiliare",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Un riferimento istantaneo con lo strumento online oppure un rapporto completo con studio di mercato." },
+      { "kind": "image", "src": "../../assets/home/det-terraza-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Due modi per conoscere il valore del tuo immobile" },
+        { "kind": "h3", "text": "In tempo reale" },
+        { "kind": "p", "text": "Con il nostro strumento di valutazione online." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Inserisci i dati del tuo immobile." },
+            { "title": "", "text": "Ricevi subito un riferimento indicativo del valore." },
+            { "title": "", "text": "Se vuoi, un consulente lo esamina insieme a te." }
+          ]
+        },
+        { "kind": "buttons", "items": [{ "label": "Vai allo strumento di valutazione", "href": "route:valuation", "solid": true }] },
+        { "kind": "h3", "text": "Rapporto di valutazione" },
+        { "kind": "p", "text": "Studiamo il tuo immobile in profondità." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Visitiamo l'immobile e ne verifichiamo la documentazione." },
+            { "title": "", "text": "Analizziamo il quartiere, il mercato e le vendite recenti." },
+            { "title": "", "text": "Ti consegniamo il rapporto e lo commentiamo insieme." }
+          ]
+        },
+        { "kind": "buttons", "items": [{ "label": "Richiedi un rapporto", "href": "route:contact", "solid": false }] }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Cosa è incluso" },
+        { "kind": "h2", "text": "Un rapporto per decidere con i dati" },
+        { "kind": "lead", "text": "È lo stesso rapporto che prepariamo prima di mettere un immobile in vendita." },
+        { "kind": "p", "text": "Rapporto di valutazione" },
+        { "kind": "p", "text": "HousySpace" },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            { "title": "Localizzazione e quartiere", "text": "01 Situazione dell'immobile e storia del quartiere" },
+            { "title": "Dati del quartiere", "text": "02 Prezzo medio per m² delle compravendite, secondo il Comune di Barcellona" },
+            { "title": "Informazioni urbanistiche e catastali", "text": "03 Riferimento catastale, classificazione e dati dell'immobile" },
+            { "title": "Valore di riferimento catastale", "text": "04 Il valore fissato dal Catasto per l'immobile" },
+            { "title": "Dati e misure", "text": "05 Superficie costruita e utile, stanza per stanza" },
+            { "title": "Caratteristiche e stato", "text": "06 Stato dell'immobile e dell'edificio, impianti, orientamento" },
+            { "title": "Documentazione", "text": "07 Certificato di abitabilità, certificato energetico e ITE" },
+            { "title": "Comparabili", "text": "08 Immobili simili sui portali e venduti nella zona" },
+            { "title": "Studio di mercato", "text": "09 Offerta attuale con cui il tuo immobile dovrà competere" },
+            { "title": "Valutazione", "text": "10 Valore di mercato, prezzo per m² e prezzo di uscita consigliato" }
+          ]
+        },
+        { "kind": "p", "text": "Non è una perizia ufficiale: è una valutazione di mercato per decidere con criterio." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Domande frequenti" },
+        { "kind": "h2", "text": "Le domande più frequenti" },
+        { "kind": "faq", "q": "È la stessa cosa di una perizia ufficiale?", "a": "No. La perizia ufficiale è redatta da una società di perizia accreditata e di solito la richiede la banca per un mutuo. Il nostro rapporto è una valutazione di mercato: ti dice a quale prezzo si vende oggi un immobile come il tuo." },
+        { "kind": "faq", "q": "A cosa mi serve?", "a": "Per decidere se vendere e a quale prezzo, ma anche in caso di eredità, divorzio o divisione tra comproprietari, o semplicemente per sapere quanto vale il tuo patrimonio." },
+        { "kind": "faq", "q": "Lo strumento online è sufficiente?", "a": "È un buon primo riferimento. Per una decisione importante ti consigliamo il rapporto completo: tiene conto dello stato reale dell'immobile e dell'edificio." },
+        { "kind": "faq", "q": "E se poi voglio vendere?", "a": "Il rapporto è il primo passo del nostro servizio di [compravendita](service:venta-estrategica): avrai già il prezzo e la strategia." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Legal notice · HousySpace",
+  "description": "Legal notice of HousySpace (pending).",
+  "head": {
+    "heading": "Legal notice",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Text pending approval.** The definitive legal text must be drafted and approved by HousySpace with its legal advisors before launch."
+        },
+        {
+          "kind": "p",
+          "text": "Owner: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Catalonia Real Estate Agents Registry: AICAT nº 14032 Phone 613 084 804"
+        },
+        {
+          "kind": "note",
+          "text": "Pending: Registered address, Companies Registry details, contact and privacy email addresses, office address and opening hours."
+        }
+      ]
+    }
+  ]
+}

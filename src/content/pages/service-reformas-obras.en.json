@@ -1,0 +1,151 @@
+{
+  "title": "Renovations & interior design · HousySpace",
+  "description": "Renovations for all types of property: project, interior design and works with one single point of contact.",
+  "head": {
+    "heading": "Renovations & interior design",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "Renovations for all types of property: project, interior design and works with one single point of contact." },
+      { "kind": "image", "src": "../../assets/home/det-ventanal-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "One renovation, one point of contact." },
+        { "kind": "p", "text": "We carry out renovations for all types of property. We plan the renovation and interior design together so that the layout, materials and light are decided before work begins. We then coordinate the professionals and monitor timelines and budget through to handover." },
+        { "kind": "p", "text": "The project is developed with the architecture and interior design studio we collaborate with, and you always have the same person to turn to." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "The phases" },
+        { "kind": "h2", "text": "From the first sketch to key handover" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Visit and requirements", "text": "We see the space and understand how you want to live in it." },
+            { "title": "Project and interior design", "text": "Layout, materials, lighting and furniture, all in one project." },
+            { "title": "Budget", "text": "A detailed quote before we start, so you can decide without surprises." },
+            { "title": "Permits and planning consent", "text": "We handle any planning permissions the council requires." },
+            { "title": "Works", "text": "We coordinate the trades and monitor timelines and budget on site." },
+            { "title": "Finishes and handover", "text": "We review every detail with you and hand over the finished property." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interiorismo",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Interior design" },
+        { "kind": "h2", "text": "A home is also chosen by touch." },
+        { "kind": "lead", "text": "We define the style, materials, textures and finishes with you so that each space works and feels like yours." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Natural wood", "text": "Floors, joinery and furniture" },
+            { "title": "Stone and marble", "text": "Worktops, bathrooms and details" },
+            { "title": "Microcement", "text": "Continuity on floors and walls" },
+            { "title": "Linen and cotton", "text": "Textiles and curtains" },
+            { "title": "Brass", "text": "Lighting and ironmongery" },
+            { "title": "Deep green", "text": "Colour and contrast" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "What's included" },
+        { "kind": "h2", "text": "The whole project, in one pair of hands" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01LayoutHow light moves and how you move through the home." },
+            { "title": "", "text": "02Materials and finishesA coherent palette for the whole property." },
+            { "title": "", "text": "03LightingNatural and artificial light designed for each room." },
+            { "title": "", "text": "04Bespoke furnitureDesign, selection and procurement of furniture and accessories." },
+            { "title": "", "text": "05Permits and tradesPlanning permissions, builders, installers and joiners, all coordinated by us." },
+            { "title": "", "text": "06Site supervisionTimelines, budget and quality controlled down to the last detail." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "When to renovate" },
+        { "kind": "h2", "text": "A renovation for every occasion" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01Before sellingRenovation quotes for the buyer or small improvements that help you sell. [See property sales](service:venta-estrategica)." },
+            { "title": "", "text": "02When buyingThe renovation planned before purchase and carried out by us. [See Personal Shopper](service:personal-shopper)." },
+            { "title": "", "text": "03For rentingRefurbishment to let sooner and at a better price." },
+            { "title": "", "text": "04For investingRenovations that add value and rental yield, with the numbers in front of you." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "\"Don't worry, I'll take care of it.\"" },
+        { "kind": "p", "text": "Permits, trades, unexpected issues on site: we manage them so you only have to decide." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Who we work with" },
+        { "kind": "h2", "text": "Projects with Maria Guimerà Arquitectura" },
+        { "kind": "lead", "text": "For the project, interior design and works supervision we collaborate with an architecture and interior design studio in Barcelona." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Meet our partners", "href": "route:about#colaboraciones", "solid": false }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Maria Guimerà Arquitectura", "text": "Architecture and interior design Architecture and interior design studio in Barcelona, specialising in full renovations of homes and Eixample flats. [Visit mariaguimera.com](https://mariaguimera.com/es/inicio/)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}

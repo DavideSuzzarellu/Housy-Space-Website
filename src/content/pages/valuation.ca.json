@@ -1,0 +1,165 @@
+{
+  "title": "Valoració immobiliària · HousySpace",
+  "description": "Sol·licita la valoració professional del teu habitatge a Barcelona.",
+  "head": {
+    "heading": "La propera propietat podria ser la teva",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Valoració immobiliària"
+      },
+      {
+        "kind": "lead",
+        "text": "Descobreix el valor real del teu habitatge amb una anàlisi immobiliària professional, basada en el mercat i les característiques de la teva propietat."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "El teu informe de valoració, al moment"
+        },
+        {
+          "kind": "lead",
+          "text": "Introdueix les dades del teu habitatge al valorador i rebràs a l'instant el teu informe de valoració. Si vols, un assessor el revisa després amb tu."
+        },
+        {
+          "kind": "valuator",
+          "title": "Valorador en línia de HousySpace"
+        },
+        {
+          "kind": "p",
+          "text": "No es veu el valorador? [Obre'l en una pestanya nova](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) o demana la valoració a un assessor amb el [formulari de sota](#solicitud)."
+        },
+        {
+          "kind": "note",
+          "text": "L'estimació del valorador és orientativa; no és una taxació oficial. El valorador el proporciona un proveïdor extern, Lystos: les dades que hi introdueixis es tractaran segons la seva informació de privacitat i la de HousySpace (text legal pendent d'aprovació)."
+        }
+      ]
+    },
+    {
+      "id": "solicitud",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Prefereixes que et truqui un assessor?"
+        },
+        {
+          "kind": "lead",
+          "text": "Deixa'ns les teves dades i un assessor de HousySpace es posarà en contacte amb tu per valorar el teu habitatge en persona."
+        },
+        {
+          "kind": "form",
+          "id": "vf",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nom i cognoms",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Telèfon",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Adreça electrònica",
+              "required": true,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "direccion",
+              "label": "Adreça o barri de l'habitatge",
+              "required": true,
+              "full": true,
+              "type": "text",
+              "placeholder": "Carrer i número, o barri",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Explica'ns alguna cosa més (estat, reformes, terminis…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud. (Text legal pendent d'aprovació.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Vull rebre comunicacions comercials de HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Vull subscriure'm a la newsletter i als articles de HousySpace per correu electrònic. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i la newsletter. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Sol·licitar valoració"
+            },
+            {
+              "kind": "note",
+              "text": "Encara no hi ha cap sistema que rebi el formulari (CRM pendent). En prémer, s'obrirà WhatsApp amb la teva sol·licitud ja redactada perquè tu l'enviïs; fins que no l'enviïs allà, no haurà arribat a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Sobre el servei de valoració",
+              "href": "service:valoracion",
+              "solid": false
+            },
+            {
+              "label": "Parlar amb un assessor",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

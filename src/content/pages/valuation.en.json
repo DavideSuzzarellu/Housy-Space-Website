@@ -1,0 +1,165 @@
+{
+  "title": "Property valuation · HousySpace",
+  "description": "Request a professional valuation of your property in Barcelona.",
+  "head": {
+    "heading": "The next property could be yours",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Property valuation"
+      },
+      {
+        "kind": "lead",
+        "text": "Discover the real value of your property with a professional real estate analysis, based on the market and your property's characteristics."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Your valuation report, instantly"
+        },
+        {
+          "kind": "lead",
+          "text": "Enter your property details in the valuation tool and you will instantly receive your valuation report. If you wish, an adviser can review it with you afterwards."
+        },
+        {
+          "kind": "valuator",
+          "title": "HousySpace online valuation tool"
+        },
+        {
+          "kind": "p",
+          "text": "Can't see the valuation tool? [Open it in a new tab](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) or request a valuation from an adviser using the [form below](#solicitud)."
+        },
+        {
+          "kind": "note",
+          "text": "The valuation tool estimate is indicative; it is not an official appraisal. The tool is provided by an external supplier, Lystos: data you enter will be processed according to their privacy information and that of HousySpace (legal text pending approval)."
+        }
+      ]
+    },
+    {
+      "id": "solicitud",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Would you prefer an adviser to call you?"
+        },
+        {
+          "kind": "lead",
+          "text": "Leave your details and a HousySpace adviser will get in touch to value your property in person."
+        },
+        {
+          "kind": "form",
+          "id": "vf",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Full name",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Phone",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Email address",
+              "required": true,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "direccion",
+              "label": "Property address or neighbourhood",
+              "required": true,
+              "full": true,
+              "type": "text",
+              "placeholder": "Street and number, or neighbourhood",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Tell us more (condition, renovations, timeline…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "I would like to receive commercial communications from HousySpace about properties, services and news by email, WhatsApp or phone. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "I would like to subscribe to the HousySpace newsletter and articles by email. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: handling your request and, only if you tick the boxes, sending commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where legally required. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy). (Legal text draft.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Request valuation"
+            },
+            {
+              "kind": "note",
+              "text": "No system is yet in place to receive the form (CRM pending). Clicking will open WhatsApp with your request pre-filled for you to send; until you send it there, it will not have reached HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "About the valuation service",
+              "href": "service:valoracion",
+              "solid": false
+            },
+            {
+              "label": "Talk to an adviser",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

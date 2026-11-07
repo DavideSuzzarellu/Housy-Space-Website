@@ -1,0 +1,115 @@
+{
+  "title": "Locazioni e gestione immobiliare · HousySpace",
+  "description": "Commercializzazione, selezione degli inquilini e gestione della locazione.",
+  "head": {
+    "heading": "Locazioni e gestione immobiliare",
+    "photo": true,
+    "items": [
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Commercializzazione, selezione degli inquilini e gestione della locazione." },
+      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Affittare con tranquillità inizia dalla scelta dell'inquilino giusto." },
+        { "kind": "p", "text": "Per i proprietari che vogliono affittare senza preoccupazioni: commercializziamo l'immobile, selezioniamo con cura gli inquilini e ti accompagniamo nel contratto. Se preferisci, gestiamo anche la locazione per tutta la durata del contratto." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Due modi di lavorare" },
+        { "kind": "h2", "text": "Sei tu a scegliere fin dove arriviamo" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Troviamo l'inquilino" },
+            { "kind": "p", "text": "Dalla pubblicazione alla consegna delle chiavi." },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Preparazione e pubblicazione dell'annuncio" },
+                { "title": "", "text": "Risposta ai candidati e visite" },
+                { "title": "", "text": "Verifica della solvibilità e documentazione" },
+                { "title": "", "text": "Contratto di locazione e deposito cauzionale" },
+                { "title": "", "text": "Inventario e consegna delle chiavi" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "E gestiamo la locazione" },
+            { "kind": "p", "text": "Durante il contratto, come concordato." },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Assistenza all'inquilino e gestione degli inconvenienti" },
+                { "title": "", "text": "Coordinamento delle riparazioni" },
+                { "title": "", "text": "Monitoraggio dei pagamenti e delle utenze" },
+                { "title": "", "text": "Rinnovi, aggiornamenti e fine contratto" },
+                { "title": "", "text": "Ispezione all'uscita dell'inquilino" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Come lo facciamo" },
+        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversazione iniziale", "text": "Capiamo l'immobile e le condizioni che stai cercando." },
+            { "title": "Messa a punto", "text": "Verifichiamo la documentazione e, se necessario, lo stato dell'appartamento." },
+            { "title": "Commercializzazione", "text": "Presentiamo la proprietà e rispondiamo agli interessati." },
+            { "title": "Selezione", "text": "Esaminiamo i candidati con te. La decisione è sempre tua." },
+            { "title": "Contratto e gestione", "text": "Formalizziamo il contratto e, se lo scegli, gestiamo la locazione." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Domande frequenti" },
+        { "kind": "h2", "text": "Le domande più frequenti" },
+        { "kind": "faq", "q": "Quali documenti mi servono per affittare?", "a": "In Catalogna, il certificato di abitabilità e il certificato di efficienza energetica. Se non li hai, il nostro architetto può occuparsene." },
+        { "kind": "faq", "q": "Come scegliete l'inquilino?", "a": "Verifichiamo la sua solvibilità e la documentazione, e ti presentiamo i candidati che corrispondono al profilo. Decidi sempre tu." },
+        { "kind": "faq", "q": "Vi occupate del contratto e del deposito cauzionale?", "a": "Sì. Prepariamo il contratto e gestiamo il deposito del deposito cauzionale presso l'INCASÒL, come previsto dalla normativa catalana." },
+        { "kind": "faq", "q": "E se si verifica un problema durante il contratto?", "a": "Se scegli la gestione, ci occupiamo degli inconvenienti. E se sorge una controversia legale, la coordiniamo con lo studio legale con cui lavoriamo. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal)." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

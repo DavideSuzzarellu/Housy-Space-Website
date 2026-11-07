@@ -1,0 +1,158 @@
+{
+  "title": "Property sales and brokerage · HousySpace",
+  "description": "Valuation, preparation, marketing, negotiation and support through to signing.",
+  "head": {
+    "heading": "Property sales and brokerage",
+    "photo": true,
+    "items": [
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "Valuation, preparation, marketing, negotiation and support through to signing." }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Selling a property is not just about listing it." },
+        { "kind": "p", "text": "As property consultants, we first tell you honestly whether selling makes sense for you, how to do it, and when. Then we study the property and its documentation in depth, so there are no surprises at signing." },
+        { "kind": "p", "text": "Everything starts with a [valuation report](service:valoracion): the market value, the recommended asking price, and the strategy to get there." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "How we do it" },
+        { "kind": "h2", "text": "Eight steps, one advisor" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Valuation", "text": "We study the property, the neighbourhood and the market to set a fair and competitive price." },
+            { "title": "Preparation", "text": "We gather and review all the documentation needed for the sale." },
+            { "title": "Listing", "text": "We present the property on our website and the main property portals." },
+            { "title": "Follow-up", "text": "Every two weeks we update you on activity and how the market is responding." },
+            { "title": "Viewings", "text": "We organise and accompany viewings with genuinely interested buyers." },
+            { "title": "Negotiation", "text": "We negotiate on your behalf. The decision to accept an offer is always yours." },
+            { "title": "Signing", "text": "We review the closing documentation and accompany you to the notary." },
+            { "title": "After the sale", "text": "We transfer utility contracts and handle the payment of sale taxes." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "What's included" },
+        { "kind": "h2", "text": "Everything it takes to sell" },
+        { "kind": "lead", "text": "What our brokerage service includes in a sale." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Updated valuation", "text": "Market value and recommended asking price, with a comparable sales study." },
+            { "title": "Market read", "text": "How demand looks in your area and what to expect over the coming months." },
+            { "title": "Marketing and advertising", "text": "Listings on property portals, our website and other channels." },
+            { "title": "Professional photography and virtual tour", "text": "A professional photographer and a virtual walkthrough that filters out casual visitors." },
+            { "title": "Technical documentation", "text": "Our architect handles the habitation certificate and energy certificate, and draws up the floor plan." },
+            { "title": "Renovation estimates", "text": "If the property needs work, the buyer knows the cost from the start." },
+            { "title": "Viewings management", "text": "We organise and supervise them." },
+            { "title": "Negotiation and closing", "text": "We defend your price and your conditions through to signing." },
+            { "title": "Legal and tax advice", "text": "Every step of the sale reviewed legally and fiscally by specialists. [See legal and tax advice](service:asesoramiento-juridico-fiscal)." },
+            { "title": "Buyer financing", "text": "Our financial broker checks the buyer can pay, so the sale doesn't fall through on the mortgage." },
+            { "title": "Property clearance", "text": "We help you plan and organise the clearance before handover." },
+            { "title": "Utilities and taxes", "text": "After signing, transfer of electricity, water and gas contracts, and settlement of sale taxes." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Brokerage agreement" },
+        { "kind": "h2", "text": "Why exclusive?" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "No race between agencies" },
+            { "kind": "p", "text": "When several agencies sell the same property, the sale turns into a race to close it first. Work gets rushed: speed takes priority and the quality of the deal and the sale price fall by the wayside. With exclusivity, we work your property carefully and with criteria, to sell it well and at the price it deserves." }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "What you gain" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Full dedication to your property throughout the contract." },
+                { "title": "", "text": "More considered marketing, because only one agency presents it." },
+                { "title": "", "text": "A stronger negotiation: we know your property inside out." },
+                { "title": "", "text": "More security: no one else negotiates on your behalf." },
+                { "title": "", "text": "Less complication and clear communication with buyers." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "\"Don't worry, I'll take care of it.\"" },
+        { "kind": "p", "text": "Many sales fall through over an unexpected issue: a missing habitation certificate, a mortgage that doesn't come through, incomplete documentation. We anticipate them and, when they appear, we resolve them." }
+      ]
+    },
+    {
+      "id": "valoracion",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Valuation" },
+        { "kind": "h2", "text": "What is your property worth?" },
+        { "kind": "p", "text": "Request your valuation however you prefer: online, instantly, or in person, with an advisor who studies your property in depth." },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "p", "text": "Online" },
+            { "kind": "h3", "text": "Instantly" },
+            { "kind": "p", "text": "Enter your property details in our valuation tool and receive an indicative reference value straight away." },
+            { "kind": "buttons", "items": [{ "label": "Online valuation", "href": "route:valuation#informe", "solid": true }] }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "p", "text": "In person" },
+            { "kind": "h3", "text": "With an advisor" },
+            { "kind": "p", "text": "We visit your property, review its documentation and study your neighbourhood's market to give you a comprehensive report." },
+            { "kind": "buttons", "items": [{ "label": "In-person valuation", "href": "route:valuation#solicitud", "solid": false }] }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}

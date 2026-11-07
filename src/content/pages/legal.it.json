@@ -1,0 +1,34 @@
+{
+  "title": "Note legali · HousySpace",
+  "description": "Note legali di HousySpace (in attesa).",
+  "head": {
+    "heading": "Note legali",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Testo in attesa di approvazione.** Il testo legale definitivo deve essere redatto e approvato da HousySpace con i propri consulenti legali prima del lancio."
+        },
+        {
+          "kind": "p",
+          "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro degli Agenti Immobiliari della Catalogna: AICAT nº 14032 Telefono 613 084 804"
+        },
+        {
+          "kind": "note",
+          "text": "In attesa di completamento: Indirizzo fiscale, Registro delle Imprese, indirizzo e-mail di contatto e privacy, orari e indirizzo dell'ufficio."
+        }
+      ]
+    }
+  ]
+}

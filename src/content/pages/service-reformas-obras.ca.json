@@ -1,0 +1,151 @@
+{
+  "title": "Reformes i interiorisme · HousySpace",
+  "description": "Reformes per a tot tipus d'immoble: projecte, interiorisme i obra amb un sol interlocutor.",
+  "head": {
+    "heading": "Reformes i interiorisme",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Reformes per a tot tipus d'immoble: projecte, interiorisme i obra amb un sol interlocutor." },
+      { "kind": "image", "src": "../../assets/home/det-ventanal-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Una reforma, un sol interlocutor." },
+        { "kind": "p", "text": "Fem reformes per a tot tipus d'immoble. Pensem la reforma i l'interiorisme alhora, perquè la distribució, els materials i la llum estiguin decidits abans de començar l'obra. Després coordinem els professionals i fem seguiment de terminis i pressupost fins al lliurament." },
+        { "kind": "p", "text": "El projecte el desenvolupem amb l'estudi d'arquitectura i interiorisme amb qui col·laborem, i tu sempre tens la mateixa persona de referència." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Les fases" },
+        { "kind": "h2", "text": "Del primer esbós al lliurament de claus" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Visita i necessitats", "text": "Veiem l'espai i entenem com vols viure-hi." },
+            { "title": "Projecte i interiorisme", "text": "Distribució, materials, il·luminació i mobiliari, en un mateix projecte." },
+            { "title": "Pressupost", "text": "Un pressupost detallat abans de començar, per decidir sense sorpreses." },
+            { "title": "Llicències i permisos", "text": "Tramitem els permisos d'obra que demani l'Ajuntament." },
+            { "title": "Obra", "text": "Coordinem els gremis i fem seguiment de terminis i pressupost a l'obra." },
+            { "title": "Acabats i lliurament", "text": "Revisem cada detall amb tu i et lliurem l'immoble acabat." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interiorismo",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Interiorisme" },
+        { "kind": "h2", "text": "L'habitatge es tria també amb les mans." },
+        { "kind": "lead", "text": "Definim amb tu l'estil, els materials, les textures i els acabats perquè cada estança funcioni i se senti teva." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Fusta natural", "text": "Terres, fusteria i mobiliari" },
+            { "title": "Pedra i marbre", "text": "Taulells, banys i detalls" },
+            { "title": "Microciment", "text": "Continuïtat en terres i parets" },
+            { "title": "Lli i cotó", "text": "Tèxtils i cortines" },
+            { "title": "Llautó", "text": "Il·luminació i ferraments" },
+            { "title": "Verd profund", "text": "Color i contrast" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Què inclou" },
+        { "kind": "h2", "text": "Tot el projecte, en les mateixes mans" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01DistribucióCom es mou la llum i com et mous tu per la casa." },
+            { "title": "", "text": "02Materials i acabatsPaleta coherent per a tot l'habitatge." },
+            { "title": "", "text": "03Il·luminacióLlum natural i artificial pensades per a cada estança." },
+            { "title": "", "text": "04Mobiliari a mesuraDisseny, selecció i compra del mobiliari i els detalls." },
+            { "title": "", "text": "05Llicències i gremisTràmits, paletes, instal·ladors i fusters, coordinats per nosaltres." },
+            { "title": "", "text": "06Seguiment d'obraTerminis, pressupost i qualitat controlats fins a l'últim detall." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Quan reformar" },
+        { "kind": "h2", "text": "Una reforma per a cada moment" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01Abans de vendrePressupostos d'obra per al comprador o petites millores que ajuden a vendre. [Veure compravenda](service:venta-estrategica)." },
+            { "title": "", "text": "02En comprarLa reforma estudiada abans de comprar i feta per nosaltres. [Veure Personal Shopper](service:personal-shopper)." },
+            { "title": "", "text": "03Per llogarPosada a punt per llogar abans i millor." },
+            { "title": "", "text": "04Per invertirReformes que sumen valor i rendibilitat, amb els números davant." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        { "kind": "p", "text": "Llicències, gremis, imprevistos d'obra: els gestionem nosaltres perquè tu només hagis de decidir." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Amb qui ho fem" },
+        { "kind": "h2", "text": "Projectes amb Maria Guimerà Arquitectura" },
+        { "kind": "lead", "text": "Per al projecte, l'interiorisme i la direcció de les reformes col·laborem amb un estudi d'arquitectura i interiorisme de Barcelona." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Coneix els nostres col·laboradors", "href": "route:about#colaboraciones", "solid": false }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Maria Guimerà Arquitectura", "text": "Arquitectura i interiorisme Estudi d'arquitectura i interiorisme a Barcelona, amb reformes integrals d'habitatges i pisos de l'Eixample. [Visita mariaguimera.com](https://mariaguimera.com/es/inicio/)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

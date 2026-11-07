@@ -1,0 +1,238 @@
+{
+  "title": "Blog · HousySpace",
+  "description": "Blog di HousySpace su quartieri, architettura, mercato e normativa immobiliare a Barcellona.",
+  "head": {
+    "heading": "Blog",
+    "photo": false,
+    "items": [
+      {
+        "kind": "p",
+        "text": "Blog"
+      },
+      {
+        "kind": "p",
+        "text": "HousySpace · Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Quartieri, architettura, mercato e normativa, spiegati con calma da chi lavora ogni giorno in città."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-balcon-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Argomento principale"
+            },
+            {
+              "kind": "p",
+              "text": "Ristrutturazioni e architettura"
+            },
+            {
+              "kind": "p",
+              "text": "Data in attesa"
+            },
+            {
+              "kind": "h2",
+              "text": "Ristrutturare un edificio di pregio senza perdere il suo carattere"
+            },
+            {
+              "kind": "p",
+              "text": "Architettura, ristrutturazioni e interior design. Argomento proposto, in attesa di redazione."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-cielo-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Mercato"
+            },
+            {
+              "kind": "p",
+              "text": "Data in attesa"
+            },
+            {
+              "kind": "h2",
+              "text": "Il mercato residenziale di Barcellona questo trimestre"
+            },
+            {
+              "kind": "p",
+              "text": "Come si muovono prezzi e domanda in città. Argomento proposto, in attesa di redazione."
+            }
+          ]
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-terraza-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Quartieri"
+            },
+            {
+              "kind": "p",
+              "text": "Data in attesa"
+            },
+            {
+              "kind": "h2",
+              "text": "Come scegliere il quartiere a Barcellona"
+            },
+            {
+              "kind": "p",
+              "text": "Informazioni utili su quartieri e distretti. Argomento proposto, in attesa di redazione."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "In preparazione"
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "p",
+              "text": "01"
+            },
+            {
+              "kind": "p",
+              "text": "Consigli"
+            },
+            {
+              "kind": "p",
+              "text": "Data in attesa"
+            },
+            {
+              "kind": "h2",
+              "text": "Cosa conviene preparare prima di vendere casa"
+            },
+            {
+              "kind": "p",
+              "text": "Consigli pratici per proprietari e acquirenti. Argomento proposto, in attesa di redazione."
+            },
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-salon-1400.jpg"
+            }
+          ]
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "p",
+              "text": "02"
+            },
+            {
+              "kind": "p",
+              "text": "Attualità e normativa"
+            },
+            {
+              "kind": "p",
+              "text": "Data in attesa"
+            },
+            {
+              "kind": "h2",
+              "text": "Normativa immobiliare: cosa conviene sapere quando si compra o si vende"
+            },
+            {
+              "kind": "p",
+              "text": "Novità legali spiegate con chiarezza. Argomento proposto, in attesa di redazione."
+            },
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-hierro-720.jpg"
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Gli articoli saranno pubblicati dal CMS, con immagine, titolo, categoria, data e autore. Non ci sono ancora articoli reali: questi sono gli argomenti proposti."
+        }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Newsletter"
+        },
+        {
+          "kind": "h2",
+          "text": "Ricevi gli articoli nella tua casella di posta"
+        },
+        {
+          "kind": "p",
+          "text": "Mercato immobiliare di Barcellona, consigli per comprare, vendere e affittare, e novità di HousySpace."
+        },
+        {
+          "kind": "form",
+          "id": "newsletter",
+          "fields": [
+            {
+              "name": "email",
+              "label": "Indirizzo e-mail",
+              "required": true,
+              "full": false,
+              "type": "email",
+              "placeholder": "Il tuo indirizzo e-mail",
+              "kind": "field"
+            },
+            {
+              "kind": "submit",
+              "label": "Iscriviti"
+            },
+            {
+              "name": "consent",
+              "label": "**Desidero ricevere la newsletter e gli articoli di HousySpace via e-mail.** Ho letto la [politica sulla privacy](route:privacy).",
+              "required": true,
+              "full": false,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "**Informazioni di base.** Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: inviarti la newsletter e gli articoli. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge; i fornitori di posta elettronica agiscono per nostro conto. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione e portabilità, e disdetta in qualsiasi momento tramite il link in ogni e-mail o scrivendo a [info@housyspace.com](mailto:info@housyspace.com). Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Bozza: non è ancora connesso alcuno strumento newsletter; cliccando si aprirà il client di posta con la richiesta già compilata e non sarai iscritto finché non la invierai.)"
+            }
+          ],
+          "mode": "email"
+        }
+      ]
+    }
+  ]
+}

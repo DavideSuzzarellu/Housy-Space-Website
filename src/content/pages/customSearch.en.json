@@ -1,0 +1,192 @@
+{
+  "title": "Custom search · HousySpace",
+  "description": "Personalised property search in Barcelona.",
+  "head": {
+    "heading": "Custom search",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Buyers"
+      },
+      {
+        "kind": "lead",
+        "text": "Tell us what you are looking for and we will find it for you, with a dedicated adviser."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Your search"
+        },
+        {
+          "kind": "lead",
+          "text": "The more you tell us, the better we can search for you. An adviser will call you to refine the details."
+        },
+        {
+          "kind": "form",
+          "id": "bf",
+          "intro": "Hello, I would like a custom property search.",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Full name",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Phone",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Email address",
+              "required": false,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "operacion",
+              "label": "Buy or rent?",
+              "required": false,
+              "full": false,
+              "type": "select",
+              "options": ["Buy", "Rent"],
+              "kind": "field"
+            },
+            {
+              "name": "presupuesto",
+              "label": "Maximum budget",
+              "required": false,
+              "full": false,
+              "type": "text",
+              "placeholder": "E.g.: 650,000 €",
+              "kind": "field"
+            },
+            {
+              "name": "zonas",
+              "label": "Areas or neighbourhoods you are interested in",
+              "required": false,
+              "full": true,
+              "type": "text",
+              "placeholder": "E.g.: Sant Gervasi, Eixample, Gràcia",
+              "kind": "field"
+            },
+            {
+              "name": "hab",
+              "label": "Bedrooms",
+              "required": false,
+              "full": false,
+              "type": "number",
+              "kind": "field"
+            },
+            {
+              "name": "m2",
+              "label": "Minimum area (m²)",
+              "required": false,
+              "full": false,
+              "type": "number",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Must-haves (terrace, lift, timeline…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "I would like to receive commercial communications from HousySpace about properties, services and news by email, WhatsApp or phone. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "I would like to subscribe to the HousySpace newsletter and articles by email. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: handling your request and, only if you tick the boxes, sending commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where legally required. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy). (Legal text draft.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Request custom search"
+            },
+            {
+              "kind": "note",
+              "text": "No system is yet in place to receive the form (CRM pending). Clicking will open WhatsApp with your request pre-filled for you to send; until you send it there, it will not have reached HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "h3",
+          "text": "Would you prefer to speak directly with an adviser?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20quiero%20una%20b%C3%BAsqueda%20a%20medida.",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "About the property personal shopper service",
+              "href": "service:personal-shopper",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

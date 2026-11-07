@@ -1,0 +1,116 @@
+{
+  "title": "Property Personal Shopper · HousySpace",
+  "description": "We search and visit with you only what fits — and if needed, we renovate it too.",
+  "head": {
+    "heading": "Property Personal Shopper",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "We search and visit with you only what fits — and if needed, we renovate it too." },
+      { "kind": "image", "src": "../../assets/home/portal-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "We search for you, visit with you, and hand you the keys." },
+        { "kind": "p", "text": "You define what you need and we do the rest: we search, filter and visit with you only what fits. Before you decide, we study the property in depth so you buy without surprises." },
+        { "kind": "p", "text": "And if the flat you like needs a renovation, we handle that too." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "How we do it" },
+        { "kind": "h2", "text": "From search to handover" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Search profile", "text": "Area, type, budget and priorities: what you want and what you don't." },
+            { "title": "Active search", "text": "We scan the market according to your criteria, including off-market listings." },
+            { "title": "Selection", "text": "We only show you options that are worth a viewing." },
+            { "title": "Viewings", "text": "We organise them and accompany you with a technical eye." },
+            { "title": "Negotiation and purchase", "text": "We negotiate the price and accompany you to completion." },
+            { "title": "Renovation", "text": "If needed, we design and carry out the works so you can move straight in." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "No surprises" },
+        { "kind": "h2", "text": "What we review before you buy" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01The propertyReal condition of the home, installations and any works with their cost." },
+            { "title": "", "text": "02The buildingCondition of the building, technical inspection and planned works or community charges." },
+            { "title": "", "text": "03DocumentationLand Registry note, encumbrances, habitation certificate and energy certificate." },
+            { "title": "", "text": "04The priceComparison with recent sales in the area so you don't overpay." },
+            { "title": "", "text": "05FinancingWith our financial broker, the mortgage studied before you commit. [See financial advice](service:asesoramiento-financiero)." },
+            { "title": "", "text": "06The surroundingsServices, transport, noise and neighbourhood evolution." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "image", "src": "../../assets/home/det-salon-1400.jpg" },
+        { "kind": "tag", "text": "Renovations" },
+        { "kind": "h2", "text": "Does the flat need a renovation? We handle that too." },
+        { "kind": "p", "text": "Often the right property needs work. Instead of finding an architect, quotes and contractors on your own, we do it with the architecture and interior design studio we collaborate with." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Renovation quote before you buy, so you can decide with the full cost in hand." },
+            { "title": "", "text": "Project, permits and works coordinated by us." },
+            { "title": "", "text": "Timeline and finish monitoring until handover." }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Renovations & interior design", "href": "service:reformas-obras", "solid": false }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "\"Don't worry, I'll take care of it.\"" },
+        { "kind": "p", "text": "From the first viewing to the day you move in, you have one single adviser by your side." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}

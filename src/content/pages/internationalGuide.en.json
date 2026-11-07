@@ -1,0 +1,65 @@
+{
+  "title": "International buyers · HousySpace",
+  "description": "Guide to buying property in Barcelona from abroad.",
+  "head": {
+    "heading": "Buying in Barcelona from abroad",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Guide"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "NIE and identification"
+            },
+            {
+              "kind": "p",
+              "text": "What you need before buying (NIE is Spain's Tax Identification Number for foreigners)."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Taxes and costs"
+            },
+            {
+              "kind": "p",
+              "text": "The costs of buying, explained clearly."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Financing"
+            },
+            {
+              "kind": "p",
+              "text": "Mortgage options for residents and non-residents."
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Content pending drafting and review by the collaborating tax adviser and law firm before publication."
+        }
+      ]
+    }
+  ]
+}
