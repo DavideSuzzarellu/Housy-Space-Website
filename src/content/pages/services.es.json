@@ -1,0 +1,39 @@
+{
+  "title": "Servicios · HousySpace",
+  "description": "Compraventa, alquiler, búsqueda personalizada, reformas, interiorismo y asesoramiento. Una misma persona de referencia, de principio a fin.",
+  "head": {
+    "heading": "Un servicio integral para cada momento de tu vivienda.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servicios"
+      },
+      {
+        "kind": "lead",
+        "text": "Compraventa, alquiler, búsqueda personalizada, reformas, interiorismo y asesoramiento. Una misma persona de referencia, de principio a fin."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Nos importa más hacer bien cada operación que hacer muchas operaciones."
+        },
+        {
+          "kind": "p",
+          "text": "Cada servicio empieza con una conversación para entender qué necesitas. A partir de ahí te explicamos con claridad el proceso, los costes y los plazos, y te acompañamos hasta el final."
+        }
+      ]
+    }
+  ]
+}

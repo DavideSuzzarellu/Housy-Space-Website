@@ -246,6 +246,11 @@ const es = {
     clusterLabel: "{count} inmuebles: acercar el mapa",
     approximateSuffix: "(ubicación aproximada)",
   },
+  servicesIndex: {
+    discover: "Descubrir el servicio",
+    othersTag: "También te ayudamos con",
+    othersHeading: "Otros servicios",
+  },
   province: {
     heading: "Provincia de Barcelona",
     lead: "Los 311 municipios de la provincia de Barcelona con sus datos oficiales: comarca, código territorial y superficie.",

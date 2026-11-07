@@ -1,0 +1,111 @@
+{
+  "title": "Ven el teu immoble · HousySpace",
+  "description": "Una venda ben plantejada comença amb una conversa honesta sobre el valor i el moment.",
+  "head": {
+    "heading": "Ven el teu immoble amb criteri.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Per a propietaris"
+      },
+      {
+        "kind": "lead",
+        "text": "Una venda ben plantejada comença amb una conversa honesta sobre el valor i el moment."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "como-trabajamos",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Com treballem"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Escoltem"
+            },
+            {
+              "kind": "p",
+              "text": "Una primera conversa per entendre què vols vendre i per què."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valorem"
+            },
+            {
+              "kind": "p",
+              "text": "Informe de valoració al moment i anàlisi amb un assessor."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Comercialitzem"
+            },
+            {
+              "kind": "p",
+              "text": "Preparem i presentem l'immoble amb cura."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Tanquem"
+            },
+            {
+              "kind": "p",
+              "text": "Negociació i acompanyament fins a la signatura."
+            }
+          ]
+        },
+        {
+          "kind": "pending",
+          "text": "Pendent: honoraris o forma de calcular-los, per explicar-los amb transparència."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Valora la teva propietat",
+              "href": "route:valuation",
+              "solid": true
+            },
+            {
+              "label": "Servei de venda estratègica",
+              "href": "service:venta-estrategica",
+              "solid": false
+            },
+            {
+              "label": "Parlar amb un assessor",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

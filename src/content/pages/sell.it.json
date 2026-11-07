@@ -1,0 +1,111 @@
+{
+  "title": "Vendi il tuo immobile · HousySpace",
+  "description": "Una vendita ben impostata inizia con una conversazione onesta sul valore e sul momento.",
+  "head": {
+    "heading": "Vendi il tuo immobile con criterio.",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Per i proprietari"
+      },
+      {
+        "kind": "lead",
+        "text": "Una vendita ben impostata inizia con una conversazione onesta sul valore e sul momento."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "como-trabajamos",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Come lavoriamo"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Ascoltiamo"
+            },
+            {
+              "kind": "p",
+              "text": "Una prima conversazione per capire cosa vuoi vendere e perché."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valutiamo"
+            },
+            {
+              "kind": "p",
+              "text": "Rapporto di valutazione immediato e analisi con un consulente."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Commercializziamo"
+            },
+            {
+              "kind": "p",
+              "text": "Prepariamo e presentiamo l'immobile con cura."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Chiudiamo"
+            },
+            {
+              "kind": "p",
+              "text": "Negoziazione e assistenza fino alla firma."
+            }
+          ]
+        },
+        {
+          "kind": "pending",
+          "text": "In sospeso: onorari o modalità di calcolo, per spiegarli con trasparenza."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Valuta il tuo immobile",
+              "href": "route:valuation",
+              "solid": true
+            },
+            {
+              "label": "Servizio di vendita strategica",
+              "href": "service:venta-estrategica",
+              "solid": false
+            },
+            {
+              "label": "Parla con un consulente",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

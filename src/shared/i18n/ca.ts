@@ -240,6 +240,11 @@ const ca = {
     clusterLabel: "{count} immobles: apropa el mapa",
     approximateSuffix: "(ubicació aproximada)",
   },
+  servicesIndex: {
+    discover: "Descobrir el servei",
+    othersTag: "També t'ajudem amb",
+    othersHeading: "Altres serveis",
+  },
   province: {
     heading: "Província de Barcelona",
     lead: "Els 311 municipis de la província de Barcelona amb les seves dades oficials: comarca, codi territorial i superfície.",

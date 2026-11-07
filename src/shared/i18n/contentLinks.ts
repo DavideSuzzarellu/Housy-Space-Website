@@ -7,6 +7,7 @@ const CONTENT_ROUTES = {
   home: "home",
   contact: "contact",
   valuation: "valuation",
+  sell: "sell",
   about: "about",
   privacy: "privacy",
   legal: "legalNotice",

@@ -22,6 +22,8 @@ import {
   type EditorialKey,
 } from "@/features/pages/application/pages";
 import OtherServices from "@/features/pages/ui/OtherServices.astro";
+import ServicesGrid from "@/features/pages/ui/ServicesGrid.astro";
+import { getServiceCards } from "@/features/pages/application/serviceCards";
 import PageView from "@/features/pages/ui/PageView.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
@@ -192,7 +194,7 @@ const crumbs = [
   home,
   ...(serviceCrumb === undefined
     ? []
-    : [{ label: dictionary.nav.services, href: `${getLocalizedPath("home", locale)}#servicios` }]),
+    : [{ label: dictionary.nav.services, href: getLocalizedPath("services", locale) }]),
   { label: serviceCrumb ?? editorial?.content.head.heading ?? "" },
 ];
 ---
@@ -218,6 +220,9 @@ const crumbs = [
         fallback={editorial.fallback}
       />
     )
+  )}
+  {target.view === "editorial" && target.key === "services" && (
+    <ServicesGrid locale={locale} {...await getServiceCards(locale)} />
   )}
   {target.view === "post" && <PostView post={target.post} locale={locale} />}
   {target.view === "service" && <OtherServices locale={locale} current={target.service} />}

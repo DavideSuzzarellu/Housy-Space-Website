@@ -1,0 +1,63 @@
+---
+import type { ServiceCard } from "@/features/pages/application/serviceCards";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import ImageCard from "@/shared/ui/molecules/ImageCard.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+
+/** Services index grid: main services (the first one featured), then the other services. */
+interface Props {
+  locale: Locale;
+  main: readonly ServiceCard[];
+  others: readonly ServiceCard[];
+}
+
+const { locale, main, others } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.servicesIndex;
+---
+
+<Section id="servicios" labelledBy="services-grid-heading" name="services-grid">
+  <h2 id="services-grid-heading" class="sr-only">
+    {dictionary.nav.services}
+  </h2>
+  <ul role="list" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {main.map((card, position) => (
+      <li class:list={["flex", position === 0 && "md:col-span-2 lg:row-span-2"]}>
+        <ImageCard
+          href={card.href}
+          image={card.image}
+          title={card.name}
+          text={card.description}
+          cta={t.discover}
+          index={position + 1}
+          size={position === 0 ? "feature" : "default"}
+          headingLevel={3}
+          class="w-full"
+        />
+      </li>
+    ))}
+  </ul>
+
+  <div class="mt-[clamp(3rem,6vw,5rem)]">
+    <p class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">{t.othersTag}</p>
+    <SectionHeading id="services-others-heading" heading={t.othersHeading} />
+    <ul role="list" class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {others.map((card, position) => (
+        <li class="flex">
+          <ImageCard
+            href={card.href}
+            image={card.image}
+            title={card.name}
+            text={card.description}
+            cta={t.discover}
+            index={main.length + position + 1}
+            headingLevel={3}
+            class="w-full"
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</Section>
