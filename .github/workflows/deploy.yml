@@ -1,41 +1,41 @@
 name: Deploy to GitHub Pages
 on:
-    push:
-        branches: [main]
-    workflow_dispatch:
+  push:
+    branches: [main]
+  workflow_dispatch:
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+  contents: read
+  pages: write
+  id-token: write
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        env:
-            CLIENT_ID: ${{ secrets.CLIENT_ID }}
-            CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        steps:
-            - name: Checkout del código
-              uses: actions/checkout@v4
-            # INSTALAMOS BUN PRIMERO
-            - name: Setup Bun
-              uses: oven-sh/setup-bun@v2
-            # AHORA SÍ, DESCARGAMOS CHROMIUM
-            - name: Instalar Chromium para generar PDFs
-              run: bunx playwright install chromium
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+      # INSTALAMOS BUN PRIMERO
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      # AHORA SÍ, DESCARGAMOS CHROMIUM
+      - name: Instalar Chromium para generar PDFs
+        run: bunx playwright install chromium
 
-            # COMPILAMOS ASTRO
-            - name: Instalar, buildear y subir el sitio
-              uses: withastro/action@v3
-              with:
-                  package-manager: bun
-                  node-version: 22
-    deploy:
-        needs: build
-        runs-on: ubuntu-latest
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        steps:
-            - name: Publicar en GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      # COMPILAMOS ASTRO
+      - name: Instalar, buildear y subir el sitio
+        uses: withastro/action@v3
+        with:
+          package-manager: bun
+          node-version: 22
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
