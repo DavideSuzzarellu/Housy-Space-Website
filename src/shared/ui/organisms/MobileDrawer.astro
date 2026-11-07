@@ -37,15 +37,15 @@ const items = getMainNavigation(locale);
     data-drawer-backdrop
     class="absolute inset-0 bg-ink/40 opacity-0 transition-opacity duration-500 group-data-[open=true]/drawer:opacity-100"
   ></div>
-  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain bg-canvas px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-petrol-dark shadow-2xl shadow-ink/25 transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
-    <div class="flex min-h-15 items-center justify-between gap-4 border-b border-petrol-dark/10 pb-3">
+  <div class="relative flex h-full w-full max-w-135 translate-x-full flex-col overflow-y-auto overscroll-contain bg-canvas px-5.5 pt-[calc(env(safe-area-inset-top)+0.875rem)] pb-[calc(env(safe-area-inset-bottom)+1.625rem)] text-fg shadow-2xl shadow-ink/25 transition-transform duration-600 ease-brand group-data-[open=true]/drawer:translate-x-0">
+    <div class="flex min-h-15 items-center justify-between gap-4 border-b border-fg/10 pb-3">
       <a href={getLocalizedPath("home", locale)} aria-label={t.a11y.homeLink}>
         <Logo alt="" class="h-10 w-auto" />
       </a>
       <button
         type="button"
         data-drawer-close
-        class="inline-flex min-h-11 cursor-pointer items-center gap-3 border border-petrol-dark/20 px-3.5 text-xs font-medium tracking-[0.14em] uppercase transition-colors hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal"
+        class="inline-flex min-h-11 cursor-pointer items-center gap-3 border border-fg/20 px-3.5 text-xs font-medium tracking-[0.14em] uppercase transition-colors hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal"
       >
         <span>{t.a11y.closeMenu}</span>
         <span
@@ -63,9 +63,7 @@ const items = getMainNavigation(locale);
             <li
               class:list={[
                 "group/item",
-                item.secondary
-                  ? "mt-3.5 mr-6.5 flex-none"
-                  : "basis-full border-b border-petrol-dark/10",
+                item.secondary ? "mt-3.5 mr-6.5 flex-none" : "basis-full border-b border-fg/10",
               ]}
               data-drawer-item
               data-expanded="false"
@@ -89,7 +87,7 @@ const items = getMainNavigation(locale);
                     aria-expanded="false"
                     aria-controls={groupId}
                     aria-label={formatMessage(t.a11y.toggleGroup, { label: item.label })}
-                    class="grid size-12 flex-none cursor-pointer place-items-center border border-petrol-dark/10 transition-colors aria-expanded:border-turquoise-deep aria-expanded:bg-turquoise/10"
+                    class="grid size-12 flex-none cursor-pointer place-items-center border border-fg/10 transition-colors aria-expanded:border-teal aria-expanded:bg-teal/10"
                   >
                     <span
                       aria-hidden="true"
@@ -108,7 +106,7 @@ const items = getMainNavigation(locale);
                       <li>
                         <a
                           href={child.href}
-                          class="block min-h-11 border-l border-petrol-dark/10 py-2.75 pl-4.5 text-[0.9375rem] leading-snug text-petrol-dark/85 no-underline transition-colors hover:border-turquoise-deep hover:text-teal focus-visible:border-turquoise-deep focus-visible:text-teal"
+                          class="block min-h-11 border-l border-fg/10 py-2.75 pl-4.5 text-[0.9375rem] leading-snug text-fg/85 no-underline transition-colors hover:border-teal hover:text-teal focus-visible:border-teal focus-visible:text-teal"
                         >
                           {child.label}
                         </a>
@@ -134,8 +132,8 @@ const items = getMainNavigation(locale);
       </div>
     )}
 
-    <div class="mt-auto border-t border-petrol-dark/10 pt-6.5">
-      <p class="mt-4.5 mb-3.5 text-[0.8125rem] text-green-grey">{t.contact.drawerIntro}</p>
+    <div class="mt-auto border-t border-fg/10 pt-6.5">
+      <p class="mt-4.5 mb-3.5 text-[0.8125rem] text-muted">{t.contact.drawerIntro}</p>
       <ContactActions locale={locale} variant="drawer" />
     </div>
   </div>

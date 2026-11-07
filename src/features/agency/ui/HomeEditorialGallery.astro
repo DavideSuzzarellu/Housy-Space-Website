@@ -33,33 +33,27 @@ const items = [
   class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
 >
   <Container>
-    <SectionHeading
-      id="gallery-heading"
-      heading={content.heading}
-      class="mb-3"
-    />
+    <SectionHeading id="gallery-heading" heading={content.heading} class="mb-3" />
     <p data-reveal class="mb-[clamp(1.5rem,3vw,2.5rem)] max-w-[55ch] text-muted">
       {content.lead}
     </p>
     <div class="grid gap-6 sm:grid-cols-2">
-      {
-        items.map((item) => (
-          <figure data-reveal class="m-0">
-            <img
-              src={item.photo}
-              alt={item.title}
-              loading="lazy"
-              width="800"
-              height="560"
-              class="block h-[320px] w-full bg-stone object-cover"
-            />
-            <figcaption class="grid gap-1 pt-3">
-              <strong class="font-serif text-2xl font-normal text-fg">{item.title}</strong>
-              <span class="text-sm text-muted">{item.subtitle}</span>
-            </figcaption>
-          </figure>
-        ))
-      }
+      {items.map((item) => (
+        <figure data-reveal class="m-0">
+          <img
+            src={item.photo}
+            alt={item.title}
+            loading="lazy"
+            width="800"
+            height="560"
+            class="block h-[320px] w-full bg-stone object-cover"
+          />
+          <figcaption class="grid gap-1 pt-3">
+            <strong class="font-serif text-2xl font-normal text-fg">{item.title}</strong>
+            <span class="text-sm text-muted">{item.subtitle}</span>
+          </figcaption>
+        </figure>
+      ))}
     </div>
   </Container>
 </section>

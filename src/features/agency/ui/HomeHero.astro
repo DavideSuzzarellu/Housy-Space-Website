@@ -48,8 +48,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     aria-hidden="true"
     class="absolute inset-0 hidden size-full object-cover"
   >
-    <source src={`${base}/media/hero/hero-corto.webm`} type="video/webm" media="(min-aspect-ratio: 4/5)" />
-    <source src={`${base}/media/hero/hero-corto.mp4`} type="video/mp4" media="(min-aspect-ratio: 4/5)" />
+    <source
+      src={`${base}/media/hero/hero-corto.webm`}
+      type="video/webm"
+      media="(min-aspect-ratio: 4/5)"
+    />
+    <source
+      src={`${base}/media/hero/hero-corto.mp4`}
+      type="video/mp4"
+      media="(min-aspect-ratio: 4/5)"
+    />
     <source src={`${base}/media/hero/hero-corto-v.webm`} type="video/webm" />
     <source src={`${base}/media/hero/hero-corto-v.mp4`} type="video/mp4" />
   </video>

@@ -61,7 +61,7 @@
   h1,
   h2,
   h3 {
-    @apply font-serif font-normal leading-[1.08] tracking-[0.01em] text-balance;
+    @apply font-serif leading-[1.08] font-normal tracking-[0.01em] text-balance;
   }
 
   :focus-visible {

@@ -91,7 +91,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
         type="button"
         data-catalog-clear-area
         hidden
-        class="min-h-11 border border-turquoise-deep px-4 text-xs tracking-[0.12em] uppercase transition-colors hover:border-accent hover:text-accent"
+        class="min-h-11 border border-teal px-4 text-xs tracking-[0.12em] uppercase transition-colors hover:border-accent hover:text-accent"
       >
         {t.areaChip} <span aria-hidden="true">✕</span>
       </button>
@@ -123,9 +123,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
     <div class="mt-7 grid gap-7 lg:group-data-[view=split]/catalog:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
       <div class="group-data-[view=map]/catalog:hidden">
         {total === 0 ? (
-          <p class="border-l-2 border-turquoise-deep py-1 pl-3 text-sm text-muted">
-            {t.emptyCatalog}
-          </p>
+          <p class="border-l-2 border-teal py-1 pl-3 text-sm text-muted">{t.emptyCatalog}</p>
         ) : (
           <ul
             data-catalog-list
@@ -172,7 +170,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
             type="button"
             data-catalog-search-area
             hidden
-            class="absolute top-3 left-1/2 z-10 min-h-11 -translate-x-1/2 bg-fg px-5 text-xs font-medium tracking-[0.12em] text-canvas uppercase shadow-lg transition-colors hover:bg-turquoise"
+            class="absolute top-3 left-1/2 z-10 min-h-11 -translate-x-1/2 bg-fg px-5 text-xs font-medium tracking-[0.12em] text-canvas uppercase shadow-lg transition-colors hover:bg-teal"
           >
             {t.searchArea}
           </button>

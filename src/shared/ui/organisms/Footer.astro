@@ -12,7 +12,6 @@ import aicatSeal from "@/assets/brand/aicat.png";
 import apeiSeal from "@/assets/brand/apei.png";
 import apeiExpert from "@/assets/brand/apei-experto.svg";
 import type { Company } from "@/features/agency/domain/company";
-import NewsletterForm from "@/features/leads/ui/NewsletterForm.astro";
 import type { Locale } from "@/shared/i18n/config";
 import { getDictionary } from "@/shared/i18n";
 import { getLocalizedPath } from "@/shared/i18n/routes";
@@ -22,9 +21,8 @@ import Logo from "@/shared/ui/atoms/Logo.astro";
 import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
 
 /**
- * Site footer of proposal v3 (2026-11-02): "¡Hablemos!" with the contact actions and social
- * profiles, newsletter, company data, three link columns and the AICAT and APEI seals as logos
- * (the AICAT seal shows the registration number, AGENTS.md §7).
+ * Site footer (HousySpace design reference v172): "¡Hablemos!" CTA block with contact actions
+ * and social links, then logo + company info column, three nav columns, AICAT and APEI seals.
  */
 interface Props {
   locale: Locale;
@@ -38,24 +36,16 @@ const year = new Date().getFullYear();
 const LINK = "hover:text-accent";
 ---
 
-<footer class="surface-dark bg-canvas pt-[clamp(3rem,5vw,4rem)] pb-10 text-[0.8125rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
-  <Container>
-    <section
-      aria-labelledby="contact-block-heading"
-      data-contact-block
-      class="mb-[clamp(0.875rem,1.8vw,1.25rem)] flex flex-wrap items-center justify-between gap-x-10 gap-y-5 border-b border-line pb-[clamp(1.625rem,3vw,2.5rem)]"
-    >
-      <h2
-        id="contact-block-heading"
-        class="text-[clamp(2.875rem,7.2vw,6.5rem)] leading-[0.95] text-fg"
-      >
-        {t.footer.ctaHeading}
-      </h2>
+<footer class="surface-dark bg-canvas pb-10 text-[0.8125rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
+  <!-- "¡Hablemos!" CTA block -->
+  <div class="border-b border-line py-[clamp(2.5rem,5vw,3.75rem)]">
+    <Container>
+      <h2 class="mb-5 text-[clamp(1.75rem,4vw,2.5rem)] text-fg">{t.footer.ctaHeading}</h2>
       <ContactActions locale={locale} variant="footer" />
-    </section>
+    </Container>
+  </div>
 
-    <NewsletterForm locale={locale} />
-
+  <Container class="pt-[clamp(3rem,5vw,4rem)]">
     <div class="grid gap-8.5 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
       <div>
         <a
@@ -141,11 +131,11 @@ const LINK = "hover:text-accent";
       </div>
     </div>
 
-    <div class="mt-6.5 grid gap-1 border-t border-line pt-5 text-xs">
+    <div class="mt-6.5 border-t border-line pt-5 text-xs">
       <p>
         © {year} {company.brandName}. {t.footer.rights}
       </p>
-      <p>{t.footer.aiImagery}</p>
+      <p class="mt-1">{t.footer.aiImagery}</p>
     </div>
   </Container>
 </footer>
