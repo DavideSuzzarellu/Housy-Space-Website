@@ -51,7 +51,12 @@ export const getStaticPaths = (async () => {
   const market = await getMarket();
   const posts = await getPosts();
   const { municipalities } = await getMunicipalities();
-  const paramOf = (path: string, locale: Locale) => path.slice(`/${locale}/`.length);
+  // Strip base URL before slicing so params are just route segments (Astro handles the base).
+  const _base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const paramOf = (path: string, locale: Locale) => {
+    const p = _base && path.startsWith(_base) ? path.slice(_base.length) : path;
+    return p.slice(`/${locale}/`.length);
+  };
   return LOCALES.flatMap((locale) => {
     const entry = (path: string, view: View) => ({
       params: { locale, page: paramOf(path, locale) },

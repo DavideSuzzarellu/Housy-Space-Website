@@ -156,8 +156,8 @@ export function getLocalizedPath<K extends RouteKey>(
   const [params] = args;
   const path = buildPath(routeKey, locale, params ?? {});
 
-  // Limpiamos el BASE_URL por si viene con una barra al final
-  const base = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+  // Vite always adds a trailing slash to BASE_URL — strip it so we don't get double slashes.
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   // Si el path ya tiene el base (raro, pero por las dudas), lo devolvemos
   if (base && path.startsWith(base)) return path;

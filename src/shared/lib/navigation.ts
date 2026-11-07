@@ -102,7 +102,10 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
     },
     {
       title: footer.columns.owners,
-      links: [{ label: nav.sell, href: getLocalizedPath("sell", locale) }],
+      links: [
+        { label: nav.sell, href: getLocalizedPath("sell", locale) },
+        { label: nav.valuation, href: getLocalizedPath("valuation", locale) },
+      ],
     },
     {
       title: footer.columns.company,
@@ -110,6 +113,7 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
         { label: nav.about, href: getLocalizedPath("about", locale) },
         { label: nav.contact, href: getLocalizedPath("contact", locale) },
         { label: nav.whereWeAre, href: whereWeAreHref(locale) },
+        { label: footer.links.internationalGuide, href: getLocalizedPath("internationalGuide", locale) },
         { label: footer.links.dataStatus, href: getLocalizedPath("dataSources", locale) },
         { label: footer.links.legalNotice, href: getLocalizedPath("legalNotice", locale) },
         { label: footer.links.privacy, href: getLocalizedPath("privacy", locale) },
