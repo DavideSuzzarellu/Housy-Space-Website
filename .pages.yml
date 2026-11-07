@@ -109,12 +109,32 @@ content:
               required: true,
               description: "Pon entre *asteriscos* la parte más fina.",
             }
+      - name: gallery
+        label: Galería editorial
+        type: object
+        fields:
+          - { name: heading, label: Titular, type: string, required: true }
+          - { name: lead, label: Subtítulo, type: string, required: true }
+          - { name: item1Title, label: Foto 1 · Título, type: string, required: true }
+          - { name: item1Subtitle, label: Foto 1 · Subtítulo, type: string, required: true }
+          - { name: item2Title, label: Foto 2 · Título, type: string, required: true }
+          - { name: item2Subtitle, label: Foto 2 · Subtítulo, type: string, required: true }
+          - { name: item3Title, label: Foto 3 · Título, type: string, required: true }
+          - { name: item3Subtitle, label: Foto 3 · Subtítulo, type: string, required: true }
+          - { name: item4Title, label: Foto 4 · Título, type: string, required: true }
+          - { name: item4Subtitle, label: Foto 4 · Subtítulo, type: string, required: true }
       - name: collaborators
         label: Colaboradores
         type: object
         fields:
-          - { name: text, label: Texto, type: string, required: true }
-          - { name: ctaLabel, label: Botón a Nosotros, type: string, required: true }
+          - { name: heading, label: Titular, type: string, required: true }
+          - { name: card1Heading, label: Tarjeta 1 · Título, type: string, required: true }
+          - { name: card1Text, label: Tarjeta 1 · Texto, type: string, required: true }
+          - { name: card1CtaLabel, label: Tarjeta 1 · Botón, type: string, required: true }
+          - { name: card2Heading, label: Tarjeta 2 · Título, type: string, required: true }
+          - { name: card2Text, label: Tarjeta 2 · Texto, type: string, required: true }
+          - { name: card2CtaLabel, label: Tarjeta 2 · Botón, type: string, required: true }
+          - { name: note, label: Nota al pie, type: string, required: true }
       - name: philosophy
         label: Filosofía
         type: object
@@ -161,6 +181,23 @@ content:
               description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: ctaLabel, label: Botón al blog, type: string, required: true }
+      - name: contact
+        label: Consulta privada (home)
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte más fina.",
+            }
+          - { name: lead, label: Subtítulo, type: string, required: true }
+          - { name: fieldNameLabel, label: Campo · Nombre, type: string, required: true }
+          - { name: fieldEmailLabel, label: Campo · Email, type: string, required: true }
+          - { name: fieldMessageLabel, label: Campo · Mensaje, type: string, required: true }
+          - { name: fieldConsentLabel, label: Campo · Consentimiento, type: string, required: true }
+          - { name: submitLabel, label: Botón enviar, type: string, required: true }
   - name: home-en
     label: Inicio (EN)
     type: file

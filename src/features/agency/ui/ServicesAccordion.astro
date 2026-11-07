@@ -66,14 +66,34 @@ const panels = PANELS.map((panel, index) => ({
 
     <div
       data-reveal
-      class="mt-[clamp(1.625rem,3vw,2.5rem)] grid justify-items-center gap-4 text-center"
+      aria-labelledby="collaborators-heading"
+      class="mt-[clamp(1.625rem,3vw,2.5rem)]"
     >
-      <p class="max-w-[26ch] text-[clamp(1rem,1.7vw,1.375rem)] leading-tight font-medium text-balance text-fg">
-        {collaborators.text}
+      <h2
+        id="collaborators-heading"
+        class="mb-[clamp(1rem,2vw,1.5rem)] font-serif text-[clamp(1.625rem,3vw,2.25rem)] font-normal leading-tight text-fg"
+      >
+        {collaborators.heading}
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="surface-stone bg-card p-7">
+          <h3 class="mb-2 font-serif text-2xl font-normal text-fg">{collaborators.card1Heading}</h3>
+          <p class="mb-6 text-sm text-muted">{collaborators.card1Text}</p>
+          <Button href={getLocalizedPath("contact", locale)} arrow>
+            {collaborators.card1CtaLabel}
+          </Button>
+        </div>
+        <div class="surface-stone bg-card p-7">
+          <h3 class="mb-2 font-serif text-2xl font-normal text-fg">{collaborators.card2Heading}</h3>
+          <p class="mb-6 text-sm text-muted">{collaborators.card2Text}</p>
+          <Button href={getLocalizedPath("contact", locale)} arrow>
+            {collaborators.card2CtaLabel}
+          </Button>
+        </div>
+      </div>
+      <p class="note mt-5 border-l-2 border-gold pl-4 text-sm text-muted">
+        {collaborators.note}
       </p>
-      <Button href={getLocalizedPath("about", locale)} arrow>
-        {collaborators.ctaLabel}
-      </Button>
     </div>
   </Container>
 </section>

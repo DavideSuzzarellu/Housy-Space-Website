@@ -1,15 +1,23 @@
 {
   "hero": {
-    "videoLandscape": "/media/hero/hero-1280.mp4",
-    "videoPortrait": "/media/hero/hero-720v.mp4",
-    "posterLandscape": "../../assets/home/hero-poster.jpg",
-    "posterPortrait": "../../assets/home/hero-poster-v.jpg"
-  },
-  "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
     "headingFirst": "Every corner has a story",
     "headingSecond": "Every person, a new beginning",
-    "linkLabel": "Get to know us"
+    "ctaLabel": "About us"
+  },
+  "stats": {
+    "eyebrow": "Five years of HousySpace",
+    "heading": "What we have achieved *with those who trusted us*",
+    "stat1Value": "35 million €",
+    "stat1Label": "of brokered volume in these five years",
+    "stat2Value": "100 properties",
+    "stat2Label": "brokered in Barcelona and surroundings",
+    "stat3Value": "60 flats",
+    "stat3Label": "rented with the same level of care",
+    "stat4Value": "9 out of 10 districts",
+    "stat4Label": "in Barcelona, plus over 10 surrounding municipalities",
+    "note": "Every transaction is on the map, district by district, with the listing price and the month it closed.",
+    "ctaLabel": "Brokered properties"
   },
   "featured": {
     "heading": "Find *your new beginning* here",
@@ -25,9 +33,27 @@
   "services": {
     "heading": "Discover everything *we can do for you*"
   },
+  "gallery": {
+    "heading": "Barcelona, a way of life",
+    "lead": "Modernist architecture, Mediterranean light and singular buildings that define the character of the city.",
+    "item1Title": "Eixample Dret",
+    "item1Subtitle": "High ceilings with original mouldings and restored hydraulic floors.",
+    "item2Title": "Sarrià - Sant Gervasi",
+    "item2Subtitle": "Detached houses with spacious gardens and uninterrupted natural light.",
+    "item3Title": "Ciutat Vella & Born",
+    "item3Subtitle": "Recovered wooden beams and original Gothic stone arches.",
+    "item4Title": "Gràcia & Pedralbes",
+    "item4Subtitle": "Modern spaces rehabilitated while respecting the historic architecture."
+  },
   "collaborators": {
-    "text": "We surround ourselves with the best to offer you much more.",
-    "ctaLabel": "Meet our partners"
+    "heading": "Specialist advice, with trusted professionals",
+    "card1Heading": "Collaborating law firm",
+    "card1Text": "Full legal advice on property transactions, title review, encumbrances and contract drafting.",
+    "card1CtaLabel": "Legal area enquiry",
+    "card2Heading": "Collaborating tax advisor",
+    "card2Text": "Comprehensive tax planning and optimisation for property transfers, capital gains and real estate taxes.",
+    "card2CtaLabel": "Tax area enquiry",
+    "note": "Independent professionals selected for their track record and rigour."
   },
   "philosophy": {
     "quoteFirst": "Don't worry,",
@@ -48,5 +74,14 @@
   "blog": {
     "heading": "Blogs *and news*",
     "ctaLabel": "See all articles"
+  },
+  "contact": {
+    "heading": "Private *consultation*",
+    "lead": "A HousySpace advisor will be with you from the first message.",
+    "fieldNameLabel": "Full name",
+    "fieldEmailLabel": "Email address",
+    "fieldMessageLabel": "Tell us what you need",
+    "fieldConsentLabel": "I have read and accept HousySpace's privacy policy and consent to the processing of my data to manage my request. (Legal text pending validation.)",
+    "submitLabel": "Send enquiry"
   }
 }

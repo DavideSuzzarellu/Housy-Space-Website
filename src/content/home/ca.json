@@ -1,15 +1,23 @@
 {
   "hero": {
-    "videoLandscape": "/media/hero/hero-1280.mp4",
-    "videoPortrait": "/media/hero/hero-720v.mp4",
-    "posterLandscape": "../../assets/home/hero-poster.jpg",
-    "posterPortrait": "../../assets/home/hero-poster-v.jpg"
-  },
-  "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
     "headingFirst": "Cada racó té una història",
     "headingSecond": "Cada persona, un nou començament",
-    "linkLabel": "Coneix-nos"
+    "ctaLabel": "Qui som"
+  },
+  "stats": {
+    "eyebrow": "Cinc anys de HousySpace",
+    "heading": "El que hem aconseguit *amb els qui han confiat en nosaltres*",
+    "stat1Value": "35 milions €",
+    "stat1Label": "de volum intermediat en aquests cinc anys",
+    "stat2Value": "100 immobles",
+    "stat2Label": "intermediats a Barcelona i rodalia",
+    "stat3Value": "60 pisos",
+    "stat3Label": "llogats amb el mateix acompanyament",
+    "stat4Value": "9 de 10 districtes",
+    "stat4Label": "de Barcelona, i més de 10 municipis de l'entorn",
+    "note": "Cada operació és al mapa, districte per districte, amb el preu d'anunci i el mes en què es va tancar.",
+    "ctaLabel": "Immobles intermediats"
   },
   "featured": {
     "heading": "Troba aquí *el teu nou començament*",
@@ -25,9 +33,27 @@
   "services": {
     "heading": "Descobreix tot *el que podem fer per tu*"
   },
+  "gallery": {
+    "heading": "Barcelona, una manera de viure",
+    "lead": "Arquitectura modernista, llum mediterrània i finques singulars que defineixen el caràcter de la ciutat.",
+    "item1Title": "Eixample Dret",
+    "item1Subtitle": "Sostres alts amb motllures originals i terres hidràulics restaurats.",
+    "item2Title": "Sarrià - Sant Gervasi",
+    "item2Subtitle": "Finques unifamiliars amb amplis jardins i llum natural ininterrompuda.",
+    "item3Title": "Ciutat Vella & Born",
+    "item3Subtitle": "Bigues de fusta recuperades i arcs de pedra gòtica original.",
+    "item4Title": "Gràcia & Pedralbes",
+    "item4Subtitle": "Espais moderns rehabilitats respectant l'arquitectura històrica."
+  },
   "collaborators": {
-    "text": "Ens envoltem dels millors per oferir-te molt més.",
-    "ctaLabel": "Coneix els nostres col·laboradors"
+    "heading": "Assessorament especialitzat, amb professionals de confiança",
+    "card1Heading": "Despatx jurídic col·laborador",
+    "card1Text": "Assessorament legal complet en transaccions immobiliàries, revisió de títols, càrregues i redacció de contractes.",
+    "card1CtaLabel": "Consultar àrea legal",
+    "card2Heading": "Fiscalista col·laborador",
+    "card2Text": "Optimització i planificació fiscal integral per a transmissions patrimonials, plusvàlues i impostos immobiliaris.",
+    "card2CtaLabel": "Consultar àrea fiscal",
+    "note": "Professionals independents seleccionats per la seva trajectòria i màxim rigor."
   },
   "philosophy": {
     "quoteFirst": "No pateixis,",
@@ -48,5 +74,14 @@
   "blog": {
     "heading": "Blogs *i notícies*",
     "ctaLabel": "Veure tots els articles"
+  },
+  "contact": {
+    "heading": "Consulta *privada*",
+    "lead": "Un consultor d'HousySpace t'acompanyarà des del primer missatge.",
+    "fieldNameLabel": "Nom i cognoms",
+    "fieldEmailLabel": "Correu electrònic",
+    "fieldMessageLabel": "Explica'ns què necessites",
+    "fieldConsentLabel": "He llegit i accepto la política de privacitat d'HousySpace i consento el tractament de les meves dades per gestionar la meva sol·licitud. (Text legal pendent de validació.)",
+    "submitLabel": "Enviar consulta"
   }
 }

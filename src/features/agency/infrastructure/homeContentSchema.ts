@@ -11,9 +11,6 @@ import { hasBalancedEmphasis } from "@/shared/lib/emphasis";
 const text = z.string().trim().min(1);
 /** Heading with an optional `*italic part*` (see shared/lib/emphasis.ts). */
 const heading = text.refine(hasBalancedEmphasis, "Unclosed *emphasis* marker");
-/** Video uploaded through the CMS media library to `public/media` (served as is). */
-const video = z.string().regex(/^\/media\/[\w./-]+\.(mp4|webm)$/);
-
 /**
  * `image` is Astro's `image()` from the collection schema context: images live in `src/assets`
  * so Astro optimizes them (AGENTS.md §8). Tests pass a stand-in.
@@ -23,20 +20,28 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
     .object({
       hero: z
         .object({
-          videoLandscape: video,
-          videoPortrait: video,
-          posterLandscape: image(),
-          posterPortrait: image(),
+          eyebrow: text,
+          headingFirst: text,
+          headingSecond: text,
+          ctaLabel: text,
         })
         .strict(),
       // Fixed parts of the design are named fields, not lists: the CMS form cannot add a third
       // heading line or a fourth step that the layout has no room for (and that would fail the build).
-      presentation: z
+      stats: z
         .object({
           eyebrow: text,
-          headingFirst: text,
-          headingSecond: text,
-          linkLabel: text,
+          heading,
+          stat1Value: text,
+          stat1Label: text,
+          stat2Value: text,
+          stat2Label: text,
+          stat3Value: text,
+          stat3Label: text,
+          stat4Value: text,
+          stat4Label: text,
+          note: text,
+          ctaLabel: text,
         })
         .strict(),
       featured: z.object({ heading, ctaLabel: text }).strict(),
@@ -50,7 +55,32 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
         })
         .strict(),
       services: z.object({ heading }).strict(),
-      collaborators: z.object({ text, ctaLabel: text }).strict(),
+      gallery: z
+        .object({
+          heading: text,
+          lead: text,
+          item1Title: text,
+          item1Subtitle: text,
+          item2Title: text,
+          item2Subtitle: text,
+          item3Title: text,
+          item3Subtitle: text,
+          item4Title: text,
+          item4Subtitle: text,
+        })
+        .strict(),
+      collaborators: z
+        .object({
+          heading: text,
+          card1Heading: text,
+          card1Text: text,
+          card1CtaLabel: text,
+          card2Heading: text,
+          card2Text: text,
+          card2CtaLabel: text,
+          note: text,
+        })
+        .strict(),
       philosophy: z
         .object({
           quoteFirst: text,
@@ -63,6 +93,17 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
       reviews: z.object({ heading, ctaLabel: text, mapsUrl: z.url() }).strict(),
       districts: z.object({ heading, ctaLabel: text }).strict(),
       blog: z.object({ heading, ctaLabel: text }).strict(),
+      contact: z
+        .object({
+          heading,
+          lead: text,
+          fieldNameLabel: text,
+          fieldEmailLabel: text,
+          fieldMessageLabel: text,
+          fieldConsentLabel: text,
+          submitLabel: text,
+        })
+        .strict(),
     })
     .strict();
 }

@@ -2,6 +2,8 @@
 import type { GetStaticPaths } from "astro";
 import { getHomeContent } from "@/features/agency/application/homeContent";
 import BlogTeaser from "@/features/blog/ui/BlogTeaser.astro";
+import HomeContact from "@/features/agency/ui/HomeContact.astro";
+import HomeEditorialGallery from "@/features/agency/ui/HomeEditorialGallery.astro";
 import HomeHero from "@/features/agency/ui/HomeHero.astro";
 import HomePresentation from "@/features/agency/ui/HomePresentation.astro";
 import HomeStats from "@/features/agency/ui/HomeStats.astro";
@@ -52,6 +54,7 @@ const PRESENTATION_ID = "presentacion";
   <HomeStats locale={locale} id="stats" content={content.stats} />
   <ValuationExplainer locale={locale} content={content.valuation} />
   <FeaturedProperties locale={locale} properties={featured} content={content.featured} />
+  <HomeEditorialGallery content={content.gallery} />
   <ServicesAccordion
     locale={locale}
     content={content.services}
@@ -61,4 +64,5 @@ const PRESENTATION_ID = "presentacion";
   <ReviewsSection locale={locale} content={content.reviews} testimonials={testimonials} />
   <LivingInBarcelona locale={locale} content={content.districts} />
   <BlogTeaser locale={locale} content={content.blog} posts={posts} />
+  <HomeContact locale={locale} content={content.contact} />
 </BaseLayout>
