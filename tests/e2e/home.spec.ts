@@ -84,7 +84,7 @@ for (const locale of LOCALES) {
     test("shows the 3 latest client reviews, newest first", async ({ page }) => {
       const section = page.locator('[data-section="reviews"]');
       await expect(section.locator("li")).toHaveCount(3);
-      await expect(section.locator("li").first()).toContainText("Bruno S.");
+      await expect(section.locator("li").first()).toContainText("Bruno Sorrentini");
     });
 
     test("links to the 10 district pages", async ({ page }) => {

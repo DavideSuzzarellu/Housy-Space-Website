@@ -9,6 +9,10 @@ export interface Testimonial {
   readonly text: string;
   readonly date: Date;
   readonly language: string;
+  /** Author photo as served by Google: linked, never copied to this site. */
+  readonly photoUrl?: string | undefined;
+  /** The review on Google Maps. */
+  readonly reviewUrl?: string | undefined;
 }
 
 /** How many the home shows. */

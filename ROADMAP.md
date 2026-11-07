@@ -29,7 +29,7 @@
 | I20 | ⚠️ **Renew housyspace.com before 2026-12-19** (expiry date per the .com registry): confirm auto-renewal at Webempresa. If it lapses, website and email go down | Everything | ⏳ urgent |
 | I21 | Email (`mail.housyspace.com`) is hosted on the Webempresa plan of the old WordPress: keep that plan for email, or migrate email first. Never cancel the hosting before deciding | Retiring the old WordPress | ⏳ pending |
 | I22 | Put the repo on GitHub (private), install the Pages CMS GitHub App on it and invite the client by email at app.pagescms.org | Client editing | ⏳ pending (repo push not authorized yet) |
-| I24 | Lawyer: confirm publishing client reviews with first name + initial on the website, and any consumer-law notice required | Launch | ⏳ pending |
+| I24 | Before launch: confirm publishing client reviews with full name and photo, any consumer-law notice, loading Google-hosted photos before cookie consent, and that the links copied from the Places API response comply with Google's policy | Launch | ⏳ pending |
 | I23 | Confirm the company facts taken from proposal v3: "9 years" of activity, partners (ADV Advocats, Maria Guimerà Arquitectura, Asesoría Edac), APEI membership no. 3261, services list (adds legal/tax and financial advice). en/it/ca of the v3 home copy are machine translations | Home copy | ⏳ pending |
 
 ## B. Phases

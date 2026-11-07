@@ -38,12 +38,36 @@ const stars = (rating: number) => "★".repeat(rating).padEnd(5, "☆");
           <p lang={testimonial.language} class="text-[0.9375rem] whitespace-pre-line normal-case">
             {testimonial.text}
           </p>
-          <p class="mt-auto grid border-t border-ink/10 pt-4 text-[0.8125rem]">
-            <b class="font-medium">{testimonial.author}</b>
-            <time datetime={testimonial.date.toISOString()} class="text-xs text-ink/70">
-              {formatDate(testimonial.date, locale)}
-            </time>
-          </p>
+          <div class="mt-auto flex items-center gap-3 border-t border-ink/10 pt-4">
+            {testimonial.photoUrl !== undefined && (
+              <img
+                src={testimonial.photoUrl}
+                alt=""
+                width="34"
+                height="34"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                class="size-8.5 shrink-0 rounded-full"
+              />
+            )}
+            <p class="grid text-[0.8125rem]">
+              <b class="font-medium">{testimonial.author}</b>
+              <time datetime={testimonial.date.toISOString()} class="text-xs text-ink/70">
+                {formatDate(testimonial.date, locale)}
+              </time>
+            </p>
+          </div>
+          {testimonial.reviewUrl !== undefined && (
+            <a
+              href={testimonial.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-petrol underline underline-offset-2"
+            >
+              {copy.viewReview}
+              <span class="sr-only"> {t.a11y.opensInNewTab}</span>
+            </a>
+          )}
         </li>
       ))}
     </ul>

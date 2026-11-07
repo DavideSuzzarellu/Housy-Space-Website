@@ -9,5 +9,7 @@ export const testimonialSchema = z
     text: z.string().trim().min(1),
     date: z.coerce.date(),
     language: z.enum(LOCALES),
+    photoUrl: z.url().optional(),
+    reviewUrl: z.url().optional(),
   })
   .strict();

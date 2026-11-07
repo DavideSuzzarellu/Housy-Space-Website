@@ -287,6 +287,7 @@ const en = {
       caption: "Conceptual AI-generated image.",
     },
     reviews: {
+      viewReview: "See this review on Google",
       orderNotice:
         "Client reviews published on Google: we show the most recent. Read them all on our profile.",
     },
