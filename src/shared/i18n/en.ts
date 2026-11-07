@@ -304,6 +304,7 @@ const en = {
     links: {
       blog: "Blog and news",
       dataStatus: "Data status",
+      internationalGuide: "International buyers guide",
       legalNotice: "Legal notice",
       privacy: "Privacy",
       cookies: "Cookies",

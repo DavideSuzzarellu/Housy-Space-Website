@@ -305,6 +305,7 @@ const ca = {
     links: {
       blog: "Blog i notícies",
       dataStatus: "Estat de les dades",
+      internationalGuide: "Guia per a estrangers",
       legalNotice: "Avís legal",
       privacy: "Privacitat",
       cookies: "Galetes",

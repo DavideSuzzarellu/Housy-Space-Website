@@ -305,6 +305,7 @@ const it = {
     links: {
       blog: "Blog e notizie",
       dataStatus: "Stato dei dati",
+      internationalGuide: "Guida per stranieri",
       legalNotice: "Note legali",
       privacy: "Privacy",
       cookies: "Cookie",

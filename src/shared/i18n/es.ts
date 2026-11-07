@@ -311,6 +311,7 @@ const es = {
     links: {
       blog: "Blog y noticias",
       dataStatus: "Estado de los datos",
+      internationalGuide: "Guía para extranjeros",
       legalNotice: "Aviso legal",
       privacy: "Privacidad",
       cookies: "Cookies",
