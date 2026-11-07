@@ -5,6 +5,7 @@ import { formatDate } from "@/shared/lib/format";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
+import { morph } from "@/shared/ui/motion/transitions";
 
 /** Article card of the home teaser and the blog index. */
 interface Props {
@@ -21,7 +22,11 @@ const { post, locale } = Astro.props;
   data-category={post.data.category}
   class="group block text-inherit no-underline"
 >
-  <div class="aspect-4/3 overflow-hidden bg-bg-deep">
+  <div
+    class="aspect-4/3 overflow-hidden bg-bg-deep"
+    transition:name={`post-${post.id}-image`}
+    transition:animate={morph}
+  >
     <Picture
       {...PHOTO_PICTURE}
       src={post.data.image}

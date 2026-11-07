@@ -7,6 +7,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatDate } from "@/shared/lib/format";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
+import { morph } from "@/shared/ui/motion/transitions";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
@@ -50,6 +51,8 @@ const crumbs = [
       sizes="(min-width: 1120px) 70rem, 100vw"
       priority
       class="aspect-16/9 w-full object-cover"
+      transition:name={`post-${post.id}-image`}
+      transition:animate={morph}
     />
     <div class="blog-body mx-auto max-w-180 py-[clamp(2.25rem,5vw,3.5rem)]">
       <Content />
