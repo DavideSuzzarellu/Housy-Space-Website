@@ -16,10 +16,13 @@ import { getFeaturedProperties } from "@/features/properties/application";
 import FeaturedProperties from "@/features/properties/ui/FeaturedProperties.astro";
 import ReviewsSection from "@/features/reviews/ui/ReviewsSection.astro";
 import ValuationExplainer from "@/features/valuation/ui/ValuationExplainer.astro";
+import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { LOCALES, type Locale } from "@/shared/i18n/config";
 import { getAlternates } from "@/shared/i18n/routes";
+import { compactJsonLd } from "@/shared/lib/seo/jsonLd";
+import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
 import IntroGate from "@/shared/ui/motion/IntroGate.astro";
 import IntroOverlay from "@/shared/ui/motion/IntroOverlay.astro";
 
@@ -38,6 +41,22 @@ const content = await getHomeContent(locale);
 const testimonials = (await getLatestTestimonials()).map((entry) => entry.data);
 const posts = (await getPosts()).slice(0, 3);
 const PRESENTATION_ID = "presentacion";
+const site = Astro.site ?? new URL(Astro.url.origin);
+const siteUrl = site.href.replace(/\/$/, "");
+const agencyJsonLd = compactJsonLd({
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: COMPANY.legalName,
+  url: siteUrl,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: COMPANY.address.street,
+    postalCode: COMPANY.address.postalCode,
+    addressLocality: COMPANY.address.city,
+    addressCountry: "ES",
+  },
+  areaServed: { "@type": "City", name: "Barcelona" },
+});
 ---
 
 <BaseLayout
@@ -48,6 +67,7 @@ const PRESENTATION_ID = "presentacion";
   headerOverlay
 >
   <IntroGate slot="head" />
+  <JsonLd slot="head" data={agencyJsonLd} />
   <IntroOverlay locale={locale} />
   <HomeHero locale={locale} nextSectionId={PRESENTATION_ID} />
   <HomePresentation locale={locale} id={PRESENTATION_ID} content={content.hero} />
