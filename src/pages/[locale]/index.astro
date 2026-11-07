@@ -4,6 +4,7 @@ import { getHomeContent } from "@/features/agency/application/homeContent";
 import BlogTeaser from "@/features/blog/ui/BlogTeaser.astro";
 import HomeHero from "@/features/agency/ui/HomeHero.astro";
 import HomePresentation from "@/features/agency/ui/HomePresentation.astro";
+import HomeStats from "@/features/agency/ui/HomeStats.astro";
 import HomePhilosophy from "@/features/agency/ui/HomePhilosophy.astro";
 import ServicesAccordion from "@/features/agency/ui/ServicesAccordion.astro";
 import LivingInBarcelona from "@/features/districts/ui/LivingInBarcelona.astro";
@@ -46,10 +47,11 @@ const PRESENTATION_ID = "presentacion";
 >
   <IntroGate slot="head" />
   <IntroOverlay locale={locale} />
-  <HomeHero locale={locale} content={content.hero} nextSectionId={PRESENTATION_ID} />
-  <HomePresentation locale={locale} id={PRESENTATION_ID} content={content.presentation} />
-  <FeaturedProperties locale={locale} properties={featured} content={content.featured} />
+  <HomeHero locale={locale} nextSectionId={PRESENTATION_ID} />
+  <HomePresentation locale={locale} id={PRESENTATION_ID} content={content.hero} />
+  <HomeStats locale={locale} id="stats" content={content.stats} />
   <ValuationExplainer locale={locale} content={content.valuation} />
+  <FeaturedProperties locale={locale} properties={featured} content={content.featured} />
   <ServicesAccordion
     locale={locale}
     content={content.services}

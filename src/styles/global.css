@@ -9,31 +9,28 @@
   --color-*: initial;
 
   /* §11 brand colors */
-  --color-petrol-dark: #14282b;
   --color-petrol: #0f5a5e;
-  --color-green-grey: #58706f;
-  --color-grey: #918f8f;
-  --color-turquoise: #21cec5;
-  --color-turquoise-deep: #058c93;
-  --color-bg-dark-1: #1a2a2d;
-  --color-bg-dark-2: #22363a;
-  --color-bg-dark-3: #2a4044;
+  --color-teal: #08777b;
+  --color-gold: #b8996a;
+  --color-ink: #0b1214;
+  --color-graphite: #172022;
+  /* Hero overlay header background — from the HousySpace reference prototype. */
+  --color-forest: #162b2a;
 
   /*
    * §11.1 role tokens, light by default. `.surface-dark` and `.surface-stone` redefine them for a
    * block and everything inside it, so components never branch on the theme.
    */
-  --color-canvas: #fcfbf8;
-  --color-bg-deep: #edeae3;
-  --color-bg-soft: #f3f1eb;
-  --color-card: #f3f1eb;
-  --color-card-hover: #ece8df;
-  --color-line: rgb(23 43 43 / 0.12);
-  --color-fg: #172b2b;
-  --color-muted: #5f6967;
-  --color-accent: #08777b;
-  --color-ink: #0b1214;
-  --color-teal: #08777b;
+  --color-canvas: #f7f5f1;
+  --color-bg-deep: #ebe5dc;
+  --color-bg-soft: #f0ece4;
+  --color-card: #ebe5dc;
+  --color-card-hover: #e2ddd5;
+  --color-line: #d6cfc3;
+  --color-fg: #0b1214;
+  --color-muted: #5b5f5e;
+  --color-star: #b8996a;
+  --color-accent: #b8996a;
   --color-stone: #ebe5dc;
   --color-taupe: #a99f92;
 
@@ -43,6 +40,7 @@
 
   /* Typography: font files are self-hosted by the Astro Fonts API (astro.config.ts). */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
 
   /* Motion (§11.1): shared easing and UI micro-transition durations. */
   --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -52,48 +50,22 @@
 
 @layer base {
   html {
-    @apply scroll-pt-28 bg-canvas font-sans tracking-[0.02em] text-fg uppercase antialiased;
+    @apply scroll-pt-28 bg-canvas font-sans tracking-[0.02em] text-fg antialiased;
   }
 
   body {
     @apply bg-canvas text-base/[1.7];
   }
 
-  /* Proposal v3: Montserrat only, all caps, no italics. Weight carries the emphasis. */
-  input,
-  textarea,
-  select,
-  button {
-    text-transform: inherit;
-  }
-
+  /* HousySpace: Cormorant Garamond headings (weight 400, sentence case); Montserrat body/UI. */
   h1,
   h2,
   h3 {
-    @apply leading-[1.08] tracking-[0.03em] text-balance;
-  }
-
-  h1,
-  h2 {
-    @apply font-extrabold;
-  }
-
-  h3 {
-    @apply font-bold;
-  }
-
-  h1:has(> em),
-  h2:has(> em) {
-    @apply font-black;
-  }
-
-  h1 em,
-  h2 em {
-    @apply font-normal not-italic;
+    @apply font-serif font-normal leading-[1.08] tracking-[0.01em] text-balance;
   }
 
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent;
+    @apply outline-2 outline-offset-2 outline-gold;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -108,17 +80,17 @@
   }
 }
 
-/* Header bar, footer, text over photos: only the roles change, as in proposal v3. */
+/* Header bar, footer, text over photos: only the roles change. */
 .surface-dark {
-  --color-canvas: #162b2a;
-  --color-bg-deep: #102221;
-  --color-bg-soft: #1b3331;
-  --color-card: #1d3533;
-  --color-card-hover: #23403d;
-  --color-line: rgb(169 190 188 / 0.28);
+  --color-canvas: #0b1214;
+  --color-bg-deep: #040a0b;
+  --color-bg-soft: #172022;
+  --color-card: #172022;
+  --color-card-hover: #1f2b2d;
+  --color-line: #2b3638;
   --color-fg: #f7f5f1;
-  --color-muted: #b4bfbe;
-  --color-accent: #21cec5;
+  --color-muted: #a9aeac;
+  --color-accent: #b8996a;
   color: var(--color-fg);
   color-scheme: dark;
 }
@@ -235,7 +207,7 @@
 
 .catalog-pin:focus-visible,
 .catalog-cluster:focus-visible {
-  outline: 2px solid var(--color-turquoise-deep);
+  outline: 2px solid var(--color-gold);
   outline-offset: 2px;
 }
 

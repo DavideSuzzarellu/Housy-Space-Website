@@ -1,0 +1,72 @@
+---
+import type { HomeContent } from "@/features/agency/application/homeContent";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+
+/**
+ * Stats section: five-year achievements with 4 KPI cards, a note, and a CTA to the
+ * sold-properties listing. Replaces the former HomePresentation (UI proposal v3 → v4 rewrite).
+ */
+interface Props {
+  locale: Locale;
+  id: string;
+  content: HomeContent["stats"];
+}
+
+const { locale, id, content } = Astro.props;
+
+const stats = [
+  { value: content.stat1Value, label: content.stat1Label },
+  { value: content.stat2Value, label: content.stat2Label },
+  { value: content.stat3Value, label: content.stat3Label },
+  { value: content.stat4Value, label: content.stat4Label },
+];
+---
+
+<section
+  id={id}
+  aria-labelledby="stats-heading"
+  class="surface-stone bg-canvas py-[clamp(4rem,9vw,7rem)]"
+>
+  <Container>
+    <p
+      data-reveal
+      class="flex items-center gap-4 text-[0.6875rem] tracking-[0.2em] text-muted uppercase before:h-px before:w-8.5 before:bg-taupe"
+    >
+      {content.eyebrow}
+    </p>
+    <h2
+      id="stats-heading"
+      data-reveal
+      class="mt-4 max-w-2xl text-[clamp(1.75rem,4vw,3rem)]"
+    >
+      <Emphasis text={content.heading} />
+    </h2>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {stats.map((stat, index) => (
+        <div
+          data-reveal
+          class="border-t border-line pt-5"
+          style={`--reveal-delay: ${index * 80}ms`}
+        >
+          <p class="font-sans font-bold text-[clamp(2rem,4vw,3rem)] leading-none text-fg">{stat.value}</p>
+          <p class="mt-2 text-sm text-muted">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <p data-reveal class="mt-8 max-w-xl border-l-2 border-gold pl-3 text-sm text-muted">
+      {content.note}
+    </p>
+
+    <div data-reveal class="mt-8">
+      <Button href={`${getLocalizedPath("sale", locale)}#pisos-vendidos`} arrow>
+        {content.ctaLabel}
+      </Button>
+    </div>
+  </Container>
+</section>

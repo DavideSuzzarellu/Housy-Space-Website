@@ -5,77 +5,53 @@ import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 
-/** Presentation: the page's h1 over a low-presence grid of chamfered tiles (proposal v3). */
+/**
+ * Intro section: the site headline and primary CTA, in its own light section below the
+ * hero video. Matches the `#presentacion` / `.hi2` section of the HousySpace reference.
+ */
 interface Props {
   locale: Locale;
   id: string;
-  content: HomeContent["presentation"];
+  content: HomeContent["hero"];
 }
 
 const { locale, id, content } = Astro.props;
-
-const TILE = 120;
-const tile = (x: number, y: number, size: number, cut: number) =>
-  `M${x + cut} ${y}H${x + size - cut}L${x + size} ${y + cut}V${y + size - cut}L${x + size - cut} ${y + size}H${x + cut}L${x} ${y + size - cut}V${y + cut}Z`;
-const CELLS = Array.from({ length: 66 }, (_, index) => ({
-  x: (index % 11) * TILE,
-  y: Math.floor(index / 11) * TILE,
-  inner: index % 5 === 0,
-  highlight: index === 20,
-}));
 ---
 
 <section
   id={id}
-  aria-labelledby="home-heading"
-  data-section="presentation"
-  class="relative isolate overflow-hidden bg-canvas py-[clamp(4.5rem,10vw,8.5rem)]"
+  aria-labelledby="presentation-heading"
+  class="relative overflow-hidden bg-canvas py-[clamp(4rem,10vw,7.5rem)]"
 >
+  <!-- Decorative geometric grid (§11.1 reference visual) -->
   <svg
     aria-hidden="true"
-    focusable="false"
-    viewBox="0 0 1320 720"
-    data-reveal="fade"
-    class="absolute top-1/2 left-1/2 -z-10 hidden w-[min(110vw,103rem)] -translate-x-1/2 -translate-y-1/2 fill-none md:block"
+    class="pointer-events-none absolute inset-0 h-full w-full"
+    preserveAspectRatio="xMidYMid slice"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    {CELLS.map((cell) => (
-      <>
-        <path
-          d={tile(cell.x + 10, cell.y + 10, 100, 15)}
-          class:list={cell.highlight ? "fill-turquoise/7 stroke-turquoise/60" : "stroke-fg/14"}
-        />
-        {cell.inner && <path d={tile(cell.x + 36, cell.y + 36, 48, 8)} class="stroke-fg/8" />}
-      </>
-    ))}
+    <rect x="5%" y="8%" width="34%" height="58%" fill="none" stroke="currentColor" stroke-width="0.6" class="text-line" opacity="0.6" />
+    <rect x="42%" y="3%" width="46%" height="72%" fill="none" stroke="currentColor" stroke-width="0.6" class="text-line" opacity="0.5" />
+    <rect x="68%" y="30%" width="28%" height="52%" fill="none" stroke="currentColor" stroke-width="0.4" class="text-line" opacity="0.3" />
+    <line x1="39%" y1="8%" x2="39%" y2="66%" stroke="currentColor" stroke-width="0.4" class="text-line" opacity="0.4" />
+    <line x1="5%" y1="66%" x2="88%" y2="66%" stroke="currentColor" stroke-width="0.4" class="text-line" opacity="0.35" />
   </svg>
-  <Container>
-    <div class="text-center">
-      <p
-        data-reveal
-        class="flex items-center justify-center gap-4 text-[0.6875rem] tracking-[0.2em] text-muted before:h-px before:w-8.5 before:bg-taupe after:h-px after:w-8.5 after:bg-taupe max-[479px]:before:hidden max-[479px]:after:hidden"
-      >
-        {content.eyebrow}
-      </p>
+
+  <Container class="relative">
+    <div
+      class="grid gap-[clamp(1.75rem,3vw,2.5rem)] min-[900px]:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] min-[900px]:items-end"
+    >
       <h1
-        id="home-heading"
-        data-reveal="lines"
-        class="mt-[clamp(1.375rem,2.6vw,1.875rem)] text-[clamp(2rem,4.6vw,4.25rem)] leading-[1.06]"
+        id="presentation-heading"
+        data-reveal
+        class="font-sans font-normal uppercase tracking-[-0.005em] leading-[1.06] text-[clamp(2.5rem,4.9vw,4.625rem)]"
       >
-        {[content.headingFirst, content.headingSecond].map((line, index) => (
-          <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
-            <span
-              data-line
-              class:list={["block", index === 0 ? "font-black" : "font-normal text-muted"]}
-              style={`--line-index: ${index}`}
-            >
-              {line}
-            </span>
-          </span>
-        ))}
+        <span class="block text-balance">{content.headingFirst}</span>
+        <span class="block italic text-muted text-balance">{content.headingSecond}</span>
       </h1>
-      <div data-reveal class="mt-[clamp(1.75rem,3vw,2.5rem)]">
+      <div data-reveal class="min-[900px]:pb-1">
         <Button href={getLocalizedPath("about", locale)} variant="solid" size="lg" arrow>
-          {content.linkLabel}
+          {content.ctaLabel}
         </Button>
       </div>
     </div>
