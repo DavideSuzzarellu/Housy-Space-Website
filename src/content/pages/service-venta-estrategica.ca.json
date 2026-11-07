@@ -1,0 +1,158 @@
+{
+  "title": "Compravenda i intermediació immobiliària · HousySpace",
+  "description": "Valoració, preparació, comercialització, negociació i acompanyament fins a la signatura.",
+  "head": {
+    "heading": "Compravenda i intermediació immobiliària",
+    "photo": true,
+    "items": [
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Valoració, preparació, comercialització, negociació i acompanyament fins a la signatura." }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Vendre un habitatge no és només publicar-lo." },
+        { "kind": "p", "text": "Com a consultors immobiliaris, primer et diem amb honestedat si et convé vendre, com fer-ho i quan. Després estudiem a fons l'immoble i la seva documentació perquè no hi hagi sorpreses en el moment de signar." },
+        { "kind": "p", "text": "Tot comença amb un [informe de valoració](service:valoracion): el valor de mercat, el preu aconsellat de sortida i l'estratègia per arribar-hi." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Com ho fem" },
+        { "kind": "h2", "text": "Vuit passos, un sol assessor" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Valoració", "text": "Estudiem l'immoble, el barri i el mercat per fixar un preu just i competitiu." },
+            { "title": "Preparació", "text": "Reunim i revisem tota la documentació necessària per vendre." },
+            { "title": "Publicació", "text": "Presentem l'habitatge al nostre web i als principals portals immobiliaris." },
+            { "title": "Seguiment", "text": "Cada dues setmanes t'informem de les gestions i de com respon el mercat." },
+            { "title": "Visites", "text": "Organitzem i acompanyem les visites amb compradors realment interessats." },
+            { "title": "Negociació", "text": "Negociem en nom teu. La decisió d'acceptar una oferta sempre és teva." },
+            { "title": "Signatura", "text": "Revisem la documentació de tancament i t'acompanyem fins a la notaria." },
+            { "title": "Després de la venda", "text": "Canviem la titularitat dels subministraments i ens ocupem de liquidar els impostos de la venda." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Què inclou" },
+        { "kind": "h2", "text": "Tot el que cal per vendre" },
+        { "kind": "lead", "text": "El que inclou el nostre servei d'intermediació en una venda." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Valoració actualitzada", "text": "Preu de mercat i preu aconsellat de sortida, amb estudi de comparables." },
+            { "title": "Lectura del mercat", "text": "Com està la demanda a la teva zona i què esperar dels propers mesos." },
+            { "title": "Màrqueting i publicitat", "text": "Anunci a portals immobiliaris, al nostre web i a altres canals." },
+            { "title": "Reportatge fotogràfic i tour virtual", "text": "Un fotògraf professional i un recorregut virtual que filtra les visites per curiositat." },
+            { "title": "Documentació tècnica", "text": "El nostre arquitecte tramita la cèdula d'habitabilitat i el certificat energètic, i fa el plànol de l'habitatge." },
+            { "title": "Pressupostos d'obra", "text": "Si l'habitatge necessita reforma, el comprador sap des del principi quant li costarà." },
+            { "title": "Gestió de visites", "text": "Les organitzem i supervisem nosaltres." },
+            { "title": "Negociació i tancament", "text": "Defensem el teu preu i les teves condicions fins a la signatura." },
+            { "title": "Assessorament jurídic i fiscal", "text": "Cada pas de la venda revisat en l'àmbit legal i fiscal per especialistes. [Veure assessorament jurídic i fiscal](service:asesoramiento-juridico-fiscal)." },
+            { "title": "Finançament del comprador", "text": "El nostre broker financer comprova que el comprador pot pagar perquè la venda no caigui per la hipoteca." },
+            { "title": "Buidatge de l'habitatge", "text": "T'ajudem a planificar i organitzar el buidatge abans del lliurament." },
+            { "title": "Subministraments i impostos", "text": "Després de la signatura, canvi de titularitat de llum, aigua i gas, i liquidació dels impostos de la venda." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Contracte d'intermediació" },
+        { "kind": "h2", "text": "Per què en exclusiva?" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Sense curses entre immobiliàries" },
+            { "kind": "p", "text": "Quan diverses immobiliàries venen el mateix pis, la venda es converteix en una cursa per adjudicar-se-la. Es treballa ràpid i pitjor: prima la rapidesa i queden en segon pla la solidesa de l'operació i el preu de venda. Amb l'exclusiva, treballem el teu habitatge amb calma i amb criteri per vendre'l bé i al preu que es mereix." }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Què guanyes tu" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Dedicació completa al teu habitatge durant tot el contracte." },
+                { "title": "", "text": "Un màrqueting més acurat, perquè només una immobiliària el presenta." },
+                { "title": "", "text": "Una negociació més ferma: coneixem el teu habitatge a fons." },
+                { "title": "", "text": "Més seguretat: ningú més negocia en nom teu." },
+                { "title": "", "text": "Menys complicacions i una comunicació clara amb els compradors." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        { "kind": "p", "text": "Moltes vendes cauen per un imprevist: una cèdula que falta, una hipoteca que no arriba, una documentació incompleta. Ens hi avancem i, quan apareixen, els resolem." }
+      ]
+    },
+    {
+      "id": "valoracion",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Valoració" },
+        { "kind": "h2", "text": "Quant val el teu habitatge?" },
+        { "kind": "p", "text": "Demana la teva valoració com prefereixis: en línia, al moment, o presencial, amb un assessor que estudia el teu habitatge a fons." },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "p", "text": "En línia" },
+            { "kind": "h3", "text": "Al moment" },
+            { "kind": "p", "text": "Introdueix les dades del teu habitatge al nostre valorador i rep al moment una referència orientativa del seu valor." },
+            { "kind": "buttons", "items": [{ "label": "Valoració online", "href": "route:valuation#informe", "solid": true }] }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "p", "text": "Presencial" },
+            { "kind": "h3", "text": "Amb un assessor" },
+            { "kind": "p", "text": "Visitem el teu habitatge, en revisem la documentació i estudiem el mercat del teu barri per donar-te un informe complet." },
+            { "kind": "buttons", "items": [{ "label": "Valoració presencial", "href": "route:valuation#solicitud", "solid": false }] }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

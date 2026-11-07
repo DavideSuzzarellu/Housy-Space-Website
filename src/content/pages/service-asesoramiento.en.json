@@ -1,0 +1,102 @@
+{
+  "title": "Personalised property advisory · HousySpace",
+  "description": "Clear, tailored guidance before making any decision.",
+  "head": {
+    "heading": "Personalised property advisory",
+    "photo": true,
+    "items": [
+      { "kind": "image", "src": "../../assets/home/det-cielo-1400.jpg" },
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "Clear, tailored guidance before making any decision." }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Not sure where to start? Start here." },
+        { "kind": "p", "text": "Before buying, selling, renting or investing, it pays to talk. As property consultants, we tell you honestly whether it makes sense, how to do it and when, and we propose a clear roadmap." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "What we help you decide" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Whether", "text": "Whether it makes sense We tell you honestly whether buying, selling or waiting is the right move." },
+            { "title": "How", "text": "How to do it The right strategy for your transaction and your situation." },
+            { "title": "When", "text": "When the time is right The right moment, based on the market and your timelines." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Common situations" },
+        { "kind": "h2", "text": "You might be here" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "[**Sell or rent?**We compare both options with numbers: sale price, expected rent, taxes and costs.Property sales and brokerage →](service:venta-estrategica)" },
+            { "title": "", "text": "[**Buy now or wait?**We look at the market in your area and what you can finance today.Financial advice →](service:asesoramiento-financiero)" },
+            { "title": "", "text": "[**I've inherited a property**What procedures are involved, what taxes to pay and what to do with it.Legal and tax advice →](service:asesoramiento-juridico-fiscal)" },
+            { "title": "", "text": "[**Should I renovate before selling?**What work adds value and what isn't worth it.Renovations and interior design →](service:reformas-obras)" },
+            { "title": "", "text": "[**I want to move house**How to coordinate selling yours and buying the new one.Property Personal Shopper →](service:personal-shopper)" },
+            { "title": "", "text": "[**I want to invest in property**What to buy, with what numbers and what return to actually expect.Property investment →](service:inversion-inmobiliaria)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "How we do it" },
+        { "kind": "h2", "text": "Step by step" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversation", "text": "We talk about your situation and what you want to achieve." },
+            { "title": "Analysis", "text": "We study the property, the area and the alternatives." },
+            { "title": "Roadmap", "text": "We propose the steps, the timelines and the costs." },
+            { "title": "Support", "text": "We help you decide and, if you want, to execute it." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "\"Don't worry, I'll take care of it.\"" },
+        { "kind": "p", "text": "A trusted advisor and a network of reliable professionals: a single point of contact for everything to do with your property." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}

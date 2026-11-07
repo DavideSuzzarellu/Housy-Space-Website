@@ -1,0 +1,115 @@
+{
+  "title": "Lettings and property management · HousySpace",
+  "description": "Marketing, tenant selection and rental management.",
+  "head": {
+    "heading": "Lettings and property management",
+    "photo": true,
+    "items": [
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "Marketing, tenant selection and rental management." },
+      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Renting with peace of mind starts with choosing the right tenant." },
+        { "kind": "p", "text": "For landlords who want to rent without worry: we market the property, carefully select tenants and guide you through the contract. If you prefer, we also manage the rental throughout the tenancy." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Two ways to work together" },
+        { "kind": "h2", "text": "You choose how far we go" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "We find you a tenant" },
+            { "kind": "p", "text": "From listing to key handover." },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Preparation and listing of the advertisement" },
+                { "title": "", "text": "Responding to candidates and viewings" },
+                { "title": "", "text": "Solvency check and documentation" },
+                { "title": "", "text": "Tenancy agreement and deposit lodgement" },
+                { "title": "", "text": "Inventory and key handover" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "And we manage the rental" },
+            { "kind": "p", "text": "During the tenancy, as agreed." },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Tenant liaison and incident management" },
+                { "title": "", "text": "Coordination of repairs" },
+                { "title": "", "text": "Payment and utility monitoring" },
+                { "title": "", "text": "Renewals, updates and end of tenancy" },
+                { "title": "", "text": "Check-out inspection" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "How we do it" },
+        { "kind": "h2", "text": "Step by step" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Initial conversation", "text": "We understand the property and the conditions you are looking for." },
+            { "title": "Property preparation", "text": "We review the documentation and, if needed, the condition of the flat." },
+            { "title": "Marketing", "text": "We list the property and respond to interested parties." },
+            { "title": "Selection", "text": "We review the candidates with you. The decision is always yours." },
+            { "title": "Contract and management", "text": "We formalise the contract and, if you choose, manage the rental." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Frequently asked questions" },
+        { "kind": "h2", "text": "What people ask us" },
+        { "kind": "faq", "q": "What documents do I need to let my property?", "a": "In Catalonia, the habitation certificate and the energy efficiency certificate. If you don't have them, our architect can arrange them." },
+        { "kind": "faq", "q": "How do you choose the tenant?", "a": "We review their solvency and documentation and present you with the matching candidates. You always make the final decision." },
+        { "kind": "faq", "q": "Do you handle the contract and deposit?", "a": "Yes. We prepare the contract and manage the deposit lodgement with INCASÒL, as required by Catalan regulations." },
+        { "kind": "faq", "q": "What if there's a problem during the tenancy?", "a": "If you opt for management, we handle incidents. And if a legal dispute arises, we coordinate with the law firm we work with. [See legal and tax advice](service:asesoramiento-juridico-fiscal)." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}

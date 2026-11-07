@@ -1,0 +1,165 @@
+{
+  "title": "Valutazione immobiliare · HousySpace",
+  "description": "Richiedi una valutazione professionale del tuo immobile a Barcellona.",
+  "head": {
+    "heading": "Il prossimo immobile potrebbe essere il tuo",
+    "photo": true,
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-balcon-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Valutazione immobiliare"
+      },
+      {
+        "kind": "lead",
+        "text": "Scopri il valore reale del tuo immobile con un'analisi immobiliare professionale, basata sul mercato e sulle caratteristiche della tua proprietà."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Il tuo rapporto di valutazione, all'istante"
+        },
+        {
+          "kind": "lead",
+          "text": "Inserisci i dati del tuo immobile nello strumento di valutazione e riceverai immediatamente il tuo rapporto. Se lo desideri, un consulente lo esaminerà con te in seguito."
+        },
+        {
+          "kind": "valuator",
+          "title": "Strumento di valutazione online di HousySpace"
+        },
+        {
+          "kind": "p",
+          "text": "Non vedi lo strumento di valutazione? [Aprilo in una nuova scheda](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) oppure richiedi la valutazione a un consulente con il [modulo qui sotto](#solicitud)."
+        },
+        {
+          "kind": "note",
+          "text": "La stima dello strumento di valutazione è indicativa; non è una perizia ufficiale. Lo strumento è fornito da un fornitore esterno, Lystos: i dati che inserisci saranno trattati secondo la sua informativa sulla privacy e quella di HousySpace (testo legale in attesa di approvazione)."
+        }
+      ]
+    },
+    {
+      "id": "solicitud",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Preferisci che ti chiami un consulente?"
+        },
+        {
+          "kind": "lead",
+          "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti contatterà per valutare il tuo immobile di persona."
+        },
+        {
+          "kind": "form",
+          "id": "vf",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nome e cognome",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Telefono",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Indirizzo e-mail",
+              "required": true,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "direccion",
+              "label": "Indirizzo o quartiere dell'immobile",
+              "required": true,
+              "full": true,
+              "type": "text",
+              "placeholder": "Via e numero, o quartiere",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Raccontaci qualcosa in più (stato, ristrutturazioni, tempistiche…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Desidero ricevere comunicazioni commerciali di HousySpace su immobili, servizi e novità, via e-mail, WhatsApp o telefono. (Facoltativo.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Desidero iscrivermi alla newsletter e agli articoli di HousySpace via e-mail. (Facoltativo.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: gestire la tua richiesta e, solo se lo selezioni, inviarti comunicazioni commerciali e la newsletter. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione, portabilità e revoca del consenso scrivendo a [info@housyspace.com](mailto:info@housyspace.com); puoi presentare reclamo all'AEPD. Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Testo legale in bozza.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Richiedi valutazione"
+            },
+            {
+              "kind": "note",
+              "text": "Non è ancora disponibile un sistema per ricevere il modulo (CRM in attesa). Cliccando si aprirà WhatsApp con la tua richiesta già compilata; finché non la invii lì, non sarà pervenuta a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Sul servizio di valutazione",
+              "href": "service:valoracion",
+              "solid": false
+            },
+            {
+              "label": "Parlare con un consulente",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

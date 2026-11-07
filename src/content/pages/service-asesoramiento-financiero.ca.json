@@ -1,0 +1,142 @@
+{
+  "title": "Assessorament financer · HousySpace",
+  "description": "Hipoteca i finançament estudiats amb números reals, juntament amb el nostre broker financer.",
+  "head": {
+    "heading": "Assessorament financer",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Hipoteca i finançament estudiats amb números reals, juntament amb el nostre broker financer." },
+      { "kind": "image", "src": "../../assets/home/oficina-1672.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "La hipoteca, estudiada abans d'enamorar-te d'un pis." },
+        { "kind": "p", "text": "Saber quant pots finançar, amb quina quota i en quines condicions t'estalvia disgustos. Ho estudiem amb tu i amb el nostre broker financer, que compara les condicions de diverses entitats." },
+        { "kind": "p", "text": "I quan vens, comprovem que el comprador pot pagar perquè l'operació no caigui per la finançament." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Per a qui" },
+        { "kind": "h2", "text": "Finançament en cada tipus d'operació" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Si compres" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Quant et poden prestar i amb quina quota" },
+                { "title": "", "text": "Estalvi necessari per a l'entrada, les despeses i els impostos" },
+                { "title": "", "text": "Comparació d'ofertes de diverses entitats" },
+                { "title": "", "text": "Taxació i documentació fins a la signatura" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Si vens" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Estudi de la viabilitat del comprador" },
+                { "title": "", "text": "Terminis de la hipoteca coordinats amb el contracte d'arres" },
+                { "title": "", "text": "Menys risc que la venda caigui" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Si inverteixes" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Finançament de la compra i de la reforma" },
+                { "title": "", "text": "Números de la inversió amb la quota inclosa" },
+                { "title": "", "text": "Veure [inversió immobiliària](service:inversion-inmobiliaria)" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Com ho fem" },
+        { "kind": "h2", "text": "Pas a pas" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversa", "text": "Ens expliques la teva situació i l'operació que tens en ment." },
+            { "title": "Estudi de viabilitat", "text": "Ingressos, estalvi, despeses de la compra: els números reals." },
+            { "title": "Ofertes", "text": "El broker busca i compara condicions entre entitats." },
+            { "title": "Taxació i documentació", "text": "Coordinem la taxació i preparem el que demana el banc." },
+            { "title": "Signatura", "text": "Revisem les condicions finals i t'acompanyem a la notaria." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Preguntes freqüents" },
+        { "kind": "h2", "text": "El que ens solen preguntar" },
+        { "kind": "faq", "q": "Quant necessito tenir estalviat?", "a": "Depèn del preu, de la taxació i del teu perfil. A més de la part que no finança el banc, cal comptar amb els impostos i les despeses de la compra. T'ho calculem amb números reals abans de començar a buscar." },
+        { "kind": "faq", "q": "Qui m'assessora en la hipoteca?", "a": "El nostre broker financer, amb qui treballem en les operacions amb finançament. Nosaltres coordinem tot el procés amb tu." },
+        { "kind": "faq", "q": "Em serveix si ja he trobat el pis?", "a": "Sí. Com abans ho estudiem, millor: així sabràs quines condicions pots signar en el contracte d'arres." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Amb qui ho fem" },
+        { "kind": "h2", "text": "Finançament amb un especialista" },
+        { "kind": "lead", "text": "Les operacions amb finançament les estudiem juntament amb un broker financer de confiança." },
+        { "kind": "buttons", "items": [{ "label": "Coneix els nostres col·laboradors", "href": "route:about#colaboraciones", "solid": false }] },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Broker financer", "text": "Finançament Estudia la viabilitat de cada operació amb finançament i compara les condicions de diverses entitats." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

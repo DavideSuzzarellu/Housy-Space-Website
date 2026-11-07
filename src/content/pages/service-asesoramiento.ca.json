@@ -1,0 +1,102 @@
+{
+  "title": "Assessorament immobiliari personalitzat · HousySpace",
+  "description": "Orientació clara, a mida, abans de prendre qualsevol decisió.",
+  "head": {
+    "heading": "Assessorament immobiliari personalitzat",
+    "photo": true,
+    "items": [
+      { "kind": "image", "src": "../../assets/home/det-cielo-1400.jpg" },
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Orientació clara, a mida, abans de prendre qualsevol decisió." }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "No saps per on començar? Comença aquí." },
+        { "kind": "p", "text": "Abans de comprar, vendre, llogar o invertir, val la pena parlar-ne. Com a consultors immobiliaris, et diem amb honestedat si et convé fer-ho, com i quan, i et proposem un full de ruta clar." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "El que t'ajudem a decidir" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Si", "text": "Si et convé Et diem amb honestedat si et convé comprar, vendre o esperar." },
+            { "title": "Com", "text": "Com fer-ho L'estratègia adequada per a la teva operació i la teva situació." },
+            { "title": "Quan", "text": "Quan és el moment El moment oportú segons el mercat i els teus terminis." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Situacions habituals" },
+        { "kind": "h2", "text": "Potser estàs aquí" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "[**Venc o llogo?**Comparem les dues opcions amb números: preu de venda, renda esperable, impostos i despeses.Compravenda i intermediació immobiliària →](service:venta-estrategica)" },
+            { "title": "", "text": "[**Compro ara o espero?**Veiem el mercat de la teva zona i el que pots finançar avui.Assessorament financer →](service:asesoramiento-financiero)" },
+            { "title": "", "text": "[**He heretat un habitatge**Quins tràmits cal fer, quins impostos pagar i què fer-ne.Assessorament jurídic i fiscal →](service:asesoramiento-juridico-fiscal)" },
+            { "title": "", "text": "[**Reformo abans de vendre?**Quina obra suma valor i quina no val la pena.Reformes i interiorisme →](service:reformas-obras)" },
+            { "title": "", "text": "[**Vull canviar de casa**Com coordinar la venda de la teva i la compra de la nova.Personal Shopper immobiliari →](service:personal-shopper)" },
+            { "title": "", "text": "[**Vull invertir en habitatge**Què comprar, amb quins números i quina rendibilitat esperar de debò.Inversió immobiliària →](service:inversion-inmobiliaria)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Com ho fem" },
+        { "kind": "h2", "text": "Pas a pas" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversa", "text": "Parlem de la teva situació i del que vols aconseguir." },
+            { "title": "Anàlisi", "text": "Estudiem l'immoble, la zona i les alternatives." },
+            { "title": "Full de ruta", "text": "Et proposem els passos, els terminis i els costos." },
+            { "title": "Acompanyament", "text": "T'ajudem a decidir i, si vols, a executar-ho." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        { "kind": "p", "text": "Un assessor de referència i una xarxa de professionals de confiança: una sola porta per a tot el que tingui a veure amb el teu habitatge." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

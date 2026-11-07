@@ -1,0 +1,238 @@
+{
+  "title": "Blog · HousySpace",
+  "description": "HousySpace blog about neighbourhoods, architecture, the market and property regulations in Barcelona.",
+  "head": {
+    "heading": "Blog",
+    "photo": false,
+    "items": [
+      {
+        "kind": "p",
+        "text": "Blog"
+      },
+      {
+        "kind": "p",
+        "text": "HousySpace · Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Neighbourhoods, architecture, the market and regulations, explained calmly by those who work in the city every day."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-balcon-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Main topic"
+            },
+            {
+              "kind": "p",
+              "text": "Renovations and architecture"
+            },
+            {
+              "kind": "p",
+              "text": "Date pending"
+            },
+            {
+              "kind": "h2",
+              "text": "Renovating a stately building without losing its character"
+            },
+            {
+              "kind": "p",
+              "text": "Architecture, renovations and interior design. Proposed topic, pending drafting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-cielo-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Market"
+            },
+            {
+              "kind": "p",
+              "text": "Date pending"
+            },
+            {
+              "kind": "h2",
+              "text": "Barcelona's residential market this quarter"
+            },
+            {
+              "kind": "p",
+              "text": "How prices and demand are moving across the city. Proposed topic, pending drafting."
+            }
+          ]
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-terraza-1400.jpg"
+            },
+            {
+              "kind": "p",
+              "text": "Neighbourhoods"
+            },
+            {
+              "kind": "p",
+              "text": "Date pending"
+            },
+            {
+              "kind": "h2",
+              "text": "How to choose a neighbourhood in Barcelona"
+            },
+            {
+              "kind": "p",
+              "text": "Useful information about neighbourhoods and districts. Proposed topic, pending drafting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "In preparation"
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "p",
+              "text": "01"
+            },
+            {
+              "kind": "p",
+              "text": "Tips"
+            },
+            {
+              "kind": "p",
+              "text": "Date pending"
+            },
+            {
+              "kind": "h2",
+              "text": "What to prepare before selling your home"
+            },
+            {
+              "kind": "p",
+              "text": "Practical advice for owners and buyers. Proposed topic, pending drafting."
+            },
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-salon-1400.jpg"
+            }
+          ]
+        },
+        {
+          "kind": "article",
+          "items": [
+            {
+              "kind": "p",
+              "text": "02"
+            },
+            {
+              "kind": "p",
+              "text": "News and regulations"
+            },
+            {
+              "kind": "p",
+              "text": "Date pending"
+            },
+            {
+              "kind": "h2",
+              "text": "Property regulations: what you need to know when buying or selling"
+            },
+            {
+              "kind": "p",
+              "text": "Legal updates explained clearly. Proposed topic, pending drafting."
+            },
+            {
+              "kind": "image",
+              "src": "../../assets/home/det-hierro-720.jpg"
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Articles will be published from the CMS, with an image, headline, category, date and author. There are no real articles yet: these are the proposed topics."
+        }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Newsletter"
+        },
+        {
+          "kind": "h2",
+          "text": "Receive articles in your inbox"
+        },
+        {
+          "kind": "p",
+          "text": "Barcelona property market, tips for buying, selling and renting, and HousySpace news."
+        },
+        {
+          "kind": "form",
+          "id": "newsletter",
+          "fields": [
+            {
+              "name": "email",
+              "label": "Email address",
+              "required": true,
+              "full": false,
+              "type": "email",
+              "placeholder": "Your email address",
+              "kind": "field"
+            },
+            {
+              "kind": "submit",
+              "label": "Subscribe"
+            },
+            {
+              "name": "consent",
+              "label": "**I would like to receive the HousySpace newsletter and articles by email.** I have read the [privacy policy](route:privacy).",
+              "required": true,
+              "full": false,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "**Basic information.** Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: sending you the newsletter and articles. Legal basis: your consent. Recipients: we do not share your data, except where legally required; email providers act on our behalf. Rights: access, rectification, erasure, objection, restriction and portability, and unsubscribe at any time via the link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com). More information in the [privacy policy](route:privacy). (Draft: no newsletter tool is connected yet; clicking will open your email client with the request pre-filled and you will not be subscribed until you send it.)"
+            }
+          ],
+          "mode": "email"
+        }
+      ]
+    }
+  ]
+}

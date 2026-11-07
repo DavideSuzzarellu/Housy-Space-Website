@@ -1,0 +1,83 @@
+{
+  "title": "Fonts de dades · HousySpace",
+  "description": "Estat de les fonts oficials i de l'actualització de les estadístiques.",
+  "head": {
+    "heading": "Fonts de dades",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Transparència"
+      },
+      {
+        "kind": "lead",
+        "text": "D'on provenen les dades dels barris de Barcelona i quan es van comprovar per última vegada."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Cobertura actual"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Població i densitat per barri (Padró municipal, Open Data BCN): 73 de 73 barris."
+            },
+            {
+              "title": "",
+              "text": "Preu mitjà de compravenda (Portal de Dades del Ajuntament, Consejo General del Notariado): 73 de 73 barris."
+            },
+            {
+              "title": "",
+              "text": "Lloguer mitjà (Portal de Dades del Ajuntament, fiances de l'INCASÒL): 73 de 73 barris."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "Fonts i última comprovació"
+        },
+        {
+          "kind": "table",
+          "head": ["Font", "Última execució", "Data", "Última correcta", "Detall"],
+          "rows": [
+            [
+              "Ajuntament de Barcelona · Open Data BCN (API CKAN)",
+              "sense execucions encara",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · CartoBCN (límits administratius)",
+              "sense execucions encara",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · Portal Barcelona Dades (mercat de l'habitatge)",
+              "ok",
+              "20/10/2026",
+              "20/10/2026",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "El sistema consulta les fonts cada 6 hores. Si una font falla, es conserven les últimes dades vàlides i, després de tres fallades consecutives, s'avisa l'equip. Generat: 20/10/2026."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Política de cookies · HousySpace",
+  "description": "Política de cookies de HousySpace (pendent).",
+  "head": {
+    "heading": "Política de cookies",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Text pendent d'aprovació.** El text legal definitiu l'ha de redactar i aprovar HousySpace amb la seva assessoria jurídica abans del llançament."
+        },
+        {
+          "kind": "p",
+          "text": "Titular: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registre d'Agents Immobiliaris de Catalunya: AICAT nº 14032 Telèfon 613 084 804"
+        },
+        {
+          "kind": "note",
+          "text": "Pendents: Domicili fiscal, Registre Mercantil, adreça electrònica de contacte i de privacitat, horari i adreça de l'oficina."
+        }
+      ]
+    }
+  ]
+}

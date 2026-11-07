@@ -1,0 +1,341 @@
+{
+  "title": "About us · HousySpace",
+  "description": "HousySpace, real estate consultants in Barcelona: we commit to every transaction with a close, transparent and personalised approach.",
+  "head": {
+    "heading": "Much more than a real estate agency",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "About us"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "historia",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "01"
+        },
+        {
+          "kind": "h2",
+          "text": "Our story"
+        },
+        {
+          "kind": "p",
+          "text": "A different way of understanding the property sector."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "9",
+              "text": "years of experience in the real estate sector"
+            },
+            {
+              "title": "5",
+              "text": "years since HousySpace was founded"
+            },
+            {
+              "title": "Today",
+              "text": "we keep growing thanks to those who choose us again and recommend us"
+            }
+          ]
+        },
+        {
+          "kind": "big",
+          "text": "HousySpace was born five years ago from one very simple conviction: **people must always be at the centre of every property transaction.**"
+        },
+        {
+          "kind": "p",
+          "text": "After years of experience in the sector, we knew its dynamics and demands well — and we also knew what, in our view, could be done differently."
+        },
+        {
+          "kind": "p",
+          "text": "We wanted to create a space where closeness was genuine, attention was truly personalised, and every client felt that their concerns were ours too."
+        },
+        {
+          "kind": "p",
+          "text": "That is how HousySpace was born. Not with the intention of being just another agency, but to build a practice true to our way of understanding this profession: with empathy, honesty, dedication and a commitment that goes far beyond closing a deal."
+        },
+        {
+          "kind": "quote",
+          "text": "Because behind every property there is a story, an important decision and people who place their trust in us."
+        },
+        {
+          "kind": "p",
+          "text": "And few things satisfy us as much as sharing the excitement of someone finding their first home, helping a family start a new chapter, or knowing that we have guided a client towards the right decision."
+        },
+        {
+          "kind": "p",
+          "text": "Five years on, we keep growing thanks to that same philosophy and, above all, to the trust of those who choose us again and recommend us."
+        }
+      ]
+    },
+    {
+      "id": "filosofia",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "02"
+        },
+        {
+          "kind": "h2",
+          "text": "Our philosophy"
+        },
+        {
+          "kind": "p",
+          "text": "Real estate consultants, not just salespeople."
+        },
+        {
+          "kind": "big",
+          "text": "We advise you on how to do it, whether it makes sense for you and when the right moment is, and we make sure everything you do is correct and safe."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "How",
+              "text": "The right strategy for your transaction."
+            },
+            {
+              "title": "Whether",
+              "text": "We tell you honestly whether it makes sense to buy, sell or wait."
+            },
+            {
+              "title": "When",
+              "text": "The right moment according to the market and your situation."
+            },
+            {
+              "title": "Safely",
+              "text": "Every step reviewed so it is correct and safe."
+            },
+            {
+              "title": "No surprises",
+              "text": "Thorough due diligence on the property before buying or selling."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Always one mile more:** everything a real estate agency does, and everything else that is needed."
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "03"
+        },
+        {
+          "kind": "h2",
+          "text": "How we work"
+        },
+        {
+          "kind": "p",
+          "text": "We do not aim to manage the greatest number of properties."
+        },
+        {
+          "kind": "big",
+          "text": "We prefer to give each client the time, attention and effort they deserve, offering a **close, transparent and truly personalised** service."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Time",
+              "text": "01"
+            },
+            {
+              "title": "Attention",
+              "text": "02"
+            },
+            {
+              "title": "Effort",
+              "text": "03"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "The journey together"
+        },
+        {
+          "kind": "p",
+          "text": "We are an agency that understands success in a simple way: **doing our job well** and ensuring our clients feel satisfied with the journey we have shared."
+        },
+        {
+          "kind": "p",
+          "text": "From start to finish"
+        },
+        {
+          "kind": "p",
+          "text": "**We are passionate about what we do.** We commit fully to every transaction, find solutions when difficulties arise, and support our clients from the very first moment to the end of the process."
+        }
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "04"
+        },
+        {
+          "kind": "h2",
+          "text": "Partnerships with sector professionals"
+        },
+        {
+          "kind": "p",
+          "text": "Surrounding ourselves with the best is also part of our philosophy."
+        },
+        {
+          "kind": "big",
+          "text": "Over the years we have built a network of professionals specialised in legal advice, architecture, interior design, renovations and other areas related to property and assets."
+        },
+        {
+          "kind": "p",
+          "text": "Every partnership grows from experience, trust and a shared way of understanding work: **offering a close, rigorous and committed service to each client.**"
+        },
+        {
+          "kind": "p",
+          "text": "Our criterion is simple: **we work with professionals we would trust ourselves.**"
+        },
+        {
+          "kind": "p",
+          "text": "Thanks to them, we can offer comprehensive solutions and support you far beyond a single property transaction. Because for us, saying «Don't worry, I'll take care of it» means having the people, the knowledge and the will to make it happen."
+        }
+      ]
+    },
+    {
+      "id": "equipo",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "05"
+        },
+        {
+          "kind": "h2",
+          "text": "Team"
+        },
+        {
+          "kind": "pending",
+          "text": "Name, role, photograph, short bio, languages and direct email for each person: pending receipt. No people or photographs will be published unless they are real."
+        }
+      ]
+    },
+    {
+      "id": "opiniones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "06"
+        },
+        {
+          "kind": "h2",
+          "text": "What our clients say"
+        },
+        {
+          "kind": "p",
+          "text": "[See reviews on the home page](route:home#resenas)"
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "image",
+          "src": "../../assets/home/facade-1400.jpg"
+        },
+        {
+          "kind": "big",
+          "text": "Because our greatest satisfaction is knowing that those who have trusted us **would do so again**."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace. Property Solutions."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Talk to HousySpace",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "See our services",
+              "href": "route:home#servicios",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h3",
+          "text": "Company information"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Catalonia Real Estate Agents Registry: AICAT nº 14032 Phone [613 084 804](tel:+34613084804) www.housyspace.com"
+        },
+        {
+          "kind": "note",
+          "text": "Pending confirmation:"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Registered address"
+            },
+            {
+              "title": "",
+              "text": "Company Registry"
+            },
+            {
+              "title": "",
+              "text": "Contact and privacy email addresses"
+            },
+            {
+              "title": "",
+              "text": "Office hours and address"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

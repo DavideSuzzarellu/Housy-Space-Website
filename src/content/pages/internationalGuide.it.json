@@ -1,0 +1,65 @@
+{
+  "title": "Acquirenti internazionali · HousySpace",
+  "description": "Guida per acquistare immobili a Barcellona dall'estero.",
+  "head": {
+    "heading": "Comprare a Barcellona dall'estero",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Guida"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "NIE e identificazione"
+            },
+            {
+              "kind": "p",
+              "text": "Cosa ti serve prima di acquistare."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Tasse e spese"
+            },
+            {
+              "kind": "p",
+              "text": "I costi dell'acquisto, spiegati con chiarezza."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Finanziamento"
+            },
+            {
+              "kind": "p",
+              "text": "Opzioni di mutuo per residenti e non residenti."
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenuto in attesa di redazione e di revisione da parte del consulente fiscale e dello studio legale collaboratori prima della pubblicazione."
+        }
+      ]
+    }
+  ]
+}

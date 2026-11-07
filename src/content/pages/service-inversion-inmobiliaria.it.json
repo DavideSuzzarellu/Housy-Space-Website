@@ -1,0 +1,99 @@
+{
+  "title": "Investimento immobiliare · HousySpace",
+  "description": "Analisi delle opportunità con numeri chiari: acquisto, ristrutturazione, affitto e rendimento.",
+  "head": {
+    "heading": "Investimento immobiliare",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Analisi delle opportunità con numeri chiari: acquisto, ristrutturazione, affitto e rendimento." },
+      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Non promettiamo rendimenti: mettiamo i numeri sul tavolo." },
+        { "kind": "p", "text": "Analizziamo le opportunità di investimento residenziale con informazioni chiare, per farti decidere con criterio. Ti diciamo anche quando un'operazione non ti conviene." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Cosa analizziamo" },
+        { "kind": "h2", "text": "Un investimento visto da ogni angolazione" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01Prezzo e costi di acquistoPrezzo, imposte, notaio, registro e agenzia: il costo reale di entrata." },
+            { "title": "", "text": "02RistrutturazioneChe lavori servono, quanto costano e quanto valore aggiungono." },
+            { "title": "", "text": "03Reddito attesoCiò che si paga oggi per immobili simili nella zona." },
+            { "title": "", "text": "04Rendimento stimatoLordo e netto, con spese, imposte e periodi di sfitto." },
+            { "title": "", "text": "05RischiStato dell'edificio, normativa sugli affitti e liquidità della zona." },
+            { "title": "", "text": "06StrategiaExit Cosa succede se vuoi vendere tra qualche anno." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Come lo facciamo" },
+        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Obiettivi", "text": "Definiamo cosa vuoi ottenere, con quale budget e in quale orizzonte temporale." },
+            { "title": "Ricerca e analisi", "text": "Studiamo le opzioni e i loro numeri." },
+            { "title": "Rischi", "text": "Verifichiamo costi, tempi e scenari." },
+            { "title": "Acquisto", "text": "Trattiamo e ti accompagniamo fino al rogito." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Un'unica porta" },
+        { "kind": "h2", "text": "Dall'analisi al reddito da affitto, senza cambiare interlocutore" },
+        { "kind": "lead", "text": "Se ne hai bisogno, ci occupiamo di ogni passo dopo l'acquisto." },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            { "title": "", "text": "[Finanzia**Consulenza finanziaria**](service:asesoramiento-financiero)" },
+            { "title": "", "text": "[Acquista**Personal Shopper immobiliare**](service:personal-shopper)" },
+            { "title": "", "text": "[Ristruttura**Ristrutturazioni e interior design**](service:reformas-obras)" },
+            { "title": "", "text": "[Affitta**Locazioni e gestione immobiliare**](service:alquiler-gestion)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

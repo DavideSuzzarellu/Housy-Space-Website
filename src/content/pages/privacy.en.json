@@ -1,0 +1,234 @@
+{
+  "title": "Privacy policy · HousySpace",
+  "description": "Privacy policy of HousySpace (pending).",
+  "head": {
+    "heading": "Privacy policy",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Draft text, pending approval.** It has been drafted for the 'I'm looking for a property' form, marketing consents and the newsletter. HousySpace's legal advisors must review it before the website is published. Items that HousySpace needs to confirm are indicated at the end."
+        },
+        {
+          "kind": "note",
+          "text": "Last updated: 28 October 2026 (draft)"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Who is the data controller"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.** CIF B26903419 Catalonia Real Estate Agents Registry: AICAT nº 14032 Email: [info@housyspace.com](mailto:info@housyspace.com) Phone: 613 084 804 Registered address and company registration details: pending completion."
+        },
+        {
+          "kind": "h2",
+          "text": "2. What data we process"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Contact details:** name, surname, phone number, email address, language and preferred contact channel or time slot."
+            },
+            {
+              "title": "",
+              "text": "**Your property search data** ('I'm looking for a property' form): transaction type (purchase or rental), property type, areas, budget, floor area, bedrooms, bathrooms, features, timeframes and, if you share it, your financing situation or whether you are selling your current home."
+            },
+            {
+              "title": "",
+              "text": "**Details of your property** if you request a valuation or wish to sell it: address or neighbourhood, type, floor area and condition."
+            },
+            {
+              "title": "",
+              "text": "**The text you type in the search assistant**, which is saved in your comments if you submit the search, and the profile it generates."
+            },
+            {
+              "title": "",
+              "text": "**Your comments** and any data you choose to include in them. Please do not include data that is not necessary, such as health data or data relating to other people."
+            },
+            {
+              "title": "",
+              "text": "**Proof of your consents:** the text you accepted, the version of that text and the date."
+            },
+            {
+              "title": "",
+              "text": "**Browsing data** via cookies: these are explained in the [cookie policy](route:cookies)."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "You provide the data to us yourself. We do not request specially protected categories of data."
+        },
+        {
+          "kind": "h2",
+          "text": "3. The purposes for which we use it and the legal basis"
+        },
+        {
+          "kind": "table",
+          "head": ["Purpose", "Legal basis", "Retention period"],
+          "rows": [
+            [
+              "Handling your enquiries and contact requests (Contact form, email, WhatsApp or telephone).",
+              "Your consent (art. 6.1.a RGPD) and the application of pre-contractual measures at your request (art. 6.1.b).",
+              "For as long as necessary to handle your request. Afterwards, blocked while legal liability may arise."
+            ],
+            [
+              "Valuing your property (online valuator and in-person valuation request).",
+              "Your consent (art. 6.1.a) and pre-contractual measures at your request (art. 6.1.b).",
+              "For as long as necessary for the valuation and its follow-up. Afterwards, blocked for the period required by law."
+            ],
+            [
+              "Keeping your property search in our buyer/tenant database ('I'm looking for a property' and 'Custom search' forms), matching it against available properties, notifying you of suitable ones and contacting you.",
+              "Your consent (art. 6.1.a), which you give by ticking the form checkbox.",
+              "For as long as your search remains active and, at most, 12 months from our last contact with you. (Retention period pending confirmation by HousySpace.)"
+            ],
+            [
+              "Providing the services you contract (brokerage, advisory, rental management…) and fulfilling the associated legal obligations.",
+              "Performance of a contract (art. 6.1.b) and compliance with legal obligations (art. 6.1.c), for example tax and anti-money-laundering obligations.",
+              "For the duration of the relationship and, afterwards, for the periods prescribed by law for each obligation."
+            ],
+            [
+              "Sending you commercial communications about properties, services and news by email, WhatsApp or telephone, depending on your chosen channel.",
+              "Your consent (art. 6.1.a RGPD) and the express authorisation required by art. 21 de la LSSI (Spanish Information Society Services Act). It is voluntary and does not affect your search.",
+              "Until you withdraw your consent or unsubscribe."
+            ],
+            [
+              "Sending you the HousySpace newsletter and articles by email.",
+              "Your consent (art. 6.1.a RGPD) and the express authorisation required by art. 21 de la LSSI. It is voluntary and independent of the others.",
+              "Until you unsubscribe via the link in each email or by writing to info@housyspace.com."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Each consent is independent and you may withdraw it at any time without affecting the lawfulness of the processing carried out before the withdrawal. The commercial communications and newsletter checkboxes are unticked by default and leaving them unticked does not affect your search."
+        },
+        {
+          "kind": "h2",
+          "text": "4. Who receives your data"
+        },
+        {
+          "kind": "p",
+          "text": "We do not share your data with third parties, except when legally required (for example, with the tax authority or the competent authorities)."
+        },
+        {
+          "kind": "p",
+          "text": "If you request a service that requires the involvement of other professionals, such as financial or legal advice, renovation work, a notary or a property registry, we will tell you and will only share your data with them with your knowledge and, where appropriate, your consent."
+        },
+        {
+          "kind": "p",
+          "text": "In order to provide the service, the following may process data on our behalf and under a contract, as data processors: providers supporting website hosting, the database or CRM, email and newsletter delivery, and messaging services (for example WhatsApp when you choose that channel). The definitive list is pending confirmation."
+        },
+        {
+          "kind": "p",
+          "text": "**Online valuator.** The valuator on the 'Valuation' page is provided by an external supplier, Lystos, and is displayed within our page. The data you enter into it is received by that supplier and processed in accordance with their privacy information, which we recommend you read; it is not HousySpace's 'Request a valuation' form. Lystos's function, the data we receive, the retention period and cookies are pending confirmation."
+        },
+        {
+          "kind": "h2",
+          "text": "5. International transfers"
+        },
+        {
+          "kind": "p",
+          "text": "Some providers (for example, messaging or mapping services) may process data outside the European Economic Area. In such cases, this is done with the safeguards required by the RGPD (GDPR), such as a European Commission adequacy decision or standard contractual clauses. Pending confirmation depending on the final providers."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Your rights"
+        },
+        {
+          "kind": "p",
+          "text": "You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability, and withdraw your consents, by writing to [info@housyspace.com](mailto:info@housyspace.com) and stating which right you wish to exercise. To handle your request properly, we may ask you to verify your identity. We will respond within one month."
+        },
+        {
+          "kind": "p",
+          "text": "To unsubscribe from the newsletter or commercial communications, you can use the unsubscribe link in each email or write to us."
+        },
+        {
+          "kind": "p",
+          "text": "If you believe we are not processing your data in accordance with the law, you may lodge a complaint with the Agencia Española de Protección de Datos ([www.aepd.es](https://www.aepd.es); C/ Jorge Juan, 6, 28001 Madrid)."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Minors"
+        },
+        {
+          "kind": "p",
+          "text": "Our forms are intended only for people aged 18 and over. We do not knowingly collect data from minors."
+        },
+        {
+          "kind": "h2",
+          "text": "8. Security"
+        },
+        {
+          "kind": "p",
+          "text": "We apply appropriate technical and organisational measures to protect your data against unauthorised access, loss or alteration."
+        },
+        {
+          "kind": "h2",
+          "text": "9. Changes to this policy"
+        },
+        {
+          "kind": "p",
+          "text": "If we change this policy, we will publish the new version here with its date. If the change affects the purposes for which you gave us your consent, we will ask for it again."
+        },
+        {
+          "kind": "h2",
+          "text": "Pending confirmation by HousySpace"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Registered address and Companies Registry details."
+            },
+            {
+              "title": "",
+              "text": "Retention period for data in the buyer/tenant database (proposal: 12 months from last contact)."
+            },
+            {
+              "title": "",
+              "text": "Definitive list of data processors (web hosting, database or CRM, email and newsletter, messaging) and their locations."
+            },
+            {
+              "title": "",
+              "text": "Newsletter tool to be contracted, with subscription confirmation email and unsubscribe link in each email."
+            },
+            {
+              "title": "",
+              "text": "Whether there are data transfers outside the European Economic Area and the safeguards applied."
+            },
+            {
+              "title": "",
+              "text": "Online valuator Lystos: whether Lystos acts as a data controller or processor, contract or terms with HousySpace, location of processing, what data HousySpace receives from the valuator, retention period and what cookies or similar technologies it installs (for the cookie policy and cookie notice)."
+            },
+            {
+              "title": "",
+              "text": "Whether HousySpace needs to appoint a data protection officer or maintain a record of processing activities (art. 30 RGPD)."
+            },
+            {
+              "title": "",
+              "text": "Confirmation that no automated decisions with legal effects are taken in relation to individuals."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

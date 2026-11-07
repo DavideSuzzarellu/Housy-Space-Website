@@ -1,0 +1,151 @@
+{
+  "title": "Ristrutturazioni e interior design · HousySpace",
+  "description": "Ristrutturazioni per ogni tipo di immobile: progetto, interior design e lavori con un unico interlocutore.",
+  "head": {
+    "heading": "Ristrutturazioni e interior design",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Ristrutturazioni per ogni tipo di immobile: progetto, interior design e lavori con un unico interlocutore." },
+      { "kind": "image", "src": "../../assets/home/det-ventanal-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Una ristrutturazione, un solo interlocutore." },
+        { "kind": "p", "text": "Realizziamo ristrutturazioni per ogni tipo di immobile. Pensiamo alla ristrutturazione e all'interior design contemporaneamente, così distribuzione, materiali e luce sono definiti prima di iniziare i lavori. Poi coordiniamo i professionisti e monitoriamo tempi e budget fino alla consegna." },
+        { "kind": "p", "text": "Il progetto viene sviluppato con lo studio di architettura e interior design con cui collaboriamo, e tu hai sempre la stessa persona di riferimento." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Le fasi" },
+        { "kind": "h2", "text": "Dal primo schizzo alla consegna delle chiavi" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Visita e esigenze", "text": "Vediamo lo spazio e capiamo come vuoi viverlo." },
+            { "title": "Progetto e interior design", "text": "Distribuzione, materiali, illuminazione e arredi, in un unico progetto." },
+            { "title": "Preventivo", "text": "Un preventivo dettagliato prima di iniziare, per decidere senza sorprese." },
+            { "title": "Permessi e autorizzazioni", "text": "Ci occupiamo dei permessi richiesti dal Comune." },
+            { "title": "Lavori", "text": "Coordiniamo le maestranze e monitoriamo tempi e budget in cantiere." },
+            { "title": "Rifiniture e consegna", "text": "Verifichiamo ogni dettaglio con te e ti consegniamo l'immobile finito." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interiorismo",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Interior design" },
+        { "kind": "h2", "text": "Una casa si sceglie anche con le mani." },
+        { "kind": "lead", "text": "Definiamo con te lo stile, i materiali, le texture e i dettagli affinché ogni ambiente funzioni e si senta tuo." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Legno naturale", "text": "Pavimenti, falegnameria e arredi" },
+            { "title": "Pietra e marmo", "text": "Piani di lavoro, bagni e dettagli" },
+            { "title": "Microcemento", "text": "Continuità su pavimenti e pareti" },
+            { "title": "Lino e cotone", "text": "Tessuti e tende" },
+            { "title": "Ottone", "text": "Illuminazione e ferramenta" },
+            { "title": "Verde profondo", "text": "Colore e contrasto" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Cosa include" },
+        { "kind": "h2", "text": "L'intero progetto, nelle stesse mani" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01DistribuzioneCome si muove la luce e come ti muovi tu per casa." },
+            { "title": "", "text": "02Materiali e rifiniturePalette coerente per tutta l'abitazione." },
+            { "title": "", "text": "03IlluminazioneLuce naturale e artificiale pensate per ogni ambiente." },
+            { "title": "", "text": "04Arredi su misuraProgettazione, selezione e acquisto di arredi e dettagli." },
+            { "title": "", "text": "05Permessi e maestranzePratiche, muratori, installatori e falegnami, coordinati da noi." },
+            { "title": "", "text": "06Supervisione cantiereTempo, budget e qualità controllati fino all'ultimo dettaglio." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Quando ristrutturare" },
+        { "kind": "h2", "text": "Una ristrutturazione per ogni momento" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01Prima di venderePreventivi per il compratore o piccoli miglioramenti che aiutano la vendita. [Vedi compravendita](service:venta-estrategica)." },
+            { "title": "", "text": "02All'acquistoLa ristrutturazione studiata prima dell'acquisto e realizzata da noi. [Vedi Personal Shopper](service:personal-shopper)." },
+            { "title": "", "text": "03Per affittareMessa a punto per affittare prima e meglio." },
+            { "title": "", "text": "04Per investireRistrutturazioni che aggiungono valore e rendimento, con i numeri davanti." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        { "kind": "p", "text": "Permessi, maestranze, imprevisti di cantiere: li gestiamo noi perché tu debba solo decidere." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Con chi lo facciamo" },
+        { "kind": "h2", "text": "Progetti con Maria Guimerà Arquitectura" },
+        { "kind": "lead", "text": "Per il progetto, l'interior design e la direzione lavori collaboriamo con uno studio di architettura e interior design di Barcellona." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Scopri i nostri collaboratori", "href": "route:about#colaboraciones", "solid": false }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Maria Guimerà Arquitectura", "text": "Architettura e interior design Studio di architettura e interior design a Barcellona, specializzato in ristrutturazioni integrali di abitazioni e appartamenti dell'Eixample. [Visita mariaguimera.com](https://mariaguimera.com/es/inicio/)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

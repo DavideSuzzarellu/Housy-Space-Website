@@ -1,0 +1,341 @@
+{
+  "title": "Chi siamo · HousySpace",
+  "description": "HousySpace, consulenti immobiliari a Barcellona: ci impegniamo in ogni operazione con un approccio vicino, trasparente e personalizzato.",
+  "head": {
+    "heading": "Molto più di una semplice agenzia immobiliare",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Chi siamo"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "historia",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "01"
+        },
+        {
+          "kind": "h2",
+          "text": "La nostra storia"
+        },
+        {
+          "kind": "p",
+          "text": "Un modo diverso di intendere il settore immobiliare."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "9",
+              "text": "anni di esperienza nel settore immobiliare"
+            },
+            {
+              "title": "5",
+              "text": "anni dalla nascita di HousySpace"
+            },
+            {
+              "title": "Oggi",
+              "text": "continuiamo a crescere grazie a chi torna a sceglierci e ci raccomanda"
+            }
+          ]
+        },
+        {
+          "kind": "big",
+          "text": "HousySpace è nata cinque anni fa da una convinzione molto semplice: **le persone devono sempre essere al centro di ogni operazione immobiliare.**"
+        },
+        {
+          "kind": "p",
+          "text": "Dopo anni di esperienza nel settore, ne conoscevamo bene le dinamiche e le esigenze — e sapevamo anche cosa, dal nostro punto di vista, poteva essere fatto diversamente."
+        },
+        {
+          "kind": "p",
+          "text": "Volevamo creare uno spazio in cui la vicinanza fosse sincera, l'attenzione davvero personalizzata e ogni cliente sentisse che le sue preoccupazioni erano anche le nostre."
+        },
+        {
+          "kind": "p",
+          "text": "È così che è nata HousySpace. Non con l'intenzione di essere l'ennesima agenzia, ma per costruire un progetto fedele al nostro modo di intendere questa professione: con empatia, onestà, dedizione e un impegno che va ben oltre la chiusura di un'operazione."
+        },
+        {
+          "kind": "quote",
+          "text": "Perché dietro ogni immobile c'è una storia, una decisione importante e persone che ripongono la loro fiducia in noi."
+        },
+        {
+          "kind": "p",
+          "text": "E poche cose ci soddisfano quanto condividere l'entusiasmo di chi trova la sua prima casa, aiutare una famiglia a iniziare un nuovo capitolo o sapere di aver guidato un cliente verso la decisione giusta."
+        },
+        {
+          "kind": "p",
+          "text": "Cinque anni dopo, continuiamo a crescere grazie a quella stessa filosofia e, soprattutto, alla fiducia di chi torna a sceglierci e ci raccomanda."
+        }
+      ]
+    },
+    {
+      "id": "filosofia",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "02"
+        },
+        {
+          "kind": "h2",
+          "text": "La nostra filosofia"
+        },
+        {
+          "kind": "p",
+          "text": "Consulenti immobiliari, non solo venditori."
+        },
+        {
+          "kind": "big",
+          "text": "Ti consigliamo su come farlo, se conviene farlo e quando è il momento giusto, e ci assicuriamo che tutto ciò che fai sia corretto e sicuro."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Come",
+              "text": "La strategia giusta per la tua operazione."
+            },
+            {
+              "title": "Se",
+              "text": "Ti diciamo onestamente se conviene comprare, vendere o aspettare."
+            },
+            {
+              "title": "Quando",
+              "text": "Il momento opportuno secondo il mercato e la tua situazione."
+            },
+            {
+              "title": "In sicurezza",
+              "text": "Ogni passo verificato per essere corretto e sicuro."
+            },
+            {
+              "title": "Nessuna sorpresa",
+              "text": "Analisi approfondita dell'immobile prima di comprare o vendere."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Sempre un miglio in più:** tutto ciò che fa un'agenzia immobiliare, e tutto ciò che serve in più."
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "03"
+        },
+        {
+          "kind": "h2",
+          "text": "Come lavoriamo"
+        },
+        {
+          "kind": "p",
+          "text": "Non puntiamo a gestire il maggior numero di immobili."
+        },
+        {
+          "kind": "big",
+          "text": "Preferiamo dedicare a ogni cliente il tempo, l'attenzione e l'impegno che merita, offrendo un servizio **vicino, trasparente e davvero personalizzato**."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Tempo",
+              "text": "01"
+            },
+            {
+              "title": "Attenzione",
+              "text": "02"
+            },
+            {
+              "title": "Impegno",
+              "text": "03"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Il percorso condiviso"
+        },
+        {
+          "kind": "p",
+          "text": "Siamo un'agenzia che intende il successo in modo semplice: **fare bene il nostro lavoro** e fare in modo che i nostri clienti si sentano soddisfatti del percorso condiviso."
+        },
+        {
+          "kind": "p",
+          "text": "Dall'inizio alla fine"
+        },
+        {
+          "kind": "p",
+          "text": "**Siamo appassionati di ciò che facciamo.** Ci impegniamo in ogni operazione, troviamo soluzioni quando sorgono difficoltà e affianchiamo i nostri clienti dal primo momento fino alla fine del processo."
+        }
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "04"
+        },
+        {
+          "kind": "h2",
+          "text": "Collaborazioni con professionisti del settore"
+        },
+        {
+          "kind": "p",
+          "text": "Circondarci dei migliori fa parte della nostra filosofia."
+        },
+        {
+          "kind": "big",
+          "text": "Nel corso degli anni abbiamo costruito una rete di professionisti specializzati in consulenza legale, architettura, interior design, ristrutturazioni e altri ambiti legati alla casa e al patrimonio."
+        },
+        {
+          "kind": "p",
+          "text": "Ogni collaborazione nasce dall'esperienza, dalla fiducia e da un modo condiviso di intendere il lavoro: **offrire un servizio vicino, rigoroso e impegnato con ogni cliente.**"
+        },
+        {
+          "kind": "p",
+          "text": "Il nostro criterio è semplice: **lavoriamo con professionisti di cui ci fideremmo noi stessi.**"
+        },
+        {
+          "kind": "p",
+          "text": "Grazie a loro possiamo offrire soluzioni complete e supportarti ben oltre una singola operazione immobiliare. Perché per noi dire «Non preoccuparti, ci penso io» significa avere le persone, le competenze e la volontà per realizzarlo."
+        }
+      ]
+    },
+    {
+      "id": "equipo",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "05"
+        },
+        {
+          "kind": "h2",
+          "text": "Team"
+        },
+        {
+          "kind": "pending",
+          "text": "Nome, ruolo, fotografia, breve presentazione, lingue e indirizzo e-mail diretto di ogni persona: in attesa di ricevere. Non verranno pubblicati persone o fotografie che non siano reali."
+        }
+      ]
+    },
+    {
+      "id": "opiniones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "p",
+          "text": "06"
+        },
+        {
+          "kind": "h2",
+          "text": "Cosa dicono i nostri clienti"
+        },
+        {
+          "kind": "p",
+          "text": "[Vedi le recensioni in home page](route:home#resenas)"
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "image",
+          "src": "../../assets/home/facade-1400.jpg"
+        },
+        {
+          "kind": "big",
+          "text": "Perché la nostra più grande soddisfazione è sapere che chi ha riposto fiducia in noi **lo farebbe di nuovo**."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace. Property Solutions."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Parla con HousySpace",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Vedi i servizi",
+              "href": "route:home#servicios",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h3",
+          "text": "Dati aziendali"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro degli Agenti Immobiliari della Catalogna: AICAT nº 14032 Telefono [613 084 804](tel:+34613084804) www.housyspace.com"
+        },
+        {
+          "kind": "note",
+          "text": "In attesa di conferma:"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Sede legale"
+            },
+            {
+              "title": "",
+              "text": "Registro delle Imprese"
+            },
+            {
+              "title": "",
+              "text": "Indirizzi e-mail di contatto e privacy"
+            },
+            {
+              "title": "",
+              "text": "Orari e indirizzo dell'ufficio"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "title": "Servei de valoració immobiliària · HousySpace",
+  "description": "Una referència al moment amb el valorador o un informe complet amb estudi de mercat.",
+  "head": {
+    "heading": "Valoració immobiliària",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servei" },
+      { "kind": "lead", "text": "Una referència al moment amb el valorador o un informe complet amb estudi de mercat." },
+      { "kind": "image", "src": "../../assets/home/det-terraza-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Dues maneres de conèixer el valor del teu habitatge" },
+        { "kind": "h3", "text": "Al moment" },
+        { "kind": "p", "text": "Amb el nostre valorador en línia." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Introdueixes les dades del teu habitatge." },
+            { "title": "", "text": "Reps al moment una referència orientativa." },
+            { "title": "", "text": "Si vols, un assessor la revisa amb tu." }
+          ]
+        },
+        { "kind": "buttons", "items": [{ "label": "Anar al valorador", "href": "route:valuation", "solid": true }] },
+        { "kind": "h3", "text": "Informe de valoració" },
+        { "kind": "p", "text": "Estudiem el teu habitatge a fons." },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "Visitem l'immoble i en revisem la documentació." },
+            { "title": "", "text": "Analitzem el barri, el mercat i les vendes recents." },
+            { "title": "", "text": "Et lliurem l'informe i el comentem amb tu." }
+          ]
+        },
+        { "kind": "buttons", "items": [{ "label": "Demanar un informe", "href": "route:contact", "solid": false }] }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Què inclou" },
+        { "kind": "h2", "text": "Un informe per decidir amb dades" },
+        { "kind": "lead", "text": "És el mateix informe que preparem abans de posar un habitatge a la venda." },
+        { "kind": "p", "text": "Informe de valoració" },
+        { "kind": "p", "text": "HousySpace" },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            { "title": "Localització i barri", "text": "01 Situació de l'immoble i història del barri" },
+            { "title": "Dades del barri", "text": "02 Preu mitjà per m² de les compravendes, segons l'Ajuntament de Barcelona" },
+            { "title": "Informació urbanística i cadastral", "text": "03 Referència cadastral, qualificació i dades de la finca" },
+            { "title": "Valor de referència cadastral", "text": "04 El valor que fixa el Cadastre per a l'habitatge" },
+            { "title": "Dades i mesures", "text": "05 Superfícies construïda i útil, estança per estança" },
+            { "title": "Característiques i estat", "text": "06 Estat de l'habitatge i de l'edifici, instal·lacions, orientació" },
+            { "title": "Documentació", "text": "07 Cèdula d'habitabilitat, certificat energètic i ITE" },
+            { "title": "Comparables", "text": "08 Habitatges similars a portals i venuts a la zona" },
+            { "title": "Estudi de mercat", "text": "09 Oferta actual amb la qual competirà el teu habitatge" },
+            { "title": "Valoració", "text": "10 Valor de mercat, preu per m² i preu aconsellat de sortida" }
+          ]
+        },
+        { "kind": "p", "text": "No és una taxació oficial: és una valoració de mercat per decidir amb criteri." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Preguntes freqüents" },
+        { "kind": "h2", "text": "El que ens solen preguntar" },
+        { "kind": "faq", "q": "És el mateix que una taxació?", "a": "No. La taxació oficial la fa una societat de taxació homologada i sol demanar-la el banc per a una hipoteca. El nostre informe és una valoració de mercat: et diu a quin preu es ven avui un habitatge com el teu." },
+        { "kind": "faq", "q": "Per a què em serveix?", "a": "Per decidir si vendre i a quin preu, però també davant d'una herència, un divorci o un repartiment entre propietaris, o simplement per saber quant val el teu patrimoni." },
+        { "kind": "faq", "q": "El valorador en línia és suficient?", "a": "És una bona primera referència. Per prendre una decisió important, et recomanem l'informe complet: té en compte l'estat real de l'habitatge i de la finca." },
+        { "kind": "faq", "q": "I si després vull vendre?", "a": "L'informe és el primer pas del nostre servei de [compravenda](service:venta-estrategica): ja tindràs el preu i l'estratègia." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parlem" },
+        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+      ]
+    }
+  ]
+}

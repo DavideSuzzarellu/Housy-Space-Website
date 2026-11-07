@@ -1,0 +1,1032 @@
+{
+  "title": "My search · HousySpace",
+  "description": "Tell us what you're looking for in a property to buy or rent: we save it in our database and alert you when a matching listing comes in.",
+  "head": {
+    "heading": "I'm looking for a property",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Buy or rent"
+      },
+      {
+        "kind": "lead",
+        "text": "Tell us what you need. We save your search in our buyers database, using the same fields as our property listings, and alert you when something matching comes in."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "How it works"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Tell us what you're looking for",
+              "text": "Operation, area, budget and must-haves. Answer step by step. The more specific, the better."
+            },
+            {
+              "title": "We save your search",
+              "text": "It's registered in our buyers database, with the same structure as a property listing: operation, type, area, price, size, bedrooms and features."
+            },
+            {
+              "title": "We'll alert you and guide you",
+              "text": "When a matching listing comes in, an adviser will get in touch. If you wish, we'll accompany you on viewings and throughout the whole process."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Your search"
+        },
+        {
+          "kind": "lead",
+          "text": "Fill in what you know; we'll refine the rest together. Fields marked with * are required."
+        },
+        {
+          "kind": "form",
+          "id": "bv",
+          "fields": [
+            {
+              "kind": "group",
+              "title": "What are you looking for?",
+              "fields": [
+                {
+                  "kind": "chips",
+                  "name": "operacion",
+                  "radio": true,
+                  "required": true,
+                  "options": [
+                    {
+                      "value": "venta",
+                      "label": "Buy",
+                      "hint": "I want to buy a property"
+                    },
+                    {
+                      "value": "alquiler",
+                      "label": "Rent",
+                      "hint": "I want to rent a property"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
+                  "name": "tipo",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "Piso",
+                      "label": "Flat"
+                    },
+                    {
+                      "value": "Ático",
+                      "label": "Penthouse"
+                    },
+                    {
+                      "value": "Dúplex",
+                      "label": "Duplex"
+                    },
+                    {
+                      "value": "Loft",
+                      "label": "Loft"
+                    },
+                    {
+                      "value": "Casa o chalet",
+                      "label": "House"
+                    },
+                    {
+                      "value": "Estudio",
+                      "label": "Studio"
+                    }
+                  ],
+                  "label": "Property type (you can select more than one)"
+                }
+              ]
+            },
+            {
+              "kind": "group",
+              "title": "Where?",
+              "fields": [
+                {
+                  "kind": "chips",
+                  "name": "distrito",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "ciutat-vella",
+                      "label": "Ciutat Vella"
+                    },
+                    {
+                      "value": "eixample",
+                      "label": "Eixample"
+                    },
+                    {
+                      "value": "sants-montjuic",
+                      "label": "Sants-Montjuïc"
+                    },
+                    {
+                      "value": "les-corts",
+                      "label": "Les Corts"
+                    },
+                    {
+                      "value": "sarria-sant-gervasi",
+                      "label": "Sarrià-Sant Gervasi"
+                    },
+                    {
+                      "value": "gracia",
+                      "label": "Gràcia"
+                    },
+                    {
+                      "value": "horta-guinardo",
+                      "label": "Horta-Guinardó"
+                    },
+                    {
+                      "value": "nou-barris",
+                      "label": "Nou Barris"
+                    },
+                    {
+                      "value": "sant-andreu",
+                      "label": "Sant Andreu"
+                    },
+                    {
+                      "value": "sant-marti",
+                      "label": "Sant Martí"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "el-raval",
+                      "label": "El Raval"
+                    },
+                    {
+                      "value": "el-barri-gotic",
+                      "label": "El Barri Gòtic"
+                    },
+                    {
+                      "value": "la-barceloneta",
+                      "label": "La Barceloneta"
+                    },
+                    {
+                      "value": "sant-pere-santa-caterina-i-la-ribera",
+                      "label": "Sant Pere, Santa Caterina i la Ribera"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Ciutat Vella (optional: if none selected, the whole district is fine)",
+                  "when": "ciutat-vella"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "el-fort-pienc",
+                      "label": "El Fort Pienc"
+                    },
+                    {
+                      "value": "la-sagrada-familia",
+                      "label": "La Sagrada Família"
+                    },
+                    {
+                      "value": "la-dreta-de-leixample",
+                      "label": "La Dreta de l'Eixample"
+                    },
+                    {
+                      "value": "lantiga-esquerra-de-leixample",
+                      "label": "L'Antiga Esquerra de l'Eixample"
+                    },
+                    {
+                      "value": "la-nova-esquerra-de-leixample",
+                      "label": "La Nova Esquerra de l'Eixample"
+                    },
+                    {
+                      "value": "sant-antoni",
+                      "label": "Sant Antoni"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Eixample (optional: if none selected, the whole district is fine)",
+                  "when": "eixample"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "el-poble-sec",
+                      "label": "El Poble-sec"
+                    },
+                    {
+                      "value": "la-marina-del-prat-vermell",
+                      "label": "La Marina del Prat Vermell"
+                    },
+                    {
+                      "value": "la-marina-de-port",
+                      "label": "La Marina de Port"
+                    },
+                    {
+                      "value": "la-font-de-la-guatlla",
+                      "label": "La Font de la Guatlla"
+                    },
+                    {
+                      "value": "hostafrancs",
+                      "label": "Hostafrancs"
+                    },
+                    {
+                      "value": "la-bordeta",
+                      "label": "La Bordeta"
+                    },
+                    {
+                      "value": "sants-badal",
+                      "label": "Sants-Badal"
+                    },
+                    {
+                      "value": "sants",
+                      "label": "Sants"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Sants-Montjuïc (optional: if none selected, the whole district is fine)",
+                  "when": "sants-montjuic"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "les-corts",
+                      "label": "Les Corts"
+                    },
+                    {
+                      "value": "la-maternitat-i-sant-ramon",
+                      "label": "La Maternitat i Sant Ramon"
+                    },
+                    {
+                      "value": "pedralbes",
+                      "label": "Pedralbes"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Les Corts (optional: if none selected, the whole district is fine)",
+                  "when": "les-corts"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "vallvidrera-el-tibidabo-i-les-planes",
+                      "label": "Vallvidrera, el Tibidabo i les Planes"
+                    },
+                    {
+                      "value": "sarria",
+                      "label": "Sarrià"
+                    },
+                    {
+                      "value": "les-tres-torres",
+                      "label": "Les Tres Torres"
+                    },
+                    {
+                      "value": "sant-gervasi-la-bonanova",
+                      "label": "Sant Gervasi-la Bonanova"
+                    },
+                    {
+                      "value": "sant-gervasi-galvany",
+                      "label": "Sant Gervasi-Galvany"
+                    },
+                    {
+                      "value": "el-putxet-i-el-farro",
+                      "label": "El Putxet i el Farró"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Sarrià-Sant Gervasi (optional: if none selected, the whole district is fine)",
+                  "when": "sarria-sant-gervasi"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "vallcarca-i-els-penitents",
+                      "label": "Vallcarca i els Penitents"
+                    },
+                    {
+                      "value": "el-coll",
+                      "label": "El Coll"
+                    },
+                    {
+                      "value": "la-salut",
+                      "label": "La Salut"
+                    },
+                    {
+                      "value": "la-vila-de-gracia",
+                      "label": "La Vila de Gràcia"
+                    },
+                    {
+                      "value": "el-camp-den-grassot-i-gracia-nova",
+                      "label": "El Camp d'en Grassot i Gràcia Nova"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Gràcia (optional: if none selected, the whole district is fine)",
+                  "when": "gracia"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "el-baix-guinardo",
+                      "label": "El Baix Guinardó"
+                    },
+                    {
+                      "value": "can-baro",
+                      "label": "Can Baró"
+                    },
+                    {
+                      "value": "el-guinardo",
+                      "label": "El Guinardó"
+                    },
+                    {
+                      "value": "la-font-den-fargues",
+                      "label": "La Font d'en Fargues"
+                    },
+                    {
+                      "value": "el-carmel",
+                      "label": "El Carmel"
+                    },
+                    {
+                      "value": "la-teixonera",
+                      "label": "La Teixonera"
+                    },
+                    {
+                      "value": "sant-genis-dels-agudells",
+                      "label": "Sant Genís dels Agudells"
+                    },
+                    {
+                      "value": "montbau",
+                      "label": "Montbau"
+                    },
+                    {
+                      "value": "la-vall-dhebron",
+                      "label": "La Vall d'Hebron"
+                    },
+                    {
+                      "value": "la-clota",
+                      "label": "La Clota"
+                    },
+                    {
+                      "value": "horta",
+                      "label": "Horta"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Horta-Guinardó (optional: if none selected, the whole district is fine)",
+                  "when": "horta-guinardo"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "vilapicina-i-la-torre-llobeta",
+                      "label": "Vilapicina i la Torre Llobeta"
+                    },
+                    {
+                      "value": "porta",
+                      "label": "Porta"
+                    },
+                    {
+                      "value": "el-turo-de-la-peira",
+                      "label": "El Turó de la Peira"
+                    },
+                    {
+                      "value": "can-peguera",
+                      "label": "Can Peguera"
+                    },
+                    {
+                      "value": "la-guineueta",
+                      "label": "La Guineueta"
+                    },
+                    {
+                      "value": "canyelles",
+                      "label": "Canyelles"
+                    },
+                    {
+                      "value": "les-roquetes",
+                      "label": "Les Roquetes"
+                    },
+                    {
+                      "value": "verdun",
+                      "label": "Verdun"
+                    },
+                    {
+                      "value": "la-prosperitat",
+                      "label": "La Prosperitat"
+                    },
+                    {
+                      "value": "la-trinitat-nova",
+                      "label": "La Trinitat Nova"
+                    },
+                    {
+                      "value": "torre-baro",
+                      "label": "Torre Baró"
+                    },
+                    {
+                      "value": "ciutat-meridiana",
+                      "label": "Ciutat Meridiana"
+                    },
+                    {
+                      "value": "vallbona",
+                      "label": "Vallbona"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Nou Barris (optional: if none selected, the whole district is fine)",
+                  "when": "nou-barris"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "la-trinitat-vella",
+                      "label": "La Trinitat Vella"
+                    },
+                    {
+                      "value": "baro-de-viver",
+                      "label": "Baró de Viver"
+                    },
+                    {
+                      "value": "el-bon-pastor",
+                      "label": "El Bon Pastor"
+                    },
+                    {
+                      "value": "sant-andreu",
+                      "label": "Sant Andreu"
+                    },
+                    {
+                      "value": "la-sagrera",
+                      "label": "La Sagrera"
+                    },
+                    {
+                      "value": "el-congres-i-els-indians",
+                      "label": "El Congrés i els Indians"
+                    },
+                    {
+                      "value": "navas",
+                      "label": "Navas"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Sant Andreu (optional: if none selected, the whole district is fine)",
+                  "when": "sant-andreu"
+                },
+                {
+                  "kind": "chips",
+                  "name": "barrio",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "el-camp-de-larpa-del-clot",
+                      "label": "El Camp de l'Arpa del Clot"
+                    },
+                    {
+                      "value": "el-clot",
+                      "label": "El Clot"
+                    },
+                    {
+                      "value": "el-parc-i-la-llacuna-del-poblenou",
+                      "label": "El Parc i la Llacuna del Poblenou"
+                    },
+                    {
+                      "value": "la-vila-olimpica-del-poblenou",
+                      "label": "La Vila Olímpica del Poblenou"
+                    },
+                    {
+                      "value": "el-poblenou",
+                      "label": "El Poblenou"
+                    },
+                    {
+                      "value": "diagonal-mar-i-el-front-maritim-del-poblenou",
+                      "label": "Diagonal Mar i el Front Marítim del Poblenou"
+                    },
+                    {
+                      "value": "el-besos-i-el-maresme",
+                      "label": "El Besòs i el Maresme"
+                    },
+                    {
+                      "value": "provencals-del-poblenou",
+                      "label": "Provençals del Poblenou"
+                    },
+                    {
+                      "value": "sant-marti-de-provencals",
+                      "label": "Sant Martí de Provençals"
+                    },
+                    {
+                      "value": "la-verneda-i-la-pau",
+                      "label": "La Verneda i la Pau"
+                    }
+                  ],
+                  "label": "Neighbourhoods of Sant Martí (optional: if none selected, the whole district is fine)",
+                  "when": "sant-marti"
+                },
+                {
+                  "name": "zona_libre",
+                  "label": "Other areas, streets or landmarks",
+                  "required": false,
+                  "full": true,
+                  "type": "text",
+                  "placeholder": "E.g.: near the Diagonal, next to a school…",
+                  "kind": "field"
+                }
+              ],
+              "hint": "Select the districts you're interested in and, if you wish to narrow it down, their neighbourhoods."
+            },
+            {
+              "kind": "group",
+              "title": "Budget and size",
+              "fields": [
+                {
+                  "kind": "note",
+                  "text": "Choose above whether you want to buy or rent and your budget will appear here."
+                },
+                {
+                  "name": "precio_min",
+                  "label": "Budget from (€)",
+                  "required": false,
+                  "full": false,
+                  "type": "text",
+                  "placeholder": "E.g.: 400,000",
+                  "kind": "field"
+                },
+                {
+                  "name": "precio_max",
+                  "label": "Budget up to (€)",
+                  "required": false,
+                  "full": false,
+                  "type": "text",
+                  "placeholder": "E.g.: 650,000",
+                  "kind": "field"
+                },
+                {
+                  "name": "precio_max",
+                  "label": "Maximum rent (€/month)",
+                  "required": false,
+                  "full": false,
+                  "type": "text",
+                  "placeholder": "E.g.: 2,000",
+                  "kind": "field"
+                },
+                {
+                  "name": "m2_min",
+                  "label": "Minimum size (m²)",
+                  "required": false,
+                  "full": false,
+                  "type": "number",
+                  "placeholder": "E.g.: 90",
+                  "kind": "field"
+                },
+                {
+                  "name": "dormitorios_min",
+                  "label": "Bedrooms (minimum)",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": ["1 or more", "2 or more", "3 or more", "4 or more", "5 or more"],
+                  "kind": "field"
+                },
+                {
+                  "name": "banos_min",
+                  "label": "Bathrooms (minimum)",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": ["1 or more", "2 or more", "3 or more"],
+                  "kind": "field"
+                },
+                {
+                  "name": "planta",
+                  "label": "Floor",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": ["Upper floor or penthouse", "Avoid lower floors"],
+                  "kind": "field"
+                },
+                {
+                  "name": "estado",
+                  "label": "Condition",
+                  "required": false,
+                  "full": true,
+                  "type": "select",
+                  "options": ["New or renovated", "Needs renovation"],
+                  "kind": "field"
+                }
+              ]
+            },
+            {
+              "kind": "group",
+              "title": "Must-haves",
+              "fields": [
+                {
+                  "kind": "chips",
+                  "name": "caracteristicas",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "Ascensor",
+                      "label": "Lift"
+                    },
+                    {
+                      "value": "Terraza",
+                      "label": "Terrace"
+                    },
+                    {
+                      "value": "Balcón",
+                      "label": "Balcony"
+                    },
+                    {
+                      "value": "Exterior",
+                      "label": "Exterior"
+                    },
+                    {
+                      "value": "Aire acondicionado",
+                      "label": "Air conditioning"
+                    },
+                    {
+                      "value": "Calefacción",
+                      "label": "Heating"
+                    },
+                    {
+                      "value": "Parking",
+                      "label": "Parking"
+                    },
+                    {
+                      "value": "Trastero",
+                      "label": "Storage room"
+                    },
+                    {
+                      "value": "Reformado",
+                      "label": "Renovated"
+                    },
+                    {
+                      "value": "Suelos originales",
+                      "label": "Original flooring"
+                    },
+                    {
+                      "value": "Piscina",
+                      "label": "Swimming pool"
+                    },
+                    {
+                      "value": "Jardín",
+                      "label": "Garden"
+                    },
+                    {
+                      "value": "Vistas",
+                      "label": "Views"
+                    },
+                    {
+                      "value": "Accesible",
+                      "label": "Accessible"
+                    },
+                    {
+                      "value": "Amueblado",
+                      "label": "Furnished"
+                    },
+                    {
+                      "value": "Admite mascotas",
+                      "label": "Pets allowed"
+                    }
+                  ]
+                }
+              ],
+              "hint": "The same terms we use in our property listings."
+            },
+            {
+              "kind": "group",
+              "title": "Timeline and situation",
+              "fields": [
+                {
+                  "name": "plazo",
+                  "label": "When do you need it?",
+                  "required": false,
+                  "full": true,
+                  "type": "select",
+                  "options": [
+                    "As soon as possible",
+                    "Within 1 to 3 months",
+                    "Within 3 to 6 months",
+                    "Later",
+                    "Just exploring"
+                  ],
+                  "kind": "field"
+                },
+                {
+                  "name": "uso",
+                  "label": "What will you use it for?",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": ["Primary residence", "Second home", "Investment"],
+                  "kind": "field"
+                },
+                {
+                  "name": "financiacion",
+                  "label": "Financing",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": [
+                    "Cash, no mortgage",
+                    "I need financing",
+                    "My mortgage is already pre-approved",
+                    "Not sure yet"
+                  ],
+                  "kind": "field"
+                },
+                {
+                  "name": "vivienda_actual",
+                  "label": "Do you have a property to sell?",
+                  "required": false,
+                  "full": true,
+                  "type": "select",
+                  "options": ["No", "Yes, I want to sell it", "Yes, it's already on the market"],
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "Need financing? We can help with [financial advice](service:asesoramiento-financiero). Need to sell before buying? See how we do it at [Sale & purchase](service:venta-estrategica)."
+                },
+                {
+                  "name": "fecha_entrada",
+                  "label": "Move-in date",
+                  "required": false,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "duracion",
+                  "label": "Contract type",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": [
+                    "Primary residence (long-term)",
+                    "Seasonal",
+                    "Not sure yet"
+                  ],
+                  "kind": "field"
+                },
+                {
+                  "name": "personas",
+                  "label": "Number of occupants",
+                  "required": false,
+                  "full": false,
+                  "type": "number",
+                  "kind": "field"
+                }
+              ]
+            },
+            {
+              "kind": "group",
+              "title": "How to contact you",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "First name",
+                  "required": true,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "apellidos",
+                  "label": "Surname",
+                  "required": false,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "telefono",
+                  "label": "Phone",
+                  "required": true,
+                  "full": false,
+                  "type": "tel",
+                  "kind": "field"
+                },
+                {
+                  "name": "email",
+                  "label": "Email",
+                  "required": true,
+                  "full": false,
+                  "type": "email",
+                  "kind": "field"
+                },
+                {
+                  "name": "idioma",
+                  "label": "Language",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": ["Español", "Català", "English", "Other"],
+                  "kind": "field"
+                },
+                {
+                  "name": "canal",
+                  "label": "Preferred contact method",
+                  "required": false,
+                  "full": false,
+                  "type": "select",
+                  "options": ["Phone", "WhatsApp", "Email"],
+                  "kind": "field"
+                },
+                {
+                  "name": "franja",
+                  "label": "Best time",
+                  "required": false,
+                  "full": true,
+                  "type": "select",
+                  "options": ["Morning", "Midday", "Afternoon"],
+                  "kind": "field"
+                },
+                {
+                  "name": "comentarios",
+                  "label": "Anything else we should know?Do not include unnecessary data, such as health information or details about other people.",
+                  "required": false,
+                  "full": true,
+                  "type": "textarea",
+                  "kind": "field"
+                }
+              ],
+              "hint": "We only ask what we need to handle your search."
+            },
+            {
+              "kind": "note",
+              "text": "This is how your search will be saved, using the same fields as a property listing. It updates as you fill in the form."
+            },
+            {
+              "kind": "group",
+              "title": "Your consent",
+              "fields": [
+                {
+                  "kind": "note",
+                  "text": "**Data controller:** HousySpace Consultores Inmobiliarios, S.L. · CIF B26903419 · [info@housyspace.com](mailto:info@housyspace.com)."
+                },
+                {
+                  "kind": "note",
+                  "text": "**Purpose:** To save your search in our buyers database, match it against available listings, alert you to matches and contact you to manage it. Only if you tick the box, also to send you commercial communications and the newsletter."
+                },
+                {
+                  "kind": "note",
+                  "text": "**Legal basis:** Your consent (Art. 6.1.a GDPR). The database consent is required to manage your search; the marketing and newsletter consents are optional and independent."
+                },
+                {
+                  "kind": "note",
+                  "text": "**Retention:** While your search is active and, at most, 12 months from our last contact. Afterwards data is deleted or blocked for the period required by law. (Retention period to be confirmed by HousySpace.)"
+                },
+                {
+                  "kind": "note",
+                  "text": "**Recipients:** We do not share your data with third parties, except as required by law. Data processors who act on our behalf and under contract include suppliers supporting the website, email, database and messaging (e.g. WhatsApp if you choose that channel). (Full list to be confirmed.)"
+                },
+                {
+                  "kind": "note",
+                  "text": "**Rights:** Access, rectification, erasure, objection, restriction and portability, and withdrawal of consent at any time, by writing to [info@housyspace.com](mailto:info@housyspace.com). If you believe your data is not being handled correctly, you can lodge a complaint with the Spanish Data Protection Agency ([aepd.es](https://www.aepd.es))."
+                },
+                {
+                  "kind": "note",
+                  "text": "**More information:** [Privacy policy](route:privacy). This form is for people aged 18 and over only."
+                },
+                {
+                  "name": "c_datos",
+                  "label": "**I have read the data protection information and consent to HousySpace saving the data from this form in its buyers database to manage my search, alert me to matching listings and contact me. ***Required to handle your search.",
+                  "required": true,
+                  "full": false,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "c_comercial",
+                  "label": "**I wish to receive commercial communications from HousySpace about listings, services and news, via the channels I select below.**Optional. Not ticking this does not affect your search.",
+                  "required": false,
+                  "full": false,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "chips",
+                  "name": "c_canal",
+                  "radio": false,
+                  "required": false,
+                  "options": [
+                    {
+                      "value": "email",
+                      "label": "Email"
+                    },
+                    {
+                      "value": "whatsapp",
+                      "label": "WhatsApp"
+                    },
+                    {
+                      "value": "telefono",
+                      "label": "Phone"
+                    }
+                  ],
+                  "label": "Which channel?"
+                },
+                {
+                  "name": "c_newsletter",
+                  "label": "**I want to subscribe to the HousySpace newsletter and articles (Barcelona property market, advice and news) by email.**Optional. Not ticking this does not affect your search.",
+                  "required": false,
+                  "full": false,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "The optional boxes are unticked by default. You can withdraw any consent at any time via the unsubscribe link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com)."
+                },
+                {
+                  "kind": "note",
+                  "text": "**Legal texts in draft.** The data protection information, checkboxes and privacy policy are pending review by HousySpace's legal advisers before the website goes live."
+                }
+              ],
+              "hint": "First, the basic information required by law. Please read it before ticking anything."
+            },
+            {
+              "kind": "submit",
+              "label": "Save my search"
+            },
+            {
+              "kind": "note",
+              "text": "There is no database connected to this form yet (CRM pending). When you click, WhatsApp will open with your search already written — it won't be saved or reach HousySpace until you send it there."
+            }
+          ],
+          "mode": "whatsapp"
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h3",
+          "text": "Would you prefer us to search for you?"
+        },
+        {
+          "kind": "p",
+          "text": "With the custom search service, a dedicated adviser works your search from start to finish."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Custom search",
+              "href": "route:customSearch",
+              "solid": true
+            },
+            {
+              "label": "Speak to an adviser",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

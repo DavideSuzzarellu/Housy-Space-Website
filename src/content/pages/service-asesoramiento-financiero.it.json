@@ -1,0 +1,142 @@
+{
+  "title": "Consulenza finanziaria · HousySpace",
+  "description": "Mutuo e finanziamento studiati con numeri reali, insieme al nostro broker finanziario.",
+  "head": {
+    "heading": "Consulenza finanziaria",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Servizio" },
+      { "kind": "lead", "text": "Mutuo e finanziamento studiati con numeri reali, insieme al nostro broker finanziario." },
+      { "kind": "image", "src": "../../assets/home/oficina-1672.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "Il mutuo, studiato prima di innamorarsi di un appartamento." },
+        { "kind": "p", "text": "Sapere quanto puoi finanziare, con quale rata e a quali condizioni evita brutte sorprese. Lo studiamo insieme a te e al nostro broker finanziario, che confronta le condizioni di diverse banche." },
+        { "kind": "p", "text": "E quando vendi, verifichiamo che l'acquirente possa pagare, per evitare che l'operazione salti per il finanziamento." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Per chi" },
+        { "kind": "h2", "text": "Finanziamento per ogni tipo di operazione" },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Se stai comprando" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Quanto puoi ottenere in prestito e con quale rata mensile" },
+                { "title": "", "text": "Risparmio necessario per l'anticipo, i costi e le imposte" },
+                { "title": "", "text": "Confronto delle offerte di diverse banche" },
+                { "title": "", "text": "Perizia e documentazione fino alla firma" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Se stai vendendo" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Valutazione della capacità finanziaria dell'acquirente" },
+                { "title": "", "text": "Tempi del mutuo coordinati con il contratto di caparra" },
+                { "title": "", "text": "Meno rischio che la vendita salti" }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            { "kind": "h3", "text": "Se stai investendo" },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                { "title": "", "text": "Finanziamento dell'acquisto e della ristrutturazione" },
+                { "title": "", "text": "Numeri dell'investimento con la rata inclusa" },
+                { "title": "", "text": "Vedi [investimento immobiliare](service:inversion-inmobiliaria)" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Come lo facciamo" },
+        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Conversazione", "text": "Ci racconti la tua situazione e l'operazione che hai in mente." },
+            { "title": "Studio di fattibilità", "text": "Redditi, risparmi, costi di acquisto: i numeri reali." },
+            { "title": "Offerte", "text": "Il broker cerca e confronta le condizioni tra le banche." },
+            { "title": "Perizia e documentazione", "text": "Coordiniamo la perizia e prepariamo quanto richiesto dalla banca." },
+            { "title": "Firma", "text": "Verifichiamo le condizioni finali e ti accompagniamo dal notaio." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Domande frequenti" },
+        { "kind": "h2", "text": "Le domande più frequenti" },
+        { "kind": "faq", "q": "Quanto devo avere risparmiato?", "a": "Dipende dal prezzo, dalla perizia e dal tuo profilo. Oltre alla parte che la banca non finanzia, bisogna tenere conto delle imposte e dei costi di acquisto. Te lo calcoliamo con numeri reali prima di iniziare a cercare." },
+        { "kind": "faq", "q": "Chi mi consiglia sul mutuo?", "a": "Il nostro broker finanziario, con cui lavoriamo nelle operazioni con finanziamento. Noi coordiniamo l'intero processo con te." },
+        { "kind": "faq", "q": "È utile se ho già trovato l'appartamento?", "a": "Sì. Prima lo studiamo, meglio è: così saprai quali condizioni puoi accettare nel contratto di caparra." }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "Con chi lo facciamo" },
+        { "kind": "h2", "text": "Finanziamento con uno specialista" },
+        { "kind": "lead", "text": "Per le operazioni con finanziamento, lavoriamo insieme a un broker finanziario di fiducia." },
+        { "kind": "buttons", "items": [{ "label": "Scopri i nostri collaboratori", "href": "route:about#colaboraciones", "solid": false }] },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "Broker finanziario", "text": "Finanziamento Valuta la fattibilità di ogni operazione con finanziamento e confronta le condizioni di diverse banche." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Parliamo" },
+        { "kind": "lead", "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Scrivici", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma." }
+      ]
+    }
+  ]
+}

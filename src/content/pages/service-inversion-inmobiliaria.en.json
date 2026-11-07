@@ -1,0 +1,99 @@
+{
+  "title": "Real estate investment · HousySpace",
+  "description": "Opportunity analysis with clear numbers: purchase, renovation, rental and returns.",
+  "head": {
+    "heading": "Real estate investment",
+    "photo": false,
+    "items": [
+      { "kind": "tag", "text": "Service" },
+      { "kind": "lead", "text": "Opportunity analysis with clear numbers: purchase, renovation, rental and returns." },
+      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
+      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "big", "text": "We don't promise returns: we put the numbers on the table." },
+        { "kind": "p", "text": "We analyse residential investment opportunities with clear information so you can decide with confidence. We also tell you when a deal doesn't make sense for you." }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "What we analyse" },
+        { "kind": "h2", "text": "An investment viewed from every angle" },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            { "title": "", "text": "01Purchase price and costsPrice, taxes, notary, Land Registry and agent fees: the real cost of entry." },
+            { "title": "", "text": "02RenovationWhat works it needs, how much they cost and how much value they add." },
+            { "title": "", "text": "03Expected rental incomeCurrent rent for similar properties in the area." },
+            { "title": "", "text": "04Estimated returnGross and net, with costs, taxes and void periods." },
+            { "title": "", "text": "05RisksBuilding condition, rental regulations and area liquidity." },
+            { "title": "", "text": "06Exit strategyWhat happens if you want to sell in a few years." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "How we do it" },
+        { "kind": "h2", "text": "Step by step" },
+        {
+          "kind": "steps",
+          "items": [
+            { "title": "Objectives", "text": "We define what you want to achieve, with what budget and over what timeframe." },
+            { "title": "Search and analysis", "text": "We study options and their numbers." },
+            { "title": "Risks", "text": "We review costs, timelines and scenarios." },
+            { "title": "Purchase", "text": "We negotiate and accompany you to completion." }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        { "kind": "tag", "text": "One single door" },
+        { "kind": "h2", "text": "From analysis to rental income, with one adviser throughout" },
+        { "kind": "lead", "text": "If you need it, we handle every step after the purchase." },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            { "title": "", "text": "[Finance**Financial advice**](service:asesoramiento-financiero)" },
+            { "title": "", "text": "[Buy**Property Personal Shopper**](service:personal-shopper)" },
+            { "title": "", "text": "[Renovate**Renovations & interior design**](service:reformas-obras)" },
+            { "title": "", "text": "[Let**Lettings and property management**](service:alquiler-gestion)" }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        { "kind": "h2", "text": "Let's talk" },
+        { "kind": "lead", "text": "Every good decision starts with a conversation. Let's talk about yours." },
+        {
+          "kind": "buttons",
+          "items": [
+            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria", "solid": false },
+            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
+            { "label": "Contact us", "href": "route:contact", "solid": false }
+          ]
+        },
+        { "kind": "note", "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation." }
+      ]
+    }
+  ]
+}
