@@ -239,6 +239,31 @@ const en = {
     clusterLabel: "{count} properties: zoom in",
     approximateSuffix: "(approximate location)",
   },
+  province: {
+    heading: "Province of Barcelona",
+    lead: "The 311 municipalities of the province of Barcelona with their official data: comarca, territorial code and area.",
+    description:
+      "The 311 municipalities of the province of Barcelona: official comarca, territorial code and area.",
+    tableCaption: "Municipalities of the province of Barcelona",
+    municipality: "Municipality",
+    comarca: "Comarca",
+    code: "Territorial code",
+    area: "Area",
+    population: "Population",
+    density: "Population density",
+    notAvailable: "Not available",
+    municipalityTag: "Municipality · {comarca}",
+    municipalityLead:
+      "Official data of {name}, a municipality of the {comarca} comarca, in the province of Barcelona.",
+    municipalityDescription:
+      "Official comarca, territorial code and area of {name} (province of Barcelona).",
+    officialData: "Official data",
+    sourceNote:
+      "Comarca, territorial code and area: [{provider}]({url}), {license}. Population and housing prices are not in this source: they are shown as not available until the official INE and Idescat data are added.",
+    others: "Other municipalities of {comarca}",
+    all: "All municipalities",
+    cityLink: "Barcelona, neighbourhood by neighbourhood",
+  },
   newsletter: {
     formLabel: "Newsletter subscription",
     heading: "Newsletter and articles",

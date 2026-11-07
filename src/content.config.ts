@@ -1,4 +1,5 @@
 import { marketSchema } from "./features/districts/infrastructure/marketSchema";
+import { municipalitiesSchema } from "./features/districts/infrastructure/municipalitySchema";
 import { pageSchema } from "./features/pages/infrastructure/pageSchema";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
@@ -37,6 +38,10 @@ export const collections = {
   market: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/market" }),
     schema: marketSchema,
+  }),
+  municipalities: defineCollection({
+    loader: glob({ pattern: "*.json", base: "./src/content/municipalities" }),
+    schema: municipalitiesSchema,
   }),
   home: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/home" }),

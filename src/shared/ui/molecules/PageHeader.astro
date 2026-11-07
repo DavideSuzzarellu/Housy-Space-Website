@@ -1,0 +1,25 @@
+---
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+
+/** Plain page head on paper: breadcrumbs, tag, h1 and lead (data pages: barrio, municipality). */
+interface Props {
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+  breadcrumbLabel: string;
+  heading: string;
+  tag?: string;
+  lead?: string;
+}
+
+const { crumbs, breadcrumbLabel, heading, tag, lead } = Astro.props;
+---
+
+<section class="bg-canvas pt-8 pb-10">
+  <Container>
+    <Breadcrumbs items={crumbs} label={breadcrumbLabel} class="mb-6" />
+    {tag !== undefined && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag}</p>}
+    <h1 class="mt-3 text-[clamp(1.875rem,4.8vw,3.5rem)]">{heading}</h1>
+    {lead !== undefined && <p class="mt-4 max-w-[62ch] text-muted">{lead}</p>}
+    <slot />
+  </Container>
+</section>

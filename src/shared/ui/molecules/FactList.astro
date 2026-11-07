@@ -3,6 +3,7 @@
  * Key facts. `inline`: "**148** m² · **3** hab. · **2** baños" (cards).
  * `grid`: value over label tiles (property detail).
  * `tone="light"`: grid tiles for white backgrounds (property sheet PDF).
+ * `list`: label over value with a top rule (official data of barrios and municipalities).
  */
 export interface Fact {
   readonly value: string;
@@ -11,7 +12,7 @@ export interface Fact {
 
 interface Props {
   facts: readonly Fact[];
-  variant?: "inline" | "grid";
+  variant?: "inline" | "grid" | "list";
   tone?: "dark" | "light";
   class?: string;
 }
@@ -39,6 +40,15 @@ const tile = TILE_TONES[tone];
         </li>
       ))}
     </ul>
+  ) : variant === "list" ? (
+    <dl class:list={["grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3", className]}>
+      {facts.map((fact) => (
+        <div class="border-t border-line pt-2.5">
+          <dt class="text-xs text-muted">{fact.label}</dt>
+          <dd class="font-semibold">{fact.value}</dd>
+        </div>
+      ))}
+    </dl>
   ) : (
     <dl class:list={["grid grid-cols-2 gap-2.5 sm:grid-cols-3", className]}>
       {facts.map((fact) => (

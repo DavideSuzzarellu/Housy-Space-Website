@@ -1,0 +1,78 @@
+---
+import type { MunicipalitiesData } from "@/features/districts/infrastructure/municipalitySchema";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { formatMessage, formatNumber } from "@/shared/lib/format";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
+import Section from "@/shared/ui/molecules/Section.astro";
+
+/** Province of Barcelona: every municipality with its official figures (AGENTS.md §6 item 20). */
+interface Props {
+  locale: Locale;
+  data: MunicipalitiesData;
+}
+
+const { locale, data } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.province;
+const crumbs = [
+  { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
+  { label: t.heading },
+];
+const CELL = "border-t border-line px-3 py-2.5 text-left";
+---
+
+<PageHeader
+  crumbs={crumbs}
+  breadcrumbLabel={dictionary.property.detail.breadcrumb}
+  heading={t.heading}
+  lead={t.lead}
+/>
+
+<Section id="municipios" labelledBy="municipalities-caption" name="municipalities" surface="stone">
+  <div class="overflow-x-auto">
+    <table class="w-full min-w-[36rem] border-collapse text-sm">
+      <caption id="municipalities-caption" class="sr-only">
+        {t.tableCaption}
+      </caption>
+      <thead>
+        <tr class="text-xs tracking-[0.12em] text-muted">
+          <th scope="col" class={`${CELL} font-medium`}>
+            {t.municipality}
+          </th>
+          <th scope="col" class={`${CELL} font-medium`}>
+            {t.comarca}
+          </th>
+          <th scope="col" class={`${CELL} font-medium`}>
+            {t.code}
+          </th>
+          <th scope="col" class={`${CELL} text-right font-medium`}>
+            {t.area} (km²)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.municipalities.map((item) => (
+          <tr>
+            <th scope="row" class={`${CELL} font-semibold`}>
+              <a
+                href={getLocalizedPath("municipality", locale, { municipio: item.slug })}
+                class="hover:text-accent"
+              >
+                {item.name}
+              </a>
+            </th>
+            <td class={CELL}>{item.comarca}</td>
+            <td class={`${CELL} tabular-nums`}>{item.code}</td>
+            <td class={`${CELL} text-right tabular-nums`}>{formatNumber(item.areaKm2, locale)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-6 max-w-[70ch] text-xs text-muted">
+    <Inline text={formatMessage(t.sourceNote, data.source)} locale={locale} />
+  </p>
+</Section>
