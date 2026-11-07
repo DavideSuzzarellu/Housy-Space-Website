@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /property-sheet-source/
+
+# Change this URL once the production domain is live (replace DavideSuzzarellu.github.io).
+# See astro.config.ts `site` — must be set to https://www.housyspace.com before launch.
+Sitemap: https://DavideSuzzarellu.github.io/Housy-Space-Website/sitemap-index.xml

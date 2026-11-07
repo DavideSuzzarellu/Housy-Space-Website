@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { buildBlogJsonLd } from "@/features/blog/application/blogJsonLd";
 import { getPosts, type BlogPost } from "@/features/blog/application/posts";
 import BlogIndex from "@/features/blog/ui/BlogIndex.astro";
 import PostView from "@/features/blog/ui/PostView.astro";
@@ -25,12 +26,14 @@ import OtherServices from "@/features/pages/ui/OtherServices.astro";
 import ServicesGrid from "@/features/pages/ui/ServicesGrid.astro";
 import { getServiceCards } from "@/features/pages/application/serviceCards";
 import PageView from "@/features/pages/ui/PageView.astro";
+import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
 import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
+import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
 
 /**
  * Every page that is not home or a listing: editorial pages from `src/content/pages` and the
@@ -141,10 +144,14 @@ function metaOf(): {
     };
   }
   if (target.view === "post") {
+    // Each post is single-language: only emit hreflang for the post's own locale + x-default.
+    const all = getAlternates("blogPost", { slug: target.post.id });
     return {
       title: `${target.post.data.title} · HousySpace`,
       description: target.post.data.description,
-      alternates: getAlternates("blogPost", { slug: target.post.id }),
+      alternates: all.filter(
+        (a) => a.locale === target.post.data.language || a.hreflang === "x-default",
+      ),
     };
   }
   if (target.view === "district") {
@@ -188,6 +195,25 @@ function metaOf(): {
 }
 
 const meta = metaOf();
+const isPost = target.view === "post";
+const site = Astro.site ?? new URL(Astro.url.origin);
+const siteUrl = site.href.replace(/\/$/, "");
+// All post-specific props grouped so none is `string | undefined` in a spread.
+const blogPostProps = isPost
+  ? {
+      ogImage: target.post.data.image.src,
+      ogType: "article" as const,
+      publishedTime: target.post.data.date.toISOString(),
+    }
+  : undefined;
+const blogJsonLd = isPost
+  ? buildBlogJsonLd({
+      post: target.post,
+      url: new URL(getLocalizedPath("blogPost", locale, { slug: target.post.id }), site).href,
+      siteUrl,
+      company: COMPANY,
+    })
+  : undefined;
 // Prose not translated yet: shown in Spanish, kept out of the index until it is (see ROADMAP).
 const proseFallback =
   (editorial?.fallback ?? false) ||
@@ -210,7 +236,9 @@ const crumbs = [
   description={meta.description}
   alternates={meta.alternates}
   noindex={proseFallback}
+  {...(blogPostProps ?? {})}
 >
+  {blogJsonLd !== undefined && <JsonLd slot="head" data={blogJsonLd} />}
   {target.view === "editorial" &&
   target.key === "blog" &&
   posts.length > 0 &&

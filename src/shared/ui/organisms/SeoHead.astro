@@ -10,6 +10,10 @@ interface Props {
   alternates?: readonly Alternate[];
   /** Open Graph image: root-relative path (PNG) or absolute URL. */
   ogImagePath?: string;
+  /** Open Graph type. Use `"article"` for blog posts. */
+  ogType?: string;
+  /** ISO 8601 string for `article:published_time` (only when `ogType="article"`). */
+  publishedTime?: string;
   noindex?: boolean;
 }
 
@@ -19,6 +23,8 @@ const {
   description,
   alternates = [],
   ogImagePath = "/brand/housyspace-logo-oficial-fondo-blanco-3000.png",
+  ogType = "website",
+  publishedTime,
   noindex = false,
 } = Astro.props;
 
@@ -43,7 +49,10 @@ const ogLocaleAlternates = alternates
   <link rel="alternate" hreflang={alternate.hreflang} href={toAbsolute(alternate.path)} />
 ))}
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
+{ogType === "article" && publishedTime && (
+  <meta property="article:published_time" content={publishedTime} />
+)}
 <meta property="og:site_name" content="HousySpace" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

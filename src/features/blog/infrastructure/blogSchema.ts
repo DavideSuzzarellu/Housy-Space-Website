@@ -25,6 +25,7 @@ export function blogSchema<I extends z.ZodType>(image: () => I) {
       language: z.enum(LOCALES),
       image: image(),
       imageAlt: text,
+      author: text.optional(),
       draft: z.boolean().default(false),
     })
     .strict();
