@@ -1,0 +1,435 @@
+---
+import { Picture } from "astro:assets";
+import type { PageContent, PageItem } from "@/features/pages/application/pages";
+import { groupItems } from "@/features/pages/application/pages";
+import type { ServiceCard } from "@/features/pages/application/serviceCards";
+import { COMPANY } from "@/features/agency/domain/company";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import PageItems from "@/features/pages/ui/PageItems.astro";
+
+interface Props {
+  locale: Locale;
+  content: PageContent;
+  serviceCards: { readonly main: ServiceCard[]; readonly others: ServiceCard[] };
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+}
+
+const { locale, content, serviceCards, crumbs } = Astro.props;
+const t = getDictionary(locale);
+const ta = t.about;
+
+const image = content.head.items.find((item) => item.kind === "image");
+const hasPhoto = content.head.photo && image !== undefined;
+
+const findSection = (id: string) => content.sections.find((s) => s.id === id);
+const historiaSection = findSection("historia");
+const filosofiaSection = findSection("filosofia");
+const comoTrabajamosSection = findSection("como-trabajamos");
+const colaboracionesSection = findSection("colaboraciones");
+
+// Historia items: timeline list (kind=list) and narrative (the rest after it)
+const historiaItems = historiaSection?.items ?? [];
+const timelineIdx = historiaItems.findIndex((item) => item.kind === "list");
+// Items up to and including eyebrow + h2 + subtitle (before the list)
+const preItems = timelineIdx > 0 ? historiaItems.slice(0, timelineIdx) : [];
+// The timeline list itself
+const timelineItem =
+  timelineIdx >= 0 && historiaItems[timelineIdx]?.kind === "list"
+    ? (historiaItems[timelineIdx] as Extract<PageItem, { kind: "list" }>)
+    : undefined;
+// Everything after the list = the narrative body
+const narrativeItems = timelineIdx >= 0 ? historiaItems.slice(timelineIdx + 1) : historiaItems;
+
+const allServices = [...serviceCards.main, ...serviceCards.others];
+
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.city}`)}`;
+
+const NAV_SECTIONS = [
+  { id: "quienes-somos", label: ta.inPageNav.whoWeAre },
+  { id: "historia", label: ta.inPageNav.history },
+  { id: "filosofia", label: ta.inPageNav.philosophy },
+  { id: "servicios", label: ta.inPageNav.services },
+  { id: "donde-estamos", label: ta.inPageNav.whereWeAre },
+] as const;
+---
+
+<div data-about-view>
+  {/* ── HERO ──────────────────────────────────────────────────────────── */}
+  <section
+    data-page-head
+    class:list={[
+      "relative isolate overflow-hidden pt-8 pb-[clamp(2.75rem,6vw,4.5rem)]",
+      hasPhoto
+        ? "surface-dark flex min-h-[clamp(24rem,50vw,34rem)] flex-col justify-end bg-canvas"
+        : "bg-canvas",
+    ]}
+  >
+    {hasPhoto && (
+      <>
+        <Picture
+          {...PHOTO_PICTURE}
+          src={image.src}
+          alt=""
+          widths={[800, 1400]}
+          sizes="100vw"
+          priority
+          class="absolute inset-0 -z-20 size-full object-cover"
+        />
+        <span
+          aria-hidden="true"
+          class="absolute inset-0 -z-10 bg-linear-to-b from-ink/55 to-ink/80"
+        ></span>
+        <MediaCredit tone="onImage" class="absolute right-4 bottom-2">
+          {t.media.conceptualImage}
+        </MediaCredit>
+      </>
+    )}
+    <Container>
+      <Breadcrumbs items={crumbs} label={t.property.detail.breadcrumb} class="mb-7" />
+      {content.head.items
+        .filter((item) => item.kind === "tag")
+        .map((item) => (
+          <p class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">
+            {item.kind === "tag" && item.text}
+          </p>
+        ))}
+      <h1 class="max-w-[22ch] text-[clamp(1.875rem,4.8vw,3.5rem)]">{content.head.heading}</h1>
+    </Container>
+  </section>
+
+  {/* ── IN-PAGE STICKY NAV ───────────────────────────────────────────── */}
+  <nav
+    id="about-nav"
+    aria-label="Secciones de la página"
+    class="sticky top-0 z-10 border-b border-line bg-canvas/95 backdrop-blur-sm"
+  >
+    <Container>
+      <ul class="flex gap-1 overflow-x-auto py-2 text-xs font-semibold tracking-[0.08em] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {NAV_SECTIONS.map((section) => (
+          <li class="shrink-0">
+            <a
+              href={`#${section.id}`}
+              data-about-nav-link
+              class="block px-3 py-1.5 text-muted transition-colors hover:text-fg data-[active]:text-accent"
+            >
+              {section.label.toUpperCase()}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Container>
+  </nav>
+
+  {/* ── QUIÉNES SOMOS: EXPERIENCIA + STATS ──────────────────────────── */}
+  <section
+    id="quienes-somos"
+    aria-labelledby="about-experience-heading"
+    class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  >
+    <Container>
+      <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+        {ta.inPageNav.experience.toUpperCase()}
+      </p>
+
+      {/* Timeline */}
+      {timelineItem !== undefined && (
+        <div class="mb-10">
+          <ol class="mt-4 flex flex-col gap-0">
+            {timelineItem.items.map((entry, i) => (
+              <li class="relative flex items-start gap-4 pb-6 last:pb-0">
+                <div class="mt-1 flex shrink-0 flex-col items-center">
+                  <span class="flex size-5 items-center justify-center rounded-full border-2 border-accent bg-canvas"></span>
+                  {i < timelineItem.items.length - 1 && (
+                    <span class="mt-1 h-full w-px flex-1 bg-line" aria-hidden="true"></span>
+                  )}
+                </div>
+                <div class="pb-2">
+                  <span class="text-[clamp(2rem,4vw,3rem)] font-black leading-none text-fg">
+                    {entry.title}
+                  </span>
+                  <p class="mt-1 max-w-[52ch] text-sm text-muted">{entry.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {/* Stats block */}
+      <div class="border-t border-line pt-8">
+        <p class="mb-6 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+          {ta.stats.sinceOpening.toUpperCase()}
+        </p>
+        <div class="grid gap-6 sm:grid-cols-3">
+          {([ta.stats.volume, ta.stats.properties, ta.stats.rentals] as const).map((stat) => (
+            <div>
+              <p class="text-[clamp(2rem,4.5vw,3.5rem)] font-black leading-none text-fg">
+                {stat.value}
+              </p>
+              <p class="mt-2 max-w-[26ch] text-sm text-muted">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-8 max-w-[62ch] text-sm text-muted">{ta.stats.operationsNote}</p>
+        <div class="mt-5">
+          <Button href={getLocalizedPath("sale", locale)} variant="outline">
+            {ta.stats.cta}
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  {/* ── NUESTRA HISTORIA ─────────────────────────────────────────────── */}
+  <section
+    id="historia"
+    aria-labelledby="about-history-heading"
+    class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  >
+    <Container>
+      <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+        {ta.inPageNav.history.toUpperCase()}
+      </p>
+      {/* Pre-list items (eyebrow p "01", h2, subtitle p) */}
+      {preItems.length > 0 && <PageItems locale={locale} units={groupItems(preItems)} />}
+      {/* Narrative text (big, p, p, quote, p, p) */}
+      <div class="max-w-[72ch]">
+        <PageItems locale={locale} units={groupItems(narrativeItems)} />
+      </div>
+    </Container>
+  </section>
+
+  {/* ── NUESTRA FILOSOFÍA ────────────────────────────────────────────── */}
+  {filosofiaSection !== undefined && (
+    <section
+      id="filosofia"
+      aria-labelledby="about-philosophy-heading"
+      class="surface-dark bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+    >
+      <Container>
+        <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+          {ta.inPageNav.philosophy.toUpperCase()}
+        </p>
+        <PageItems locale={locale} units={groupItems(filosofiaSection.items)} />
+      </Container>
+    </section>
+  )}
+
+  {/* ── CÓMO TRABAJAMOS ──────────────────────────────────────────────── */}
+  {comoTrabajamosSection !== undefined && (
+    <section class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+      <Container>
+        <PageItems locale={locale} units={groupItems(comoTrabajamosSection.items)} />
+      </Container>
+    </section>
+  )}
+
+  {/* ── NUESTROS SERVICIOS (carousel) ───────────────────────────────── */}
+  <section
+    id="servicios"
+    aria-labelledby="about-services-heading"
+    class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  >
+    <Container>
+      <div class="mb-6 flex items-center justify-between gap-4">
+        <p
+          id="about-services-heading"
+          class="text-[0.6875rem] font-semibold tracking-[0.16em] text-accent"
+        >
+          {ta.inPageNav.services.toUpperCase()}
+        </p>
+        <div class="flex gap-2" aria-label="Navegación del carrusel de servicios">
+          <button
+            id="about-svc-prev"
+            type="button"
+            aria-label={ta.services.previous}
+            class="flex size-9 items-center justify-center border border-line text-muted transition-colors hover:border-fg hover:text-fg disabled:opacity-30"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <button
+            id="about-svc-next"
+            type="button"
+            aria-label={ta.services.next}
+            class="flex size-9 items-center justify-center border border-line text-muted transition-colors hover:border-fg hover:text-fg disabled:opacity-30"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="about-svc-rail"
+        class="flex gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        role="list"
+      >
+        {allServices.map((card) => (
+          <article
+            role="listitem"
+            class="w-[clamp(14rem,36vw,20rem)] shrink-0 border-t border-line pt-4"
+          >
+            <p class="mb-1 text-[0.625rem] font-semibold tracking-[0.14em] text-accent">
+              {t.serviceNames[card.key].split(" ")[0]?.toUpperCase()}
+            </p>
+            <h3 class="mb-3 text-[clamp(0.9375rem,1.4vw,1.0625rem)] font-bold leading-tight">
+              {card.name}
+            </h3>
+            <a
+              href={card.href}
+              class="text-xs font-semibold tracking-[0.08em] text-accent underline-offset-2 hover:underline"
+            >
+              {t.servicesIndex.discover} →
+            </a>
+          </article>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  {/* ── RESEÑAS CTA ──────────────────────────────────────────────────── */}
+  <section class="bg-canvas py-[clamp(2rem,4vw,3rem)]">
+    <Container>
+      <Button href={getLocalizedPath("home", locale) + "#resenas"} variant="outline">
+        {ta.reviews.cta}
+      </Button>
+    </Container>
+  </section>
+
+  {/* ── DÓNDE ESTAMOS ────────────────────────────────────────────────── */}
+  <section
+    id="donde-estamos"
+    aria-labelledby="about-where-heading"
+    class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  >
+    <Container>
+      <h2 id="about-where-heading" class="mb-8 text-[clamp(1.5rem,3.6vw,2.5rem)]">
+        {ta.whereWeAre.addressLabel !== "Dirección"
+          ? ta.inPageNav.whereWeAre
+          : ta.inPageNav.whereWeAre}
+      </h2>
+      <div class="grid gap-10 md:grid-cols-2">
+        <div class="space-y-6">
+          <div class="border-t border-line pt-4">
+            <p class="mb-1 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+              {ta.whereWeAre.addressLabel.toUpperCase()}
+            </p>
+            <address class="not-italic text-fg">
+              <p>{COMPANY.address.street}</p>
+              <p>
+                {COMPANY.address.postalCode} {COMPANY.address.city}
+              </p>
+            </address>
+          </div>
+          <div class="border-t border-line pt-4">
+            <p class="mb-1 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+              {ta.whereWeAre.hoursLabel.toUpperCase()}
+            </p>
+            <p class="text-fg">{t.footer.hours}</p>
+          </div>
+          <div class="flex gap-3 pt-2">
+            <Button href={mapsUrl} variant="outline" external>
+              {ta.whereWeAre.howToGet}
+            </Button>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="border-t border-line pt-4">
+            <p class="mb-3 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+              {ta.whereWeAre.companyDataLabel.toUpperCase()}
+            </p>
+            <dl class="space-y-1 text-sm text-muted">
+              <div>
+                <dt class="inline font-medium text-fg">{COMPANY.legalName}</dt>
+              </div>
+              <div>
+                <dt class="inline">{t.footer.taxIdLabel}</dt>
+                <dd class="inline">{COMPANY.taxId}</dd>
+              </div>
+              <div>
+                <dt class="inline">{t.footer.aicatLabel}</dt>
+                <dd class="inline">AICAT nº {COMPANY.aicatNumber}</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  {/* ── ¿TRABAJAS EN EL SECTOR? ─────────────────────────────────────── */}
+  <section class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+    <Container>
+      <div class="border-t border-line pt-8">
+        <h2 class="mb-2 text-[clamp(1.125rem,2vw,1.5rem)] font-bold">{ta.sector.heading}</h2>
+        <p class="mb-5 max-w-[52ch] text-muted">{ta.sector.text}</p>
+        <Button href={getLocalizedPath("contact", locale)} variant="outline">
+          {ta.sector.cta}
+        </Button>
+      </div>
+    </Container>
+  </section>
+
+  {/* ── COLABORACIONES ──────────────────────────────────────────────── */}
+  {colaboracionesSection !== undefined && (
+    <section class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+      <Container>
+        <PageItems locale={locale} units={groupItems(colaboracionesSection.items)} />
+      </Container>
+    </section>
+  )}
+</div>
+
+<script>
+  function initAboutNav() {
+    const links = document.querySelectorAll<HTMLAnchorElement>("[data-about-nav-link]");
+    const sections = [...links]
+      .map((a) => {
+        const id = a.getAttribute("href")?.slice(1);
+        return id ? document.getElementById(id) : null;
+      })
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((a) => {
+              const active = a.getAttribute("href") === `#${id}`;
+              a.toggleAttribute("data-active", active);
+            });
+          }
+        }
+      },
+      { rootMargin: "-20% 0px -70% 0px" },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+
+    // Services carousel
+    const rail = document.getElementById("about-svc-rail");
+    const prev = document.getElementById("about-svc-prev");
+    const next = document.getElementById("about-svc-next");
+    if (rail && prev && next) {
+      const scroll = (dir: number) => {
+        const card = rail.querySelector<HTMLElement>("[role='listitem']");
+        const step = card ? card.offsetWidth + 24 : 320;
+        rail.scrollBy({ left: dir * step, behavior: "smooth" });
+      };
+      prev.addEventListener("click", () => scroll(-1));
+      next.addEventListener("click", () => scroll(1));
+    }
+  }
+
+  document.addEventListener("astro:page-load", initAboutNav);
+</script>

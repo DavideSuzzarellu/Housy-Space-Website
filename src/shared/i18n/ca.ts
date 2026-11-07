@@ -447,6 +447,45 @@ const ca = {
     body: "La pàgina que cerques no existeix o s'ha mogut.",
     backHome: "Torna a l'inici",
   },
+  about: {
+    inPageNav: {
+      whoWeAre: "Qui som",
+      experience: "La nostra experiència",
+      history: "La nostra història",
+      philosophy: "La nostra filosofia",
+      services: "Els nostres serveis",
+      reviews: "Ressenyes",
+      whereWeAre: "On som",
+    },
+    stats: {
+      sinceOpening: "Des que vam obrir HousySpace",
+      volume: { value: "+35M €", label: "de volum intermediat en cinc anys" },
+      properties: { value: "+100", label: "immobles intermediats a Barcelona i voltants" },
+      rentals: { value: "+60", label: "pisos llogats amb el mateix acompanyament" },
+      operationsNote:
+        "Cada operació és al mapa, districte a districte, amb el preu d'anunci i el mes en què es va tancar.",
+      cta: "Veure els immobles intermediats",
+    },
+    services: {
+      previous: "Anterior",
+      next: "Següent",
+    },
+    reviews: {
+      cta: "Veure ressenyes a la portada",
+    },
+    whereWeAre: {
+      addressLabel: "Adreça",
+      hoursLabel: "Horari",
+      howToGet: "Com arribar",
+      mapsLabel: "Veure a Google Maps",
+      companyDataLabel: "Dades de l'empresa",
+    },
+    sector: {
+      heading: "Treballes al sector?",
+      text: "Si comparteixes la nostra manera d'entendre la feina, parlem.",
+      cta: "Vull col·laborar",
+    },
+  },
 } as const satisfies Dictionary;
 
 export default ca;

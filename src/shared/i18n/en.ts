@@ -445,6 +445,45 @@ const en = {
     body: "The page you are looking for does not exist or has moved.",
     backHome: "Back to home",
   },
+  about: {
+    inPageNav: {
+      whoWeAre: "Who we are",
+      experience: "Our experience",
+      history: "Our story",
+      philosophy: "Our philosophy",
+      services: "Our services",
+      reviews: "Reviews",
+      whereWeAre: "Where we are",
+    },
+    stats: {
+      sinceOpening: "Since opening HousySpace",
+      volume: { value: "+35M €", label: "in brokered volume over five years" },
+      properties: { value: "+100", label: "properties brokered in Barcelona and surroundings" },
+      rentals: { value: "+60", label: "rentals managed with the same care" },
+      operationsNote:
+        "Every transaction is on the map, district by district, with the listing price and the month it was completed.",
+      cta: "See the properties brokered",
+    },
+    services: {
+      previous: "Previous",
+      next: "Next",
+    },
+    reviews: {
+      cta: "Read reviews on the home page",
+    },
+    whereWeAre: {
+      addressLabel: "Address",
+      hoursLabel: "Hours",
+      howToGet: "How to get here",
+      mapsLabel: "View on Google Maps",
+      companyDataLabel: "Company information",
+    },
+    sector: {
+      heading: "Do you work in the sector?",
+      text: "If you share our approach to the job, let's talk.",
+      cta: "I want to collaborate",
+    },
+  },
 } as const satisfies Dictionary;
 
 export default en;

@@ -25,6 +25,7 @@ import {
 import OtherServices from "@/features/pages/ui/OtherServices.astro";
 import ServicesGrid from "@/features/pages/ui/ServicesGrid.astro";
 import { getServiceCards } from "@/features/pages/application/serviceCards";
+import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
 import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -121,6 +122,9 @@ const editorial =
     : target.view === "service"
       ? await getPage(`service-${getServiceSlug(target.service, DEFAULT_LOCALE)}`, locale)
       : undefined;
+
+const isAbout = target.view === "editorial" && target.key === "about";
+const aboutServiceCards = isAbout ? await getServiceCards(locale) : undefined;
 
 function metaOf(): {
   title: string;
@@ -244,6 +248,13 @@ const crumbs = [
   posts.length > 0 &&
   editorial !== undefined ? (
     <BlogIndex locale={locale} content={editorial.content} posts={posts} crumbs={crumbs} />
+  ) : isAbout && editorial !== undefined && aboutServiceCards !== undefined ? (
+    <AboutView
+      locale={locale}
+      content={editorial.content}
+      serviceCards={aboutServiceCards}
+      crumbs={crumbs}
+    />
   ) : (
     editorial !== undefined && (
       <PageView

@@ -446,6 +446,45 @@ const it = {
     body: "La pagina che cerchi non esiste o è stata spostata.",
     backHome: "Torna alla home",
   },
+  about: {
+    inPageNav: {
+      whoWeAre: "Chi siamo",
+      experience: "La nostra esperienza",
+      history: "La nostra storia",
+      philosophy: "La nostra filosofia",
+      services: "I nostri servizi",
+      reviews: "Recensioni",
+      whereWeAre: "Dove siamo",
+    },
+    stats: {
+      sinceOpening: "Da quando abbiamo aperto HousySpace",
+      volume: { value: "+35M €", label: "di volume intermediato in cinque anni" },
+      properties: { value: "+100", label: "immobili intermediati a Barcellona e dintorni" },
+      rentals: { value: "+60", label: "appartamenti affittati con la stessa cura" },
+      operationsNote:
+        "Ogni operazione è sulla mappa, distretto per distretto, con il prezzo di annuncio e il mese in cui si è conclusa.",
+      cta: "Vedi gli immobili intermediati",
+    },
+    services: {
+      previous: "Precedente",
+      next: "Successivo",
+    },
+    reviews: {
+      cta: "Leggi le recensioni sulla home",
+    },
+    whereWeAre: {
+      addressLabel: "Indirizzo",
+      hoursLabel: "Orari",
+      howToGet: "Come arrivare",
+      mapsLabel: "Vedi su Google Maps",
+      companyDataLabel: "Dati aziendali",
+    },
+    sector: {
+      heading: "Lavori nel settore?",
+      text: "Se condividi il nostro approccio al lavoro, parliamone.",
+      cta: "Voglio collaborare",
+    },
+  },
 } as const satisfies Dictionary;
 
 export default it;
