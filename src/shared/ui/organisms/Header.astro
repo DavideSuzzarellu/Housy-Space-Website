@@ -42,8 +42,8 @@ const SHOW_WITH_NAV =
   class:list={[
     "surface-dark",
     "group/header fixed inset-x-0 top-0 z-60 text-fg transition-[background-color,border-color] duration-400",
-    "border-b border-stone/16 bg-bg-dark-1",
-    "data-[theme=overlay]:border-transparent data-[theme=overlay]:bg-transparent",
+    "border-b border-stone/16 bg-canvas/90 backdrop-blur-xl",
+    "data-[theme=overlay]:border-transparent data-[theme=overlay]:bg-forest data-[theme=overlay]:backdrop-blur-none",
     // Soft gradient keeps the negative logo legible over the video.
     "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+4.375rem)] before:bg-linear-to-b before:from-ink/65 before:via-ink/30 before:to-ink/0 before:opacity-0 before:transition-opacity data-[theme=overlay]:before:opacity-100",
   ]}
@@ -54,7 +54,7 @@ const SHOW_WITH_NAV =
       aria-label={t.a11y.homeLink}
       class="relative block flex-none"
     >
-      <Logo variant="negative" alt="" class="h-13.5 w-auto md:h-17" />
+      <Logo variant="negative" alt="" class="h-13.5 w-auto transition-[height] duration-400 ease-brand group-data-[theme=overlay]/header:h-16 md:h-17 md:group-data-[theme=overlay]/header:h-20" />
     </a>
 
     <nav
@@ -100,13 +100,13 @@ const SHOW_WITH_NAV =
                     id={submenuId}
                     class="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 translate-y-2.5 pt-3.5 opacity-0 transition-[opacity,translate,visibility] duration-400 ease-brand group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100 group-data-[open=true]/item:visible group-data-[open=true]/item:translate-y-0 group-data-[open=true]/item:opacity-100"
                   >
-                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-accent/20 bg-bg-dark-1/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
+                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-accent/20 bg-canvas/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
                       {item.children.map((child, childIndex) => (
                         <li>
                           <a
                             href={child.href}
                             class:list={[
-                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/7 hover:pl-7 hover:text-accent focus-visible:text-accent",
+                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-gold/7 hover:pl-7 hover:text-accent focus-visible:text-accent",
                               childIndex === 0 && "font-medium text-white",
                             ]}
                           >

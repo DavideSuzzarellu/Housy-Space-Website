@@ -1,26 +1,20 @@
 ---
 import posterLandscape from "@/assets/home/hero-poster.jpg";
 import posterPortrait from "@/assets/home/hero-poster-v.jpg";
-import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
-import { getLocalizedPath } from "@/shared/i18n/routes";
-import Button from "@/shared/ui/atoms/Button.astro";
-import Container from "@/shared/ui/atoms/Container.astro";
 
 /**
- * Hero: video background (landscape + portrait sources) with heading overlay.
- * The poster images display before the video loads and on devices with prefers-reduced-motion.
- * Videos already exist in public/media/hero/ — no Astro image optimisation needed for them.
+ * Hero: full-viewport video only (no text overlay).
+ * The heading lives in the HomePresentation section below (§11.1 reference structure).
  */
 interface Props {
   locale: Locale;
-  content: HomeContent["hero"];
   /** Id of the section the scroll cue jumps to. */
   nextSectionId: string;
 }
 
-const { locale, content, nextSectionId } = Astro.props;
+const { locale, nextSectionId } = Astro.props;
 const t = getDictionary(locale);
 
 const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
@@ -31,7 +25,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   id="hero"
   aria-label={t.home.hero.label}
   data-hero
-  class="surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas text-white md:min-h-130"
+  class="surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
 >
   <!-- Poster (shown before video loads or on reduced motion / no-JS) -->
   <picture class="absolute inset-0">
@@ -60,27 +54,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <source src={`${base}/media/hero/hero-corto-v.mp4`} type="video/mp4" />
   </video>
 
-  <!-- Gradient overlay -->
+  <!-- Gradient shade (bottom) -->
   <div
     aria-hidden="true"
-    class="pointer-events-none absolute inset-0 bg-linear-to-b from-ink/55 via-ink/20 via-40% to-ink/88"
+    class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent via-transparent via-50% to-ink/70"
   ></div>
-
-  <!-- Content -->
-  <Container class="relative flex h-full flex-col justify-end pb-[clamp(4rem,8vw,6rem)]">
-    <p class="mb-5 flex items-center gap-4 text-[0.6875rem] tracking-[0.2em] text-white/60 uppercase before:h-px before:w-8.5 before:bg-white/40 max-[479px]:before:hidden">
-      {content.eyebrow}
-    </p>
-    <h1 class="text-[clamp(2.25rem,5.5vw,5rem)] leading-[1.04] text-balance">
-      <span class="block">{content.headingFirst}</span>
-      <span class="block text-white/70">{content.headingSecond}</span>
-    </h1>
-    <div class="mt-[clamp(1.75rem,3vw,2.5rem)]">
-      <Button href={getLocalizedPath("about", locale)} variant="solid" size="lg" arrow>
-        {content.ctaLabel}
-      </Button>
-    </div>
-  </Container>
 
   <!-- Scroll cue -->
   <a
