@@ -5,7 +5,6 @@ import { getLocalizedPath, type Alternate } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import { getMainNavigation } from "@/shared/lib/navigation";
 import { SITE_HEADER_TRANSITION_NAME } from "@/shared/lib/transitionNames";
-import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
 import Logo from "@/shared/ui/atoms/Logo.astro";
 import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
 
@@ -136,15 +135,7 @@ const SHOW_WITH_NAV =
         </div>
       )}
 
-      <!-- Only beside the "Menu" button: the inline menu already ends in Contact. -->
-      <a
-        href={getLocalizedPath("contact", locale)}
-        class="hidden min-h-11.5 items-center gap-3 border border-fg bg-fg px-5 text-xs leading-none font-medium tracking-[0.14em] text-ink uppercase no-underline transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-accent hover:bg-turquoise focus-visible:border-accent focus-visible:bg-turquoise min-[35rem]:inline-flex"
-      >
-        {t.contact.letsTalk}
-        <ArrowUpRight />
-      </a>
-
+      <!-- Proposal v3 (2026-10-30): no "Let's talk" CTA; the drawer and the footer carry it. -->
       <button
         type="button"
         data-menu-button

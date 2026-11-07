@@ -61,6 +61,9 @@
 - [x] Home page: all 7 sections + contact block, real featured properties, en/it/ca machine-translated (pending client review)
 - [x] Home restyled to proposal v3: order, accordion, carousel, philosophy, copy from Pages CMS. Valuation popup and its form wait for I3; reviews stay hidden until I6; services accordion shows the 8 confirmed services (legal/tax and financial wait for I23)
 - [ ] Confirm the white logo derived from the official SVG
+- [~] Sync with proposal v3 as of 2026-11-02 (`docs/ui-migration.md`): Phase 2 layout
+  - [x] Navigation of v3: My search (new `mySearch` route, shows the home search page until Phase 4 merges both searches), Where we are (about `#donde-estamos`, section added in Phase 4), footer columns
+  - [x] Contact actions Call · WhatsApp · Email · Tell us (drawer, footer, mobile bar), footer of v3 (social links, newsletter that opens the visitor's email, hours, email, AICAT white seal and APEI seal with "Experto nº 3261" as logos), header without "Let's talk". Kept against v3 for AA (§8): muted `#5F6967` (v3 `#67716F` fails on cards) and petrol hover on the drawer CTA (v3 taupe hover 3.9:1)
 
 ### Phase 3 — Catalog & property detail
 - [~] Catalog with URL-synced filters, sort, list/map view, clustered Leaflet map (ICGC tiles) — implemented + unit tests; `tests/e2e/catalog.spec.ts` and the catalog performance budget still to run against a build (🔒 I1 for `bun run build`). Map-area search ("buscar en esta zona") and district/barrio filters wait for Phase 5 geo data
@@ -147,4 +150,5 @@
 | 2026-10-30 | Forms open WhatsApp or email with the request written, as the proposal does, until I3 and the CRM exist: nothing is stored or sent by the site. Legal drafts stay marked as pending exactly as in the proposal (I11) |
 | 2026-10-30 | Prose exists in Spanish only: other locales show it with `lang="es"` and `noindex` until translated. Barrio pages are fully translated |
 | 2026-10-30 | Typography follows the live proposal v3, overriding the brand manual: Montserrat only, one variable file (400–900), all site text uppercase, no italics. Cormorant Garamond removed. The property PDF sheet stays in sentence case |
+| 2026-11-04 | UI sync with proposal v3 as edited up to 2026-11-02 (layout, styles and copy). The Claude Design canvas "Web HousySpace" (2026-10-25) is an earlier iteration and not a reference. All copy translated into es/en/it/ca (pending client review). Plan and gaps in `docs/ui-migration.md` |
 | 2026-10-30 | Light theme via role tokens (`fg`, `muted`, `line`, `card`, `canvas`, `accent`) redefined by `.surface-dark` and `.surface-stone`, as the proposal does. Stone needs darker muted/accent to pass AA. Newsletter and APEI seal from the proposal left out of the footer: no delivery destination (I3) and membership unconfirmed (I23) |

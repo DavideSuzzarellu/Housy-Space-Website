@@ -11,13 +11,17 @@ export const EDITORIAL = [
   "dataSources",
   "internationalGuide",
   "customSearch",
-  "homeSearch",
+  "mySearch",
   "valuation",
   "blog",
 ] as const;
 export type EditorialKey = (typeof EDITORIAL)[number];
 /** Content file name when it differs from the route key. */
-export const CONTENT_FILE: Partial<Record<EditorialKey, string>> = { legalNotice: "legal" };
+export const CONTENT_FILE: Partial<Record<EditorialKey, string>> = {
+  legalNotice: "legal",
+  // TODO(ui-migration Phase 4): one merged "Mi búsqueda" page replaces both search pages.
+  mySearch: "homeSearch",
+};
 
 export type PageContent = CollectionEntry<"pages">["data"];
 export type PageSection = PageContent["sections"][number];

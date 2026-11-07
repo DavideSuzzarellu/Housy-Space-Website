@@ -1,4 +1,6 @@
 ---
+import { withBase } from "@/shared/lib/basePath";
+
 /**
  * Brand logo from SVG files (never re-typeset, AGENTS.md §11).
  * - official: `logo/housyspace-completo-oficial.svg` (light backgrounds).
@@ -19,4 +21,10 @@ const SOURCES = {
 } as const;
 ---
 
-<img src={SOURCES[variant]} alt={alt} width="295" height="99" class:list={["block", className]} />
+<img
+  src={withBase(SOURCES[variant])}
+  alt={alt}
+  width="295"
+  height="99"
+  class:list={["block", className]}
+/>
