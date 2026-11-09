@@ -32,7 +32,7 @@ const stars = (rating: number) => "★".repeat(rating).padEnd(5, "☆");
     <ul class="grid gap-4 md:grid-cols-3">
       {testimonials.map((testimonial) => (
         <li class="flex flex-col gap-3 bg-white p-6 text-ink">
-          <p role="img" class="text-petrol" aria-label={`${testimonial.rating} / 5`}>
+          <p role="img" class="text-accent" aria-label={`${testimonial.rating} / 5`}>
             <span aria-hidden="true">{stars(testimonial.rating)}</span>
           </p>
           <p lang={testimonial.language} class="text-[0.9375rem] whitespace-pre-line normal-case">

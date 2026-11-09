@@ -9,8 +9,8 @@ interface Props {
   alternates: readonly Alternate[];
   label: string;
   /**
-   * `header`: on the petrol header bar or over the hero (current locale in turquoise).
-   * `light`: on a light surface (drawer); small text uses teal, not turquoise (§8 contrast).
+   * `header`: on the petrol header bar or over the hero (current locale in turquoise accent).
+   * `light`: on a light surface (drawer); small text uses teal for legible contrast (§8).
    */
   tone?: "header" | "light";
 }
@@ -21,7 +21,7 @@ const links = alternates.filter((alternate) => alternate.hreflang !== "x-default
 
 const TONES = {
   header: "text-current aria-[current=page]:text-accent",
-  light: "text-petrol-dark aria-[current=page]:text-teal",
+  light: "text-fg aria-[current=page]:text-teal",
 } as const;
 ---
 

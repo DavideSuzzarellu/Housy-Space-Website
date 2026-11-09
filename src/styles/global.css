@@ -2,37 +2,50 @@
 @import "../shared/ui/motion/motion.css";
 
 /*
- * Brand tokens — defined ONCE here (AGENTS.md §11 and §11.1).
+ * Brand tokens — defined ONCE here (AGENTS.md §11; values from docs/design-system/tokens.json).
  * The default Tailwind palette is reset so only brand colors exist.
+ *
+ * Tailwind names differ from the design system in two places (AGENTS.md §11.2):
+ *   accent    = DS `accent-tx` (turquoise for TEXT and links, AA on its surface)
+ *   turquoise = DS `accent`    (pure #21cec5: fills, rules and decoration only)
+ *   canvas    = DS `bg`, dark = DS `c-bg-dark`.
  */
 @theme {
   --color-*: initial;
 
-  /* §11 brand colors */
+  /* Brand constants (no theme). */
   --color-petrol: #0f5a5e;
   --color-teal: #08777b;
-  --color-gold: #b8996a;
   --color-ink: #0b1214;
-  --color-graphite: #172022;
-  /* Hero overlay header background — from the HousySpace reference prototype. */
-  --color-forest: #162b2a;
-
-  /*
-   * §11.1 role tokens, light by default. `.surface-dark` and `.surface-stone` redefine them for a
-   * block and everything inside it, so components never branch on the theme.
-   */
-  --color-canvas: #f7f5f1;
-  --color-bg-deep: #ebe5dc;
-  --color-bg-soft: #f0ece4;
-  --color-card: #ebe5dc;
-  --color-card-hover: #e2ddd5;
-  --color-line: #d6cfc3;
-  --color-fg: #0b1214;
-  --color-muted: #5b5f5e;
-  --color-star: #b8996a;
-  --color-accent: #0f5a5e;
   --color-stone: #ebe5dc;
   --color-taupe: #a99f92;
+  --color-turquoise: #21cec5;
+  --color-turquoise-deep: #058c93;
+  --color-dark: #162b2a;
+
+  /*
+   * Role tokens, light by default. `.surface-dark` and `.surface-stone` redefine them for a
+   * block and everything inside it, so components never branch on the theme.
+   */
+  --color-canvas: #fcfbf8;
+  --color-bg-soft: #f3f1eb;
+  --color-bg-deep: #edeae3;
+  --color-bg-lift: #ece8df;
+  --color-card: #f3f1eb;
+  --color-card-hover: #ece8df;
+  --color-line: rgb(23 43 43 / 0.12);
+  --color-line-strong: rgb(23 43 43 / 0.2);
+  --color-fg: #172b2b;
+  --color-fg-2: #172b2b;
+  --color-muted: #67716f;
+  --color-accent: #08777b;
+  --color-taupe-tx: #857a6c;
+
+  /* States: always with a word or icon, never colour alone. */
+  --color-ok: #0a7a73;
+  --color-ko: #9a6a3a;
+  --color-warn: #9a5b00;
+  --color-err: #a8322a;
 
   /* Neutrals declared explicitly (logo backgrounds, overlays). */
   --color-white: #ffffff;
@@ -40,9 +53,9 @@
 
   /* Typography: font files are self-hosted by the Astro Fonts API (astro.config.ts). */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 
-  /* Motion (§11.1): shared easing and UI micro-transition durations. */
+  /* Motion (§11.8): shared easing and UI micro-transition durations. */
   --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
   --default-transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
   --default-transition-duration: 300ms;
@@ -57,15 +70,17 @@
     @apply bg-canvas text-base/[1.7];
   }
 
-  /* HousySpace: Cormorant Garamond headings (weight 400, sentence case); Montserrat body/UI. */
+  /* Design system: Montserrat headings, 800, uppercase by CSS (HTML stays in normal case). */
   h1,
   h2,
-  h3 {
-    @apply font-serif leading-[1.08] font-normal tracking-[0.01em] text-balance;
+  h3,
+  h4 {
+    @apply font-heading leading-[1.08] font-extrabold tracking-[0.03em] text-balance uppercase;
   }
 
+  /* `accent` is the AA turquoise of each surface (teal on paper, #21cec5 on dark blocks). */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-gold;
+    @apply outline-2 outline-offset-3 outline-accent;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -80,30 +95,38 @@
   }
 }
 
-/* Header bar, footer, text over photos: only the roles change. */
-.surface-dark {
-  --color-canvas: #0b1214;
-  --color-bg-deep: #040a0b;
-  --color-bg-soft: #172022;
-  --color-card: #172022;
-  --color-card-hover: #1f2b2d;
-  --color-line: #2b3638;
+/* Dark petrol blocks (header over the hero, footer, reviews, photo headers): only the roles change. */
+.surface-dark,
+[data-theme="dark"] {
+  --color-canvas: #162b2a;
+  --color-bg-deep: #102221;
+  --color-bg-soft: #1b3331;
+  --color-bg-lift: #23403d;
+  --color-card: #1d3533;
+  --color-card-hover: #23403d;
+  --color-line: rgb(169 190 188 / 0.16);
+  --color-line-strong: rgb(169 190 188 / 0.28);
   --color-fg: #f7f5f1;
-  --color-muted: #a9aeac;
-  --color-accent: #b8996a;
+  --color-fg-2: #d8dedc;
+  --color-muted: #b4bfbe;
+  --color-accent: #21cec5;
+  --color-taupe-tx: #a99f92;
+  --color-ok: #9fe3dc;
+  --color-ko: #e6c9a8;
+  --color-warn: #ffcf8a;
+  --color-err: #ffb4a8;
   color: var(--color-fg);
   color-scheme: dark;
 }
 
-/* Alternate light sections. Muted and accent are darker: the light values fail AA on stone (§8). */
+/* Alternate light sections (`c-bg-alt`). Muted is darker: the light value is 4.5:1 only on paper (§8). */
 .surface-stone {
-  --color-canvas: #ebe5dc;
+  --color-canvas: #f3f1eb;
   --color-bg-soft: #fcfbf8;
   --color-card: #fcfbf8;
   --color-card-hover: #fffefb;
   --color-line: rgb(23 43 43 / 0.14);
   --color-muted: #525c5a;
-  --color-accent: #0f5a5e;
 }
 
 /* Article body written in Pages CMS: plain Markdown, so its elements are styled here. */
@@ -207,7 +230,7 @@
 
 .catalog-pin:focus-visible,
 .catalog-cluster:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 

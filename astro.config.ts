@@ -57,7 +57,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: "Montserrat",
       cssVariable: "--font-montserrat",
-      // One variable file covers every weight the v3 design uses (400 body to 900 headings).
+      // Body 400, buttons 500, labels 700, headings 800/900 (design system, AGENTS.md §11.3).
       weights: ["400 900"],
       styles: ["normal"],
       // latin-ext covers Catalan/Italian/Spanish edge glyphs; unicode-range means its files are
