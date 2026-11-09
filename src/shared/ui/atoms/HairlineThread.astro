@@ -1,0 +1,28 @@
+---
+/**
+ * Vertical hairline that draws itself downwards on reveal and links the home sections
+ * (reference `.hi-thread`). `bottom` ends in a small accent dot. Decorative.
+ */
+interface Props {
+  position: "top" | "bottom";
+  class?: string;
+}
+
+const { position, class: className } = Astro.props;
+
+const POSITIONS = {
+  top: "h-[clamp(1.75rem,3.2vw,2.75rem)] mb-[clamp(1rem,2vw,1.625rem)]",
+  bottom:
+    "relative h-[clamp(2rem,4vw,3.5rem)] mt-[clamp(1.875rem,3.6vw,3rem)] after:absolute after:-bottom-[3px] after:-left-0.5 after:size-[5px] after:rounded-full after:bg-turquoise after:content-['']",
+} as const;
+---
+
+<span
+  aria-hidden="true"
+  data-reveal="thread"
+  class:list={[
+    "mx-auto block w-px origin-top bg-linear-to-b from-fg/0 via-fg/30 to-fg/10",
+    POSITIONS[position],
+    className,
+  ]}
+></span>

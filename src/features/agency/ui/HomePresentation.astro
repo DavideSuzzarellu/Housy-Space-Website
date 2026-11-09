@@ -3,6 +3,7 @@ import type { HomeContent } from "@/features/agency/application/homeContent";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
+import HairlineThread from "@/shared/ui/atoms/HairlineThread.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 
 /**
@@ -21,7 +22,7 @@ const { locale, id, content } = Astro.props;
 <section
   id={id}
   aria-labelledby="presentation-heading"
-  class="relative overflow-hidden bg-canvas py-[clamp(4rem,10vw,7.5rem)]"
+  class="relative overflow-clip bg-canvas pt-[clamp(0.25rem,1.6vw,1.25rem)]"
 >
   <!-- Decorative geometric grid (§11.1 reference visual) -->
   <svg
@@ -86,24 +87,34 @@ const { locale, id, content } = Astro.props;
   </svg>
 
   <Container class="relative">
-    <div class="grid gap-[clamp(1.75rem,3vw,2.5rem)] min-[900px]:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] min-[900px]:items-end">
-      <h1
-        id="presentation-heading"
-        data-reveal="words"
-        class="font-sans font-normal uppercase tracking-[-0.005em] leading-[1.06] text-[clamp(2.5rem,4.9vw,4.625rem)]"
+    <HairlineThread position="top" />
+    <div class="relative isolate mx-auto max-w-[1040px]">
+      <p
+        data-reveal
+        class="mb-[clamp(1.375rem,2.6vw,1.875rem)] flex items-center gap-4 text-[0.6875rem] tracking-[0.24em] text-accent uppercase before:h-px before:w-8.5 before:flex-none before:bg-taupe/70 max-[479px]:tracking-[0.18em] max-[479px]:before:hidden"
       >
-        <span data-words-line="rise" class="block text-balance">
-          {content.headingFirst}
-        </span>
-        <span data-words-line="type" class="block italic text-muted text-balance">
-          {content.headingSecond}
-        </span>
-      </h1>
-      <div data-reveal class="min-[900px]:pb-1">
-        <Button href={getLocalizedPath("about", locale)} variant="solid" size="lg" arrow>
-          {content.ctaLabel}
-        </Button>
+        {content.eyebrow}
+      </p>
+      <div class="grid gap-[clamp(1.5rem,3vw,2.25rem)]">
+        <h1
+          id="presentation-heading"
+          data-reveal="words"
+          class="font-sans leading-[1.06] font-normal tracking-[-0.005em] uppercase text-[clamp(1.875rem,3.5vw,3.125rem)]"
+        >
+          <span data-words-line="rise" class="block font-black text-balance">
+            {content.headingFirst}
+          </span>{" "}
+          <span data-words-line="type" class="block text-muted text-balance">
+            {content.headingSecond}
+          </span>
+        </h1>
+        <div data-reveal style="--reveal-delay: 1.05s">
+          <Button href={getLocalizedPath("about", locale)} variant="solid" size="xl" arrow>
+            {content.ctaLabel}
+          </Button>
+        </div>
       </div>
     </div>
+    <HairlineThread position="bottom" />
   </Container>
 </section>

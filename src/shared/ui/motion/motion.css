@@ -106,6 +106,16 @@
       transform: translateY(112%);
     }
 
+    /* Hairline thread (HairlineThread.astro): draws downwards instead of fading up. */
+    .motion-ready [data-reveal="thread"] {
+      transition: transform 1.6s var(--ease-brand);
+    }
+
+    .motion-ready [data-reveal="thread"]:not(.is-revealed) {
+      opacity: 1;
+      transform: scaleY(0);
+    }
+
     /*
      * Word-by-word headline (words.ts): the heading itself stays put, its words animate.
      * `rise` lines lift and un-blur; `type` lines are wiped in from the left by a mask.
