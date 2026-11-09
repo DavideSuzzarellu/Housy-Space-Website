@@ -323,6 +323,8 @@ const en = {
     },
     services: {
       regionLabel: "Our services",
+      pause: "Pause the carousel",
+      play: "Resume the carousel",
       carousel: "carousel",
       enterLabel: "View service:",
       previous: "Previous service",

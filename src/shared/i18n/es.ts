@@ -330,6 +330,8 @@ const es = {
     },
     services: {
       regionLabel: "Nuestros servicios",
+      pause: "Pausar el carrusel",
+      play: "Reanudar el carrusel",
       carousel: "carrusel",
       enterLabel: "Ver servicio:",
       previous: "Servicio anterior",
