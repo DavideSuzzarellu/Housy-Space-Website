@@ -1,12 +1,19 @@
-# UI migration — sync with proposal v3 (2026-11-02)
+# UI migration — HousySpace design reference (2026-11-09)
 
-> Phase 1 output (analysis). Decisions of 2026-11-04 (client):
+> **Design reference changed 2026-11-09** (client decision). The sole reference is now the
+> **HousySpace design system** (`docs/design-system/`, source artifact `EGX5LwxCsGXaz29aYzsZtG`).
+> It supersedes the 2026-11-07 prototype (Cormorant Garamond, gold, ink) and proposal v3.
 >
-> - **Proposal v3 is the only reference for layout, styles and copy**: artifact
->   `45a50557-4abc-4a6c-80cc-fba1507c81a3` (https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk), version `1793660382-0f86`, last edited 2026-11-02.
-> - The Claude Design canvas "Web HousySpace" (`c48b2ded…`, 2026-10-25) is an **earlier iteration** that v3 superseded. It is not used.
+> - Typography: Montserrat only, headings 800/900, uppercase by CSS.
+> - Accent: turquoise (`accent` for fills, `accent-tx` for text); gold is retired.
+> - Surfaces: paper `#FCFBF8`, alternate `#F3F1EB`, dark petrol blocks `#162B2A`.
+> - Straight corners, almost no shadows. Copy rules in AGENTS.md §11.5.
+> - `AGENTS.md` §11 rewritten; the 2026-11-07 notes below are historical.
+>
+> Earlier decisions of 2026-11-04 still stand:
+>
 > - **All copy is translated into es/en/it/ca.**
-> - `AGENTS.md` is updated with the new reference, navigation, header, footer and translation rule.
+> - Route structure, page list, and content architecture unchanged.
 
 ## 0. Why v3 and not the Design canvas (evidence)
 
@@ -38,20 +45,27 @@
 
 Texts may also have changed in the HTML pages without a CSS block; each page is diffed in Phase 4.
 
-## 2. Design tokens (v3 vs `src/styles/global.css`)
+## 2. Design tokens (design system vs `src/styles/global.css`)
 
-| Role                | v3                                                                                                                      | Project                     | Action                                                    |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------- |
-| canvas / fg         | `#FCFBF8` / `#172B2B`                                                                                                   | same                        | —                                                         |
-| muted (light)       | `#67716F`                                                                                                               | `#5F6967`                   | ⚠️ align to `#67716F` after checking AA (4.5:1 on canvas) |
-| fg-2 (light)        | `#33403F`                                                                                                               | —                           | new role if a component needs it                          |
-| accent text (light) | `#08777B`                                                                                                               | `accent #08777B`            | —                                                         |
-| stone muted/accent  | `#3A514D` (`accent-tx` in Living)                                                                                       | `#525C5A` / `#0F5A5E`       | ⚠️ verify per use                                         |
-| dark block (header) | bg `#162B2A`, bar `#1A2E31`, fg `#F7F5F1`, muted `#b4bfbe`, accent `#21CEC5`                                            | `.surface-dark` same values | bar colour `#1A2E31` to verify                            |
-| charts              | `#1F4A47` (a), `#B08F5E` / text `#8A6D45` (b), `#8E9A97` (c), bars `#CFC5B6`, grid `rgba(23,43,43,.09)`, axis `#67716F` | to check in `charts/*`      | add as chart tokens, defined once                         |
-| reviews stars       | `#E6B63F` (dark) / `#B8860B` (card)                                                                                     | to check                    | token if missing                                          |
-| taupe text          | `#857A6C`                                                                                                               | `taupe #A99F92` only        | new `taupe-text` if used for text (AA)                    |
-| type                | Montserrat, uppercase, tracking `.1–.16em` on labels, headings 700–900                                                  | same                        | —                                                         |
+Applied 2026-11-09 — `global.css`, `astro.config.ts` and the skills `tailwind-css` / `new-component` updated. Values come from `docs/design-system/tokens.json`; Tailwind names are mapped in AGENTS.md §11.2.
+
+| Role                 | Design system                    | Project                                           | Status                      |
+| -------------------- | -------------------------------- | ------------------------------------------------- | --------------------------- |
+| canvas               | `c-bg` `#FCFBF8`                 | `--color-canvas`                                  | ✅                          |
+| fg / muted           | `#172B2B` / `#67716F`            | `--color-fg` / `--color-muted`                    | ✅                          |
+| accent (text, focus) | `accent-tx` `#08777B`            | `--color-accent` (role)                           | ✅                          |
+| turquoise (fills)    | `accent` `#21CEC5`               | `--color-turquoise`                               | ✅                          |
+| line / card          | `rgba(23,43,43,.12)` / `#F3F1EB` | `--color-line` / `--color-card`                   | ✅                          |
+| dark block           | `c-bg-dark` `#162B2A` + roles    | `.surface-dark`, `[data-theme="dark"]`, `bg-dark` | ✅                          |
+| alternate section    | `c-bg-alt` `#F3F1EB`             | `.surface-stone`                                  | ✅                          |
+| heading font         | Montserrat 800/900, uppercase    | `--font-heading` + `@layer base` h1–h4            | ✅ (sizes per component ⚠️) |
+| body font            | Montserrat 400                   | `--font-sans`, weights 400–900                    | ✅                          |
+| shape / shadows      | `radius-0`, almost no shadows    | per component                                     | ⚠️ to audit                 |
+| charts               | `ch-a/b/c/bar/grid/ax`           | `charts/*` still use `accent` / `taupe`           | ⚠️ not mapped               |
+| states               | `ok ko nd warn err`              | `ok ko warn err` in `@theme` (`nd` missing)       | ⚠️ unused yet               |
+
+Retired and removed: `gold`, `star`, `graphite`, `forest`, `font-serif`, Cormorant Garamond.
+Not done by the token swap: per-component layout, heading sizes (components still carry sizes tuned for Cormorant), body-wide uppercase, the `size-adjust: 81.9%` heading face, and the DS section layouts (§11.7).
 
 ## 3. Page mapping (v3 path ↔ project route)
 

@@ -19,7 +19,7 @@
 | ------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | Framework           | Astro + TypeScript (strict)                                                   | Static by default, on-demand rendering where needed                          |
 | i18n                | Astro built-in i18n routing (`astro:i18n`)                                    | No third-party i18n routing library                                          |
-| Styling             | Tailwind CSS                                                                  | Brand tokens from section 11                                                 |
+| Styling             | Tailwind CSS                                                                  | Brand tokens from section 11 (`docs/design-system/tokens.json`)              |
 | Content             | Astro Content Collections (custom Mobilia loaders + `glob()` for local pages) | See section 3.2                                                              |
 | Content editing     | **Pages CMS** (hosted, free; `.pages.yml`) over the local JSON/Markdown files  | Client logs in by email invite (no GitHub account). Needs the repo on GitHub + the Pages CMS GitHub App. Listings stay in Mobilia |
 | Navigation & motion | Astro View Transitions (`<ClientRouter />` from `astro:transitions`)          | See section 3.3                                                              |
@@ -272,7 +272,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
 
 - **TDD:** failing test first. Vitest for domain/application/adapters (Mobilia mocked with fixtures from real responses), Playwright for search, detail, and lead submission in all 4 locales.
 - **Types:** end-to-end typing is mandatory — see section 8.1.
-- **Accessibility:** WCAG 2.2 AA; turquoise `#21CEC5` on white fails contrast. On light backgrounds: `turquoise-deep` `#058C93` (4.05:1) only for large text (≥24px, or ≥18.66px bold) and non-text UI (icons, borders, focus rings, 3:1); for normal-size text and links use `petrol` `#0F5A5E` (7.9:1) or `teal` `#08777B` (5.3:1).
+- **Accessibility:** WCAG 2.2 AA; turquoise `accent` `#21CEC5` on light paper fails contrast (1.9:1): use it only for fills and rules. Focus rings and text/links on light backgrounds use `accent-tx` `#08777B` (5.2:1) or `petrol` `#0F5A5E` (7.9:1); `accent-2` `#058C93` and `taupe-tx` only for text ≥ 24px. On dark blocks `accent-tx` becomes `#21CEC5` (7.6:1). Full ratios per token in `docs/design-system/tokens.json` (§11.2).
 - **Performance:** Lighthouse ≥ 90 mobile; LCP < 2.5s. Photos use `<Picture>` with the shared `PHOTO_PICTURE` config (AVIF + WebP); exactly one eager/priority image per page; first-load JS ≈ 6–8 KB; heavy assets (Leaflet, hero video) load on visibility/idle. Budgets enforced in `tests/e2e/performance.spec.ts`; details and how to re-measure in `docs/performance.md`.
 - **SEO:** per-page metadata, Open Graph, sitemap (`@astrojs/sitemap` with i18n), `robots.txt`, JSON-LD (`RealEstateAgent`, `Residence` + `Offer`), clean slugs including the property reference.
 - **Security:** server-side validation, rate limiting + honeypot/captcha on forms, secrets only in env vars, never expose CRM errors to users.
@@ -312,73 +312,102 @@ bun run check        # astro check (types)
 bun run build        # astro build + property sheet PDFs (needs Chromium)
 ```
 
-## 11. Brand & design (source: HousySpace brand manual 2026)
+## 11. Brand & design (source: HousySpace design system — decision 2026-11-09)
 
-**Colors**
+> The single visual reference is the **HousySpace design system** (Claude artifact `https://claude.ai/artifact/EGX5LwxCsGXaz29aYzsZtG`), generated from the client's static site `HOUSYSPACE-PS/housyspace-web@ef59e52`. A local copy lives in `docs/design-system/` and is what agents read:
+>
+> - `docs/design-system/README.md` — brand book (tone, colour, type, spacing, imagery, logos, icons). **Read it before any UI or copy work.**
+> - `docs/design-system/tokens.json` (source of truth) and `tokens.css` (generated, CSS variables) — every colour, text style, spacing, radius and shadow, with its usage note and contrast ratio.
+> - `docs/design-system/components/<Name>/README.md` — one per section of the reference site: where it appears, what it needs, rules.
+> - `docs/design-system/assets/<Group>/README.md` — logos, seals, icons, illustrations, photos.
+>
+> This **supersedes** the 2026-11-07 prototype system (Cormorant Garamond, gold accent, ink/graphite, sentence case) and the older v3 artifact. Where the two disagree, the design system wins.
+> The reference site is plain HTML/CSS/JS: never copy its CSS or markup verbatim. Rebuild every section with this project's Tailwind v4 tokens, Astro components, Content Collections and i18n.
+> The component previews and the site's `css/` and image files are NOT in the repo; open the artifact when pixel-level detail is needed (layout at 1440 px, class names).
 
-| Token            | HEX                               | Use                                                               |
-| ---------------- | --------------------------------- | ----------------------------------------------------------------- |
-| `petrol-dark`    | `#14282B`                         | Headings, brand backgrounds                                       |
-| `petrol`         | `#0F5A5E`                         | Primary brand color                                               |
-| `green-grey`     | `#58706F`                         | Secondary text                                                    |
-| `grey`           | `#918F8F`                         | Muted text                                                        |
-| `turquoise`      | `#21CEC5`                         | Digital accents on dark backgrounds (links, buttons, map markers) |
-| `turquoise-deep` | `#058C93`                         | Large text / UI accents on light backgrounds (not small text, §8) |
-| `bg-dark-1/2/3`  | `#1A2A2D` / `#22363A` / `#2A4044` | Dark sections                                                     |
+### 11.1 Look & feel
 
-No other color combinations for the logo.
+Sober and editorial: light paper, petrol green, a turquoise accent, ONE type family (Montserrat), always uppercase. Large real photography of Barcelona. Straight corners, almost no shadows: separation comes from alternating backgrounds and 1 px `line` rules.
 
-**Typography**
+- **Uppercase:** all site text is displayed in capitals, but HTML and the i18n dictionaries stay in normal case. The capitals come from CSS (`text-transform: uppercase`) so screen readers and Google read normal sentences. Headings (`h1`–`h4`) add `letter-spacing: .03em`. Today `global.css` uppercases `h1`–`h4`; the rest is uppercased per component (`uppercase`) until the full migration (`TODO` decide body-wide).
+- **Shape:** `radius-0` by default (buttons, cards, photos, fields); `radius-4` only for pop-up windows and boxes; `radius-20` only for the district cards; `radius-full` for circles (carousel arrows, avatars). Shadows only on pop-ups (`sombra-ventana`), report sheets on dark (`sombra-ficha`) and the philosophy button (`sombra-boton`).
+- **Focus:** visible everywhere: 2 px outline, offset 3 px, in the `accent` role (teal on paper, `#21CEC5` on dark blocks). Pure turquoise on paper is 1.9:1 and fails the 3:1 non-text minimum, so the design system's "outline in accent" is applied with the AA role.
+- **Dark blocks** (video hero, photo headers, valuation, reviews, footer, mobile menu) use the `dark` theme: `.surface-dark` (or `data-theme="dark"`) on the block; components never branch on it, they use the role tokens below.
 
-- Montserrat — the ONLY text font (client decision 2026-10-30, overrides the brand manual), one variable file with weights 400–900. All site text is uppercase, tracking 0.02em, never italic. h1/h2 800 (900 when they contain an `em`), h3 700, the `em` part of a heading 400. The property PDF sheet stays in sentence case.
-- Objektiv Mk1 — logo only, never in text (use the SVG logo, never re-typeset it).
+### 11.2 Colour
 
-**Logo**
+Define the tokens ONCE in `@theme` (values from `docs/design-system/tokens.json`; do not retype them from this file). **Tailwind names differ from the design system in these places:** Tailwind `canvas` = DS `bg`; Tailwind `accent` = DS `accent-tx` (text, links, focus); Tailwind `turquoise` = DS `accent` (pure `#21CEC5`, fills and rules only); Tailwind `dark` = DS `c-bg-dark`; `.surface-stone` = DS `c-bg-alt`. The table below lists the design-system names.
 
-- Header: official logo on white. Over video/photos: negative version.
-- Clear space = height of the "o" in "Housy". Minimum size: full logo 140px, basic 100px, isotype 24px.
-- Isotype: favicon, map marker, social avatars. Never stretch, recolor, or rotate.
-- Source: `logo/housyspace-completo-oficial.svg` (official version). Groups by color: `#housy` (#14282B), `#tejado` (#0F5A5E), `#space` (#58706F), `#lema` (#918F8F). The other manual versions (negative, monochrome petrol/black/white) are derived ONLY by recoloring these groups with manual colors.
-- Isotype SVG: the UI proposal contains `isotipo.svg` and `logo-blanco.svg` — `TODO` confirm they are official before use. Until then use a neutral placeholder; do NOT crop or redraw the isotype from the full logo.
-- Media: the proposal's hero video and architecture images are AI-generated placeholders — replace with licensed footage/photos (author + license recorded) before launch.
-- Copy to `public/brand/` at scaffold time; PNGs are for social/OG only.
+| Role token | Light | Dark block | Use |
+| --- | --- | --- | --- |
+| `c-bg` / `bg` | `#FCFBF8` | `#162B2A` | Page / block background (paper) |
+| `c-bg-alt` / `bg-alt` | `#F3F1EB` | `#1B3331` | Alternate sections (`.bg-a` / `.bg-b`) |
+| `card`, `card-h` | `#F3F1EB`, `#ECE8DF` | `#1D3533`, `#23403D` | Card and card hover |
+| `fg`, `fg-2` | `#172B2B` | `#F7F5F1`, `#D8DEDC` | Main text |
+| `muted` | `#67716F` | `#B4BFBE` | Secondary text |
+| `line`, `line-2` | `rgba(23,43,43,.12/.2)` | `rgba(169,190,188,.16/.28)` | Rules, borders, fields |
+| `accent-tx` | `#08777B` | `#21CEC5` | Turquoise for TEXT and links |
+| `accent` | `#21CEC5` | `#21CEC5` | Turquoise for fills, rules and focus only |
+| `petrol` | `#0F5A5E` | — | Brand green: service-card perimeter, accent fills (white text on it, 7.9:1) |
+| `ok` `ko` `nd` `warn` `err` | see tokens | see tokens | States; ALWAYS with a word or icon, never colour alone |
+| `ch-a` `ch-b` `ch-c` `ch-bar` `ch-grid` `ch-ax` | see tokens | see tokens | Charts and maps (§6.2) |
 
-**Graphic resources**
+Brand constants (no theme): `ink` `#0B1214`, `teal` `#08777B`, `accent-2` `#058C93`, `stone` `#EBE5DC`, `taupe` `#A99F92`, `c-bg-dark` `#162B2A`.
 
-- Parallel lines at the roof angle (38.6°), petrol or grey, low presence.
-- Photography: real Barcelona architecture/streets, B&W or petrol-tinted, natural light.
+Rules:
 
-**Tone:** "Soluciones inmobiliarias a tu medida" — elegant, close, international.
+- Components use role tokens; never hardcode hex and never branch on the theme.
+- `accent` on light fails as text (1.9:1): text and links use `accent-tx`. `accent-2` and `taupe-tx` (4.1:1) only for text ≥ 24 px. `c-text-2` (`muted`) on `bg-deep` (4.2:1) not for small text.
+- Gold `#B8996A` and the Cormorant/ink/graphite system are **retired**. Remove them when touching a component; do not add new uses.
 
-### 11.1 UI proposal (visual reference)
+### 11.3 Typography
 
-- Source (current, **v3**, last updated 2026-11-02): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk (slug `45a50557-4abc-4a6c-80cc-fba1507c81a3`). It is the single reference for **layout, styles and copy** (decision 2026-11-04). Its demo listings, photos and placeholder notes ("demostración", "pendiente", "Prototipo navegable") are never real content.
-- Its styles live in `assets/css/v3.css`, written as dated change blocks (`/* ==== <id>-DDMMYY ==== */`). To sync, read the blocks dated after the last sync recorded in `docs/ui-migration.md`.
-- Not references: the Claude Design canvas "Web HousySpace" (2026-10-25, an earlier iteration the v3 superseded; only its Services and Sell boards are used, for the two pages v3 lacks) and v1 (https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8).
-- Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
-- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark `#162B2A` blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery.
-- **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):
+- **Montserrat** only (variable 400–900, Google Fonts `family=Montserrat:wght@400..900&display=swap`, latin + latin-ext; self-hosting through Fontsource is allowed if performance needs it).
+- **Montserrat Titulares** = the same Montserrat declared with `size-adjust: 81.9%` for headings. The design system sizes were measured with it: where `size-adjust` is not available, multiply `titulares` sizes by 0.819.
+- Styles come from `tokens.json` `type.groups` (Titulares, Texto, Interfaz): headings 800/900 (`presentacion-h1`, `cabecera-h1`, `seccion-h2`, `pagina-h1`, `h2`), subtitles 700 (`h3`, `h3-s`), body 400 (`cuerpo` = 14 px / 1.7), buttons 500 wide-tracked (`boton`), labels 700 very wide-tracked (`rotulo`). Sizes are for 1440 px; large headings use `clamp()` and shrink on mobile.
+- 10 px is the minimum size on the whole site (`legal`, `pie-enlace`).
+- Headings mark their light-weight part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML (§3.2).
+- **Objektiv Mk1**: logo SVG only, never re-typeset in HTML.
 
-| Token | HEX | Use |
-|-------|-----|-----|
-| `canvas` | `#FCFBF8` | Page background (role) |
-| `bg-deep` / `bg-soft` | `#EDEAE3` / `#F3F1EB` | Placeholders, alternate fills (role) |
-| `card` / `card-hover` | `#F3F1EB` / `#ECE8DF` | Cards (role) |
-| `line` | `rgb(23 43 43 / .12)` | Borders/dividers (role) |
-| `fg` / `muted` | `#172B2B` / `#5F6967` | Main / secondary text (role) |
-| `accent` | `#08777B` | Accent text and links (role) |
-| `ink` | `#0B1214` | Fixed dark ink (overlays, text on turquoise) |
-| `teal` | `#08777B` | Intermediate accent |
-| `stone` | `#EBE5DC` | Light warm sections |
-| `taupe` | `#A99F92` | Warm muted detail |
+### 11.4 Layout
 
-Role tokens are redefined by `.surface-dark` (canvas `#162B2A`, fg `#F7F5F1`, muted `#B4BFBE`, accent `#21CEC5`) and `.surface-stone` (canvas `#EBE5DC`, darker muted and accent for AA). Components use the roles and never branch on the theme.
+- Container `.wrap`: max `wrap-max` 1120 px, `wrap-pad` 22 px each side.
+- Sections `.sec`: vertical padding `seccion-y` 76 px, `seccion-y-movil` 54 px below 760 px (the mobile breakpoint is **760 px**).
+- Header height `cabecera-alto` 92 px desktop / `cabecera-alto-movil` 76 px mobile; anchors keep that gap (`scroll-padding-top`).
+- Header: two states: transparent with dark theme over the hero photo/video, and solid (`glass` background) elsewhere. Mobile menu is a drop-down panel. Footer is a dark block.
 
-- **Motion:** shared easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade/translate) on section content and line-by-line reveal on the hero heading, via ONE IntersectionObserver utility initialized on `astro:page-load`; slow image zoom on hover (≈1.2–1.6s); UI micro-transitions 250–350ms. All disabled under `prefers-reduced-motion`.
-- **Header (v3):** petrol bar with the negative logo (transparent over the home hero until scroll, logo slightly larger at the very top), main menu with dropdowns, language switcher, skip-to-content link. The menu stays **inline whenever it fits** (measured in three densities, `shared/ui/organisms/navFit.ts`, never by a fixed breakpoint, never clipped); only when it does not fit does it move behind the "Menu" button (light drawer from the right). No "Let's talk" CTA in the header (v3, 2026-10-30).
-- **Home sections (v3 order):** Hero (video + poster) · Presentation · Featured properties (Mobilia `portadaWeb`) · Valuation · Services (the 9 services) · Philosophy · Google reviews · Living in Barcelona (barrio by barrio) · Blog · Footer.
-- **Footer (v3, 2026-11-02):** "¡Hablemos!" with Call · WhatsApp · Email · "Tell us" buttons and the Instagram and LinkedIn logos; newsletter block (opens the visitor's email with the request written, like the forms, until I3 exists); company data (name, CIF, address, opening hours, phone, WhatsApp, `info@housyspace.com`); columns Explore · Owners · HousySpace; AICAT (white) and APEI seals with "Experto nº 3261". All included as in v3 (client decision 2026-11-04; APEI still to be confirmed under I23).
-- **Scope:** EVERYTHING in the proposal is in scope (confirmed). See section 6 for the full feature list.
+### 11.5 Content & tone (Spanish is the source; en/it/ca keep the meaning)
+
+- Address the client informally (es: tuteo, «Te asesoramos», «tu vivienda»; en/it/ca: the equivalent warm, direct register, `TODO` client review). Present as **consultores inmobiliarios, not an agency**: «Consultores inmobiliarios, no solo vendedores». Never «agencia pequeña».
+- Fixed phrases, verbatim: «No te preocupes, yo me encargo» (always «yo», never «nos encargamos») and «UNA MILLA EXTRA» (never «una milla más»).
+- «Los mejores» appears only in two sentences: «Rodearnos de los mejores también forma parte de nuestra filosofía.» and «Nos rodeamos de los mejores para ofrecerte mucho más.»
+- Figures always rounded with «más de»: «+35 M€ intermediados», «+100 inmuebles», «+10 municipios», «9 años en el sector», «5 años de HousySpace». Never the exact figure.
+- No emoji, no italics, no full stop at the end of headings, no numbered kickers («01 /») above them.
+- Buttons use a clear verb: «Conócenos», «Enviar consulta», «Ver el mapa aquí».
+
+### 11.6 Imagery, logos, icons
+
+- **Photos:** real Barcelona architecture and streets (modernista facades, balconies, interiors); district photos are Shutterstock standard licence. Always `object-fit: cover`, straight corners. AI-generated placeholders must be replaced before launch.
+- **Illustrations:** own, transparent background, for services and About us. If one was AI-generated, the footer says «Imagen conceptual generada con IA».
+- **Logos:** `logo.svg` / `logo-oscuro.svg` on light paper; `logo-blanco.svg` on dark blocks and photos; isotype (`isotipo.svg`, `isotipo-blanco.svg`) only in small spaces and for favicon; `pin-housyspace.svg` is the map and valuation pin. Never stretch, recolour or rotate. Source: `logo/housyspace-completo-oficial.svg`; PNGs for social/OG only. Minimum size: full logo 140 px, isotype 24 px.
+- **Seals (footer):** AICAT with its logo only; APEI with its logo and «Experto nº 3261» below.
+- **Icons:** inline SVG, stroke only: `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2.2"`, round caps and joins, `aria-hidden="true"` next to text. No emoji, no icon fonts.
+
+### 11.7 Page sections (components of the reference)
+
+Each section of the reference site has a README under `docs/design-system/components/<Name>/`: where it appears, what the caller provides and its rules. Build the matching Astro component from it (§3.1) instead of inventing a layout:
+
+- **Home:** `PortadaHero` (video, no text on it) · `Presentacion` · `Filosofia` · `InmueblesDestacados` · `DescubreBarcelona` · `CarruselServicios` · `Cifras` · `Valoracion` · `Resenas` · `BlogPortada`.
+- **Properties:** `CatalogoCabecera` · `TarjetaInmueble` · `InmueblesVendidos` · `FichaInmueble`.
+- **Services:** `ServicioCabecera` · `ServicioIncluye` · `ServicioPasos` · `Hablemos`.
+- **About / Contact / Living in Barcelona:** `NosotrosCabecera` · `NosotrosSeccion` · `MillaExtra` · `ServiciosIntegrales` · `ContactoFormas` · `ContactoFormulario` · `PreguntasFrecuentes` · `MiBusquedaFormulario` · `Distritos` · `BarrioCabecera` · `BarrioDatos`.
+- **Shared:** `Cabecera` · `Pie` · `Boton` · `Newsletter` · `TextoLegal`.
+
+Where the reference and this file disagree on behaviour (real listings from Mobilia instead of demo ones, 4 locales, approximate location, consent rules), this file wins; where they disagree on look, the design system wins. Notes on its own limits: the reference has no JavaScript (carousels, counters, map and the Lystos valuator are static there).
+
+### 11.8 Motion
+
+Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px) on section content via ONE IntersectionObserver on `astro:page-load`; image zoom on hover (scale 1→1.05, 700 ms); UI micro-transitions 250–350 ms. All disabled under `prefers-reduced-motion`. The design system does not define the previous system's scroll progress bar or hero Ken Burns: keep them only if already built, recoloured with `accent` (`TODO` confirm with the client).
 
 ## 12. Agent skills (local)
 
