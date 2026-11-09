@@ -232,7 +232,11 @@ const items = getMainNavigation(locale);
       }
     });
     // The header shows the menu inline again (wider window): the drawer has no place there.
-    document.addEventListener("site:nav-inline", close);
+    // Same value as `--breakpoint-nav` (the `nav:` variant in global.css).
+    const inline = matchMedia("(min-width: 87.5rem)");
+    inline.addEventListener("change", (event) => {
+      if (event.matches) close();
+    });
     // Navigating from inside the drawer: make sure the next page starts unlocked.
     document.addEventListener("astro:before-swap", () => {
       document.documentElement.classList.remove("overflow-hidden");

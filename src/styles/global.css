@@ -22,6 +22,9 @@
   --color-turquoise: #21cec5;
   --color-turquoise-deep: #058c93;
   --color-dark: #162b2a;
+  /* Header bar and dropdown panels (reference: solid #1a2e31, panel rgba(22,37,40,.97)). */
+  --color-header: #1a2e31;
+  --color-panel: #162528;
   /* Services accordion: closed bars alternate these two tones (the image colour). */
   --color-forest: #1f3a38;
   --color-forest-lift: #2a4745;
@@ -67,6 +70,9 @@
   --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
   --default-transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
   --default-transition-duration: 300ms;
+
+  /* Width from which the horizontal menu fits beside the logo and the language links. */
+  --breakpoint-nav: 87.5rem;
 }
 
 @layer base {
