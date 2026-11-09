@@ -3,10 +3,8 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
-import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
-import Container from "@/shared/ui/atoms/Container.astro";
 
-/** Links to the other services, closing each service page. */
+/** Links to the other services, closing each service page (reference `.svp-other`). */
 interface Props {
   locale: Locale;
   current: ServiceKey;
@@ -16,25 +14,27 @@ const { locale, current } = Astro.props;
 const t = getDictionary(locale);
 ---
 
-<nav aria-labelledby="other-services" class="bg-canvas pb-[clamp(2.75rem,5vw,4.125rem)]">
-  <Container>
-    <p id="other-services" class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">
-      {t.nav.otherServices}
-    </p>
-    <ul class="grid gap-x-8 sm:grid-cols-2">
-      {SERVICE_KEYS.filter((service) => service !== current).map((service) => (
-        <li>
-          <a
-            href={getLocalizedPath("serviceDetail", locale, {
-              service: getServiceSlug(service, locale),
-            })}
-            class="flex items-center justify-between gap-3 border-b border-line py-3 text-sm no-underline hover:text-accent"
-          >
-            {t.serviceNames[service]}
-            <ArrowUpRight />
-          </a>
-        </li>
-      ))}
-    </ul>
-  </Container>
+<nav
+  aria-labelledby="other-services"
+  class="grid border-t border-line-strong min-[640px]:grid-cols-2 min-[640px]:gap-x-10 min-[1024px]:gap-x-16"
+>
+  <p
+    id="other-services"
+    class="pt-3.5 pb-2 text-[0.6875rem] tracking-[0.16em] text-accent min-[640px]:col-span-full"
+  >
+    {t.nav.otherServices}
+  </p>
+  {SERVICE_KEYS.filter((service) => service !== current).map((service) => (
+    <a
+      href={getLocalizedPath("serviceDetail", locale, {
+        service: getServiceSlug(service, locale),
+      })}
+      class="flex items-baseline justify-between gap-3 border-b border-line py-3.25 font-heading text-[18px] leading-6 no-underline transition-[color,padding] duration-300 hover:pl-2 hover:text-accent focus-visible:pl-2 focus-visible:text-accent motion-reduce:transition-none"
+    >
+      <span>{t.serviceNames[service]}</span>
+      <i aria-hidden="true" class="text-accent">
+        →
+      </i>
+    </a>
+  ))}
 </nav>

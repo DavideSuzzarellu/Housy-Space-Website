@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -178,6 +180,7 @@
       ]
     },
     {
+      "layout": "tax",
       "surface": "paper",
       "band": false,
       "items": [
@@ -194,76 +197,91 @@
           "text": "Chi riscuote ogni imposta e quando compare in un'operazione."
         },
         {
-          "kind": "h3",
-          "text": "Comune"
-        },
-        {
-          "kind": "p",
-          "text": "Imposte municipali"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Imposta sulle plusvalenze municipali (plusvalía)",
-              "text": "Al momento della vendita, donazione o eredità."
+              "kind": "h3",
+              "text": "Comune"
             },
             {
-              "title": "Imposta municipale sugli immobili (IBI)",
-              "text": "Ogni anno, in quanto proprietario."
+              "kind": "p",
+              "text": "Imposte municipali"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Imposta sulle plusvalenze municipali (plusvalía)",
+                  "text": "Al momento della vendita, donazione o eredità."
+                },
+                {
+                  "title": "Imposta municipale sugli immobili (IBI)",
+                  "text": "Ogni anno, in quanto proprietario."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Generalitat (Governo Catalano)"
-        },
-        {
-          "kind": "p",
-          "text": "Agència Tributària de Catalunya"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Imposta di trasferimento immobiliare (ITP)",
-              "text": "All'acquisto di un immobile usato."
+              "kind": "h3",
+              "text": "Generalitat (Governo Catalano)"
             },
             {
-              "title": "Imposta sugli atti giuridici documentati (AJD)",
-              "text": "All'acquisto di immobile nuovo o alla stipula di un mutuo."
+              "kind": "p",
+              "text": "Agència Tributària de Catalunya"
             },
             {
-              "title": "Imposta sulle successioni e donazioni",
-              "text": "In caso di eredità o donazione di un immobile."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Imposta di trasferimento immobiliare (ITP)",
+                  "text": "All'acquisto di un immobile usato."
+                },
+                {
+                  "title": "Imposta sugli atti giuridici documentati (AJD)",
+                  "text": "All'acquisto di immobile nuovo o alla stipula di un mutuo."
+                },
+                {
+                  "title": "Imposta sulle successioni e donazioni",
+                  "text": "In caso di eredità o donazione di un immobile."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Stato Spagnolo"
-        },
-        {
-          "kind": "p",
-          "text": "Agencia Tributaria"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "IRPEF: plusvalenza immobiliare",
-              "text": "Al momento della vendita con guadagno."
+              "kind": "h3",
+              "text": "Stato Spagnolo"
             },
             {
-              "title": "IRPEF: redditi da locazione",
-              "text": "Se affitti l'immobile."
+              "kind": "p",
+              "text": "Agencia Tributaria"
             },
             {
-              "title": "Imposta patrimoniale",
-              "text": "In base al valore del tuo patrimonio."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "IRPEF: plusvalenza immobiliare",
+                  "text": "Al momento della vendita con guadagno."
+                },
+                {
+                  "title": "IRPEF: redditi da locazione",
+                  "text": "Se affitti l'immobile."
+                },
+                {
+                  "title": "Imposta patrimoniale",
+                  "text": "In base al valore del tuo patrimonio."
+                }
+              ]
             }
           ]
         }
@@ -305,6 +323,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -318,13 +337,13 @@
         },
         {
           "kind": "lead",
-          "text": "Uno studio legale e uno studio fiscale di Barcellona con cui esaminiamo gli aspetti legali e fiscali delle nostre operazioni."
+          "text": "Uno studio legale e uno studio fiscale di Barcellona con cui esaminiamo gli aspetti legali e fiscali delle nostre operazioni, e molto altro."
         },
         {
           "kind": "buttons",
           "items": [
             {
-              "label": "Scopri i nostri collaboratori",
+              "label": "Perché ci fidiamo di loro",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -336,17 +355,25 @@
           "items": [
             {
               "title": "ADV Advocats",
-              "text": "Studio legale e fiscale Studio legale a Barcellona: successioni, redditi e imposte, diritto civile, del lavoro e d'impresa. [Visita advadvocats.cat](https://advadvocats.cat/es/)"
+              "text": "Studio legale a Barcellona: successioni, redditi e imposte, diritto civile, del lavoro e d'impresa.",
+              "kicker": "Studio legale e fiscale",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visita advadvocats.cat"
             },
             {
               "title": "Asesoría Edac",
-              "text": "Consulenza fiscale Consulenza fiscale, contabile e del lavoro a Barcellona: imposte, dichiarazioni e pratiche con il fisco. [Visita serviciosdac.com](https://www.serviciosdac.com/)"
+              "text": "Consulenza fiscale, contabile e del lavoro a Barcellona: imposte, dichiarazioni e pratiche con il fisco.",
+              "kicker": "Consulenza fiscale",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visita serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -385,7 +412,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma."
+          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
         }
       ]
     }

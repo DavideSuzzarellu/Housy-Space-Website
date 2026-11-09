@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "stepsList",
       "surface": "paper",
       "band": false,
       "items": [
@@ -88,6 +90,7 @@
     },
     {
       "id": "interiorismo",
+      "layout": "swatches",
       "surface": "stone",
       "band": false,
       "items": [
@@ -109,33 +112,40 @@
           "items": [
             {
               "title": "Madera natural",
-              "text": "Suelos, carpintería y mobiliario"
+              "text": "Suelos, carpintería y mobiliario",
+              "color": "#B98A5E"
             },
             {
               "title": "Piedra y mármol",
-              "text": "Encimeras, baños y detalles"
+              "text": "Encimeras, baños y detalles",
+              "color": "#D9D2C5"
             },
             {
               "title": "Microcemento",
-              "text": "Continuidad en suelos y paredes"
+              "text": "Continuidad en suelos y paredes",
+              "color": "#CDBFA9"
             },
             {
               "title": "Lino y algodón",
-              "text": "Textiles y cortinas"
+              "text": "Textiles y cortinas",
+              "color": "#ECE6DA"
             },
             {
               "title": "Latón",
-              "text": "Iluminación y herrajes"
+              "text": "Iluminación y herrajes",
+              "color": "#B48A45"
             },
             {
               "title": "Verde profundo",
-              "text": "Color y contraste"
+              "text": "Color y contraste",
+              "color": "#2C4A44"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -152,34 +162,35 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01DistribuciónCómo se mueve la luz y cómo te mueves tú por la casa."
+              "title": "Distribución",
+              "text": "Cómo se mueve la luz y cómo te mueves tú por la casa."
             },
             {
-              "title": "",
-              "text": "02Materiales y acabadosUna paleta coherente para toda la vivienda."
+              "title": "Materiales y acabados",
+              "text": "Una paleta coherente para toda la vivienda."
             },
             {
-              "title": "",
-              "text": "03IluminaciónLuz natural y artificial pensadas para cada estancia."
+              "title": "Iluminación",
+              "text": "Luz natural y artificial pensadas para cada estancia."
             },
             {
-              "title": "",
-              "text": "04Mobiliario a medidaDiseño, selección y compra del mobiliario y los detalles."
+              "title": "Mobiliario a medida",
+              "text": "Diseño, selección y compra del mobiliario y los detalles."
             },
             {
-              "title": "",
-              "text": "05Licencias y gremiosPermisos, albañiles, instaladores y carpinteros, coordinados por nosotros."
+              "title": "Licencias y gremios",
+              "text": "Permisos, albañiles, instaladores y carpinteros, coordinados por nosotros."
             },
             {
-              "title": "",
-              "text": "06Seguimiento de obraPlazos, presupuesto y calidad controlados hasta el último detalle."
+              "title": "Seguimiento de obra",
+              "text": "Plazos, presupuesto y calidad controlados hasta el último detalle."
             }
           ]
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -196,20 +207,20 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Antes de venderPresupuestos de obra para el comprador o pequeñas mejoras que ayudan a vender. [Ver compraventa](service:venta-estrategica)."
+              "title": "Antes de vender",
+              "text": "Presupuestos de obra para el comprador o pequeñas mejoras que ayudan a vender. [Ver compraventa](service:venta-estrategica)."
             },
             {
-              "title": "",
-              "text": "02Al comprarLa reforma estudiada antes de comprar y hecha por nosotros. [Ver Personal Shopper](service:personal-shopper)."
+              "title": "Al comprar",
+              "text": "La reforma estudiada antes de comprar y hecha por nosotros. [Ver Personal Shopper](service:personal-shopper)."
             },
             {
-              "title": "",
-              "text": "03Para alquilarPuesta a punto para alquilar antes y mejor."
+              "title": "Para alquilar",
+              "text": "Puesta a punto para alquilar antes y mejor."
             },
             {
-              "title": "",
-              "text": "04Para invertirReformas que suman valor y rentabilidad, con los números delante."
+              "title": "Para invertir",
+              "text": "Reformas que suman valor y rentabilidad, con los números delante."
             }
           ]
         }
@@ -221,7 +232,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No te preocupes, yo me encargo.»"
+          "text": "«No te preocupes, *yo me encargo.*»"
         },
         {
           "kind": "p",
@@ -230,6 +241,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -249,7 +261,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Conoce a nuestros colaboradores",
+              "label": "Por qué confiamos en ellos",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -261,13 +273,17 @@
           "items": [
             {
               "title": "Maria Guimerà Arquitectura",
-              "text": "Arquitectura e interiorismo Estudio de arquitectura e interiorismo en Barcelona, con reformas integrales de viviendas y pisos del Eixample. [Visitar mariaguimera.com](https://mariaguimera.com/es/inicio/)"
+              "text": "Estudio de arquitectura e interiorismo en Barcelona, con reformas integrales de viviendas y pisos del Eixample.",
+              "kicker": "Arquitectura e interiorismo",
+              "href": "https://mariaguimera.com/es/inicio/",
+              "cta": "Visitar mariaguimera.com"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -306,7 +322,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

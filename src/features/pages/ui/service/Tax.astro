@@ -1,0 +1,40 @@
+---
+import { itemsOf, type ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** Taxes by administration (reference `.sx-tax-g`): one card per authority with its taxes. */
+interface Props {
+  locale: Locale;
+  cards: readonly ItemOf<"card">[];
+}
+
+const { locale, cards } = Astro.props;
+---
+
+<div class="grid gap-3.5 min-[900px]:grid-cols-3">
+  {cards.map((card) => (
+    <div data-reveal class="bg-card px-7 pt-7.5 pb-5.5">
+      {itemsOf(card.items, "h3").map((title) => (
+        <h3 class="text-[clamp(25px,2.2vw,31px)]">{title.text}</h3>
+      ))}
+      {itemsOf(card.items, "p").map((line) => (
+        <p class="mt-1 mb-4.5 text-[11px] leading-[normal] font-medium tracking-[0.14em] text-accent">
+          {line.text}
+        </p>
+      ))}
+      {itemsOf(card.items, "list").map((list) => (
+        <ul>
+          {list.items.map((entry) => (
+            <li class="border-t border-line py-3.25">
+              <b class="block text-[13px] font-medium text-fg">{entry.title}</b>
+              <span class="block text-xs leading-[1.5] text-muted">
+                <Inline text={entry.text} locale={locale} />
+              </span>
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  ))}
+</div>

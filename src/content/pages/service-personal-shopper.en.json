@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -95,6 +96,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -111,41 +113,38 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01The propertyReal condition of the home, installations and any works with their cost."
+              "title": "The property",
+              "text": "Real condition of the home, installations and any works with their cost."
             },
             {
-              "title": "",
-              "text": "02The buildingCondition of the building, technical inspection and planned works or community charges."
+              "title": "The building",
+              "text": "Condition of the building, technical inspection and planned works or community charges."
             },
             {
-              "title": "",
-              "text": "03DocumentationLand Registry note, encumbrances, habitation certificate and energy certificate."
+              "title": "Documentation",
+              "text": "Land Registry note, encumbrances, habitation certificate and energy certificate."
             },
             {
-              "title": "",
-              "text": "04The priceComparison with recent sales in the area so you don't overpay."
+              "title": "The price",
+              "text": "Comparison with recent sales in the area so you don't overpay."
             },
             {
-              "title": "",
-              "text": "05FinancingWith our financial broker, the mortgage studied before you commit. [See financial advice](service:asesoramiento-financiero)."
+              "title": "Financing",
+              "text": "With our financial broker, the mortgage studied before you commit. [See financial advice](service:asesoramiento-financiero)."
             },
             {
-              "title": "",
-              "text": "06The surroundingsServices, transport, noise and neighbourhood evolution."
+              "title": "The surroundings",
+              "text": "Services, transport, noise and neighbourhood evolution."
             }
           ]
         }
       ]
     },
     {
+      "layout": "call",
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/det-salon-1400.jpg"
-        },
         {
           "kind": "tag",
           "text": "Renovations"
@@ -194,7 +193,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "\"Don't worry, I'll take care of it.\""
+          "text": "\"Don't worry, *I'll take care of it.*\""
         },
         {
           "kind": "p",
@@ -203,6 +202,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -241,7 +241,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -48,6 +49,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -64,28 +66,28 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Preu i costos de compraPreu, impostos, notaria, registre i gestoria: el cost real d'entrada."
+              "title": "Preu i costos de compra",
+              "text": "Preu, impostos, notaria, registre i gestoria: el cost real d'entrada."
             },
             {
-              "title": "",
-              "text": "02ReformaQuina obra necessita, quant costa i quant valor afegeix."
+              "title": "Reforma",
+              "text": "Quina obra necessita, quant costa i quant valor afegeix."
             },
             {
-              "title": "",
-              "text": "03Renda esperableEl que es paga avui per habitatges similars a la zona."
+              "title": "Renda esperable",
+              "text": "El que es paga avui per habitatges similars a la zona."
             },
             {
-              "title": "",
-              "text": "04Rendibilitat estimadaBruta i neta, amb despeses, impostos i períodes sense llogatari."
+              "title": "Rendibilitat estimada",
+              "text": "Bruta i neta, amb despeses, impostos i períodes sense llogatari."
             },
             {
-              "title": "",
-              "text": "05RiscsEstat de la finca, normativa de lloguer i liquiditat de la zona."
+              "title": "Riscs",
+              "text": "Estat de la finca, normativa de lloguer i liquiditat de la zona."
             },
             {
-              "title": "",
-              "text": "06SortidaQu passa si vols vendre d'aquí a uns anys."
+              "title": "Sortida",
+              "text": "Qu passa si vols vendre d'aquí a uns anys."
             }
           ]
         }
@@ -127,6 +129,7 @@
       ]
     },
     {
+      "layout": "route",
       "surface": "paper",
       "band": false,
       "items": [
@@ -147,26 +150,35 @@
           "ordered": true,
           "items": [
             {
-              "title": "",
-              "text": "[Financia**Assessorament financer**](service:asesoramiento-financiero)"
+              "title": "Assessorament financer",
+              "text": "",
+              "kicker": "Financia",
+              "href": "service:asesoramiento-financiero"
             },
             {
-              "title": "",
-              "text": "[Compra**Personal Shopper immobiliari**](service:personal-shopper)"
+              "title": "Personal Shopper immobiliari",
+              "text": "",
+              "kicker": "Compra",
+              "href": "service:personal-shopper"
             },
             {
-              "title": "",
-              "text": "[Reforma**Reformes i interiorisme**](service:reformas-obras)"
+              "title": "Reformes i interiorisme",
+              "text": "",
+              "kicker": "Reforma",
+              "href": "service:reformas-obras"
             },
             {
-              "title": "",
-              "text": "[Lloga**Lloguer i gestió d'immobles**](service:alquiler-gestion)"
+              "title": "Lloguer i gestió d'immobles",
+              "text": "",
+              "kicker": "Lloga",
+              "href": "service:alquiler-gestion"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -205,7 +217,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

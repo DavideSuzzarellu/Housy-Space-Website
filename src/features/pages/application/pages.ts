@@ -56,6 +56,27 @@ export function groupItems<T extends { readonly kind: string }>(
   return units;
 }
 
+export type ItemOf<K extends PageItem["kind"]> = Extract<PageItem, { readonly kind: K }>;
+
+/** The items of one kind, narrowed. */
+export function itemsOf<K extends PageItem["kind"]>(
+  items: readonly PageItem[],
+  kind: K,
+): ItemOf<K>[] {
+  return items.filter((item): item is ItemOf<K> => item.kind === kind);
+}
+
+const HEADING_KINDS = new Set(["tag", "h2", "lead"]);
+
+/** The leading tag / h2 / lead of a section (its heading block) and everything after it. */
+export function splitBlockHead<T extends { readonly kind: string }>(
+  items: readonly T[],
+): { readonly head: T[]; readonly body: T[] } {
+  const end = items.findIndex((item) => !HEADING_KINDS.has(item.kind));
+  const cut = end === -1 ? items.length : end;
+  return { head: items.slice(0, cut), body: items.slice(cut) };
+}
+
 export interface LoadedPage {
   readonly content: PageContent;
   /** Not translated yet: the Spanish text is shown and the page stays out of the index. */

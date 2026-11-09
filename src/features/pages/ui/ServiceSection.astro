@@ -1,0 +1,150 @@
+---
+import {
+  itemsOf,
+  splitBlockHead,
+  type PageContent,
+  type PageSection,
+} from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import type { ServiceKey } from "@/shared/i18n/services";
+import Container from "@/shared/ui/atoms/Container.astro";
+import BlockHead from "./service/BlockHead.astro";
+import Band from "./service/Band.astro";
+import Call from "./service/Call.astro";
+import Check from "./service/Check.astro";
+import Closing from "./service/Closing.astro";
+import Collaborators from "./service/Collaborators.astro";
+import Columns from "./service/Columns.astro";
+import Comparison from "./service/Comparison.astro";
+import Faq from "./service/Faq.astro";
+import Intro from "./service/Intro.astro";
+import NumberedCards from "./service/NumberedCards.astro";
+import ReportDoc from "./service/ReportDoc.astro";
+import Route from "./service/Route.astro";
+import Situations from "./service/Situations.astro";
+import Steps from "./service/Steps.astro";
+import Swatches from "./service/Swatches.astro";
+import Tax from "./service/Tax.astro";
+import Trio from "./service/Trio.astro";
+import Valuation from "./service/Valuation.astro";
+
+/**
+ * One section of a service page: its surface and padding, then the block its `layout` names.
+ * Without a layout the items decide: steps, FAQ entries or the dark band.
+ */
+interface Props {
+  locale: Locale;
+  service: ServiceKey;
+  section: PageContent["sections"][number];
+}
+
+const { locale, service, section } = Astro.props;
+const { head, body } = splitBlockHead(section.items);
+const lists = itemsOf(body, "list");
+const steps = itemsOf(body, "steps");
+const cards = itemsOf(body, "card");
+const layout: PageSection["layout"] | "steps" | "faq" | "band" | "plain" =
+  section.layout ??
+  (section.band
+    ? "band"
+    : steps.length > 0
+      ? "steps"
+      : itemsOf(body, "faq").length > 0
+        ? "faq"
+        : "plain");
+const SURFACES = {
+  paper: "bg-canvas",
+  stone: "surface-stone bg-canvas",
+  dark: "surface-dark bg-canvas",
+} as const;
+const band = layout === "band";
+---
+
+<section
+  id={section.id ?? (layout === "cta" ? "hablemos" : undefined)}
+  class:list={[
+    "scroll-mt-28",
+    band
+      ? "surface-dark bg-canvas py-[clamp(60px,7.4vw,108px)] text-center"
+      : ["py-[clamp(44px,5vw,66px)]", SURFACES[section.surface]],
+  ]}
+>
+  <Container>
+    {band && <Band locale={locale} items={body} />}
+    {layout === "intro" && <Intro locale={locale} items={body} />}
+    {layout === "introLined" && <Intro locale={locale} items={body} lined />}
+    {(layout === "steps" || layout === "stepsList") && steps[0] !== undefined && (
+      <>
+        <BlockHead
+          locale={locale}
+          items={head}
+          spaced={false}
+          narrow={false}
+          class="[&_h2]:mb-8.5"
+        />
+        <Steps
+          locale={locale}
+          item={steps[0]}
+          variant={layout === "stepsList" ? "list" : "timeline"}
+        />
+      </>
+    )}
+    {layout === "check" && lists[0] !== undefined && (
+      <Check locale={locale} head={head} list={lists[0]} />
+    )}
+    {layout === "split" && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Columns locale={locale} cards={cards} />
+      </>
+    )}
+    {layout === "cards" && lists[0] !== undefined && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <NumberedCards locale={locale} list={lists[0]} />
+      </>
+    )}
+    {layout === "trio" && lists[0] !== undefined && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Trio locale={locale} list={lists[0]} />
+      </>
+    )}
+    {layout === "sit" && lists[0] !== undefined && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Situations locale={locale} list={lists[0]} />
+      </>
+    )}
+    {layout === "route" && lists[0] !== undefined && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Route locale={locale} list={lists[0]} />
+      </>
+    )}
+    {layout === "tax" && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Tax locale={locale} cards={cards} />
+      </>
+    )}
+    {layout === "swatches" && lists[0] !== undefined && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Swatches list={lists[0]} />
+      </>
+    )}
+    {layout === "cmp" && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <Comparison locale={locale} cards={cards} />
+      </>
+    )}
+    {layout === "doc" && <ReportDoc locale={locale} head={head} body={body} />}
+    {layout === "faq" && <Faq locale={locale} head={head} body={body} />}
+    {layout === "colab" && <Collaborators locale={locale} head={head} body={body} />}
+    {layout === "call" && <Call locale={locale} head={head} body={body} />}
+    {layout === "valuation" && <Valuation locale={locale} items={section.items} />}
+    {layout === "cta" && <Closing locale={locale} service={service} items={section.items} />}
+  </Container>
+</section>

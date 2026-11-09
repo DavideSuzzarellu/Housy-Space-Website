@@ -39,7 +39,10 @@ const LINK = "text-muted hover:text-accent";
 <footer class="surface-dark bg-canvas pt-[clamp(3rem,5vw,4rem)] pb-10 text-[0.6875rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
   <Container>
     <!-- "¡Hablemos!" CTA row: big heading on the left, contact actions and social links on the right -->
-    <div class="mb-9.5 flex flex-wrap items-center justify-between gap-x-10 gap-y-5 border-b border-line pb-[clamp(1.625rem,3vw,2.5rem)]">
+    <div
+      data-footer-cta
+      class="mb-9.5 flex flex-wrap items-center justify-between gap-x-10 gap-y-5 border-b border-line pb-[clamp(1.625rem,3vw,2.5rem)]"
+    >
       <h2 class="m-0 text-[clamp(2.875rem,7.2vw,6.5rem)] leading-[0.95] text-fg">
         {t.footer.ctaHeading}
       </h2>

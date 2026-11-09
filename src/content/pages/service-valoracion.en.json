@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "cmp",
       "surface": "stone",
       "band": false,
       "items": [
@@ -34,80 +35,91 @@
           "text": "Two ways to know your property's value"
         },
         {
-          "kind": "h3",
-          "text": "Instantly"
-        },
-        {
-          "kind": "p",
-          "text": "With our online valuation tool."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "",
-              "text": "You enter your property details."
+              "kind": "h3",
+              "text": "Instantly"
             },
             {
-              "title": "",
-              "text": "You instantly receive an indicative reference value."
+              "kind": "p",
+              "text": "With our online valuation tool."
             },
             {
-              "title": "",
-              "text": "If you like, an advisor can review it with you."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "You enter your property details."
+                },
+                {
+                  "title": "",
+                  "text": "You instantly receive an indicative reference value."
+                },
+                {
+                  "title": "",
+                  "text": "If you like, an advisor can review it with you."
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Request a valuation",
+                  "href": "route:valuation",
+                  "solid": true
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "buttons",
+          "kind": "card",
           "items": [
             {
-              "label": "Go to the valuation tool",
-              "href": "route:valuation",
-              "solid": true
-            }
-          ]
-        },
-        {
-          "kind": "h3",
-          "text": "Valuation report"
-        },
-        {
-          "kind": "p",
-          "text": "We study your property in depth."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "We visit the property and review its documentation."
+              "kind": "h3",
+              "text": "Valuation report"
             },
             {
-              "title": "",
-              "text": "We analyse the neighbourhood, the market and recent sales."
+              "kind": "p",
+              "text": "We study your property in depth."
             },
             {
-              "title": "",
-              "text": "We deliver the report and discuss it with you."
-            }
-          ]
-        },
-        {
-          "kind": "buttons",
-          "items": [
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "We visit the property and review its documentation."
+                },
+                {
+                  "title": "",
+                  "text": "We analyse the neighbourhood, the market and recent sales."
+                },
+                {
+                  "title": "",
+                  "text": "We deliver the report and discuss it with you."
+                }
+              ]
+            },
             {
-              "label": "Request a report",
-              "href": "route:contact",
-              "solid": false
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Request a report",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
+      "layout": "doc",
       "surface": "paper",
       "band": false,
       "items": [
@@ -137,43 +149,53 @@
           "items": [
             {
               "title": "Location and neighbourhood",
-              "text": "01 Property situation and neighbourhood history"
+              "text": "Property situation and neighbourhood history",
+              "kicker": "01"
             },
             {
               "title": "Neighbourhood data",
-              "text": "02 Average price per m² for sales, according to Barcelona City Council"
+              "text": "Average price per m² for sales, according to Barcelona City Council",
+              "kicker": "02"
             },
             {
               "title": "Planning and cadastral information",
-              "text": "03 Cadastral reference, zoning and property data"
+              "text": "Cadastral reference, zoning and property data",
+              "kicker": "03"
             },
             {
               "title": "Cadastral reference value",
-              "text": "04 The value set by the Cadastre for the property"
+              "text": "The value set by the Cadastre for the property",
+              "kicker": "04"
             },
             {
               "title": "Data and measurements",
-              "text": "05 Built and usable area, room by room"
+              "text": "Built and usable area, room by room",
+              "kicker": "05"
             },
             {
               "title": "Features and condition",
-              "text": "06 Condition of the property and building, installations, orientation"
+              "text": "Condition of the property and building, installations, orientation",
+              "kicker": "06"
             },
             {
               "title": "Documentation",
-              "text": "07 Habitation certificate, energy certificate and ITE"
+              "text": "Habitation certificate, energy certificate and ITE",
+              "kicker": "07"
             },
             {
               "title": "Comparables",
-              "text": "08 Similar properties on portals and sold in the area"
+              "text": "Similar properties on portals and sold in the area",
+              "kicker": "08"
             },
             {
               "title": "Market study",
-              "text": "09 Current supply your property will compete with"
+              "text": "Current supply your property will compete with",
+              "kicker": "09"
             },
             {
               "title": "Valuation",
-              "text": "10 Market value, price per m² and recommended asking price"
+              "text": "Market value, price per m² and recommended asking price",
+              "kicker": "10"
             }
           ]
         },
@@ -218,6 +240,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -256,7 +279,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. The valuation report is free and without obligation. Fees depend on each property."
         }
       ]
     }

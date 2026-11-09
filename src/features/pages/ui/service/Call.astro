@@ -1,0 +1,46 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import BlockHead from "./BlockHead.astro";
+
+/** Extra service offered inside a page (reference `.sx-call`): statement, ticks and a link. */
+interface Props {
+  locale: Locale;
+  head: readonly PageItem[];
+  body: readonly PageItem[];
+}
+
+const { locale, head, body } = Astro.props;
+const lines = itemsOf(body, "p");
+const ticks = itemsOf(body, "list")[0];
+const button = itemsOf(body, "buttons")[0]?.items[0];
+---
+
+<div class="max-w-205">
+  <BlockHead locale={locale} items={head} spaced={false} class="[&_h2]:mb-4.5" />
+  {lines.map((line) => (
+    <p class="max-w-[56ch] text-[14.5px] leading-[1.65] text-fg-2">
+      <Inline text={line.text} locale={locale} />
+    </p>
+  ))}
+  {ticks && (
+    <ul class="mt-5.5 mb-7">
+      {ticks.items.map((entry) => (
+        <li
+          data-reveal
+          class="relative border-t border-line-strong py-3 pl-8 text-[13.5px] leading-[1.5] before:absolute before:top-4.5 before:left-0.5 before:h-[7px] before:w-3 before:-rotate-45 before:border-b-[1.6px] before:border-l-[1.6px] before:border-accent"
+        >
+          <Inline text={entry.text} locale={locale} />
+        </li>
+      ))}
+    </ul>
+  )}
+  {button && (
+    <Button href={resolveContentHref(button.href, locale)} arrow class="leading-none!">
+      {button.label}
+    </Button>
+  )}
+</div>

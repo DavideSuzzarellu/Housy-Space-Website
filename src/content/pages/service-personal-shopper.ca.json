@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -95,6 +96,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -111,41 +113,38 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01L'immobileEstat real de l'habitatge, instal·lacions i possibles obres amb el seu cost."
+              "title": "L'immobile",
+              "text": "Estat real de l'habitatge, instal·lacions i possibles obres amb el seu cost."
             },
             {
-              "title": "",
-              "text": "02L'edificiEstat de la finca, ITE i obres previstes o derrames de la comunitat."
+              "title": "L'edifici",
+              "text": "Estat de la finca, ITE i obres previstes o derrames de la comunitat."
             },
             {
-              "title": "",
-              "text": "03DocumentacióNota simple del Registre, càrregues, cèdula d'habitabilitat i certificat energètic."
+              "title": "Documentació",
+              "text": "Nota simple del Registre, càrregues, cèdula d'habitabilitat i certificat energètic."
             },
             {
-              "title": "",
-              "text": "04El preuComparació amb vendes recents de la zona per no pagar de més."
+              "title": "El preu",
+              "text": "Comparació amb vendes recents de la zona per no pagar de més."
             },
             {
-              "title": "",
-              "text": "05FinançamentAmb el nostre broker financer, la hipoteca estudiada abans de comprometre't. [Veure assessorament financer](service:asesoramiento-financiero)."
+              "title": "Finançament",
+              "text": "Amb el nostre broker financer, la hipoteca estudiada abans de comprometre't. [Veure assessorament financer](service:asesoramiento-financiero)."
             },
             {
-              "title": "",
-              "text": "06L'entornServeis, transport, soroll i evolució del barri."
+              "title": "L'entorn",
+              "text": "Serveis, transport, soroll i evolució del barri."
             }
           ]
         }
       ]
     },
     {
+      "layout": "call",
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/det-salon-1400.jpg"
-        },
         {
           "kind": "tag",
           "text": "Reformes"
@@ -194,7 +193,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No et preocupis, jo me n'encarrego.»"
+          "text": "«No et preocupis, *jo me n'encarrego.*»"
         },
         {
           "kind": "p",
@@ -203,6 +202,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -241,7 +241,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

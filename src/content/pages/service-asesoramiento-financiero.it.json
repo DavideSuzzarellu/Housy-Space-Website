@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -211,6 +213,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "stone",
       "band": false,
       "items": [
@@ -230,7 +233,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Scopri i nostri collaboratori",
+              "label": "Perché ci fidiamo di loro",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -242,13 +245,15 @@
           "items": [
             {
               "title": "Broker finanziario",
-              "text": "Finanziamento Valuta la fattibilità di ogni operazione con finanziamento e confronta le condizioni di diverse banche."
+              "text": "Valuta la fattibilità di ogni operazione con finanziamento e confronta le condizioni di diverse banche.",
+              "kicker": "Finanziamento"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -287,7 +292,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma."
+          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
         }
       ]
     }

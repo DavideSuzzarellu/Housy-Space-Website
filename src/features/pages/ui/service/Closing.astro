@@ -1,0 +1,60 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import type { ServiceKey } from "@/shared/i18n/services";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import OtherServices from "../OtherServices.astro";
+
+/**
+ * Closing contact block of a service page (reference `.svp-cta`, id `hablemos`): title, line,
+ * the contact buttons, the provisional-content note and the links to the other services.
+ */
+interface Props {
+  locale: Locale;
+  service: ServiceKey;
+  items: readonly PageItem[];
+}
+
+const { locale, service, items } = Astro.props;
+const title = itemsOf(items, "h2")[0];
+const lead = itemsOf(items, "lead")[0];
+const buttons = itemsOf(items, "buttons")[0];
+const note = itemsOf(items, "note")[0];
+---
+
+<div data-service-cta class="grid gap-[clamp(40px,5vw,64px)]">
+  <div>
+    {title && (
+      <h2 data-reveal class="mb-3.5 text-[clamp(25px,2.8vw,38px)]">
+        {title.text}
+      </h2>
+    )}
+    {lead && (
+      <p class="mb-3.5 max-w-159 text-base leading-[1.7] text-fg">
+        <Inline text={lead.text} locale={locale} />
+      </p>
+    )}
+    {buttons && (
+      <div class="mt-6.5 flex flex-wrap gap-3">
+        {buttons.items.map((button) => (
+          <Button
+            href={resolveContentHref(button.href, locale)}
+            variant={button.solid ? "solid" : "outline"}
+            external={button.href.startsWith("https://")}
+            class="leading-none!"
+          >
+            {button.label}
+          </Button>
+        ))}
+      </div>
+    )}
+    {note && (
+      <p class="my-3.5 max-w-[495px] border-l-2 border-turquoise py-1 pl-3 text-[11px] text-muted">
+        <Inline text={note.text} locale={locale} />
+      </p>
+    )}
+  </div>
+  <OtherServices locale={locale} current={service} />
+</div>

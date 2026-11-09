@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -205,6 +207,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -243,7 +246,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

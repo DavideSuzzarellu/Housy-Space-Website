@@ -26,20 +26,25 @@
   },
   "sections": [
     {
+      "layout": "introLined",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "big",
-          "text": "Selling a property is not just about listing it."
+          "text": "Selling a property is much more than just listing it."
         },
         {
           "kind": "p",
-          "text": "As property consultants, we first tell you honestly whether selling makes sense for you, how to do it, and when. Then we study the property and its documentation in depth, so there are no surprises at signing."
+          "text": "Before putting your property on the market, we advise you honestly on whether the time is right, how to go about it and which strategy to follow."
         },
         {
           "kind": "p",
-          "text": "Everything starts with a [valuation report](service:valoracion): the market value, the recommended asking price, and the strategy to get there."
+          "text": "We study your property, its documentation and the market so that you can decide with confidence and avoid surprises."
+        },
+        {
+          "kind": "p",
+          "text": "It all begins with a [valuation report](service:valoracion), where we analyse your property's market value, recommend an asking price and define the best sales strategy."
         }
       ]
     },
@@ -95,6 +100,7 @@
       ]
     },
     {
+      "layout": "check",
       "surface": "paper",
       "band": false,
       "items": [
@@ -167,6 +173,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -187,7 +194,7 @@
             },
             {
               "kind": "p",
-              "text": "When several agencies sell the same property, the sale turns into a race to close it first. Work gets rushed: speed takes priority and the quality of the deal and the sale price fall by the wayside. With exclusivity, we work your property carefully and with criteria, to sell it well and at the price it deserves."
+              "text": "When several agencies compete to sell a property, speed can win out over the quality of the deal. With exclusivity, we prioritise a careful strategy to achieve the best price and a safe sale."
             }
           ]
         },
@@ -234,7 +241,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "\"Don't worry, I'll take care of it.\""
+          "text": "\"Don't worry, *I'll take care of it.*\""
         },
         {
           "kind": "p",
@@ -244,6 +251,7 @@
     },
     {
       "id": "valoracion",
+      "layout": "valuation",
       "surface": "stone",
       "band": false,
       "items": [
@@ -316,6 +324,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -354,7 +363,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

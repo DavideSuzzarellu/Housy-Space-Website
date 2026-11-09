@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "cmp",
       "surface": "stone",
       "band": false,
       "items": [
@@ -34,80 +35,91 @@
           "text": "Due modi per conoscere il valore del tuo immobile"
         },
         {
-          "kind": "h3",
-          "text": "In tempo reale"
-        },
-        {
-          "kind": "p",
-          "text": "Con il nostro strumento di valutazione online."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "",
-              "text": "Inserisci i dati del tuo immobile."
+              "kind": "h3",
+              "text": "In tempo reale"
             },
             {
-              "title": "",
-              "text": "Ricevi subito un riferimento indicativo del valore."
+              "kind": "p",
+              "text": "Con il nostro strumento di valutazione online."
             },
             {
-              "title": "",
-              "text": "Se vuoi, un consulente lo esamina insieme a te."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Inserisci i dati del tuo immobile."
+                },
+                {
+                  "title": "",
+                  "text": "Ricevi subito un riferimento indicativo del valore."
+                },
+                {
+                  "title": "",
+                  "text": "Se vuoi, un consulente lo esamina insieme a te."
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Richiedi una valutazione",
+                  "href": "route:valuation",
+                  "solid": true
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "buttons",
+          "kind": "card",
           "items": [
             {
-              "label": "Vai allo strumento di valutazione",
-              "href": "route:valuation",
-              "solid": true
-            }
-          ]
-        },
-        {
-          "kind": "h3",
-          "text": "Rapporto di valutazione"
-        },
-        {
-          "kind": "p",
-          "text": "Studiamo il tuo immobile in profondità."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "Visitiamo l'immobile e ne verifichiamo la documentazione."
+              "kind": "h3",
+              "text": "Rapporto di valutazione"
             },
             {
-              "title": "",
-              "text": "Analizziamo il quartiere, il mercato e le vendite recenti."
+              "kind": "p",
+              "text": "Studiamo il tuo immobile in profondità."
             },
             {
-              "title": "",
-              "text": "Ti consegniamo il rapporto e lo commentiamo insieme."
-            }
-          ]
-        },
-        {
-          "kind": "buttons",
-          "items": [
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visitiamo l'immobile e ne verifichiamo la documentazione."
+                },
+                {
+                  "title": "",
+                  "text": "Analizziamo il quartiere, il mercato e le vendite recenti."
+                },
+                {
+                  "title": "",
+                  "text": "Ti consegniamo il rapporto e lo commentiamo insieme."
+                }
+              ]
+            },
             {
-              "label": "Richiedi un rapporto",
-              "href": "route:contact",
-              "solid": false
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Richiedi un rapporto",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
+      "layout": "doc",
       "surface": "paper",
       "band": false,
       "items": [
@@ -137,43 +149,53 @@
           "items": [
             {
               "title": "Localizzazione e quartiere",
-              "text": "01 Situazione dell'immobile e storia del quartiere"
+              "text": "Situazione dell'immobile e storia del quartiere",
+              "kicker": "01"
             },
             {
               "title": "Dati del quartiere",
-              "text": "02 Prezzo medio per m² delle compravendite, secondo il Comune di Barcellona"
+              "text": "Prezzo medio per m² delle compravendite, secondo il Comune di Barcellona",
+              "kicker": "02"
             },
             {
               "title": "Informazioni urbanistiche e catastali",
-              "text": "03 Riferimento catastale, classificazione e dati dell'immobile"
+              "text": "Riferimento catastale, classificazione e dati dell'immobile",
+              "kicker": "03"
             },
             {
               "title": "Valore di riferimento catastale",
-              "text": "04 Il valore fissato dal Catasto per l'immobile"
+              "text": "Il valore fissato dal Catasto per l'immobile",
+              "kicker": "04"
             },
             {
               "title": "Dati e misure",
-              "text": "05 Superficie costruita e utile, stanza per stanza"
+              "text": "Superficie costruita e utile, stanza per stanza",
+              "kicker": "05"
             },
             {
               "title": "Caratteristiche e stato",
-              "text": "06 Stato dell'immobile e dell'edificio, impianti, orientamento"
+              "text": "Stato dell'immobile e dell'edificio, impianti, orientamento",
+              "kicker": "06"
             },
             {
               "title": "Documentazione",
-              "text": "07 Certificato di abitabilità, certificato energetico e ITE"
+              "text": "Certificato di abitabilità, certificato energetico e ITE",
+              "kicker": "07"
             },
             {
               "title": "Comparabili",
-              "text": "08 Immobili simili sui portali e venduti nella zona"
+              "text": "Immobili simili sui portali e venduti nella zona",
+              "kicker": "08"
             },
             {
               "title": "Studio di mercato",
-              "text": "09 Offerta attuale con cui il tuo immobile dovrà competere"
+              "text": "Offerta attuale con cui il tuo immobile dovrà competere",
+              "kicker": "09"
             },
             {
               "title": "Valutazione",
-              "text": "10 Valore di mercato, prezzo per m² e prezzo di uscita consigliato"
+              "text": "Valore di mercato, prezzo per m² e prezzo di uscita consigliato",
+              "kicker": "10"
             }
           ]
         },
@@ -218,6 +240,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -256,7 +279,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma."
+          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. La perizia di valutazione è gratuita e senza impegno. Gli onorari dipendono da ciascun immobile."
         }
       ]
     }

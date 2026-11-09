@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "trio",
       "surface": "stone",
       "band": false,
       "items": [
@@ -52,22 +54,26 @@
           "ordered": false,
           "items": [
             {
-              "title": "Whether",
-              "text": "Whether it makes sense We tell you honestly whether buying, selling or waiting is the right move."
+              "title": "Whether it makes sense",
+              "text": "We tell you honestly whether buying, selling or waiting is the right move.",
+              "kicker": "Whether"
             },
             {
-              "title": "How",
-              "text": "How to do it The right strategy for your transaction and your situation."
+              "title": "How to do it",
+              "text": "The right strategy for your transaction and your situation.",
+              "kicker": "How"
             },
             {
-              "title": "When",
-              "text": "When the time is right The right moment, based on the market and your timelines."
+              "title": "When the time is right",
+              "text": "The right moment, based on the market and your timelines.",
+              "kicker": "When"
             }
           ]
         }
       ]
     },
     {
+      "layout": "sit",
       "surface": "paper",
       "band": false,
       "items": [
@@ -84,28 +90,40 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "[**Sell or rent?**We compare both options with numbers: sale price, expected rent, taxes and costs.Property sales and brokerage →](service:venta-estrategica)"
+              "title": "Sell or rent?",
+              "text": "We compare both options with numbers: sale price, expected rent, taxes and costs.",
+              "href": "service:venta-estrategica",
+              "cta": "Property sales and brokerage →"
             },
             {
-              "title": "",
-              "text": "[**Buy now or wait?**We look at the market in your area and what you can finance today.Financial advice →](service:asesoramiento-financiero)"
+              "title": "Buy now or wait?",
+              "text": "We look at the market in your area and what you can finance today.",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Financial advice →"
             },
             {
-              "title": "",
-              "text": "[**I've inherited a property**What procedures are involved, what taxes to pay and what to do with it.Legal and tax advice →](service:asesoramiento-juridico-fiscal)"
+              "title": "I've inherited a property",
+              "text": "What procedures are involved, what taxes to pay and what to do with it.",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Legal and tax advice →"
             },
             {
-              "title": "",
-              "text": "[**Should I renovate before selling?**What work adds value and what isn't worth it.Renovations and interior design →](service:reformas-obras)"
+              "title": "Should I renovate before selling?",
+              "text": "What work adds value and what isn't worth it.",
+              "href": "service:reformas-obras",
+              "cta": "Renovations and interior design →"
             },
             {
-              "title": "",
-              "text": "[**I want to move house**How to coordinate selling yours and buying the new one.Property Personal Shopper →](service:personal-shopper)"
+              "title": "I want to move house",
+              "text": "How to coordinate selling yours and buying the new one.",
+              "href": "service:personal-shopper",
+              "cta": "Property Personal Shopper →"
             },
             {
-              "title": "",
-              "text": "[**I want to invest in property**What to buy, with what numbers and what return to actually expect.Property investment →](service:inversion-inmobiliaria)"
+              "title": "I want to invest in property",
+              "text": "What to buy, with what numbers and what return to actually expect.",
+              "href": "service:inversion-inmobiliaria",
+              "cta": "Property investment →"
             }
           ]
         }
@@ -152,7 +170,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "\"Don't worry, I'll take care of it.\""
+          "text": "\"Don't worry, *I'll take care of it.*\""
         },
         {
           "kind": "p",
@@ -161,6 +179,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -199,7 +218,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

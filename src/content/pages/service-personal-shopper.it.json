@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -95,6 +96,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -111,41 +113,38 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01L'immobileStato reale dell'abitazione, impianti e possibili lavori con il loro costo."
+              "title": "L'immobile",
+              "text": "Stato reale dell'abitazione, impianti e possibili lavori con il loro costo."
             },
             {
-              "title": "",
-              "text": "02L'edificioStato dell'immobile, ispezione tecnica e lavori previsti o spese condominiali."
+              "title": "L'edificio",
+              "text": "Stato dell'immobile, ispezione tecnica e lavori previsti o spese condominiali."
             },
             {
-              "title": "",
-              "text": "03DocumentazioneVisura catastale, ipoteche, certificato di abitabilità e certificato energetico."
+              "title": "Documentazione",
+              "text": "Visura catastale, ipoteche, certificato di abitabilità e certificato energetico."
             },
             {
-              "title": "",
-              "text": "04Il prezzoConfronto con vendite recenti nella zona per non pagare di più."
+              "title": "Il prezzo",
+              "text": "Confronto con vendite recenti nella zona per non pagare di più."
             },
             {
-              "title": "",
-              "text": "05FinanziamentoConil nostro broker finanziario, il mutuo studiato prima di impegnarsi. [Vedi consulenza finanziaria](service:asesoramiento-financiero)."
+              "title": "Finanziamento",
+              "text": "Conil nostro broker finanziario, il mutuo studiato prima di impegnarsi. [Vedi consulenza finanziaria](service:asesoramiento-financiero)."
             },
             {
-              "title": "",
-              "text": "06L'ambienteServizi, trasporti, rumore e evoluzione del quartiere."
+              "title": "L'ambiente",
+              "text": "Servizi, trasporti, rumore e evoluzione del quartiere."
             }
           ]
         }
       ]
     },
     {
+      "layout": "call",
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/det-salon-1400.jpg"
-        },
         {
           "kind": "tag",
           "text": "Ristrutturazioni"
@@ -194,7 +193,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«Non preoccuparti, ci penso io.»"
+          "text": "«Non preoccuparti, *ci penso io.*»"
         },
         {
           "kind": "p",
@@ -203,6 +202,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -241,7 +241,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma."
+          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
         }
       ]
     }

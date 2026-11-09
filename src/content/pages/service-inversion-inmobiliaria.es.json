@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -48,6 +49,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -64,28 +66,28 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Precio y costes de compraPrecio, impuestos, notaría, registro y gestoría: el coste real de entrar."
+              "title": "Precio y costes de compra",
+              "text": "Precio, impuestos, notaría, registro y gestoría: el coste real de entrar."
             },
             {
-              "title": "",
-              "text": "02ReformaQué obra necesita, cuánto cuesta y cuánto valor añade."
+              "title": "Reforma",
+              "text": "Qué obra necesita, cuánto cuesta y cuánto valor añade."
             },
             {
-              "title": "",
-              "text": "03Renta esperableLo que se paga hoy por viviendas similares en la zona."
+              "title": "Renta esperable",
+              "text": "Lo que se paga hoy por viviendas similares en la zona."
             },
             {
-              "title": "",
-              "text": "04Rentabilidad estimadaBruta y neta, con gastos, impuestos y periodos sin inquilino."
+              "title": "Rentabilidad estimada",
+              "text": "Bruta y neta, con gastos, impuestos y periodos sin inquilino."
             },
             {
-              "title": "",
-              "text": "05RiesgosEstado de la finca, normativa de alquiler y liquidez de la zona."
+              "title": "Riesgos",
+              "text": "Estado de la finca, normativa de alquiler y liquidez de la zona."
             },
             {
-              "title": "",
-              "text": "06SalidaQué pasa si quieres vender dentro de unos años."
+              "title": "Salida",
+              "text": "Qué pasa si quieres vender dentro de unos años."
             }
           ]
         }
@@ -127,6 +129,7 @@
       ]
     },
     {
+      "layout": "route",
       "surface": "paper",
       "band": false,
       "items": [
@@ -147,26 +150,35 @@
           "ordered": true,
           "items": [
             {
-              "title": "",
-              "text": "[Financia**Asesoramiento financiero**](service:asesoramiento-financiero)"
+              "title": "Asesoramiento financiero",
+              "text": "",
+              "kicker": "Financia",
+              "href": "service:asesoramiento-financiero"
             },
             {
-              "title": "",
-              "text": "[Compra**Personal Shopper inmobiliario**](service:personal-shopper)"
+              "title": "Personal Shopper inmobiliario",
+              "text": "",
+              "kicker": "Compra",
+              "href": "service:personal-shopper"
             },
             {
-              "title": "",
-              "text": "[Reforma**Reformas e interiorismo**](service:reformas-obras)"
+              "title": "Reformas e interiorismo",
+              "text": "",
+              "kicker": "Reforma",
+              "href": "service:reformas-obras"
             },
             {
-              "title": "",
-              "text": "[Alquila**Alquiler y gestión de inmuebles**](service:alquiler-gestion)"
+              "title": "Alquiler y gestión de inmuebles",
+              "text": "",
+              "kicker": "Alquila",
+              "href": "service:alquiler-gestion"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -205,7 +217,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

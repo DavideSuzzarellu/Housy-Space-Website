@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -211,6 +213,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "stone",
       "band": false,
       "items": [
@@ -230,7 +233,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Meet our partners",
+              "label": "Why we trust them",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -242,13 +245,15 @@
           "items": [
             {
               "title": "Financial broker",
-              "text": "Financing Assesses the viability of each transaction involving financing and compares conditions from different lenders."
+              "text": "Assesses the viability of each transaction involving financing and compares conditions from different lenders.",
+              "kicker": "Financing"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -287,7 +292,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

@@ -63,6 +63,47 @@ describe("service pages", () => {
     expect(page.head.heading).toMatch(/\*[^*]+\*/);
   });
 
+  /** Explicit layout of each section, in order; `-` follows from the items (steps, faq, band, text). */
+  const LAYOUTS: Record<string, string> = {
+    "alquiler-gestion": "intro split - - cta",
+    asesoramiento: "intro trio sit - - cta",
+    "asesoramiento-financiero": "intro split - - colab cta",
+    "asesoramiento-juridico-fiscal": "intro split tax - colab cta",
+    "inversion-inmobiliaria": "intro cards - route cta",
+    "personal-shopper": "intro - cards call - cta",
+    "reformas-obras": "intro stepsList swatches cards cards - colab cta",
+    valoracion: "cmp doc - cta",
+    "venta-estrategica": "introLined - check split - valuation cta",
+  };
+
+  it.each(services)("%s declares the layout of every section", (file) => {
+    const key = /^service-(.+)\.\w\w\.json$/.exec(file)?.[1] ?? "";
+    const page = schema.parse(read(file));
+    expect(page.sections.map((section) => section.layout ?? "-").join(" ")).toBe(LAYOUTS[key]);
+  });
+
+  it.each(services)("%s links its list entries and tax or comparison columns as cards", (file) => {
+    const page = schema.parse(read(file));
+    for (const section of page.sections) {
+      if (section.layout === "sit" || section.layout === "route") {
+        const lists = section.items.filter((item) => item.kind === "list");
+        for (const list of lists) {
+          expect(list.items.every((entry) => entry.href !== undefined)).toBe(true);
+        }
+      }
+      if (section.layout === "tax" || section.layout === "cmp") {
+        expect(section.items.some((item) => item.kind === "card")).toBe(true);
+        expect(section.items.some((item) => item.kind === "h3")).toBe(false);
+      }
+      if (section.layout === "trio") {
+        const lists = section.items.filter((item) => item.kind === "list");
+        for (const list of lists) {
+          expect(list.items.every((entry) => entry.kicker !== undefined)).toBe(true);
+        }
+      }
+    }
+  });
+
   it("rejects an illustration without a text alternative", () => {
     const base = schema.parse(read("service-valoracion.es.json"));
     const broken = {

@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -95,6 +96,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -111,41 +113,38 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01El inmuebleEstado real de la vivienda, instalaciones y posibles reformas con su coste."
+              "title": "El inmueble",
+              "text": "Estado real de la vivienda, instalaciones y posibles reformas con su coste."
             },
             {
-              "title": "",
-              "text": "02El edificioEstado de la finca, ITE y obras previstas o derramas de la comunidad."
+              "title": "El edificio",
+              "text": "Estado de la finca, ITE y obras previstas o derramas de la comunidad."
             },
             {
-              "title": "",
-              "text": "03La documentaciónNota simple del Registro, cargas, cédula de habitabilidad y certificado energético."
+              "title": "La documentación",
+              "text": "Nota simple del Registro, cargas, cédula de habitabilidad y certificado energético."
             },
             {
-              "title": "",
-              "text": "04El precioComparación con ventas recientes de la zona para no pagar de más."
+              "title": "El precio",
+              "text": "Comparación con ventas recientes de la zona para no pagar de más."
             },
             {
-              "title": "",
-              "text": "05La financiaciónCon nuestro bróker financiero, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero)."
+              "title": "La financiación",
+              "text": "Con nuestro bróker financiero, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero)."
             },
             {
-              "title": "",
-              "text": "06El entornoServicios, transporte, ruido y evolución del barrio."
+              "title": "El entorno",
+              "text": "Servicios, transporte, ruido y evolución del barrio."
             }
           ]
         }
       ]
     },
     {
+      "layout": "call",
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/det-salon-1400.jpg"
-        },
         {
           "kind": "tag",
           "text": "Reformas"
@@ -194,7 +193,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No te preocupes, yo me encargo.»"
+          "text": "«No te preocupes, *yo me encargo.*»"
         },
         {
           "kind": "p",
@@ -203,6 +202,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -241,7 +241,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

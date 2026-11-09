@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+import Button from "@/shared/ui/atoms/Button.astro";
+import BlockHead from "./BlockHead.astro";
+
+/** Who we work with (reference `.sx-colab`): heading and a link to the about page beside the partners. */
+interface Props {
+  locale: Locale;
+  head: readonly PageItem[];
+  body: readonly PageItem[];
+}
+
+const { locale, head, body } = Astro.props;
+const button = itemsOf(body, "buttons")[0]?.items[0];
+const partners = itemsOf(body, "list")[0];
+---
+
+<div class="grid gap-x-16 gap-y-2.5 min-[960px]:grid-cols-[5fr_6fr] min-[960px]:items-start">
+  <div class="mb-11.5">
+    <BlockHead locale={locale} items={head} spaced={false} />
+    {button && (
+      <Button href={resolveContentHref(button.href, locale)} arrow class="mt-10 leading-none!">
+        {button.label}
+      </Button>
+    )}
+  </div>
+  <ul class="grid gap-3.5">
+    {partners?.items.map((entry) => (
+      <li data-reveal class="border-l-2 border-turquoise bg-card px-7 pt-7 pb-6.5">
+        <span class="mb-2.5 block text-[11px] leading-[normal] font-medium tracking-[0.16em] text-accent">
+          {entry.kicker}
+        </span>
+        {entry.logo && (
+          <Image
+            src={entry.logo}
+            alt=""
+            widths={[240, 480]}
+            sizes="242px"
+            loading="lazy"
+            decoding="async"
+            class="mt-1 mb-3 block h-[clamp(42px,4.6vw,58px)] w-auto max-w-full"
+          />
+        )}
+        <b class="mb-2.5 block font-heading text-[clamp(22px,calc(2.2vw-2px),28px)] leading-[1.1] font-normal">
+          {entry.title}
+        </b>
+        <p class="text-[13px] leading-[1.6] text-muted">{entry.text}</p>
+        {entry.href && (
+          <a
+            href={resolveContentHref(entry.href, locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-4.5 inline-flex items-center gap-2.5 border-b border-line-strong pb-1.5 text-xs leading-none font-medium tracking-[0.12em] text-fg no-underline transition-colors duration-300 hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent"
+          >
+            {entry.cta}
+            <ArrowUpRight />
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>

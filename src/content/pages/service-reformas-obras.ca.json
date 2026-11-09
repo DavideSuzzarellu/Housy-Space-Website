@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "stepsList",
       "surface": "paper",
       "band": false,
       "items": [
@@ -88,6 +90,7 @@
     },
     {
       "id": "interiorismo",
+      "layout": "swatches",
       "surface": "stone",
       "band": false,
       "items": [
@@ -109,33 +112,40 @@
           "items": [
             {
               "title": "Fusta natural",
-              "text": "Terres, fusteria i mobiliari"
+              "text": "Terres, fusteria i mobiliari",
+              "color": "#B98A5E"
             },
             {
               "title": "Pedra i marbre",
-              "text": "Taulells, banys i detalls"
+              "text": "Taulells, banys i detalls",
+              "color": "#D9D2C5"
             },
             {
               "title": "Microciment",
-              "text": "Continuïtat en terres i parets"
+              "text": "Continuïtat en terres i parets",
+              "color": "#CDBFA9"
             },
             {
               "title": "Lli i cotó",
-              "text": "Tèxtils i cortines"
+              "text": "Tèxtils i cortines",
+              "color": "#ECE6DA"
             },
             {
               "title": "Llautó",
-              "text": "Il·luminació i ferraments"
+              "text": "Il·luminació i ferraments",
+              "color": "#B48A45"
             },
             {
               "title": "Verd profund",
-              "text": "Color i contrast"
+              "text": "Color i contrast",
+              "color": "#2C4A44"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -152,34 +162,35 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01DistribucióCom es mou la llum i com et mous tu per la casa."
+              "title": "Distribució",
+              "text": "Com es mou la llum i com et mous tu per la casa."
             },
             {
-              "title": "",
-              "text": "02Materials i acabatsPaleta coherent per a tot l'habitatge."
+              "title": "Materials i acabats",
+              "text": "Paleta coherent per a tot l'habitatge."
             },
             {
-              "title": "",
-              "text": "03Il·luminacióLlum natural i artificial pensades per a cada estança."
+              "title": "Il·luminació",
+              "text": "Llum natural i artificial pensades per a cada estança."
             },
             {
-              "title": "",
-              "text": "04Mobiliari a mesuraDisseny, selecció i compra del mobiliari i els detalls."
+              "title": "Mobiliari a mesura",
+              "text": "Disseny, selecció i compra del mobiliari i els detalls."
             },
             {
-              "title": "",
-              "text": "05Llicències i gremisTràmits, paletes, instal·ladors i fusters, coordinats per nosaltres."
+              "title": "Llicències i gremis",
+              "text": "Tràmits, paletes, instal·ladors i fusters, coordinats per nosaltres."
             },
             {
-              "title": "",
-              "text": "06Seguiment d'obraTerminis, pressupost i qualitat controlats fins a l'últim detall."
+              "title": "Seguiment d'obra",
+              "text": "Terminis, pressupost i qualitat controlats fins a l'últim detall."
             }
           ]
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -196,20 +207,20 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Abans de vendrePressupostos d'obra per al comprador o petites millores que ajuden a vendre. [Veure compravenda](service:venta-estrategica)."
+              "title": "Abans de vendre",
+              "text": "Pressupostos d'obra per al comprador o petites millores que ajuden a vendre. [Veure compravenda](service:venta-estrategica)."
             },
             {
-              "title": "",
-              "text": "02En comprarLa reforma estudiada abans de comprar i feta per nosaltres. [Veure Personal Shopper](service:personal-shopper)."
+              "title": "En comprar",
+              "text": "La reforma estudiada abans de comprar i feta per nosaltres. [Veure Personal Shopper](service:personal-shopper)."
             },
             {
-              "title": "",
-              "text": "03Per llogarPosada a punt per llogar abans i millor."
+              "title": "Per llogar",
+              "text": "Posada a punt per llogar abans i millor."
             },
             {
-              "title": "",
-              "text": "04Per invertirReformes que sumen valor i rendibilitat, amb els números davant."
+              "title": "Per invertir",
+              "text": "Reformes que sumen valor i rendibilitat, amb els números davant."
             }
           ]
         }
@@ -221,7 +232,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No et preocupis, jo me n'encarrego.»"
+          "text": "«No et preocupis, *jo me n'encarrego.*»"
         },
         {
           "kind": "p",
@@ -230,6 +241,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -249,7 +261,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Coneix els nostres col·laboradors",
+              "label": "Per què confiem en ells",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -261,13 +273,17 @@
           "items": [
             {
               "title": "Maria Guimerà Arquitectura",
-              "text": "Arquitectura i interiorisme Estudi d'arquitectura i interiorisme a Barcelona, amb reformes integrals d'habitatges i pisos de l'Eixample. [Visita mariaguimera.com](https://mariaguimera.com/es/inicio/)"
+              "text": "Estudi d'arquitectura i interiorisme a Barcelona, amb reformes integrals d'habitatges i pisos de l'Eixample.",
+              "kicker": "Arquitectura i interiorisme",
+              "href": "https://mariaguimera.com/es/inicio/",
+              "cta": "Visita mariaguimera.com"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -306,7 +322,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

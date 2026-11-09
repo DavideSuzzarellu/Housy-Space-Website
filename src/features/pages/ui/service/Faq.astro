@@ -1,0 +1,39 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import BlockHead from "./BlockHead.astro";
+
+/** Frequently asked questions (reference `.sx-faq`): native details, heading beside them. */
+interface Props {
+  locale: Locale;
+  head: readonly PageItem[];
+  body: readonly PageItem[];
+}
+
+const { locale, head, body } = Astro.props;
+const questions = itemsOf(body, "faq");
+const MARK =
+  "before:absolute before:top-1/2 before:right-1.5 before:h-[1.5px] before:w-3.5 before:bg-accent after:absolute after:top-1/2 after:right-1.5 after:h-[1.5px] after:w-3.5 after:rotate-90 after:bg-accent after:transition-transform after:duration-400 after:ease-brand group-open:after:rotate-0 motion-reduce:after:transition-none";
+---
+
+<div class="grid gap-x-16 gap-y-2.5 min-[960px]:grid-cols-[4fr_7fr] min-[960px]:items-start">
+  <BlockHead locale={locale} items={head} spaced={false} />
+  <div class="border-b border-line-strong">
+    {questions.map((item) => (
+      <details data-reveal class="group border-t border-line-strong pt-4 pb-4.25">
+        <summary
+          class:list={[
+            "relative cursor-pointer list-none py-5.5 pr-11 font-heading text-[clamp(18px,calc(1.8vw-2px),22px)] leading-[1.25] transition-colors duration-250 marker:hidden hover:text-accent focus-visible:text-accent [&::-webkit-details-marker]:hidden",
+            MARK,
+          ]}
+        >
+          {item.q}
+        </summary>
+        <p class="max-w-[68ch] pr-11 pb-6 text-[13.5px] leading-[1.65] text-muted">
+          <Inline text={item.a} locale={locale} />
+        </p>
+      </details>
+    ))}
+  </div>
+</div>

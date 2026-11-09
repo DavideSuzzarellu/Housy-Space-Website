@@ -1,0 +1,64 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * Numbered process (reference `.svp-tl`): a timeline with a diamond on each hairline, or, as
+ * `list`, one step per row (reformas).
+ */
+interface Props {
+  locale: Locale;
+  item: ItemOf<"steps">;
+  variant?: "timeline" | "list";
+}
+
+const { locale, item, variant = "timeline" } = Astro.props;
+const count = item.items.length;
+const TIMELINE_COLUMNS = new Map([
+  [6, "min-[860px]:grid-cols-3 min-[860px]:gap-y-8.5"],
+  [7, "min-[860px]:grid-cols-4 min-[860px]:gap-y-8.5"],
+  [8, "min-[860px]:grid-cols-4 min-[860px]:gap-y-8.5"],
+]);
+const list = variant === "list";
+---
+
+<ol
+  class:list={[
+    "grid",
+    list
+      ? "ml-auto max-w-205"
+      : [
+          "gap-6.5",
+          "min-[860px]:gap-x-0",
+          TIMELINE_COLUMNS.get(count) ??
+            "min-[860px]:grid-cols-[repeat(auto-fit,minmax(200px,1fr))]",
+        ],
+  ]}
+>
+  {item.items.map((entry, index) => (
+    <li
+      data-reveal
+      class:list={[
+        "relative",
+        list
+          ? "grid grid-cols-[90px_1fr] gap-x-5 gap-y-1 border-t border-line-strong py-6.5"
+          : "pt-6.5 pr-6.5 pb-1.5 min-[860px]:border-t min-[860px]:border-line-strong min-[860px]:before:absolute min-[860px]:before:-top-[5px] min-[860px]:before:left-0 min-[860px]:before:size-[9px] min-[860px]:before:rotate-45 min-[860px]:before:bg-turquoise",
+      ]}
+    >
+      <b
+        aria-hidden="true"
+        class:list={[
+          "mb-2.5 block font-heading text-[38px] leading-none font-normal text-turquoise-deep/55",
+          list && "row-span-2",
+        ]}
+      >
+        {String(index + 1).padStart(2, "0")}
+      </b>
+      <h3 class="mb-2 text-[26px] wrap-break-word min-[860px]:text-[18px]">{entry.title}</h3>
+      <p class="mb-3.5 max-w-137.5 text-[13px] text-muted">
+        <Inline text={entry.text} locale={locale} />
+      </p>
+    </li>
+  ))}
+</ol>

@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -48,6 +49,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -64,28 +66,28 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Prezzo e costi di acquistoPrezzo, imposte, notaio, registro e agenzia: il costo reale di entrata."
+              "title": "Prezzo e costi di acquisto",
+              "text": "Prezzo, imposte, notaio, registro e agenzia: il costo reale di entrata."
             },
             {
-              "title": "",
-              "text": "02RistrutturazioneChe lavori servono, quanto costano e quanto valore aggiungono."
+              "title": "Ristrutturazione",
+              "text": "Che lavori servono, quanto costano e quanto valore aggiungono."
             },
             {
-              "title": "",
-              "text": "03Reddito attesoCiò che si paga oggi per immobili simili nella zona."
+              "title": "Reddito atteso",
+              "text": "Ciò che si paga oggi per immobili simili nella zona."
             },
             {
-              "title": "",
-              "text": "04Rendimento stimatoLordo e netto, con spese, imposte e periodi di sfitto."
+              "title": "Rendimento stimato",
+              "text": "Lordo e netto, con spese, imposte e periodi di sfitto."
             },
             {
-              "title": "",
-              "text": "05RischiStato dell'edificio, normativa sugli affitti e liquidità della zona."
+              "title": "Rischi",
+              "text": "Stato dell'edificio, normativa sugli affitti e liquidità della zona."
             },
             {
-              "title": "",
-              "text": "06StrategiaExit Cosa succede se vuoi vendere tra qualche anno."
+              "title": "Strategia",
+              "text": "Exit Cosa succede se vuoi vendere tra qualche anno."
             }
           ]
         }
@@ -127,6 +129,7 @@
       ]
     },
     {
+      "layout": "route",
       "surface": "paper",
       "band": false,
       "items": [
@@ -147,26 +150,35 @@
           "ordered": true,
           "items": [
             {
-              "title": "",
-              "text": "[Finanzia**Consulenza finanziaria**](service:asesoramiento-financiero)"
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "kicker": "Finanzia",
+              "href": "service:asesoramiento-financiero"
             },
             {
-              "title": "",
-              "text": "[Acquista**Personal Shopper immobiliare**](service:personal-shopper)"
+              "title": "Personal Shopper immobiliare",
+              "text": "",
+              "kicker": "Acquista",
+              "href": "service:personal-shopper"
             },
             {
-              "title": "",
-              "text": "[Ristruttura**Ristrutturazioni e interior design**](service:reformas-obras)"
+              "title": "Ristrutturazioni e interior design",
+              "text": "",
+              "kicker": "Ristruttura",
+              "href": "service:reformas-obras"
             },
             {
-              "title": "",
-              "text": "[Affitta**Locazioni e gestione immobiliare**](service:alquiler-gestion)"
+              "title": "Locazioni e gestione immobiliare",
+              "text": "",
+              "kicker": "Affitta",
+              "href": "service:alquiler-gestion"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -205,7 +217,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma."
+          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
         }
       ]
     }

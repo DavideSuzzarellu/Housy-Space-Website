@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "trio",
       "surface": "stone",
       "band": false,
       "items": [
@@ -52,22 +54,26 @@
           "ordered": false,
           "items": [
             {
-              "title": "Si",
-              "text": "Si et convé Et diem amb honestedat si et convé comprar, vendre o esperar."
+              "title": "Si et convé",
+              "text": "Et diem amb honestedat si et convé comprar, vendre o esperar.",
+              "kicker": "Si"
             },
             {
-              "title": "Com",
-              "text": "Com fer-ho L'estratègia adequada per a la teva operació i la teva situació."
+              "title": "Com fer-ho",
+              "text": "L'estratègia adequada per a la teva operació i la teva situació.",
+              "kicker": "Com"
             },
             {
-              "title": "Quan",
-              "text": "Quan és el moment El moment oportú segons el mercat i els teus terminis."
+              "title": "Quan és el moment",
+              "text": "El moment oportú segons el mercat i els teus terminis.",
+              "kicker": "Quan"
             }
           ]
         }
       ]
     },
     {
+      "layout": "sit",
       "surface": "paper",
       "band": false,
       "items": [
@@ -84,28 +90,40 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "[**Venc o llogo?**Comparem les dues opcions amb números: preu de venda, renda esperable, impostos i despeses.Compravenda i intermediació immobiliària →](service:venta-estrategica)"
+              "title": "Venc o llogo?",
+              "text": "Comparem les dues opcions amb números: preu de venda, renda esperable, impostos i despeses.",
+              "href": "service:venta-estrategica",
+              "cta": "Compravenda i intermediació immobiliària →"
             },
             {
-              "title": "",
-              "text": "[**Compro ara o espero?**Veiem el mercat de la teva zona i el que pots finançar avui.Assessorament financer →](service:asesoramiento-financiero)"
+              "title": "Compro ara o espero?",
+              "text": "Veiem el mercat de la teva zona i el que pots finançar avui.",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Assessorament financer →"
             },
             {
-              "title": "",
-              "text": "[**He heretat un habitatge**Quins tràmits cal fer, quins impostos pagar i què fer-ne.Assessorament jurídic i fiscal →](service:asesoramiento-juridico-fiscal)"
+              "title": "He heretat un habitatge",
+              "text": "Quins tràmits cal fer, quins impostos pagar i què fer-ne.",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Assessorament jurídic i fiscal →"
             },
             {
-              "title": "",
-              "text": "[**Reformo abans de vendre?**Quina obra suma valor i quina no val la pena.Reformes i interiorisme →](service:reformas-obras)"
+              "title": "Reformo abans de vendre?",
+              "text": "Quina obra suma valor i quina no val la pena.",
+              "href": "service:reformas-obras",
+              "cta": "Reformes i interiorisme →"
             },
             {
-              "title": "",
-              "text": "[**Vull canviar de casa**Com coordinar la venda de la teva i la compra de la nova.Personal Shopper immobiliari →](service:personal-shopper)"
+              "title": "Vull canviar de casa",
+              "text": "Com coordinar la venda de la teva i la compra de la nova.",
+              "href": "service:personal-shopper",
+              "cta": "Personal Shopper immobiliari →"
             },
             {
-              "title": "",
-              "text": "[**Vull invertir en habitatge**Què comprar, amb quins números i quina rendibilitat esperar de debò.Inversió immobiliària →](service:inversion-inmobiliaria)"
+              "title": "Vull invertir en habitatge",
+              "text": "Què comprar, amb quins números i quina rendibilitat esperar de debò.",
+              "href": "service:inversion-inmobiliaria",
+              "cta": "Inversió immobiliària →"
             }
           ]
         }
@@ -152,7 +170,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No et preocupis, jo me n'encarrego.»"
+          "text": "«No et preocupis, *jo me n'encarrego.*»"
         },
         {
           "kind": "p",
@@ -161,6 +179,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -199,7 +218,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

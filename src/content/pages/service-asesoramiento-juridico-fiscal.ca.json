@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -178,6 +180,7 @@
       ]
     },
     {
+      "layout": "tax",
       "surface": "paper",
       "band": false,
       "items": [
@@ -194,76 +197,91 @@
           "text": "Qui cobra cada impost i quan apareix en una operació."
         },
         {
-          "kind": "h3",
-          "text": "Ajuntament"
-        },
-        {
-          "kind": "p",
-          "text": "Impostos municipals"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Plusvàlua municipal",
-              "text": "En vendre, heretar o donar."
+              "kind": "h3",
+              "text": "Ajuntament"
             },
             {
-              "title": "Impost sobre béns immobles (IBI)",
-              "text": "Cada any, com a propietari."
+              "kind": "p",
+              "text": "Impostos municipals"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Plusvàlua municipal",
+                  "text": "En vendre, heretar o donar."
+                },
+                {
+                  "title": "Impost sobre béns immobles (IBI)",
+                  "text": "Cada any, com a propietari."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Generalitat"
-        },
-        {
-          "kind": "p",
-          "text": "Agència Tributària de Catalunya"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Impost de transmissions patrimonials (ITP)",
-              "text": "En comprar un habitatge de segona mà."
+              "kind": "h3",
+              "text": "Generalitat"
             },
             {
-              "title": "Actes jurídics documentats (AJD)",
-              "text": "En comprar obra nova o signar una hipoteca."
+              "kind": "p",
+              "text": "Agència Tributària de Catalunya"
             },
             {
-              "title": "Successions i donacions",
-              "text": "En heretar o rebre un habitatge."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Impost de transmissions patrimonials (ITP)",
+                  "text": "En comprar un habitatge de segona mà."
+                },
+                {
+                  "title": "Actes jurídics documentats (AJD)",
+                  "text": "En comprar obra nova o signar una hipoteca."
+                },
+                {
+                  "title": "Successions i donacions",
+                  "text": "En heretar o rebre un habitatge."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Estat Espanyol"
-        },
-        {
-          "kind": "p",
-          "text": "Agencia Tributaria"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "IRPF: guany patrimonial",
-              "text": "En vendre amb benefici."
+              "kind": "h3",
+              "text": "Estat Espanyol"
             },
             {
-              "title": "IRPF: rendiments",
-              "text": "Si lloga l'habitatge."
+              "kind": "p",
+              "text": "Agencia Tributaria"
             },
             {
-              "title": "Patrimoni",
-              "text": "Segons el valor del teu patrimoni."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "IRPF: guany patrimonial",
+                  "text": "En vendre amb benefici."
+                },
+                {
+                  "title": "IRPF: rendiments",
+                  "text": "Si lloga l'habitatge."
+                },
+                {
+                  "title": "Patrimoni",
+                  "text": "Segons el valor del teu patrimoni."
+                }
+              ]
             }
           ]
         }
@@ -305,6 +323,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -318,13 +337,13 @@
         },
         {
           "kind": "lead",
-          "text": "Un despatx d'advocats i una assessoria fiscal de Barcelona amb qui revisem els aspectes legals i fiscals de les nostres operacions."
+          "text": "Un despatx d'advocats i una assessoria fiscal de Barcelona amb qui revisem els aspectes legals i fiscals de les nostres operacions, i molt més."
         },
         {
           "kind": "buttons",
           "items": [
             {
-              "label": "Coneix els nostres col·laboradors",
+              "label": "Per què confiem en ells",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -336,17 +355,25 @@
           "items": [
             {
               "title": "ADV Advocats",
-              "text": "Despatx jurídic i fiscal Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa. [Visita advadvocats.cat](https://advadvocats.cat/es/)"
+              "text": "Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa.",
+              "kicker": "Despatx jurídic i fiscal",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visita advadvocats.cat"
             },
             {
               "title": "Asesoría Edac",
-              "text": "Assessoria fiscal Assessoria fiscal, comptable i laboral a Barcelona: impostos, declaracions i tràmits amb Hisenda. [Visita serviciosdac.com](https://www.serviciosdac.com/)"
+              "text": "Assessoria fiscal, comptable i laboral a Barcelona: impostos, declaracions i tràmits amb Hisenda.",
+              "kicker": "Assessoria fiscal",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visita serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -385,7 +412,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

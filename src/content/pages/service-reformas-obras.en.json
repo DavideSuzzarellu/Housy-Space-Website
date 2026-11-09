@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "stepsList",
       "surface": "paper",
       "band": false,
       "items": [
@@ -88,6 +90,7 @@
     },
     {
       "id": "interiorismo",
+      "layout": "swatches",
       "surface": "stone",
       "band": false,
       "items": [
@@ -109,33 +112,40 @@
           "items": [
             {
               "title": "Natural wood",
-              "text": "Floors, joinery and furniture"
+              "text": "Floors, joinery and furniture",
+              "color": "#B98A5E"
             },
             {
               "title": "Stone and marble",
-              "text": "Worktops, bathrooms and details"
+              "text": "Worktops, bathrooms and details",
+              "color": "#D9D2C5"
             },
             {
               "title": "Microcement",
-              "text": "Continuity on floors and walls"
+              "text": "Continuity on floors and walls",
+              "color": "#CDBFA9"
             },
             {
               "title": "Linen and cotton",
-              "text": "Textiles and curtains"
+              "text": "Textiles and curtains",
+              "color": "#ECE6DA"
             },
             {
               "title": "Brass",
-              "text": "Lighting and ironmongery"
+              "text": "Lighting and ironmongery",
+              "color": "#B48A45"
             },
             {
               "title": "Deep green",
-              "text": "Colour and contrast"
+              "text": "Colour and contrast",
+              "color": "#2C4A44"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -152,34 +162,35 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01LayoutHow light moves and how you move through the home."
+              "title": "Layout",
+              "text": "How light moves and how you move through the home."
             },
             {
-              "title": "",
-              "text": "02Materials and finishesA coherent palette for the whole property."
+              "title": "Materials and finishes",
+              "text": "A coherent palette for the whole property."
             },
             {
-              "title": "",
-              "text": "03LightingNatural and artificial light designed for each room."
+              "title": "Lighting",
+              "text": "Natural and artificial light designed for each room."
             },
             {
-              "title": "",
-              "text": "04Bespoke furnitureDesign, selection and procurement of furniture and accessories."
+              "title": "Bespoke furniture",
+              "text": "Design, selection and procurement of furniture and accessories."
             },
             {
-              "title": "",
-              "text": "05Permits and tradesPlanning permissions, builders, installers and joiners, all coordinated by us."
+              "title": "Permits and trades",
+              "text": "Planning permissions, builders, installers and joiners, all coordinated by us."
             },
             {
-              "title": "",
-              "text": "06Site supervisionTimelines, budget and quality controlled down to the last detail."
+              "title": "Site supervision",
+              "text": "Timelines, budget and quality controlled down to the last detail."
             }
           ]
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "stone",
       "band": false,
       "items": [
@@ -196,20 +207,20 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Before sellingRenovation quotes for the buyer or small improvements that help you sell. [See property sales](service:venta-estrategica)."
+              "title": "Before selling",
+              "text": "Renovation quotes for the buyer or small improvements that help you sell. [See property sales](service:venta-estrategica)."
             },
             {
-              "title": "",
-              "text": "02When buyingThe renovation planned before purchase and carried out by us. [See Personal Shopper](service:personal-shopper)."
+              "title": "When buying",
+              "text": "The renovation planned before purchase and carried out by us. [See Personal Shopper](service:personal-shopper)."
             },
             {
-              "title": "",
-              "text": "03For rentingRefurbishment to let sooner and at a better price."
+              "title": "For renting",
+              "text": "Refurbishment to let sooner and at a better price."
             },
             {
-              "title": "",
-              "text": "04For investingRenovations that add value and rental yield, with the numbers in front of you."
+              "title": "For investing",
+              "text": "Renovations that add value and rental yield, with the numbers in front of you."
             }
           ]
         }
@@ -221,7 +232,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "\"Don't worry, I'll take care of it.\""
+          "text": "\"Don't worry, *I'll take care of it.*\""
         },
         {
           "kind": "p",
@@ -230,6 +241,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -249,7 +261,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Meet our partners",
+              "label": "Why we trust them",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -261,13 +273,17 @@
           "items": [
             {
               "title": "Maria Guimerà Arquitectura",
-              "text": "Architecture and interior design Architecture and interior design studio in Barcelona, specialising in full renovations of homes and Eixample flats. [Visit mariaguimera.com](https://mariaguimera.com/es/inicio/)"
+              "text": "Architecture and interior design studio in Barcelona, specialising in full renovations of homes and Eixample flats.",
+              "kicker": "Architecture and interior design",
+              "href": "https://mariaguimera.com/es/inicio/",
+              "cta": "Visit mariaguimera.com"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -306,7 +322,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

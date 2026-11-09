@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "cmp",
       "surface": "stone",
       "band": false,
       "items": [
@@ -34,80 +35,91 @@
           "text": "Dos formas de conocer el valor de tu vivienda"
         },
         {
-          "kind": "h3",
-          "text": "Al momento"
-        },
-        {
-          "kind": "p",
-          "text": "Con nuestro valorador online."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "",
-              "text": "Introduces los datos de tu vivienda."
+              "kind": "h3",
+              "text": "Al momento"
             },
             {
-              "title": "",
-              "text": "Recibes al momento una referencia orientativa."
+              "kind": "p",
+              "text": "Con nuestro valorador online."
             },
             {
-              "title": "",
-              "text": "Si quieres, un asesor la revisa contigo."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Introduces los datos de tu vivienda."
+                },
+                {
+                  "title": "",
+                  "text": "Recibes al momento una referencia orientativa."
+                },
+                {
+                  "title": "",
+                  "text": "Si quieres, un asesor la revisa contigo."
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Solicitar valoración",
+                  "href": "route:valuation",
+                  "solid": true
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "buttons",
+          "kind": "card",
           "items": [
             {
-              "label": "Ir al valorador",
-              "href": "route:valuation",
-              "solid": true
-            }
-          ]
-        },
-        {
-          "kind": "h3",
-          "text": "Informe de valoración"
-        },
-        {
-          "kind": "p",
-          "text": "Estudiamos tu vivienda a fondo."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "Visitamos el inmueble y revisamos su documentación."
+              "kind": "h3",
+              "text": "Informe de valoración"
             },
             {
-              "title": "",
-              "text": "Analizamos el barrio, el mercado y las ventas recientes."
+              "kind": "p",
+              "text": "Estudiamos tu vivienda a fondo."
             },
             {
-              "title": "",
-              "text": "Te entregamos el informe y lo comentamos contigo."
-            }
-          ]
-        },
-        {
-          "kind": "buttons",
-          "items": [
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visitamos el inmueble y revisamos su documentación."
+                },
+                {
+                  "title": "",
+                  "text": "Analizamos el barrio, el mercado y las ventas recientes."
+                },
+                {
+                  "title": "",
+                  "text": "Te entregamos el informe y lo comentamos contigo."
+                }
+              ]
+            },
             {
-              "label": "Pedir un informe",
-              "href": "route:contact",
-              "solid": false
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Pedir un informe",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
+      "layout": "doc",
       "surface": "paper",
       "band": false,
       "items": [
@@ -137,43 +149,53 @@
           "items": [
             {
               "title": "Localización y barrio",
-              "text": "01 Situación del inmueble e historia del barrio"
+              "text": "Situación del inmueble e historia del barrio",
+              "kicker": "01"
             },
             {
               "title": "Datos del barrio",
-              "text": "02 Precio medio por m² de las compraventas, según el Ayuntamiento de Barcelona"
+              "text": "Precio medio por m² de las compraventas, según el Ayuntamiento de Barcelona",
+              "kicker": "02"
             },
             {
               "title": "Información urbanística y catastral",
-              "text": "03 Referencia catastral, calificación y datos de la finca"
+              "text": "Referencia catastral, calificación y datos de la finca",
+              "kicker": "03"
             },
             {
               "title": "Valor de referencia catastral",
-              "text": "04 El valor que fija Catastro para la vivienda"
+              "text": "El valor que fija Catastro para la vivienda",
+              "kicker": "04"
             },
             {
               "title": "Datos y medidas",
-              "text": "05 Superficies construida y útil, estancia por estancia"
+              "text": "Superficies construida y útil, estancia por estancia",
+              "kicker": "05"
             },
             {
               "title": "Características y estado",
-              "text": "06 Estado de la vivienda y del edificio, instalaciones, orientación"
+              "text": "Estado de la vivienda y del edificio, instalaciones, orientación",
+              "kicker": "06"
             },
             {
               "title": "Documentación",
-              "text": "07 Cédula de habitabilidad, certificado energético e ITE"
+              "text": "Cédula de habitabilidad, certificado energético e ITE",
+              "kicker": "07"
             },
             {
               "title": "Comparables",
-              "text": "08 Viviendas similares en portales y vendidas en la zona"
+              "text": "Viviendas similares en portales y vendidas en la zona",
+              "kicker": "08"
             },
             {
               "title": "Estudio de mercado",
-              "text": "09 Oferta actual con la que competirá tu vivienda"
+              "text": "Oferta actual con la que competirá tu vivienda",
+              "kicker": "09"
             },
             {
               "title": "Valoración",
-              "text": "10 Valor de mercado, precio por m² y precio aconsejado de salida"
+              "text": "Valor de mercado, precio por m² y precio aconsejado de salida",
+              "kicker": "10"
             }
           ]
         },
@@ -218,6 +240,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -256,7 +279,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. El informe de valoración es gratuito y sin compromiso. Los honorarios dependen de cada inmueble."
         }
       ]
     }

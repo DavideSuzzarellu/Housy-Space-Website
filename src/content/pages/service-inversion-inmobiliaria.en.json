@@ -34,6 +34,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -48,6 +49,7 @@
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
       "band": false,
       "items": [
@@ -64,28 +66,28 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01Purchase price and costsPrice, taxes, notary, Land Registry and agent fees: the real cost of entry."
+              "title": "Purchase price and costs",
+              "text": "Price, taxes, notary, Land Registry and agent fees: the real cost of entry."
             },
             {
-              "title": "",
-              "text": "02RenovationWhat works it needs, how much they cost and how much value they add."
+              "title": "Renovation",
+              "text": "What works it needs, how much they cost and how much value they add."
             },
             {
-              "title": "",
-              "text": "03Expected rental incomeCurrent rent for similar properties in the area."
+              "title": "Expected rental income",
+              "text": "Current rent for similar properties in the area."
             },
             {
-              "title": "",
-              "text": "04Estimated returnGross and net, with costs, taxes and void periods."
+              "title": "Estimated return",
+              "text": "Gross and net, with costs, taxes and void periods."
             },
             {
-              "title": "",
-              "text": "05RisksBuilding condition, rental regulations and area liquidity."
+              "title": "Risks",
+              "text": "Building condition, rental regulations and area liquidity."
             },
             {
-              "title": "",
-              "text": "06Exit strategyWhat happens if you want to sell in a few years."
+              "title": "Exit strategy",
+              "text": "What happens if you want to sell in a few years."
             }
           ]
         }
@@ -127,6 +129,7 @@
       ]
     },
     {
+      "layout": "route",
       "surface": "paper",
       "band": false,
       "items": [
@@ -147,26 +150,35 @@
           "ordered": true,
           "items": [
             {
-              "title": "",
-              "text": "[Finance**Financial advice**](service:asesoramiento-financiero)"
+              "title": "Financial advice",
+              "text": "",
+              "kicker": "Finance",
+              "href": "service:asesoramiento-financiero"
             },
             {
-              "title": "",
-              "text": "[Buy**Property Personal Shopper**](service:personal-shopper)"
+              "title": "Property Personal Shopper",
+              "text": "",
+              "kicker": "Buy",
+              "href": "service:personal-shopper"
             },
             {
-              "title": "",
-              "text": "[Renovate**Renovations & interior design**](service:reformas-obras)"
+              "title": "Renovations & interior design",
+              "text": "",
+              "kicker": "Renovate",
+              "href": "service:reformas-obras"
             },
             {
-              "title": "",
-              "text": "[Let**Lettings and property management**](service:alquiler-gestion)"
+              "title": "Lettings and property management",
+              "text": "",
+              "kicker": "Let",
+              "href": "service:alquiler-gestion"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -205,7 +217,7 @@
         },
         {
           "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees and conditions: pending confirmation."
+          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
         }
       ]
     }

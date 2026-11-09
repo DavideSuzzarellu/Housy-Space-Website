@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -211,6 +213,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "stone",
       "band": false,
       "items": [
@@ -230,7 +233,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Conoce a nuestros colaboradores",
+              "label": "Por qué confiamos en ellos",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -242,13 +245,15 @@
           "items": [
             {
               "title": "Bróker financiero",
-              "text": "Financiación Estudia la viabilidad de cada operación con financiación y compara las condiciones de distintas entidades."
+              "text": "Estudia la viabilidad de cada operación con financiación y compara las condiciones de distintas entidades.",
+              "kicker": "Financiación"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -287,7 +292,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

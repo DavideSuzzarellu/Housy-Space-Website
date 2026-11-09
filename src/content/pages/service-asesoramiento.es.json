@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "trio",
       "surface": "stone",
       "band": false,
       "items": [
@@ -52,22 +54,26 @@
           "ordered": false,
           "items": [
             {
-              "title": "Si",
-              "text": "Si te conviene Te decimos con honestidad si te conviene comprar, vender o esperar."
+              "title": "Si te conviene",
+              "text": "Te decimos con honestidad si te conviene comprar, vender o esperar.",
+              "kicker": "Si"
             },
             {
-              "title": "Cómo",
-              "text": "Cómo hacerlo La estrategia adecuada para tu operación y tu situación."
+              "title": "Cómo hacerlo",
+              "text": "La estrategia adecuada para tu operación y tu situación.",
+              "kicker": "Cómo"
             },
             {
-              "title": "Cuándo",
-              "text": "Cuándo es el momento El momento oportuno según el mercado y tus plazos."
+              "title": "Cuándo es el momento",
+              "text": "El momento oportuno según el mercado y tus plazos.",
+              "kicker": "Cuándo"
             }
           ]
         }
       ]
     },
     {
+      "layout": "sit",
       "surface": "paper",
       "band": false,
       "items": [
@@ -84,28 +90,40 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "[**¿Vendo o alquilo?**Comparamos las dos opciones con números: precio de venta, renta esperable, impuestos y gastos.Compraventa e intermediación inmobiliaria →](service:venta-estrategica)"
+              "title": "¿Vendo o alquilo?",
+              "text": "Comparamos las dos opciones con números: precio de venta, renta esperable, impuestos y gastos.",
+              "href": "service:venta-estrategica",
+              "cta": "Compraventa e intermediación inmobiliaria →"
             },
             {
-              "title": "",
-              "text": "[**¿Compro ahora o espero?**Vemos el mercado de tu zona y lo que puedes financiar hoy.Asesoramiento financiero →](service:asesoramiento-financiero)"
+              "title": "¿Compro ahora o espero?",
+              "text": "Vemos el mercado de tu zona y lo que puedes financiar hoy.",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Asesoramiento financiero →"
             },
             {
-              "title": "",
-              "text": "[**He heredado una vivienda**Qué trámites hay, qué impuestos pagar y qué hacer con ella.Asesoramiento jurídico y fiscal →](service:asesoramiento-juridico-fiscal)"
+              "title": "He heredado una vivienda",
+              "text": "Qué trámites hay, qué impuestos pagar y qué hacer con ella.",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Asesoramiento jurídico y fiscal →"
             },
             {
-              "title": "",
-              "text": "[**¿Reformo antes de vender?**Qué obra suma valor y cuál no merece la pena.Reformas e interiorismo →](service:reformas-obras)"
+              "title": "¿Reformo antes de vender?",
+              "text": "Qué obra suma valor y cuál no merece la pena.",
+              "href": "service:reformas-obras",
+              "cta": "Reformas e interiorismo →"
             },
             {
-              "title": "",
-              "text": "[**Quiero cambiar de casa**Cómo coordinar la venta de la tuya y la compra de la nueva.Personal Shopper inmobiliario →](service:personal-shopper)"
+              "title": "Quiero cambiar de casa",
+              "text": "Cómo coordinar la venta de la tuya y la compra de la nueva.",
+              "href": "service:personal-shopper",
+              "cta": "Personal Shopper inmobiliario →"
             },
             {
-              "title": "",
-              "text": "[**Quiero invertir en vivienda**Qué comprar, con qué números y qué rentabilidad esperar de verdad.Inversión inmobiliaria →](service:inversion-inmobiliaria)"
+              "title": "Quiero invertir en vivienda",
+              "text": "Qué comprar, con qué números y qué rentabilidad esperar de verdad.",
+              "href": "service:inversion-inmobiliaria",
+              "cta": "Inversión inmobiliaria →"
             }
           ]
         }
@@ -152,7 +170,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No te preocupes, yo me encargo.»"
+          "text": "«No te preocupes, *yo me encargo.*»"
         },
         {
           "kind": "p",
@@ -161,6 +179,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -199,7 +218,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
@@ -40,6 +41,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -178,6 +180,7 @@
       ]
     },
     {
+      "layout": "tax",
       "surface": "paper",
       "band": false,
       "items": [
@@ -194,76 +197,91 @@
           "text": "Quién cobra cada impuesto y cuándo aparece en una operación."
         },
         {
-          "kind": "h3",
-          "text": "Ayuntamiento"
-        },
-        {
-          "kind": "p",
-          "text": "Impuestos municipales"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Plusvalía municipal",
-              "text": "Al vender, heredar o donar."
+              "kind": "h3",
+              "text": "Ayuntamiento"
             },
             {
-              "title": "IBI",
-              "text": "Cada año, como propietario."
+              "kind": "p",
+              "text": "Impuestos municipales"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Plusvalía municipal",
+                  "text": "Al vender, heredar o donar."
+                },
+                {
+                  "title": "IBI",
+                  "text": "Cada año, como propietario."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Generalitat"
-        },
-        {
-          "kind": "p",
-          "text": "Agència Tributària de Catalunya"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Transmisiones patrimoniales",
-              "text": "Al comprar una vivienda de segunda mano."
+              "kind": "h3",
+              "text": "Generalitat"
             },
             {
-              "title": "Actos jurídicos documentados",
-              "text": "Al comprar obra nueva o firmar una hipoteca."
+              "kind": "p",
+              "text": "Agència Tributària de Catalunya"
             },
             {
-              "title": "Sucesiones y donaciones",
-              "text": "Al heredar o recibir una vivienda."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Transmisiones patrimoniales",
+                  "text": "Al comprar una vivienda de segunda mano."
+                },
+                {
+                  "title": "Actos jurídicos documentados",
+                  "text": "Al comprar obra nueva o firmar una hipoteca."
+                },
+                {
+                  "title": "Sucesiones y donaciones",
+                  "text": "Al heredar o recibir una vivienda."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Estado"
-        },
-        {
-          "kind": "p",
-          "text": "Agencia Tributaria"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "IRPF: ganancia patrimonial",
-              "text": "Al vender con beneficio."
+              "kind": "h3",
+              "text": "Estado"
             },
             {
-              "title": "IRPF: rendimientos",
-              "text": "Si alquilas la vivienda."
+              "kind": "p",
+              "text": "Agencia Tributaria"
             },
             {
-              "title": "Patrimonio",
-              "text": "Según el valor de tu patrimonio."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "IRPF: ganancia patrimonial",
+                  "text": "Al vender con beneficio."
+                },
+                {
+                  "title": "IRPF: rendimientos",
+                  "text": "Si alquilas la vivienda."
+                },
+                {
+                  "title": "Patrimonio",
+                  "text": "Según el valor de tu patrimonio."
+                }
+              ]
             }
           ]
         }
@@ -305,6 +323,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -318,13 +337,13 @@
         },
         {
           "kind": "lead",
-          "text": "Un despacho de abogados y una asesoría fiscal de Barcelona con los que revisamos los aspectos legales y fiscales de nuestras operaciones."
+          "text": "Un despacho de abogados y una asesoría fiscal de Barcelona con los que revisamos los aspectos legales y fiscales de nuestras operaciones, y mucho más."
         },
         {
           "kind": "buttons",
           "items": [
             {
-              "label": "Conoce a nuestros colaboradores",
+              "label": "Por qué confiamos en ellos",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -336,17 +355,25 @@
           "items": [
             {
               "title": "ADV Advocats",
-              "text": "Despacho jurídico y fiscal Despacho de abogados en Barcelona: herencias, renta e impuestos, derecho civil, laboral y de empresa. [Visitar advadvocats.cat](https://advadvocats.cat/es/)"
+              "text": "Despacho de abogados en Barcelona: herencias, renta e impuestos, derecho civil, laboral y de empresa.",
+              "kicker": "Despacho jurídico y fiscal",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visitar advadvocats.cat"
             },
             {
               "title": "Asesoría Edac",
-              "text": "Asesoría fiscal Asesoría fiscal, contable y laboral en Barcelona: impuestos, declaraciones y trámites con Hacienda. [Visitar serviciosdac.com](https://www.serviciosdac.com/)"
+              "text": "Asesoría fiscal, contable y laboral en Barcelona: impuestos, declaraciones y trámites con Hacienda.",
+              "kicker": "Asesoría fiscal",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visitar serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -385,7 +412,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

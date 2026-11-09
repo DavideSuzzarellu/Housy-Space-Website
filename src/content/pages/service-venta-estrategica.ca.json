@@ -26,20 +26,25 @@
   },
   "sections": [
     {
+      "layout": "introLined",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "big",
-          "text": "Vendre un habitatge no és només publicar-lo."
+          "text": "Vendre un habitatge és molt més que publicar-lo."
         },
         {
           "kind": "p",
-          "text": "Com a consultors immobiliaris, primer et diem amb honestedat si et convé vendre, com fer-ho i quan. Després estudiem a fons l'immoble i la seva documentació perquè no hi hagi sorpreses en el moment de signar."
+          "text": "Abans de posar el teu habitatge a la venda, t'assessorem amb honestedat sobre si és el moment adequat, com fer-ho i quina estratègia seguir."
         },
         {
           "kind": "p",
-          "text": "Tot comença amb un [informe de valoració](service:valoracion): el valor de mercat, el preu aconsellat de sortida i l'estratègia per arribar-hi."
+          "text": "Estudiem el teu immoble, la seva documentació i el mercat perquè puguis prendre decisions amb seguretat i evitar sorpreses."
+        },
+        {
+          "kind": "p",
+          "text": "Tot comença amb un [informe de valoració](service:valoracion), on analitzem el valor de mercat del teu habitatge, recomanem un preu de sortida i definim la millor estratègia de venda."
         }
       ]
     },
@@ -95,6 +100,7 @@
       ]
     },
     {
+      "layout": "check",
       "surface": "paper",
       "band": false,
       "items": [
@@ -167,6 +173,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -187,7 +194,7 @@
             },
             {
               "kind": "p",
-              "text": "Quan diverses immobiliàries venen el mateix pis, la venda es converteix en una cursa per adjudicar-se-la. Es treballa ràpid i pitjor: prima la rapidesa i queden en segon pla la solidesa de l'operació i el preu de venda. Amb l'exclusiva, treballem el teu habitatge amb calma i amb criteri per vendre'l bé i al preu que es mereix."
+              "text": "Quan diverses agències competeixen per vendre un habitatge, la rapidesa pot imposar-se a la qualitat de l'operació. Amb l'exclusiva, prioritzem una estratègia acurada per aconseguir el millor preu i una venda segura."
             }
           ]
         },
@@ -234,7 +241,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No et preocupis, jo me n'encarrego.»"
+          "text": "«No et preocupis, *jo me n'encarrego.*»"
         },
         {
           "kind": "p",
@@ -244,6 +251,7 @@
     },
     {
       "id": "valoracion",
+      "layout": "valuation",
       "surface": "stone",
       "band": false,
       "items": [
@@ -316,6 +324,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -354,7 +363,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

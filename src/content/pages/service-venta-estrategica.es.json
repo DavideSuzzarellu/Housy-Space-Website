@@ -26,20 +26,25 @@
   },
   "sections": [
     {
+      "layout": "introLined",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "big",
-          "text": "Vender una vivienda no es solo publicarla."
+          "text": "Vender una vivienda es mucho más que publicarla."
         },
         {
           "kind": "p",
-          "text": "Como consultores inmobiliarios, primero te decimos con honestidad si te conviene vender, cómo hacerlo y cuándo. Después estudiamos a fondo el inmueble y su documentación, para que no haya sorpresas en el momento de firmar."
+          "text": "Antes de poner tu vivienda a la venta, te asesoramos con honestidad sobre si es el momento adecuado, cómo hacerlo y qué estrategia seguir."
         },
         {
           "kind": "p",
-          "text": "Todo empieza con un [informe de valoración](service:valoracion): el valor de mercado, el precio aconsejado de salida y la estrategia para llegar a él."
+          "text": "Estudiamos tu inmueble, su documentación y el mercado para que puedas tomar decisiones con seguridad y evitar sorpresas."
+        },
+        {
+          "kind": "p",
+          "text": "Todo comienza con un [informe de valoración](service:valoracion), donde analizamos el valor de mercado de tu vivienda, recomendamos un precio de salida y definimos la mejor estrategia de venta."
         }
       ]
     },
@@ -95,6 +100,7 @@
       ]
     },
     {
+      "layout": "check",
       "surface": "paper",
       "band": false,
       "items": [
@@ -167,6 +173,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -187,7 +194,7 @@
             },
             {
               "kind": "p",
-              "text": "Cuando varias inmobiliarias venden el mismo piso, la venta se convierte en una carrera por adjudicársela. Se trabaja deprisa y peor: prima la rapidez y quedan en segundo plano la solidez de la operación y el precio de venta. Con la exclusiva, trabajamos tu vivienda con calma y con criterio, para venderla bien y al precio que merece."
+              "text": "Cuando varias agencias compiten por vender una vivienda, la rapidez puede imponerse a la calidad de la operación. Con la exclusiva, priorizamos una estrategia cuidada para conseguir el mejor precio y una venta segura."
             }
           ]
         },
@@ -234,7 +241,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«No te preocupes, yo me encargo.»"
+          "text": "«No te preocupes, *yo me encargo.*»"
         },
         {
           "kind": "p",
@@ -244,6 +251,7 @@
     },
     {
       "id": "valoracion",
+      "layout": "valuation",
       "surface": "stone",
       "band": false,
       "items": [
@@ -316,6 +324,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -354,7 +363,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
         }
       ]
     }

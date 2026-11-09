@@ -321,3 +321,8 @@ html body ::placeholder {
   padding: 0;
   list-style: none;
 }
+
+/* Service pages close with their own "Hablemos" block (reference `body:has(.svp-cta) .ftr-cta`). */
+body:has([data-service-cta]) [data-footer-cta] {
+  display: none;
+}

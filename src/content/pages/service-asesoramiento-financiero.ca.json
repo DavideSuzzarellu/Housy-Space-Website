@@ -26,6 +26,7 @@
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -44,6 +45,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -211,6 +213,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "stone",
       "band": false,
       "items": [
@@ -230,7 +233,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Coneix els nostres col·laboradors",
+              "label": "Per què confiem en ells",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -242,13 +245,15 @@
           "items": [
             {
               "title": "Broker financer",
-              "text": "Finançament Estudia la viabilitat de cada operació amb finançament i compara les condicions de diverses entitats."
+              "text": "Estudia la viabilitat de cada operació amb finançament i compara les condicions de diverses entitats.",
+              "kicker": "Finançament"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -287,7 +292,7 @@
         },
         {
           "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
         }
       ]
     }

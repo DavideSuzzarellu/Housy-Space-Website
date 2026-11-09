@@ -1,0 +1,39 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+
+/** Path through the next services (reference `.sx-route-l`): verb, service, arrow between steps. */
+interface Props {
+  locale: Locale;
+  list: ItemOf<"list">;
+}
+
+const { locale, list } = Astro.props;
+const ARROW =
+  "min-[860px]:not-last:after:absolute min-[860px]:not-last:after:top-1/2 min-[860px]:not-last:after:-right-[11px] min-[860px]:not-last:after:z-1 min-[860px]:not-last:after:-mt-[11px] min-[860px]:not-last:after:grid min-[860px]:not-last:after:size-[22px] min-[860px]:not-last:after:place-items-center min-[860px]:not-last:after:rounded-full min-[860px]:not-last:after:bg-turquoise min-[860px]:not-last:after:text-[10px] min-[860px]:not-last:after:text-ink min-[860px]:not-last:after:content-['→']";
+---
+
+<ol class="grid gap-3 min-[860px]:grid-cols-4 min-[860px]:gap-0">
+  {list.items.map((entry) => (
+    <li
+      data-reveal
+      class:list={[
+        "relative min-[860px]:not-first:border-l min-[860px]:not-first:border-line-strong",
+        ARROW,
+      ]}
+    >
+      <a
+        href={entry.href === undefined ? undefined : resolveContentHref(entry.href, locale)}
+        class="block h-full bg-card px-6.5 py-6 text-inherit no-underline transition-colors duration-350 hover:bg-card-hover focus-visible:bg-card-hover"
+      >
+        <small class="mb-3 block font-heading text-[clamp(28px,calc(3vw-2px),38px)] leading-none text-accent">
+          {entry.kicker}
+        </small>
+        <b class="block text-xs leading-[1.5] font-medium tracking-[0.12em] text-fg">
+          {entry.title}
+        </b>
+      </a>
+    </li>
+  ))}
+</ol>

@@ -59,10 +59,52 @@ export type FormField = z.infer<typeof formFieldSchema>;
 export type FormLeaf = z.infer<typeof formLeafSchema>;
 
 const textItem = <K extends string>(kind: K) => z.object({ kind: z.literal(kind), text }).strict();
-const listItems = z.array(z.object({ title: z.string(), text: z.string() }).strict());
+
+/** Layouts of a service page section (reference blocks `sx-*`); the others follow from their items. */
+export const SECTION_LAYOUTS = [
+  "intro",
+  "introLined",
+  "check",
+  "cards",
+  "split",
+  "trio",
+  "sit",
+  "route",
+  "tax",
+  "colab",
+  "call",
+  "cmp",
+  "doc",
+  "swatches",
+  "stepsList",
+  "valuation",
+  "cta",
+] as const;
+export type SectionLayout = (typeof SECTION_LAYOUTS)[number];
 
 /** `image` is Astro's `image()` from the collection context; tests pass a stand-in. */
 export function pageSchema<I extends z.ZodType>(image: () => I) {
+  /**
+   * One entry of a list. Optional parts, by layout: `kicker` (small label above the title, or the
+   * number of a report line), `href` + `cta` (the entry is a link / has an outbound link),
+   * `color` (swatch of a material), `logo` (collaborator).
+   */
+  const listItems = z.array(
+    z
+      .object({
+        title: z.string(),
+        text: z.string(),
+        kicker: text.optional(),
+        href: text.optional(),
+        cta: text.optional(),
+        color: z
+          .string()
+          .regex(/^#[0-9a-f]{6}$/i)
+          .optional(),
+        logo: image().optional(),
+      })
+      .strict(),
+  );
   const leaf = z.discriminatedUnion("kind", [
     textItem("tag"),
     textItem("h2"),
@@ -127,6 +169,7 @@ export function pageSchema<I extends z.ZodType>(image: () => I) {
         z
           .object({
             id: text.optional(),
+            layout: z.enum(SECTION_LAYOUTS).optional(),
             surface: z.enum(["paper", "stone", "dark"]),
             band: z.boolean(),
             items: z.array(item),

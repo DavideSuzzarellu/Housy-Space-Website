@@ -26,20 +26,25 @@
   },
   "sections": [
     {
+      "layout": "introLined",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "big",
-          "text": "Vendere un immobile non significa soltanto pubblicarlo."
+          "text": "Vendere un immobile è molto più che pubblicarlo."
         },
         {
           "kind": "p",
-          "text": "Come consulenti immobiliari, prima di tutto ti diciamo onestamente se conviene vendere, come farlo e quando. Poi studiamo l'immobile e la sua documentazione in modo approfondito, per evitare sorprese al momento della firma."
+          "text": "Prima di mettere in vendita il tuo immobile, ti consigliamo con onestà se è il momento giusto, come procedere e quale strategia seguire."
         },
         {
           "kind": "p",
-          "text": "Tutto inizia con una [perizia di valutazione](service:valoracion): il valore di mercato, il prezzo di uscita consigliato e la strategia per raggiungerlo."
+          "text": "Studiamo il tuo immobile, la sua documentazione e il mercato, perché tu possa decidere con sicurezza ed evitare sorprese."
+        },
+        {
+          "kind": "p",
+          "text": "Tutto inizia con una [perizia di valutazione](service:valoracion), in cui analizziamo il valore di mercato del tuo immobile, consigliamo un prezzo di uscita e definiamo la migliore strategia di vendita."
         }
       ]
     },
@@ -95,6 +100,7 @@
       ]
     },
     {
+      "layout": "check",
       "surface": "paper",
       "band": false,
       "items": [
@@ -167,6 +173,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -187,7 +194,7 @@
             },
             {
               "kind": "p",
-              "text": "Quando più agenzie vendono lo stesso immobile, la vendita diventa una corsa ad aggiudicarsela. Si lavora in fretta e peggio: conta la rapidità e passano in secondo piano la solidità dell'operazione e il prezzo di vendita. Con l'esclusiva, lavoriamo il tuo immobile con calma e con criterio, per venderlo bene e al prezzo che merita."
+              "text": "Quando più agenzie si contendono la vendita di un immobile, la rapidità può prevalere sulla qualità dell'operazione. Con l'esclusiva, diamo priorità a una strategia curata per ottenere il miglior prezzo e una vendita sicura."
             }
           ]
         },
@@ -234,7 +241,7 @@
       "items": [
         {
           "kind": "bandQuote",
-          "text": "«Non preoccuparti, ci penso io.»"
+          "text": "«Non preoccuparti, *ci penso io.*»"
         },
         {
           "kind": "p",
@@ -244,6 +251,7 @@
     },
     {
       "id": "valoracion",
+      "layout": "valuation",
       "surface": "stone",
       "band": false,
       "items": [
@@ -316,6 +324,7 @@
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -354,7 +363,7 @@
         },
         {
           "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Onorari e condizioni: in attesa di conferma."
+          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
         }
       ]
     }
