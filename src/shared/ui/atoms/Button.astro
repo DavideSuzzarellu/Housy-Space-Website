@@ -3,13 +3,12 @@ import ArrowUpRight from "./ArrowUpRight.astro";
 
 /**
  * Link styled as a button (CTAs navigate), or a form submit button with the same look.
- * Petrol fill sweeps in on hover/focus.
- * Follows the surface roles: white text on petrol fill across all surfaces.
+ * Turquoise fill sweeps in from the left on hover/focus with ink text (reference `.btn`).
  */
 interface Common {
-  variant?: "outline" | "solid";
-  /** `sm`: compact control of proposal v3 (newsletter, 34 px). */
-  size?: "sm" | "md" | "lg";
+  variant?: "outline" | "solid" | "paper";
+  /** `sm`: compact control of proposal v3 (newsletter, 34 px); `xl`: 68 px home CTA. */
+  size?: "sm" | "md" | "lg" | "xl";
   /** Trailing up-right arrow (main CTAs of proposal v3). */
   arrow?: boolean;
   class?: string;
@@ -50,18 +49,22 @@ const {
 const VARIANTS = {
   outline: "border-current text-inherit",
   solid: "border-fg bg-fg text-canvas",
+  /** Paper fill with dark text on any dark block or photo, whatever the surface roles say. */
+  paper: "border-paper bg-paper text-dark",
 } as const;
 
 const SIZES = {
   sm: "min-h-8.5 px-4.5 text-[0.625rem]",
   md: "min-h-11 px-6.5 py-4 text-xs",
   lg: "min-h-11 px-10 py-5 text-[0.8125rem] leading-snug",
+  /** Home CTAs: 68 px tall, padding and type scale with the viewport. */
+  xl: "min-h-17 px-[clamp(1.625rem,3.4vw,3.25rem)] py-5 text-[clamp(0.75rem,1.05vw,0.875rem)] leading-snug",
 } as const;
 
 const classes = [
   "relative isolate inline-flex cursor-pointer items-center justify-center gap-3.5 overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
-  "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-petrol before:transition-transform before:duration-450 before:ease-brand",
-  "hover:border-petrol hover:text-white hover:before:scale-x-100 focus-visible:border-petrol focus-visible:text-white focus-visible:before:scale-x-100",
+  "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-turquoise before:transition-transform before:duration-450 before:ease-brand",
+  "hover:border-turquoise hover:text-ink hover:before:scale-x-100 focus-visible:border-turquoise focus-visible:text-ink focus-visible:before:scale-x-100",
   VARIANTS[variant],
   SIZES[size],
   className,

@@ -22,6 +22,7 @@
   --color-turquoise: #21cec5;
   --color-turquoise-deep: #058c93;
   --color-dark: #162b2a;
+  --color-paper: #fcfbf8;
 
   /*
    * Role tokens, light by default. `.surface-dark` and `.surface-stone` redefine them for a
