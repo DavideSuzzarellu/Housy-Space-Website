@@ -74,8 +74,8 @@ const items = getMainNavigation(locale);
                   class:list={[
                     "block no-underline transition-colors hover:text-teal focus-visible:text-teal",
                     item.secondary
-                      ? "min-h-11 py-3 text-xs leading-snug font-medium tracking-[0.14em] uppercase"
-                      : "min-h-15 flex-1 py-3.75 text-[clamp(1.6875rem,7.4vw,2.125rem)] leading-tight",
+                      ? "min-h-11 py-3 text-[0.625rem] leading-snug font-medium tracking-[0.1em] uppercase"
+                      : "flex min-h-14.25 flex-1 items-center py-3 text-[0.9375rem] leading-tight tracking-[0.1em]",
                   ]}
                 >
                   {item.label}
@@ -87,7 +87,7 @@ const items = getMainNavigation(locale);
                     aria-expanded="false"
                     aria-controls={groupId}
                     aria-label={formatMessage(t.a11y.toggleGroup, { label: item.label })}
-                    class="grid size-12 flex-none cursor-pointer place-items-center border border-fg/10 transition-colors aria-expanded:border-teal aria-expanded:bg-teal/10"
+                    class="grid size-10.5 flex-none cursor-pointer place-items-center rounded-full bg-fg/6 transition-colors aria-expanded:bg-teal/15"
                   >
                     <span
                       aria-hidden="true"

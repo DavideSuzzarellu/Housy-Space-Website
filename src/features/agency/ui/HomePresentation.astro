@@ -48,7 +48,7 @@ const { locale, id, content } = Astro.props;
             {content.headingSecond}
           </span>
         </h1>
-        <div data-reveal class="mt-4" style="--reveal-delay: 1.05s">
+        <div data-reveal class="min-[760px]:mt-4" style="--reveal-delay: 1.05s">
           <Button
             href={getLocalizedPath("about", locale)}
             variant="solid"
