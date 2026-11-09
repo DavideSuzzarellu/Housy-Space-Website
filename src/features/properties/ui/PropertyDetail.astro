@@ -6,6 +6,7 @@ import {
   presentMetaLine,
   presentPhotos,
 } from "@/features/properties/application/propertyFacts";
+import { withBase } from "@/shared/lib/basePath";
 import {
   getPropertySheetFileName,
   getPropertySheetPdfPath,
@@ -216,7 +217,7 @@ const metaLine = presentMetaLine(property, operation, locale);
         />
         <!-- Generated at build time from the property sheet page (scripts/build-property-sheets.ts). -->
         <Button
-          href={getPropertySheetPdfPath(property, operation, locale)}
+          href={withBase(getPropertySheetPdfPath(property, operation, locale))}
           download={getPropertySheetFileName(property)}
           class="mt-2.5 w-full"
         >
