@@ -74,6 +74,60 @@ for (const locale of LOCALES) {
       expect(page.url()).toBe(url);
     });
 
+    test("services carousel shows seven panels in a circle; the others are skipped by Tab", async ({
+      page,
+    }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      await expect(panels).toHaveCount(9);
+      await expect(panels.locator("a:visible")).toHaveCount(7);
+      await expect(panels.first()).toHaveAttribute("data-pos", "0");
+      await expect(panels.nth(4)).toHaveAttribute("data-pos", "hr");
+      await expect(panels.nth(4).locator("a")).toBeHidden();
+    });
+
+    test("services carousel turns round with its arrows and the keyboard", async ({ page }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      const rail = page.locator("[data-rail-wrap]");
+      await rail.scrollIntoViewIfNeeded();
+      await rail.locator("[data-rail-next]").click();
+      await expect(panels.nth(1)).toHaveAttribute("data-active", "true");
+      await rail.locator("[data-rail-prev]").click();
+      await rail.locator("[data-rail-prev]").click();
+      // Circular: before the first comes the last.
+      await expect(panels.nth(8)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(8)).toHaveAttribute("data-pos", "0");
+
+      await panels.nth(8).locator("a").focus();
+      await page.keyboard.press("ArrowRight");
+      await expect(panels.nth(0)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(0).locator("a")).toBeFocused();
+    });
+
+    test("services carousel can be paused and resumed (WCAG 2.2.2)", async ({ page }, testInfo) => {
+      test.skip(
+        testInfo.project.name.includes("reduced-motion"),
+        "No auto-advance, so no pause button, under reduced motion",
+      );
+      const rail = page.locator("[data-rail-wrap]");
+      const list = rail.locator("[data-services-accordion]");
+      const toggle = rail.locator("[data-rail-toggle]");
+      await rail.scrollIntoViewIfNeeded();
+      await expect(toggle).toBeVisible();
+      const pauseLabel = await toggle.getAttribute("aria-label");
+      await toggle.click();
+      await expect(list).toHaveAttribute("data-held", "");
+      expect(await toggle.getAttribute("aria-label")).not.toBe(pauseLabel);
+      await toggle.click();
+      await expect(toggle).toHaveAttribute("aria-label", pauseLabel ?? "");
+    });
+
+    test("stats count up to the figures of the content", async ({ page }) => {
+      await page.locator("#stats-heading").scrollIntoViewIfNeeded();
+      await expect(page.locator("[data-count]")).toHaveText(["35", "100", "60", "9"], {
+        timeout: 6_000,
+      });
+    });
+
     test("districts carousel moves with its buttons", async ({ page }) => {
       const rail = page.locator("[data-rail]");
       await rail.scrollIntoViewIfNeeded();

@@ -80,6 +80,35 @@ test.describe("header menu fits the available width", () => {
   });
 });
 
+test.describe("header over the hero", () => {
+  test.use({ viewport: { width: 1600, height: 900 } });
+
+  test("floats dark over the hero and becomes light glass after scrolling", async ({ page }) => {
+    await page.goto(getLocalizedPath("home", "es"));
+    const header = page.locator("[data-header]");
+    await expect(header).toHaveAttribute("data-theme", "overlay");
+    await expect(header).toHaveClass(/surface-dark/);
+    await expect(header).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+
+    await page.evaluate(() => window.scrollTo(0, 600));
+    await expect(header).toHaveAttribute("data-theme", "solid");
+    await expect(header).not.toHaveClass(/surface-dark/);
+    // Light glass bar: the page colour shows through, never a dark bar.
+    const [red = 0, green = 0, blue = 0] =
+      (await header.evaluate((node) => getComputedStyle(node).backgroundColor))
+        .match(/\d+/g)
+        ?.map(Number) ?? [];
+    expect(Math.min(red, green, blue)).toBeGreaterThan(200);
+  });
+
+  test("is a light bar from the start on pages without a hero", async ({ page }) => {
+    await page.goto(getLocalizedPath("sale", "es"));
+    const header = page.locator("[data-header]");
+    await expect(header).toHaveAttribute("data-theme", "solid");
+    await expect(header).not.toHaveClass(/surface-dark/);
+  });
+});
+
 test.describe("desktop main menu", () => {
   test.use({ viewport: { width: 1600, height: 900 } });
 

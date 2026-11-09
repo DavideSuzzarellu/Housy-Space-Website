@@ -70,6 +70,34 @@ test.describe("scroll progress bar", () => {
   });
 });
 
+test.describe("headline and heading rule", () => {
+  test("the presentation headline is split into words without changing its text", async ({
+    page,
+  }) => {
+    await skipIntro(page);
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await page.goto(home);
+    const heading = page.locator("#presentation-heading");
+    const words = await heading.evaluate((node) => (node.textContent ?? "").trim().split(/\s+/));
+    await expect(heading.locator(".w")).toHaveCount(words.length);
+    expect(
+      await heading.locator(".w").evaluateAll((nodes) => nodes.map((node) => node.textContent)),
+    ).toEqual(words);
+  });
+
+  test("section h2 draws its 64px accent rule when revealed", async ({ page }) => {
+    await skipIntro(page);
+    await page.goto(home);
+    const heading = page.locator("#services-heading");
+    await heading.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() => heading.evaluate((node) => getComputedStyle(node, "::after").width), {
+        timeout: 5_000,
+      })
+      .toBe("64px");
+  });
+});
+
 test.describe("reduced motion", () => {
   test.use({ contextOptions: { reducedMotion: "reduce" } });
 
@@ -79,6 +107,8 @@ test.describe("reduced motion", () => {
     const servicesHeading = page.locator("#services-heading");
     await expect(servicesHeading).toHaveCSS("opacity", "1");
     await expect(servicesHeading).toHaveCSS("transform", "none");
+    // No word splitting without motion: the headline stays one plain text.
+    await expect(page.locator("#presentation-heading .w")).toHaveCount(0);
     await expect(page.locator('[data-reveal="lines"] [data-line]').first()).toHaveCSS(
       "transform",
       "none",
