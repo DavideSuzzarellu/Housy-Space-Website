@@ -19,7 +19,7 @@ interface Props {
 const { title, unit, items, source, sourceUrl, locale } = Astro.props;
 const max = Math.max(...items.map((item) => item.value));
 const format = figureFormat(locale);
-const TONES = { main: "bg-accent", second: "bg-taupe", third: "bg-green-grey" } as const;
+const TONES = { main: "bg-accent", second: "bg-taupe", third: "bg-muted" } as const;
 ---
 
 <figure class="m-0 border border-line bg-canvas p-4">

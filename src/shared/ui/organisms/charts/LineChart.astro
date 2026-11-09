@@ -43,9 +43,9 @@ const path = (points: readonly (readonly [number, number])[]) =>
 const TONES = {
   main: "stroke-accent",
   second: "stroke-taupe",
-  third: "stroke-green-grey",
+  third: "stroke-muted",
 } as const;
-const SWATCH = { main: "bg-accent", second: "bg-taupe", third: "bg-green-grey" } as const;
+const SWATCH = { main: "bg-accent", second: "bg-taupe", third: "bg-muted" } as const;
 const GRID = [0, 0.25, 0.5, 0.75, 1].map((step) => Math.round(maxY * step));
 const YEARS = [minX, Math.round((minX + maxX) / 2), maxX];
 const hasProvisional = series.some((line) => line.provisional);

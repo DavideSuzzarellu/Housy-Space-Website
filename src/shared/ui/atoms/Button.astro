@@ -3,8 +3,8 @@ import ArrowUpRight from "./ArrowUpRight.astro";
 
 /**
  * Link styled as a button (CTAs navigate), or a form submit button with the same look.
- * Turquoise fill sweeps in on hover/focus.
- * Follows the surface roles: dark ink on light sections, light on `.surface-dark` (§8).
+ * Petrol fill sweeps in on hover/focus.
+ * Follows the surface roles: white text on petrol fill across all surfaces.
  */
 interface Common {
   variant?: "outline" | "solid";
@@ -60,8 +60,8 @@ const SIZES = {
 
 const classes = [
   "relative isolate inline-flex cursor-pointer items-center justify-center gap-3.5 overflow-hidden border text-center font-sans font-medium tracking-[0.12em] uppercase no-underline transition-colors duration-350",
-  "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-turquoise before:transition-transform before:duration-450 before:ease-brand",
-  "hover:border-turquoise hover:text-ink hover:before:scale-x-100 focus-visible:border-turquoise focus-visible:text-ink focus-visible:before:scale-x-100",
+  "before:absolute before:inset-0 before:-z-10 before:origin-left before:scale-x-0 before:bg-petrol before:transition-transform before:duration-450 before:ease-brand",
+  "hover:border-petrol hover:text-white hover:before:scale-x-100 focus-visible:border-petrol focus-visible:text-white focus-visible:before:scale-x-100",
   VARIANTS[variant],
   SIZES[size],
   className,
