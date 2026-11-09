@@ -107,6 +107,82 @@
     .motion-ready [data-reveal="lines"]:not(.is-revealed) [data-line] {
       transform: translateY(112%);
     }
+
+    /*
+     * Word-by-word headline (words.ts): the heading itself stays put, its words animate.
+     * `rise` lines lift and un-blur; `type` lines are wiped in from the left by a mask.
+     * Until words.ts has split the text the heading is hidden, so nothing flashes.
+     */
+    .motion-ready [data-reveal="words"]:not(.is-revealed) {
+      transform: none;
+    }
+
+    .motion-ready [data-reveal="words"]:not([data-words-ready]):not(.is-revealed) {
+      opacity: 0;
+    }
+
+    .motion-ready [data-reveal="words"]:not(.is-revealed) {
+      opacity: 1;
+    }
+
+    [data-reveal="words"] .w {
+      display: inline-block;
+    }
+
+    .motion-ready [data-reveal="words"] [data-words-line]:not([data-words-line="type"]) .w {
+      transition:
+        opacity 1s var(--ease-brand),
+        translate 1.3s var(--ease-brand),
+        filter 1.1s var(--ease-brand);
+      transition-delay: calc(0.15s + var(--i, 0) * 0.11s);
+    }
+
+    .motion-ready
+      [data-reveal="words"]:not(.is-revealed)
+      [data-words-line]:not([data-words-line="type"])
+      .w {
+      opacity: 0;
+      translate: 0 0.34em;
+      filter: blur(9px);
+    }
+
+    .motion-ready [data-reveal="words"] [data-words-line="type"] .w {
+      padding: 0.2em 0.16em;
+      margin: -0.2em -0.16em;
+      mask-image: linear-gradient(90deg, #000 38%, transparent 62%);
+      mask-size: 280% 100%;
+      mask-repeat: no-repeat;
+      mask-position: 0 0;
+      transition:
+        mask-position 1s cubic-bezier(0.45, 0.05, 0.3, 1),
+        translate 1.5s var(--ease-brand);
+      transition-delay: calc(1s + var(--i, 0) * 0.17s);
+    }
+
+    .motion-ready [data-reveal="words"]:not(.is-revealed) [data-words-line="type"] .w {
+      mask-position: 100% 0;
+      translate: -0.1em 0;
+    }
+  }
+
+  /* Short accent rule under every revealed h2 (reference v2.css). Opt out with data-no-rule. */
+  h2[data-reveal]:not([data-no-rule])::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 2px;
+    margin-top: 1rem;
+    background: var(--color-turquoise);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .motion-ready h2[data-reveal]:not([data-no-rule])::after {
+      transition: width 1.2s var(--ease-brand) 0.35s;
+    }
+
+    .motion-ready h2[data-reveal]:not([data-no-rule]):not(.is-revealed)::after {
+      width: 0;
+    }
   }
 }
 

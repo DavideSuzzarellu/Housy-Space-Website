@@ -89,11 +89,15 @@ const { locale, id, content } = Astro.props;
     <div class="grid gap-[clamp(1.75rem,3vw,2.5rem)] min-[900px]:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] min-[900px]:items-end">
       <h1
         id="presentation-heading"
-        data-reveal
+        data-reveal="words"
         class="font-sans font-normal uppercase tracking-[-0.005em] leading-[1.06] text-[clamp(2.5rem,4.9vw,4.625rem)]"
       >
-        <span class="block text-balance">{content.headingFirst}</span>
-        <span class="block italic text-muted text-balance">{content.headingSecond}</span>
+        <span data-words-line="rise" class="block text-balance">
+          {content.headingFirst}
+        </span>
+        <span data-words-line="type" class="block italic text-muted text-balance">
+          {content.headingSecond}
+        </span>
       </h1>
       <div data-reveal class="min-[900px]:pb-1">
         <Button href={getLocalizedPath("about", locale)} variant="solid" size="lg" arrow>
