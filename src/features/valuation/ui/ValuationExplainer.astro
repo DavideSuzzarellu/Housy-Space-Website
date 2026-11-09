@@ -7,11 +7,10 @@ import { getLocalizedPath } from "@/shared/i18n/routes";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
 import Button from "@/shared/ui/atoms/Button.astro";
 import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
-import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
-import Section from "@/shared/ui/molecules/Section.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 
 /**
- * Valuation banner over a full-bleed photo. The valuation itself is an external iframe on the
+ * Valuation banner: full-bleed photo with the text on its plain left wall (stacked text-then-photo under 900 px). The valuation itself is an external iframe on the
  * valuation page: this site never computes figures (AGENTS.md §6 item 12).
  */
 interface Props {
@@ -23,41 +22,43 @@ const { locale, content } = Astro.props;
 const copy = getDictionary(locale).home.valuation;
 ---
 
-<Section
+<section
   id="valoracion"
-  labelledBy="valuation-heading"
-  name="valuation"
-  spacing="spacious"
-  surface="dark"
-  class="grid min-h-[clamp(27.5rem,50vw,38.75rem)] items-center overflow-hidden"
+  aria-labelledby="valuation-heading"
+  data-section="valuation"
+  class="surface-dark relative isolate flex flex-col overflow-hidden bg-canvas min-[900px]:grid min-[900px]:min-h-[clamp(27.5rem,50vw,38.75rem)] min-[900px]:items-center"
 >
-  <figure slot="background" class="absolute inset-0 -z-10 m-0">
+  <figure class="relative order-2 m-0 aspect-video after:absolute after:inset-x-0 after:top-0 after:h-[30%] after:bg-linear-to-b after:from-canvas after:to-canvas/0 after:content-[''] max-[599px]:aspect-[4/5] min-[900px]:absolute min-[900px]:inset-0 min-[900px]:-z-10 min-[900px]:aspect-auto min-[900px]:after:hidden">
     <Picture
       {...PHOTO_PICTURE}
       src={content.image}
       alt={content.imageAlt}
-      widths={[800, 1400]}
+      widths={[720, 1280, 1855, 2880]}
       sizes="100vw"
-      class="size-full object-cover"
+      class="size-full object-cover object-[65%_50%] min-[600px]:object-[62%_50%] min-[900px]:object-[0%_50%]"
     />
     <span
       aria-hidden="true"
-      class="absolute inset-0 bg-linear-to-b from-ink/35 to-ink/80 md:bg-linear-to-r md:from-ink/80 md:via-ink/50 md:to-ink/10"
+      class="absolute inset-0 hidden bg-linear-to-r from-ink/60 via-ink/40 via-30% to-ink/0 to-47% min-[900px]:block"
     ></span>
-    <figcaption class="absolute right-4 bottom-2.5">
+    <figcaption class="absolute right-4 bottom-2.5 z-1 min-[900px]:right-auto min-[900px]:left-[clamp(1.5rem,4.5vw,4.5rem)]">
       <MediaCredit tone="onImage">{copy.caption}</MediaCredit>
     </figcaption>
   </figure>
-  <SectionHeading id="valuation-heading" heading={content.heading} size="lg" class="max-w-[13em]" />
-  <p
-    data-reveal
-    class="mt-4 mb-[clamp(1.625rem,3vw,2.375rem)] max-w-[34ch] text-[clamp(1rem,1.3vw,1.25rem)] leading-normal text-fg/90"
-  >
-    {content.lead}
-  </p>
-  <div data-reveal>
-    <Button href={getLocalizedPath("valuation", locale)} variant="paper" size="xl" arrow>
-      {content.ctaLabel}
-    </Button>
+  <div class="order-1 mx-auto w-full max-w-280 px-5.5 pt-[clamp(3rem,8vw,4.5rem)] pb-[clamp(1.75rem,5vw,2.5rem)] min-[900px]:m-0 min-[900px]:max-w-none min-[900px]:py-[clamp(4.375rem,8vw,7.5rem)] min-[900px]:pr-5.5 min-[900px]:pl-[clamp(1.5rem,4.5vw,4.5rem)]">
+    <div data-reveal class="min-[900px]:max-w-[min(43vw,760px)]">
+      <h2
+        id="valuation-heading"
+        class="mb-[clamp(0.875rem,1.6vw,1.25rem)] max-w-[13em] text-[clamp(1.875rem,9vw,3.75rem)] leading-[1.04] text-fg min-[900px]:max-w-none min-[900px]:text-[clamp(1.875rem,4.2vw,4.5rem)] [&_em]:block"
+      >
+        <Emphasis text={content.heading} />
+      </h2>
+      <p class="mb-[clamp(1.625rem,3vw,2.375rem)] max-w-[32ch] text-[clamp(1.0625rem,2.6vw,1.375rem)] leading-normal text-fg/90 min-[900px]:text-[clamp(1.0625rem,1.7vw,1.625rem)]">
+        {content.lead}
+      </p>
+      <Button href={getLocalizedPath("valuation", locale)} variant="paper" size="xl" arrow>
+        {content.ctaLabel}
+      </Button>
+    </div>
   </div>
-</Section>
+</section>
