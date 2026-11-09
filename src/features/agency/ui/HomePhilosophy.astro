@@ -4,6 +4,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
+import { splitQuote } from "./quote";
 
 /** The company's motto, large, with a CTA to the philosophy on the about page. */
 interface Props {
@@ -12,30 +13,54 @@ interface Props {
 }
 
 const { locale, content } = Astro.props;
+const first = splitQuote(content.quoteFirst);
+const second = splitQuote(content.quoteSecond);
 ---
 
-<Section id="filosofia" labelledBy="philosophy-heading" name="philosophy" spacing="spacious">
-  <div class="grid items-center gap-[clamp(1.875rem,4vw,3rem)] lg:grid-cols-[minmax(0,1fr)_auto]">
+<Section id="filosofia" labelledBy="philosophy-heading" name="philosophy" spacing="roomy">
+  <div class="grid gap-[clamp(1.875rem,3.6vw,2.75rem)] min-[960px]:grid-cols-[minmax(0,1fr)_auto] min-[960px]:items-center min-[960px]:gap-x-[clamp(3rem,6vw,6rem)]">
     <div>
+      <!-- Each line slides up inside its own mask (the shared "lines" reveal); the opening mark hangs outside the block. -->
       <h2
         id="philosophy-heading"
-        data-reveal
+        data-reveal="lines"
         data-no-rule
-        class="font-sans font-black uppercase tracking-[0.03em] leading-[1.06] text-[clamp(2.125rem,4.6vw,4.125rem)]"
+        class="mt-[clamp(1.125rem,2.2vw,1.75rem)] text-[clamp(2.125rem,4.6vw,4.125rem)] leading-[1.06] font-black tracking-[0.03em] text-fg uppercase"
       >
-        <span class="block">{content.quoteFirst}</span>
-        <span class="block font-normal">{content.quoteSecond}</span>
+        <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em] min-[1180px]:-ml-[0.5em] min-[1180px]:pl-[0.5em]">
+          <span data-line class="block" style="--line-index: 0">
+            {first.lead !== "" && (
+              <span class="mr-[0.05em] min-[1180px]:-ml-[0.46em]">{first.lead}</span>
+            )}
+            {first.body}
+            {first.trail}
+          </span>
+        </span>
+        <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
+          <span data-line class="block" style="--line-index: 1">
+            {second.lead}
+            <em class="text-accent">{second.body}</em>
+            <span class="font-normal">{second.trail}</span>
+          </span>
+        </span>
       </h2>
       <p
         data-reveal
-        class="mt-[clamp(1.375rem,2.6vw,2rem)] font-sans font-normal text-[clamp(1.125rem,calc(1.8vw_-_2px),1.4375rem)] leading-[1.3]"
+        style="--reveal-delay: 0.15s"
+        class="mt-[clamp(1.375rem,2.6vw,2rem)] text-[clamp(1.125rem,calc(1.8vw-2px),1.4375rem)] leading-[1.3] text-fg"
       >
-        <span class="block text-muted">{content.subLead}</span>
+        <span class="block text-taupe-tx">{content.subLead}</span>
         {content.sub}
       </p>
     </div>
-    <div data-reveal>
-      <Button href={getLocalizedPath("about", locale)} variant="solid" arrow>
+    <div data-reveal style="--reveal-delay: 0.25s" class="grid min-[960px]:justify-items-start">
+      <Button
+        href={getLocalizedPath("about", locale)}
+        variant="solid"
+        size="wide"
+        arrow
+        class="shadow-[0_18px_40px_color-mix(in_srgb,var(--color-fg)_10%,transparent)] max-[479px]:w-full"
+      >
         {content.primaryCta}
       </Button>
     </div>

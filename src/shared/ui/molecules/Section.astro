@@ -7,7 +7,7 @@ interface Props {
   labelledBy: string;
   /** Stable hook for tests/analytics (e.g. "services"). */
   name: string;
-  spacing?: "default" | "spacious";
+  spacing?: "default" | "roomy" | "spacious";
   surface?: "paper" | "stone" | "dark";
   class?: string;
 }
@@ -23,6 +23,7 @@ const {
 
 const SPACING = {
   default: "py-[clamp(2.75rem,5vw,4.125rem)]",
+  roomy: "py-[clamp(4rem,7.4vw,7rem)]",
   spacious: "py-[clamp(4.5rem,8vw,7.5rem)]",
 } as const;
 
