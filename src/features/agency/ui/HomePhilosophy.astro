@@ -17,7 +17,7 @@ const first = splitQuote(content.quoteFirst);
 const second = splitQuote(content.quoteSecond);
 ---
 
-<Section id="filosofia" labelledBy="philosophy-heading" name="philosophy" spacing="roomy">
+<Section id="filosofia" labelledBy="philosophy-heading" name="philosophy" spacing="default">
   <div class="grid gap-[clamp(1.875rem,3.6vw,2.75rem)] min-[960px]:grid-cols-[minmax(0,1fr)_auto] min-[960px]:items-center min-[960px]:gap-x-[clamp(3rem,6vw,6rem)]">
     <div>
       <!-- Each line slides up inside its own mask (the shared "lines" reveal); the opening mark hangs outside the block. -->
@@ -25,7 +25,7 @@ const second = splitQuote(content.quoteSecond);
         id="philosophy-heading"
         data-reveal="lines"
         data-no-rule
-        class="mt-[clamp(1.125rem,2.2vw,1.75rem)] text-[clamp(2.125rem,4.6vw,4.125rem)] leading-[1.06] font-black tracking-[0.03em] text-fg uppercase"
+        class="text-[clamp(2.125rem,4.6vw,4.125rem)] leading-[1.06] font-black tracking-[0.03em] text-fg uppercase"
       >
         <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em] min-[1180px]:-ml-[0.5em] min-[1180px]:pl-[0.5em]">
           <span data-line class="block" style="--line-index: 0">
@@ -59,7 +59,7 @@ const second = splitQuote(content.quoteSecond);
         variant="solid"
         size="wide"
         arrow
-        class="leading-[1.2] shadow-[0_18px_40px_color-mix(in_srgb,var(--color-fg)_10%,transparent)] max-[479px]:w-full [&_svg]:h-3 [&_svg]:w-6.5"
+        class="shadow-[0_18px_40px_color-mix(in_srgb,var(--color-fg)_10%,transparent)] max-[479px]:w-full"
       >
         {content.primaryCta}
       </Button>

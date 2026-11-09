@@ -172,7 +172,7 @@ const SIDE = 3;
               class="absolute inset-0 flex flex-col items-center justify-between py-5 text-[#f5f2eb] transition-opacity delay-200 duration-300 group-data-[active=true]/panel:opacity-0 group-data-[active=true]/panel:delay-0 min-[769px]:py-6"
             >
               <span class="text-[0.6875rem] font-bold text-taupe">{panel.number}</span>
-              <span class="rail-vertical max-h-[calc(100%-2.5rem)] rotate-180 overflow-hidden text-base font-bold tracking-[0.01em] uppercase [writing-mode:vertical-rl] max-[380px]:text-[0.9375rem] min-[769px]:max-h-[calc(100%-4.5rem)] min-[769px]:max-w-[calc(100%-1.5rem)] min-[769px]:leading-[1.18]">
+              <span class="rail-vertical max-h-[calc(100%-2.5rem)] rotate-180 overflow-hidden font-heading text-base font-bold tracking-[0.01em] uppercase [writing-mode:vertical-rl] max-[380px]:text-[0.9375rem] min-[769px]:max-h-[calc(100%-4.5rem)] min-[769px]:max-w-[calc(100%-1.5rem)] min-[769px]:leading-[1.18]">
                 {panel.title}
               </span>
             </span>
@@ -208,7 +208,7 @@ const SIDE = 3;
         </li>
       ))}
     </ul>
-    <div class="mt-3 flex justify-end motion-reduce:hidden">
+    <div class="mt-3 flex justify-end motion-reduce:hidden min-[769px]:absolute min-[769px]:top-[-3.5rem] min-[769px]:right-19 min-[769px]:mt-0">
       <button
         type="button"
         data-rail-toggle
