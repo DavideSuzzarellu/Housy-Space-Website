@@ -12,21 +12,21 @@ Also from proposal v3, same status: `oficina-1672.jpg` (about; shows a recreated
 
 Added 2026-10-30 from proposal v3 (artifact `9boSsZEnH16FUL5ATJ78Pk`), same AI-generated placeholder status: `src/assets/home/services/*.webp` (services accordion, `assets/img/servicios/cine-*-640.webp`), `src/assets/home/districts/*.webp` (districts carousel, `assets/img/distritos/carrusel/*`), `src/assets/home/det-ventanal-1400.jpg` (valuation banner). `services/advisory.webp` shows a recreated logo on a wall: replace it first (§11).
 
-| File                                                | Proposal path                     | Used in                                     | Status                                           |
-| --------------------------------------------------- | --------------------------------- | ------------------------------------------- | ------------------------------------------------ |
-| `public/media/hero/hero-1280.mp4`, `hero-1280.webm` | `assets/video/hero-1280.*`        | Hero video (landscape)                      | AI-generated placeholder — replace before launch |
-| `public/media/hero/hero-720v.mp4`, `hero-720v.webm` | `assets/video/hero-720v.*`        | Hero video (portrait screens)               | AI-generated placeholder — replace before launch |
-| `src/assets/home/hero-poster.jpg`                   | `assets/video/hero-poster.jpg`    | Hero poster / LCP image (landscape)         | AI-generated placeholder — replace before launch |
-| `src/assets/home/hero-poster-v.jpg`                 | `assets/video/hero-poster-v.jpg`  | Hero poster (portrait)                      | AI-generated placeholder — replace before launch |
-| `src/assets/home/portal-1400.jpg`                   | `assets/img/portal-1400.jpg`      | 01 presentation (main), 06 Gràcia card      | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-salon-720.jpg`                 | `assets/img/det-salon-720.jpg`    | 01 presentation (secondary)                 | AI-generated placeholder — replace before launch |
-| `src/assets/home/facade-1400.jpg`                   | `assets/img/facade-1400.jpg`      | 02 sales & brokerage card, 06 Eixample card | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-salon-1400.jpg`                | `assets/img/det-salon-1400.jpg`   | 02 rentals & management card                | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-hierro-720.jpg`                | `assets/img/det-hierro-720.jpg`   | 02 personal shopper card                    | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-ventanal-720.jpg`              | `assets/img/det-ventanal-720.jpg` | 02 renovations card                         | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-chimenea-720.jpg`              | `assets/img/det-chimenea-720.jpg` | 02 interior design card                     | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-cielo-1400.jpg`                | `assets/img/det-cielo-1400.jpg`   | 02 personalised advice card                 | AI-generated placeholder — replace before launch |
-| `src/assets/home/det-balcon-1400.jpg`               | `assets/img/det-balcon-1400.jpg`  | 04 valuation (background and report figure) | AI-generated placeholder — replace before launch |
+| File                                                       | Proposal path                                          | Used in                                     | Status                                           |
+| ---------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------- | ------------------------------------------------ |
+| `public/media/hero/hero-corto-1280.*`, `hero-corto-1920.*` | `assets/video/hero-corto.mp4` (re-encoded, no audio)   | Hero video (landscape)                      | AI-generated placeholder — replace before launch |
+| `public/media/hero/hero-corto-v-540.*`                     | `assets/video/hero-corto-v.mp4` (re-encoded, no audio) | Hero video (portrait screens)               | AI-generated placeholder — replace before launch |
+| `src/assets/home/hero-poster.jpg`                          | `assets/video/hero-poster.jpg`                         | Hero poster / LCP image (landscape)         | AI-generated placeholder — replace before launch |
+| `src/assets/home/hero-poster-v.jpg`                        | `assets/video/hero-poster-v.jpg`                       | Hero poster (portrait)                      | AI-generated placeholder — replace before launch |
+| `src/assets/home/portal-1400.jpg`                          | `assets/img/portal-1400.jpg`                           | 01 presentation (main), 06 Gràcia card      | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-salon-720.jpg`                        | `assets/img/det-salon-720.jpg`                         | 01 presentation (secondary)                 | AI-generated placeholder — replace before launch |
+| `src/assets/home/facade-1400.jpg`                          | `assets/img/facade-1400.jpg`                           | 02 sales & brokerage card, 06 Eixample card | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-salon-1400.jpg`                       | `assets/img/det-salon-1400.jpg`                        | 02 rentals & management card                | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-hierro-720.jpg`                       | `assets/img/det-hierro-720.jpg`                        | 02 personal shopper card                    | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-ventanal-720.jpg`                     | `assets/img/det-ventanal-720.jpg`                      | 02 renovations card                         | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-chimenea-720.jpg`                     | `assets/img/det-chimenea-720.jpg`                      | 02 interior design card                     | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-cielo-1400.jpg`                       | `assets/img/det-cielo-1400.jpg`                        | 02 personalised advice card                 | AI-generated placeholder — replace before launch |
+| `src/assets/home/det-balcon-1400.jpg`                      | `assets/img/det-balcon-1400.jpg`                       | 04 valuation (background and report figure) | AI-generated placeholder — replace before launch |
 
 ## Brand
 

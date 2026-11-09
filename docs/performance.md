@@ -17,7 +17,7 @@ server's compression, which is weaker than a CDN's brotli.
 | `/es/alquiler/local-comercial-en-alquiler-en-barcelona-1004` (rent) | Baseline | 99    | 2.12 s | 0   | 0 ms | 1.37 s | 1.37 s      | 183 KB   | 8 KB | 53 KB  | 20 KB | 12       |
 | `/es/alquiler/local-comercial-en-alquiler-en-barcelona-1004` (rent) | After    | 100   | 1.82 s | 0   | 0 ms | 1.06 s | 1.06 s      | 152 KB   | 8 KB | 29 KB  | 13 KB | 11       |
 
-¹ About 2000 KB of the home total is the hero video (`hero-720v.webm` on a phone). After this
+¹ About 2000 KB of the home total is the hero video (`hero-corto-v-540.webm` on a phone). After this
 pass it starts only after the `load` event plus an idle period, so it no longer competes with
 the critical path. Lighthouse still counts it because the trace keeps recording after load.
 
