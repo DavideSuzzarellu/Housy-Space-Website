@@ -9,13 +9,14 @@ interface Props {
   items: readonly Crumb[];
   /** Accessible name of the navigation landmark (i18n). */
   label: string;
-  /** `onImage`: 10 px light trail over a photo head (reference `.crumbs`). */
-  tone?: "default" | "onImage";
+  /** `onImage`: 10 px light trail over a photo head; `compact`: the same 10 px trail on paper (reference `.crumbs`). */
+  tone?: "default" | "onImage" | "compact";
   class?: string;
 }
 
 const { items, label, tone = "default", class: className } = Astro.props;
 const onImage = tone === "onImage";
+const compact = tone === "compact";
 const lastIndex = items.length - 1;
 ---
 
@@ -23,7 +24,11 @@ const lastIndex = items.length - 1;
   <ol
     class:list={[
       "flex flex-wrap items-center gap-x-2 gap-y-1 tracking-[0.06em]",
-      onImage ? "text-[0.625rem] text-fg-2" : "text-xs text-muted",
+      onImage
+        ? "text-[0.625rem] text-fg-2"
+        : compact
+          ? "text-[0.625rem] text-muted"
+          : "text-xs text-muted",
     ]}
   >
     {items.map((item, index) => (
@@ -41,7 +46,7 @@ const lastIndex = items.length - 1;
         ) : (
           <span
             aria-current={index === lastIndex ? "page" : undefined}
-            class={onImage ? "text-fg-2" : "text-fg"}
+            class={onImage ? "text-fg-2" : compact ? "text-muted" : "text-fg"}
           >
             {item.label}
           </span>

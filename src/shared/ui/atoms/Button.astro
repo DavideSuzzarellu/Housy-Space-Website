@@ -6,7 +6,7 @@ import ArrowUpRight from "./ArrowUpRight.astro";
  * Turquoise fill sweeps in from the left on hover/focus with ink text (reference `.btn`).
  */
 interface Common {
-  variant?: "outline" | "solid" | "paper";
+  variant?: "outline" | "solid" | "paper" | "accent";
   /** `sm`: compact control of proposal v3 (newsletter, 34 px); `xl`: 68 px home CTA; `wide`: block CTA (label left, arrow pushed right, arrow slides on hover). */
   size?: "sm" | "md" | "lg" | "xl" | "wide";
   /** Trailing up-right arrow (main CTAs of proposal v3). */
@@ -49,6 +49,8 @@ const {
 
 const VARIANTS = {
   outline: "border-current text-inherit",
+  /** Turquoise outline with accent text (PDF download of the property side box). */
+  accent: "border-turquoise text-accent",
   solid: "border-fg bg-fg text-canvas",
   /** Paper fill with dark text on any dark block or photo, whatever the surface roles say. */
   paper: "border-paper bg-paper text-dark",

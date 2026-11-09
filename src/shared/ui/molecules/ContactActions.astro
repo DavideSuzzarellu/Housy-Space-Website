@@ -27,6 +27,8 @@ interface Props {
   whatsappMessage?: string;
   /** Overrides the consultation CTA of `stack` and `row` (e.g. "Request a viewing"). */
   consultation?: { readonly href: string; readonly label: string };
+  /** `stack` only: plain "Call" instead of "Call · phone number" (the property side box). */
+  shortCall?: boolean;
   class?: string;
 }
 
@@ -35,6 +37,7 @@ const {
   variant,
   whatsappMessage,
   consultation: consultationOverride,
+  shortCall = false,
   class: className,
 } = Astro.props;
 const { contact, a11y } = getDictionary(locale);
@@ -63,7 +66,7 @@ const BAR_LINK = `${TILE} px-1 py-4.25 text-[0.625rem] tracking-[0.06em]`;
     <Button href={whatsapp} external newTabLabel={a11y.opensInNewTab}>
       {contact.whatsapp}
     </Button>
-    <Button href={call.href}>{call.long}</Button>
+    <Button href={call.href}>{shortCall ? contact.call : call.long}</Button>
   </div>
 ) : variant === "row" ? (
   <div class:list={["flex flex-wrap gap-3", className]}>

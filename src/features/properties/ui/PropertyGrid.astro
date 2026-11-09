@@ -13,18 +13,28 @@ interface Props {
   ctaLabel: string;
   /** Cards link to this operation's detail (e.g. the operation of the current page). */
   operation?: DetailOperation;
+  /** `catalog`: the unboxed reference card in a 2 / 3 column grid (related properties). */
+  variant?: "feature" | "catalog";
 }
 
-const { locale, properties, ctaLabel, operation } = Astro.props;
+const { locale, properties, ctaLabel, operation, variant = "feature" } = Astro.props;
 ---
 
-<ul class="grid gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7.5">
+<ul
+  class:list={[
+    "grid",
+    variant === "catalog"
+      ? "gap-7 min-[700px]:grid-cols-2 min-[1000px]:grid-cols-3"
+      : "gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7.5",
+  ]}
+>
   {properties.map((property, index) => (
     <li data-reveal style={`--reveal-delay: ${index * 0.1}s`} class="flex">
       <PropertyCard
         property={property}
         locale={locale}
         ctaLabel={ctaLabel}
+        variant={variant}
         {...(operation === undefined ? {} : { operation })}
       />
     </li>

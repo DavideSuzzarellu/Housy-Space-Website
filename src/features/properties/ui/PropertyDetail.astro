@@ -85,7 +85,7 @@ const metaLine = presentMetaLine(property, operation, locale);
 
 <article data-property-detail data-morph-ref={property.ref} data-ref={property.ref}>
   <Container class="pt-7 pb-6 md:pt-9">
-    <Breadcrumbs items={crumbs} label={d.breadcrumb} class="mb-6" />
+    <Breadcrumbs items={crumbs} label={d.breadcrumb} tone="compact" class="mb-14.5" />
     <PropertyGallery
       photos={photos}
       heroTransitionName={names.image}
@@ -120,24 +120,19 @@ const metaLine = presentMetaLine(property, operation, locale);
           {title}
         </h1>
         <p class="text-sm text-muted">{metaLine}</p>
-        <div class="mt-5 w-fit" transition:name={names.price} transition:animate={morph}>
-          <PriceTag
-            locale={locale}
-            price={price}
-            perMonth={operation === "rent"}
-            class="text-[2.5rem]"
-          />
-        </div>
 
         {facts.length > 0 && (
-          <DetailBlock id="detail-facts" heading={d.factsHeading}>
+          <section aria-labelledby="detail-facts" class="my-5">
+            <h2 id="detail-facts" class="sr-only">
+              {d.factsHeading}
+            </h2>
             <FactList variant="grid" facts={facts} />
-          </DetailBlock>
+          </section>
         )}
 
         {paragraphs.length > 0 && (
           <DetailBlock id="detail-description" heading={d.descriptionHeading}>
-            <div class="flex max-w-[68ch] flex-col gap-4 text-fg/90">
+            <div class="flex max-w-[68ch] flex-col gap-4 text-fg">
               {paragraphs.map((paragraph) => (
                 <p class="whitespace-pre-line">{paragraph}</p>
               ))}
@@ -154,21 +149,6 @@ const metaLine = presentMetaLine(property, operation, locale);
             </ul>
           </DetailBlock>
         )}
-
-        <DetailBlock id="detail-energy" heading={d.energyHeading}>
-          <div class="grid gap-6 sm:grid-cols-2">
-            <EnergyRatingScale
-              locale={locale}
-              label={d.energyConsumption}
-              rating={property.energyRating}
-            />
-            <EnergyRatingScale
-              locale={locale}
-              label={d.energyEmissions}
-              rating={property.emissionsRating}
-            />
-          </div>
-        </DetailBlock>
 
         {property.virtualTourUrl !== undefined && (
           <DetailBlock id="detail-tour" heading={d.virtualTourHeading}>
@@ -192,6 +172,21 @@ const metaLine = presentMetaLine(property, operation, locale);
             />
           </DetailBlock>
         )}
+
+        <DetailBlock id="detail-energy" heading={d.energyHeading}>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <EnergyRatingScale
+              locale={locale}
+              label={d.energyConsumption}
+              rating={property.energyRating}
+            />
+            <EnergyRatingScale
+              locale={locale}
+              label={d.energyEmissions}
+              rating={property.emissionsRating}
+            />
+          </div>
+        </DetailBlock>
       </div>
 
       <aside
@@ -199,37 +194,55 @@ const metaLine = presentMetaLine(property, operation, locale);
         data-property-contact
         class="bg-card p-6.5 lg:sticky lg:top-28"
       >
-        <h2 id="detail-contact" class="text-[1.875rem]">
+        <h2 id="detail-contact" class="sr-only">
           {d.contactHeading}
         </h2>
-        <p class="mt-2 text-sm text-muted">{d.contactText}</p>
-        <p class="mt-4 text-sm">
-          <span class="text-muted">{d.advisorLabel}:</span>{" "}
-          <span class="font-medium text-fg">{agent?.name ?? d.advisorFallback}</span>
-        </p>
-        <p class="mt-1 text-sm text-muted">{reference}</p>
+        <div transition:name={names.price} transition:animate={morph}>
+          <PriceTag
+            locale={locale}
+            price={price}
+            perMonth={operation === "rent"}
+            class="font-heading"
+          />
+        </div>
+        <p class="mt-1 mb-3.5 text-[0.6875rem] text-muted">{reference}</p>
         <ContactActions
           locale={locale}
           variant="stack"
+          shortCall
           whatsappMessage={whatsappMessage}
           consultation={{ href: visitHref, label: d.requestVisit }}
-          class="mt-5"
         />
         <!-- Generated at build time from the property sheet page (scripts/build-property-sheets.ts). -->
         <Button
           href={withBase(getPropertySheetPdfPath(property, operation, locale))}
           download={getPropertySheetFileName(property)}
+          variant="accent"
           class="mt-2.5 w-full"
         >
-          {t.sheet.download}
+          <span class="flex flex-col items-center gap-1.5">
+            <span class="before:mr-3 before:inline-block before:size-2.25 before:-translate-y-0.75 before:rotate-45 before:border-r-[1.5px] before:border-b-[1.5px] before:border-current before:content-['']">
+              {t.sheet.download}
+            </span>
+            <small class="text-[0.625rem] font-normal tracking-[0.04em] text-muted normal-case">
+              {t.sheet.downloadNote}
+            </small>
+          </span>
         </Button>
+        <p class="mt-4 text-[0.6875rem] text-muted">
+          {d.advisorLabel}:{" "}
+          <span class="font-medium text-fg">{agent?.name ?? d.advisorFallback}</span>
+        </p>
       </aside>
     </div>
   </Container>
 
   {similar.length > 0 && (
     <Section id="similares" labelledBy="similar-heading" name="similar">
-      <h2 id="similar-heading" class="mb-7 text-[clamp(1.75rem,4vw,2.5rem)]">
+      <h2
+        id="similar-heading"
+        class="mb-7 text-[clamp(1.75rem,4vw,2.5rem)] after:mt-4 after:block after:h-0.5 after:w-16 after:bg-turquoise after:content-['']"
+      >
         {d.similarHeading}
       </h2>
       <PropertyGrid
@@ -237,7 +250,11 @@ const metaLine = presentMetaLine(property, operation, locale);
         properties={similar}
         ctaLabel={d.similarCta}
         operation={operation}
+        variant="catalog"
       />
+      <div class="mt-7">
+        <Button href={getLocalizedPath(listingKey, locale)}>{d.backToCatalog}</Button>
+      </div>
     </Section>
   )}
 </article>

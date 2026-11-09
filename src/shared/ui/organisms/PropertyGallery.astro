@@ -50,7 +50,7 @@ const CONTROL =
   "surface-dark grid min-h-11 min-w-11 cursor-pointer place-items-center border border-fg/40 bg-ink/60 px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase transition-colors hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent";
 ---
 
-<div data-gallery class="mb-8">
+<div data-gallery class="mb-7.5">
   <div class:list={["grid gap-2", thumbs.length > 0 && "md:grid-cols-[2fr_1fr] md:grid-rows-2"]}>
     <div
       class="relative aspect-16/10 overflow-hidden bg-bg-deep md:row-span-2 md:aspect-auto md:min-h-110"
@@ -75,7 +75,7 @@ const CONTROL =
             src={hero.src}
             alt={hero.alt}
             width={1400}
-            height={875}
+            height={933}
             widths={[640, 828, 1000, 1400]}
             sizes="(min-width: 1120px) 46rem, (min-width: 768px) 66vw, 100vw"
             priority
@@ -106,7 +106,7 @@ const CONTROL =
             src={photo.src}
             alt={photo.alt}
             width={720}
-            height={540}
+            height={480}
             widths={[360, 720]}
             sizes="(min-width: 1120px) 23rem, 33vw"
             class="block size-full object-cover"

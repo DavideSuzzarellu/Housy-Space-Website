@@ -21,8 +21,16 @@ interface Props {
 const { facts, variant = "inline", tone = "dark", class: className } = Astro.props;
 
 const TILE_TONES = {
-  dark: { tile: "bg-card", label: "text-muted", value: "text-fg" },
-  light: { tile: "bg-stone", label: "text-petrol", value: "text-ink" },
+  dark: {
+    tile: "bg-card",
+    label: "text-[0.625rem] text-muted",
+    value: "text-fg font-heading text-2xl leading-normal font-normal",
+  },
+  light: {
+    tile: "bg-stone",
+    label: "text-xs text-petrol",
+    value: "text-ink font-heading text-[1.625rem] leading-tight font-bold",
+  },
 } as const;
 const tile = TILE_TONES[tone];
 ---
@@ -62,10 +70,8 @@ const tile = TILE_TONES[tone];
     <dl class:list={["grid grid-cols-2 gap-2.5 sm:grid-cols-3", className]}>
       {facts.map((fact) => (
         <div class:list={["flex flex-col-reverse px-4 py-3.5", tile.tile]}>
-          <dt class:list={["text-xs", tile.label]}>{fact.label}</dt>
-          <dd class:list={["font-heading text-[1.625rem] leading-tight font-bold", tile.value]}>
-            {fact.value}
-          </dd>
+          <dt class={tile.label}>{fact.label}</dt>
+          <dd class={tile.value}>{fact.value}</dd>
         </div>
       ))}
     </dl>

@@ -168,12 +168,14 @@ const es = {
       advisorFallback: "Equipo HousySpace",
       requestVisit: "Solicitar visita",
       whatsappMessage: "Hola, me interesa el inmueble con referencia {ref}: {title}.",
-      similarHeading: "Propiedades similares",
+      similarHeading: "Propiedades relacionadas",
+      backToCatalog: "← Volver al catálogo",
       similarCta: "Ver la ficha completa",
     },
     // Property sheet (PDF). Documentation and disclaimer texts are from the approved demo sheet.
     sheet: {
-      download: "Descargar ficha (PDF)",
+      download: "Descargar ficha PDF",
+      downloadNote: "Dossier A4",
       documentTitle: "Ficha Ref. {ref} · {title} | HousySpace",
       label: "Ficha del inmueble",
       galleryHeading: "Galería",
