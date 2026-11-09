@@ -57,7 +57,7 @@ const CELL =
           options={[{ value: "", label: t.anyZone }, ...options.zones]}
         />
       </div>
-      <div class:list={[CELL, "col-span-2 md:col-span-1"]}>
+      <div class:list={CELL}>
         <p id={fieldId("operation")}>{t.operationLabel}</p>
         <div
           role="group"

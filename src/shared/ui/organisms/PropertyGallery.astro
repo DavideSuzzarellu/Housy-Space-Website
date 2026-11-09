@@ -51,9 +51,17 @@ const CONTROL =
 ---
 
 <div data-gallery class="mb-7.5">
-  <div class:list={["grid gap-2", thumbs.length > 0 && "md:grid-cols-[2fr_1fr] md:grid-rows-2"]}>
+  <div
+    class:list={[
+      "grid gap-2",
+      thumbs.length > 0 && "grid-cols-2 md:grid-cols-[2fr_1fr] md:grid-rows-2",
+    ]}
+  >
     <div
-      class="relative aspect-16/10 overflow-hidden bg-bg-deep md:row-span-2 md:aspect-auto md:min-h-110"
+      class:list={[
+        "relative aspect-16/10 overflow-hidden bg-bg-deep md:row-span-2 md:aspect-auto md:min-h-110",
+        thumbs.length > 0 && "col-span-2 md:col-span-1",
+      ]}
       transition:name={heroTransitionName}
       transition:animate={morph}
       style={`view-transition-class: ${heroTransitionClass}`}
@@ -99,7 +107,10 @@ const CONTROL =
           data-gallery-open={String(index)}
           aria-label={label}
           aria-haspopup="dialog"
-          class="relative hidden aspect-4/3 cursor-zoom-in overflow-hidden bg-bg-deep md:block md:aspect-auto"
+          class:list={[
+            "relative aspect-4/3 cursor-zoom-in overflow-hidden bg-bg-deep md:aspect-auto",
+            thumbs.length === 1 && "col-span-2 md:col-span-1",
+          ]}
         >
           <Picture
             {...PHOTO_PICTURE}
@@ -108,7 +119,7 @@ const CONTROL =
             width={720}
             height={480}
             widths={[360, 720]}
-            sizes="(min-width: 1120px) 23rem, 33vw"
+            sizes="(min-width: 1120px) 23rem, (min-width: 768px) 33vw, 50vw"
             class="block size-full object-cover"
           />
           {isLast && (
@@ -120,17 +131,6 @@ const CONTROL =
       );
     })}
   </div>
-  {count > 1 && (
-    <button
-      type="button"
-      data-gallery-open="0"
-      aria-haspopup="dialog"
-      class="mt-2 min-h-11 w-full border border-line px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-accent hover:text-accent focus-visible:border-accent md:hidden"
-    >
-      {formatMessage(labels.showAll, { count })}
-    </button>
-  )}
-
   {count > 0 && (
     <dialog
       data-gallery-dialog
