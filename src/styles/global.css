@@ -150,6 +150,15 @@ html body ::placeholder {
   text-transform: uppercase !important;
 }
 
+/*
+ * Below-the-fold home sections skip layout and paint until they are near the viewport
+ * (zero JS). "auto" in the intrinsic size remembers the real height once rendered.
+ */
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 40rem;
+}
+
 /* Dark petrol blocks (header over the hero, footer, reviews, photo headers): only the roles change. */
 .surface-dark,
 [data-theme="dark"] {

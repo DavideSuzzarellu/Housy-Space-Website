@@ -17,7 +17,13 @@ const first = splitQuote(content.quoteFirst);
 const second = splitQuote(content.quoteSecond);
 ---
 
-<Section id="filosofia" labelledBy="philosophy-heading" name="philosophy" spacing="default">
+<Section
+  id="filosofia"
+  labelledBy="philosophy-heading"
+  name="philosophy"
+  spacing="default"
+  class="defer-render"
+>
   <div class="grid gap-[clamp(1.875rem,3.6vw,2.75rem)] min-[960px]:grid-cols-[minmax(0,1fr)_auto] min-[960px]:items-center min-[960px]:gap-x-[clamp(3rem,6vw,6rem)]">
     <div>
       <!-- Each line slides up inside its own mask (the shared "lines" reveal); the opening mark hangs outside the block. -->

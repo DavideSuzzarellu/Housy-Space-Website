@@ -26,14 +26,14 @@ const copy = getDictionary(locale).home.valuation;
   id="valoracion"
   aria-labelledby="valuation-heading"
   data-section="valuation"
-  class="surface-dark relative isolate flex flex-col overflow-hidden bg-canvas min-[900px]:grid min-[900px]:min-h-[clamp(27.5rem,50vw,38.75rem)] min-[900px]:items-center"
+  class="defer-render surface-dark relative isolate flex flex-col overflow-hidden bg-canvas min-[900px]:grid min-[900px]:min-h-[clamp(27.5rem,50vw,38.75rem)] min-[900px]:items-center"
 >
   <figure class="relative order-2 m-0 aspect-video after:absolute after:inset-x-0 after:top-0 after:h-[30%] after:bg-linear-to-b after:from-canvas after:to-canvas/0 after:content-[''] max-[599px]:aspect-[4/5] min-[900px]:absolute min-[900px]:inset-0 min-[900px]:-z-10 min-[900px]:aspect-auto min-[900px]:after:hidden">
     <Picture
       {...PHOTO_PICTURE}
       src={content.image}
       alt={content.imageAlt}
-      widths={[720, 1280, 1855, 2880]}
+      widths={[720, 1280, 1855]}
       sizes="100vw"
       class="size-full object-cover object-[65%_50%] min-[600px]:object-[62%_50%] min-[900px]:object-[0%_50%]"
     />

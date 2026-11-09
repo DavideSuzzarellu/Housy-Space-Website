@@ -30,7 +30,7 @@ const items = [
   id="barcelona"
   aria-labelledby="gallery-heading"
   data-section="gallery"
-  class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  class="defer-render bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
 >
   <Container>
     <SectionHeading id="gallery-heading" heading={content.heading} class="mb-3" />
@@ -44,6 +44,7 @@ const items = [
             src={item.photo}
             alt={item.title}
             loading="lazy"
+            decoding="async"
             width="800"
             height="560"
             class="block h-[320px] w-full bg-stone object-cover"

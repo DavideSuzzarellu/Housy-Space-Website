@@ -20,7 +20,7 @@ const { locale, content, posts } = Astro.props;
 const copy = getDictionary(locale).home.blog;
 ---
 
-<Section id="blog" labelledBy="blog-heading" name="blog">
+<Section id="blog" labelledBy="blog-heading" name="blog" class="defer-render">
   <SectionHeading id="blog-heading" heading={content.heading} class="mb-5" />
   {posts.length > 0 ? (
     <div class="grid gap-[30px] min-[900px]:grid-cols-3 min-[900px]:gap-[clamp(1.75rem,3vw,2.75rem)]">

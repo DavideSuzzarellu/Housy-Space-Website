@@ -20,7 +20,13 @@ const { locale, properties, content } = Astro.props;
 const copy = getDictionary(locale).home.featured;
 ---
 
-<Section id="propiedades" labelledBy="featured-heading" name="featured" surface="stone">
+<Section
+  id="propiedades"
+  labelledBy="featured-heading"
+  name="featured"
+  surface="stone"
+  class="defer-render"
+>
   <SectionHeading
     id="featured-heading"
     heading={content.heading}
