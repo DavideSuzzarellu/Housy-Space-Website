@@ -1,7 +1,6 @@
 import { initIntro } from "./intro";
 import { initScrollProgress } from "./progress";
 import { initReveal, MOTION_READY_CLASS, motionAllowed, revealMorphTargets } from "./reveal";
-import { initWords } from "./words";
 
 declare global {
   interface Window {
@@ -16,7 +15,6 @@ declare global {
  */
 document.addEventListener("astro:page-load", () => {
   initIntro();
-  initWords();
   initReveal();
   initScrollProgress();
   window.__hsBooted = true;

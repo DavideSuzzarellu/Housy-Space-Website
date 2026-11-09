@@ -5,6 +5,7 @@ import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import StreetGrid from "./StreetGrid.astro";
 import HairlineThread from "@/shared/ui/atoms/HairlineThread.astro";
+import WordSplit from "@/shared/ui/atoms/WordSplit.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 
 /**
@@ -38,14 +39,13 @@ const { locale, id, content } = Astro.props;
         <StreetGrid />
         <h1
           id="presentation-heading"
-          data-reveal="words"
           class="leading-[1.06] uppercase text-[clamp(1.875rem,3.5vw,3.125rem)]"
         >
           <span data-words-line="rise" class="block font-black text-balance">
-            {content.headingFirst}
+            <WordSplit text={content.headingFirst} />
           </span>{" "}
           <span data-words-line="type" class="block font-normal text-muted text-balance">
-            {content.headingSecond}
+            <WordSplit text={content.headingSecond} />
           </span>
         </h1>
         <div data-reveal class="min-[760px]:mt-4" style="--reveal-delay: 1.05s">

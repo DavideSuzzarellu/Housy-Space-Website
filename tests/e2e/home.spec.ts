@@ -121,11 +121,21 @@ for (const locale of LOCALES) {
       await expect(toggle).toHaveAttribute("aria-label", pauseLabel ?? "");
     });
 
-    test("stats count up to the figures of the content", async ({ page }) => {
-      await page.locator("#stats-heading").scrollIntoViewIfNeeded();
-      await expect(page.locator("[data-count]")).toHaveText(["35", "100", "60", "9"], {
-        timeout: 6_000,
-      });
+    test("stats count up to the figures of the content (CSS counter, no script)", async ({
+      page,
+    }) => {
+      // Scroll the whole row into view: the scroll-driven count ends once it has entered.
+      await page.locator("#stats ul").scrollIntoViewIfNeeded();
+      await page.evaluate(() => window.scrollBy(0, 300));
+      await expect
+        .poll(() =>
+          page
+            .locator(".stat-count")
+            .evaluateAll((nodes) =>
+              nodes.map((node) => getComputedStyle(node).getPropertyValue("--count").trim()),
+            ),
+        )
+        .toEqual(["35", "100", "60", "9"]);
     });
 
     test("districts carousel moves with its buttons", async ({ page }) => {

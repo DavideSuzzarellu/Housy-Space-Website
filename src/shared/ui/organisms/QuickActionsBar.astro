@@ -41,6 +41,10 @@ const t = getDictionary(locale);
       transform: translateY(110%);
       visibility: hidden;
       animation: quick-bar-in linear both;
+    }
+
+    /* Separate rule on purpose (a minifier folds the timeline into the shorthand, which browsers reject). */
+    nav[aria-label].quick-bar {
       animation-timeline: scroll(root);
       animation-range: 70vh calc(70vh + 4rem);
     }

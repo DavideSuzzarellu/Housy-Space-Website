@@ -52,7 +52,7 @@ const stats = [
 <section
   id={id}
   aria-labelledby="stats-heading"
-  class="surface-stone bg-canvas pt-[clamp(3rem,5.6vw,5rem)] pb-[clamp(3.25rem,6vw,5.25rem)]"
+  class="defer-render surface-stone bg-canvas pt-[clamp(3rem,5.6vw,5rem)] pb-[clamp(3.25rem,6vw,5.25rem)]"
 >
   <Container>
     <div class="mb-[clamp(1.625rem,3.4vw,2.75rem)]">
@@ -79,7 +79,9 @@ const stats = [
           <p class="m-0 flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-[clamp(2.125rem,9vw,3.375rem)] leading-none font-black tracking-[-0.02em] text-fg min-[900px]:text-[clamp(2.5rem,4.8vw,4.25rem)]">
             <span aria-hidden="true">
               {stat.plus && <span class="mr-[0.02em] font-normal">+</span>}
-              <span data-count={stat.number}>{stat.number}</span>
+              <span class="stat-count" style={`--target: ${stat.number}`}>
+                <span class="stat-final">{stat.number}</span>
+              </span>
             </span>
             <span class="sr-only">
               {stat.plus ? `${moreThan} ` : ""}
@@ -118,8 +120,45 @@ const stats = [
   </Container>
 </section>
 
-<script>
-  import { initStatsCount } from "./statsCount";
+<style>
+  /*
+   * Count-up with no JavaScript: a registered integer property runs 0 to the figure while the row
+   * scrolls into view, and a counter prints it. Without scroll-driven animations, or with reduced
+   * motion, the real number in the HTML (.stat-final) is shown as it is.
+   */
+  @property --count {
+    syntax: "<integer>";
+    inherits: false;
+    initial-value: 0;
+  }
 
-  document.addEventListener("astro:page-load", initStatsCount);
-</script>
+  @keyframes stat-count {
+    to {
+      --count: var(--target);
+    }
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .stat-count {
+        counter-reset: stat var(--count);
+        font-variant-numeric: tabular-nums;
+        animation: stat-count cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+
+      /* Separate rule on purpose (a minifier folds the timeline into the shorthand, which browsers reject). */
+      li > p > span > .stat-count {
+        animation-timeline: view();
+        animation-range: entry 10% entry 90%;
+      }
+
+      .stat-count::before {
+        content: counter(stat);
+      }
+
+      .stat-final {
+        display: none;
+      }
+    }
+  }
+</style>

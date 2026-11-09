@@ -202,6 +202,11 @@ const lastIndex = items.length - 1;
     .site-header[data-overlay="true"] {
       --hdr-t: 0;
       animation: header-solid linear both;
+    }
+
+    /* Separate rule on purpose: a CSS minifier folds the timeline into the shorthand above, and
+       browsers reject that, which would leave the bar transparent for good. */
+    [data-header][data-overlay="true"] {
       animation-timeline: scroll(root);
       animation-range: 0 60px;
     }
