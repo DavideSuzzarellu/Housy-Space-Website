@@ -241,3 +241,26 @@ test.describe("reduced motion", () => {
     expect(errors).toEqual([]);
   });
 });
+
+test("the side box carries the price and the actions; the price is not repeated under the title", async ({
+  page,
+}) => {
+  const { path } = await firstDetailPath(page, "es");
+  await page.goto(path);
+  const box = page.locator("[data-property-contact]");
+  await expect(box.getByRole("link", { name: "Solicitar visita" })).toBeVisible();
+  await expect(box.getByRole("link", { name: "WhatsApp" })).toBeVisible();
+  await expect(box.getByRole("link", { name: "Llamar", exact: true })).toBeVisible();
+  await expect(box.locator("a[download]")).toContainText("Descargar ficha PDF");
+  // Description, features, location and energy follow the reference order.
+  const ids = await page
+    .locator("[data-property-detail] section[aria-labelledby]")
+    .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("aria-labelledby")));
+  const order = [
+    "detail-description",
+    "detail-features",
+    "detail-location",
+    "detail-energy",
+  ].filter((id) => ids.includes(id));
+  expect(ids.filter((id) => id !== null && order.includes(id))).toEqual(order);
+});

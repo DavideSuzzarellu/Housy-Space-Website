@@ -154,3 +154,45 @@ test("works without JavaScript: every listing is visible", async ({ browser }) =
   await expect(visibleCards(page)).toHaveCount(total);
   await context.close();
 });
+
+test("extra filters open from the search bar without JavaScript and hold the type filter", async ({
+  page,
+}) => {
+  await page.goto(getLocalizedPath("sale", "es"));
+  const panelField = page.locator('select[name="tipo"]');
+  await expect(panelField).toBeHidden();
+  await page.locator("[data-more-label]").click();
+  await expect(panelField).toBeVisible();
+  await expect(page.locator('input[name="pmin"]')).toBeVisible();
+  // The toggle is not a form control: the island never serialises it into the URL.
+  await page.locator('input[name="pmin"]').fill("100000");
+  await expect(page).toHaveURL(/[?&]pmin=100000/);
+  expect(new URL(page.url()).search).not.toContain("more");
+});
+
+test("Buscar brings the results into view and keeps the filters", async ({ page }) => {
+  await page.goto(getLocalizedPath("sale", "es"));
+  await page.getByRole("button", { name: "Buscar" }).click();
+  await expect(page.locator("[data-catalog-results]")).toBeInViewport();
+});
+
+test.describe("phone", () => {
+  test.use({ viewport: { width: 412, height: 823 } });
+
+  test("hides the split view button and never overflows horizontally", async ({ page }) => {
+    await page.goto(getLocalizedPath("sale", "es"));
+    await expect(page.locator('[data-catalog-view="split"]')).toBeHidden();
+    await expect(page.locator('[data-catalog-view="list"]')).toBeVisible();
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    );
+    expect(overflow).toBe(0);
+  });
+});
+
+test("the head photo is the only eager image of the catalog", async ({ page }) => {
+  await page.goto(getLocalizedPath("sale", "es"));
+  const eager = page.locator('main img:not([src$=".svg"]):not([loading="lazy"])');
+  await expect(eager).toHaveCount(1);
+  await expect(eager).toHaveAttribute("fetchpriority", "high");
+});
