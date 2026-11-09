@@ -190,7 +190,7 @@ html body ::placeholder {
   --color-card: #fcfbf8;
   --color-card-hover: #fffefb;
   --color-line: rgb(23 43 43 / 0.14);
-  --color-muted: #5a6462;
+  --color-muted: #67716f;
 }
 
 /* Article body written in Pages CMS: plain Markdown, so its elements are styled here. */

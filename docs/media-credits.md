@@ -30,10 +30,11 @@ Added 2026-10-30 from proposal v3 (artifact `9boSsZEnH16FUL5ATJ78Pk`), same AI-g
 
 ## Brand
 
-| File                                           | Origin                        | Notes                                                                                                                                                                    |
-| ---------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `public/brand/housyspace-completo-oficial.svg` | Official logo (`logo/`)       | Official version                                                                                                                                                         |
-| `public/brand/housyspace-monocromo-blanco.svg` | Derived from the official SVG | Monochrome white: only the fills of the `#housy`, `#tejado`, `#space` and `#lema` groups were recolored to white, as AGENTS.md §11 allows. Confirm with the brand owner. |
+| File                                           | Origin                                               | Notes                                                                                                                                                                    |
+| ---------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `public/brand/housyspace-completo-oficial.svg` | Official logo (`logo/`)                              | Official version                                                                                                                                                         |
+| `public/brand/housyspace-monocromo-blanco.svg` | Derived from the official SVG                        | Monochrome white: only the fills of the `#housy`, `#tejado`, `#space` and `#lema` groups were recolored to white, as AGENTS.md §11 allows. Confirm with the brand owner. |
+| `public/brand/housyspace-blanco-oficial.svg`   | Client reference site (`assets/img/logo-blanco.svg`) | White logo with the petrol roof, used by the header, footer and intro (client decision 2026-11-09: colours must equal the reference site).                               |
 
 The proposal's `isotipo.svg` and `logo-blanco.svg` are **not** used: they are still unconfirmed (ROADMAP input I5).
 
