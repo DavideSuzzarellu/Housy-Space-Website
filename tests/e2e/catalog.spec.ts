@@ -41,7 +41,7 @@ test("filters sync with the URL, survive a reload and can be cleared", async ({ 
   test.skip(total === 0, "No sale listings published");
 
   // An impossible minimum: every card is hidden and the empty state shows.
-  await page.locator("details summary").click();
+  await page.locator("[data-more-label]").click();
   await page.locator('input[name="smin"]').fill("999999");
   await expect(page).toHaveURL(/[?&]smin=999999/);
   await expect(visibleCards(page)).toHaveCount(0);

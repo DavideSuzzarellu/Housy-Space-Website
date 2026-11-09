@@ -48,9 +48,16 @@ const crumbs = [
   alternates={getListingAlternates(operation)}
 >
   <PropertyCatalog locale={locale} operation={operation} model={model}>
-    <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-8" />
+    <Breadcrumbs
+      items={crumbs}
+      label={dictionary.property.detail.breadcrumb}
+      tone="onImage"
+      class="mb-5.5"
+    />
     <Eyebrow tag={t.eyebrow} />
-    <h1 class="mt-4 text-[clamp(2rem,4.8vw,3.5rem)]">{t.heading[operation]}</h1>
-    <p class="mt-4 mb-9 max-w-[60ch] text-fg/90">{t.lead}</p>
+    <h1 class="mt-3.5 mb-4 max-w-[16ch] text-[clamp(2.5rem,11vw,3.5rem)] leading-none text-balance md:text-[clamp(1.9375rem,4.3vw,3.625rem)]">
+      {t.heading}
+    </h1>
+    <p class="mb-3.5 max-w-[56ch] text-fg-2">{t.lead}</p>
   </PropertyCatalog>
 </BaseLayout>

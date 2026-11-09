@@ -4,14 +4,21 @@ interface Props {
   label: string;
   /** `id` of the control in the slot. */
   controlId: string;
+  /** `glass`: small accent caps label of the catalog search panel. */
+  tone?: "default" | "glass";
   class?: string;
 }
 
-const { label, controlId, class: className } = Astro.props;
+const { label, controlId, tone = "default", class: className } = Astro.props;
+
+const LABELS = {
+  default: "text-xs tracking-[0.08em] text-muted",
+  glass: "text-[0.625rem] tracking-[0.14em] text-accent uppercase",
+} as const;
 ---
 
 <div class:list={["flex flex-col gap-1.5", className]}>
-  <label for={controlId} class="text-xs tracking-[0.08em] text-muted">
+  <label for={controlId} class={LABELS[tone]}>
     {label}
   </label>
   <slot />

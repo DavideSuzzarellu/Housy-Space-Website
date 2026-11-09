@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import headPhoto from "@/assets/home/det-salon-1400.jpg";
+import headPhoto from "@/assets/home/prop-cabecera-1672.webp";
 import type { CatalogModel } from "@/features/properties/application/catalog";
 import {
   CATALOG_PARAMS,
@@ -55,20 +55,25 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
   data-approximate-label={t.approximateSuffix}
   class="group/catalog"
 >
-  <section class="surface-dark relative isolate overflow-hidden bg-canvas pt-7 pb-[clamp(2.25rem,5vw,3.5rem)] md:pt-9">
+  <section class="surface-dark relative isolate flex min-h-[calc(min(62svh,560px)-5.75rem)] items-end overflow-hidden bg-canvas">
     <Picture
       {...PHOTO_PICTURE}
       src={headPhoto}
       alt=""
-      widths={[800, 1400]}
+      widths={[640, 900, 1672]}
       sizes="100vw"
-      class="absolute inset-0 -z-20 size-full object-cover"
+      priority
+      class="absolute inset-0 -z-20 size-full object-cover object-[50%_45%]"
     />
     <span
       aria-hidden="true"
-      class="absolute inset-0 -z-10 bg-linear-to-b from-ink/75 to-ink/85"
+      class="absolute inset-0 -z-10 bg-linear-to-r from-ink/60 via-ink/25 via-45% to-transparent to-70%"
     ></span>
-    <Container>
+    <span
+      aria-hidden="true"
+      class="absolute inset-0 -z-10 bg-linear-to-b from-ink/50 via-ink/10 via-30% to-ink/60"
+    ></span>
+    <Container class="pt-9 pb-9 md:pb-12">
       <slot />
       <CatalogFilters
         locale={locale}
@@ -77,13 +82,16 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
         formId={FORM_ID}
       />
     </Container>
-    <MediaCredit tone="onImage" class="absolute right-4 bottom-2">
+    <MediaCredit tone="onImage" class="absolute right-4 bottom-3">
       {dictionary.media.conceptualImage}
     </MediaCredit>
   </section>
 
   <Container class="pt-8 pb-16 md:pb-22">
-    <div class="flex flex-wrap items-center gap-3 border-b border-line pb-4">
+    <div
+      data-catalog-results
+      class="flex scroll-mt-24 flex-wrap items-center gap-3 border-b border-line pb-4"
+    >
       <p data-catalog-count aria-live="polite" class="mr-auto text-sm text-muted">
         {countText}
       </p>
@@ -129,14 +137,13 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
             data-catalog-list
             class="grid gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:group-data-[view=split]/catalog:grid-cols-1 xl:group-data-[view=split]/catalog:grid-cols-2"
           >
-            {model.properties.map((property, index) => (
+            {model.properties.map((property) => (
               <li data-catalog-ref={property.ref} class="flex">
                 <PropertyCard
                   property={property}
                   locale={locale}
                   ctaLabel={t.cardCta}
                   operation={operation}
-                  priority={index === 0}
                 />
               </li>
             ))}

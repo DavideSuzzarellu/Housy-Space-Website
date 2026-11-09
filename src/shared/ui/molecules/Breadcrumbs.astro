@@ -9,26 +9,40 @@ interface Props {
   items: readonly Crumb[];
   /** Accessible name of the navigation landmark (i18n). */
   label: string;
+  /** `onImage`: 10 px light trail over a photo head (reference `.crumbs`). */
+  tone?: "default" | "onImage";
   class?: string;
 }
 
-const { items, label, class: className } = Astro.props;
+const { items, label, tone = "default", class: className } = Astro.props;
+const onImage = tone === "onImage";
 const lastIndex = items.length - 1;
 ---
 
 <nav aria-label={label} class={className}>
-  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-[0.06em] text-muted">
+  <ol
+    class:list={[
+      "flex flex-wrap items-center gap-x-2 gap-y-1 tracking-[0.06em]",
+      onImage ? "text-[0.625rem] text-fg-2" : "text-xs text-muted",
+    ]}
+  >
     {items.map((item, index) => (
       <li class="flex items-center gap-2">
         {index < lastIndex && item.href !== undefined ? (
           <a
             href={item.href}
-            class="text-muted no-underline hover:text-accent focus-visible:text-accent"
+            class:list={[
+              "no-underline hover:text-accent focus-visible:text-accent",
+              onImage ? "text-fg-2" : "text-muted",
+            ]}
           >
             {item.label}
           </a>
         ) : (
-          <span aria-current={index === lastIndex ? "page" : undefined} class="text-fg">
+          <span
+            aria-current={index === lastIndex ? "page" : undefined}
+            class={onImage ? "text-fg-2" : "text-fg"}
+          >
             {item.label}
           </span>
         )}
