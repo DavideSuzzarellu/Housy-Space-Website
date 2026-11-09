@@ -1,4 +1,6 @@
 ---
+import type { ImageMetadata, ImageOutputFormat } from "astro";
+import { getImage } from "astro:assets";
 import posterLandscape from "@/assets/home/hero-poster.jpg";
 import posterPortrait from "@/assets/home/hero-poster-v.jpg";
 import { getDictionary } from "@/shared/i18n";
@@ -18,7 +20,24 @@ const { locale, nextSectionId } = Astro.props;
 const t = getDictionary(locale);
 
 const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
+const LANDSCAPE_MEDIA = "(min-aspect-ratio: 4/5)";
+const LANDSCAPE_SMALL_MEDIA = `${LANDSCAPE_MEDIA} and (max-width: 1440px)`;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+/** The poster is the LCP image: AVIF first, WebP fallback, one width per viewport and density. */
+async function posterSet(src: ImageMetadata, widths: number[], format: ImageOutputFormat) {
+  const image = await getImage({ src, format, widths });
+  return { src: image.src, srcset: image.srcSet.attribute };
+}
+
+const LANDSCAPE_WIDTHS = [960, 1440, 1920];
+const PORTRAIT_WIDTHS = [480, 608];
+const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise.all([
+  posterSet(posterLandscape, LANDSCAPE_WIDTHS, "avif"),
+  posterSet(posterLandscape, LANDSCAPE_WIDTHS, "webp"),
+  posterSet(posterPortrait, PORTRAIT_WIDTHS, "avif"),
+  posterSet(posterPortrait, PORTRAIT_WIDTHS, "webp"),
+]);
 ---
 
 <section
@@ -27,11 +46,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   data-hero
   class="group surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
 >
-  <!-- Poster (Ken Burns until the video plays; static on reduced motion / Save-Data / no-JS) -->
+  <!-- Poster (the only eager image of the page; Ken Burns until the video plays, static on reduced motion / Save-Data / no-JS) -->
   <picture class="absolute inset-0">
-    <source media={PORTRAIT_MEDIA} srcset={posterPortrait.src} type="image/jpeg" />
+    <source media={PORTRAIT_MEDIA} type="image/avif" srcset={portraitAvif.srcset} sizes="100vw" />
+    <source media={PORTRAIT_MEDIA} type="image/webp" srcset={portraitWebp.srcset} sizes="100vw" />
+    <source type="image/avif" srcset={landscapeAvif.srcset} sizes="100vw" />
     <img
-      src={posterLandscape.src}
+      src={landscapeWebp.src}
+      srcset={landscapeWebp.srcset}
+      sizes="100vw"
+      width={posterLandscape.width}
+      height={posterLandscape.height}
       alt=""
       fetchpriority="high"
       decoding="async"
@@ -39,7 +64,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     />
   </picture>
 
-  <!-- Video (loads after page ready, skipped on reduced motion / Save-Data); fades in once playing -->
+  <!--
+    Video: starts after the page has loaded and the browser is idle; skipped on reduced motion,
+    Save-Data and 2G. Same cut as hero-corto.*, re-encoded smaller (no audio): 1280 px up to
+    1440 px wide, 1920 px above, 540 px for portrait screens. WebM first, MP4 fallback.
+  -->
   <video
     data-hero-video
     muted
@@ -50,17 +79,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[1600ms] ease-in-out group-data-playing:opacity-100"
   >
     <source
-      src={`${base}/media/hero/hero-corto.webm`}
+      src={`${base}/media/hero/hero-corto-1280.webm`}
       type="video/webm"
-      media="(min-aspect-ratio: 4/5)"
+      media={LANDSCAPE_SMALL_MEDIA}
     />
     <source
-      src={`${base}/media/hero/hero-corto.mp4`}
+      src={`${base}/media/hero/hero-corto-1280.mp4`}
       type="video/mp4"
-      media="(min-aspect-ratio: 4/5)"
+      media={LANDSCAPE_SMALL_MEDIA}
     />
-    <source src={`${base}/media/hero/hero-corto-v.webm`} type="video/webm" />
-    <source src={`${base}/media/hero/hero-corto-v.mp4`} type="video/mp4" />
+    <source
+      src={`${base}/media/hero/hero-corto-1920.webm`}
+      type="video/webm"
+      media={LANDSCAPE_MEDIA}
+    />
+    <source
+      src={`${base}/media/hero/hero-corto-1920.mp4`}
+      type="video/mp4"
+      media={LANDSCAPE_MEDIA}
+    />
+    <source src={`${base}/media/hero/hero-corto-v-540.webm`} type="video/webm" />
+    <source src={`${base}/media/hero/hero-corto-v-540.mp4`} type="video/mp4" />
   </video>
 
   <!-- Gradient shade: darker at the top for the header, a clean cut at the bottom -->
@@ -93,9 +132,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 </style>
 
 <script>
+  interface NetworkInformation {
+    saveData?: boolean;
+    effectiveType?: string;
+  }
+  const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection;
+  // Save-Data or a 2G link: keep the poster, never download megabytes of video.
   const SAVE_DATA =
-    "connection" in navigator &&
-    (navigator as unknown as { connection: { saveData: boolean } }).connection.saveData;
+    connection?.saveData === true || /(^|-)2g$/.test(connection?.effectiveType ?? "");
 
   let observer: IntersectionObserver | undefined;
   let active: { hero: HTMLElement; video: HTMLVideoElement } | undefined;
@@ -108,24 +152,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     else active.video.pause();
   }
 
+  /** After the `load` event, when the browser is idle: the video never competes with the LCP. */
+  function whenIdle(callback: () => void): void {
+    const schedule = (): void => {
+      if (typeof window.requestIdleCallback === "function")
+        window.requestIdleCallback(callback, { timeout: 3000 });
+      else window.setTimeout(callback, 200);
+    };
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
+  }
+
   function maybePlayVideo(): void {
     const hero = document.querySelector<HTMLElement>("[data-hero]");
     const video = hero?.querySelector<HTMLVideoElement>("[data-hero-video]");
     if (hero == null || video == null) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced || SAVE_DATA) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || SAVE_DATA) return;
     video.addEventListener("playing", () => hero.setAttribute("data-playing", ""), { once: true });
-    active = { hero, video };
-    visible = true;
-    observer = new IntersectionObserver(
-      (entries) => {
-        visible = entries.some((entry) => entry.isIntersecting);
-        sync();
-      },
-      { threshold: 0.02 },
-    );
-    observer.observe(hero);
-    sync();
+    whenIdle(() => {
+      // The visitor may already have navigated away.
+      if (!hero.isConnected) return;
+      active = { hero, video };
+      // The first observer callback says whether the hero is on screen: nothing downloads before.
+      visible = false;
+      observer = new IntersectionObserver(
+        (entries) => {
+          visible = entries.some((entry) => entry.isIntersecting);
+          sync();
+        },
+        { threshold: 0.02 },
+      );
+      observer.observe(hero);
+    });
   }
 
   function stopVideo(): void {
