@@ -146,14 +146,9 @@ content:
         label: Colaboradores
         type: object
         fields:
-          - { name: heading, label: Titular, type: string, required: true }
-          - { name: card1Heading, label: Tarjeta 1 · Título, type: string, required: true }
-          - { name: card1Text, label: Tarjeta 1 · Texto, type: string, required: true }
-          - { name: card1CtaLabel, label: Tarjeta 1 · Botón, type: string, required: true }
-          - { name: card2Heading, label: Tarjeta 2 · Título, type: string, required: true }
-          - { name: card2Text, label: Tarjeta 2 · Texto, type: string, required: true }
-          - { name: card2CtaLabel, label: Tarjeta 2 · Botón, type: string, required: true }
-          - { name: note, label: Nota al pie, type: string, required: true }
+          - { name: lineFirst, label: Frase · primera línea, type: string, required: true }
+          - { name: lineSecond, label: Frase · segunda línea, type: string, required: true }
+          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
       - name: philosophy
         label: Filosofía
         type: object

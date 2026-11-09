@@ -54,14 +54,9 @@
     "item4Subtitle": "Espais moderns rehabilitats respectant l'arquitectura històrica."
   },
   "collaborators": {
-    "heading": "Assessorament especialitzat, amb professionals de confiança",
-    "card1Heading": "Despatx jurídic col·laborador",
-    "card1Text": "Assessorament legal complet en transaccions immobiliàries, revisió de títols, càrregues i redacció de contractes.",
-    "card1CtaLabel": "Consultar àrea legal",
-    "card2Heading": "Fiscalista col·laborador",
-    "card2Text": "Optimització i planificació fiscal integral per a transmissions patrimonials, plusvàlues i impostos immobiliaris.",
-    "card2CtaLabel": "Consultar àrea fiscal",
-    "note": "Professionals independents seleccionats per la seva trajectòria i màxim rigor."
+    "lineFirst": "Ens envoltem dels millors",
+    "lineSecond": "per oferir-te molt més.",
+    "ctaLabel": "Per què confiem en ells"
   },
   "philosophy": {
     "quoteFirst": "No pateixis,",

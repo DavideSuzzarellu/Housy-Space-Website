@@ -54,14 +54,9 @@
     "item4Subtitle": "Modern spaces rehabilitated while respecting the historic architecture."
   },
   "collaborators": {
-    "heading": "Specialist advice, with trusted professionals",
-    "card1Heading": "Collaborating law firm",
-    "card1Text": "Full legal advice on property transactions, title review, encumbrances and contract drafting.",
-    "card1CtaLabel": "Legal area enquiry",
-    "card2Heading": "Collaborating tax advisor",
-    "card2Text": "Comprehensive tax planning and optimisation for property transfers, capital gains and real estate taxes.",
-    "card2CtaLabel": "Tax area enquiry",
-    "note": "Independent professionals selected for their track record and rigour."
+    "lineFirst": "We surround ourselves with the best",
+    "lineSecond": "to offer you so much more.",
+    "ctaLabel": "Why we trust them"
   },
   "philosophy": {
     "quoteFirst": "Don't worry,",

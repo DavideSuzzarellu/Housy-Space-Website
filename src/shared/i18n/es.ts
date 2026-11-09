@@ -330,6 +330,21 @@ const es = {
     },
     services: {
       regionLabel: "Nuestros servicios",
+      carousel: "carrusel",
+      enterLabel: "Ver servicio:",
+      previous: "Servicio anterior",
+      next: "Servicio siguiente",
+      tags: {
+        saleBrokerage: "Intermediación",
+        valuation: "Precio de mercado",
+        legalTax: "Seguridad jurídica",
+        renovations: "Proyecto y obra",
+        advisory: "A tu medida",
+        financial: "Financiación",
+        personalShopper: "Búsqueda",
+        investment: "Rentabilidad",
+        rentalManagement: "Gestión",
+      } satisfies Record<ServiceKey, string>,
     },
     featured: {
       cardCta: "Consultar la ficha completa",

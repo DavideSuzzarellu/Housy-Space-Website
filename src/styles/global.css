@@ -22,6 +22,9 @@
   --color-turquoise: #21cec5;
   --color-turquoise-deep: #058c93;
   --color-dark: #162b2a;
+  /* Services accordion: closed bars alternate these two tones (the image colour). */
+  --color-forest: #1f3a38;
+  --color-forest-lift: #2a4745;
   --color-paper: #fcfbf8;
 
   /*

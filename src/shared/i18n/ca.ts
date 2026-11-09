@@ -324,6 +324,21 @@ const ca = {
     },
     services: {
       regionLabel: "Els nostres serveis",
+      carousel: "carrusel",
+      enterLabel: "Veure el servei:",
+      previous: "Servei anterior",
+      next: "Servei següent",
+      tags: {
+        saleBrokerage: "Intermediació",
+        valuation: "Preu de mercat",
+        legalTax: "Seguretat jurídica",
+        renovations: "Projecte i obra",
+        advisory: "A la teva mida",
+        financial: "Finançament",
+        personalShopper: "Cerca",
+        investment: "Rendibilitat",
+        rentalManagement: "Gestió",
+      },
     },
     featured: {
       cardCta: "Consulta la fitxa completa",

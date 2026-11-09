@@ -54,14 +54,9 @@
     "item4Subtitle": "Spazi moderni riqualificati nel rispetto dell'architettura storica."
   },
   "collaborators": {
-    "heading": "Consulenza specializzata, con professionisti di fiducia",
-    "card1Heading": "Studio legale collaboratore",
-    "card1Text": "Consulenza legale completa per transazioni immobiliari, verifica dei titoli, gravami e redazione di contratti.",
-    "card1CtaLabel": "Consulenza area legale",
-    "card2Heading": "Consulente fiscale collaboratore",
-    "card2Text": "Ottimizzazione e pianificazione fiscale integrale per trasferimenti patrimoniali, plusvalori e imposte immobiliari.",
-    "card2CtaLabel": "Consulenza area fiscale",
-    "note": "Professionisti indipendenti selezionati per il loro percorso e il massimo rigore."
+    "lineFirst": "Ci circondiamo dei migliori",
+    "lineSecond": "per offrirti molto di più.",
+    "ctaLabel": "Perché ci fidiamo di loro"
   },
   "philosophy": {
     "quoteFirst": "Non preoccuparti,",

@@ -324,6 +324,21 @@ const it = {
     },
     services: {
       regionLabel: "I nostri servizi",
+      carousel: "carosello",
+      enterLabel: "Vedi il servizio:",
+      previous: "Servizio precedente",
+      next: "Servizio successivo",
+      tags: {
+        saleBrokerage: "Intermediazione",
+        valuation: "Prezzo di mercato",
+        legalTax: "Sicurezza giuridica",
+        renovations: "Progetto e lavori",
+        advisory: "Su misura",
+        financial: "Finanziamento",
+        personalShopper: "Ricerca",
+        investment: "Redditività",
+        rentalManagement: "Gestione",
+      },
     },
     featured: {
       cardCta: "Consulta la scheda completa",

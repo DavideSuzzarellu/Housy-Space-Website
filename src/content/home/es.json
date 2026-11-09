@@ -54,14 +54,9 @@
     "item4Subtitle": "Espacios modernos rehabilitados respetando la arquitectura histórica."
   },
   "collaborators": {
-    "heading": "Asesoramiento especializado, con profesionales de confianza",
-    "card1Heading": "Despacho jurídico colaborador",
-    "card1Text": "Asesoramiento legal completo en transacciones inmobiliarias, revisión de títulos, cargas y redacción de contratos.",
-    "card1CtaLabel": "Consultar área legal",
-    "card2Heading": "Fiscalista colaborador",
-    "card2Text": "Optimización y planificación fiscal integral para transmisiones patrimoniales, plusvalías e impuestos inmobiliarios.",
-    "card2CtaLabel": "Consultar área fiscal",
-    "note": "Profesionales independientes seleccionados por su trayectoria y máxima rigurosidad."
+    "lineFirst": "Nos rodeamos de los mejores",
+    "lineSecond": "para ofrecerte mucho más.",
+    "ctaLabel": "Por qué confiamos en ellos"
   },
   "philosophy": {
     "quoteFirst": "¡No te preocupes,",

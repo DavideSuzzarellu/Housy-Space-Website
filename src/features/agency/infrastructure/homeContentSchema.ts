@@ -77,18 +77,7 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
           item4Subtitle: text,
         })
         .strict(),
-      collaborators: z
-        .object({
-          heading: text,
-          card1Heading: text,
-          card1Text: text,
-          card1CtaLabel: text,
-          card2Heading: text,
-          card2Text: text,
-          card2CtaLabel: text,
-          note: text,
-        })
-        .strict(),
+      collaborators: z.object({ lineFirst: text, lineSecond: text, ctaLabel: text }).strict(),
       philosophy: z
         .object({
           quoteFirst: text,

@@ -323,6 +323,21 @@ const en = {
     },
     services: {
       regionLabel: "Our services",
+      carousel: "carousel",
+      enterLabel: "View service:",
+      previous: "Previous service",
+      next: "Next service",
+      tags: {
+        saleBrokerage: "Brokerage",
+        valuation: "Market price",
+        legalTax: "Legal certainty",
+        renovations: "Project and works",
+        advisory: "Tailored to you",
+        financial: "Financing",
+        personalShopper: "Search",
+        investment: "Returns",
+        rentalManagement: "Management",
+      },
     },
     featured: {
       cardCta: "View the full listing",
