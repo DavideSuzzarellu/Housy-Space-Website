@@ -51,7 +51,7 @@ test("filters sync with the URL, survive a reload and can be cleared", async ({ 
   await expect(page.locator('input[name="smin"]')).toHaveValue("999999");
   await expect(visibleCards(page)).toHaveCount(0);
 
-  await page.locator("[data-catalog-empty] [data-catalog-clear]").click();
+  await page.locator("[data-catalog-empty] [data-catalog-clear] button").click();
   await expect(visibleCards(page)).toHaveCount(total);
   await expect(page).toHaveURL(new RegExp(`${path}$`));
   expect(errors).toEqual([]);

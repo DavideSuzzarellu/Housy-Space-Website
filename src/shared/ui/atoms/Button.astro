@@ -25,7 +25,8 @@ interface LinkProps extends Common {
 }
 
 interface SubmitProps extends Common {
-  type: "submit";
+  /** `button`: a plain button (its action is bound by a script or a delegating parent). */
+  type: "submit" | "button";
   href?: never;
   external?: never;
   newTabLabel?: never;
@@ -73,7 +74,7 @@ const classes = [
 ---
 
 {type === "submit" ? (
-  <button type="submit" class:list={classes}>
+  <button type={type} class:list={classes}>
     <slot />
     {arrow && <ArrowUpRight class="size-2.75" />}
   </button>

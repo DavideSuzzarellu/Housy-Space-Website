@@ -111,3 +111,21 @@ describe("PropertyCatalog search form (reference layout)", () => {
     expect(toggle).not.toContain("name=");
   });
 });
+
+describe("PropertyCatalog toolbar and empty state (reference copy)", () => {
+  it("offers the reference no-results copy with clear and My search actions", async () => {
+    const html = await render();
+    const empty = /<div[^>]*data-catalog-empty[\s\S]*?<\/div>\s*<\/div>/.exec(html)?.[0] ?? "";
+    expect(empty).toContain("No hay inmuebles con estos criterios ahora mismo.");
+    expect(empty).toContain("Si nos cuentas qué buscas, lo buscamos por ti.");
+    expect(empty).toContain("Limpiar filtros");
+    expect(empty).toContain('href="/es/mi-busqueda"');
+  });
+
+  it("hides the split view button below 900px and keeps the three views", async () => {
+    const html = await render();
+    expect(html).toMatch(/data-catalog-view="split"[^>]*class="[^"]*max-\[899px\]:hidden/);
+    for (const view of ["list", "split", "map"])
+      expect(html).toContain(`data-catalog-view="${view}"`);
+  });
+});
