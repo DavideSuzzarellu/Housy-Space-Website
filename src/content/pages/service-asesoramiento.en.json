@@ -2,12 +2,26 @@
   "title": "Personalised property advisory · HousySpace",
   "description": "Clear, tailored guidance before making any decision.",
   "head": {
-    "heading": "Personalised property advisory",
-    "photo": true,
+    "heading": "Personalised *property advisory*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-asesoramiento-1000.webp",
+      "alt": "Service illustration: A green piece fitting into a gap",
+      "scale": 0.805
+    },
     "items": [
-      { "kind": "image", "src": "../../assets/home/det-cielo-1400.jpg" },
-      { "kind": "tag", "text": "Service" },
-      { "kind": "lead", "text": "Clear, tailored guidance before making any decision." }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-cielo-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
+      {
+        "kind": "lead",
+        "text": "Clear, tailored guidance before making any decision."
+      }
     ]
   },
   "sections": [
@@ -15,7 +29,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Not sure where to start? Start here." },
+        {
+          "kind": "big",
+          "text": "Not sure where to start? Start here."
+        },
         {
           "kind": "p",
           "text": "Before buying, selling, renting or investing, it pays to talk. As property consultants, we tell you honestly whether it makes sense, how to do it and when, and we propose a clear roadmap."
@@ -26,7 +43,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "What we help you decide" },
+        {
+          "kind": "h2",
+          "text": "What we help you decide"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -51,8 +71,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Common situations" },
-        { "kind": "h2", "text": "You might be here" },
+        {
+          "kind": "tag",
+          "text": "Common situations"
+        },
+        {
+          "kind": "h2",
+          "text": "You might be here"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -89,8 +115,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "How we do it" },
-        { "kind": "h2", "text": "Step by step" },
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Step by step"
+        },
         {
           "kind": "steps",
           "items": [
@@ -102,8 +134,14 @@
               "title": "Analysis",
               "text": "We study the property, the area and the alternatives."
             },
-            { "title": "Roadmap", "text": "We propose the steps, the timelines and the costs." },
-            { "title": "Support", "text": "We help you decide and, if you want, to execute it." }
+            {
+              "title": "Roadmap",
+              "text": "We propose the steps, the timelines and the costs."
+            },
+            {
+              "title": "Support",
+              "text": "We help you decide and, if you want, to execute it."
+            }
           ]
         }
       ]
@@ -112,7 +150,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "\"Don't worry, I'll take care of it.\"" },
+        {
+          "kind": "bandQuote",
+          "text": "\"Don't worry, I'll take care of it.\""
+        },
         {
           "kind": "p",
           "text": "A trusted advisor and a network of reliable professionals: a single point of contact for everything to do with your property."
@@ -123,7 +164,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Let's talk" },
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
         {
           "kind": "lead",
           "text": "Every good decision starts with a conversation. Let's talk about yours."
@@ -131,14 +175,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contact us", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

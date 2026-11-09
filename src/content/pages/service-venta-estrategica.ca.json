@@ -2,11 +2,22 @@
   "title": "Compravenda i intermediació immobiliària · HousySpace",
   "description": "Valoració, preparació, comercialització, negociació i acompanyament fins a la signatura.",
   "head": {
-    "heading": "Compravenda i intermediació immobiliària",
-    "photo": true,
+    "heading": "Compravenda *i intermediació immobiliària*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-compraventa-1000.webp",
+      "alt": "Il·lustració del servei: Dos volums crema que encaixen",
+      "scale": 0.737
+    },
     "items": [
-      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
-      { "kind": "tag", "text": "Servei" },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
       {
         "kind": "lead",
         "text": "Valoració, preparació, comercialització, negociació i acompanyament fins a la signatura."
@@ -18,7 +29,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Vendre un habitatge no és només publicar-lo." },
+        {
+          "kind": "big",
+          "text": "Vendre un habitatge no és només publicar-lo."
+        },
         {
           "kind": "p",
           "text": "Com a consultors immobiliaris, primer et diem amb honestedat si et convé vendre, com fer-ho i quan. Després estudiem a fons l'immoble i la seva documentació perquè no hi hagi sorpreses en el moment de signar."
@@ -33,8 +47,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Com ho fem" },
-        { "kind": "h2", "text": "Vuit passos, un sol assessor" },
+        {
+          "kind": "tag",
+          "text": "Com ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Vuit passos, un sol assessor"
+        },
         {
           "kind": "steps",
           "items": [
@@ -78,9 +98,18 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Què inclou" },
-        { "kind": "h2", "text": "Tot el que cal per vendre" },
-        { "kind": "lead", "text": "El que inclou el nostre servei d'intermediació en una venda." },
+        {
+          "kind": "tag",
+          "text": "Què inclou"
+        },
+        {
+          "kind": "h2",
+          "text": "Tot el que cal per vendre"
+        },
+        {
+          "kind": "lead",
+          "text": "El que inclou el nostre servei d'intermediació en una venda."
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -109,7 +138,10 @@
               "title": "Pressupostos d'obra",
               "text": "Si l'habitatge necessita reforma, el comprador sap des del principi quant li costarà."
             },
-            { "title": "Gestió de visites", "text": "Les organitzem i supervisem nosaltres." },
+            {
+              "title": "Gestió de visites",
+              "text": "Les organitzem i supervisem nosaltres."
+            },
             {
               "title": "Negociació i tancament",
               "text": "Defensem el teu preu i les teves condicions fins a la signatura."
@@ -138,12 +170,21 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Contracte d'intermediació" },
-        { "kind": "h2", "text": "Per què en exclusiva?" },
+        {
+          "kind": "tag",
+          "text": "Contracte d'intermediació"
+        },
+        {
+          "kind": "h2",
+          "text": "Per què en exclusiva?"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Sense curses entre immobiliàries" },
+            {
+              "kind": "h3",
+              "text": "Sense curses entre immobiliàries"
+            },
             {
               "kind": "p",
               "text": "Quan diverses immobiliàries venen el mateix pis, la venda es converteix en una cursa per adjudicar-se-la. Es treballa ràpid i pitjor: prima la rapidesa i queden en segon pla la solidesa de l'operació i el preu de venda. Amb l'exclusiva, treballem el teu habitatge amb calma i amb criteri per vendre'l bé i al preu que es mereix."
@@ -153,7 +194,10 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Què guanyes tu" },
+            {
+              "kind": "h3",
+              "text": "Què guanyes tu"
+            },
             {
               "kind": "list",
               "ordered": false,
@@ -170,7 +214,10 @@
                   "title": "",
                   "text": "Una negociació més ferma: coneixem el teu habitatge a fons."
                 },
-                { "title": "", "text": "Més seguretat: ningú més negocia en nom teu." },
+                {
+                  "title": "",
+                  "text": "Més seguretat: ningú més negocia en nom teu."
+                },
                 {
                   "title": "",
                   "text": "Menys complicacions i una comunicació clara amb els compradors."
@@ -185,7 +232,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        {
+          "kind": "bandQuote",
+          "text": "«No et preocupis, jo me n'encarrego.»"
+        },
         {
           "kind": "p",
           "text": "Moltes vendes cauen per un imprevist: una cèdula que falta, una hipoteca que no arriba, una documentació incompleta. Ens hi avancem i, quan apareixen, els resolem."
@@ -197,8 +247,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Valoració" },
-        { "kind": "h2", "text": "Quant val el teu habitatge?" },
+        {
+          "kind": "tag",
+          "text": "Valoració"
+        },
+        {
+          "kind": "h2",
+          "text": "Quant val el teu habitatge?"
+        },
         {
           "kind": "p",
           "text": "Demana la teva valoració com prefereixis: en línia, al moment, o presencial, amb un assessor que estudia el teu habitatge a fons."
@@ -206,8 +262,14 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "p", "text": "En línia" },
-            { "kind": "h3", "text": "Al moment" },
+            {
+              "kind": "p",
+              "text": "En línia"
+            },
+            {
+              "kind": "h3",
+              "text": "Al moment"
+            },
             {
               "kind": "p",
               "text": "Introdueix les dades del teu habitatge al nostre valorador i rep al moment una referència orientativa del seu valor."
@@ -215,7 +277,11 @@
             {
               "kind": "buttons",
               "items": [
-                { "label": "Valoració online", "href": "route:valuation#informe", "solid": true }
+                {
+                  "label": "Valoració online",
+                  "href": "route:valuation#informe",
+                  "solid": true
+                }
               ]
             }
           ]
@@ -223,8 +289,14 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "p", "text": "Presencial" },
-            { "kind": "h3", "text": "Amb un assessor" },
+            {
+              "kind": "p",
+              "text": "Presencial"
+            },
+            {
+              "kind": "h3",
+              "text": "Amb un assessor"
+            },
             {
               "kind": "p",
               "text": "Visitem el teu habitatge, en revisem la documentació i estudiem el mercat del teu barri per donar-te un informe complet."
@@ -247,7 +319,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parlem" },
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
         {
           "kind": "lead",
           "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
@@ -255,14 +330,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

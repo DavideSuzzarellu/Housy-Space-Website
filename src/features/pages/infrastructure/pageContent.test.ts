@@ -47,6 +47,39 @@ describe("editorial pages", () => {
   });
 });
 
+describe("service pages", () => {
+  const services = files.filter((file) => file.startsWith("service-"));
+
+  it("has the 9 services in the 4 locales", () => {
+    expect(services).toHaveLength(36);
+  });
+
+  it.each(services)("%s opens with its illustration and an emphasised heading", (file) => {
+    const page = schema.parse(read(file));
+    expect(page.head.photo).toBe(false);
+    expect(page.head.illustration?.alt.length).toBeGreaterThan(0);
+    expect(page.head.illustration?.scale).toBeGreaterThan(0.5);
+    expect(page.head.illustration?.scale).toBeLessThanOrEqual(1);
+    expect(page.head.heading).toMatch(/\*[^*]+\*/);
+  });
+
+  it("rejects an illustration without a text alternative", () => {
+    const base = schema.parse(read("service-valoracion.es.json"));
+    const broken = {
+      ...base,
+      head: {
+        ...base.head,
+        illustration: {
+          src: "../../assets/servicios/ill-valoracion-1000.webp",
+          alt: "",
+          scale: 0.7,
+        },
+      },
+    };
+    expect(schema.safeParse(broken).success).toBe(false);
+  });
+});
+
 describe("market data", () => {
   const market = marketSchema.parse(
     JSON.parse(readFileSync("src/content/market/barcelona.json", "utf8")),

@@ -2,15 +2,26 @@
   "title": "Servizio di valutazione immobiliare · HousySpace",
   "description": "Un riferimento istantaneo con lo strumento online oppure un rapporto completo con studio di mercato.",
   "head": {
-    "heading": "Valutazione immobiliare",
+    "heading": "Valutazione *immobiliare*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-valoracion-1000.webp",
+      "alt": "Illustrazione del servizio: Un volume verde selezionato tra altri volumi crema",
+      "scale": 0.744
+    },
     "items": [
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Un riferimento istantaneo con lo strumento online oppure un rapporto completo con studio di mercato."
       },
-      { "kind": "image", "src": "../../assets/home/det-terraza-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-terraza-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,16 +29,34 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Due modi per conoscere il valore del tuo immobile" },
-        { "kind": "h3", "text": "In tempo reale" },
-        { "kind": "p", "text": "Con il nostro strumento di valutazione online." },
+        {
+          "kind": "h2",
+          "text": "Due modi per conoscere il valore del tuo immobile"
+        },
+        {
+          "kind": "h3",
+          "text": "In tempo reale"
+        },
+        {
+          "kind": "p",
+          "text": "Con il nostro strumento di valutazione online."
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "", "text": "Inserisci i dati del tuo immobile." },
-            { "title": "", "text": "Ricevi subito un riferimento indicativo del valore." },
-            { "title": "", "text": "Se vuoi, un consulente lo esamina insieme a te." }
+            {
+              "title": "",
+              "text": "Inserisci i dati del tuo immobile."
+            },
+            {
+              "title": "",
+              "text": "Ricevi subito un riferimento indicativo del valore."
+            },
+            {
+              "title": "",
+              "text": "Se vuoi, un consulente lo esamina insieme a te."
+            }
           ]
         },
         {
@@ -40,20 +69,41 @@
             }
           ]
         },
-        { "kind": "h3", "text": "Rapporto di valutazione" },
-        { "kind": "p", "text": "Studiamo il tuo immobile in profondità." },
+        {
+          "kind": "h3",
+          "text": "Rapporto di valutazione"
+        },
+        {
+          "kind": "p",
+          "text": "Studiamo il tuo immobile in profondità."
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "", "text": "Visitiamo l'immobile e ne verifichiamo la documentazione." },
-            { "title": "", "text": "Analizziamo il quartiere, il mercato e le vendite recenti." },
-            { "title": "", "text": "Ti consegniamo il rapporto e lo commentiamo insieme." }
+            {
+              "title": "",
+              "text": "Visitiamo l'immobile e ne verifichiamo la documentazione."
+            },
+            {
+              "title": "",
+              "text": "Analizziamo il quartiere, il mercato e le vendite recenti."
+            },
+            {
+              "title": "",
+              "text": "Ti consegniamo il rapporto e lo commentiamo insieme."
+            }
           ]
         },
         {
           "kind": "buttons",
-          "items": [{ "label": "Richiedi un rapporto", "href": "route:contact", "solid": false }]
+          "items": [
+            {
+              "label": "Richiedi un rapporto",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
         }
       ]
     },
@@ -61,14 +111,26 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Cosa è incluso" },
-        { "kind": "h2", "text": "Un rapporto per decidere con i dati" },
+        {
+          "kind": "tag",
+          "text": "Cosa è incluso"
+        },
+        {
+          "kind": "h2",
+          "text": "Un rapporto per decidere con i dati"
+        },
         {
           "kind": "lead",
           "text": "È lo stesso rapporto che prepariamo prima di mettere un immobile in vendita."
         },
-        { "kind": "p", "text": "Rapporto di valutazione" },
-        { "kind": "p", "text": "HousySpace" },
+        {
+          "kind": "p",
+          "text": "Rapporto di valutazione"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace"
+        },
         {
           "kind": "list",
           "ordered": true,
@@ -125,8 +187,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Domande frequenti" },
-        { "kind": "h2", "text": "Le domande più frequenti" },
+        {
+          "kind": "tag",
+          "text": "Domande frequenti"
+        },
+        {
+          "kind": "h2",
+          "text": "Le domande più frequenti"
+        },
         {
           "kind": "faq",
           "q": "È la stessa cosa di una perizia ufficiale?",
@@ -153,7 +221,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -161,14 +232,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

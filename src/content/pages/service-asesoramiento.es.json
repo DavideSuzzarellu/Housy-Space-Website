@@ -2,8 +2,13 @@
   "title": "Asesoramiento inmobiliario personalizado · HousySpace",
   "description": "Orientación clara, a tu medida, antes de tomar cualquier decisión.",
   "head": {
-    "heading": "Asesoramiento inmobiliario personalizado",
-    "photo": true,
+    "heading": "Asesoramiento *inmobiliario personalizado*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-asesoramiento-1000.webp",
+      "alt": "Ilustración del servicio: Una pieza verde que encaja en un vacío",
+      "scale": 0.805
+    },
     "items": [
       {
         "kind": "image",

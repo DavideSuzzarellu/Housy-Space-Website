@@ -246,6 +246,10 @@ const it = {
     clusterLabel: "{count} immobili: ingrandisci la mappa",
     approximateSuffix: "(posizione approssimativa)",
   },
+  servicePage: {
+    /** Button under the head that scrolls to the closing contact block. */
+    talk: "Parliamone",
+  },
   servicesIndex: {
     discover: "Scopri il servizio",
     othersTag: "Ti aiutiamo anche con",

@@ -2,8 +2,13 @@
   "title": "Alquiler y gestión de inmuebles · HousySpace",
   "description": "Comercialización, selección de arrendatarios y gestión del alquiler.",
   "head": {
-    "heading": "Alquiler y gestión de inmuebles",
-    "photo": true,
+    "heading": "Alquiler *y gestión de inmuebles*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-alquiler-1000.webp",
+      "alt": "Ilustración del servicio: Un arco verde que protege tres edificios",
+      "scale": 0.798
+    },
     "items": [
       {
         "kind": "tag",

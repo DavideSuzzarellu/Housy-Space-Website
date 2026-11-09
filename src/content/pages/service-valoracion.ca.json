@@ -2,15 +2,26 @@
   "title": "Servei de valoració immobiliària · HousySpace",
   "description": "Una referència al moment amb el valorador o un informe complet amb estudi de mercat.",
   "head": {
-    "heading": "Valoració immobiliària",
+    "heading": "Valoració *immobiliària*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-valoracion-1000.webp",
+      "alt": "Il·lustració del servei: Un volum verd seleccionat entre altres volums crema",
+      "scale": 0.744
+    },
     "items": [
-      { "kind": "tag", "text": "Servei" },
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
       {
         "kind": "lead",
         "text": "Una referència al moment amb el valorador o un informe complet amb estudi de mercat."
       },
-      { "kind": "image", "src": "../../assets/home/det-terraza-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-terraza-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,36 +29,81 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Dues maneres de conèixer el valor del teu habitatge" },
-        { "kind": "h3", "text": "Al moment" },
-        { "kind": "p", "text": "Amb el nostre valorador en línia." },
+        {
+          "kind": "h2",
+          "text": "Dues maneres de conèixer el valor del teu habitatge"
+        },
+        {
+          "kind": "h3",
+          "text": "Al moment"
+        },
+        {
+          "kind": "p",
+          "text": "Amb el nostre valorador en línia."
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "", "text": "Introdueixes les dades del teu habitatge." },
-            { "title": "", "text": "Reps al moment una referència orientativa." },
-            { "title": "", "text": "Si vols, un assessor la revisa amb tu." }
+            {
+              "title": "",
+              "text": "Introdueixes les dades del teu habitatge."
+            },
+            {
+              "title": "",
+              "text": "Reps al moment una referència orientativa."
+            },
+            {
+              "title": "",
+              "text": "Si vols, un assessor la revisa amb tu."
+            }
           ]
         },
         {
           "kind": "buttons",
-          "items": [{ "label": "Anar al valorador", "href": "route:valuation", "solid": true }]
+          "items": [
+            {
+              "label": "Anar al valorador",
+              "href": "route:valuation",
+              "solid": true
+            }
+          ]
         },
-        { "kind": "h3", "text": "Informe de valoració" },
-        { "kind": "p", "text": "Estudiem el teu habitatge a fons." },
+        {
+          "kind": "h3",
+          "text": "Informe de valoració"
+        },
+        {
+          "kind": "p",
+          "text": "Estudiem el teu habitatge a fons."
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "", "text": "Visitem l'immoble i en revisem la documentació." },
-            { "title": "", "text": "Analitzem el barri, el mercat i les vendes recents." },
-            { "title": "", "text": "Et lliurem l'informe i el comentem amb tu." }
+            {
+              "title": "",
+              "text": "Visitem l'immoble i en revisem la documentació."
+            },
+            {
+              "title": "",
+              "text": "Analitzem el barri, el mercat i les vendes recents."
+            },
+            {
+              "title": "",
+              "text": "Et lliurem l'informe i el comentem amb tu."
+            }
           ]
         },
         {
           "kind": "buttons",
-          "items": [{ "label": "Demanar un informe", "href": "route:contact", "solid": false }]
+          "items": [
+            {
+              "label": "Demanar un informe",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
         }
       ]
     },
@@ -55,14 +111,26 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Què inclou" },
-        { "kind": "h2", "text": "Un informe per decidir amb dades" },
+        {
+          "kind": "tag",
+          "text": "Què inclou"
+        },
+        {
+          "kind": "h2",
+          "text": "Un informe per decidir amb dades"
+        },
         {
           "kind": "lead",
           "text": "És el mateix informe que preparem abans de posar un habitatge a la venda."
         },
-        { "kind": "p", "text": "Informe de valoració" },
-        { "kind": "p", "text": "HousySpace" },
+        {
+          "kind": "p",
+          "text": "Informe de valoració"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace"
+        },
         {
           "kind": "list",
           "ordered": true,
@@ -119,8 +187,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Preguntes freqüents" },
-        { "kind": "h2", "text": "El que ens solen preguntar" },
+        {
+          "kind": "tag",
+          "text": "Preguntes freqüents"
+        },
+        {
+          "kind": "h2",
+          "text": "El que ens solen preguntar"
+        },
         {
           "kind": "faq",
           "q": "És el mateix que una taxació?",
@@ -147,7 +221,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parlem" },
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
         {
           "kind": "lead",
           "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
@@ -155,14 +232,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

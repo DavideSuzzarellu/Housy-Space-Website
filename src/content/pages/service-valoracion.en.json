@@ -2,15 +2,26 @@
   "title": "Property valuation service · HousySpace",
   "description": "An instant reference with the online tool or a comprehensive report with a market study.",
   "head": {
-    "heading": "Property valuation",
+    "heading": "Property *valuation*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-valoracion-1000.webp",
+      "alt": "Service illustration: A green volume selected among other cream volumes",
+      "scale": 0.744
+    },
     "items": [
-      { "kind": "tag", "text": "Service" },
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
       {
         "kind": "lead",
         "text": "An instant reference with the online tool or a comprehensive report with a market study."
       },
-      { "kind": "image", "src": "../../assets/home/det-terraza-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-terraza-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,38 +29,81 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Two ways to know your property's value" },
-        { "kind": "h3", "text": "Instantly" },
-        { "kind": "p", "text": "With our online valuation tool." },
+        {
+          "kind": "h2",
+          "text": "Two ways to know your property's value"
+        },
+        {
+          "kind": "h3",
+          "text": "Instantly"
+        },
+        {
+          "kind": "p",
+          "text": "With our online valuation tool."
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "", "text": "You enter your property details." },
-            { "title": "", "text": "You instantly receive an indicative reference value." },
-            { "title": "", "text": "If you like, an advisor can review it with you." }
+            {
+              "title": "",
+              "text": "You enter your property details."
+            },
+            {
+              "title": "",
+              "text": "You instantly receive an indicative reference value."
+            },
+            {
+              "title": "",
+              "text": "If you like, an advisor can review it with you."
+            }
           ]
         },
         {
           "kind": "buttons",
           "items": [
-            { "label": "Go to the valuation tool", "href": "route:valuation", "solid": true }
+            {
+              "label": "Go to the valuation tool",
+              "href": "route:valuation",
+              "solid": true
+            }
           ]
         },
-        { "kind": "h3", "text": "Valuation report" },
-        { "kind": "p", "text": "We study your property in depth." },
+        {
+          "kind": "h3",
+          "text": "Valuation report"
+        },
+        {
+          "kind": "p",
+          "text": "We study your property in depth."
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "", "text": "We visit the property and review its documentation." },
-            { "title": "", "text": "We analyse the neighbourhood, the market and recent sales." },
-            { "title": "", "text": "We deliver the report and discuss it with you." }
+            {
+              "title": "",
+              "text": "We visit the property and review its documentation."
+            },
+            {
+              "title": "",
+              "text": "We analyse the neighbourhood, the market and recent sales."
+            },
+            {
+              "title": "",
+              "text": "We deliver the report and discuss it with you."
+            }
           ]
         },
         {
           "kind": "buttons",
-          "items": [{ "label": "Request a report", "href": "route:contact", "solid": false }]
+          "items": [
+            {
+              "label": "Request a report",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
         }
       ]
     },
@@ -57,14 +111,26 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "What's included" },
-        { "kind": "h2", "text": "A report to decide with data" },
+        {
+          "kind": "tag",
+          "text": "What's included"
+        },
+        {
+          "kind": "h2",
+          "text": "A report to decide with data"
+        },
         {
           "kind": "lead",
           "text": "It's the same report we prepare before listing a property for sale."
         },
-        { "kind": "p", "text": "Valuation report" },
-        { "kind": "p", "text": "HousySpace" },
+        {
+          "kind": "p",
+          "text": "Valuation report"
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace"
+        },
         {
           "kind": "list",
           "ordered": true,
@@ -85,7 +151,10 @@
               "title": "Cadastral reference value",
               "text": "04 The value set by the Cadastre for the property"
             },
-            { "title": "Data and measurements", "text": "05 Built and usable area, room by room" },
+            {
+              "title": "Data and measurements",
+              "text": "05 Built and usable area, room by room"
+            },
             {
               "title": "Features and condition",
               "text": "06 Condition of the property and building, installations, orientation"
@@ -118,8 +187,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Frequently asked questions" },
-        { "kind": "h2", "text": "What people ask us" },
+        {
+          "kind": "tag",
+          "text": "Frequently asked questions"
+        },
+        {
+          "kind": "h2",
+          "text": "What people ask us"
+        },
         {
           "kind": "faq",
           "q": "Is it the same as an official appraisal?",
@@ -146,7 +221,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Let's talk" },
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
         {
           "kind": "lead",
           "text": "Every good decision starts with a conversation. Let's talk about yours."
@@ -154,14 +232,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contact us", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

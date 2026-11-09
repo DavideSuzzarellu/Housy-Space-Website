@@ -2,17 +2,34 @@
   "title": "Personal Shopper immobiliare · HousySpace",
   "description": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo — e se serve, lo ristrutturiamo anche noi.",
   "head": {
-    "heading": "Personal Shopper immobiliare",
+    "heading": "Personal Shopper *immobiliare*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-personal-shopper-1000.webp",
+      "alt": "Illustrazione del servizio: Una lente d'ingrandimento su un'opzione in evidenza tra diversi volumi",
+      "scale": 0.797
+    },
     "items": [
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo — e se serve, lo ristrutturiamo anche noi."
       },
-      { "kind": "image", "src": "../../assets/home/portal-1400.jpg" },
-      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
-      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -38,8 +55,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come lo facciamo" },
-        { "kind": "h2", "text": "Dalla ricerca alla consegna delle chiavi" },
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Dalla ricerca alla consegna delle chiavi"
+        },
         {
           "kind": "steps",
           "items": [
@@ -75,8 +98,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Nessuna sorpresa" },
-        { "kind": "h2", "text": "Cosa verifichiamo prima che tu compri" },
+        {
+          "kind": "tag",
+          "text": "Nessuna sorpresa"
+        },
+        {
+          "kind": "h2",
+          "text": "Cosa verifichiamo prima che tu compri"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -113,8 +142,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "image", "src": "../../assets/home/det-salon-1400.jpg" },
-        { "kind": "tag", "text": "Ristrutturazioni" },
+        {
+          "kind": "image",
+          "src": "../../assets/home/det-salon-1400.jpg"
+        },
+        {
+          "kind": "tag",
+          "text": "Ristrutturazioni"
+        },
         {
           "kind": "h2",
           "text": "L'appartamento ha bisogno di ristrutturazione? Ce ne occupiamo noi."
@@ -131,8 +166,14 @@
               "title": "",
               "text": "Preventivo della ristrutturazione prima dell'acquisto, per decidere con il costo totale."
             },
-            { "title": "", "text": "Progetto, permessi e lavori coordinati da noi." },
-            { "title": "", "text": "Monitoraggio dei tempi e delle finiture fino alla consegna." }
+            {
+              "title": "",
+              "text": "Progetto, permessi e lavori coordinati da noi."
+            },
+            {
+              "title": "",
+              "text": "Monitoraggio dei tempi e delle finiture fino alla consegna."
+            }
           ]
         },
         {
@@ -151,7 +192,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        {
+          "kind": "bandQuote",
+          "text": "«Non preoccuparti, ci penso io.»"
+        },
         {
           "kind": "p",
           "text": "Dalla prima visita al giorno in cui entri a vivere, hai un solo consulente di riferimento."
@@ -162,7 +206,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -170,14 +217,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

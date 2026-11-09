@@ -2,15 +2,26 @@
   "title": "Reformes i interiorisme · HousySpace",
   "description": "Reformes per a tot tipus d'immoble: projecte, interiorisme i obra amb un sol interlocutor.",
   "head": {
-    "heading": "Reformes i interiorisme",
+    "heading": "Reformes *i interiorisme*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-reformas-1000.webp",
+      "alt": "Il·lustració del servei: Volums crema i verds que es reordenen",
+      "scale": 0.652
+    },
     "items": [
-      { "kind": "tag", "text": "Servei" },
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
       {
         "kind": "lead",
         "text": "Reformes per a tot tipus d'immoble: projecte, interiorisme i obra amb un sol interlocutor."
       },
-      { "kind": "image", "src": "../../assets/home/det-ventanal-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-ventanal-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,7 +29,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Una reforma, un sol interlocutor." },
+        {
+          "kind": "big",
+          "text": "Una reforma, un sol interlocutor."
+        },
         {
           "kind": "p",
           "text": "Fem reformes per a tot tipus d'immoble. Pensem la reforma i l'interiorisme alhora, perquè la distribució, els materials i la llum estiguin decidits abans de començar l'obra. Després coordinem els professionals i fem seguiment de terminis i pressupost fins al lliurament."
@@ -33,8 +47,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Les fases" },
-        { "kind": "h2", "text": "Del primer esbós al lliurament de claus" },
+        {
+          "kind": "tag",
+          "text": "Les fases"
+        },
+        {
+          "kind": "h2",
+          "text": "Del primer esbós al lliurament de claus"
+        },
         {
           "kind": "steps",
           "items": [
@@ -71,8 +91,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Interiorisme" },
-        { "kind": "h2", "text": "L'habitatge es tria també amb les mans." },
+        {
+          "kind": "tag",
+          "text": "Interiorisme"
+        },
+        {
+          "kind": "h2",
+          "text": "L'habitatge es tria també amb les mans."
+        },
         {
           "kind": "lead",
           "text": "Definim amb tu l'estil, els materials, les textures i els acabats perquè cada estança funcioni i se senti teva."
@@ -81,12 +107,30 @@
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "Fusta natural", "text": "Terres, fusteria i mobiliari" },
-            { "title": "Pedra i marbre", "text": "Taulells, banys i detalls" },
-            { "title": "Microciment", "text": "Continuïtat en terres i parets" },
-            { "title": "Lli i cotó", "text": "Tèxtils i cortines" },
-            { "title": "Llautó", "text": "Il·luminació i ferraments" },
-            { "title": "Verd profund", "text": "Color i contrast" }
+            {
+              "title": "Fusta natural",
+              "text": "Terres, fusteria i mobiliari"
+            },
+            {
+              "title": "Pedra i marbre",
+              "text": "Taulells, banys i detalls"
+            },
+            {
+              "title": "Microciment",
+              "text": "Continuïtat en terres i parets"
+            },
+            {
+              "title": "Lli i cotó",
+              "text": "Tèxtils i cortines"
+            },
+            {
+              "title": "Llautó",
+              "text": "Il·luminació i ferraments"
+            },
+            {
+              "title": "Verd profund",
+              "text": "Color i contrast"
+            }
           ]
         }
       ]
@@ -95,8 +139,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Què inclou" },
-        { "kind": "h2", "text": "Tot el projecte, en les mateixes mans" },
+        {
+          "kind": "tag",
+          "text": "Què inclou"
+        },
+        {
+          "kind": "h2",
+          "text": "Tot el projecte, en les mateixes mans"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -105,7 +155,10 @@
               "title": "",
               "text": "01DistribucióCom es mou la llum i com et mous tu per la casa."
             },
-            { "title": "", "text": "02Materials i acabatsPaleta coherent per a tot l'habitatge." },
+            {
+              "title": "",
+              "text": "02Materials i acabatsPaleta coherent per a tot l'habitatge."
+            },
             {
               "title": "",
               "text": "03Il·luminacióLlum natural i artificial pensades per a cada estança."
@@ -130,8 +183,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Quan reformar" },
-        { "kind": "h2", "text": "Una reforma per a cada moment" },
+        {
+          "kind": "tag",
+          "text": "Quan reformar"
+        },
+        {
+          "kind": "h2",
+          "text": "Una reforma per a cada moment"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -144,7 +203,10 @@
               "title": "",
               "text": "02En comprarLa reforma estudiada abans de comprar i feta per nosaltres. [Veure Personal Shopper](service:personal-shopper)."
             },
-            { "title": "", "text": "03Per llogarPosada a punt per llogar abans i millor." },
+            {
+              "title": "",
+              "text": "03Per llogarPosada a punt per llogar abans i millor."
+            },
             {
               "title": "",
               "text": "04Per invertirReformes que sumen valor i rendibilitat, amb els números davant."
@@ -157,7 +219,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        {
+          "kind": "bandQuote",
+          "text": "«No et preocupis, jo me n'encarrego.»"
+        },
         {
           "kind": "p",
           "text": "Llicències, gremis, imprevistos d'obra: els gestionem nosaltres perquè tu només hagis de decidir."
@@ -168,8 +233,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Amb qui ho fem" },
-        { "kind": "h2", "text": "Projectes amb Maria Guimerà Arquitectura" },
+        {
+          "kind": "tag",
+          "text": "Amb qui ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Projectes amb Maria Guimerà Arquitectura"
+        },
         {
           "kind": "lead",
           "text": "Per al projecte, l'interiorisme i la direcció de les reformes col·laborem amb un estudi d'arquitectura i interiorisme de Barcelona."
@@ -200,7 +271,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parlem" },
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
         {
           "kind": "lead",
           "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
@@ -208,14 +282,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

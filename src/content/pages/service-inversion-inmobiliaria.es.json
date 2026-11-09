@@ -2,8 +2,13 @@
   "title": "Inversión inmobiliaria · HousySpace",
   "description": "Análisis de oportunidades con números claros: compra, reforma, alquiler y rentabilidad.",
   "head": {
-    "heading": "Inversión inmobiliaria",
+    "heading": "Inversión *inmobiliaria*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-inversion-1000.webp",
+      "alt": "Ilustración del servicio: Una curva ascendente sobre escalones con una llave, un rodillo y monedas",
+      "scale": 0.77
+    },
     "items": [
       {
         "kind": "tag",

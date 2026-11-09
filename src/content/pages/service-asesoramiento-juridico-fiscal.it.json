@@ -2,11 +2,22 @@
   "title": "Consulenza legale e fiscale · HousySpace",
   "description": "Quando l'operazione lo richiede, coordiniamo la consulenza con professionisti indipendenti di fiducia.",
   "head": {
-    "heading": "Consulenza legale e fiscale",
-    "photo": true,
+    "heading": "Consulenza *legale e fiscale*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
+      "alt": "Illustrazione del servizio: Una bilancia schematica in equilibrio",
+      "scale": 0.684
+    },
     "items": [
-      { "kind": "image", "src": "../../assets/home/det-hierro-720.jpg" },
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-hierro-720.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Quando l'operazione lo richiede, coordiniamo la consulenza con professionisti indipendenti di fiducia."
@@ -18,7 +29,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Ogni passaggio, corretto e sicuro." },
+        {
+          "kind": "big",
+          "text": "Ogni passaggio, corretto e sicuro."
+        },
         {
           "kind": "p",
           "text": "Comprare, vendere, ereditare o affittare un immobile ha conseguenze legali e fiscali. Le esaminiamo con lo studio legale e i consulenti fiscali con cui collaboriamo, ti spieghiamo le opzioni in modo chiaro e ci assicuriamo che tutto sia in ordine prima di firmare."
@@ -29,12 +43,21 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come possiamo aiutarti" },
-        { "kind": "h2", "text": "In base alla tua situazione" },
+        {
+          "kind": "tag",
+          "text": "Come possiamo aiutarti"
+        },
+        {
+          "kind": "h2",
+          "text": "In base alla tua situazione"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Comprare o vendere" },
+            {
+              "kind": "h3",
+              "text": "Comprare o vendere"
+            },
             {
               "kind": "list",
               "ordered": false,
@@ -43,9 +66,18 @@
                   "title": "",
                   "text": "Visura ipotecaria, gravami e situazione al Registro della Proprietà"
                 },
-                { "title": "", "text": "Contratto di caparra e contratto di compravendita" },
-                { "title": "", "text": "Revisione dell'atto prima del notaio" },
-                { "title": "", "text": "Imposte sull'operazione" }
+                {
+                  "title": "",
+                  "text": "Contratto di caparra e contratto di compravendita"
+                },
+                {
+                  "title": "",
+                  "text": "Revisione dell'atto prima del notaio"
+                },
+                {
+                  "title": "",
+                  "text": "Imposte sull'operazione"
+                }
               ]
             }
           ]
@@ -53,15 +85,30 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Ereditare un immobile" },
+            {
+              "kind": "h3",
+              "text": "Ereditare un immobile"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Documentazione per accettare o rinunciare all'eredità" },
-                { "title": "", "text": "Imposta sulle successioni e plusvalenza municipale" },
-                { "title": "", "text": "Trascrizione al Registro della Proprietà" },
-                { "title": "", "text": "Accordi tra eredi per vendere o dividere" }
+                {
+                  "title": "",
+                  "text": "Documentazione per accettare o rinunciare all'eredità"
+                },
+                {
+                  "title": "",
+                  "text": "Imposta sulle successioni e plusvalenza municipale"
+                },
+                {
+                  "title": "",
+                  "text": "Trascrizione al Registro della Proprietà"
+                },
+                {
+                  "title": "",
+                  "text": "Accordi tra eredi per vendere o dividere"
+                }
               ]
             }
           ]
@@ -69,15 +116,30 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Affittare" },
+            {
+              "kind": "h3",
+              "text": "Affittare"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Contratto di locazione" },
-                { "title": "", "text": "Deposito cauzionale e garanzie" },
-                { "title": "", "text": "Mancato pagamento e sfratti" },
-                { "title": "", "text": "I redditi da locazione nella dichiarazione dei redditi" }
+                {
+                  "title": "",
+                  "text": "Contratto di locazione"
+                },
+                {
+                  "title": "",
+                  "text": "Deposito cauzionale e garanzie"
+                },
+                {
+                  "title": "",
+                  "text": "Mancato pagamento e sfratti"
+                },
+                {
+                  "title": "",
+                  "text": "I redditi da locazione nella dichiarazione dei redditi"
+                }
               ]
             }
           ]
@@ -85,15 +147,30 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Aziende e attività commerciali" },
+            {
+              "kind": "h3",
+              "text": "Aziende e attività commerciali"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Contratti commerciali" },
-                { "title": "", "text": "Società patrimoniali" },
-                { "title": "", "text": "Locazione di locali commerciali" },
-                { "title": "", "text": "Licenze e permessi" }
+                {
+                  "title": "",
+                  "text": "Contratti commerciali"
+                },
+                {
+                  "title": "",
+                  "text": "Società patrimoniali"
+                },
+                {
+                  "title": "",
+                  "text": "Locazione di locali commerciali"
+                },
+                {
+                  "title": "",
+                  "text": "Licenze e permessi"
+                }
               ]
             }
           ]
@@ -104,11 +181,26 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Fiscalità" },
-        { "kind": "h2", "text": "Le imposte sugli immobili, per ente" },
-        { "kind": "lead", "text": "Chi riscuote ogni imposta e quando compare in un'operazione." },
-        { "kind": "h3", "text": "Comune" },
-        { "kind": "p", "text": "Imposte municipali" },
+        {
+          "kind": "tag",
+          "text": "Fiscalità"
+        },
+        {
+          "kind": "h2",
+          "text": "Le imposte sugli immobili, per ente"
+        },
+        {
+          "kind": "lead",
+          "text": "Chi riscuote ogni imposta e quando compare in un'operazione."
+        },
+        {
+          "kind": "h3",
+          "text": "Comune"
+        },
+        {
+          "kind": "p",
+          "text": "Imposte municipali"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -123,8 +215,14 @@
             }
           ]
         },
-        { "kind": "h3", "text": "Generalitat (Governo Catalano)" },
-        { "kind": "p", "text": "Agència Tributària de Catalunya" },
+        {
+          "kind": "h3",
+          "text": "Generalitat (Governo Catalano)"
+        },
+        {
+          "kind": "p",
+          "text": "Agència Tributària de Catalunya"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -143,8 +241,14 @@
             }
           ]
         },
-        { "kind": "h3", "text": "Stato Spagnolo" },
-        { "kind": "p", "text": "Agencia Tributaria" },
+        {
+          "kind": "h3",
+          "text": "Stato Spagnolo"
+        },
+        {
+          "kind": "p",
+          "text": "Agencia Tributaria"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -153,8 +257,14 @@
               "title": "IRPEF: plusvalenza immobiliare",
               "text": "Al momento della vendita con guadagno."
             },
-            { "title": "IRPEF: redditi da locazione", "text": "Se affitti l'immobile." },
-            { "title": "Imposta patrimoniale", "text": "In base al valore del tuo patrimonio." }
+            {
+              "title": "IRPEF: redditi da locazione",
+              "text": "Se affitti l'immobile."
+            },
+            {
+              "title": "Imposta patrimoniale",
+              "text": "In base al valore del tuo patrimonio."
+            }
           ]
         }
       ]
@@ -163,8 +273,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come lo facciamo" },
-        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
         {
           "kind": "steps",
           "items": [
@@ -176,7 +292,10 @@
               "title": "Studiamo il tuo caso",
               "text": "Lo esaminiamo con gli specialisti e ti spieghiamo le opzioni."
             },
-            { "title": "Decidiamo insieme", "text": "Cosa faremo, come e quando." },
+            {
+              "title": "Decidiamo insieme",
+              "text": "Cosa faremo, come e quando."
+            },
             {
               "title": "Lo coordiniamo",
               "text": "Ci assicuriamo che tutto sia corretto e sicuro fino alla firma."
@@ -189,8 +308,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Con chi lo facciamo" },
-        { "kind": "h2", "text": "Lavoriamo con ADV Advocats e Asesoría Edac" },
+        {
+          "kind": "tag",
+          "text": "Con chi lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Lavoriamo con ADV Advocats e Asesoría Edac"
+        },
         {
           "kind": "lead",
           "text": "Uno studio legale e uno studio fiscale di Barcellona con cui esaminiamo gli aspetti legali e fiscali delle nostre operazioni."
@@ -225,7 +350,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -233,14 +361,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

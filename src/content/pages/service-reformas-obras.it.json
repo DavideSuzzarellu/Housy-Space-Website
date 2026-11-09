@@ -2,15 +2,26 @@
   "title": "Ristrutturazioni e interior design · HousySpace",
   "description": "Ristrutturazioni per ogni tipo di immobile: progetto, interior design e lavori con un unico interlocutore.",
   "head": {
-    "heading": "Ristrutturazioni e interior design",
+    "heading": "Ristrutturazioni *e interior design*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-reformas-1000.webp",
+      "alt": "Illustrazione del servizio: Volumi crema e verdi che si riordinano",
+      "scale": 0.652
+    },
     "items": [
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Ristrutturazioni per ogni tipo di immobile: progetto, interior design e lavori con un unico interlocutore."
       },
-      { "kind": "image", "src": "../../assets/home/det-ventanal-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-ventanal-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,7 +29,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Una ristrutturazione, un solo interlocutore." },
+        {
+          "kind": "big",
+          "text": "Una ristrutturazione, un solo interlocutore."
+        },
         {
           "kind": "p",
           "text": "Realizziamo ristrutturazioni per ogni tipo di immobile. Pensiamo alla ristrutturazione e all'interior design contemporaneamente, così distribuzione, materiali e luce sono definiti prima di iniziare i lavori. Poi coordiniamo i professionisti e monitoriamo tempi e budget fino alla consegna."
@@ -33,8 +47,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Le fasi" },
-        { "kind": "h2", "text": "Dal primo schizzo alla consegna delle chiavi" },
+        {
+          "kind": "tag",
+          "text": "Le fasi"
+        },
+        {
+          "kind": "h2",
+          "text": "Dal primo schizzo alla consegna delle chiavi"
+        },
         {
           "kind": "steps",
           "items": [
@@ -71,8 +91,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Interior design" },
-        { "kind": "h2", "text": "Una casa si sceglie anche con le mani." },
+        {
+          "kind": "tag",
+          "text": "Interior design"
+        },
+        {
+          "kind": "h2",
+          "text": "Una casa si sceglie anche con le mani."
+        },
         {
           "kind": "lead",
           "text": "Definiamo con te lo stile, i materiali, le texture e i dettagli affinché ogni ambiente funzioni e si senta tuo."
@@ -81,12 +107,30 @@
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "Legno naturale", "text": "Pavimenti, falegnameria e arredi" },
-            { "title": "Pietra e marmo", "text": "Piani di lavoro, bagni e dettagli" },
-            { "title": "Microcemento", "text": "Continuità su pavimenti e pareti" },
-            { "title": "Lino e cotone", "text": "Tessuti e tende" },
-            { "title": "Ottone", "text": "Illuminazione e ferramenta" },
-            { "title": "Verde profondo", "text": "Colore e contrasto" }
+            {
+              "title": "Legno naturale",
+              "text": "Pavimenti, falegnameria e arredi"
+            },
+            {
+              "title": "Pietra e marmo",
+              "text": "Piani di lavoro, bagni e dettagli"
+            },
+            {
+              "title": "Microcemento",
+              "text": "Continuità su pavimenti e pareti"
+            },
+            {
+              "title": "Lino e cotone",
+              "text": "Tessuti e tende"
+            },
+            {
+              "title": "Ottone",
+              "text": "Illuminazione e ferramenta"
+            },
+            {
+              "title": "Verde profondo",
+              "text": "Colore e contrasto"
+            }
           ]
         }
       ]
@@ -95,8 +139,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Cosa include" },
-        { "kind": "h2", "text": "L'intero progetto, nelle stesse mani" },
+        {
+          "kind": "tag",
+          "text": "Cosa include"
+        },
+        {
+          "kind": "h2",
+          "text": "L'intero progetto, nelle stesse mani"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -133,8 +183,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Quando ristrutturare" },
-        { "kind": "h2", "text": "Una ristrutturazione per ogni momento" },
+        {
+          "kind": "tag",
+          "text": "Quando ristrutturare"
+        },
+        {
+          "kind": "h2",
+          "text": "Una ristrutturazione per ogni momento"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -147,7 +203,10 @@
               "title": "",
               "text": "02All'acquistoLa ristrutturazione studiata prima dell'acquisto e realizzata da noi. [Vedi Personal Shopper](service:personal-shopper)."
             },
-            { "title": "", "text": "03Per affittareMessa a punto per affittare prima e meglio." },
+            {
+              "title": "",
+              "text": "03Per affittareMessa a punto per affittare prima e meglio."
+            },
             {
               "title": "",
               "text": "04Per investireRistrutturazioni che aggiungono valore e rendimento, con i numeri davanti."
@@ -160,7 +219,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        {
+          "kind": "bandQuote",
+          "text": "«Non preoccuparti, ci penso io.»"
+        },
         {
           "kind": "p",
           "text": "Permessi, maestranze, imprevisti di cantiere: li gestiamo noi perché tu debba solo decidere."
@@ -171,8 +233,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Con chi lo facciamo" },
-        { "kind": "h2", "text": "Progetti con Maria Guimerà Arquitectura" },
+        {
+          "kind": "tag",
+          "text": "Con chi lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Progetti con Maria Guimerà Arquitectura"
+        },
         {
           "kind": "lead",
           "text": "Per il progetto, l'interior design e la direzione lavori collaboriamo con uno studio di architettura e interior design di Barcellona."
@@ -203,7 +271,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -211,14 +282,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

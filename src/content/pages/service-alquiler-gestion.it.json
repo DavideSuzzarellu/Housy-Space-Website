@@ -2,15 +2,26 @@
   "title": "Locazioni e gestione immobiliare · HousySpace",
   "description": "Commercializzazione, selezione degli inquilini e gestione della locazione.",
   "head": {
-    "heading": "Locazioni e gestione immobiliare",
-    "photo": true,
+    "heading": "Locazioni *e gestione immobiliare*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-alquiler-1000.webp",
+      "alt": "Illustrazione del servizio: Un arco verde che protegge tre edifici",
+      "scale": 0.798
+    },
     "items": [
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Commercializzazione, selezione degli inquilini e gestione della locazione."
       },
-      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -32,22 +43,49 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Due modi di lavorare" },
-        { "kind": "h2", "text": "Sei tu a scegliere fin dove arriviamo" },
+        {
+          "kind": "tag",
+          "text": "Due modi di lavorare"
+        },
+        {
+          "kind": "h2",
+          "text": "Sei tu a scegliere fin dove arriviamo"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Troviamo l'inquilino" },
-            { "kind": "p", "text": "Dalla pubblicazione alla consegna delle chiavi." },
+            {
+              "kind": "h3",
+              "text": "Troviamo l'inquilino"
+            },
+            {
+              "kind": "p",
+              "text": "Dalla pubblicazione alla consegna delle chiavi."
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Preparazione e pubblicazione dell'annuncio" },
-                { "title": "", "text": "Risposta ai candidati e visite" },
-                { "title": "", "text": "Verifica della solvibilità e documentazione" },
-                { "title": "", "text": "Contratto di locazione e deposito cauzionale" },
-                { "title": "", "text": "Inventario e consegna delle chiavi" }
+                {
+                  "title": "",
+                  "text": "Preparazione e pubblicazione dell'annuncio"
+                },
+                {
+                  "title": "",
+                  "text": "Risposta ai candidati e visite"
+                },
+                {
+                  "title": "",
+                  "text": "Verifica della solvibilità e documentazione"
+                },
+                {
+                  "title": "",
+                  "text": "Contratto di locazione e deposito cauzionale"
+                },
+                {
+                  "title": "",
+                  "text": "Inventario e consegna delle chiavi"
+                }
               ]
             }
           ]
@@ -55,17 +93,38 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "E gestiamo la locazione" },
-            { "kind": "p", "text": "Durante il contratto, come concordato." },
+            {
+              "kind": "h3",
+              "text": "E gestiamo la locazione"
+            },
+            {
+              "kind": "p",
+              "text": "Durante il contratto, come concordato."
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Assistenza all'inquilino e gestione degli inconvenienti" },
-                { "title": "", "text": "Coordinamento delle riparazioni" },
-                { "title": "", "text": "Monitoraggio dei pagamenti e delle utenze" },
-                { "title": "", "text": "Rinnovi, aggiornamenti e fine contratto" },
-                { "title": "", "text": "Ispezione all'uscita dell'inquilino" }
+                {
+                  "title": "",
+                  "text": "Assistenza all'inquilino e gestione degli inconvenienti"
+                },
+                {
+                  "title": "",
+                  "text": "Coordinamento delle riparazioni"
+                },
+                {
+                  "title": "",
+                  "text": "Monitoraggio dei pagamenti e delle utenze"
+                },
+                {
+                  "title": "",
+                  "text": "Rinnovi, aggiornamenti e fine contratto"
+                },
+                {
+                  "title": "",
+                  "text": "Ispezione all'uscita dell'inquilino"
+                }
               ]
             }
           ]
@@ -76,8 +135,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come lo facciamo" },
-        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
         {
           "kind": "steps",
           "items": [
@@ -109,8 +174,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Domande frequenti" },
-        { "kind": "h2", "text": "Le domande più frequenti" },
+        {
+          "kind": "tag",
+          "text": "Domande frequenti"
+        },
+        {
+          "kind": "h2",
+          "text": "Le domande più frequenti"
+        },
         {
           "kind": "faq",
           "q": "Quali documenti mi servono per affittare?",
@@ -137,7 +208,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -145,14 +219,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

@@ -2,8 +2,13 @@
   "title": "Reformas e interiorismo · HousySpace",
   "description": "Reformas para todo tipo de inmueble: proyecto, interiorismo y obra con un solo interlocutor.",
   "head": {
-    "heading": "Reformas e interiorismo",
+    "heading": "Reformas *e interiorismo*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-reformas-1000.webp",
+      "alt": "Ilustración del servicio: Volúmenes crema y verde que se reordenan",
+      "scale": 0.652
+    },
     "items": [
       {
         "kind": "tag",

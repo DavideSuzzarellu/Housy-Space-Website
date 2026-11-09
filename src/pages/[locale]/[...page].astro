@@ -22,11 +22,11 @@ import {
   getPage,
   type EditorialKey,
 } from "@/features/pages/application/pages";
-import OtherServices from "@/features/pages/ui/OtherServices.astro";
 import ServicesGrid from "@/features/pages/ui/ServicesGrid.astro";
 import { getServiceCards } from "@/features/pages/application/serviceCards";
 import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
+import ServiceView from "@/features/pages/ui/ServiceView.astro";
 import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
@@ -255,6 +255,14 @@ const crumbs = [
       serviceCards={aboutServiceCards}
       crumbs={crumbs}
     />
+  ) : target.view === "service" && editorial !== undefined ? (
+    <ServiceView
+      locale={locale}
+      service={target.service}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
   ) : (
     editorial !== undefined && (
       <PageView
@@ -269,7 +277,6 @@ const crumbs = [
     <ServicesGrid locale={locale} {...await getServiceCards(locale)} />
   )}
   {target.view === "post" && <PostView post={target.post} locale={locale} />}
-  {target.view === "service" && <OtherServices locale={locale} current={target.service} />}
   {target.view === "living" && <LivingView locale={locale} market={market} fallback={!isSpanish} />}
   {target.view === "district" && (
     <DistrictView

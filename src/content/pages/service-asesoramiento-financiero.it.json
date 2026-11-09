@@ -2,15 +2,26 @@
   "title": "Consulenza finanziaria · HousySpace",
   "description": "Mutuo e finanziamento studiati con numeri reali, insieme al nostro broker finanziario.",
   "head": {
-    "heading": "Consulenza finanziaria",
+    "heading": "Consulenza *finanziaria*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-financiero-1000.webp",
+      "alt": "Illustrazione del servizio: Una struttura appoggiata su tre solidi sostegni",
+      "scale": 0.739
+    },
     "items": [
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Mutuo e finanziamento studiati con numeri reali, insieme al nostro broker finanziario."
       },
-      { "kind": "image", "src": "../../assets/home/oficina-1672.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,7 +29,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Il mutuo, studiato prima di innamorarsi di un appartamento." },
+        {
+          "kind": "big",
+          "text": "Il mutuo, studiato prima di innamorarsi di un appartamento."
+        },
         {
           "kind": "p",
           "text": "Sapere quanto puoi finanziare, con quale rata e a quali condizioni evita brutte sorprese. Lo studiamo insieme a te e al nostro broker finanziario, che confronta le condizioni di diverse banche."
@@ -33,12 +47,21 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Per chi" },
-        { "kind": "h2", "text": "Finanziamento per ogni tipo di operazione" },
+        {
+          "kind": "tag",
+          "text": "Per chi"
+        },
+        {
+          "kind": "h2",
+          "text": "Finanziamento per ogni tipo di operazione"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Se stai comprando" },
+            {
+              "kind": "h3",
+              "text": "Se stai comprando"
+            },
             {
               "kind": "list",
               "ordered": false,
@@ -51,8 +74,14 @@
                   "title": "",
                   "text": "Risparmio necessario per l'anticipo, i costi e le imposte"
                 },
-                { "title": "", "text": "Confronto delle offerte di diverse banche" },
-                { "title": "", "text": "Perizia e documentazione fino alla firma" }
+                {
+                  "title": "",
+                  "text": "Confronto delle offerte di diverse banche"
+                },
+                {
+                  "title": "",
+                  "text": "Perizia e documentazione fino alla firma"
+                }
               ]
             }
           ]
@@ -60,14 +89,26 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Se stai vendendo" },
+            {
+              "kind": "h3",
+              "text": "Se stai vendendo"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Valutazione della capacità finanziaria dell'acquirente" },
-                { "title": "", "text": "Tempi del mutuo coordinati con il contratto di caparra" },
-                { "title": "", "text": "Meno rischio che la vendita salti" }
+                {
+                  "title": "",
+                  "text": "Valutazione della capacità finanziaria dell'acquirente"
+                },
+                {
+                  "title": "",
+                  "text": "Tempi del mutuo coordinati con il contratto di caparra"
+                },
+                {
+                  "title": "",
+                  "text": "Meno rischio che la vendita salti"
+                }
               ]
             }
           ]
@@ -75,13 +116,22 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "Se stai investendo" },
+            {
+              "kind": "h3",
+              "text": "Se stai investendo"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Finanziamento dell'acquisto e della ristrutturazione" },
-                { "title": "", "text": "Numeri dell'investimento con la rata inclusa" },
+                {
+                  "title": "",
+                  "text": "Finanziamento dell'acquisto e della ristrutturazione"
+                },
+                {
+                  "title": "",
+                  "text": "Numeri dell'investimento con la rata inclusa"
+                },
                 {
                   "title": "",
                   "text": "Vedi [investimento immobiliare](service:inversion-inmobiliaria)"
@@ -96,8 +146,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come lo facciamo" },
-        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
         {
           "kind": "steps",
           "items": [
@@ -129,8 +185,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Domande frequenti" },
-        { "kind": "h2", "text": "Le domande più frequenti" },
+        {
+          "kind": "tag",
+          "text": "Domande frequenti"
+        },
+        {
+          "kind": "h2",
+          "text": "Le domande più frequenti"
+        },
         {
           "kind": "faq",
           "q": "Quanto devo avere risparmiato?",
@@ -152,8 +214,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Con chi lo facciamo" },
-        { "kind": "h2", "text": "Finanziamento con uno specialista" },
+        {
+          "kind": "tag",
+          "text": "Con chi lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Finanziamento con uno specialista"
+        },
         {
           "kind": "lead",
           "text": "Per le operazioni con finanziamento, lavoriamo insieme a un broker finanziario di fiducia."
@@ -184,7 +252,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -192,14 +263,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

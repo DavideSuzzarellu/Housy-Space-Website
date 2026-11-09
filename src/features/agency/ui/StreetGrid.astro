@@ -7,6 +7,12 @@ import { DESKTOP_GRID, MOBILE_GRID, blockPath, gridShapes } from "./streetGrid";
  * JS beyond the shared reveal (it is fully drawn without JS or under reduced motion).
  * Place it inside a positioned parent; it fills it and ignores pointer events.
  */
+interface Props {
+  /** `home`: phone grid anchored under the button. `heading`: centred, fading out at the bottom (service heads). */
+  placement?: "home" | "heading";
+}
+
+const { placement = "home" } = Astro.props;
 const GRIDS = [
   { spec: DESKTOP_GRID, className: "hg-w" },
   { spec: MOBILE_GRID, className: "hg-t" },
@@ -17,7 +23,7 @@ const GRIDS = [
 }));
 ---
 
-<div class="hg-box" data-reveal="fade" aria-hidden="true">
+<div class="hg-box" data-reveal="fade" data-placement={placement} aria-hidden="true">
   {GRIDS.map(({ spec, className, shapes }) => (
     <svg class={`hg ${className}`} viewBox={spec.viewBox} focusable="false">
       {shapes.map((shape) => (
@@ -107,6 +113,23 @@ const GRIDS = [
         linear-gradient(180deg, transparent 0, #000 18%, #000 88%, transparent 100%),
         linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
       mask-composite: intersect;
+    }
+  }
+
+  /* Service heads: grid centred on the head, faded out towards the bottom edge. */
+  .hg-box[data-placement="heading"] {
+    mask-image: linear-gradient(180deg, #000 0, #000 72%, transparent 100%);
+  }
+
+  @media (max-width: 759px) {
+    .hg-box[data-placement="heading"] .hg-t {
+      top: 50%;
+      bottom: auto;
+      width: 150vw;
+      translate: -50% -50%;
+      mask-image:
+        linear-gradient(180deg, transparent 0, #000 18%, #000 88%, transparent 100%),
+        linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
     }
   }
 

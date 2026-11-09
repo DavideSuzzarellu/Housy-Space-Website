@@ -41,3 +41,7 @@ The proposal's `isotipo.svg` and `logo-blanco.svg` are **not** used: they are st
 ## Listing photos
 
 Property photos come from Mobilia (`media.mobiliagestion.es`) and belong to the agency's listings. Astro optimizes them at build time; they are not stored in the repository.
+
+## Service pages
+
+Added 2026-11-09 from the client's static reference site (`assets/img/servicios/ill-*-1000.webp`), same AI-generated placeholder status: `src/assets/servicios/ill-*-1000.webp` (9 transparent illustrations floating beside the head of each service page: compraventa, valoracion, asesoramiento, financiero, juridico-fiscal, reformas, personal-shopper, inversion, alquiler). Replace before launch.

@@ -2,12 +2,26 @@
   "title": "Lettings and property management · HousySpace",
   "description": "Marketing, tenant selection and rental management.",
   "head": {
-    "heading": "Lettings and property management",
-    "photo": true,
+    "heading": "Lettings *and property management*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-alquiler-1000.webp",
+      "alt": "Service illustration: A green arch sheltering three buildings",
+      "scale": 0.798
+    },
     "items": [
-      { "kind": "tag", "text": "Service" },
-      { "kind": "lead", "text": "Marketing, tenant selection and rental management." },
-      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
+      {
+        "kind": "lead",
+        "text": "Marketing, tenant selection and rental management."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -29,22 +43,49 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Two ways to work together" },
-        { "kind": "h2", "text": "You choose how far we go" },
+        {
+          "kind": "tag",
+          "text": "Two ways to work together"
+        },
+        {
+          "kind": "h2",
+          "text": "You choose how far we go"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "We find you a tenant" },
-            { "kind": "p", "text": "From listing to key handover." },
+            {
+              "kind": "h3",
+              "text": "We find you a tenant"
+            },
+            {
+              "kind": "p",
+              "text": "From listing to key handover."
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Preparation and listing of the advertisement" },
-                { "title": "", "text": "Responding to candidates and viewings" },
-                { "title": "", "text": "Solvency check and documentation" },
-                { "title": "", "text": "Tenancy agreement and deposit lodgement" },
-                { "title": "", "text": "Inventory and key handover" }
+                {
+                  "title": "",
+                  "text": "Preparation and listing of the advertisement"
+                },
+                {
+                  "title": "",
+                  "text": "Responding to candidates and viewings"
+                },
+                {
+                  "title": "",
+                  "text": "Solvency check and documentation"
+                },
+                {
+                  "title": "",
+                  "text": "Tenancy agreement and deposit lodgement"
+                },
+                {
+                  "title": "",
+                  "text": "Inventory and key handover"
+                }
               ]
             }
           ]
@@ -52,17 +93,38 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "And we manage the rental" },
-            { "kind": "p", "text": "During the tenancy, as agreed." },
+            {
+              "kind": "h3",
+              "text": "And we manage the rental"
+            },
+            {
+              "kind": "p",
+              "text": "During the tenancy, as agreed."
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Tenant liaison and incident management" },
-                { "title": "", "text": "Coordination of repairs" },
-                { "title": "", "text": "Payment and utility monitoring" },
-                { "title": "", "text": "Renewals, updates and end of tenancy" },
-                { "title": "", "text": "Check-out inspection" }
+                {
+                  "title": "",
+                  "text": "Tenant liaison and incident management"
+                },
+                {
+                  "title": "",
+                  "text": "Coordination of repairs"
+                },
+                {
+                  "title": "",
+                  "text": "Payment and utility monitoring"
+                },
+                {
+                  "title": "",
+                  "text": "Renewals, updates and end of tenancy"
+                },
+                {
+                  "title": "",
+                  "text": "Check-out inspection"
+                }
               ]
             }
           ]
@@ -73,8 +135,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "How we do it" },
-        { "kind": "h2", "text": "Step by step" },
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Step by step"
+        },
         {
           "kind": "steps",
           "items": [
@@ -106,8 +174,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Frequently asked questions" },
-        { "kind": "h2", "text": "What people ask us" },
+        {
+          "kind": "tag",
+          "text": "Frequently asked questions"
+        },
+        {
+          "kind": "h2",
+          "text": "What people ask us"
+        },
         {
           "kind": "faq",
           "q": "What documents do I need to let my property?",
@@ -134,7 +208,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Let's talk" },
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
         {
           "kind": "lead",
           "text": "Every good decision starts with a conversation. Let's talk about yours."
@@ -142,14 +219,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contact us", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

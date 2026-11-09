@@ -2,8 +2,13 @@
   "title": "Personal Shopper inmobiliario · HousySpace",
   "description": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también lo reformamos.",
   "head": {
-    "heading": "Personal Shopper inmobiliario",
+    "heading": "Personal Shopper *inmobiliario*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-personal-shopper-1000.webp",
+      "alt": "Ilustración del servicio: Una lupa sobre una opción destacada entre varios volúmenes",
+      "scale": 0.797
+    },
     "items": [
       {
         "kind": "tag",

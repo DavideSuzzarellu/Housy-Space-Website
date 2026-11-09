@@ -2,15 +2,26 @@
   "title": "Financial advice · HousySpace",
   "description": "Mortgage and financing studied with real numbers, together with our financial broker.",
   "head": {
-    "heading": "Financial advice",
+    "heading": "Financial *advice*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-financiero-1000.webp",
+      "alt": "Service illustration: A structure resting on three solid supports",
+      "scale": 0.739
+    },
     "items": [
-      { "kind": "tag", "text": "Service" },
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
       {
         "kind": "lead",
         "text": "Mortgage and financing studied with real numbers, together with our financial broker."
       },
-      { "kind": "image", "src": "../../assets/home/oficina-1672.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      }
     ]
   },
   "sections": [
@@ -18,7 +29,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "big", "text": "The mortgage, studied before you fall in love with a flat." },
+        {
+          "kind": "big",
+          "text": "The mortgage, studied before you fall in love with a flat."
+        },
         {
           "kind": "p",
           "text": "Knowing how much you can finance, at what monthly payment and on what terms saves headaches. We study it with you and with our financial broker, who compares the conditions offered by different lenders."
@@ -33,20 +47,41 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Who it's for" },
-        { "kind": "h2", "text": "Financing for each type of transaction" },
+        {
+          "kind": "tag",
+          "text": "Who it's for"
+        },
+        {
+          "kind": "h2",
+          "text": "Financing for each type of transaction"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "If you're buying" },
+            {
+              "kind": "h3",
+              "text": "If you're buying"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "How much you can borrow and at what monthly payment" },
-                { "title": "", "text": "Savings needed for the deposit, costs and taxes" },
-                { "title": "", "text": "Comparison of offers from different lenders" },
-                { "title": "", "text": "Appraisal and documentation through to signing" }
+                {
+                  "title": "",
+                  "text": "How much you can borrow and at what monthly payment"
+                },
+                {
+                  "title": "",
+                  "text": "Savings needed for the deposit, costs and taxes"
+                },
+                {
+                  "title": "",
+                  "text": "Comparison of offers from different lenders"
+                },
+                {
+                  "title": "",
+                  "text": "Appraisal and documentation through to signing"
+                }
               ]
             }
           ]
@@ -54,14 +89,26 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "If you're selling" },
+            {
+              "kind": "h3",
+              "text": "If you're selling"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Assessment of the buyer's financial viability" },
-                { "title": "", "text": "Mortgage timelines coordinated with the deposit contract" },
-                { "title": "", "text": "Less risk of the sale falling through" }
+                {
+                  "title": "",
+                  "text": "Assessment of the buyer's financial viability"
+                },
+                {
+                  "title": "",
+                  "text": "Mortgage timelines coordinated with the deposit contract"
+                },
+                {
+                  "title": "",
+                  "text": "Less risk of the sale falling through"
+                }
               ]
             }
           ]
@@ -69,14 +116,26 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "If you're investing" },
+            {
+              "kind": "h3",
+              "text": "If you're investing"
+            },
             {
               "kind": "list",
               "ordered": false,
               "items": [
-                { "title": "", "text": "Financing for the purchase and renovation" },
-                { "title": "", "text": "Investment figures with the monthly payment included" },
-                { "title": "", "text": "See [property investment](service:inversion-inmobiliaria)" }
+                {
+                  "title": "",
+                  "text": "Financing for the purchase and renovation"
+                },
+                {
+                  "title": "",
+                  "text": "Investment figures with the monthly payment included"
+                },
+                {
+                  "title": "",
+                  "text": "See [property investment](service:inversion-inmobiliaria)"
+                }
               ]
             }
           ]
@@ -87,8 +146,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "How we do it" },
-        { "kind": "h2", "text": "Step by step" },
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Step by step"
+        },
         {
           "kind": "steps",
           "items": [
@@ -120,8 +185,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Frequently asked questions" },
-        { "kind": "h2", "text": "What people ask us" },
+        {
+          "kind": "tag",
+          "text": "Frequently asked questions"
+        },
+        {
+          "kind": "h2",
+          "text": "What people ask us"
+        },
         {
           "kind": "faq",
           "q": "How much do I need saved?",
@@ -143,8 +214,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Who we work with" },
-        { "kind": "h2", "text": "Financing with a specialist" },
+        {
+          "kind": "tag",
+          "text": "Who we work with"
+        },
+        {
+          "kind": "h2",
+          "text": "Financing with a specialist"
+        },
         {
           "kind": "lead",
           "text": "For transactions involving financing, we work alongside a trusted financial broker."
@@ -152,7 +229,11 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Meet our partners", "href": "route:about#colaboraciones", "solid": false }
+            {
+              "label": "Meet our partners",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
           ]
         },
         {
@@ -171,7 +252,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Let's talk" },
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
         {
           "kind": "lead",
           "text": "Every good decision starts with a conversation. Let's talk about yours."
@@ -179,14 +263,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contact us", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

@@ -2,17 +2,34 @@
   "title": "Investimento immobiliare · HousySpace",
   "description": "Analisi delle opportunità con numeri chiari: acquisto, ristrutturazione, affitto e rendimento.",
   "head": {
-    "heading": "Investimento immobiliare",
+    "heading": "Investimento *immobiliare*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-inversion-1000.webp",
+      "alt": "Illustrazione del servizio: Una curva ascendente su gradini con una chiave, un rullo e delle monete",
+      "scale": 0.77
+    },
     "items": [
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Analisi delle opportunità con numeri chiari: acquisto, ristrutturazione, affitto e rendimento."
       },
-      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
-      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
-      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -20,7 +37,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Non promettiamo rendimenti: mettiamo i numeri sul tavolo." },
+        {
+          "kind": "big",
+          "text": "Non promettiamo rendimenti: mettiamo i numeri sul tavolo."
+        },
         {
           "kind": "p",
           "text": "Analizziamo le opportunità di investimento residenziale con informazioni chiare, per farti decidere con criterio. Ti diciamo anche quando un'operazione non ti conviene."
@@ -31,8 +51,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Cosa analizziamo" },
-        { "kind": "h2", "text": "Un investimento visto da ogni angolazione" },
+        {
+          "kind": "tag",
+          "text": "Cosa analizziamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Un investimento visto da ogni angolazione"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -69,8 +95,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come lo facciamo" },
-        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
         {
           "kind": "steps",
           "items": [
@@ -78,9 +110,18 @@
               "title": "Obiettivi",
               "text": "Definiamo cosa vuoi ottenere, con quale budget e in quale orizzonte temporale."
             },
-            { "title": "Ricerca e analisi", "text": "Studiamo le opzioni e i loro numeri." },
-            { "title": "Rischi", "text": "Verifichiamo costi, tempi e scenari." },
-            { "title": "Acquisto", "text": "Trattiamo e ti accompagniamo fino al rogito." }
+            {
+              "title": "Ricerca e analisi",
+              "text": "Studiamo le opzioni e i loro numeri."
+            },
+            {
+              "title": "Rischi",
+              "text": "Verifichiamo costi, tempi e scenari."
+            },
+            {
+              "title": "Acquisto",
+              "text": "Trattiamo e ti accompagniamo fino al rogito."
+            }
           ]
         }
       ]
@@ -89,7 +130,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Un'unica porta" },
+        {
+          "kind": "tag",
+          "text": "Un'unica porta"
+        },
         {
           "kind": "h2",
           "text": "Dall'analisi al reddito da affitto, senza cambiare interlocutore"
@@ -126,7 +170,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -134,14 +181,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

@@ -111,7 +111,18 @@ export function pageSchema<I extends z.ZodType>(image: () => I) {
     .object({
       title: text,
       description: z.string(),
-      head: z.object({ heading: text, photo: z.boolean(), items: z.array(leaf) }).strict(),
+      head: z
+        .object({
+          heading: text,
+          photo: z.boolean(),
+          /** Service pages: transparent illustration beside the heading; `scale` = object width / canvas width. */
+          illustration: z
+            .object({ src: image(), alt: text, scale: z.number().gt(0).lte(1) })
+            .strict()
+            .optional(),
+          items: z.array(leaf),
+        })
+        .strict(),
       sections: z.array(
         z
           .object({

@@ -2,8 +2,13 @@
   "title": "Asesoramiento financiero · HousySpace",
   "description": "Hipoteca y financiación estudiadas con números reales, junto a nuestro bróker financiero.",
   "head": {
-    "heading": "Asesoramiento financiero",
+    "heading": "Asesoramiento *financiero*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-financiero-1000.webp",
+      "alt": "Ilustración del servicio: Una estructura apoyada sobre tres soportes sólidos",
+      "scale": 0.739
+    },
     "items": [
       {
         "kind": "tag",

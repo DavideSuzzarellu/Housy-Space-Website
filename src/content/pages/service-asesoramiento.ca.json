@@ -2,12 +2,26 @@
   "title": "Assessorament immobiliari personalitzat · HousySpace",
   "description": "Orientació clara, a mida, abans de prendre qualsevol decisió.",
   "head": {
-    "heading": "Assessorament immobiliari personalitzat",
-    "photo": true,
+    "heading": "Assessorament *immobiliari personalitzat*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-asesoramiento-1000.webp",
+      "alt": "Il·lustració del servei: Una peça verda que encaixa en un buit",
+      "scale": 0.805
+    },
     "items": [
-      { "kind": "image", "src": "../../assets/home/det-cielo-1400.jpg" },
-      { "kind": "tag", "text": "Servei" },
-      { "kind": "lead", "text": "Orientació clara, a mida, abans de prendre qualsevol decisió." }
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-cielo-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
+      {
+        "kind": "lead",
+        "text": "Orientació clara, a mida, abans de prendre qualsevol decisió."
+      }
     ]
   },
   "sections": [
@@ -15,7 +29,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "big", "text": "No saps per on començar? Comença aquí." },
+        {
+          "kind": "big",
+          "text": "No saps per on començar? Comença aquí."
+        },
         {
           "kind": "p",
           "text": "Abans de comprar, vendre, llogar o invertir, val la pena parlar-ne. Com a consultors immobiliaris, et diem amb honestedat si et convé fer-ho, com i quan, i et proposem un full de ruta clar."
@@ -26,7 +43,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "El que t'ajudem a decidir" },
+        {
+          "kind": "h2",
+          "text": "El que t'ajudem a decidir"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -51,8 +71,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Situacions habituals" },
-        { "kind": "h2", "text": "Potser estàs aquí" },
+        {
+          "kind": "tag",
+          "text": "Situacions habituals"
+        },
+        {
+          "kind": "h2",
+          "text": "Potser estàs aquí"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -89,8 +115,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Com ho fem" },
-        { "kind": "h2", "text": "Pas a pas" },
+        {
+          "kind": "tag",
+          "text": "Com ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Pas a pas"
+        },
         {
           "kind": "steps",
           "items": [
@@ -98,12 +130,18 @@
               "title": "Conversa",
               "text": "Parlem de la teva situació i del que vols aconseguir."
             },
-            { "title": "Anàlisi", "text": "Estudiem l'immoble, la zona i les alternatives." },
+            {
+              "title": "Anàlisi",
+              "text": "Estudiem l'immoble, la zona i les alternatives."
+            },
             {
               "title": "Full de ruta",
               "text": "Et proposem els passos, els terminis i els costos."
             },
-            { "title": "Acompanyament", "text": "T'ajudem a decidir i, si vols, a executar-ho." }
+            {
+              "title": "Acompanyament",
+              "text": "T'ajudem a decidir i, si vols, a executar-ho."
+            }
           ]
         }
       ]
@@ -112,7 +150,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "«No et preocupis, jo me n'encarrego.»" },
+        {
+          "kind": "bandQuote",
+          "text": "«No et preocupis, jo me n'encarrego.»"
+        },
         {
           "kind": "p",
           "text": "Un assessor de referència i una xarxa de professionals de confiança: una sola porta per a tot el que tingui a veure amb el teu habitatge."
@@ -123,7 +164,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parlem" },
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
         {
           "kind": "lead",
           "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
@@ -131,14 +175,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

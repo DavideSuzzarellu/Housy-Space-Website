@@ -2,8 +2,13 @@
   "title": "Compraventa e intermediación inmobiliaria · HousySpace",
   "description": "Valoración, preparación, comercialización, negociación y acompañamiento hasta la firma.",
   "head": {
-    "heading": "Compraventa e intermediación inmobiliaria",
-    "photo": true,
+    "heading": "Compraventa *e intermediación inmobiliaria*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-compraventa-1000.webp",
+      "alt": "Ilustración del servicio: Dos volúmenes crema que encajan entre sí",
+      "scale": 0.737
+    },
     "items": [
       {
         "kind": "image",

@@ -2,11 +2,22 @@
   "title": "Consulenza immobiliare personalizzata · HousySpace",
   "description": "Orientamento chiaro, su misura, prima di prendere qualsiasi decisione.",
   "head": {
-    "heading": "Consulenza immobiliare personalizzata",
-    "photo": true,
+    "heading": "Consulenza *immobiliare personalizzata*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-asesoramiento-1000.webp",
+      "alt": "Illustrazione del servizio: Un pezzo verde che si incastra in un vuoto",
+      "scale": 0.805
+    },
     "items": [
-      { "kind": "image", "src": "../../assets/home/det-cielo-1400.jpg" },
-      { "kind": "tag", "text": "Servizio" },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-cielo-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
       {
         "kind": "lead",
         "text": "Orientamento chiaro, su misura, prima di prendere qualsiasi decisione."
@@ -18,7 +29,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Non sai da dove iniziare? Inizia da qui." },
+        {
+          "kind": "big",
+          "text": "Non sai da dove iniziare? Inizia da qui."
+        },
         {
           "kind": "p",
           "text": "Prima di comprare, vendere, affittare o investire, conviene parlarne. Come consulenti immobiliari, ti diciamo onestamente se conviene farlo, come e quando, e ti proponiamo una tabella di marcia chiara."
@@ -29,7 +43,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Cosa ti aiutiamo a decidere" },
+        {
+          "kind": "h2",
+          "text": "Cosa ti aiutiamo a decidere"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -54,8 +71,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Situazioni comuni" },
-        { "kind": "h2", "text": "Potresti essere qui" },
+        {
+          "kind": "tag",
+          "text": "Situazioni comuni"
+        },
+        {
+          "kind": "h2",
+          "text": "Potresti essere qui"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -92,8 +115,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Come lo facciamo" },
-        { "kind": "h2", "text": "Passo dopo passo" },
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
         {
           "kind": "steps",
           "items": [
@@ -101,7 +130,10 @@
               "title": "Conversazione",
               "text": "Parliamo della tua situazione e di ciò che vuoi ottenere."
             },
-            { "title": "Analisi", "text": "Studiamo l'immobile, la zona e le alternative." },
+            {
+              "title": "Analisi",
+              "text": "Studiamo l'immobile, la zona e le alternative."
+            },
             {
               "title": "Tabella di marcia",
               "text": "Ti proponiamo i passi, le tempistiche e i costi."
@@ -118,7 +150,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "«Non preoccuparti, ci penso io.»" },
+        {
+          "kind": "bandQuote",
+          "text": "«Non preoccuparti, ci penso io.»"
+        },
         {
           "kind": "p",
           "text": "Un consulente di riferimento e una rete di professionisti di fiducia: un unico interlocutore per tutto ciò che riguarda il tuo immobile."
@@ -129,7 +164,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parliamo" },
+        {
+          "kind": "h2",
+          "text": "Parliamo"
+        },
         {
           "kind": "lead",
           "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
@@ -137,14 +175,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Chiama", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20inmobiliario%20personalizado",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Scrivici", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

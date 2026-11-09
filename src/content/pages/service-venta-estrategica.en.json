@@ -2,11 +2,22 @@
   "title": "Property sales and brokerage · HousySpace",
   "description": "Valuation, preparation, marketing, negotiation and support through to signing.",
   "head": {
-    "heading": "Property sales and brokerage",
-    "photo": true,
+    "heading": "Property sales *and brokerage*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-compraventa-1000.webp",
+      "alt": "Service illustration: Two cream volumes that fit together",
+      "scale": 0.737
+    },
     "items": [
-      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
-      { "kind": "tag", "text": "Service" },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
       {
         "kind": "lead",
         "text": "Valuation, preparation, marketing, negotiation and support through to signing."
@@ -18,7 +29,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "big", "text": "Selling a property is not just about listing it." },
+        {
+          "kind": "big",
+          "text": "Selling a property is not just about listing it."
+        },
         {
           "kind": "p",
           "text": "As property consultants, we first tell you honestly whether selling makes sense for you, how to do it, and when. Then we study the property and its documentation in depth, so there are no surprises at signing."
@@ -33,8 +47,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "How we do it" },
-        { "kind": "h2", "text": "Eight steps, one advisor" },
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Eight steps, one advisor"
+        },
         {
           "kind": "steps",
           "items": [
@@ -78,9 +98,18 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "What's included" },
-        { "kind": "h2", "text": "Everything it takes to sell" },
-        { "kind": "lead", "text": "What our brokerage service includes in a sale." },
+        {
+          "kind": "tag",
+          "text": "What's included"
+        },
+        {
+          "kind": "h2",
+          "text": "Everything it takes to sell"
+        },
+        {
+          "kind": "lead",
+          "text": "What our brokerage service includes in a sale."
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -109,7 +138,10 @@
               "title": "Renovation estimates",
               "text": "If the property needs work, the buyer knows the cost from the start."
             },
-            { "title": "Viewings management", "text": "We organise and supervise them." },
+            {
+              "title": "Viewings management",
+              "text": "We organise and supervise them."
+            },
             {
               "title": "Negotiation and closing",
               "text": "We defend your price and your conditions through to signing."
@@ -138,12 +170,21 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Brokerage agreement" },
-        { "kind": "h2", "text": "Why exclusive?" },
+        {
+          "kind": "tag",
+          "text": "Brokerage agreement"
+        },
+        {
+          "kind": "h2",
+          "text": "Why exclusive?"
+        },
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "No race between agencies" },
+            {
+              "kind": "h3",
+              "text": "No race between agencies"
+            },
             {
               "kind": "p",
               "text": "When several agencies sell the same property, the sale turns into a race to close it first. Work gets rushed: speed takes priority and the quality of the deal and the sale price fall by the wayside. With exclusivity, we work your property carefully and with criteria, to sell it well and at the price it deserves."
@@ -153,7 +194,10 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "h3", "text": "What you gain" },
+            {
+              "kind": "h3",
+              "text": "What you gain"
+            },
             {
               "kind": "list",
               "ordered": false,
@@ -170,8 +214,14 @@
                   "title": "",
                   "text": "A stronger negotiation: we know your property inside out."
                 },
-                { "title": "", "text": "More security: no one else negotiates on your behalf." },
-                { "title": "", "text": "Less complication and clear communication with buyers." }
+                {
+                  "title": "",
+                  "text": "More security: no one else negotiates on your behalf."
+                },
+                {
+                  "title": "",
+                  "text": "Less complication and clear communication with buyers."
+                }
               ]
             }
           ]
@@ -182,7 +232,10 @@
       "surface": "dark",
       "band": true,
       "items": [
-        { "kind": "bandQuote", "text": "\"Don't worry, I'll take care of it.\"" },
+        {
+          "kind": "bandQuote",
+          "text": "\"Don't worry, I'll take care of it.\""
+        },
         {
           "kind": "p",
           "text": "Many sales fall through over an unexpected issue: a missing habitation certificate, a mortgage that doesn't come through, incomplete documentation. We anticipate them and, when they appear, we resolve them."
@@ -194,8 +247,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Valuation" },
-        { "kind": "h2", "text": "What is your property worth?" },
+        {
+          "kind": "tag",
+          "text": "Valuation"
+        },
+        {
+          "kind": "h2",
+          "text": "What is your property worth?"
+        },
         {
           "kind": "p",
           "text": "Request your valuation however you prefer: online, instantly, or in person, with an advisor who studies your property in depth."
@@ -203,8 +262,14 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "p", "text": "Online" },
-            { "kind": "h3", "text": "Instantly" },
+            {
+              "kind": "p",
+              "text": "Online"
+            },
+            {
+              "kind": "h3",
+              "text": "Instantly"
+            },
             {
               "kind": "p",
               "text": "Enter your property details in our valuation tool and receive an indicative reference value straight away."
@@ -212,7 +277,11 @@
             {
               "kind": "buttons",
               "items": [
-                { "label": "Online valuation", "href": "route:valuation#informe", "solid": true }
+                {
+                  "label": "Online valuation",
+                  "href": "route:valuation#informe",
+                  "solid": true
+                }
               ]
             }
           ]
@@ -220,8 +289,14 @@
         {
           "kind": "card",
           "items": [
-            { "kind": "p", "text": "In person" },
-            { "kind": "h3", "text": "With an advisor" },
+            {
+              "kind": "p",
+              "text": "In person"
+            },
+            {
+              "kind": "h3",
+              "text": "With an advisor"
+            },
             {
               "kind": "p",
               "text": "We visit your property, review its documentation and study your neighbourhood's market to give you a comprehensive report."
@@ -244,7 +319,10 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Let's talk" },
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
         {
           "kind": "lead",
           "text": "Every good decision starts with a conversation. Let's talk about yours."
@@ -252,14 +330,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Call", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contact us", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

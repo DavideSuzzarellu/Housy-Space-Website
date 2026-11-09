@@ -2,17 +2,34 @@
   "title": "Inversió immobiliària · HousySpace",
   "description": "Anàlisi d'oportunitats amb números clars: compra, reforma, lloguer i rendibilitat.",
   "head": {
-    "heading": "Inversió immobiliària",
+    "heading": "Inversió *immobiliària*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-inversion-1000.webp",
+      "alt": "Il·lustració del servei: Una corba ascendent sobre esglaons amb una clau, un corró i monedes",
+      "scale": 0.77
+    },
     "items": [
-      { "kind": "tag", "text": "Servei" },
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
       {
         "kind": "lead",
         "text": "Anàlisi d'oportunitats amb números clars: compra, reforma, lloguer i rendibilitat."
       },
-      { "kind": "image", "src": "../../assets/home/sky-1400.jpg" },
-      { "kind": "image", "src": "../../assets/home/facade-1400.jpg" },
-      { "kind": "image", "src": "../../assets/home/salon-1400.jpg" }
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      }
     ]
   },
   "sections": [
@@ -20,7 +37,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "big", "text": "No prometem rendibilitats: posem els números sobre la taula." },
+        {
+          "kind": "big",
+          "text": "No prometem rendibilitats: posem els números sobre la taula."
+        },
         {
           "kind": "p",
           "text": "Analitzem oportunitats d'inversió residencial amb informació clara, perquè decideixis amb criteri. Et diem també quan una operació no et convé."
@@ -31,8 +51,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Què analitzem" },
-        { "kind": "h2", "text": "Una inversió, mirada des de tots els angles" },
+        {
+          "kind": "tag",
+          "text": "Què analitzem"
+        },
+        {
+          "kind": "h2",
+          "text": "Una inversió, mirada des de tots els angles"
+        },
         {
           "kind": "list",
           "ordered": false,
@@ -57,7 +83,10 @@
               "title": "",
               "text": "05RiscsEstat de la finca, normativa de lloguer i liquiditat de la zona."
             },
-            { "title": "", "text": "06SortidaQu passa si vols vendre d'aquí a uns anys." }
+            {
+              "title": "",
+              "text": "06SortidaQu passa si vols vendre d'aquí a uns anys."
+            }
           ]
         }
       ]
@@ -66,8 +95,14 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Com ho fem" },
-        { "kind": "h2", "text": "Pas a pas" },
+        {
+          "kind": "tag",
+          "text": "Com ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Pas a pas"
+        },
         {
           "kind": "steps",
           "items": [
@@ -75,9 +110,18 @@
               "title": "Objectius",
               "text": "Definim què vols aconseguir, amb quin pressupost i amb quin horitzó."
             },
-            { "title": "Cerca i anàlisi", "text": "Estudiem opcions i les seves xifres." },
-            { "title": "Riscos", "text": "Revisem costos, terminis i escenaris." },
-            { "title": "Compra", "text": "Negociem i t'acompanyem fins a la firma." }
+            {
+              "title": "Cerca i anàlisi",
+              "text": "Estudiem opcions i les seves xifres."
+            },
+            {
+              "title": "Riscos",
+              "text": "Revisem costos, terminis i escenaris."
+            },
+            {
+              "title": "Compra",
+              "text": "Negociem i t'acompanyem fins a la firma."
+            }
           ]
         }
       ]
@@ -86,8 +130,14 @@
       "surface": "paper",
       "band": false,
       "items": [
-        { "kind": "tag", "text": "Una sola porta" },
-        { "kind": "h2", "text": "De l'anàlisi a la renda, sense canviar d'interlocutor" },
+        {
+          "kind": "tag",
+          "text": "Una sola porta"
+        },
+        {
+          "kind": "h2",
+          "text": "De l'anàlisi a la renda, sense canviar d'interlocutor"
+        },
         {
           "kind": "lead",
           "text": "Si ho necessites, ens ocupem de cada pas després de la compra."
@@ -104,7 +154,10 @@
               "title": "",
               "text": "[Compra**Personal Shopper immobiliari**](service:personal-shopper)"
             },
-            { "title": "", "text": "[Reforma**Reformes i interiorisme**](service:reformas-obras)" },
+            {
+              "title": "",
+              "text": "[Reforma**Reformes i interiorisme**](service:reformas-obras)"
+            },
             {
               "title": "",
               "text": "[Lloga**Lloguer i gestió d'immobles**](service:alquiler-gestion)"
@@ -117,7 +170,10 @@
       "surface": "stone",
       "band": false,
       "items": [
-        { "kind": "h2", "text": "Parlem" },
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
         {
           "kind": "lead",
           "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
@@ -125,14 +181,26 @@
         {
           "kind": "buttons",
           "items": [
-            { "label": "Truca", "href": "tel:+34613084804", "solid": true },
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
             {
               "label": "WhatsApp",
               "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria",
               "solid": false
             },
-            { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
-            { "label": "Contacta'ns", "href": "route:contact", "solid": false }
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
           ]
         },
         {

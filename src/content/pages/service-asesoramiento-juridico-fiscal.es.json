@@ -2,8 +2,13 @@
   "title": "Asesoramiento jurídico y fiscal · HousySpace",
   "description": "Cuando la operación lo requiere, coordinamos la consulta con profesionales independientes de confianza.",
   "head": {
-    "heading": "Asesoramiento jurídico y fiscal",
-    "photo": true,
+    "heading": "Asesoramiento *jurídico y fiscal*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
+      "alt": "Ilustración del servicio: Balanza esquemática en equilibrio",
+      "scale": 0.684
+    },
     "items": [
       {
         "kind": "image",

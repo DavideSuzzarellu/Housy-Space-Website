@@ -252,6 +252,10 @@ const es = {
     clusterLabel: "{count} inmuebles: acercar el mapa",
     approximateSuffix: "(ubicación aproximada)",
   },
+  servicePage: {
+    /** Button under the head that scrolls to the closing contact block. */
+    talk: "Hablemos",
+  },
   servicesIndex: {
     discover: "Descubrir el servicio",
     othersTag: "También te ayudamos con",

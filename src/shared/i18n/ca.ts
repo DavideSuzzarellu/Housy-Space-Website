@@ -246,6 +246,10 @@ const ca = {
     clusterLabel: "{count} immobles: apropa el mapa",
     approximateSuffix: "(ubicació aproximada)",
   },
+  servicePage: {
+    /** Button under the head that scrolls to the closing contact block. */
+    talk: "Parlem",
+  },
   servicesIndex: {
     discover: "Descobrir el servei",
     othersTag: "També t'ajudem amb",

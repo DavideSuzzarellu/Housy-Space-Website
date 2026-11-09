@@ -1,0 +1,85 @@
+---
+import { Picture } from "astro:assets";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
+import type { PageContent } from "@/features/pages/application/pages";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+
+/**
+ * Head of a service page (reference `.sv5-hero`): paper with the Cerdà street grid, a big
+ * headline (second half light) and the service illustration floating on the right (centred
+ * above the text on phones). The illustration is the one eager image of the page.
+ */
+interface Props {
+  locale: Locale;
+  head: PageContent["head"];
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+  /** Label of the button that scrolls to the closing contact block. */
+  talk: string;
+}
+
+const { locale, head, crumbs, talk } = Astro.props;
+const t = getDictionary(locale);
+const lead = head.items.find((item) => item.kind === "lead");
+const tag = head.items.find((item) => item.kind === "tag");
+const { illustration } = head;
+---
+
+<section
+  data-page-head
+  class="relative isolate overflow-clip border-b border-fg/10 bg-canvas pt-[clamp(1.625rem,4vw,3.25rem)] pb-[clamp(3.5rem,8vw,7rem)]"
+>
+  <StreetGrid placement="heading" />
+  <Container class="grid grid-cols-1 items-center gap-x-[clamp(1rem,2.4vw,2.5rem)] min-[761px]:grid-cols-[minmax(0,1fr)_clamp(18.75rem,34vw,28.75rem)]">
+    <Breadcrumbs
+      items={crumbs}
+      label={t.property.detail.breadcrumb}
+      tone="compact"
+      class="col-span-full row-start-1 mb-[clamp(1.875rem,4.4vw,3.625rem)]"
+    />
+    <div class="row-start-3 min-w-0 @container min-[761px]:row-start-2">
+      {tag?.kind === "tag" && (
+        <p class="mb-3.5 text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>
+      )}
+      <h1 class="mt-4 mb-[clamp(1.5rem,3.4vw,2.5rem)] text-[clamp(30px,8.4vw,44px)] leading-none wrap-break-word min-[521px]:text-[clamp(30px,8.4vw,52px)] min-[761px]:text-[clamp(30px,11cqw,72px)] [&_em]:block">
+        <Emphasis text={head.heading} />
+      </h1>
+      {lead?.kind === "lead" && (
+        <p class="mb-[clamp(1.875rem,4vw,2.875rem)] max-w-[58ch] text-[clamp(14px,1.35vw,17px)] leading-[1.8] text-mid">
+          {lead.text}
+        </p>
+      )}
+      <Button
+        href="#hablemos"
+        size="lg"
+        variant="solid"
+        arrow
+        class="leading-[1.35] max-[520px]:w-full"
+      >
+        {talk}
+      </Button>
+    </div>
+    {illustration !== undefined && (
+      <figure
+        data-reveal
+        style={`--w:${illustration.scale}`}
+        class="row-start-2 m-0 mx-auto mt-[-6px] mb-[clamp(0.625rem,3vw,1.25rem)] w-[min(84%,400px)] min-w-0 min-[761px]:row-start-2 min-[761px]:mt-0 min-[761px]:mr-[calc(-1*clamp(0px,3vw,48px))] min-[761px]:mb-0 min-[761px]:ml-0 min-[761px]:w-auto"
+      >
+        <Picture
+          {...PHOTO_PICTURE}
+          src={illustration.src}
+          alt={illustration.alt}
+          widths={[400, 600, 920]}
+          sizes="(max-width: 760px) 80vw, 400px"
+          priority
+          class="mx-auto block h-auto w-[calc(100%*var(--w))]"
+        />
+      </figure>
+    )}
+  </Container>
+</section>

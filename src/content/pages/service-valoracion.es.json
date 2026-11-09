@@ -2,8 +2,13 @@
   "title": "Valoración inmobiliaria · HousySpace",
   "description": "Una referencia al momento con el valorador o un informe completo con estudio de mercado.",
   "head": {
-    "heading": "Valoración inmobiliaria",
+    "heading": "Valoración *inmobiliaria*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-valoracion-1000.webp",
+      "alt": "Ilustración del servicio: Un volumen verde seleccionado entre otros volúmenes crema",
+      "scale": 0.744
+    },
     "items": [
       {
         "kind": "tag",
