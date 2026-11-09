@@ -7,7 +7,10 @@
     "items": [
       { "kind": "image", "src": "../../assets/home/det-hierro-720.jpg" },
       { "kind": "tag", "text": "Servei" },
-      { "kind": "lead", "text": "Quan l'operació ho requereix, coordinem la consulta amb professionals independents de confiança." }
+      {
+        "kind": "lead",
+        "text": "Quan l'operació ho requereix, coordinem la consulta amb professionals independents de confiança."
+      }
     ]
   },
   "sections": [
@@ -16,7 +19,10 @@
       "band": false,
       "items": [
         { "kind": "big", "text": "Cada pas, correcte i segur." },
-        { "kind": "p", "text": "Comprar, vendre, heretar o llogar un habitatge té conseqüències legals i fiscals. Les revisem amb el despatx d'advocats i l'assessoria fiscal amb qui col·laborem, t'expliquem les opcions amb paraules clares i ens assegurem que tot estigui en ordre abans de signar." }
+        {
+          "kind": "p",
+          "text": "Comprar, vendre, heretar o llogar un habitatge té conseqüències legals i fiscals. Les revisem amb el despatx d'advocats i l'assessoria fiscal amb qui col·laborem, t'expliquem les opcions amb paraules clares i ens assegurem que tot estigui en ordre abans de signar."
+        }
       ]
     },
     {
@@ -114,8 +120,14 @@
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "Impost de transmissions patrimonials (ITP)", "text": "En comprar un habitatge de segona mà." },
-            { "title": "Actes jurídics documentats (AJD)", "text": "En comprar obra nova o signar una hipoteca." },
+            {
+              "title": "Impost de transmissions patrimonials (ITP)",
+              "text": "En comprar un habitatge de segona mà."
+            },
+            {
+              "title": "Actes jurídics documentats (AJD)",
+              "text": "En comprar obra nova o signar una hipoteca."
+            },
             { "title": "Successions i donacions", "text": "En heretar o rebre un habitatge." }
           ]
         },
@@ -141,10 +153,19 @@
         {
           "kind": "steps",
           "items": [
-            { "title": "Explica'ns què et preocupa", "text": "Parlem amb calma de la teva operació i dels teus dubtes." },
-            { "title": "Estudiem el teu cas", "text": "Ho revisem amb els especialistes i t'expliquem les opcions." },
+            {
+              "title": "Explica'ns què et preocupa",
+              "text": "Parlem amb calma de la teva operació i dels teus dubtes."
+            },
+            {
+              "title": "Estudiem el teu cas",
+              "text": "Ho revisem amb els especialistes i t'expliquem les opcions."
+            },
             { "title": "Decidim junts", "text": "Què farem, com i quan." },
-            { "title": "Ho coordinem", "text": "Ens assegurem que tot sigui correcte i segur fins a la signatura." }
+            {
+              "title": "Ho coordinem",
+              "text": "Ens assegurem que tot sigui correcte i segur fins a la signatura."
+            }
           ]
         }
       ]
@@ -155,14 +176,32 @@
       "items": [
         { "kind": "tag", "text": "Amb qui ho fem" },
         { "kind": "h2", "text": "Treballem amb ADV Advocats i Asesoría Edac" },
-        { "kind": "lead", "text": "Un despatx d'advocats i una assessoria fiscal de Barcelona amb qui revisem els aspectes legals i fiscals de les nostres operacions." },
-        { "kind": "buttons", "items": [{ "label": "Coneix els nostres col·laboradors", "href": "route:about#colaboraciones", "solid": false }] },
+        {
+          "kind": "lead",
+          "text": "Un despatx d'advocats i una assessoria fiscal de Barcelona amb qui revisem els aspectes legals i fiscals de les nostres operacions."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Coneix els nostres col·laboradors",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
         {
           "kind": "list",
           "ordered": false,
           "items": [
-            { "title": "ADV Advocats", "text": "Despatx jurídic i fiscal Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa. [Visita advadvocats.cat](https://advadvocats.cat/es/)" },
-            { "title": "Asesoría Edac", "text": "Assessoria fiscal Assessoria fiscal, comptable i laboral a Barcelona: impostos, declaracions i tràmits amb Hisenda. [Visita serviciosdac.com](https://www.serviciosdac.com/)" }
+            {
+              "title": "ADV Advocats",
+              "text": "Despatx jurídic i fiscal Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa. [Visita advadvocats.cat](https://advadvocats.cat/es/)"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Assessoria fiscal Assessoria fiscal, comptable i laboral a Barcelona: impostos, declaracions i tràmits amb Hisenda. [Visita serviciosdac.com](https://www.serviciosdac.com/)"
+            }
           ]
         }
       ]
@@ -172,17 +211,27 @@
       "band": false,
       "items": [
         { "kind": "h2", "text": "Parlem" },
-        { "kind": "lead", "text": "Tota bona decisió comença amb una conversa. Parlem de la teva." },
+        {
+          "kind": "lead",
+          "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
+        },
         {
           "kind": "buttons",
           "items": [
             { "label": "Truca", "href": "tel:+34613084804", "solid": true },
-            { "label": "WhatsApp", "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal", "solid": false },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal",
+              "solid": false
+            },
             { "label": "Email", "href": "mailto:info@housyspace.com", "solid": false },
             { "label": "Contacta'ns", "href": "route:contact", "solid": false }
           ]
         },
-        { "kind": "note", "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació." }
+        {
+          "kind": "note",
+          "text": "Contingut provisional pendent de revisió per part de HousySpace. Honoraris i condicions: pendents de confirmació."
+        }
       ]
     }
   ]

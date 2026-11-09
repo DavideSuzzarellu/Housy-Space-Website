@@ -803,11 +803,7 @@
                   "required": false,
                   "full": false,
                   "type": "select",
-                  "options": [
-                    "Primary residence (long-term)",
-                    "Seasonal",
-                    "Not sure yet"
-                  ],
+                  "options": ["Primary residence (long-term)", "Seasonal", "Not sure yet"],
                   "kind": "field"
                 },
                 {

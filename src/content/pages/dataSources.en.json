@@ -50,13 +50,7 @@
           "kind": "table",
           "head": ["Source", "Last run", "Date", "Last successful", "Detail"],
           "rows": [
-            [
-              "Ajuntament de Barcelona · Open Data BCN (API CKAN)",
-              "no runs yet",
-              "—",
-              "—",
-              ""
-            ],
+            ["Ajuntament de Barcelona · Open Data BCN (API CKAN)", "no runs yet", "—", "—", ""],
             [
               "Ajuntament de Barcelona · CartoBCN (administrative boundaries)",
               "no runs yet",
