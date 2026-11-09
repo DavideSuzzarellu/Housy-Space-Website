@@ -25,9 +25,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   id="hero"
   aria-label={t.home.hero.label}
   data-hero
-  class="surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
+  class="group surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
 >
-  <!-- Poster (shown before video loads or on reduced motion / no-JS) -->
+  <!-- Poster (Ken Burns until the video plays; static on reduced motion / Save-Data / no-JS) -->
   <picture class="absolute inset-0">
     <source media={PORTRAIT_MEDIA} srcset={posterPortrait.src} type="image/jpeg" />
     <img
@@ -35,18 +35,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       alt=""
       fetchpriority="high"
       decoding="async"
-      class="size-full object-cover"
+      class="animate-kenburns size-full origin-[60%_40%] object-cover group-data-playing:[animation-play-state:paused] motion-reduce:animate-none"
     />
   </picture>
 
-  <!-- Video (loads after page ready, skipped on reduced motion / Save-Data) -->
+  <!-- Video (loads after page ready, skipped on reduced motion / Save-Data); fades in once playing -->
   <video
     data-hero-video
     muted
     loop
     playsinline
+    preload="none"
     aria-hidden="true"
-    class="absolute inset-0 hidden size-full object-cover"
+    class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[1600ms] ease-in-out group-data-playing:opacity-100"
   >
     <source
       src={`${base}/media/hero/hero-corto.webm`}
@@ -62,46 +63,78 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <source src={`${base}/media/hero/hero-corto-v.mp4`} type="video/mp4" />
   </video>
 
-  <!-- Gradient shade (bottom) -->
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent via-transparent via-50% to-ink/70"
-  ></div>
+  <!-- Gradient shade: darker at the top for the header, a clean cut at the bottom -->
+  <div aria-hidden="true" class="hero-shade pointer-events-none absolute inset-0"></div>
 
-  <!-- Scroll cue -->
+  <!-- Scroll cue: hairline with an accent segment sliding down it -->
   <a
     href={`#${nextSectionId}`}
     aria-label={t.a11y.scrollDown}
     class="absolute bottom-14.5 left-1/2 z-2 -ml-3.5 h-13.5 w-7 md:bottom-5.5"
   >
-    <span class="absolute inset-x-0 top-0 h-7 w-full rounded-full border border-white/40"></span>
-    <span class="absolute top-2 left-1/2 h-2.5 w-px -translate-x-px animate-bounce bg-white/60"></span>
+    <span class="absolute top-0 left-3.25 h-13.5 w-px overflow-hidden bg-fg/30">
+      <span class="animate-scroll-cue absolute -top-4 left-0 h-4 w-px bg-turquoise motion-reduce:animate-none"></span>
+    </span>
   </a>
 </section>
+
+<style>
+  .hero-shade {
+    --shade: var(--color-ink);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--shade) 50%, transparent) 0%,
+      color-mix(in srgb, var(--shade) 8%, transparent) 26%,
+      transparent 55%,
+      color-mix(in srgb, var(--shade) 25%, transparent) 100%
+    );
+    mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  }
+</style>
 
 <script>
   const SAVE_DATA =
     "connection" in navigator &&
     (navigator as unknown as { connection: { saveData: boolean } }).connection.saveData;
 
+  let observer: IntersectionObserver | undefined;
+  let active: { hero: HTMLElement; video: HTMLVideoElement } | undefined;
+  let visible = true;
+
+  /** Plays only while the hero is on screen and the tab is visible (saves battery and data). */
+  function sync(): void {
+    if (active === undefined) return;
+    if (visible && !document.hidden) void active.video.play().catch(() => undefined);
+    else active.video.pause();
+  }
+
   function maybePlayVideo(): void {
-    const video = document.querySelector<HTMLVideoElement>("[data-hero-video]");
-    if (video === null) return;
+    const hero = document.querySelector<HTMLElement>("[data-hero]");
+    const video = hero?.querySelector<HTMLVideoElement>("[data-hero-video]");
+    if (hero == null || video == null) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced || SAVE_DATA) return;
-    video.classList.remove("hidden");
-    void video.play().catch(() => {
-      /* autoplay blocked — poster stays visible */
-    });
+    video.addEventListener("playing", () => hero.setAttribute("data-playing", ""), { once: true });
+    active = { hero, video };
+    visible = true;
+    observer = new IntersectionObserver(
+      (entries) => {
+        visible = entries.some((entry) => entry.isIntersecting);
+        sync();
+      },
+      { threshold: 0.02 },
+    );
+    observer.observe(hero);
+    sync();
   }
 
   function stopVideo(): void {
-    const video = document.querySelector<HTMLVideoElement>("[data-hero-video]");
-    if (video === null) return;
-    video.pause();
-    video.classList.add("hidden");
+    observer?.disconnect();
+    active?.video.pause();
+    active = undefined;
   }
 
   document.addEventListener("astro:page-load", maybePlayVideo);
   document.addEventListener("astro:before-preparation", stopVideo);
+  document.addEventListener("visibilitychange", sync);
 </script>
