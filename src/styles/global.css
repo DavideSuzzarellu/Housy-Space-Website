@@ -33,6 +33,8 @@
    */
   --color-canvas: #fcfbf8;
   --color-bg-soft: #f3f1eb;
+  /* Translucent bar and floating panels (design system `glass`). */
+  --color-glass: rgb(252 251 248 / 0.93);
   --color-bg-deep: #edeae3;
   --color-bg-lift: #ece8df;
   --color-card: #f3f1eb;

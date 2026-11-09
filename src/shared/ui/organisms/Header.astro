@@ -9,8 +9,9 @@ import Logo from "@/shared/ui/atoms/Logo.astro";
 import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
 
 /**
- * Site header (UI proposal v3). A petrol bar with the negative logo; transparent over a full-bleed
- * hero until the page scrolls (home). The horizontal menu shows whenever it fits beside the logo
+ * Site header. Transparent with a dark gradient, the negative logo and a big logo over a
+ * full-bleed hero (home); after scrolling, or on every other page, a light glass bar with the
+ * dark logo (reference `.hdr.light`). The horizontal menu shows whenever it fits beside the logo
  * and actions, measured in three densities (`navFit.ts`); otherwise it moves behind the "Menu"
  * button (drawer). Before the script measures (`data-nav="auto"`), CSS falls back to `xl`.
  */
@@ -26,6 +27,10 @@ const t = getDictionary(locale);
 const items = getMainNavigation(locale);
 const lastIndex = items.length - 1;
 
+/** Logo height: the big hero logo on the overlay, the compact one on the glass bar. */
+const LOGO_HEIGHT =
+  "h-13.5 md:h-17 transition-[height,opacity] duration-600 ease-brand group-data-[theme=overlay]/header:h-[clamp(4.75rem,20.5vw,5.625rem)] md:group-data-[theme=overlay]/header:h-[clamp(6.75rem,9vw,8.25rem)]";
+
 /** Visible while the horizontal menu is shown (a density, or the `xl` fallback before measuring). */
 const SHOW_WITH_NAV =
   "group-data-[nav=auto]/header:xl:block group-data-[nav=full]/header:block group-data-[nav=tight]/header:block group-data-[nav=xtight]/header:block";
@@ -40,24 +45,32 @@ const SHOW_WITH_NAV =
   data-theme={overlay ? "overlay" : "solid"}
   data-nav="auto"
   class:list={[
-    "surface-dark",
-    "group/header fixed inset-x-0 top-0 z-60 text-fg transition-[background-color,border-color] duration-400",
-    "border-b border-stone/16 bg-canvas/90 backdrop-blur-xl",
-    "data-[theme=overlay]:border-transparent data-[theme=overlay]:bg-dark data-[theme=overlay]:backdrop-blur-none",
+    overlay && "surface-dark",
+    "group/header fixed inset-x-0 top-0 z-60 text-fg transition-[background-color,box-shadow] duration-400",
+    "bg-glass shadow-[0_1px_0_var(--color-line)] backdrop-blur-[10px]",
+    "data-[theme=overlay]:bg-transparent data-[theme=overlay]:shadow-none data-[theme=overlay]:backdrop-blur-none",
     // Soft gradient keeps the negative logo legible over the video.
-    "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+4.375rem)] before:bg-linear-to-b before:from-ink/65 before:via-ink/30 before:to-ink/0 before:opacity-0 before:transition-opacity data-[theme=overlay]:before:opacity-100",
+    "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+4.375rem)] before:bg-linear-to-b before:from-ink/65 before:via-ink/30 before:to-ink/0 before:opacity-0 before:transition-opacity before:duration-500 data-[theme=overlay]:before:opacity-100",
   ]}
 >
-  <div class="flex h-19 items-center gap-5 px-[clamp(1.125rem,3.2vw,3.25rem)] md:h-23">
+  <div class="flex h-19 items-center gap-5 px-[clamp(1.125rem,3.2vw,3.25rem)] transition-[height] duration-600 ease-brand group-data-[theme=overlay]/header:h-[calc(clamp(4.75rem,20.5vw,5.625rem)+2.75rem)] md:h-23 md:group-data-[theme=overlay]/header:h-[calc(clamp(6.75rem,9vw,8.25rem)+2.75rem)]">
     <a
       href={getLocalizedPath("home", locale)}
       aria-label={t.a11y.homeLink}
       class="relative block flex-none"
     >
       <Logo
+        variant="official"
+        alt=""
+        class:list={[LOGO_HEIGHT, "w-auto group-data-[theme=overlay]/header:opacity-0"]}
+      />
+      <Logo
         variant="negative"
         alt=""
-        class="h-13.5 w-auto transition-[height] duration-400 ease-brand group-data-[theme=overlay]/header:h-16 md:h-17 md:group-data-[theme=overlay]/header:h-20"
+        class:list={[
+          LOGO_HEIGHT,
+          "absolute top-0 left-0 w-auto opacity-0 group-data-[theme=overlay]/header:opacity-100",
+        ]}
       />
     </a>
 
@@ -104,14 +117,14 @@ const SHOW_WITH_NAV =
                     id={submenuId}
                     class="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 translate-y-2.5 pt-3.5 opacity-0 transition-[opacity,translate,visibility] duration-400 ease-brand group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100 group-data-[open=true]/item:visible group-data-[open=true]/item:translate-y-0 group-data-[open=true]/item:opacity-100"
                   >
-                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-accent/20 bg-canvas/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
+                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-dark/10 bg-paper/98 py-3 whitespace-normal shadow-2xl shadow-dark/12 backdrop-blur-lg">
                       {item.children.map((child, childIndex) => (
                         <li>
                           <a
                             href={child.href}
                             class:list={[
-                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/7 hover:pl-7 hover:text-accent focus-visible:text-accent",
-                              childIndex === 0 && "font-medium text-white",
+                              "block px-5.5 py-2.5 text-xs leading-snug text-dark no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/8 hover:pl-7 hover:text-teal focus-visible:text-teal",
+                              childIndex === 0 && "font-medium",
                             ]}
                           >
                             {child.label}
@@ -157,7 +170,7 @@ const SHOW_WITH_NAV =
 <script>
   import { chooseNavMode, type NavDensity } from "./navFit";
 
-  const SCROLLED_PX = 24;
+  const SCROLLED_PX = 60;
   let frame = 0;
   let documentBound = false;
 
@@ -167,7 +180,10 @@ const SHOW_WITH_NAV =
   function syncScrollState(): void {
     const header = currentHeader();
     if (header?.dataset["overlay"] === "true") {
-      header.dataset["theme"] = window.scrollY > SCROLLED_PX ? "solid" : "overlay";
+      const overlay = window.scrollY <= SCROLLED_PX;
+      header.dataset["theme"] = overlay ? "overlay" : "solid";
+      // The dark role tokens (white text, white logo) apply only while it floats over the hero.
+      header.classList.toggle("surface-dark", overlay);
     }
     const bar = document.querySelector<HTMLElement>("[data-quick-actions]");
     if (bar !== null) {
