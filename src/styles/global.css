@@ -77,19 +77,40 @@
 
 @layer base {
   html {
-    @apply scroll-pt-28 bg-canvas font-sans tracking-[0.02em] text-fg antialiased;
+    @apply scroll-pt-28 bg-canvas font-sans tracking-[0.0175rem] text-fg antialiased;
   }
 
   body {
     @apply bg-canvas text-base/[1.7];
   }
 
-  /* Design system: Montserrat headings, 800, uppercase by CSS (HTML stays in normal case). */
+  /*
+   * Reference headings: Montserrat, uppercase by CSS, 800 (h1, h2) and 700 (h3, h4). A heading
+   * whose first part is bold and the rest light (an <em>, from "*asterisks*") is 900 + 400.
+   */
   h1,
   h2,
   h3,
   h4 {
-    @apply font-heading leading-[1.08] font-extrabold tracking-[0.03em] text-balance uppercase;
+    @apply font-heading leading-[1.08] tracking-[0.03em] text-balance uppercase;
+  }
+
+  h1,
+  h2 {
+    @apply font-extrabold;
+  }
+
+  h3,
+  h4 {
+    @apply font-bold;
+  }
+
+  :is(h1, h2):has(> em) {
+    @apply font-black;
+  }
+
+  :is(h1, h2) em {
+    @apply font-normal;
   }
 
   /* `accent` is the AA turquoise of each surface (teal on paper, #21cec5 on dark blocks). */
@@ -114,6 +135,19 @@
 *::before,
 *::after {
   font-style: normal !important;
+}
+
+/*
+ * All text in capitals (reference site.css "um5"): look only, the HTML keeps its normal case.
+ * "!important" beats the "normal-case" utilities scattered through components, so the explicit
+ * opt-out is ".normal-case" itself: it and everything inside it keep their case (the PDF sheet,
+ * whose <html> carries it, and verbatim client reviews).
+ */
+html body *:not(.normal-case, .normal-case *),
+html body *:not(.normal-case, .normal-case *)::before,
+html body *:not(.normal-case, .normal-case *)::after,
+html body ::placeholder {
+  text-transform: uppercase !important;
 }
 
 /* Dark petrol blocks (header over the hero, footer, reviews, photo headers): only the roles change. */
@@ -142,12 +176,12 @@
 
 /* Alternate light sections (`c-bg-alt`). Muted is darker: the light value is 4.5:1 only on paper (§8). */
 .surface-stone {
-  --color-canvas: #f3f1eb;
+  --color-canvas: #ebe5dc;
   --color-bg-soft: #fcfbf8;
   --color-card: #fcfbf8;
   --color-card-hover: #fffefb;
   --color-line: rgb(23 43 43 / 0.14);
-  --color-muted: #525c5a;
+  --color-muted: #5a6462;
 }
 
 /* Article body written in Pages CMS: plain Markdown, so its elements are styled here. */

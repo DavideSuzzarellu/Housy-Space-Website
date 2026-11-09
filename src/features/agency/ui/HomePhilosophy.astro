@@ -39,7 +39,7 @@ const second = splitQuote(content.quoteSecond);
         <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
           <span data-line class="block" style="--line-index: 1">
             {second.lead}
-            <em class="text-accent">{second.body}</em>
+            <em>{second.body}</em>
             <span class="font-normal">{second.trail}</span>
           </span>
         </span>
@@ -59,7 +59,7 @@ const second = splitQuote(content.quoteSecond);
         variant="solid"
         size="wide"
         arrow
-        class="shadow-[0_18px_40px_color-mix(in_srgb,var(--color-fg)_10%,transparent)] max-[479px]:w-full"
+        class="leading-[1.2] shadow-[0_18px_40px_color-mix(in_srgb,var(--color-fg)_10%,transparent)] max-[479px]:w-full [&_svg]:h-3 [&_svg]:w-6.5"
       >
         {content.primaryCta}
       </Button>

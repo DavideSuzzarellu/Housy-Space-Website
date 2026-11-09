@@ -39,17 +39,23 @@ const { locale, id, content } = Astro.props;
         <h1
           id="presentation-heading"
           data-reveal="words"
-          class="font-sans leading-[1.06] font-normal tracking-[-0.005em] uppercase text-[clamp(1.875rem,3.5vw,3.125rem)]"
+          class="font-sans leading-[1.06] uppercase text-[clamp(1.875rem,3.5vw,3.125rem)]"
         >
           <span data-words-line="rise" class="block font-black text-balance">
             {content.headingFirst}
           </span>{" "}
-          <span data-words-line="type" class="block text-muted text-balance">
+          <span data-words-line="type" class="block font-normal text-muted text-balance">
             {content.headingSecond}
           </span>
         </h1>
         <div data-reveal style="--reveal-delay: 1.05s">
-          <Button href={getLocalizedPath("about", locale)} variant="solid" size="xl" arrow>
+          <Button
+            href={getLocalizedPath("about", locale)}
+            variant="solid"
+            size="xl"
+            arrow
+            class="min-[900px]:px-[clamp(3.25rem,4vw,3.6rem)]"
+          >
             {content.ctaLabel}
           </Button>
         </div>
