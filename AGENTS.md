@@ -363,7 +363,7 @@ Rules:
 ### 11.3 Typography
 
 - **Montserrat** only (variable 400–900, Google Fonts `family=Montserrat:wght@400..900&display=swap`, latin + latin-ext; self-hosting through Fontsource is allowed if performance needs it).
-- **Montserrat Titulares** = the same Montserrat declared with `size-adjust: 81.9%` for headings. The design system sizes were measured with it: where `size-adjust` is not available, multiply `titulares` sizes by 0.819.
+- **Montserrat Titulares** = the same Montserrat declared with `size-adjust: 81.9%` for headings. The design system sizes were measured with it: where `size-adjust` is not available, multiply `titulares` sizes by 0.819. Implemented in `src/layouts/HeadingFontFace.astro` (`shared/lib/headingFont.ts`): the Fonts API cannot set `size-adjust`, so the heading `@font-face` reuses the body font's own files from `fontData` (no second download); use `font-heading`, never a hand-scaled size.
 - Styles come from `tokens.json` `type.groups` (Titulares, Texto, Interfaz): headings 800/900 (`presentacion-h1`, `cabecera-h1`, `seccion-h2`, `pagina-h1`, `h2`), subtitles 700 (`h3`, `h3-s`), body 400 (`cuerpo` = 14 px / 1.7), buttons 500 wide-tracked (`boton`), labels 700 very wide-tracked (`rotulo`). Sizes are for 1440 px; large headings use `clamp()` and shrink on mobile.
 - 10 px is the minimum size on the whole site (`legal`, `pie-enlace`).
 - Headings mark their light-weight part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML (§3.2).

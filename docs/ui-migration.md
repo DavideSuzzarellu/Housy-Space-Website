@@ -65,7 +65,8 @@ Applied 2026-11-09 — `global.css`, `astro.config.ts` and the skills `tailwind-
 | states               | `ok ko nd warn err`              | `ok ko warn err` in `@theme` (`nd` missing)       | ⚠️ unused yet               |
 
 Retired and removed: `gold`, `star`, `graphite`, `forest`, `font-serif`, Cormorant Garamond.
-Not done by the token swap: per-component layout, heading sizes (components still carry sizes tuned for Cormorant), body-wide uppercase, the `size-adjust: 81.9%` heading face, and the DS section layouts (§11.7).
+Done 2026-11-09: the `size-adjust: 81.9%` heading face (`layouts/HeadingFontFace.astro`) and no italics (global rule).
+Not done yet: per-component layout, heading sizes tuned for Cormorant, body-wide uppercase, and the DS section layouts (§11.7). Home map: one commit per step (type scale → button → motion → hero → …).
 
 ## 3. Page mapping (v3 path ↔ project route)
 

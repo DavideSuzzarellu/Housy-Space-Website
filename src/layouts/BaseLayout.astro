@@ -13,6 +13,7 @@ import MobileDrawer from "@/shared/ui/organisms/MobileDrawer.astro";
 import QuickActionsBar from "@/shared/ui/organisms/QuickActionsBar.astro";
 import SeoHead from "@/shared/ui/organisms/SeoHead.astro";
 import "@/styles/global.css";
+import HeadingFontFace from "./HeadingFontFace.astro";
 
 interface Props {
   locale: Locale;
@@ -55,6 +56,7 @@ const t = getDictionary(locale);
       cssVariable="--font-montserrat"
       preload={[{ weight: "400 900", style: "normal", subset: "latin" }]}
     />
+    <HeadingFontFace />
     <SeoHead
       locale={locale}
       title={title}
