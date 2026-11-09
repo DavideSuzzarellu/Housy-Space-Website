@@ -328,6 +328,9 @@ const en = {
       cardCta: "View the full listing",
       empty: "There are no featured properties published at the moment.",
     },
+    stats: {
+      moreThan: "more than",
+    },
     valuation: {
       caption: "Conceptual AI-generated image.",
     },

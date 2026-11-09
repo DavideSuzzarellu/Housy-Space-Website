@@ -61,13 +61,21 @@ content:
               required: true,
               description: "Pon entre *asteriscos* la parte más fina.",
             }
-          - { name: stat1Value, label: "Dato 1 · valor", type: string, required: true }
+          - { name: stat1Number, label: "Dato 1 · número", type: number, required: true }
+          - { name: stat1Plus, label: "Dato 1 · con «+» delante", type: boolean }
+          - { name: stat1Unit, label: "Dato 1 · unidad", type: string, required: true }
           - { name: stat1Label, label: "Dato 1 · descripción", type: string, required: true }
-          - { name: stat2Value, label: "Dato 2 · valor", type: string, required: true }
+          - { name: stat2Number, label: "Dato 2 · número", type: number, required: true }
+          - { name: stat2Plus, label: "Dato 2 · con «+» delante", type: boolean }
+          - { name: stat2Unit, label: "Dato 2 · unidad", type: string, required: true }
           - { name: stat2Label, label: "Dato 2 · descripción", type: string, required: true }
-          - { name: stat3Value, label: "Dato 3 · valor", type: string, required: true }
+          - { name: stat3Number, label: "Dato 3 · número", type: number, required: true }
+          - { name: stat3Plus, label: "Dato 3 · con «+» delante", type: boolean }
+          - { name: stat3Unit, label: "Dato 3 · unidad", type: string, required: true }
           - { name: stat3Label, label: "Dato 3 · descripción", type: string, required: true }
-          - { name: stat4Value, label: "Dato 4 · valor", type: string, required: true }
+          - { name: stat4Number, label: "Dato 4 · número", type: number, required: true }
+          - { name: stat4Plus, label: "Dato 4 · con «+» delante", type: boolean }
+          - { name: stat4Unit, label: "Dato 4 · unidad", type: string, required: true }
           - { name: stat4Label, label: "Dato 4 · descripción", type: string, required: true }
           - { name: note, label: Nota al pie, type: string, required: true }
           - { name: ctaLabel, label: Texto del botón, type: string, required: true }

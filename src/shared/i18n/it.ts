@@ -329,6 +329,9 @@ const it = {
       cardCta: "Consulta la scheda completa",
       empty: "Al momento non ci sono immobili in evidenza pubblicati.",
     },
+    stats: {
+      moreThan: "più di",
+    },
     valuation: {
       caption: "Immagine concettuale generata con IA.",
     },

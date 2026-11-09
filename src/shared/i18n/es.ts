@@ -335,6 +335,9 @@ const es = {
       cardCta: "Consultar la ficha completa",
       empty: "En este momento no hay inmuebles destacados publicados.",
     },
+    stats: {
+      moreThan: "más de",
+    },
     valuation: {
       caption: "Imagen conceptual generada con IA.",
     },

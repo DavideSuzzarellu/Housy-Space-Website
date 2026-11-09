@@ -329,6 +329,9 @@ const ca = {
       cardCta: "Consulta la fitxa completa",
       empty: "En aquest moment no hi ha immobles destacats publicats.",
     },
+    stats: {
+      moreThan: "més de",
+    },
     valuation: {
       caption: "Imatge conceptual generada amb IA.",
     },
