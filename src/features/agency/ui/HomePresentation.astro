@@ -3,6 +3,7 @@ import type { HomeContent } from "@/features/agency/application/homeContent";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
+import StreetGrid from "./StreetGrid.astro";
 import HairlineThread from "@/shared/ui/atoms/HairlineThread.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 
@@ -24,68 +25,6 @@ const { locale, id, content } = Astro.props;
   aria-labelledby="presentation-heading"
   class="relative overflow-clip bg-canvas pt-[clamp(0.25rem,1.6vw,1.25rem)]"
 >
-  <!-- Decorative geometric grid (§11.1 reference visual) -->
-  <svg
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0 h-full w-full"
-    preserveAspectRatio="xMidYMid slice"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      x="5%"
-      y="8%"
-      width="34%"
-      height="58%"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.6"
-      class="text-line"
-      opacity="0.6"
-    />
-    <rect
-      x="42%"
-      y="3%"
-      width="46%"
-      height="72%"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.6"
-      class="text-line"
-      opacity="0.5"
-    />
-    <rect
-      x="68%"
-      y="30%"
-      width="28%"
-      height="52%"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.4"
-      class="text-line"
-      opacity="0.3"
-    />
-    <line
-      x1="39%"
-      y1="8%"
-      x2="39%"
-      y2="66%"
-      stroke="currentColor"
-      stroke-width="0.4"
-      class="text-line"
-      opacity="0.4"
-    />
-    <line
-      x1="5%"
-      y1="66%"
-      x2="88%"
-      y2="66%"
-      stroke="currentColor"
-      stroke-width="0.4"
-      class="text-line"
-      opacity="0.35"
-    />
-  </svg>
-
   <Container class="relative">
     <HairlineThread position="top" />
     <div class="relative isolate mx-auto max-w-[1040px]">
@@ -95,7 +34,8 @@ const { locale, id, content } = Astro.props;
       >
         {content.eyebrow}
       </p>
-      <div class="grid gap-[clamp(1.5rem,3vw,2.25rem)]">
+      <div class="grid gap-[clamp(1.5rem,3vw,2.25rem)] min-[760px]:relative">
+        <StreetGrid />
         <h1
           id="presentation-heading"
           data-reveal="words"
