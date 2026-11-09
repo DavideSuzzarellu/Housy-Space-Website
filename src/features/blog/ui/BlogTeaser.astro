@@ -23,9 +23,9 @@ const copy = getDictionary(locale).home.blog;
 <Section id="blog" labelledBy="blog-heading" name="blog">
   <SectionHeading id="blog-heading" heading={content.heading} class="mb-5" />
   {posts.length > 0 ? (
-    <div class="grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-[30px] min-[900px]:grid-cols-3 min-[900px]:gap-[clamp(1.75rem,3vw,2.75rem)]">
       {posts.map((post) => (
-        <PostCard post={post} locale={locale} />
+        <PostCard post={post} locale={locale} layout="teaser" />
       ))}
     </div>
   ) : (
@@ -34,7 +34,7 @@ const copy = getDictionary(locale).home.blog;
     </p>
   )}
   <div class="mt-[clamp(1.875rem,3.6vw,2.875rem)] flex justify-center">
-    <Button href={getLocalizedPath("blog", locale)} variant="solid" size="lg" arrow>
+    <Button href={getLocalizedPath("blog", locale)} variant="solid" size="xl" arrow>
       {content.ctaLabel}
     </Button>
   </div>

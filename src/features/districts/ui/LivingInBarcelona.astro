@@ -23,14 +23,14 @@ const { locale, content } = Astro.props;
 const copy = getDictionary(locale).home.living;
 
 const NAV_BUTTON =
-  "grid size-12 cursor-pointer place-items-center rounded-full border border-line text-fg transition-colors hover:bg-fg hover:text-canvas focus-visible:bg-fg focus-visible:text-canvas disabled:cursor-default disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-fg md:size-14";
+  "grid size-14 cursor-pointer place-items-center rounded-full border border-line-strong text-fg transition-colors hover:bg-fg hover:text-canvas focus-visible:bg-fg focus-visible:text-canvas focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-fg disabled:cursor-default disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-fg max-[700px]:size-12";
 ---
 
 <section
   id="descubre"
   aria-labelledby="living-heading"
   data-section="living"
-  class="surface-stone overflow-hidden bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  class="surface-stone overflow-hidden bg-canvas pt-[clamp(2.75rem,5vw,4.125rem)] pb-[clamp(3.5rem,6.4vw,5.75rem)]"
 >
   <Container>
     <SectionHeading
@@ -42,9 +42,9 @@ const NAV_BUTTON =
       <Button
         href={getLocalizedPath("living", locale)}
         variant="solid"
-        size="lg"
+        size="xl"
         arrow
-        class="max-sm:w-full"
+        class="max-[700px]:w-full"
       >
         {content.ctaLabel}
       </Button>
@@ -74,16 +74,16 @@ const NAV_BUTTON =
     data-rail
     role="region"
     aria-label={copy.railLabel}
-    class="snap-x snap-mandatory scroll-px-[var(--rail-pad)] overflow-x-auto overscroll-x-contain [--rail-pad:max(1.375rem,calc((100%-70rem)/2))] [scrollbar-width:none]"
+    class="snap-x snap-mandatory scroll-px-[var(--rail-pad)] overflow-x-auto overscroll-x-contain [--rail-pad:max(1.375rem,calc((100%-67.25rem)/2))] [scrollbar-width:none]"
   >
-    <ul class="flex w-max gap-[clamp(0.75rem,1.4vw,1.125rem)] px-[var(--rail-pad)] py-1.5">
+    <ul class="flex w-max gap-[clamp(0.75rem,1.4vw,1.125rem)] px-[var(--rail-pad)] pt-1.5 pb-2.5">
       {DISTRICTS.map((district) => {
         const image = DISTRICT_IMAGES[district.slug];
         return (
           <li class="snap-start">
             <a
               href={getLocalizedPath("district", locale, { district: district.slug })}
-              class="group surface-dark relative block aspect-4/5 w-[min(72vw,18.5rem)] overflow-hidden rounded-[1.25rem] bg-ink text-white no-underline after:absolute after:inset-0 after:bg-linear-to-b after:from-ink/0 after:from-40% after:to-ink/80 md:w-[clamp(14.375rem,23vw,18.5rem)]"
+              class="group surface-dark relative block aspect-4/5 w-[min(72vw,18.5rem)] overflow-hidden rounded-[1.25rem] bg-stone text-white no-underline after:absolute after:inset-0 after:bg-linear-to-b after:from-ink/0 after:from-40% after:to-ink/80 md:w-[clamp(14.375rem,23vw,18.5rem)]"
             >
               {image !== undefined && (
                 <Picture
@@ -99,7 +99,7 @@ const NAV_BUTTON =
                 <small class="text-[0.625rem] leading-tight font-semibold tracking-[0.16em] text-white/80">
                   {formatMessage(copy.barrioCount, { count: district.barrioCount })}
                 </small>
-                <b class="text-[clamp(1.125rem,1.7vw,1.4375rem)] leading-[1.1] font-bold text-balance">
+                <b class="text-[clamp(1.125rem,1.7vw,1.4375rem)] leading-[1.1] font-bold tracking-[0.03em] text-balance">
                   {district.name}
                 </b>
               </span>
