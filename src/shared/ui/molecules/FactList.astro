@@ -4,6 +4,7 @@
  * `grid`: value over label tiles (property detail).
  * `tone="light"`: grid tiles for white backgrounds (property sheet PDF).
  * `list`: label over value with a top rule (official data of barrios and municipalities).
+ * `plain`: ruleless 12 px row of the catalog card, "**148** m²   **3** habitaciones".
  */
 export interface Fact {
   readonly value: string;
@@ -12,7 +13,7 @@ export interface Fact {
 
 interface Props {
   facts: readonly Fact[];
-  variant?: "inline" | "grid" | "list";
+  variant?: "inline" | "grid" | "list" | "plain";
   tone?: "dark" | "light";
   class?: string;
 }
@@ -27,7 +28,15 @@ const tile = TILE_TONES[tone];
 ---
 
 {facts.length > 0 &&
-  (variant === "inline" ? (
+  (variant === "plain" ? (
+    <ul class:list={["flex flex-wrap gap-x-5.5 gap-y-1 text-xs text-muted", className]}>
+      {facts.map((fact) => (
+        <li>
+          <b class="font-medium text-fg">{fact.value}</b> {fact.label}
+        </li>
+      ))}
+    </ul>
+  ) : variant === "inline" ? (
     <ul
       class:list={[
         "flex flex-wrap gap-x-5.5 gap-y-1.5 border-t border-line pt-3 text-[0.65625rem] text-muted",

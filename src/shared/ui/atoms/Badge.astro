@@ -1,23 +1,20 @@
 ---
 interface Props {
-  tone?: "dark" | "accent";
+  /** `approx`: dashed outline pill ("approximate location") over a photo. */
+  tone?: "dark" | "accent" | "approx";
   class?: string;
 }
 
 const { tone = "dark", class: className } = Astro.props;
 
 const TONES = {
-  dark: "surface-dark bg-ink/80",
-  accent: "bg-turquoise font-medium text-ink",
+  dark: "surface-dark bg-ink/80 px-2.5 py-1.5 tracking-[0.12em]",
+  accent: "bg-turquoise px-2.5 py-1.5 font-medium tracking-[0.12em] text-ink",
+  approx:
+    "surface-dark border border-dashed border-turquoise/60 bg-ink/80 px-2.25 py-1.25 tracking-[0.06em]",
 } as const;
 ---
 
-<span
-  class:list={[
-    "inline-block px-2.5 py-1.5 text-[0.625rem] tracking-[0.12em] uppercase",
-    TONES[tone],
-    className,
-  ]}
->
+<span class:list={["inline-block text-[0.625rem] uppercase", TONES[tone], className]}>
   <slot />
 </span>

@@ -135,7 +135,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
         ) : (
           <ul
             data-catalog-list
-            class="grid gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:group-data-[view=split]/catalog:grid-cols-1 xl:group-data-[view=split]/catalog:grid-cols-2"
+            class="grid gap-7 min-[700px]:grid-cols-2 min-[900px]:group-data-[view=split]/catalog:grid-cols-1 min-[1200px]:gap-8.5 min-[1500px]:group-data-[view=split]/catalog:grid-cols-2 min-[1500px]:group-data-[view=split]/catalog:gap-5"
           >
             {model.properties.map((property) => (
               <li data-catalog-ref={property.ref} class="flex">
@@ -144,6 +144,7 @@ const sortOptions = CATALOG_SORTS.map((sort) => ({
                   locale={locale}
                   ctaLabel={t.cardCta}
                   operation={operation}
+                  variant="catalog"
                 />
               </li>
             ))}
