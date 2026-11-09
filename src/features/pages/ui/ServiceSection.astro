@@ -36,9 +36,11 @@ interface Props {
   locale: Locale;
   service: ServiceKey;
   section: PageContent["sections"][number];
+  /** Far below the head: the browser skips its layout and paint until it nears the viewport. */
+  defer?: boolean;
 }
 
-const { locale, service, section } = Astro.props;
+const { locale, service, section, defer = false } = Astro.props;
 const { head, body } = splitBlockHead(section.items);
 const lists = itemsOf(body, "list");
 const steps = itemsOf(body, "steps");
@@ -64,6 +66,7 @@ const band = layout === "band";
   id={section.id ?? (layout === "cta" ? "hablemos" : undefined)}
   class:list={[
     "scroll-mt-28",
+    defer && "defer-render",
     band
       ? "surface-dark bg-canvas py-[clamp(60px,7.4vw,108px)] text-center"
       : ["py-[clamp(44px,5vw,66px)]", SURFACES[section.surface]],

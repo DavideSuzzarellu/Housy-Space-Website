@@ -37,6 +37,71 @@ for (const [url, heading] of PAGES) {
   });
 }
 
+const SERVICES = [
+  "venta-estrategica",
+  "valoracion",
+  "asesoramiento",
+  "asesoramiento-financiero",
+  "asesoramiento-juridico-fiscal",
+  "reformas-obras",
+  "personal-shopper",
+  "inversion-inmobiliaria",
+  "alquiler-gestion",
+] as const;
+
+for (const service of SERVICES) {
+  test(`/es/servicios/${service} has its illustrated head and its own closing block`, async ({
+    page,
+  }) => {
+    await page.goto(`/es/servicios/${service}`);
+    const head = page.locator("[data-page-head]");
+    // The illustration is the only eager image of the page and carries a text alternative.
+    await expect(head.locator("img[fetchpriority='high']")).toHaveCount(1);
+    await expect(head.locator("img[alt]:not([alt=''])")).toHaveCount(1);
+    // "Hablemos" scrolls to the closing block, which lists the other eight services.
+    await head.getByRole("link", { name: "Hablemos" }).click();
+    await expect(page.locator("#hablemos")).toBeInViewport();
+    await expect(page.locator("#hablemos nav a")).toHaveCount(8);
+    // The footer's own "¡Hablemos!" row is hidden: the page closes with its own.
+    await expect(page.locator("[data-footer-cta]")).toBeHidden();
+  });
+}
+
+test("the compraventa page lists eight steps and twelve inclusions", async ({ page }) => {
+  await page.goto("/es/servicios/venta-estrategica");
+  await expect(page.locator("main ol li").filter({ has: page.locator("h3") })).toHaveCount(8);
+  await expect(
+    page.getByRole("heading", { name: "Todo lo que hace falta para vender" }),
+  ).toBeVisible();
+  await expect(page.locator("section:has(h2:text('Todo lo que hace falta')) ul > li")).toHaveCount(
+    12,
+  );
+});
+
+test("frequently asked questions open and close without scripts", async ({ page }) => {
+  await page.goto("/es/servicios/alquiler-gestion");
+  const first = page.locator("details").first();
+  await expect(first).not.toHaveAttribute("open", "");
+  await first.locator("summary").click();
+  await expect(first).toHaveAttribute("open", "");
+  await first.locator("summary").click();
+  await expect(first).not.toHaveAttribute("open", "");
+});
+
+test("service pages are translated: the head keeps its illustration in every locale", async ({
+  page,
+}) => {
+  for (const [locale, segment] of [
+    ["en", "services"],
+    ["it", "servizi"],
+    ["ca", "serveis"],
+  ] as const) {
+    await page.goto(`/${locale}/${segment}/valoracion`);
+    await expect(page.locator("[data-page-head] img[alt]:not([alt=''])")).toHaveCount(1);
+    await expect(page.locator("#hablemos")).toBeAttached();
+  }
+});
+
 test("barrio figures match the official data, with their source", async ({ page }) => {
   await page.goto("/es/vivir-en-barcelona/nou-barris/verdun");
   await expect(page.getByText("2.736", { exact: true }).first()).toBeVisible();

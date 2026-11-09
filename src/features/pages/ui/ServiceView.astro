@@ -22,7 +22,7 @@ const t = getDictionary(locale);
 
 <div lang={fallback ? "es" : undefined} data-page-view data-service-view>
   <ServiceHead locale={locale} head={content.head} crumbs={crumbs} talk={t.servicePage.talk} />
-  {content.sections.map((section) => (
-    <ServiceSection locale={locale} service={service} section={section} />
+  {content.sections.map((section, index) => (
+    <ServiceSection locale={locale} service={service} section={section} defer={index > 1} />
   ))}
 </div>
