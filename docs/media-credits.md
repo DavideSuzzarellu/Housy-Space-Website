@@ -47,3 +47,7 @@ Property photos come from Mobilia (`media.mobiliagestion.es`) and belong to the 
 Added 2026-11-09 from the client's static reference site (`assets/img/servicios/ill-*-1000.webp`), same AI-generated placeholder status: `src/assets/servicios/ill-*-1000.webp` (9 transparent illustrations floating beside the head of each service page: compraventa, valoracion, asesoramiento, financiero, juridico-fiscal, reformas, personal-shopper, inversion, alquiler). Replace before launch.
 
 Also 2026-11-09, from the same reference site (`assets/img/colaboradores/edac.png`): `src/assets/colaboradores/edac.png`, logo of Asesoría Edac on the legal and tax service page. Third-party logo supplied by the client: confirm its reuse terms with the collaborator.
+
+## About us page
+
+Added 2026-11-10 from the client's static reference site (`assets/img/nosotros/ill-*-1248.webp`), same AI-generated placeholder status as the service illustrations: `src/assets/nosotros/ill-*.webp` (8 transparent illustrations: experiencia, historia, filosofia, milla, diferencia, como-trabajamos, compromiso, colaboraciones). The footer already carries the "Imagen conceptual generada con IA" notice. Replace before launch.
