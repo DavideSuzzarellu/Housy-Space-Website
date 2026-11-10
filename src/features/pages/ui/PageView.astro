@@ -108,7 +108,7 @@ const SURFACES = {
           class:list={[
             "mt-4 max-w-[62ch] text-fg/90",
             hero &&
-              "[&_p]:mb-[clamp(1.875rem,4vw,2.875rem)] [&_p]:max-w-[58ch] [&_p]:text-[clamp(0.875rem,1.35vw,1.0625rem)] [&_p]:leading-[1.8] [&_p]:text-fg/85",
+              "[&>:last-child]:mb-0 [&_p]:mb-[clamp(1.875rem,4vw,2.875rem)] [&_p]:max-w-[58ch] [&_p]:text-[clamp(0.875rem,1.35vw,1.0625rem)] [&_p]:leading-[1.8] [&_p]:text-fg/85",
           ]}
         >
           <PageItems
@@ -126,6 +126,7 @@ const SURFACES = {
       id={section.id}
       class:list={[
         hero ? "py-[clamp(3.5rem,7vw,6rem)]" : "py-[clamp(2.75rem,5vw,4.125rem)]",
+        hero && "[&_ol]:mt-[clamp(1.875rem,4vw,3.375rem)]",
         hero && section.id !== undefined && "[&_h2]:text-[clamp(1.75rem,3.6vw,3rem)]",
         hero &&
           index === content.sections.length - 1 &&
