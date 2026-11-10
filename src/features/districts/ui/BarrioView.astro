@@ -140,7 +140,7 @@ const districtLabel = formatMessage(t.districtSuffix, { name: district.name });
 
 <Section id="graficos" labelledBy="barrio-charts" name="barrio-charts">
   <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.chartsTag}</p>
-  <SectionHeading id="barrio-charts" heading={t.chartsHeading} class="mb-6" />
+  <SectionHeading id="barrio-charts" heading={t.chartsHeading} size="data" class="mb-[22px]" />
   <div class="grid gap-5 lg:grid-cols-2">
     <LineChart
       title={t.saleChart}

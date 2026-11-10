@@ -24,23 +24,24 @@ interface Props {
 const { locale, barrios, current, references = [], searchable = false } = Astro.props;
 const t = getDictionary(locale).zones;
 const format = figureFormat(locale);
-const CELL = "border-b border-line p-2 text-right whitespace-nowrap";
+const CELL =
+  "border-b border-line px-3 py-[13px] text-right font-heading text-base font-normal whitespace-nowrap";
 ---
 
 <div class="overflow-x-auto">
-  <table class="w-full min-w-120 border-collapse text-sm">
+  <table class="w-full min-w-120 border-collapse text-[0.8125rem]">
     <thead>
       <tr class="text-xs">
-        <th scope="col" class="border-b-2 border-fg p-2 text-left">
+        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-left">
           {t.barrio}
         </th>
-        <th scope="col" class="border-b-2 border-fg p-2 text-right">
+        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-right">
           {t.saleColumn}
         </th>
-        <th scope="col" class="border-b-2 border-fg p-2 text-right">
+        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-right">
           {t.rentColumn}
         </th>
-        <th scope="col" class="border-b-2 border-fg p-2 text-right">
+        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-right">
           {t.densityColumn}
         </th>
       </tr>
@@ -49,9 +50,12 @@ const CELL = "border-b border-line p-2 text-right whitespace-nowrap";
       {barrios.map((barrio) => (
         <tr
           data-barrio-row={searchable ? barrio.name : undefined}
-          class={barrio.slug === current ? "bg-card font-semibold" : undefined}
+          class={barrio.slug === current ? "bg-taupe/18" : undefined}
         >
-          <th scope="row" class="border-b border-line p-2 text-left font-medium">
+          <th
+            scope="row"
+            class="border-b border-line px-3 py-[13px] text-left font-heading text-[1.0625rem] leading-tight font-normal"
+          >
             {barrio.slug === current ? (
               barrio.name
             ) : (
@@ -71,9 +75,12 @@ const CELL = "border-b border-line p-2 text-right whitespace-nowrap";
           <td class={CELL}>{format.format(barrio.density)}</td>
         </tr>
       ))}
-      {references.map((reference) => (
-        <tr class="font-semibold">
-          <th scope="row" class="border-b border-line p-2 text-left">
+      {references.map((reference, index) => (
+        <tr class:list={["text-muted", index === 0 && "border-t border-line-strong"]}>
+          <th
+            scope="row"
+            class="border-b border-line px-3 py-[13px] text-left font-heading text-[1.0625rem] leading-tight font-normal"
+          >
             {reference.href === undefined ? (
               reference.label
             ) : (
