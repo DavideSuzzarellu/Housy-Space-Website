@@ -47,3 +47,10 @@ describe("morph preset", () => {
     expect(morph.forwards).toEqual(morph.backwards);
   });
 });
+
+describe("staggerDelay", () => {
+  it("steps by 0.09 s per sibling and stops at 0.45 s, as the reference site", async () => {
+    const { staggerDelay } = await import("./reveal");
+    expect([0, 1, 2, 5, 6, 40].map(staggerDelay)).toEqual([0, 0.09, 0.18, 0.45, 0.45, 0.45]);
+  });
+});
