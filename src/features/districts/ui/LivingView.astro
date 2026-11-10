@@ -6,6 +6,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { figureFormat, formatMessage } from "@/shared/lib/format";
 import Container from "@/shared/ui/atoms/Container.astro";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
@@ -53,23 +54,31 @@ const panels = market.districts.flatMap((district, index) => {
 });
 ---
 
-<Section id="mapa" labelledBy="living-heading" name="living-map">
-  <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-6" />
+<Section id="mapa" labelledBy="living-heading" name="living-map" class="overflow-clip">
+  <div slot="background" class="absolute inset-x-0 top-0 h-[clamp(18.75rem,34vw,29.375rem)]">
+    <StreetGrid placement="heading" />
+  </div>
+  <Breadcrumbs
+    items={crumbs}
+    label={dictionary.property.detail.breadcrumb}
+    tone="compact"
+    class="mb-6"
+  />
   <div class="mb-6 flex flex-wrap items-end justify-between gap-5">
     <div>
       <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{dictionary.nav.living}</p>
-      <h1 id="living-heading" class="text-[clamp(1.875rem,4.8vw,3.5rem)]">
+      <h1 id="living-heading" class="text-[clamp(1.875rem,4vw,3.625rem)]">
         {t.livingHeading}
       </h1>
-      <p class="mt-3 text-muted">{t.livingLead}</p>
+      <p class="mt-3">{t.livingLead}</p>
     </div>
-    <div role="group" aria-label={t.metricLabel} class="flex border border-line">
+    <div role="group" aria-label={t.metricLabel} class="flex">
       {METRICS.map((metric, index) => (
         <button
           type="button"
           data-metric={metric.key}
           aria-pressed={index === 0 ? "true" : "false"}
-          class="min-h-11 cursor-pointer px-4 text-xs tracking-[0.08em] text-muted hover:text-fg aria-pressed:bg-fg aria-pressed:text-canvas"
+          class="-ml-px min-h-11 cursor-pointer border border-line-strong px-4 text-[0.6875rem] tracking-[0.14em] first:ml-0 hover:text-accent aria-pressed:border-fg aria-pressed:bg-fg aria-pressed:text-canvas aria-pressed:hover:text-canvas"
         >
           {metric.label}
         </button>
