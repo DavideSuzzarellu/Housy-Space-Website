@@ -16,9 +16,9 @@ describe("getMainNavigation", () => {
     ]);
   });
 
-  it("links Services to its index, My search to its route and Where we are to the about anchor", () => {
+  it("links Services to the home accordion, My search to its route and Where we are to the about anchor", () => {
     const items = getMainNavigation("es");
-    expect(items[1]?.href).toBe("/es/servicios");
+    expect(items[1]?.href).toBe("/es#servicios");
     expect(items[3]?.href).toBe("/es/mi-busqueda");
     expect(items[6]?.href).toBe("/es/nosotros#donde-estamos");
   });
@@ -64,7 +64,7 @@ describe("getFooterNavigation", () => {
     ]);
     expect(columns[0]?.links.map((link) => link.href)).toEqual([
       "/es/venta",
-      "/es/servicios",
+      "/es#servicios",
       "/es/vivir-en-barcelona",
       "/es/mi-busqueda",
       "/es/blog",

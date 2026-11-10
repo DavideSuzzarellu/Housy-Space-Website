@@ -252,8 +252,6 @@ const it = {
   },
   servicesIndex: {
     discover: "Scopri il servizio",
-    othersTag: "Ti aiutiamo anche con",
-    othersHeading: "Altri servizi",
   },
   province: {
     heading: "Provincia di Barcellona",

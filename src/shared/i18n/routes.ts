@@ -208,6 +208,10 @@ export interface UrlExtras {
  * Appends query params and/or a hash to a path from `getLocalizedPath`.
  * Keeps URL building in one place (no string concatenation in components).
  */
+/** The services accordion of the home: `/servicios` itself only redirects there (astro.config). */
+export const getServicesAnchorPath = (locale: Locale): string =>
+  withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" });
+
 export function withUrlExtras(path: string, extras: UrlExtras): string {
   const search = new URLSearchParams(extras.query).toString();
   const hash =

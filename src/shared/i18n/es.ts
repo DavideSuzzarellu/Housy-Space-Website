@@ -258,8 +258,6 @@ const es = {
   },
   servicesIndex: {
     discover: "Descubrir el servicio",
-    othersTag: "También te ayudamos con",
-    othersHeading: "Otros servicios",
   },
   province: {
     heading: "Provincia de Barcelona",

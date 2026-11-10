@@ -14,7 +14,6 @@ export const EDITORIAL = [
   "mySearch",
   "valuation",
   "sell",
-  "services",
   "blog",
 ] as const;
 export type EditorialKey = (typeof EDITORIAL)[number];

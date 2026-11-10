@@ -251,8 +251,6 @@ const en = {
   },
   servicesIndex: {
     discover: "Discover the service",
-    othersTag: "We also help you with",
-    othersHeading: "Other services",
   },
   province: {
     heading: "Province of Barcelona",
