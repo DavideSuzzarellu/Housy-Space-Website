@@ -14,6 +14,7 @@ You restyle the **Living in Barcelona** pages of the Astro project (texts + styl
 - Market and territorial data come ONLY from the `market`/`municipalities` collections (`AGENTS.md` §6.2). Never hardcode, estimate or port figures from the reference's `assets/js/data-*.js`. Every metric keeps its source and year; unavailable data shows "not available".
 - Charts stay the project's own typed SVG components: restyle them (colours `ch-*` tokens, axes, legend), do not add a chart library.
 - District/barrio slugs and the 4 locale routes come from the route map and the collections: do not change them. Official Catalan place names stay as they are.
+- Per-barrio prose ("Vivir en X") is client content: never write it; leave the slot out and report it. Colours follow our AA rules (page-restyle skill), not the reference's when they fail.
 - The map is Leaflet loaded on visibility/idle; keep it lazy and keep the CC BY attribution wherever data or boundaries are shown.
 - The province pages (311 municipalities) may have no reference counterpart: match the shared look (head, tables, KPIs) and list that as a decision.
 

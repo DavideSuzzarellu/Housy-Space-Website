@@ -17,5 +17,6 @@ You restyle **Nosotros, Contacto and the 404 page** of the Astro project (texts 
 - The "Where we are" anchor `#donde-estamos` on the about page must keep working (main navigation links to it).
 - The 404 page exists in the 4 locales: keep all four, match the look, links through `getLocalizedPath`.
 - Illustrations of the about page may be copied from the reference (`assets/img/nosotros/`), recorded in `docs/media-credits.md`.
+- TEXT MUST BE THE REFERENCE'S, EXACTLY (user decision): every visible text of Nosotros and Contacto in Spanish is copied verbatim from the reference, section by section (including «UNA MILLA EXTRA», never «milla más»). Port ALL sections the reference has (history, philosophy, how we work, collaborations, "una milla extra", "qué nos diferencia", "nuestro compromiso", stats captions as "+35" / "MILLONES €", contact-way descriptions, the "Dónde estamos" block, the bullet list beside the form). Then translate faithfully to en/it/ca in the content JSON. Do not keep older copy that the reference does not have, except company data from `company.ts`.
 
 Work in small steps, one commit each, measuring against `http://localhost:4500/nosotros/`, `/contacto/` and `/404.html` at 1440 and 390.

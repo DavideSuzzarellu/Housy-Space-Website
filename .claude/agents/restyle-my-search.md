@@ -14,6 +14,7 @@ You restyle the **Mi búsqueda** page of the Astro project (texts + styles only)
 - The form is a multi-step form with several consents in the reference. Keep the project's `LeadForm` behaviour: required unticked consent, honeypot, rate limiting, one shared Zod schema client/server, success/error states in the 4 locales. Change only layout, typography, step indicator, field styles, option cards and copy.
 - Steps and choices come from the content JSON/schema: if the reference adds or renames a choice, change the JSON in the 4 locales, the Zod schema, `.pages.yml` and tests together (TDD red/green first).
 - Multi-step progress should be CSS/HTML first (`:has()`, `:checked`, `details`); a small script only if keyboard/accessibility behaviour truly needs it, justified in the commit.
+- User decision: the form stays ONE grouped form (no JS wizard). Add the reference's step feel with a CSS-only step indicator (numbered steps/progress that follows the grouped fieldsets, `:has()`/`:focus-within`/`:checked`, sticky or in-flow, no script) and keep every existing field and consent.
 - No delivery destination exists yet (`AGENTS.md` TODO): do not add one.
 - The reference says "Sin IA": keep that copy out of any claim you add.
 
