@@ -231,15 +231,41 @@ html body ::placeholder {
   list-style: revert;
 }
 
+.blog-body li + li {
+  margin-top: 0.4em;
+}
+
+.blog-body li::marker {
+  color: var(--color-accent);
+}
+
+.blog-body strong {
+  font-weight: 700;
+}
+
 .blog-body blockquote {
-  border-left: 2px solid var(--color-accent);
-  padding-left: 1em;
+  border-left: 2px solid var(--color-turquoise);
+  padding-left: 1.25em;
+  font-size: 1.125em;
   font-weight: 500;
+  line-height: 1.6;
+}
+
+.blog-body hr {
+  border: 0;
+  border-top: 1px solid var(--color-line-strong);
+  margin-block: 2.2em;
 }
 
 .blog-body img {
+  display: block;
   height: auto;
   max-width: 100%;
+  margin-block: 1.8em;
+}
+
+.blog-body :is(h2, h3) + * {
+  margin-top: 0.7em;
 }
 
 /* Services accordion: the bar's end advances the panel (ServicesAccordion.astro). */
