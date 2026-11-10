@@ -18,8 +18,8 @@ const LABEL =
   "flex flex-col gap-2 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.14em] text-fg";
 const CHIP =
   "relative flex min-h-10.5 cursor-pointer flex-col justify-center border border-line-strong px-4 py-2 text-[0.6875rem] tracking-[0.12em] transition-colors hover:border-petrol has-checked:border-petrol has-checked:bg-petrol has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-accent";
-/** Single-choice answers (buy / rent) are big cards, as in the reference. */
-const CARD = "min-h-28 items-center text-center text-sm! tracking-[0.16em]!";
+/** Option cards (operation, type) are big, as in the reference; two options get taller ones. */
+const CARD = "min-h-19 items-center text-center text-[0.78rem]! font-semibold tracking-[0.16em]!";
 ---
 
 {field.kind === "field" && field.type === "consent" && (
@@ -78,9 +78,21 @@ const CARD = "min-h-28 items-center text-center text-sm! tracking-[0.16em]!";
     class="sm:col-span-2"
   >
     {field.label !== undefined && <p class="mb-2 text-xs text-muted">{field.label}</p>}
-    <div class:list={["flex flex-wrap gap-2", field.radio && "grid grid-cols-2 gap-3"]}>
+    <div
+      class:list={[
+        "flex flex-wrap gap-2",
+        field.cards && "grid grid-cols-2 gap-3",
+        field.cards && field.options.length > 2 && "sm:grid-cols-3",
+      ]}
+    >
       {field.options.map((option) => (
-        <label class:list={[CHIP, field.radio && CARD]}>
+        <label
+          class:list={[
+            CHIP,
+            field.cards && CARD,
+            field.cards && field.options.length === 2 && "min-h-28! text-sm!",
+          ]}
+        >
           <input
             type={field.radio ? "radio" : "checkbox"}
             name={field.name}

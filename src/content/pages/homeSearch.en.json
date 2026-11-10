@@ -78,6 +78,7 @@
                   "kind": "chips",
                   "name": "operacion",
                   "radio": true,
+                  "cards": true,
                   "required": true,
                   "options": [
                     {
@@ -96,6 +97,7 @@
                   "kind": "chips",
                   "name": "tipo",
                   "radio": false,
+                  "cards": true,
                   "required": false,
                   "options": [
                     {

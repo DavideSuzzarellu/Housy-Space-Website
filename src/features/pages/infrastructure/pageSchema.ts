@@ -31,6 +31,8 @@ const formLeafSchema = z.discriminatedUnion("kind", [
       kind: z.literal("chips"),
       name: text,
       radio: z.boolean(),
+      /** Big option cards (operation, type) instead of small chips. */
+      cards: z.boolean().optional(),
       required: z.boolean(),
       options: z.array(optionSchema).min(1),
       label: text.optional(),

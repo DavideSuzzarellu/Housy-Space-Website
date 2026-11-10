@@ -142,3 +142,18 @@ describe("market data", () => {
     );
   });
 });
+
+describe("my search form", () => {
+  /** Every `chips` leaf of a page, however deep. */
+  function chips(value: unknown): object[] {
+    if (Array.isArray(value)) return value.flatMap(chips);
+    if (typeof value !== "object" || value === null) return [];
+    const own = "kind" in value && value.kind === "chips" ? [value] : [];
+    return [...own, ...Object.values(value).flatMap(chips)];
+  }
+
+  it.each(["es", "en", "it", "ca"])("%s: only the operation and the type are option cards", (l) => {
+    const cards = chips(read(`homeSearch.${l}.json`)).filter((c) => "cards" in c);
+    expect(cards.map((c) => ("name" in c ? c.name : ""))).toEqual(["operacion", "tipo"]);
+  });
+});
