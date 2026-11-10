@@ -12,6 +12,7 @@ import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
+import FactList from "@/shared/ui/molecules/FactList.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
@@ -51,6 +52,12 @@ const kpis = [
   },
 ] as const;
 const format = figureFormat(locale);
+const facts = [
+  { label: t.population, value: `${format.format(district.population)} ${t.inhabitants}` },
+  { label: t.area, value: `${format.format(district.area)} km²` },
+  { label: t.barriosLabel, value: String(district.barrioCount) },
+  { label: t.rentPerM2, value: `${format.format(district.rentPerM2)} ${t.saleUnit} · 2025` },
+];
 const ANCHORS = [
   { href: "#historia", label: t.anchorDistrict },
   { href: "#datos", label: t.anchorMarket },
@@ -123,47 +130,28 @@ const crumbs = [
 <Section id="datos" labelledBy="district-data" name="district-data" surface="stone">
   <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.officialData}</p>
   <SectionHeading id="district-data" size="data" heading={t.marketHeading} class="mb-3" />
-  <p lang={fallback ? "es" : undefined} class="mb-6 max-w-[80ch] text-muted">
+  <p
+    lang={fallback ? "es" : undefined}
+    class="mb-[clamp(1.625rem,3vw,2.375rem)] max-w-[38rem] text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.6]"
+  >
     {district.summary}
   </p>
+  <FactList facts={facts} variant="boxed" class="mb-[22px]" />
   <MarketKpis
     locale={locale}
     items={kpis.map((kpi) => ({
       label: kpi.label,
       value: district[kpi.key],
-      unit: kpi.unit,
-      comparisons: [{ diff: percentDiff(district[kpi.key], kpi.cityValue), against: city.name }],
-      rank: formatMessage(t.rankDistrict, {
+      unit: `${kpi.unit} · ${formatMessage(t.rankDistrict, {
         rank: rankOf(
           district[kpi.key],
           market.districts.map((d) => d[kpi.key]),
         ),
         total: market.districts.length,
-      }),
+      })}`,
+      comparisons: [{ diff: percentDiff(district[kpi.key], kpi.cityValue), against: city.name }],
     }))}
   />
-  <dl class="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
-    <div class="border-t border-line pt-2.5">
-      <dt class="text-xs text-muted">{t.population}</dt>
-      <dd class="font-semibold">
-        {format.format(district.population)} {t.inhabitants}
-      </dd>
-    </div>
-    <div class="border-t border-line pt-2.5">
-      <dt class="text-xs text-muted">{t.area}</dt>
-      <dd class="font-semibold">{format.format(district.area)} km²</dd>
-    </div>
-    <div class="border-t border-line pt-2.5">
-      <dt class="text-xs text-muted">{t.barriosLabel}</dt>
-      <dd class="font-semibold">{district.barrioCount}</dd>
-    </div>
-    <div class="border-t border-line pt-2.5">
-      <dt class="text-xs text-muted">{t.rentPerM2}</dt>
-      <dd class="font-semibold">
-        {format.format(district.rentPerM2)} {t.saleUnit} · 2025
-      </dd>
-    </div>
-  </dl>
   <div class="mt-7 grid gap-5 lg:grid-cols-2">
     <LineChart
       title={t.saleChart}
@@ -223,18 +211,28 @@ const crumbs = [
     id="district-places"
     size="data"
     heading={formatMessage(t.placesHeading, { name: district.name })}
-    class="mb-6"
+    class="mb-0"
   />
-  <ol lang={fallback ? "es" : undefined} class="grid gap-x-8 gap-y-5 md:grid-cols-2">
+  <ol
+    lang={fallback ? "es" : undefined}
+    class="mt-[34px] grid gap-x-[clamp(1.75rem,4vw,3.5rem)] md:grid-cols-2 min-[1100px]:grid-cols-3"
+  >
     {district.landmarks.map((landmark, index) => (
-      <li class="grid grid-cols-[auto_1fr] gap-4 border-t border-line pt-3">
-        <b aria-hidden="true" class="text-xs text-accent">
+      <li class="grid grid-cols-[44px_minmax(0,1fr)] border-t border-line-strong pt-[26px] pb-6">
+        <b
+          aria-hidden="true"
+          class="font-heading text-[0.9375rem] leading-normal font-normal tracking-[0.06em] text-taupe-tx"
+        >
           {String(index + 1).padStart(2, "0")}
         </b>
         <div>
-          <h3 class="text-base">{landmark.name}</h3>
-          <p class="text-xs text-muted">{landmark.where}</p>
-          <p class="mt-1 text-sm">{landmark.text}</p>
+          <h3 class="font-heading text-[clamp(1.4375rem,2vw,1.6875rem)] leading-[1.15] font-normal">
+            {landmark.name}
+          </h3>
+          <span class="mt-1.5 mb-2.5 block text-[0.65625rem] tracking-[0.14em] text-muted">
+            {landmark.where}
+          </span>
+          <p class="text-[0.8125rem] leading-[1.6] text-fg-2">{landmark.text}</p>
         </div>
       </li>
     ))}

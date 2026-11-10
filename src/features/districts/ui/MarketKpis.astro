@@ -9,7 +9,8 @@ export interface Kpi {
   readonly value: number;
   readonly unit: string;
   readonly comparisons: readonly { readonly diff: number; readonly against: string }[];
-  readonly rank: string;
+  /** Empty when the rank is already part of the unit line (districts). */
+  readonly rank?: string;
 }
 
 interface Props {
@@ -42,9 +43,11 @@ const signed = (diff: number) => `${diff > 0 ? "+" : "−"}${Math.abs(diff)} %`;
           {formatMessage(t.versus, { diff: signed(comparison.diff), against: comparison.against })}
         </small>
       ))}
-      <span class="mt-2.5 block border-t border-line pt-[9px] text-[0.625rem] text-taupe-tx">
-        {item.rank}
-      </span>
+      {item.rank !== undefined && (
+        <span class="mt-2.5 block border-t border-line pt-[9px] text-[0.625rem] text-taupe-tx">
+          {item.rank}
+        </span>
+      )}
     </div>
   ))}
 </div>
