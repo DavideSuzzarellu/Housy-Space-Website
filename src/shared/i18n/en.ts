@@ -470,7 +470,6 @@ const en = {
       "WhatsApp has opened with your request written. It will not reach HousySpace until you send it there.",
     sentEmail:
       "Your email app has opened with your request written. It will not reach HousySpace until you send it.",
-    openValuator: "Can't see the valuator? Open it in a new tab",
   },
   notFound: {
     metaTitle: "Page not found · HousySpace",

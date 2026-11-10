@@ -472,7 +472,6 @@ const ca = {
       "S'ha obert WhatsApp amb la teva sol·licitud ja escrita. Fins que no l'enviïs, no haurà arribat a HousySpace.",
     sentEmail:
       "S'ha obert el teu correu amb la sol·licitud ja escrita. Fins que no l'enviïs, no haurà arribat a HousySpace.",
-    openValuator: "No es veu el valorador? Obre'l en una pestanya nova",
   },
   notFound: {
     metaTitle: "Pàgina no trobada · HousySpace",
