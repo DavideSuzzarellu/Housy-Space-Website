@@ -34,7 +34,7 @@ Every photo/illustration through `<Picture {...PHOTO_PICTURE}>` (AVIF + WebP) wi
 
 ## Accessibility (WCAG 2.2 AA)
 
-Use the nearest AA-passing token when the reference colour fails for text, and say so in the commit body. Exceptions the user already decided to keep as in the reference: `muted` `#67716f` on stone, the teal stats unit on stone, `taupe-tx` text. Focus rings use the `accent` role. Never colour-only states.
+Our colour rules win over the reference: NO exceptions. When a reference colour fails AA (text 4.5:1, graphics and UI 3:1), use the nearest passing token (`muted` on stone is `#5a6462`, `taupe-tx` is `#6b6155`, units on stone use `petrol`, chart series `ch-b`/`ch-c` are `#9a7b4c`/`#6f7c79`) and say so in the commit body. Compute the ratios (do not eyeball). Focus rings use the `accent` role. Never colour-only states.
 
 ## Texts and i18n
 

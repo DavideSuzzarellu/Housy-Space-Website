@@ -48,17 +48,18 @@
   --color-fg-2: #172b2b;
   --color-muted: #67716f;
   --color-accent: #08777b;
-  --color-taupe-tx: #857a6c;
+  /* Darker than the design system's #857a6c (3.4 to 4.1:1): AA on paper, stone and cards (§8). */
+  --color-taupe-tx: #6b6155;
   /* Reference `--mid`: lead text of the service page heads. */
   --color-mid: #3a514d;
 
   /* Charts (reference rendered values): main, second and third series, plain bars, grid, axis. */
   --color-ch-a: #1f4a47;
-  --color-ch-b: #b08f5e;
-  --color-ch-c: #8e9a97;
+  --color-ch-b: #9a7b4c;
+  --color-ch-c: #6f7c79;
   --color-ch-bar: #cfc5b6;
   --color-ch-grid: rgb(23 43 43 / 0.09);
-  --color-ch-ax: #67716f;
+  --color-ch-ax: #5a6462;
 
   /* States: always with a word or icon, never colour alone. */
   --color-ok: #0a7a73;
@@ -200,7 +201,7 @@ html body ::placeholder {
   --color-card: #fcfbf8;
   --color-card-hover: #fffefb;
   --color-line: rgb(23 43 43 / 0.14);
-  --color-muted: #67716f;
+  --color-muted: #5a6462;
 }
 
 /* Article body written in Pages CMS: plain Markdown, so its elements are styled here. */

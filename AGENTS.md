@@ -272,7 +272,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
 
 - **TDD:** failing test first. Vitest for domain/application/adapters (Mobilia mocked with fixtures from real responses), Playwright for search, detail, and lead submission in all 4 locales.
 - **Types:** end-to-end typing is mandatory — see section 8.1.
-- **Accessibility:** WCAG 2.2 AA; turquoise `accent` `#21CEC5` on light paper fails contrast (1.9:1): use it only for fills and rules. Focus rings and text/links on light backgrounds use `accent-tx` `#08777B` (5.2:1) or `petrol` `#0F5A5E` (7.9:1); `accent-2` `#058C93` and `taupe-tx` only for text ≥ 24px. On dark blocks `accent-tx` becomes `#21CEC5` (7.6:1). Full ratios per token in `docs/design-system/tokens.json` (§11.2).
+- **Accessibility:** WCAG 2.2 AA; turquoise `accent` `#21CEC5` on light paper fails contrast (1.9:1): use it only for fills and rules. Focus rings and text/links on light backgrounds use `accent-tx` `#08777B` (5.2:1) or `petrol` `#0F5A5E` (7.9:1); `accent-2` `#058C93` only for text ≥ 24px; `taupe-tx` is `#6b6155` (AA, §11.2). No colour exceptions "as in the reference": ours win. On dark blocks `accent-tx` becomes `#21CEC5` (7.6:1). Full ratios per token in `docs/design-system/tokens.json` (§11.2).
 - **Performance:** Lighthouse ≥ 90 mobile; LCP < 2.5s. Photos use `<Picture>` with the shared `PHOTO_PICTURE` config (AVIF + WebP); exactly one eager/priority image per page; first-load JS ≈ 6–8 KB; heavy assets (Leaflet, hero video) load on visibility/idle. Budgets enforced in `tests/e2e/performance.spec.ts`; details and how to re-measure in `docs/performance.md`.
 - **SEO:** per-page metadata, Open Graph, sitemap (`@astrojs/sitemap` with i18n), `robots.txt`, JSON-LD (`RealEstateAgent`, `Residence` + `Offer`), clean slugs including the property reference.
 - **Security:** server-side validation, rate limiting + honeypot/captcha on forms, secrets only in env vars, never expose CRM errors to users.
@@ -357,7 +357,7 @@ Brand constants (no theme): `ink` `#0B1214`, `teal` `#08777B`, `accent-2` `#058C
 Rules:
 
 - Components use role tokens; never hardcode hex and never branch on the theme.
-- `accent` on light fails as text (1.9:1): text and links use `accent-tx`. `accent-2` and `taupe-tx` (4.1:1) only for text ≥ 24 px. `c-text-2` (`muted`) on `bg-deep` (4.2:1) not for small text.
+- `accent` on light fails as text (1.9:1): text and links use `accent-tx`. `accent-2` only for text ≥ 24 px. `taupe-tx` is `#6b6155` on light (darker than the design system's `#857a6c`, which gives 3.4 to 4.1:1): AA for any text size. Chart series `ch-b` `#9a7b4c` and `ch-c` `#6f7c79` pass 3:1 on cards. `c-text-2` (`muted`) on `bg-deep` (4.2:1) not for small text.
 - Gold `#B8996A` and the Cormorant/ink/graphite system are **retired**. Remove them when touching a component; do not add new uses.
 
 ### 11.3 Typography
