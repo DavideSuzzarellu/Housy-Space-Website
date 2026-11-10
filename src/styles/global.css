@@ -61,6 +61,17 @@
   --color-ch-grid: rgb(23 43 43 / 0.09);
   --color-ch-ax: #5a6462;
 
+  /* District map fill ramp, stone to petrol (reference `PAL`). Tone 4 is #6e746e, not the reference
+     #7e8077: that one fails 4.5:1 with both the dark and the light label (rampContrast.test.ts). */
+  --color-ramp-0: #f1ece3;
+  --color-ramp-1: #e0d7c8;
+  --color-ramp-2: #c9bdab;
+  --color-ramp-3: #a99f92;
+  --color-ramp-4: #6e746e;
+  --color-ramp-5: #4b5b56;
+  --color-ramp-6: #1f3633;
+  --color-ramp-nd: #e7e1d5;
+
   /* States: always with a word or icon, never colour alone. */
   --color-ok: #0a7a73;
   --color-ko: #9a6a3a;
