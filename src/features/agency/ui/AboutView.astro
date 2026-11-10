@@ -5,6 +5,9 @@ import { PHOTO_PICTURE } from "@/shared/lib/images";
 import histImg from "@/assets/nosotros/ill-historia.webp";
 import filoImg from "@/assets/nosotros/ill-filosofia.webp";
 import comoImg from "@/assets/nosotros/ill-como-trabajamos.webp";
+import millaImg from "@/assets/nosotros/ill-milla.webp";
+import difImg from "@/assets/nosotros/ill-diferencia.webp";
+import compImg from "@/assets/nosotros/ill-compromiso.webp";
 import colabImg from "@/assets/nosotros/ill-colaboraciones.webp";
 import AboutSection from "@/features/agency/ui/AboutSection.astro";
 import type { PageContent, PageItem } from "@/features/pages/application/pages";
@@ -36,6 +39,9 @@ const historiaSection = findSection("historia");
 const filosofiaSection = findSection("filosofia");
 const comoTrabajamosSection = findSection("como-trabajamos");
 const colaboracionesSection = findSection("colaboraciones");
+const millaSection = findSection("milla");
+const difSection = findSection("diferencia");
+const compSection = findSection("compromiso");
 
 // Historia items: timeline list (kind=list) and narrative (the rest after it)
 const historiaItems = historiaSection?.items ?? [];
@@ -150,10 +156,10 @@ const NAV_SECTIONS = [
                           (stat) => (
                             <div>
                               <p class="text-[clamp(1.875rem,3.6vw,3.25rem)] font-extrabold leading-none tracking-[-0.02em] text-accent">
-                                {stat.value.match(/^[+\d.,]+/)?.[0] ?? stat.value}
+                                {stat.value}
                               </p>
                               <p class="mt-1 text-[0.6875rem] font-bold tracking-[0.22em] text-taupe-tx">
-                                {stat.value.replace(/^[+\d.,]+/, "").trim() || " "}
+                                {stat.unit}
                               </p>
                               <p class="mt-2 text-[0.75rem] leading-[1.6] tracking-[0.06em] text-fg-2">
                                 {stat.label}
@@ -206,19 +212,42 @@ const NAV_SECTIONS = [
     <AboutSection locale={locale} id="filosofia" image={filoImg} items={filosofiaSection.items} />
   )}
 
-  {/* ── CÓMO TRABAJAMOS ──────────────────────────────────────────────── */}
+  {millaSection !== undefined && (
+    <AboutSection
+      locale={locale}
+      id="milla"
+      tone="white"
+      image={millaImg}
+      items={millaSection.items}
+    />
+  )}
+
+  {difSection !== undefined && (
+    <AboutSection locale={locale} id="diferencia" image={difImg} items={difSection.items} />
+  )}
+
   {comoTrabajamosSection !== undefined && (
     <AboutSection
       locale={locale}
+      id="como-trabajamos"
       tone="white"
       image={comoImg}
       items={comoTrabajamosSection.items}
     />
   )}
 
-  {/* ── COLABORACIONES ──────────────────────────────────────────────── */}
+  {compSection !== undefined && (
+    <AboutSection locale={locale} id="compromiso" image={compImg} items={compSection.items} />
+  )}
+
   {colaboracionesSection !== undefined && (
-    <AboutSection locale={locale} image={colabImg} items={colaboracionesSection.items} />
+    <AboutSection
+      locale={locale}
+      id="colaboraciones"
+      tone="white"
+      image={colabImg}
+      items={colaboracionesSection.items}
+    />
   )}
 
   {/* ── NUESTROS SERVICIOS (carousel) ───────────────────────────────── */}
@@ -228,6 +257,7 @@ const NAV_SECTIONS = [
     class="bg-white py-[clamp(2.75rem,5vw,4.125rem)]"
   >
     <Container>
+      <p class="mb-6 max-w-[60ch] text-fg-2">{ta.services.intro}</p>
       <div class="mb-6 flex items-center justify-between gap-4">
         <p
           id="about-services-heading"
@@ -283,6 +313,7 @@ const NAV_SECTIONS = [
   {/* ── RESEÑAS CTA ──────────────────────────────────────────────────── */}
   <section class="bg-canvas py-[clamp(2rem,4vw,3rem)]">
     <Container>
+      <h2 class="mb-5 text-[clamp(1.5rem,3.6vw,2.5rem)]">{ta.reviews.heading}</h2>
       <Button href={getLocalizedPath("home", locale) + "#resenas"} variant="outline">
         {ta.reviews.cta}
       </Button>

@@ -486,24 +486,31 @@ const en = {
       experience: "Our experience",
       history: "Our story",
       philosophy: "Our philosophy",
-      services: "Our services",
+      services: "Comprehensive services",
       reviews: "Reviews",
       whereWeAre: "Where we are",
     },
     stats: {
       sinceOpening: "Since opening HousySpace",
-      volume: { value: "+35M €", label: "in brokered volume over five years" },
-      properties: { value: "+100", label: "properties brokered in Barcelona and surroundings" },
-      rentals: { value: "+60", label: "rentals managed with the same care" },
+      volume: { value: "+35", unit: "million €", label: "in brokered volume over five years" },
+      properties: {
+        value: "+100",
+        unit: "properties",
+        label: "brokered in Barcelona and surroundings",
+      },
+      rentals: { value: "+60", unit: "flats", label: "rented with the same care" },
       operationsNote:
         "Every transaction is on the map, district by district, with the listing price and the month it was completed.",
       cta: "See the properties brokered",
     },
     services: {
+      intro:
+        "Thanks to them, we offer comprehensive solutions and accompany you far beyond a property transaction.",
       previous: "Previous",
       next: "Next",
     },
     reviews: {
+      heading: "What our clients say",
       cta: "Read reviews on the home page",
     },
     whereWeAre: {

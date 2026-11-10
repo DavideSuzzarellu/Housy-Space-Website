@@ -494,24 +494,35 @@ const es = {
       experience: "Nuestra experiencia",
       history: "Nuestra historia",
       philosophy: "Nuestra filosofía",
-      services: "Nuestros servicios",
+      services: "Servicios integrales",
       reviews: "Reseñas",
       whereWeAre: "Dónde estamos",
     },
     stats: {
       sinceOpening: "Desde que abrimos HousySpace",
-      volume: { value: "+35M €", label: "de volumen intermediado en estos cinco años" },
-      properties: { value: "+100", label: "inmuebles intermediados en Barcelona y alrededores" },
-      rentals: { value: "+60", label: "pisos alquilados con el mismo acompañamiento" },
+      volume: {
+        value: "+35",
+        unit: "millones €",
+        label: "de volumen intermediado en estos cinco años",
+      },
+      properties: {
+        value: "+100",
+        unit: "inmuebles",
+        label: "intermediados en Barcelona y alrededores",
+      },
+      rentals: { value: "+60", unit: "pisos", label: "alquilados con el mismo acompañamiento" },
       operationsNote:
         "Cada operación está en el mapa, distrito a distrito, con el precio de anuncio y el mes en que se cerró.",
       cta: "Ver los inmuebles intermediados",
     },
     services: {
+      intro:
+        "Gracias a ellos ofrecemos soluciones integrales y te acompañamos mucho más allá de una operación inmobiliaria.",
       previous: "Anterior",
       next: "Siguiente",
     },
     reviews: {
+      heading: "Qué dicen nuestros clientes",
       cta: "Ver reseñas en la portada",
     },
     whereWeAre: {

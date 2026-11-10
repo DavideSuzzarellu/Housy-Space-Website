@@ -64,7 +64,12 @@ const body = rest.filter((item) => item !== kicker && item !== statement && item
           <Inline text={lead.text} locale={locale} />
         </p>
       )}
-      <div class="min-w-0">
+      <div
+        class:list={[
+          "min-w-0",
+          lead === undefined && "md:col-span-2 md:columns-2 md:gap-x-[clamp(1.5rem,4vw,4.5rem)]",
+        ]}
+      >
         <PageItems locale={locale} units={groupItems(body)} />
       </div>
     </div>

@@ -22,16 +22,8 @@
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "01"
-        },
-        {
           "kind": "h2",
           "text": "Nuestra historia"
-        },
-        {
-          "kind": "p",
-          "text": "Una forma diferente de entender el sector inmobiliario."
         },
         {
           "kind": "list",
@@ -52,32 +44,32 @@
           ]
         },
         {
-          "kind": "big",
-          "text": "HousySpace nació hace cinco años de una convicción muy sencilla: **las personas deben estar siempre en el centro de cada operación inmobiliaria.**"
+          "kind": "p",
+          "text": "HousySpace nació hace cinco años con una idea muy simple: **en cada operación inmobiliaria, las personas van siempre en el centro.**"
         },
         {
           "kind": "p",
-          "text": "Después de varios años de experiencia en el sector, conocíamos bien sus dinámicas, sus exigencias y también aquello que, desde nuestro punto de vista, podía hacerse de otra manera."
+          "text": "Llevábamos años en el sector y sabíamos qué podía hacerse de otra manera."
         },
         {
           "kind": "p",
-          "text": "Queríamos crear un espacio donde la cercanía fuera sincera, la atención verdaderamente personalizada y cada cliente sintiera que sus preocupaciones también eran las nuestras."
+          "text": "Queríamos cercanía sincera, atención de verdad personal y que cada cliente sintiera que sus preocupaciones también eran las nuestras."
         },
         {
           "kind": "p",
-          "text": "Así nació HousySpace. No con la intención de ser una inmobiliaria más, sino de construir un proyecto fiel a nuestra manera de entender esta profesión: con empatía, honestidad, dedicación y un compromiso que va mucho más allá de cerrar una operación."
+          "text": "Así nació HousySpace: no para ser una inmobiliaria más, sino un proyecto fiel a cómo entendemos esta profesión, con empatía, honestidad, dedicación y un compromiso que va más allá de cerrar una operación."
         },
         {
           "kind": "quote",
-          "text": "Porque detrás de cada inmueble hay una historia, una decisión importante y personas que depositan su confianza en nosotros."
+          "text": "Detrás de cada inmueble hay una historia, una decisión importante y personas que confían en nosotros."
         },
         {
           "kind": "p",
-          "text": "Y pocas cosas nos satisfacen tanto como compartir la ilusión de alguien que encuentra su primer hogar, ayudar a una familia a comenzar una nueva etapa o saber que hemos acompañado a un cliente a tomar la decisión correcta."
+          "text": "Nos da mucha satisfacción compartir la ilusión de quien encuentra su primer hogar, ayudar a una familia a empezar una nueva etapa o acompañar a un cliente a tomar la decisión correcta."
         },
         {
           "kind": "p",
-          "text": "Cinco años después, seguimos creciendo gracias a esa misma filosofía y, sobre todo, a la confianza de quienes vuelven a elegirnos y nos recomiendan."
+          "text": "Cinco años después seguimos creciendo con la misma filosofía, gracias a quienes vuelven a elegirnos y nos recomiendan."
         }
       ]
     },
@@ -86,10 +78,6 @@
       "surface": "dark",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "02"
-        },
         {
           "kind": "h2",
           "text": "Nuestra filosofía"
@@ -100,60 +88,117 @@
         },
         {
           "kind": "big",
-          "text": "Te asesoramos sobre cómo hacerlo, si te conviene hacerlo y cuándo es el mejor momento, y nos aseguramos de que todo lo que haces sea correcto y seguro."
+          "text": "Te aconsejamos cómo hacerlo, si te conviene y cuándo es el mejor momento, y velamos por que todo lo que hagas sea correcto y seguro."
+        },
+        {
+          "kind": "p",
+          "text": "Que estés contento en cada paso, **no solo al firmar**."
+        },
+        {
+          "kind": "h3",
+          "text": "Te ayudamos en todo, pase lo que pase"
         },
         {
           "kind": "list",
           "ordered": true,
           "items": [
             {
-              "title": "Cómo",
-              "text": "La estrategia adecuada para tu operación."
+              "title": "Te asesoramos",
+              "text": "Con honestidad: cómo, si y cuándo te conviene comprar, vender o esperar."
             },
             {
-              "title": "Si",
-              "text": "Te decimos con honestidad si te conviene comprar, vender o esperar."
+              "title": "Estudiamos el inmueble a fondo",
+              "text": "Antes de comprar o vender, para que no haya sorpresas al firmar."
             },
             {
-              "title": "Cuándo",
-              "text": "El momento oportuno según el mercado y tu situación."
+              "title": "Un asesor de referencia",
+              "text": "Te acompaña de principio a fin, desde la primera conversación."
             },
             {
-              "title": "Con seguridad",
-              "text": "Cada paso revisado para que sea correcto y seguro."
+              "title": "Nos anticipamos",
+              "text": "Cada paso revisado para que nada se caiga por el camino."
             },
             {
-              "title": "Sin sorpresas",
-              "text": "Estudio a fondo del inmueble antes de comprar o vender."
+              "title": "Resolvemos lo que surja",
+              "text": "Soluciones, no excusas: la salida más ingeniosa y eficaz."
+            },
+            {
+              "title": "Una red de profesionales",
+              "text": "Una sola puerta de entrada: nosotros coordinamos al resto."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milla",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Una milla extra"
+        },
+        {
+          "kind": "p",
+          "text": "Siempre una **milla extra**"
+        },
+        {
+          "kind": "big",
+          "text": "Todo lo que hace una inmobiliaria, y todo lo que hace falta además."
+        },
+        {
+          "kind": "p",
+          "text": "Muchas operaciones se caen por un imprevisto que nadie supo resolver. Nosotros nos anticipamos y, cuando aparece, lo resolvemos de la manera más ingeniosa y eficaz."
+        },
+        {
+          "kind": "p",
+          "text": "Aunque no dependa de nosotros o no podamos resolverlo directamente, nuestra respuesta es siempre la misma:"
+        },
+        {
+          "kind": "quote",
+          "text": "No te preocupes, yo me encargo."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Nos adelantamos a los imprevistos."
+            },
+            {
+              "title": "",
+              "text": "Los resolvemos cuando aparecen."
+            },
+            {
+              "title": "",
+              "text": "Estás tranquilo y contento en cada paso."
             }
           ]
         },
         {
           "kind": "p",
-          "text": "**Siempre una milla más:** todo lo que hace una inmobiliaria, y todo lo que hace falta además."
+          "text": "**Haremos todo lo que haga falta en tu operación para que quedes contento.**"
         }
       ]
     },
     {
-      "id": "como-trabajamos",
-      "surface": "paper",
+      "id": "diferencia",
+      "surface": "stone",
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "03"
-        },
-        {
           "kind": "h2",
-          "text": "Cómo trabajamos"
+          "text": "Qué nos diferencia"
         },
         {
           "kind": "p",
-          "text": "No buscamos gestionar el mayor número de inmuebles."
+          "text": "No buscamos gestionar el mayor número de inmuebles posible."
         },
         {
           "kind": "big",
-          "text": "Preferimos dedicar a cada cliente el tiempo, la atención y el esfuerzo que merece, ofreciendo un trato **cercano, transparente y verdaderamente personalizado**."
+          "text": "Preferimos darle a cada cliente el tiempo, la atención y el esfuerzo que merece, con un trato **cercano, transparente y de verdad personalizado**."
         },
         {
           "kind": "list",
@@ -172,34 +217,79 @@
               "text": "03"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Cómo trabajamos"
         },
         {
           "kind": "p",
+          "text": "Nos apasiona nuestro trabajo."
+        },
+        {
+          "kind": "h3",
           "text": "El camino recorrido"
         },
         {
           "kind": "p",
-          "text": "Somos una inmobiliaria que entiende el éxito de una forma sencilla: **hacer bien nuestro trabajo** y conseguir que nuestros clientes se sientan satisfechos con el camino recorrido."
+          "text": "Para nosotros el éxito es sencillo: **hacer bien nuestro trabajo** y lograr que nuestros clientes queden satisfechos con el camino recorrido."
         },
         {
-          "kind": "p",
+          "kind": "h3",
           "text": "De principio a fin"
         },
         {
           "kind": "p",
-          "text": "**Nos apasiona lo que hacemos.** Nos implicamos en cada operación, buscamos soluciones cuando surgen dificultades y acompañamos a nuestros clientes desde el primer momento hasta el final del proceso."
+          "text": "Nos implicamos en cada operación, buscamos solución cuando surgen dificultades y estamos al lado del cliente desde el primer momento hasta el final del proceso."
+        }
+      ]
+    },
+    {
+      "id": "compromiso",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Nuestro compromiso"
+        },
+        {
+          "kind": "p",
+          "text": "Nuestra mayor satisfacción es saber que quienes han confiado en nosotros **volverían a hacerlo**."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Hablar con HousySpace",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Ver los servicios",
+              "href": "route:home#servicios",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace. Property Solutions."
         }
       ]
     },
     {
       "id": "colaboraciones",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "04"
-        },
         {
           "kind": "h2",
           "text": "Colaboraciones con profesionales del sector"
@@ -210,19 +300,19 @@
         },
         {
           "kind": "big",
-          "text": "A lo largo de los años hemos construido una red de profesionales especializados en asesoramiento jurídico, arquitectura, interiorismo, reformas y otros ámbitos relacionados con la vivienda y el patrimonio."
+          "text": "Con los años hemos formado una red de profesionales especializados en asesoramiento jurídico, arquitectura, interiorismo, reformas y otros ámbitos ligados a la vivienda y al patrimonio."
         },
         {
           "kind": "p",
-          "text": "Cada colaboración nace de la experiencia, la confianza y una misma forma de entender el trabajo: **ofrecer un servicio cercano, riguroso y comprometido con cada cliente.**"
+          "text": "Cada colaboración surge de la experiencia, la confianza y una forma compartida de entender el trabajo: **dar un servicio cercano, riguroso y comprometido con cada cliente.**"
         },
         {
           "kind": "p",
-          "text": "Nuestro criterio es sencillo: **trabajamos con profesionales en quienes nosotros mismos confiaríamos.**"
+          "text": "Nuestro criterio es simple: **colaboramos con profesionales en quienes nosotros mismos confiaríamos.**"
         },
         {
           "kind": "p",
-          "text": "Gracias a ellos, podemos ofrecer soluciones integrales y acompañarte mucho más allá de una operación inmobiliaria. Porque para nosotros, decir «No te preocupes, yo me encargo» significa tener las personas, los conocimientos y la voluntad necesarios para hacerlo realidad."
+          "text": "Para nosotros, decir «No te preocupes, yo me encargo» significa contar con las personas, los conocimientos y la voluntad necesarios para hacerlo realidad."
         }
       ]
     },
@@ -231,10 +321,6 @@
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "05"
-        },
         {
           "kind": "h2",
           "text": "Equipo"
@@ -250,10 +336,6 @@
       "surface": "stone",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "06"
-        },
         {
           "kind": "h2",
           "text": "Qué dicen nuestros clientes"
