@@ -58,11 +58,16 @@ const tile = TILE_TONES[tone];
       ))}
     </ul>
   ) : variant === "list" ? (
-    <dl class:list={["grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3", className]}>
+    <dl
+      class:list={[
+        "grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-x-4.5 border-t border-line",
+        className,
+      ]}
+    >
       {facts.map((fact) => (
-        <div class="border-t border-line pt-2.5">
-          <dt class="text-xs text-muted">{fact.label}</dt>
-          <dd class="font-semibold">{fact.value}</dd>
+        <div class="border-b border-line py-2.5">
+          <dt class="text-[0.65625rem] tracking-[0.12em] text-muted">{fact.label}</dt>
+          <dd class="mt-0.75 font-heading text-[1.0625rem] font-normal">{fact.value}</dd>
         </div>
       ))}
     </dl>

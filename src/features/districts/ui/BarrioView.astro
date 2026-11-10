@@ -5,6 +5,7 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { figureFormat, formatMessage, formatPrice } from "@/shared/lib/format";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import FactList from "@/shared/ui/molecules/FactList.astro";
 import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
@@ -110,15 +111,21 @@ const districtLabel = formatMessage(t.districtSuffix, { name: district.name });
   tag={formatMessage(t.barrioTag, { district: district.name })}
   heading={barrio.name}
   lead={formatMessage(t.barrioLead, { district: district.name })}
-/>
+>
+  <StreetGrid slot="background" placement="heading" />
+</PageHeader>
 
 <Section id="datos" labelledBy="barrio-figures" name="barrio-figures" surface="stone">
-  <h2 id="barrio-figures" class="sr-only">
-    {t.officialData}
+  <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{t.officialData}</p>
+  <h2
+    id="barrio-figures"
+    class="mt-3 mb-[clamp(1.625rem,3.4vw,2.625rem)] text-[clamp(1.625rem,3vw,2.5rem)] text-balance"
+  >
+    {formatMessage(t.dataHeading, { name: barrio.name })}
   </h2>
   <MarketKpis locale={locale} items={kpis} />
-  <FactList facts={facts} variant="list" class="mt-6" />
-  <div class="mt-7 flex flex-wrap gap-3">
+  <FactList facts={facts} variant="list" class="mt-6.5" />
+  <div class="mt-7 flex flex-wrap gap-2.5">
     <Button href={getLocalizedPath("valuation", locale)} variant="solid" arrow>
       {t.valueHere}
     </Button>

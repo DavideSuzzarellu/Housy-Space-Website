@@ -404,6 +404,7 @@ const en = {
     valueHere: "Value a property here",
     searchHere: "Find properties here",
     discover: "Discover {name}",
+    dataHeading: "Housing prices and data for {name}",
     chartsTag: "Charts",
     chartsHeading: "Trends and comparison",
     saleChart: "Sale price (€/m²)",

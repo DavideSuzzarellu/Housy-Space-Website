@@ -405,6 +405,7 @@ const it = {
     valueHere: "Valuta un immobile qui",
     searchHere: "Cerca immobili qui",
     discover: "Scopri {name}",
+    dataHeading: "Prezzo delle case e dati di {name}",
     chartsTag: "Grafici",
     chartsHeading: "Andamento e confronto",
     saleChart: "Prezzo di vendita (€/m²)",

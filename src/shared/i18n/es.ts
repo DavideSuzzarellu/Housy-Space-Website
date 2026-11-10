@@ -411,6 +411,7 @@ const es = {
     valueHere: "Valorar un inmueble aquí",
     searchHere: "Buscar inmuebles aquí",
     discover: "Conocer {name}",
+    dataHeading: "Precio de la vivienda y datos de {name}",
     chartsTag: "Gráficos",
     chartsHeading: "Evolución y comparación",
     saleChart: "Precio de compraventa (€/m²)",

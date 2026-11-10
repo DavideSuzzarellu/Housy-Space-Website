@@ -5,6 +5,7 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage, formatNumber } from "@/shared/lib/format";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 import FactList from "@/shared/ui/molecules/FactList.astro";
@@ -53,7 +54,9 @@ const crumbs = [
     name: municipality.name,
     comarca: municipality.comarca,
   })}
-/>
+>
+  <StreetGrid slot="background" placement="heading" />
+</PageHeader>
 
 <Section id="datos" labelledBy="municipality-figures" name="municipality-figures" surface="stone">
   <h2 id="municipality-figures" class="sr-only">

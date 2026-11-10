@@ -405,6 +405,7 @@ const ca = {
     valueHere: "Valorar un immoble aquí",
     searchHere: "Cercar immobles aquí",
     discover: "Conèixer {name}",
+    dataHeading: "Preu de l'habitatge i dades de {name}",
     chartsTag: "Gràfics",
     chartsHeading: "Evolució i comparació",
     saleChart: "Preu de compravenda (€/m²)",

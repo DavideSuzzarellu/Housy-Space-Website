@@ -5,6 +5,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage, formatNumber } from "@/shared/lib/format";
 import Inline from "@/shared/ui/atoms/Inline.astro";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
 import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
 
@@ -29,7 +30,9 @@ const CELL = "border-t border-line px-3 py-2.5 text-left";
   breadcrumbLabel={dictionary.property.detail.breadcrumb}
   heading={t.heading}
   lead={t.lead}
-/>
+>
+  <StreetGrid slot="background" placement="heading" />
+</PageHeader>
 
 <Section id="municipios" labelledBy="municipalities-caption" name="municipalities" surface="stone">
   <div class="overflow-x-auto">
