@@ -2,7 +2,7 @@
 import Container from "@/shared/ui/atoms/Container.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 
-/** Plain page head on paper: breadcrumbs, tag, h1 and lead (data pages: barrio, municipality). */
+/** Page head on paper (decorative grid via the `background` slot): breadcrumbs, tag, h1 and lead (data pages: barrio, municipality). */
 interface Props {
   crumbs: readonly { readonly label: string; readonly href?: string }[];
   breadcrumbLabel: string;
@@ -14,12 +14,13 @@ interface Props {
 const { crumbs, breadcrumbLabel, heading, tag, lead } = Astro.props;
 ---
 
-<section class="bg-canvas pt-8 pb-10">
+<section class="relative isolate overflow-clip bg-canvas pt-8 pb-[2.125rem]">
+  <slot name="background" />
   <Container>
-    <Breadcrumbs items={crumbs} label={breadcrumbLabel} class="mb-6" />
+    <Breadcrumbs items={crumbs} label={breadcrumbLabel} tone="compact" class="mb-6" />
     {tag !== undefined && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag}</p>}
-    <h1 class="mt-3 text-[clamp(1.875rem,4.8vw,3.5rem)]">{heading}</h1>
-    {lead !== undefined && <p class="mt-4 max-w-[62ch] text-muted">{lead}</p>}
+    <h1 class="mt-3 text-[clamp(1.875rem,3.8vw,3.125rem)]">{heading}</h1>
+    {lead !== undefined && <p class="mt-4 max-w-[56ch]">{lead}</p>}
     <slot />
   </Container>
 </section>
