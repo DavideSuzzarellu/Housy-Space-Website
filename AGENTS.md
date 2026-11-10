@@ -424,9 +424,11 @@ Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px)
 | `astro-best-practices` | Rendering mode, islands, images, env, endpoints, performance |
 | `seo-multilingual` | Metadata, canonical, hreflang, JSON-LD, sitemap, redirects |
 | `testing-tdd` | Writing tests (Vitest, Playwright) — always, with any code change |
+| `page-restyle` | Adapting a page to the client's reference site (texts + styles), CSS-first and measured in Chrome |
 | `commit-per-task` | Finishing any task: one conventional commit per tested task, explaining what and why |
 
 - Third-party skills: read the full content first (never import unreviewed scripts), then copy the folder into `.claude/skills/` or install via `/plugin marketplace add <owner/repo>` + `/plugin install <plugin>@<marketplace>` with project scope. Record the source in the skills index.
+- Project subagents live in `.claude/agents/` (`restyle-living`, `restyle-about-contact`, `restyle-my-search`, `restyle-blog`, `restyle-legal`, `restyle-sell-valuation`): each owns a group of pages and loads `page-restyle`. Run parallel ones in separate git worktrees and merge their branches one by one.
 - Claude Code entry point: `CLAUDE.md` contains `@AGENTS.md` so this file stays the single source of truth.
 
 ## 13. Agent rules
