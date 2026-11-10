@@ -22,16 +22,8 @@
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "01"
-        },
-        {
           "kind": "h2",
           "text": "Our story"
-        },
-        {
-          "kind": "p",
-          "text": "A different way of understanding the property sector."
         },
         {
           "kind": "list",
@@ -43,41 +35,41 @@
             },
             {
               "title": "5",
-              "text": "years since HousySpace was founded"
+              "text": "years since HousySpace was born"
             },
             {
               "title": "Today",
-              "text": "we keep growing thanks to those who choose us again and recommend us"
+              "text": "we keep growing with those who choose us again and recommend us"
             }
           ]
         },
         {
-          "kind": "big",
-          "text": "HousySpace was born five years ago from one very simple conviction: **people must always be at the centre of every property transaction.**"
+          "kind": "p",
+          "text": "HousySpace was born five years ago from a very simple idea: **in every property transaction, people always come first.**"
         },
         {
           "kind": "p",
-          "text": "After years of experience in the sector, we knew its dynamics and demands well — and we also knew what, in our view, could be done differently."
+          "text": "We had spent years in the industry and knew what could be done differently."
         },
         {
           "kind": "p",
-          "text": "We wanted to create a space where closeness was genuine, attention was truly personalised, and every client felt that their concerns were ours too."
+          "text": "We wanted sincere closeness, truly personal attention, and for every client to feel that their worries were ours too."
         },
         {
           "kind": "p",
-          "text": "That is how HousySpace was born. Not with the intention of being just another agency, but to build a practice true to our way of understanding this profession: with empathy, honesty, dedication and a commitment that goes far beyond closing a deal."
+          "text": "That is how HousySpace came about: not to be just another estate agency, but a project true to how we understand this profession, with empathy, honesty, dedication and a commitment that goes beyond closing a deal."
         },
         {
           "kind": "quote",
-          "text": "Because behind every property there is a story, an important decision and people who place their trust in us."
+          "text": "Behind every property there is a story, an important decision and people who trust us."
         },
         {
           "kind": "p",
-          "text": "And few things satisfy us as much as sharing the excitement of someone finding their first home, helping a family start a new chapter, or knowing that we have guided a client towards the right decision."
+          "text": "It gives us great satisfaction to share the joy of someone finding their first home, to help a family begin a new chapter, or to accompany a client in making the right decision."
         },
         {
           "kind": "p",
-          "text": "Five years on, we keep growing thanks to that same philosophy and, above all, to the trust of those who choose us again and recommend us."
+          "text": "Five years later we keep growing with the same philosophy, thanks to those who choose us again and recommend us."
         }
       ]
     },
@@ -87,73 +79,126 @@
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "02"
-        },
-        {
           "kind": "h2",
           "text": "Our philosophy"
         },
         {
           "kind": "p",
-          "text": "Real estate consultants, not just salespeople."
+          "text": "Real estate consultants, not just sellers."
         },
         {
           "kind": "big",
-          "text": "We advise you on how to do it, whether it makes sense for you and when the right moment is, and we make sure everything you do is correct and safe."
+          "text": "We advise you on how to do it, whether it suits you and when is the best moment, and we make sure everything you do is correct and safe."
+        },
+        {
+          "kind": "p",
+          "text": "That you are happy at every step, **not only when you sign**."
+        },
+        {
+          "kind": "h3",
+          "text": "We help you with everything, whatever happens"
         },
         {
           "kind": "list",
           "ordered": true,
           "items": [
             {
-              "title": "How",
-              "text": "The right strategy for your transaction."
+              "title": "We advise you",
+              "text": "Honestly: how, whether and when it suits you to buy, sell or wait."
             },
             {
-              "title": "Whether",
-              "text": "We tell you honestly whether it makes sense to buy, sell or wait."
+              "title": "We study the property in depth",
+              "text": "Before buying or selling, so there are no surprises at signing."
             },
             {
-              "title": "When",
-              "text": "The right moment according to the market and your situation."
+              "title": "One reference advisor",
+              "text": "Accompanies you from start to finish, from the first conversation."
             },
             {
-              "title": "Safely",
-              "text": "Every step reviewed so it is correct and safe."
+              "title": "We anticipate",
+              "text": "Every step reviewed so that nothing falls through along the way."
             },
             {
-              "title": "No surprises",
-              "text": "Thorough due diligence on the property before buying or selling."
+              "title": "We solve whatever comes up",
+              "text": "Solutions, not excuses: the most ingenious and effective way out."
+            },
+            {
+              "title": "A network of professionals",
+              "text": "A single point of entry: we coordinate the rest."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milla",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "An extra mile"
+        },
+        {
+          "kind": "p",
+          "text": "Always an **extra mile**"
+        },
+        {
+          "kind": "big",
+          "text": "Everything an estate agency does, and everything that is needed on top."
+        },
+        {
+          "kind": "p",
+          "text": "Many transactions fall through because of an unforeseen problem that nobody knew how to solve. We anticipate, and when it appears, we solve it in the most ingenious and effective way."
+        },
+        {
+          "kind": "p",
+          "text": "Even if it does not depend on us or we cannot solve it directly, our answer is always the same:"
+        },
+        {
+          "kind": "quote",
+          "text": "Don't worry, I'll take care of it."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "We get ahead of the unexpected."
+            },
+            {
+              "title": "",
+              "text": "We solve it when it appears."
+            },
+            {
+              "title": "",
+              "text": "You are calm and happy at every step."
             }
           ]
         },
         {
           "kind": "p",
-          "text": "**Always one mile more:** everything a real estate agency does, and everything else that is needed."
+          "text": "**We will do whatever it takes in your transaction so that you end up happy.**"
         }
       ]
     },
     {
-      "id": "como-trabajamos",
-      "surface": "paper",
+      "id": "diferencia",
+      "surface": "stone",
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "03"
-        },
-        {
           "kind": "h2",
-          "text": "How we work"
+          "text": "What sets us apart"
         },
         {
           "kind": "p",
-          "text": "We do not aim to manage the greatest number of properties."
+          "text": "We do not aim to manage the largest possible number of properties."
         },
         {
           "kind": "big",
-          "text": "We prefer to give each client the time, attention and effort they deserve, offering a **close, transparent and truly personalised** service."
+          "text": "We prefer to give each client the time, attention and effort they deserve, with a **close, transparent and truly personal approach**."
         },
         {
           "kind": "list",
@@ -172,37 +217,82 @@
               "text": "03"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "How we work"
         },
         {
           "kind": "p",
-          "text": "The journey together"
+          "text": "We are passionate about our work."
+        },
+        {
+          "kind": "h3",
+          "text": "The road travelled"
         },
         {
           "kind": "p",
-          "text": "We are an agency that understands success in a simple way: **doing our job well** and ensuring our clients feel satisfied with the journey we have shared."
+          "text": "For us, success is simple: **doing our work well** and making sure our clients are satisfied with the road travelled."
         },
         {
-          "kind": "p",
+          "kind": "h3",
           "text": "From start to finish"
         },
         {
           "kind": "p",
-          "text": "**We are passionate about what we do.** We commit fully to every transaction, find solutions when difficulties arise, and support our clients from the very first moment to the end of the process."
+          "text": "We get involved in every transaction, look for a solution when difficulties arise and stand by the client from the very first moment to the end of the process."
+        }
+      ]
+    },
+    {
+      "id": "compromiso",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Our commitment"
+        },
+        {
+          "kind": "p",
+          "text": "Our greatest satisfaction is knowing that those who have trusted us **would do so again**."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Talk to HousySpace",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "See the services",
+              "href": "route:home#servicios",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace. Property Solutions."
         }
       ]
     },
     {
       "id": "colaboraciones",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "04"
-        },
-        {
           "kind": "h2",
-          "text": "Partnerships with sector professionals"
+          "text": "Collaboration with industry professionals"
         },
         {
           "kind": "p",
@@ -210,19 +300,19 @@
         },
         {
           "kind": "big",
-          "text": "Over the years we have built a network of professionals specialised in legal advice, architecture, interior design, renovations and other areas related to property and assets."
+          "text": "Over the years we have built a network of professionals specialised in legal advice, architecture, interior design, renovations and other fields linked to housing and property."
         },
         {
           "kind": "p",
-          "text": "Every partnership grows from experience, trust and a shared way of understanding work: **offering a close, rigorous and committed service to each client.**"
+          "text": "Every collaboration stems from experience, trust and a shared way of understanding work: **providing a close, rigorous service committed to each client.**"
         },
         {
           "kind": "p",
-          "text": "Our criterion is simple: **we work with professionals we would trust ourselves.**"
+          "text": "Our criterion is simple: **we work with professionals we ourselves would trust.**"
         },
         {
           "kind": "p",
-          "text": "Thanks to them, we can offer comprehensive solutions and support you far beyond a single property transaction. Because for us, saying «Don't worry, I'll take care of it» means having the people, the knowledge and the will to make it happen."
+          "text": "For us, saying «Don't worry, I'll take care of it» means having the people, the knowledge and the will needed to make it happen."
         }
       ]
     },
@@ -231,10 +321,6 @@
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "05"
-        },
         {
           "kind": "h2",
           "text": "Team"
@@ -250,10 +336,6 @@
       "surface": "stone",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "06"
-        },
         {
           "kind": "h2",
           "text": "What our clients say"

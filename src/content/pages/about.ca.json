@@ -22,16 +22,8 @@
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "01"
-        },
-        {
           "kind": "h2",
           "text": "La nostra història"
-        },
-        {
-          "kind": "p",
-          "text": "Una manera diferent d'entendre el sector immobiliari."
         },
         {
           "kind": "list",
@@ -39,7 +31,7 @@
           "items": [
             {
               "title": "9",
-              "text": "anys d'experiència en el sector immobiliari"
+              "text": "anys d'experiència al sector immobiliari"
             },
             {
               "title": "5",
@@ -47,37 +39,37 @@
             },
             {
               "title": "Avui",
-              "text": "continuem creixent gràcies als qui tornen a triar-nos i ens recomanen"
+              "text": "seguim creixent amb qui torna a escollir-nos i ens recomana"
             }
           ]
         },
         {
-          "kind": "big",
-          "text": "HousySpace va néixer fa cinc anys d'una convicció molt senzilla: **les persones han d'estar sempre al centre de cada operació immobiliària.**"
+          "kind": "p",
+          "text": "HousySpace va néixer fa cinc anys amb una idea molt simple: **en cada operació immobiliària, les persones van sempre al centre.**"
         },
         {
           "kind": "p",
-          "text": "Després d'anys d'experiència en el sector, en coneixíem bé les dinàmiques i les exigències — i també allò que, des del nostre punt de vista, es podia fer d'una altra manera."
+          "text": "Portàvem anys al sector i sabíem què es podia fer d'una altra manera."
         },
         {
           "kind": "p",
-          "text": "Volíem crear un espai on la proximitat fos sincera, l'atenció veritablement personalitzada i cada client sentís que les seves preocupacions també eren les nostres."
+          "text": "Volíem proximitat sincera, atenció de debò personal i que cada client sentís que les seves preocupacions també eren les nostres."
         },
         {
           "kind": "p",
-          "text": "Així va néixer HousySpace. No amb la intenció de ser una immobiliària més, sinó de construir un projecte fidel a la nostra manera d'entendre aquesta professió: amb empatia, honestedat, dedicació i un compromís que va molt més enllà de tancar una operació."
+          "text": "Així va néixer HousySpace: no per ser una immobiliària més, sinó un projecte fidel a com entenem aquesta professió, amb empatia, honestedat, dedicació i un compromís que va més enllà de tancar una operació."
         },
         {
           "kind": "quote",
-          "text": "Perquè darrere de cada immoble hi ha una història, una decisió important i persones que dipositen la seva confiança en nosaltres."
+          "text": "Darrere de cada immoble hi ha una història, una decisió important i persones que confien en nosaltres."
         },
         {
           "kind": "p",
-          "text": "I poques coses ens satisfan tant com compartir l'il·lusió d'algú que troba la seva primera llar, ajudar una família a començar una nova etapa o saber que hem acompanyat un client a prendre la decisió correcta."
+          "text": "Ens fa molta satisfacció compartir la il·lusió de qui troba la seva primera llar, ajudar una família a començar una nova etapa o acompanyar un client a prendre la decisió correcta."
         },
         {
           "kind": "p",
-          "text": "Cinc anys després, continuem creixent gràcies a aquesta mateixa filosofia i, sobretot, a la confiança dels qui tornen a triar-nos i ens recomanen."
+          "text": "Cinc anys després seguim creixent amb la mateixa filosofia, gràcies a qui torna a escollir-nos i ens recomana."
         }
       ]
     },
@@ -86,10 +78,6 @@
       "surface": "dark",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "02"
-        },
         {
           "kind": "h2",
           "text": "La nostra filosofia"
@@ -100,60 +88,117 @@
         },
         {
           "kind": "big",
-          "text": "T'assessorem sobre com fer-ho, si et convé fer-ho i quan és el millor moment, i ens assegurem que tot el que fas sigui correcte i segur."
+          "text": "T'aconsellem com fer-ho, si et convé i quan és el millor moment, i vetllem perquè tot el que facis sigui correcte i segur."
+        },
+        {
+          "kind": "p",
+          "text": "Que estiguis content a cada pas, **no només en signar**."
+        },
+        {
+          "kind": "h3",
+          "text": "T'ajudem en tot, passi el que passi"
         },
         {
           "kind": "list",
           "ordered": true,
           "items": [
             {
-              "title": "Com",
-              "text": "L'estratègia adequada per a la teva operació."
+              "title": "T'assessorem",
+              "text": "Amb honestedat: com, si i quan et convé comprar, vendre o esperar."
             },
             {
-              "title": "Si",
-              "text": "Et diem amb honestedat si et convé comprar, vendre o esperar."
+              "title": "Estudiem l'immoble a fons",
+              "text": "Abans de comprar o vendre, perquè no hi hagi sorpreses en signar."
             },
             {
-              "title": "Quan",
-              "text": "El moment oportú segons el mercat i la teva situació."
+              "title": "Un assessor de referència",
+              "text": "T'acompanya de principi a fi, des de la primera conversa."
             },
             {
-              "title": "Amb seguretat",
-              "text": "Cada pas revisat perquè sigui correcte i segur."
+              "title": "Ens anticipem",
+              "text": "Cada pas revisat perquè res no es perdi pel camí."
             },
             {
-              "title": "Sense sorpreses",
-              "text": "Estudi a fons de l'immoble abans de comprar o vendre."
+              "title": "Resolem el que sorgeixi",
+              "text": "Solucions, no excuses: la sortida més enginyosa i eficaç."
+            },
+            {
+              "title": "Una xarxa de professionals",
+              "text": "Una sola porta d'entrada: nosaltres coordinem la resta."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milla",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Una milla extra"
+        },
+        {
+          "kind": "p",
+          "text": "Sempre una **milla extra**"
+        },
+        {
+          "kind": "big",
+          "text": "Tot el que fa una immobiliària, i tot el que cal a més."
+        },
+        {
+          "kind": "p",
+          "text": "Moltes operacions cauen per un imprevist que ningú no va saber resoldre. Nosaltres ens anticipem i, quan apareix, el resolem de la manera més enginyosa i eficaç."
+        },
+        {
+          "kind": "p",
+          "text": "Encara que no depengui de nosaltres o no ho puguem resoldre directament, la nostra resposta és sempre la mateixa:"
+        },
+        {
+          "kind": "quote",
+          "text": "No et preocupis, jo me n'encarrego."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Ens avancem als imprevistos."
+            },
+            {
+              "title": "",
+              "text": "Els resolem quan apareixen."
+            },
+            {
+              "title": "",
+              "text": "Estàs tranquil i content a cada pas."
             }
           ]
         },
         {
           "kind": "p",
-          "text": "**Sempre una milla més:** tot el que fa una immobiliària, i tot el que cal a més."
+          "text": "**Farem tot el que calgui en la teva operació perquè quedis content.**"
         }
       ]
     },
     {
-      "id": "como-trabajamos",
-      "surface": "paper",
+      "id": "diferencia",
+      "surface": "stone",
       "band": false,
       "items": [
         {
-          "kind": "p",
-          "text": "03"
-        },
-        {
           "kind": "h2",
-          "text": "Com treballem"
+          "text": "Què ens diferencia"
         },
         {
           "kind": "p",
-          "text": "No busquem gestionar el major nombre d'immobles."
+          "text": "No busquem gestionar el màxim nombre d'immobles possible."
         },
         {
           "kind": "big",
-          "text": "Preferim dedicar a cada client el temps, l'atenció i l'esforç que mereix, oferint un tracte **proper, transparent i veritablement personalitzat**."
+          "text": "Preferim donar a cada client el temps, l'atenció i l'esforç que mereix, amb un tracte **proper, transparent i de debò personalitzat**."
         },
         {
           "kind": "list",
@@ -172,34 +217,79 @@
               "text": "03"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Com treballem"
         },
         {
           "kind": "p",
+          "text": "Ens apassiona la nostra feina."
+        },
+        {
+          "kind": "h3",
           "text": "El camí recorregut"
         },
         {
           "kind": "p",
-          "text": "Som una immobiliària que entén l'èxit d'una manera senzilla: **fer bé la nostra feina** i aconseguir que els nostres clients se sentin satisfets del camí recorregut."
+          "text": "Per a nosaltres l'èxit és senzill: **fer bé la nostra feina** i aconseguir que els nostres clients quedin satisfets amb el camí recorregut."
         },
         {
-          "kind": "p",
+          "kind": "h3",
           "text": "De principi a fi"
         },
         {
           "kind": "p",
-          "text": "**Ens apassiona el que fem.** Ens impliquem en cada operació, busquem solucions quan sorgeixen dificultats i acompanyem els nostres clients des del primer moment fins al final del procés."
+          "text": "Ens impliquem en cada operació, busquem solució quan sorgeixen dificultats i som al costat del client des del primer moment fins al final del procés."
+        }
+      ]
+    },
+    {
+      "id": "compromiso",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "El nostre compromís"
+        },
+        {
+          "kind": "p",
+          "text": "La nostra màxima satisfacció és saber que qui ha confiat en nosaltres **ho tornaria a fer**."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Parlar amb HousySpace",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Veure els serveis",
+              "href": "route:home#servicios",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace. Property Solutions."
         }
       ]
     },
     {
       "id": "colaboraciones",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "04"
-        },
         {
           "kind": "h2",
           "text": "Col·laboracions amb professionals del sector"
@@ -210,19 +300,19 @@
         },
         {
           "kind": "big",
-          "text": "Al llarg dels anys hem construït una xarxa de professionals especialitzats en assessorament jurídic, arquitectura, interiorisme, reformes i altres àmbits relacionats amb l'habitatge i el patrimoni."
+          "text": "Amb els anys hem format una xarxa de professionals especialitzats en assessorament jurídic, arquitectura, interiorisme, reformes i altres àmbits lligats a l'habitatge i al patrimoni."
         },
         {
           "kind": "p",
-          "text": "Cada col·laboració neix de l'experiència, la confiança i una mateixa manera d'entendre la feina: **oferir un servei proper, rigorós i compromès amb cada client.**"
+          "text": "Cada col·laboració sorgeix de l'experiència, la confiança i una manera compartida d'entendre la feina: **donar un servei proper, rigorós i compromès amb cada client.**"
         },
         {
           "kind": "p",
-          "text": "El nostre criteri és senzill: **treballem amb professionals en qui nosaltres mateixos confiaríem.**"
+          "text": "El nostre criteri és simple: **col·laborem amb professionals en qui nosaltres mateixos confiaríem.**"
         },
         {
           "kind": "p",
-          "text": "Gràcies a ells podem oferir solucions integrals i acompanyar-te molt més enllà d'una operació immobiliària. Perquè per a nosaltres, dir «No et preocupis, jo me n'encarrego» significa tenir les persones, els coneixements i la voluntat necessaris per fer-ho realitat."
+          "text": "Per a nosaltres, dir «No et preocupis, jo me n'encarrego» significa comptar amb les persones, els coneixements i la voluntat necessaris per fer-ho realitat."
         }
       ]
     },
@@ -231,10 +321,6 @@
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "05"
-        },
         {
           "kind": "h2",
           "text": "Equip"
@@ -250,10 +336,6 @@
       "surface": "stone",
       "band": false,
       "items": [
-        {
-          "kind": "p",
-          "text": "06"
-        },
         {
           "kind": "h2",
           "text": "Què diuen els nostres clients"
