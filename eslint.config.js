@@ -12,6 +12,8 @@ export default defineConfig(
     "playwright-report/",
     "test-results/",
     "coverage/",
+    // Agent worktrees are whole copies of the repo, each with its own tsconfig.
+    ".claude/worktrees/",
   ]),
   js.configs.recommended,
   tseslint.configs.strict,
