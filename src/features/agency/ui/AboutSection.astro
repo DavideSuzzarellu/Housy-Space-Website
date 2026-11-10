@@ -1,0 +1,72 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import type { PageItem } from "@/features/pages/application/pages";
+import { groupItems } from "@/features/pages/application/pages";
+import PageItems from "@/features/pages/ui/PageItems.astro";
+import type { Locale } from "@/shared/i18n/config";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * About-page block of the reference (`nr-sec`): accent kicker, large statement beside a
+ * transparent illustration, then a lead paragraph and the body in two columns. The section's
+ * items keep their editorial order: h2 = kicker, first paragraph = statement, `big` = lead,
+ * the rest = body. A numbered "01" paragraph is dropped (AGENTS.md §11.5: no numbered kickers).
+ */
+interface Props {
+  locale: Locale;
+  id?: string;
+  items: readonly PageItem[];
+  image: ImageMetadata;
+  tone?: "canvas" | "white";
+}
+
+const { locale, id, items, image, tone = "canvas" } = Astro.props;
+
+const rest = items.filter((item) => !(item.kind === "p" && /^\d{2}$/.test(item.text)));
+const kicker = rest.find((item) => item.kind === "h2");
+const statement = rest.find((item) => item.kind === "p");
+const lead = rest.find((item) => item.kind === "big");
+const body = rest.filter((item) => item !== kicker && item !== statement && item !== lead);
+---
+
+<section
+  id={id}
+  class:list={["py-[clamp(2.75rem,5.6vw,5.75rem)]", tone === "white" ? "bg-white" : "bg-canvas"]}
+>
+  <Container>
+    {kicker?.kind === "h2" && (
+      <h2 class="text-[0.6875rem] tracking-[0.24em] text-accent">{kicker.text}</h2>
+    )}
+    <div class="mt-[clamp(0.75rem,1.6vw,1.375rem)] grid items-center gap-[clamp(1.5rem,4vw,4.5rem)] md:grid-cols-[7fr_4fr]">
+      {statement?.kind === "p" && (
+        <p class="max-w-[21ch] text-[clamp(1.625rem,3.5vw,3.25rem)] leading-[1.1] font-extrabold tracking-[-0.008em] text-balance text-fg">
+          <Inline text={statement.text} locale={locale} />
+        </p>
+      )}
+      <div class="hidden w-full max-w-[440px] justify-self-end md:block">
+        <Picture
+          {...PHOTO_PICTURE}
+          src={image}
+          alt=""
+          widths={[440, 880]}
+          sizes="(min-width: 768px) 30vw, 80vw"
+          loading="lazy"
+          class="h-auto w-full"
+        />
+      </div>
+    </div>
+    <div class="mt-[clamp(1.5rem,3.2vw,3rem)] grid items-start gap-[clamp(1.5rem,4vw,4.5rem)] md:grid-cols-[5fr_6fr]">
+      {lead?.kind === "big" && (
+        <p class="max-w-[44ch] text-[clamp(0.9375rem,1.3vw,1.1875rem)] leading-[1.55] font-semibold tracking-[0.012em] text-fg">
+          <Inline text={lead.text} locale={locale} />
+        </p>
+      )}
+      <div class="min-w-0">
+        <PageItems locale={locale} units={groupItems(body)} />
+      </div>
+    </div>
+  </Container>
+</section>

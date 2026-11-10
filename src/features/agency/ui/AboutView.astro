@@ -2,8 +2,12 @@
 import { Picture } from "astro:assets";
 import expImg from "@/assets/nosotros/ill-experiencia.webp";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
+import histImg from "@/assets/nosotros/ill-historia.webp";
+import filoImg from "@/assets/nosotros/ill-filosofia.webp";
+import comoImg from "@/assets/nosotros/ill-como-trabajamos.webp";
+import colabImg from "@/assets/nosotros/ill-colaboraciones.webp";
+import AboutSection from "@/features/agency/ui/AboutSection.astro";
 import type { PageContent, PageItem } from "@/features/pages/application/pages";
-import { groupItems } from "@/features/pages/application/pages";
 import type { ServiceCard } from "@/features/pages/application/serviceCards";
 import { COMPANY } from "@/features/agency/domain/company";
 import { getDictionary } from "@/shared/i18n";
@@ -12,7 +16,6 @@ import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
-import PageItems from "@/features/pages/ui/PageItems.astro";
 
 interface Props {
   locale: Locale;
@@ -209,46 +212,39 @@ const NAV_SECTIONS = [
   </section>
 
   {/* ── NUESTRA HISTORIA ─────────────────────────────────────────────── */}
-  <section id="historia" class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
-    <Container>
-      <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
-        {ta.inPageNav.history.toUpperCase()}
-      </p>
-      {/* Pre-list items (eyebrow p "01", h2, subtitle p) */}
-      {preItems.length > 0 && <PageItems locale={locale} units={groupItems(preItems)} />}
-      {/* Narrative text (big, p, p, quote, p, p) */}
-      <div class="max-w-[72ch]">
-        <PageItems locale={locale} units={groupItems(narrativeItems)} />
-      </div>
-    </Container>
-  </section>
+  <AboutSection
+    locale={locale}
+    id="historia"
+    tone="white"
+    image={histImg}
+    items={[...preItems, ...narrativeItems]}
+  />
 
   {/* ── NUESTRA FILOSOFÍA ────────────────────────────────────────────── */}
   {filosofiaSection !== undefined && (
-    <section id="filosofia" class="surface-dark bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
-      <Container>
-        <p class="mb-2 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
-          {ta.inPageNav.philosophy.toUpperCase()}
-        </p>
-        <PageItems locale={locale} units={groupItems(filosofiaSection.items)} />
-      </Container>
-    </section>
+    <AboutSection locale={locale} id="filosofia" image={filoImg} items={filosofiaSection.items} />
   )}
 
   {/* ── CÓMO TRABAJAMOS ──────────────────────────────────────────────── */}
   {comoTrabajamosSection !== undefined && (
-    <section class="bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
-      <Container>
-        <PageItems locale={locale} units={groupItems(comoTrabajamosSection.items)} />
-      </Container>
-    </section>
+    <AboutSection
+      locale={locale}
+      tone="white"
+      image={comoImg}
+      items={comoTrabajamosSection.items}
+    />
+  )}
+
+  {/* ── COLABORACIONES ──────────────────────────────────────────────── */}
+  {colaboracionesSection !== undefined && (
+    <AboutSection locale={locale} image={colabImg} items={colaboracionesSection.items} />
   )}
 
   {/* ── NUESTROS SERVICIOS (carousel) ───────────────────────────────── */}
   <section
     id="servicios"
     aria-labelledby="about-services-heading"
-    class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+    class="bg-white py-[clamp(2.75rem,5vw,4.125rem)]"
   >
     <Container>
       <div class="mb-6 flex items-center justify-between gap-4">
@@ -316,7 +312,7 @@ const NAV_SECTIONS = [
   <section
     id="donde-estamos"
     aria-labelledby="about-where-heading"
-    class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+    class="bg-white py-[clamp(2.75rem,5vw,4.125rem)]"
   >
     <Container>
       <h2 id="about-where-heading" class="mb-8 text-[clamp(1.5rem,3.6vw,2.5rem)]">
@@ -384,15 +380,6 @@ const NAV_SECTIONS = [
       </div>
     </Container>
   </section>
-
-  {/* ── COLABORACIONES ──────────────────────────────────────────────── */}
-  {colaboracionesSection !== undefined && (
-    <section class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
-      <Container>
-        <PageItems locale={locale} units={groupItems(colaboracionesSection.items)} />
-      </Container>
-    </section>
-  )}
 </div>
 
 <script>
