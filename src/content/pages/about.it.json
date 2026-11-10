@@ -3,15 +3,15 @@
   "description": "HousySpace, consulenti immobiliari a Barcellona: ci impegniamo in ogni operazione con un approccio vicino, trasparente e personalizzato.",
   "head": {
     "heading": "Molto più di una semplice agenzia immobiliare",
-    "photo": true,
+    "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "Chi siamo"
+        "text": "Presentazione di HousySpace"
       },
       {
-        "kind": "image",
-        "src": "../../assets/home/oficina-1672.jpg"
+        "kind": "p",
+        "text": "Un modo diverso di intendere il settore immobiliare."
       }
     ]
   },

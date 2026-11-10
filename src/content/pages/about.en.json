@@ -3,15 +3,15 @@
   "description": "HousySpace, real estate consultants in Barcelona: we commit to every transaction with a close, transparent and personalised approach.",
   "head": {
     "heading": "Much more than a real estate agency",
-    "photo": true,
+    "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "About us"
+        "text": "HousySpace presentation"
       },
       {
-        "kind": "image",
-        "src": "../../assets/home/oficina-1672.jpg"
+        "kind": "p",
+        "text": "A different way of understanding the real estate sector."
       }
     ]
   },

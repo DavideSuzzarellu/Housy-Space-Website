@@ -3,15 +3,15 @@
   "description": "HousySpace, consultores inmobiliarios en Barcelona: nos implicamos en cada operación, con un trato cercano, transparente y personalizado.",
   "head": {
     "heading": "Mucho más que una inmobiliaria",
-    "photo": true,
+    "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "Nosotros"
+        "text": "Presentación de HousySpace"
       },
       {
-        "kind": "image",
-        "src": "../../assets/home/oficina-1672.jpg"
+        "kind": "p",
+        "text": "Una manera distinta de entender el sector inmobiliario."
       }
     ]
   },

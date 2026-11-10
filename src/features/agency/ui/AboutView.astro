@@ -1,5 +1,4 @@
 ---
-import { Picture } from "astro:assets";
 import type { PageContent, PageItem } from "@/features/pages/application/pages";
 import { groupItems } from "@/features/pages/application/pages";
 import type { ServiceCard } from "@/features/pages/application/serviceCards";
@@ -7,10 +6,8 @@ import { COMPANY } from "@/features/agency/domain/company";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import { PHOTO_PICTURE } from "@/shared/lib/images";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
-import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import PageItems from "@/features/pages/ui/PageItems.astro";
 
@@ -24,9 +21,6 @@ interface Props {
 const { locale, content, serviceCards, crumbs } = Astro.props;
 const t = getDictionary(locale);
 const ta = t.about;
-
-const image = content.head.items.find((item) => item.kind === "image");
-const hasPhoto = content.head.photo && image !== undefined;
 
 const findSection = (id: string) => content.sections.find((s) => s.id === id);
 const historiaSection = findSection("historia");
@@ -64,43 +58,31 @@ const NAV_SECTIONS = [
   {/* ── HERO ──────────────────────────────────────────────────────────── */}
   <section
     data-page-head
-    class:list={[
-      "relative isolate overflow-hidden pt-8 pb-[clamp(2.75rem,6vw,4.5rem)]",
-      hasPhoto
-        ? "surface-dark flex min-h-[clamp(24rem,50vw,34rem)] flex-col justify-end bg-canvas"
-        : "bg-canvas",
-    ]}
+    class="bg-canvas flex min-h-[clamp(24rem,52svh,34rem)] flex-col justify-center py-[clamp(2.25rem,5vw,4.375rem)]"
   >
-    {hasPhoto && (
-      <>
-        <Picture
-          {...PHOTO_PICTURE}
-          src={image.src}
-          alt=""
-          widths={[800, 1400]}
-          sizes="100vw"
-          priority
-          class="absolute inset-0 -z-20 size-full object-cover"
-        />
-        <span
-          aria-hidden="true"
-          class="absolute inset-0 -z-10 bg-linear-to-b from-ink/55 to-ink/80"
-        ></span>
-        <MediaCredit tone="onImage" class="absolute right-4 bottom-2">
-          {t.media.conceptualImage}
-        </MediaCredit>
-      </>
-    )}
     <Container>
-      <Breadcrumbs items={crumbs} label={t.property.detail.breadcrumb} class="mb-7" />
+      <Breadcrumbs
+        items={crumbs}
+        label={t.property.detail.breadcrumb}
+        class="mb-[clamp(1.125rem,2.6vw,1.875rem)]"
+      />
       {content.head.items
         .filter((item) => item.kind === "tag")
         .map((item) => (
-          <p class="mb-3 text-[0.6875rem] tracking-[0.16em] text-accent">
+          <p class="text-[0.6875rem] font-bold tracking-[0.24em] text-accent">
             {item.kind === "tag" && item.text}
           </p>
         ))}
-      <h1 class="max-w-[22ch] text-[clamp(1.875rem,4.8vw,3.5rem)]">{content.head.heading}</h1>
+      <h1 class="mt-[0.4em] max-w-[10.5em] text-balance text-[clamp(2.75rem,7.4vw,6.75rem)] leading-[0.98]">
+        {content.head.heading}
+      </h1>
+      {content.head.items
+        .filter((item) => item.kind === "p")
+        .map((item) => (
+          <p class="mt-[clamp(1.125rem,2vw,1.75rem)] max-w-[42ch] text-[clamp(0.8125rem,1.15vw,1rem)] font-medium leading-[1.65] tracking-[0.09em] text-muted">
+            {item.kind === "p" && item.text}
+          </p>
+        ))}
     </Container>
   </section>
 
@@ -111,13 +93,13 @@ const NAV_SECTIONS = [
     class="sticky top-0 z-10 border-b border-line bg-canvas/95 backdrop-blur-sm"
   >
     <Container>
-      <ul class="flex gap-1 overflow-x-auto py-2 text-xs font-semibold tracking-[0.08em] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <ul class="flex gap-[clamp(0.875rem,2vw,1.75rem)] overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {NAV_SECTIONS.map((section) => (
           <li class="shrink-0">
             <a
               href={`#${section.id}`}
               data-about-nav-link
-              class="block px-3 py-1.5 text-muted transition-colors hover:text-fg data-[active]:text-accent"
+              class="-mb-px block border-b border-transparent pt-[17px] pb-[15px] text-[0.6875rem] font-medium tracking-[0.14em] whitespace-nowrap text-fg-2 transition-colors hover:text-fg data-[active]:border-accent data-[active]:text-accent"
             >
               {section.label.toUpperCase()}
             </a>
