@@ -251,10 +251,7 @@ const crumbs = [
   {...(blogPostProps ?? {})}
 >
   {blogJsonLd !== undefined && <JsonLd slot="head" data={blogJsonLd} />}
-  {target.view === "editorial" &&
-  target.key === "blog" &&
-  posts.length > 0 &&
-  editorial !== undefined ? (
+  {target.view === "editorial" && target.key === "blog" && editorial !== undefined ? (
     <BlogIndex locale={locale} content={editorial.content} posts={posts} crumbs={crumbs} />
   ) : isAbout && editorial !== undefined && aboutServiceCards !== undefined ? (
     <AboutView

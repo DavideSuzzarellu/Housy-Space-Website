@@ -10,7 +10,7 @@ import Container from "@/shared/ui/atoms/Container.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import PostCard from "./PostCard.astro";
 
-/** Blog with real articles: head from the page content, category filter, grid and newsletter. */
+/** Blog index (articles or the empty state): head from the page content, category filter, grid and newsletter. */
 interface Props {
   locale: Locale;
   content: PageContent;
@@ -26,41 +26,62 @@ const categories = BLOG_CATEGORIES.filter((category) =>
   posts.some((post) => post.data.category === category),
 );
 const CHIP =
-  "min-h-11 cursor-pointer border border-line px-4 text-xs tracking-[0.08em] text-muted hover:text-fg aria-pressed:bg-fg aria-pressed:text-canvas";
+  "min-h-11 cursor-pointer border border-line-strong px-3 text-[0.625rem] tracking-[0.06em] text-muted hover:text-fg aria-pressed:border-fg aria-pressed:bg-fg aria-pressed:text-canvas";
+const [featured, ...rest] = posts;
+const [kicker, place] = content.head.items.filter((item) => item.kind === "p");
 ---
 
-<section class="bg-canvas pt-8 pb-8">
+<section data-page-head class="bg-canvas pt-8 pb-5">
   <Container>
     <Breadcrumbs items={crumbs} label={t.property.detail.breadcrumb} class="mb-7" />
-    <h1 class="text-[clamp(1.875rem,4.8vw,3.5rem)]">{content.head.heading}</h1>
-    {lead !== undefined && <p class="mt-4 max-w-[62ch] text-muted">{lead.text}</p>}
-    {categories.length > 1 && (
-      <div
-        role="group"
-        aria-label={t.blog.filterLabel}
-        data-blog-filter
-        class="mt-6 flex flex-wrap gap-2"
-      >
-        <button type="button" data-filter="" aria-pressed="true" class={CHIP}>
-          {t.blog.all}
-        </button>
-        {categories.map((category) => (
-          <button type="button" data-filter={category} aria-pressed="false" class={CHIP}>
-            {category}
+    <div class="mt-6.5 flex flex-wrap justify-between gap-x-5 gap-y-1 border-b border-b-line-strong border-t-2 border-t-fg py-3 text-[0.6875rem] font-medium tracking-[0.18em] text-muted">
+      <span>{kicker?.kind === "p" ? kicker.text : content.head.heading}</span>
+      {place?.kind === "p" && <span>{place.text}</span>}
+    </div>
+    <h1 class="mt-6.5 mb-4.5 text-[clamp(2.375rem,5vw,4.25rem)] leading-[0.92]">
+      {content.head.heading}
+    </h1>
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-4 border-b border-line-strong pb-5.5">
+      {lead !== undefined && <p class="m-0 max-w-[62ch] text-muted">{lead.text}</p>}
+      {categories.length > 1 && (
+        <div
+          role="group"
+          aria-label={t.blog.filterLabel}
+          data-blog-filter
+          class="flex flex-wrap gap-2"
+        >
+          <button type="button" data-filter="" aria-pressed="true" class={CHIP}>
+            {t.blog.all}
           </button>
-        ))}
-      </div>
-    )}
+          {categories.map((category) => (
+            <button type="button" data-filter={category} aria-pressed="false" class={CHIP}>
+              {category}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   </Container>
 </section>
 
-<section class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+<section class="surface-stone bg-canvas py-[clamp(3.375rem,5vw,4.75rem)]">
   <Container>
-    <div class="grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post) => (
-        <PostCard post={post} locale={locale} />
-      ))}
-    </div>
+    {featured === undefined ? (
+      <p data-blog-empty class="max-w-[68ch] border-l-2 border-turquoise py-1 pl-3 text-muted">
+        {t.home.blog.empty}
+      </p>
+    ) : (
+      <>
+        <PostCard post={featured} locale={locale} layout="feature" />
+        {rest.length > 0 && (
+          <div class="mt-[clamp(2.5rem,5vw,4.5rem)] grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post) => (
+              <PostCard post={post} locale={locale} />
+            ))}
+          </div>
+        )}
+      </>
+    )}
   </Container>
 </section>
 

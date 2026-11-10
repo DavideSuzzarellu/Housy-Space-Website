@@ -14,12 +14,14 @@ interface Props {
   /**
    * `stack`: image above the text. `teaser`: home layout of the reference, a row (image 42%)
    * with a hairline under 900 px that stacks from 900 px, with the meta line in uppercase.
+   * `feature`: first post of the index (reference `bz-f`): image 7fr / text 5fr from 900 px.
    */
-  layout?: "stack" | "teaser";
+  layout?: "stack" | "teaser" | "feature";
 }
 
 const { post, locale, layout = "stack" } = Astro.props;
 const teaser = layout === "teaser";
+const feature = layout === "feature";
 ---
 
 <a
@@ -30,7 +32,9 @@ const teaser = layout === "teaser";
     "group text-inherit no-underline",
     teaser
       ? "grid grid-cols-[42%_1fr] items-center gap-5 border-b border-line pb-6.5 last:border-b-0 min-[900px]:grid-cols-1 min-[900px]:items-start min-[900px]:gap-4.5 min-[900px]:border-b-0 min-[900px]:pb-0"
-      : "block",
+      : feature
+        ? "grid items-end gap-7.5 min-[900px]:grid-cols-[7fr_5fr] min-[900px]:gap-15"
+        : "block",
   ]}
 >
   <div
@@ -50,7 +54,7 @@ const teaser = layout === "teaser";
   <div>
     <p
       class:list={[
-        "text-[0.6875rem] tracking-[0.14em]",
+        "text-[0.6875rem] tracking-[0.14em] uppercase",
         teaser ? "mb-1.5 grid gap-[3px] uppercase" : "mt-4 flex flex-wrap gap-x-3.5 gap-y-1",
       ]}
     >
@@ -64,7 +68,9 @@ const teaser = layout === "teaser";
       class:list={[
         teaser
           ? "m-0 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12]"
-          : "mt-2 text-[clamp(1.125rem,1.7vw,1.375rem)]",
+          : feature
+            ? "mt-2 text-[clamp(1.6875rem,3.1vw,2.625rem)]"
+            : "mt-2 text-[clamp(1.125rem,1.7vw,1.375rem)]",
       ]}
     >
       {post.data.title}
