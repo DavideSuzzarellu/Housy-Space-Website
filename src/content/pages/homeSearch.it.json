@@ -2,16 +2,26 @@
   "title": "La mia ricerca · HousySpace",
   "description": "Dicci cosa cerchi in un immobile da comprare o affittare: salviamo la tua ricerca nel nostro database e ti avvisiamo quando entra qualcosa di adatto.",
   "head": {
-    "heading": "Sto cercando un immobile",
+    "heading": "La tua prossima casa *inizia qui*",
     "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "Acquisto o affitto"
+        "text": "Cerca casa a Barcellona"
       },
       {
         "kind": "lead",
-        "text": "Dicci di cosa hai bisogno. Salviamo la tua ricerca nel nostro database di acquirenti, con gli stessi campi delle schede degli immobili, e ti avvisiamo quando entra qualcosa di adatto."
+        "text": "Raccontaci che tipo di casa cerchi e iscriviti al nostro database. Quando avremo un immobile in linea con le tue preferenze, ti contatteremo perché tu possa vederlo prima che venga pubblicato."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Inizia la tua ricerca",
+            "href": "#formulario",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -28,16 +38,16 @@
           "kind": "steps",
           "items": [
             {
-              "title": "Dicci cosa cerchi",
-              "text": "Tipo di operazione, zona, budget e requisiti indispensabili. Rispondi passo dopo passo. Più sei preciso, meglio è."
+              "title": "Raccontaci cosa cerchi",
+              "text": "Indicaci dove ti piacerebbe vivere, il tuo budget e le caratteristiche che cerchi nella tua casa."
             },
             {
               "title": "Salviamo la tua ricerca",
-              "text": "Viene registrata nel nostro database di acquirenti, con la stessa struttura di una scheda immobile: operazione, tipo, zona, prezzo, superficie, camere e caratteristiche."
+              "text": "Registriamo le tue preferenze nel nostro database per individuare le case che possono fare al caso tuo."
             },
             {
-              "title": "Ti avvisiamo e ti accompagniamo",
-              "text": "Quando entra un immobile adatto, un consulente ti contatta. Se vuoi, ti accompagniamo nelle visite e in tutto il processo."
+              "title": "Ti avvisiamo prima",
+              "text": "Se riceviamo una casa in linea con la tua ricerca, ti contattiamo prima di pubblicarla."
             }
           ]
         }
@@ -50,11 +60,11 @@
       "items": [
         {
           "kind": "h2",
-          "text": "La tua ricerca"
+          "text": "La tua ricerca di casa *a Barcellona*"
         },
         {
           "kind": "lead",
-          "text": "Compila quello che sai; il resto lo definiamo insieme. I campi contrassegnati con * sono obbligatori."
+          "text": "Comprare o affittare casa a Barcellona con una consulenza immobiliare personalizzata. I campi contrassegnati con * sono obbligatori."
         },
         {
           "kind": "form",
@@ -1004,21 +1014,16 @@
       "band": false,
       "items": [
         {
-          "kind": "h3",
-          "text": "Preferisci che cerchiamo noi per te?"
+          "kind": "h2",
+          "text": "Trovare casa è importante. *Farlo bene, ancora di più*"
         },
         {
           "kind": "p",
-          "text": "Con la ricerca personalizzata, un consulente di riferimento gestisce la tua ricerca dall'inizio alla fine."
+          "text": "Sappiamo che ogni ricerca è diversa. Se preferisci raccontarci di persona cosa ti serve, siamo qui per ascoltarti e aiutarti."
         },
         {
           "kind": "buttons",
           "items": [
-            {
-              "label": "Ricerca personalizzata",
-              "href": "route:customSearch",
-              "solid": true
-            },
             {
               "label": "Parla con un consulente",
               "href": "route:contact",

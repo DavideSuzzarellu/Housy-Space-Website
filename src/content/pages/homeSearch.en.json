@@ -2,16 +2,26 @@
   "title": "My search · HousySpace",
   "description": "Tell us what you're looking for in a property to buy or rent: we save it in our database and alert you when a matching listing comes in.",
   "head": {
-    "heading": "I'm looking for a property",
+    "heading": "Your next home *starts here*",
     "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "Buy or rent"
+        "text": "Find a home in Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Tell us what you need. We save your search in our buyers database, using the same fields as our property listings, and alert you when something matching comes in."
+        "text": "Tell us what kind of home you are looking for and join our database. When we have a property that fits your preferences, we will contact you so you can see it before it is published."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Start your search",
+            "href": "#formulario",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -28,16 +38,16 @@
           "kind": "steps",
           "items": [
             {
-              "title": "Tell us what you're looking for",
-              "text": "Operation, area, budget and must-haves. Answer step by step. The more specific, the better."
+              "title": "Tell us what you are looking for",
+              "text": "Tell us where you would like to live, your budget and the features you want in your home."
             },
             {
               "title": "We save your search",
-              "text": "It's registered in our buyers database, with the same structure as a property listing: operation, type, area, price, size, bedrooms and features."
+              "text": "We record your preferences in our database to identify homes that may fit."
             },
             {
-              "title": "We'll alert you and guide you",
-              "text": "When a matching listing comes in, an adviser will get in touch. If you wish, we'll accompany you on viewings and throughout the whole process."
+              "title": "We tell you first",
+              "text": "If we receive a home that fits your search, we contact you before it is published."
             }
           ]
         }
@@ -50,11 +60,11 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Your search"
+          "text": "Your home search *in Barcelona*"
         },
         {
           "kind": "lead",
-          "text": "Fill in what you know; we'll refine the rest together. Fields marked with * are required."
+          "text": "Buy or rent a home in Barcelona with personalised real estate advice. Fields marked with * are required."
         },
         {
           "kind": "form",
@@ -1000,23 +1010,18 @@
       "band": false,
       "items": [
         {
-          "kind": "h3",
-          "text": "Would you prefer us to search for you?"
+          "kind": "h2",
+          "text": "Finding a home is important. *Doing it well, even more so*"
         },
         {
           "kind": "p",
-          "text": "With the custom search service, a dedicated adviser works your search from start to finish."
+          "text": "We know every search is different. If you would rather tell us in person what you need, we are here to listen and help."
         },
         {
           "kind": "buttons",
           "items": [
             {
-              "label": "Custom search",
-              "href": "route:customSearch",
-              "solid": true
-            },
-            {
-              "label": "Speak to an adviser",
+              "label": "Talk to an advisor",
               "href": "route:contact",
               "solid": false
             }

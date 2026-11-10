@@ -2,16 +2,26 @@
   "title": "La meva cerca · HousySpace",
   "description": "Explica'ns què cerques en un habitatge per comprar o llogar: ho guardem a la nostra base de dades i t'avisem quan entra un immoble que s'hi ajusta.",
   "head": {
-    "heading": "Estic buscant un habitatge",
+    "heading": "El teu pròxim habitatge *comença aquí*",
     "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "Compra o lloguer"
+        "text": "Cerca pis a Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Explica'ns què necessites. Guardem la teva cerca a la nostra base de dades de demandants, amb els mateixos camps que les fitxes dels immobles, i t'avisem quan entra alguna cosa que s'hi ajusta."
+        "text": "Explica'ns quin tipus d'habitatge busques i apunta't a la nostra base de dades. Quan tinguem una propietat que encaixi amb les teves preferències, ens posarem en contacte amb tu perquè la puguis conèixer abans que es publiqui."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Comença la teva cerca",
+            "href": "#formulario",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -28,16 +38,16 @@
           "kind": "steps",
           "items": [
             {
-              "title": "Explica'ns què cerques",
-              "text": "Operació, zona, pressupost i el que no pot faltar. Respon pas a pas. Com més concret, millor."
+              "title": "Explica'ns què busques",
+              "text": "Indica'ns on t'agradaria viure, el teu pressupost i quines característiques busques en el teu habitatge."
             },
             {
               "title": "Guardem la teva cerca",
-              "text": "Es registra a la nostra base de dades de demandants, amb la mateixa estructura que la fitxa d'un immoble: operació, tipus, zona, preu, superfície, habitacions i característiques."
+              "text": "Registrem les teves preferències a la nostra base de dades per identificar habitatges que puguin encaixar."
             },
             {
-              "title": "T'avisem i t'acompanyem",
-              "text": "Quan entra un immoble que s'hi ajusta, un assessor t'avisa. Si vols, t'acompanyem en les visites i en tot el procés."
+              "title": "T'avisem abans",
+              "text": "Si rebem un habitatge que encaixa amb la teva cerca, et contactem abans de publicar-lo."
             }
           ]
         }
@@ -50,11 +60,11 @@
       "items": [
         {
           "kind": "h2",
-          "text": "La teva cerca"
+          "text": "La teva cerca d'habitatge *a Barcelona*"
         },
         {
           "kind": "lead",
-          "text": "Omple el que sàpigues; la resta ho afinarem junts. Els camps marcats amb * són obligatoris."
+          "text": "Comprar o llogar habitatge a Barcelona amb assessorament immobiliari personalitzat. Els camps marcats amb * són obligatoris."
         },
         {
           "kind": "form",
@@ -1004,21 +1014,16 @@
       "band": false,
       "items": [
         {
-          "kind": "h3",
-          "text": "Prefereixes que busquem nosaltres per tu?"
+          "kind": "h2",
+          "text": "Trobar casa és important. *Fer-ho bé, encara més*"
         },
         {
           "kind": "p",
-          "text": "Amb la cerca a mida, un assessor de referència treballa la teva cerca de principi a fi."
+          "text": "Sabem que cada cerca és diferent. Si prefereixes explicar-nos personalment què necessites, som aquí per escoltar-te i ajudar-te."
         },
         {
           "kind": "buttons",
           "items": [
-            {
-              "label": "Cerca a mida",
-              "href": "route:customSearch",
-              "solid": true
-            },
             {
               "label": "Parlar amb un assessor",
               "href": "route:contact",

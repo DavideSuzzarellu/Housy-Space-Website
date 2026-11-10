@@ -6,7 +6,7 @@ const PAGES = [
   ["/es/servicios/asesoramiento-juridico-fiscal", "Asesoramiento jurídico y fiscal"],
   ["/es/nosotros", "Mucho más que una inmobiliaria"],
   ["/es/contacto", "Hablemos"],
-  ["/es/mi-busqueda", "Busco vivienda"],
+  ["/es/mi-busqueda", "Tu próximo hogar empieza aquí"],
   ["/es/busqueda-a-medida", "Búsqueda a medida"],
   ["/es/valoracion", "La próxima propiedad podría ser la tuya"],
   ["/es/vender", "Vende tu inmueble con criterio."],

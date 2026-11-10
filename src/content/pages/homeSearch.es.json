@@ -2,16 +2,26 @@
   "title": "Busco vivienda · HousySpace",
   "description": "Deja tu búsqueda de vivienda en compra o alquiler: la guardamos en nuestra base de datos y te avisamos cuando entra un inmueble que encaja.",
   "head": {
-    "heading": "Busco vivienda",
+    "heading": "Tu próximo hogar *empieza aquí*",
     "photo": false,
     "items": [
       {
         "kind": "tag",
-        "text": "Compra o alquiler"
+        "text": "Buscar piso en Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Cuéntanos qué necesitas. Guardamos tu búsqueda en nuestra base de datos de demandantes, con los mismos campos que las fichas de los inmuebles, y te avisamos cuando entra algo que encaja."
+        "text": "Cuéntanos qué tipo de vivienda buscas y apúntate a nuestra base de datos. Cuando tengamos una propiedad que encaje con tus preferencias, nos pondremos en contacto contigo para que puedas conocerla antes de que se publique."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Empieza tu búsqueda",
+            "href": "#formulario",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -29,15 +39,15 @@
           "items": [
             {
               "title": "Cuéntanos qué buscas",
-              "text": "Operación, zona, presupuesto y lo que no puede faltar. Ve respondiendo paso a paso. Cuanto más concreto, mejor."
+              "text": "Indícanos dónde te gustaría vivir, tu presupuesto y qué características buscas en tu vivienda."
             },
             {
               "title": "Guardamos tu búsqueda",
-              "text": "Se registra en nuestra base de datos de demandantes, con la misma estructura que la ficha de un inmueble: operación, tipo, zona, precio, superficie, habitaciones y características."
+              "text": "Registramos tus preferencias en nuestra base de datos para identificar viviendas que puedan encajar."
             },
             {
-              "title": "Te avisamos y te acompañamos",
-              "text": "Cuando entra un inmueble que encaja, un asesor te avisa. Si quieres, te acompañamos en las visitas y en todo el proceso."
+              "title": "Te avisamos antes",
+              "text": "Si recibimos una vivienda que encaja con tu búsqueda, te contactamos antes de publicarla."
             }
           ]
         }
@@ -50,11 +60,11 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Tu búsqueda"
+          "text": "Tu búsqueda de vivienda *en Barcelona*"
         },
         {
           "kind": "lead",
-          "text": "Rellena lo que sepas; lo demás lo afinamos juntos. Los campos marcados con * son obligatorios."
+          "text": "Comprar o alquilar vivienda en Barcelona con asesoramiento inmobiliario personalizado. Los campos marcados con * son obligatorios."
         },
         {
           "kind": "form",
@@ -1004,21 +1014,16 @@
       "band": false,
       "items": [
         {
-          "kind": "h3",
-          "text": "¿Prefieres que busquemos por ti?"
+          "kind": "h2",
+          "text": "Encontrar casa es importante. *Hacerlo bien, todavía más*"
         },
         {
           "kind": "p",
-          "text": "Con la búsqueda a medida, un asesor de referencia trabaja tu búsqueda de principio a fin."
+          "text": "Sabemos que cada búsqueda es diferente. Si prefieres contarnos personalmente qué necesitas, estamos aquí para escucharte y ayudarte."
         },
         {
           "kind": "buttons",
           "items": [
-            {
-              "label": "Búsqueda a medida",
-              "href": "route:customSearch",
-              "solid": true
-            },
             {
               "label": "Hablar con un asesor",
               "href": "route:contact",
