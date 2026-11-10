@@ -21,9 +21,18 @@
   },
   "sections": [
     {
+      "id": "formas",
       "surface": "stone",
       "band": false,
       "items": [
+        {
+          "kind": "h2",
+          "text": "Elige cómo hablar con nosotros"
+        },
+        {
+          "kind": "lead",
+          "text": "Puedes llamarnos, escribirnos o venir a vernos a la oficina. Usa la forma que te resulte más cómoda."
+        },
         {
           "kind": "buttons",
           "items": [
@@ -48,7 +57,14 @@
               "solid": false
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Cuéntanos qué necesitas"
@@ -150,7 +166,14 @@
             }
           ],
           "mode": "whatsapp"
-        },
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "surface": "stone",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Preguntas frecuentes"

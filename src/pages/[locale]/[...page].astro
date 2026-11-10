@@ -23,6 +23,7 @@ import {
   type EditorialKey,
 } from "@/features/pages/application/pages";
 import { getServiceCards } from "@/features/pages/application/serviceCards";
+import ContactView from "@/features/agency/ui/ContactView.astro";
 import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
 import ServiceView from "@/features/pages/ui/ServiceView.astro";
@@ -262,6 +263,8 @@ const crumbs = [
       serviceCards={aboutServiceCards}
       crumbs={crumbs}
     />
+  ) : target.view === "editorial" && target.key === "contact" && editorial !== undefined ? (
+    <ContactView locale={locale} content={editorial.content} crumbs={crumbs} />
   ) : target.view === "service" && editorial !== undefined ? (
     <ServiceView
       locale={locale}

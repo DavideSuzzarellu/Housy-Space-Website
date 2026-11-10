@@ -21,9 +21,18 @@
   },
   "sections": [
     {
+      "id": "formas",
       "surface": "stone",
       "band": false,
       "items": [
+        {
+          "kind": "h2",
+          "text": "Choose how to talk to us"
+        },
+        {
+          "kind": "lead",
+          "text": "You can call us, write to us or come and see us at the office. Use whichever way suits you best."
+        },
         {
           "kind": "buttons",
           "items": [
@@ -48,7 +57,14 @@
               "solid": false
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Tell us what you need"
@@ -150,7 +166,14 @@
             }
           ],
           "mode": "whatsapp"
-        },
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "surface": "stone",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Frequently asked questions"

@@ -21,9 +21,18 @@
   },
   "sections": [
     {
+      "id": "formas",
       "surface": "stone",
       "band": false,
       "items": [
+        {
+          "kind": "h2",
+          "text": "Tria com parlar amb nosaltres"
+        },
+        {
+          "kind": "lead",
+          "text": "Pots trucar-nos, escriure'ns o venir a veure'ns a l'oficina. Fes servir la manera que et resulti més còmoda."
+        },
         {
           "kind": "buttons",
           "items": [
@@ -48,7 +57,14 @@
               "solid": false
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Explica'ns què necessites"
@@ -150,7 +166,14 @@
             }
           ],
           "mode": "whatsapp"
-        },
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "surface": "stone",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Preguntes freqüents"
