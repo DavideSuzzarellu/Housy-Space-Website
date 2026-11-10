@@ -9,6 +9,13 @@ import millaImg from "@/assets/nosotros/ill-milla.webp";
 import difImg from "@/assets/nosotros/ill-diferencia.webp";
 import compImg from "@/assets/nosotros/ill-compromiso.webp";
 import colabImg from "@/assets/nosotros/ill-colaboraciones.webp";
+import WhereWeAre from "@/features/agency/ui/WhereWeAre.astro";
+import {
+  CONTACT_PHONE,
+  COMPANY_EMAIL,
+  phoneDisplay,
+  telHref,
+} from "@/features/agency/domain/contact";
 import AboutSection from "@/features/agency/ui/AboutSection.astro";
 import type { PageContent, PageItem } from "@/features/pages/application/pages";
 import type { ServiceCard } from "@/features/pages/application/serviceCards";
@@ -57,8 +64,6 @@ const timelineItem =
 const narrativeItems = timelineIdx >= 0 ? historiaItems.slice(timelineIdx + 1) : historiaItems;
 
 const allServices = [...serviceCards.main, ...serviceCards.others];
-
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.city}`)}`;
 
 const NAV_SECTIONS = [
   { id: "quienes-somos", label: ta.inPageNav.whoWeAre },
@@ -330,51 +335,37 @@ const NAV_SECTIONS = [
       <h2 id="about-where-heading" class="mb-8 text-[clamp(1.5rem,3.6vw,2.5rem)]">
         {ta.inPageNav.whereWeAre}
       </h2>
-      <div class="grid gap-10 md:grid-cols-2">
-        <div class="space-y-6">
-          <div class="border-t border-line pt-4">
-            <p class="mb-1 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
-              {ta.whereWeAre.addressLabel.toUpperCase()}
-            </p>
-            <address class="not-italic text-fg">
-              <p>{COMPANY.address.street}</p>
-              <p>
-                {COMPANY.address.postalCode} {COMPANY.address.city}
-              </p>
-            </address>
-          </div>
-          <div class="border-t border-line pt-4">
-            <p class="mb-1 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
-              {ta.whereWeAre.hoursLabel.toUpperCase()}
-            </p>
-            <p class="text-fg">{t.footer.hours}</p>
-          </div>
-          <div class="flex gap-3 pt-2">
-            <Button href={mapsUrl} variant="outline" external>
-              {ta.whereWeAre.howToGet}
-            </Button>
-          </div>
-        </div>
-
-        <div class="space-y-2">
-          <div class="border-t border-line pt-4">
-            <p class="mb-3 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
-              {ta.whereWeAre.companyDataLabel.toUpperCase()}
-            </p>
-            <dl class="space-y-1 text-sm text-muted">
-              <div>
-                <dt class="inline font-medium text-fg">{COMPANY.legalName}</dt>
-              </div>
-              <div>
-                <dt class="inline">{t.footer.taxIdLabel}</dt>
-                <dd class="inline">{COMPANY.taxId}</dd>
-              </div>
-              <div>
-                <dt class="inline">{t.footer.aicatLabel}</dt>
-                <dd class="inline">AICAT nº {COMPANY.aicatNumber}</dd>
-              </div>
-            </dl>
-          </div>
+      <WhereWeAre locale={locale} />
+      <div class="mt-10">
+        <div class="border-t border-line pt-4">
+          <p class="mb-3 text-[0.6875rem] font-semibold tracking-[0.16em] text-accent">
+            {ta.whereWeAre.companyDataLabel.toUpperCase()}
+          </p>
+          <dl class="space-y-1 text-sm text-muted">
+            <div>
+              <dt class="inline font-medium text-fg">{COMPANY.legalName}</dt>
+            </div>
+            <div>
+              <dt class="inline">{t.footer.taxIdLabel}</dt>
+              <dd class="inline">{COMPANY.taxId}</dd>
+            </div>
+            <div>
+              <dt class="inline">{t.footer.aicatLabel}</dt>
+              <dd class="inline">AICAT nº {COMPANY.aicatNumber}</dd>
+            </div>
+            <div>
+              <dt class="inline">{t.contact.phoneLabel}:</dt>
+              <dd class="inline">
+                <a href={telHref(CONTACT_PHONE)}>{phoneDisplay(CONTACT_PHONE)}</a>
+              </dd>
+            </div>
+            <div>
+              <dt class="inline">{t.contact.emailLabel}:</dt>
+              <dd class="inline">
+                <a href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
     </Container>

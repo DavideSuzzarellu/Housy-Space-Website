@@ -4,6 +4,17 @@ import { groupItems } from "@/features/pages/application/pages";
 import PageItems from "@/features/pages/ui/PageItems.astro";
 import type { Locale } from "@/shared/i18n/config";
 import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import {
+  COMPANY_EMAIL,
+  CONTACT_PHONE,
+  phoneDisplay,
+  SOCIAL_LINKS,
+} from "@/features/agency/domain/contact";
+import { COMPANY } from "@/features/agency/domain/company";
+import WhereWeAre from "@/features/agency/ui/WhereWeAre.astro";
+import { getDictionary } from "@/shared/i18n";
+import Button from "@/shared/ui/atoms/Button.astro";
+import SocialLinks from "@/shared/ui/molecules/SocialLinks.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import PaperHero from "@/shared/ui/organisms/PaperHero.astro";
 
@@ -19,6 +30,7 @@ interface Props {
 }
 
 const { locale, content, crumbs } = Astro.props;
+const t = getDictionary(locale);
 
 const kicker = content.head.items.find((item) => item.kind === "tag")?.text;
 const subtitle = content.head.items.find((item) => item.kind === "lead")?.text;
@@ -29,14 +41,19 @@ const pick = <K extends PageItem["kind"]>(items: readonly PageItem[], kind: K) =
 
 const formas = section("formas")?.items ?? [];
 const formulario = section("formulario")?.items ?? [];
+const donde = section("donde-estamos");
 const preguntas = section("preguntas");
 
-const buttons = pick(formas, "buttons");
+// Each way of contact is a `card` item: h3 title, p description, buttons[0] = its action.
+const cards = formas.filter(
+  (item): item is Extract<PageItem, { kind: "card" }> => item.kind === "card",
+);
 const ICONS: Record<string, string> = {
   tel: "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z",
   mailto: "M3 6h18v12H3zM3 7l9 6 9-6",
   chat: "M4 5h16v11H9l-5 4z",
   form: "M4 20h4L19 9l-4-4L4 16z",
+  pin: "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
 };
 const kindOf = (href: string) =>
   href.startsWith("tel:")
@@ -45,13 +62,18 @@ const kindOf = (href: string) =>
       ? "mailto"
       : href.includes("wa.me")
         ? "chat"
-        : "form";
-const valueOf = (href: string) =>
-  href.startsWith("tel:")
-    ? href.slice(4).replace(/^\+34(\d{3})(\d{3})(\d{3})$/, "+34 $1 $2 $3")
-    : href.startsWith("mailto:")
-      ? href.slice(7)
-      : "";
+        : href === "#donde-estamos"
+          ? "pin"
+          : "form";
+// Values come from the company data, never retyped in the content files.
+const valueOf = (kind: string): string[] =>
+  kind === "tel" || kind === "chat"
+    ? [phoneDisplay(CONTACT_PHONE)]
+    : kind === "mailto"
+      ? [COMPANY_EMAIL]
+      : kind === "pin"
+        ? [COMPANY.address.street, `${COMPANY.address.postalCode} ${COMPANY.address.city}`]
+        : [];
 ---
 
 <div data-contact-view>
@@ -69,59 +91,79 @@ const valueOf = (href: string) =>
       <div class="mb-[clamp(1.25rem,2.6vw,2.125rem)] max-w-[64ch]">
         <PageItems
           locale={locale}
-          units={groupItems(formas.filter((item) => item.kind !== "buttons"))}
+          units={groupItems(formas.filter((item) => item.kind === "h2" || item.kind === "lead"))}
         />
       </div>
-      {buttons !== undefined && (
-        <ul class="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4" role="list">
-          {buttons.items.map((button) => {
-            const kind = kindOf(button.href);
-            const value = valueOf(button.href);
-            return (
-              <li class="group relative flex min-w-0 flex-col gap-2.5 border border-line-strong bg-canvas p-[clamp(1.25rem,2vw,1.75rem)]">
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-[-1px] top-[-1px] h-[3px] origin-left scale-x-0 bg-turquoise transition-transform duration-[450ms] group-focus-within:scale-x-100 group-hover:scale-x-100"
-                ></span>
-                <span
-                  aria-hidden="true"
-                  class="grid size-12 place-items-center bg-card text-accent"
+      <ul class="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4" role="list">
+        {cards.map((card) => {
+          const title = pick(card.items, "h3")?.text;
+          const text = pick(card.items, "p")?.text;
+          const action = pick(card.items, "buttons")?.items[0];
+          if (action === undefined) return null;
+          const kind = kindOf(action.href);
+          return (
+            <li class="flex min-w-0 flex-col gap-2.5 border border-line-strong bg-canvas p-[clamp(1.25rem,2vw,1.75rem)]">
+              <span aria-hidden="true" class="grid size-12 place-items-center bg-card text-accent">
+                <svg
+                  viewBox="0 0 24 24"
+                  class="size-[26px]"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    class="size-[26px]"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d={ICONS[kind]} />
-                  </svg>
-                </span>
-                <h3 class="mt-1.5 text-[clamp(0.9375rem,1.2vw,1.0625rem)] leading-[1.3] tracking-[0.06em]">
-                  <a
-                    href={resolveContentHref(button.href, locale)}
-                    class="after:absolute after:inset-0 after:content-['']"
-                    {...(button.href.startsWith("https://")
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                  >
-                    {button.label}
-                  </a>
-                </h3>
-                {value !== "" && (
-                  <p class="text-[0.8125rem] font-bold tracking-[0.05em] [overflow-wrap:anywhere]">
-                    {value}
-                  </p>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      )}
+                  <path d={ICONS[kind]} />
+                </svg>
+              </span>
+              <h3 class="mt-1.5 text-[clamp(0.9375rem,1.2vw,1.0625rem)] leading-[1.3] tracking-[0.06em]">
+                {title}
+              </h3>
+              <p class="text-[0.8125rem] text-muted">{text}</p>
+              <p class="text-[0.8125rem] font-bold tracking-[0.05em] [overflow-wrap:anywhere]">
+                {valueOf(kind).map((line) => (
+                  <span class="block">{line}</span>
+                ))}
+              </p>
+              <div class="mt-auto pt-2">
+                <Button
+                  href={resolveContentHref(action.href, locale)}
+                  variant={action.solid ? "solid" : "outline"}
+                  external={action.href.startsWith("https://")}
+                >
+                  {action.label}
+                </Button>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
+        <PageItems locale={locale} units={groupItems(formas.filter((item) => item.kind === "p"))} />
+        <div class="flex items-center gap-4">
+          <span class="text-[0.6875rem] font-bold tracking-[0.16em] text-accent">
+            {t.contact.followUs}
+          </span>
+          <SocialLinks
+            links={SOCIAL_LINKS}
+            label={t.contact.socialLabel}
+            newTabLabel={t.a11y.opensInNewTab}
+          />
+        </div>
+      </div>
     </Container>
   </section>
+
+  {donde !== undefined && (
+    <section id="donde-estamos" class="bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
+      <Container>
+        <div class="mb-[clamp(1.25rem,2.6vw,2.125rem)] max-w-[64ch]">
+          <PageItems locale={locale} units={groupItems(donde.items)} />
+        </div>
+        <WhereWeAre locale={locale} />
+      </Container>
+    </section>
+  )}
 
   <section id="formulario" class="bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
     <Container>

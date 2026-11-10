@@ -62,6 +62,9 @@ const es = {
     valuation: "Valoración inmobiliaria",
   } satisfies Record<ServiceKey, string>,
   contact: {
+    phoneLabel: "Teléfono",
+    emailLabel: "Correo electrónico",
+    followUs: "Síguenos",
     call: "Llamar",
     callWithNumber: "Llamar · {phone}",
     whatsapp: "WhatsApp",
@@ -530,6 +533,10 @@ const es = {
       hoursLabel: "Horario",
       howToGet: "Cómo llegar",
       mapsLabel: "Ver en Google Maps",
+      mapKicker: "Mapa de Google",
+      viewMap: "Ver el mapa aquí",
+      mapNote: "Al cargar el mapa, tu navegador se conecta con Google.",
+      openMaps: "Abrir en Google Maps",
       companyDataLabel: "Datos de la empresa",
     },
     sector: {

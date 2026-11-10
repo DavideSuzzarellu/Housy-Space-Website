@@ -57,6 +57,9 @@ const ca = {
     valuation: "Valoració immobiliària",
   },
   contact: {
+    phoneLabel: "Telèfon",
+    emailLabel: "Correu electrònic",
+    followUs: "Segueix-nos",
     call: "Truca",
     callWithNumber: "Truca · {phone}",
     whatsapp: "WhatsApp",
@@ -516,6 +519,10 @@ const ca = {
       hoursLabel: "Horari",
       howToGet: "Com arribar",
       mapsLabel: "Veure a Google Maps",
+      mapKicker: "Mapa de Google",
+      viewMap: "Veure el mapa aquí",
+      mapNote: "En carregar el mapa, el teu navegador es connecta amb Google.",
+      openMaps: "Obrir a Google Maps",
       companyDataLabel: "Dades de l'empresa",
     },
     sector: {

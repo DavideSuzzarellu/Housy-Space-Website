@@ -1,0 +1,82 @@
+---
+import { COMPANY } from "@/features/agency/domain/company";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Button from "@/shared/ui/atoms/Button.astro";
+
+/**
+ * "Where we are" block of the reference (about and contact pages): address, hours and directions
+ * beside a Google map that only loads when the visitor asks for it (a closed `<details>` keeps the
+ * lazy iframe unrendered, so no request reaches Google before the click and no script is needed).
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const tw = t.about.whereWeAre;
+
+const place = `${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.city}`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(place)}`;
+const searchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
+const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(place)}&z=17&hl=${locale}&output=embed`;
+const LABEL = "mb-1 text-[0.6875rem] font-bold tracking-[0.16em] text-accent";
+---
+
+<div class="grid items-stretch gap-[clamp(1.5rem,4vw,3rem)] md:grid-cols-2">
+  <dl class="space-y-6">
+    <div class="border-t border-line pt-4">
+      <dt class={LABEL}>{tw.addressLabel}</dt>
+      <dd>
+        <address class="not-italic text-fg">
+          <p>{COMPANY.address.street}</p>
+          <p>
+            {COMPANY.address.postalCode} {COMPANY.address.city}
+          </p>
+        </address>
+      </dd>
+    </div>
+    <div class="border-t border-line pt-4">
+      <dt class={LABEL}>{tw.hoursLabel}</dt>
+      <dd class="text-fg">{t.footer.hours}</dd>
+    </div>
+    <div class="pt-2">
+      <Button href={directionsUrl} variant="solid" external>
+        {tw.howToGet}
+      </Button>
+    </div>
+  </dl>
+
+  <div>
+    <div class="relative min-h-72 border border-line-strong bg-card">
+      <details class="h-full">
+        <summary class="flex min-h-72 cursor-pointer list-none flex-col items-start justify-center gap-3 p-[clamp(1.25rem,3vw,2rem)] [&::-webkit-details-marker]:hidden">
+          <span class={LABEL}>{tw.mapKicker}</span>
+          <span class="text-fg">{place}</span>
+          <span class="border border-fg px-5 py-3 text-[0.6875rem] font-medium tracking-[0.14em] text-fg">
+            {tw.viewMap}
+          </span>
+          <span class="text-xs text-muted">{tw.mapNote}</span>
+        </summary>
+        <iframe
+          src={embedUrl}
+          title={tw.mapKicker}
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          class="absolute inset-0 size-full border-0"
+        ></iframe>
+      </details>
+    </div>
+    <p class="mt-3 text-xs">
+      <a
+        href={searchUrl}
+        class="text-accent underline underline-offset-2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {tw.openMaps}
+      </a>
+    </p>
+  </div>
+</div>

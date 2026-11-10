@@ -34,29 +34,115 @@
           "text": "Puoi chiamarci, scriverci o venire a trovarci in ufficio. Usa la modalità che preferisci."
         },
         {
-          "kind": "buttons",
+          "kind": "card",
           "items": [
             {
-              "label": "Chiama",
-              "href": "tel:+34613084804",
-              "solid": true
+              "kind": "h3",
+              "text": "Chiamaci"
             },
             {
-              "label": "WhatsApp",
-              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
-              "solid": false
+              "kind": "p",
+              "text": "Parla direttamente con un consulente."
             },
             {
-              "label": "Email",
-              "href": "mailto:info@housyspace.com",
-              "solid": false
-            },
-            {
-              "label": "Scrivici",
-              "href": "#formulario",
-              "solid": false
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Chiama",
+                  "href": "tel:+34613084804",
+                  "solid": true
+                }
+              ]
             }
           ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "WhatsApp"
+            },
+            {
+              "kind": "p",
+              "text": "Raccontaci di cosa hai bisogno dal tuo cellulare."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Apri WhatsApp",
+                  "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Email"
+            },
+            {
+              "kind": "p",
+              "text": "Per scriverci con calma e con più dettagli."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Scrivi un'email",
+                  "href": "mailto:info@housyspace.com",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Vieni a trovarci"
+            },
+            {
+              "kind": "p",
+              "text": "Dal lunedì al venerdì, dalle 10:00 alle 19:00."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Come arrivare",
+                  "href": "#donde-estamos",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Preferisci lasciarci la tua richiesta per iscritto? [Compila il modulo](#formulario)."
+        }
+      ]
+    },
+    {
+      "id": "donde-estamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Dove siamo"
+        },
+        {
+          "kind": "lead",
+          "text": "Il nostro ufficio è a Barcellona. Puoi venire a trovarci durante l'orario d'ufficio."
         }
       ]
     },
@@ -72,6 +158,39 @@
         {
           "kind": "lead",
           "text": "Un consulente di HousySpace ti seguirà personalmente."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "È obbligatorio solo ciò che è contrassegnato con *: nome, telefono e la tua richiesta."
+            },
+            {
+              "title": "",
+              "text": "Il resto ci aiuta a seguirti meglio, ma è facoltativo."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Preferisci parlare adesso?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            }
+          ]
         },
         {
           "kind": "form",

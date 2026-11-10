@@ -34,29 +34,115 @@
           "text": "You can call us, write to us or come and see us at the office. Use whichever way suits you best."
         },
         {
-          "kind": "buttons",
+          "kind": "card",
           "items": [
             {
-              "label": "Call",
-              "href": "tel:+34613084804",
-              "solid": true
+              "kind": "h3",
+              "text": "Call us"
             },
             {
-              "label": "WhatsApp",
-              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
-              "solid": false
+              "kind": "p",
+              "text": "Speak directly with an adviser."
             },
             {
-              "label": "Email",
-              "href": "mailto:info@housyspace.com",
-              "solid": false
-            },
-            {
-              "label": "Tell us",
-              "href": "#formulario",
-              "solid": false
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Call",
+                  "href": "tel:+34613084804",
+                  "solid": true
+                }
+              ]
             }
           ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "WhatsApp"
+            },
+            {
+              "kind": "p",
+              "text": "Tell us what you need from your phone."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Open WhatsApp",
+                  "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Email"
+            },
+            {
+              "kind": "p",
+              "text": "To write to us calmly and in more detail."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Write an email",
+                  "href": "mailto:info@housyspace.com",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Come and see us"
+            },
+            {
+              "kind": "p",
+              "text": "Monday to Friday, from 10:00 to 19:00."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Get directions",
+                  "href": "#donde-estamos",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Would you rather leave your enquiry in writing? [Fill in the form](#formulario)."
+        }
+      ]
+    },
+    {
+      "id": "donde-estamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Where we are"
+        },
+        {
+          "kind": "lead",
+          "text": "Our office is in Barcelona. You can come and see us during office hours."
         }
       ]
     },
@@ -72,6 +158,39 @@
         {
           "kind": "lead",
           "text": "A HousySpace adviser will personally attend to you."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Only what is marked with * is required: name, phone and your enquiry."
+            },
+            {
+              "title": "",
+              "text": "The rest helps us serve you better, but it is optional."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Would you rather talk now?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            }
+          ]
         },
         {
           "kind": "form",

@@ -57,6 +57,9 @@ const en = {
     valuation: "Property valuation",
   },
   contact: {
+    phoneLabel: "Phone",
+    emailLabel: "Email",
+    followUs: "Follow us",
     call: "Call",
     callWithNumber: "Call · {phone}",
     whatsapp: "WhatsApp",
@@ -518,6 +521,10 @@ const en = {
       hoursLabel: "Hours",
       howToGet: "How to get here",
       mapsLabel: "View on Google Maps",
+      mapKicker: "Google map",
+      viewMap: "See the map here",
+      mapNote: "When the map loads, your browser connects to Google.",
+      openMaps: "Open in Google Maps",
       companyDataLabel: "Company information",
     },
     sector: {

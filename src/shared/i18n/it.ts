@@ -57,6 +57,9 @@ const it = {
     valuation: "Valutazione immobiliare",
   },
   contact: {
+    phoneLabel: "Telefono",
+    emailLabel: "E-mail",
+    followUs: "Seguici",
     call: "Chiama",
     callWithNumber: "Chiama · {phone}",
     whatsapp: "WhatsApp",
@@ -519,6 +522,10 @@ const it = {
       hoursLabel: "Orari",
       howToGet: "Come arrivare",
       mapsLabel: "Vedi su Google Maps",
+      mapKicker: "Mappa di Google",
+      viewMap: "Vedi la mappa qui",
+      mapNote: "Al caricamento della mappa, il tuo browser si connette a Google.",
+      openMaps: "Apri in Google Maps",
       companyDataLabel: "Dati aziendali",
     },
     sector: {
