@@ -13,10 +13,13 @@ interface Props {
 
 const { locale, field } = Astro.props;
 const CONTROL =
-  "min-h-11 w-full border border-line bg-canvas px-3.5 py-2.5 text-sm text-fg transition-colors hover:border-muted";
-const LABEL = "flex flex-col gap-1.5 text-xs tracking-[0.06em] text-muted";
+  "min-h-13.5 w-full border border-line-strong bg-transparent px-4 py-2.5 text-[0.9375rem] font-normal tracking-[0.02em] text-fg transition-colors hover:border-petrol focus:border-petrol";
+const LABEL =
+  "flex flex-col gap-2 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.14em] text-fg";
 const CHIP =
-  "relative flex min-h-11 cursor-pointer flex-col justify-center border border-line px-3.5 py-2 text-xs transition-colors hover:border-muted has-checked:border-fg has-checked:bg-fg has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-accent";
+  "relative flex min-h-10.5 cursor-pointer flex-col justify-center border border-line-strong px-4 py-2 text-[0.6875rem] tracking-[0.12em] transition-colors hover:border-petrol has-checked:border-petrol has-checked:bg-petrol has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-accent";
+/** Single-choice answers (buy / rent) are big cards, as in the reference. */
+const CARD = "min-h-28 items-center text-center text-sm! tracking-[0.16em]!";
 ---
 
 {field.kind === "field" && field.type === "consent" && (
@@ -75,9 +78,9 @@ const CHIP =
     class="sm:col-span-2"
   >
     {field.label !== undefined && <p class="mb-2 text-xs text-muted">{field.label}</p>}
-    <div class="flex flex-wrap gap-2">
+    <div class:list={["flex flex-wrap gap-2", field.radio && "grid grid-cols-2 gap-3"]}>
       {field.options.map((option) => (
-        <label class={CHIP}>
+        <label class:list={[CHIP, field.radio && CARD]}>
           <input
             type={field.radio ? "radio" : "checkbox"}
             name={field.name}

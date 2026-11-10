@@ -37,15 +37,15 @@ const isGrouped = fields.some((field) => field.kind === "group");
   data-subject={t.emailSubject}
   data-sent={mode === "whatsapp" ? t.sentWhatsapp : t.sentEmail}
   novalidate
-  class:list={["mt-6 grid gap-5", !isGrouped && "sm:grid-cols-2"]}
+  class:list={["mt-6 grid gap-5", isGrouped ? "max-w-200" : "sm:grid-cols-2"]}
 >
   {fields.map((field) =>
     field.kind === "group" ? (
-      <fieldset class="grid gap-4 border-t border-line pt-6 sm:grid-cols-2">
-        <legend class="float-left mb-1 w-full text-base font-bold text-fg sm:col-span-2">
+      <fieldset class="grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
+        <legend class="float-left mb-2 w-full text-[clamp(1.5rem,3vw,2.375rem)] leading-[1.12] font-bold text-fg sm:col-span-2">
           {field.title}
           {field.hint !== undefined && (
-            <small class="mt-1 block text-xs font-normal tracking-[0.04em] text-muted">
+            <small class="mt-2 block text-xs leading-[1.7] font-normal tracking-[0.04em] text-muted">
               {field.hint}
             </small>
           )}
