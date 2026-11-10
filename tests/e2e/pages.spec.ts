@@ -154,3 +154,21 @@ test("district barrios appear only after choosing the district", async ({ page }
   await page.locator('input[name="distrito"][value="ciutat-vella"]').check({ force: true });
   await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
 });
+
+test("the about page keeps its paper head, its in-page anchors and 'where we are'", async ({
+  page,
+}) => {
+  await page.goto("/es/nosotros");
+  await expect(page.locator("[data-page-head] img")).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  await page.goto("/es/nosotros#donde-estamos");
+  await expect(page.locator("#donde-estamos")).toBeInViewport();
+});
+
+test("the contact page lists the four contact ways above the form", async ({ page }) => {
+  await page.goto("/es/contacto");
+  await expect(page.locator("#formas li")).toHaveCount(4);
+  await expect(page.locator("#formulario #cf")).toBeVisible();
+  await page.locator("#formas a", { hasText: "Cuéntanos" }).click();
+  await expect(page.locator("#formulario")).toBeInViewport();
+});
