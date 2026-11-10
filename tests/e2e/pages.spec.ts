@@ -121,12 +121,21 @@ test("untranslated prose stays out of the index and is marked as Spanish", async
   await expect(page.locator("[data-page-view]")).toHaveAttribute("lang", "es");
 });
 
-test("the map recolours by metric and search filters the table", async ({ page }) => {
+test("the district map recolours by metric, shows a district and search filters the table", async ({
+  page,
+}) => {
   await page.goto("/es/vivir-en-barcelona");
-  const first = page.locator("path[data-slug]").first();
-  const before = await first.evaluate((node) => node.style.fill);
-  await page.locator('[data-metric="density"]').click();
-  await expect.poll(() => first.evaluate((node) => node.style.fill)).not.toBe(before);
+  const first = page.locator(".zs").first();
+  const before = await first.evaluate((node) => getComputedStyle(node).fill);
+  await page.locator('label[for="zm-m-density"]').click();
+  await expect.poll(() => first.evaluate((node) => getComputedStyle(node).fill)).not.toBe(before);
+  await page.locator('label[for="zd-eixample"]').click();
+  await expect(page.locator(".zp-eixample")).toBeVisible();
+  await expect(page.locator(".zp-all")).toBeHidden();
+  await expect(page.locator(".zk-eixample")).toHaveAttribute(
+    "href",
+    /\/vivir-en-barcelona\/eixample$/,
+  );
   await page.locator("[data-barrio-search]").fill("verdun");
   await expect(page.locator("[data-barrio-row]:visible")).toHaveCount(1);
 });

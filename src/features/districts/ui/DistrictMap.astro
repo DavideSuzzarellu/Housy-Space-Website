@@ -1,0 +1,394 @@
+---
+import {
+  buildDistrictMap,
+  LIGHT_FROM,
+  METRIC_KEYS,
+  TONES,
+  type MapMetric,
+  type MetricKey,
+} from "@/features/districts/application/districtMap";
+import type { MarketData } from "@/features/districts/infrastructure/marketSchema";
+import shapes from "@/features/districts/infrastructure/shapes.json";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { figureFormat, formatMessage } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
+
+/**
+ * Living in Barcelona index map: 10 districts, server-rendered SVG, no JavaScript. The metric tabs and
+ * the district chips are radio inputs; `:has()` shows the matching panel, colours and legend.
+ */
+interface Props {
+  locale: Locale;
+  market: MarketData;
+}
+
+const { locale, market } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.zones;
+const model = buildDistrictMap(market, shapes);
+const format = figureFormat(locale);
+const METRICS: Readonly<Record<MetricKey, { tab: string; label: string; unit: string }>> = {
+  sale: { tab: t.metricSale, label: t.saleLabel, unit: t.saleUnit },
+  rent: { tab: t.metricRent, label: t.rentLabel, unit: t.rentUnit },
+  density: { tab: t.metricDensity, label: t.densityLabel, unit: t.densityUnit },
+};
+const total = model.districts.length;
+const show = (value: number | null): string =>
+  value === null ? dictionary.province.notAvailable : format.format(value);
+const tone = (metric: MapMetric): string => (metric.tone < 0 ? "nd" : String(metric.tone));
+const inkOf = (metric: MapMetric): string => (metric.tone >= LIGHT_FROM ? "canvas" : "fg");
+const rampStops = Array.from({ length: TONES }, (_, i) => i);
+const people = format.format(model.population);
+/** One rule set per district: `:has()` can only reach what its radio id names. */
+const districtCss = model.districts
+  .map(
+    ({ slug }) =>
+      `.zm:has(#zd-${slug}:checked) .zp-${slug}{display:block}.zm:has(#zd-${slug}:checked) .zp-all{display:none}.zm:has(#zd-${slug}:checked) .zo-${slug}{opacity:1}.zm:has(.zk-${slug}:focus-visible) .zo-${slug}{opacity:1;stroke:var(--color-accent)}`,
+  )
+  .join("");
+const sorted = (key: MetricKey) =>
+  [...model.districts].sort((a, b) => (b.metrics[key].value ?? 0) - (a.metrics[key].value ?? 0));
+---
+
+<div class="zm min-[1280px]:-mx-20" data-district-map>
+  <style is:inline set:html={districtCss}></style>
+  <div class="mb-6 flex flex-wrap items-end justify-between gap-5">
+    <div>
+      <slot />
+    </div>
+    <fieldset class="m-0 flex border-0 p-0">
+      <legend class="sr-only">{t.metricLabel}</legend>
+      {METRIC_KEYS.map((key, index) => (
+        <span class="relative -ml-px first:ml-0">
+          <input
+            type="radio"
+            name="zm-metric"
+            id={`zm-m-${key}`}
+            checked={index === 0}
+            class="peer absolute inset-0 size-full cursor-pointer opacity-0"
+          />
+          <label
+            for={`zm-m-${key}`}
+            class="block min-h-11 border border-line-strong px-4 py-3.5 text-[0.6875rem] tracking-[0.14em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+          >
+            {METRICS[key].tab}
+          </label>
+        </span>
+      ))}
+    </fieldset>
+  </div>
+
+  <fieldset class="m-0 mb-6 flex flex-wrap gap-2 border-0 p-0">
+    <legend class="sr-only">{t.chooseZone}</legend>
+    {[{ slug: "all", name: t.allCity }, ...model.districts].map((zone, index) => (
+      <span class="relative">
+        <input
+          type="radio"
+          name="zm-district"
+          id={`zd-${zone.slug}`}
+          checked={index === 0}
+          class="peer absolute inset-0 size-full cursor-pointer opacity-0"
+        />
+        <label
+          for={`zd-${zone.slug}`}
+          class="block min-h-9 border border-line-strong px-3.5 py-2.5 text-[0.65625rem] tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+        >
+          {zone.name}
+        </label>
+      </span>
+    ))}
+  </fieldset>
+
+  <div class="grid gap-x-[clamp(2rem,4.4vw,4rem)] gap-y-8 min-[760px]:grid-cols-[minmax(0,18.75rem)_minmax(0,1fr)]">
+    <div class="relative min-[760px]:col-start-2 min-[760px]:row-start-1">
+      <div
+        role="group"
+        aria-label={t.mapLabel}
+        class="zm-stage relative mx-auto w-[min(100%,43rem)]"
+        style={`aspect-ratio:${model.viewBox.width}/${model.viewBox.height}`}
+      >
+        <svg
+          viewBox={`0 0 ${model.viewBox.width} ${model.viewBox.height}`}
+          class="absolute inset-0 size-full"
+        >
+          {model.districts.map((district) => (
+            <a
+              href={getLocalizedPath("district", locale, { district: district.slug })}
+              aria-label={district.name}
+              class={`zk zk-${district.slug}`}
+            >
+              <path
+                d={district.d}
+                class="zs"
+                style={`--sale:var(--ramp-${tone(district.metrics.sale)});--rent:var(--ramp-${tone(district.metrics.rent)});--density:var(--ramp-${tone(district.metrics.density)})`}
+              />
+            </a>
+          ))}
+          {model.districts.map((district) => (
+            <path d={district.d} aria-hidden="true" class={`zo zo-${district.slug}`} />
+          ))}
+        </svg>
+        <!-- Names written on the map; the shapes above are the links. -->
+        {model.districts.map((district) => (
+          <span
+            aria-hidden="true"
+            class:list={["zl", !district.fitsWide && "zl-nw", !district.fitsNarrow && "zl-nn"]}
+            style={`left:${district.left.toFixed(2)}%;top:${district.top.toFixed(2)}%;--ink-sale:var(--color-${inkOf(district.metrics.sale)});--ink-rent:var(--color-${inkOf(district.metrics.rent)});--ink-density:var(--color-${inkOf(district.metrics.density)});--halo-sale:var(--color-${inkOf(district.metrics.sale) === "fg" ? "canvas" : "fg"});--halo-rent:var(--color-${inkOf(district.metrics.rent) === "fg" ? "canvas" : "fg"});--halo-density:var(--color-${inkOf(district.metrics.density) === "fg" ? "canvas" : "fg"})`}
+          >
+            {district.lines.map((line, i) => (
+              <>
+                {i > 0 && <br />}
+                {line}
+              </>
+            ))}
+          </span>
+        ))}
+      </div>
+      {METRIC_KEYS.map((key) => (
+        <div
+          data-show={key}
+          class="zg mt-4 w-56 min-[760px]:absolute min-[760px]:bottom-0 min-[760px]:left-0 min-[760px]:mt-0"
+        >
+          <p class="mb-1.5 text-[0.625rem] font-medium">{METRICS[key].label}</p>
+          <div aria-hidden="true" class="flex h-2">
+            {rampStops.map((stop) => (
+              <i class="flex-1" style={`background:var(--ramp-${stop})`} />
+            ))}
+          </div>
+          <p class="mt-1 flex justify-between text-[0.625rem] text-muted">
+            <span>{format.format(model.range[key].min)}</span>
+            <span>
+              {format.format(model.range[key].max)} {METRICS[key].unit}
+            </span>
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <aside
+      aria-live="polite"
+      aria-label={t.mapHint}
+      class="min-[760px]:col-start-1 min-[760px]:row-start-1"
+    >
+      {[
+        {
+          slug: "all",
+          tag: t.cityTag,
+          name: market.city.name,
+          meta: formatMessage(t.cityMeta, {
+            districts: total,
+            barrios: model.barrioCount,
+            people,
+          }),
+          figures: model.city,
+          ranks: null,
+          href: null,
+        },
+        ...model.districts.map((district) => ({
+          slug: district.slug,
+          tag: formatMessage(t.districtTag, { count: district.barrioCount }),
+          name: district.name,
+          meta: formatMessage(t.districtMeta, {
+            barrios: district.barrioCount,
+            people: format.format(district.population),
+          }),
+          figures: {
+            sale: district.metrics.sale,
+            rent: district.metrics.rent,
+            density: district.metrics.density,
+          },
+          ranks: district.metrics,
+          href: getLocalizedPath("district", locale, { district: district.slug }),
+        })),
+      ].map((zone) => (
+        <div class:list={["zp", `zp-${zone.slug}`]} hidden={false}>
+          <p class="mb-1 text-[0.6875rem] tracking-[0.16em] text-accent">{zone.tag}</p>
+          <h2 class="mb-3 text-[clamp(1.75rem,3.2vw,2.875rem)]">{zone.name}</h2>
+          <p class="mb-2 border-t border-line pt-3 text-[0.71875rem] text-muted">{zone.meta}</p>
+          <dl class="m-0">
+            {METRIC_KEYS.map((key) => {
+              const figure = zone.figures[key];
+              return (
+                <div data-on={key} class="zf border-t border-line py-3">
+                  <dt class="text-[0.65625rem] tracking-[0.16em] text-muted">
+                    {METRICS[key].label}
+                  </dt>
+                  <dd class="m-0">
+                    <b class="block text-[2.5rem] leading-none font-bold">{show(figure.value)}</b>
+                    <span class="text-[0.65625rem] tracking-[0.16em] text-muted">
+                      {METRICS[key].unit}
+                      {figure.year !== null && ` · ${figure.year}`}
+                    </span>
+                    {zone.ranks !== null && zone.ranks[key].rank !== null && (
+                      <span class="mt-1 block text-[0.65625rem] tracking-[0.08em] text-muted">
+                        {formatMessage(t.rankDistrict, { rank: zone.ranks[key].rank ?? 0, total })}
+                      </span>
+                    )}
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+          <div class="mt-5 flex flex-wrap gap-3">
+            {zone.href !== null ? (
+              <Button href={zone.href} variant="solid" arrow>
+                {formatMessage(t.discover, { name: zone.name })}
+              </Button>
+            ) : (
+              <>
+                <Button href={getLocalizedPath("valuation", locale)} variant="solid" arrow>
+                  {t.valueHere}
+                </Button>
+                <Button href={getLocalizedPath("sale", locale)} arrow>
+                  {t.searchHere}
+                </Button>
+              </>
+            )}
+          </div>
+        </div>
+      ))}
+      <p class="mt-4 text-xs text-muted">{t.mapHint}</p>
+    </aside>
+  </div>
+
+  <!-- Text alternative of the map: the 10 districts with their figure, ordered by the chosen metric. -->
+  <div class="mt-10 border-t border-line pt-6">
+    {METRIC_KEYS.map((key) => (
+      <div data-show={key}>
+        <h3 class="mb-4 text-[0.75rem] tracking-[0.14em]">
+          {formatMessage(t.byDistrict, { metric: METRICS[key].label, unit: METRICS[key].unit })}
+        </h3>
+        <ol class="m-0 grid list-none gap-x-10 gap-y-2 p-0 min-[760px]:grid-cols-2">
+          {sorted(key).map((district) => (
+            <li class="grid grid-cols-[minmax(0,9rem)_minmax(0,1fr)_4.5rem] items-center gap-3 text-xs">
+              <a
+                href={getLocalizedPath("district", locale, { district: district.slug })}
+                class="hover:text-accent"
+              >
+                {district.name}
+              </a>
+              <span aria-hidden="true" class="block h-2.5 bg-ch-bar">
+                <span
+                  class="block h-full bg-ch-a"
+                  style={`width:${(((district.metrics[key].value ?? 0) / model.range[key].max) * 100).toFixed(1)}%`}
+                />
+              </span>
+              <b class="text-right font-bold">{show(district.metrics[key].value)}</b>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .zm {
+    --ramp-0: var(--color-ramp-0);
+    --ramp-1: var(--color-ramp-1);
+    --ramp-2: var(--color-ramp-2);
+    --ramp-3: var(--color-ramp-3);
+    --ramp-4: var(--color-ramp-4);
+    --ramp-5: var(--color-ramp-5);
+    --ramp-6: var(--color-ramp-6);
+    --ramp-nd: var(--color-ramp-nd);
+  }
+  .zs {
+    fill: var(--sale);
+    /* Boundaries are graphics: muted on paper is 4.9:1. */
+    stroke: var(--color-muted);
+    stroke-width: 0.9;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transition: opacity 0.25s var(--ease-brand, ease-out);
+  }
+  .zs:hover {
+    opacity: 0.78;
+  }
+  .zo {
+    fill: none;
+    stroke: var(--color-fg);
+    stroke-width: 3;
+    stroke-linejoin: round;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .zl {
+    position: absolute;
+    translate: -50% -50%;
+    text-align: center;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink-sale);
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px var(--halo-sale);
+    pointer-events: none;
+  }
+  .zk {
+    outline: none;
+  }
+  .zl-nn {
+    display: none;
+  }
+  @media (min-width: 520px) {
+    .zl {
+      font-size: 0.78125rem;
+    }
+    .zl-nn {
+      display: block;
+    }
+    .zl-nw {
+      display: none;
+    }
+  }
+  [data-show] {
+    display: none;
+  }
+  .zp {
+    display: none;
+  }
+  .zp-all {
+    display: block;
+  }
+  .zo {
+    transition: opacity 0.25s var(--ease-brand, ease-out);
+  }
+  .zm:has(#zm-m-sale:checked) [data-show="sale"],
+  .zm:has(#zm-m-rent:checked) [data-show="rent"],
+  .zm:has(#zm-m-density:checked) [data-show="density"] {
+    display: block;
+  }
+  .zm:has(#zm-m-rent:checked) .zs {
+    fill: var(--rent);
+  }
+  .zm:has(#zm-m-density:checked) .zs {
+    fill: var(--density);
+  }
+  .zm:has(#zm-m-rent:checked) .zl {
+    color: var(--ink-rent);
+    -webkit-text-stroke-color: var(--halo-rent);
+  }
+  .zm:has(#zm-m-density:checked) .zl {
+    color: var(--ink-density);
+    -webkit-text-stroke-color: var(--halo-density);
+  }
+  .zm:has(#zm-m-sale:checked) .zf[data-on="sale"],
+  .zm:has(#zm-m-rent:checked) .zf[data-on="rent"],
+  .zm:has(#zm-m-density:checked) .zf[data-on="density"] {
+    background: var(--color-card);
+    margin-inline: -0.75rem;
+    padding-inline: 0.75rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .zs,
+    .zo {
+      transition: none;
+    }
+  }
+</style>
