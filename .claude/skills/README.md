@@ -12,6 +12,9 @@ Skills for agents working on the HousySpace website. `AGENTS.md` is the single s
 | [`astro-best-practices`](astro-best-practices/SKILL.md) | Zero-JS islands, static vs on-demand rendering, `astro:env` secrets, `Image`/`Picture`, collections via use cases, endpoints, performance | project-authored |
 | [`seo-multilingual`](seo-multilingual/SKILL.md) | Metadata, canonical, hreflang + x-default, JSON-LD, i18n sitemap, slug and 301 rules | project-authored |
 | [`testing-tdd`](testing-tdd/SKILL.md) | Red/green/refactor with Vitest (domain, application, loaders, components) and Playwright (4-locale flows, a11y) | project-authored |
+| [`seo-audit`](seo-audit/SKILL.md) | Audit technical, on-page, international and local SEO and title tags; reports findings. Use it to review, not to change the shared SEO head (that is `seo-multilingual`) | `coreyhaines31/marketingskills` v2.2.2 (hash `00202d90`) |
+| [`ai-seo`](ai-seo/SKILL.md) | Make content citable by AI assistants and answer engines (structure, agent readiness, llms.txt, citations). Suggestions only: commands it mentions (`npx is-agentic`, `curl`) are run only after asking | `coreyhaines31/marketingskills` v2.12.0 (hash `e5ddbe10`) |
+| [`programmatic-seo`](programmatic-seo/SKILL.md) | Plan template-driven SEO pages at scale. Planning only: zone landing pages are NOT MVP (`AGENTS.md` §4.1), so do not build pages from it without asking | `coreyhaines31/marketingskills` v2.1.1 (hash `2e8deb5f`) |
 | [`page-restyle`](page-restyle/SKILL.md) | Make a page match the client's reference site: reference-wins rule, scope limits, CSS-first/JS-last, performance with Astro tools, AA, translated URLs, Chrome DevTools comparison procedure | project-authored |
 | [`commit-per-task`](commit-per-task/SKILL.md) | Close every finished, tested task with one conventional commit explaining what and why; check gate chained to the commit; never-commit list | project-authored |
 
