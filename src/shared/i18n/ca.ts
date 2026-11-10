@@ -467,6 +467,8 @@ const ca = {
     searchPlaceholder: "Prem o escriu un nom",
   },
   forms: {
+    step: "Pas {n} de {total}",
+    progress: "Progrés de la teva cerca",
     emailSubject: "Sol·licitud des del web de HousySpace",
     sentWhatsapp:
       "S'ha obert WhatsApp amb la teva sol·licitud ja escrita. Fins que no l'enviïs, no haurà arribat a HousySpace.",

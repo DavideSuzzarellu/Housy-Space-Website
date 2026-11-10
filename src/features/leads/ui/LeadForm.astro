@@ -25,7 +25,27 @@ interface Props {
 const { locale, id, mode, intro, fields } = Astro.props;
 const t = getDictionary(locale).forms;
 const target = mode === "whatsapp" ? whatsappHref(CONTACT_PHONE) : plainMailtoHref(COMPANY_EMAIL);
-const isGrouped = fields.some((field) => field.kind === "group");
+const groups = fields.filter((field) => field.kind === "group");
+const isGrouped = groups.length > 0;
+const total = groups.length;
+const stepLabel = (n: number) => t.step.replace("{n}", String(n)).replace("{total}", String(total));
+/**
+ * CSS-only progress (no script): the step holding the focus is the current one. `:nth-of-type(k)`
+ * cannot read a variable, so the rules are generated per step; before any focus step 1 shows.
+ * Inactive labels stay in the accessibility tree (visually hidden), so a screen reader hears all steps.
+ */
+const SHOW =
+  "position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal";
+const progressCss = isGrouped
+  ? `#${id} .progress-step{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}` +
+    `#${id}:not(:has(fieldset:focus-within)){--p:${1 / total}}#${id}:not(:has(fieldset:focus-within)) [data-step="1"]{${SHOW}}` +
+    groups
+      .map((_, i) => {
+        const on = `#${id}:has(fieldset:nth-of-type(${i + 1}):focus-within)`;
+        return `${on}{--p:${(i + 1) / total}}${on} [data-step="${i + 1}"]{${SHOW}}`;
+      })
+      .join("")
+  : "";
 ---
 
 <form
@@ -37,8 +57,29 @@ const isGrouped = fields.some((field) => field.kind === "group");
   data-subject={t.emailSubject}
   data-sent={mode === "whatsapp" ? t.sentWhatsapp : t.sentEmail}
   novalidate
-  class:list={["mt-6 grid gap-5", isGrouped ? "max-w-200" : "sm:grid-cols-2"]}
+  class:list={[
+    "mt-6 grid gap-5",
+    isGrouped ? "max-w-200 grid-cols-1 *:sm:col-span-1!" : "sm:grid-cols-2",
+  ]}
 >
+  {isGrouped && (
+    <div
+      role="group"
+      aria-label={t.progress}
+      class="sticky top-19 z-10 -mx-1 bg-canvas/95 px-1 py-3 backdrop-blur-sm min-[760px]:top-23"
+    >
+      <ol class="m-0 mb-3 list-none p-0 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.18em] text-fg">
+        {groups.map((group, i) => (
+          <li data-step={i + 1} class="progress-step">
+            {stepLabel(i + 1)} <span class="text-muted">· {group.title}</span>
+          </li>
+        ))}
+      </ol>
+      <span class="relative block h-0.5 bg-line" aria-hidden="true">
+        <b class="absolute inset-y-0 left-0 block w-[calc(var(--p)*100%)] bg-petrol transition-[width] duration-500 motion-reduce:transition-none" />
+      </span>
+    </div>
+  )}
   {fields.map((field) =>
     field.kind === "group" ? (
       <fieldset class="grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
@@ -66,6 +107,8 @@ const isGrouped = fields.some((field) => field.kind === "group");
     class="border-l-2 border-accent py-1 pl-3 text-sm sm:col-span-2"
   ></p>
 </form>
+
+<style is:inline set:html={progressCss}></style>
 
 <script>
   import "./leadForm.client";

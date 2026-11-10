@@ -465,6 +465,8 @@ const en = {
     searchPlaceholder: "Tap or type a name",
   },
   forms: {
+    step: "Step {n} of {total}",
+    progress: "Your search progress",
     emailSubject: "Request from the HousySpace website",
     sentWhatsapp:
       "WhatsApp has opened with your request written. It will not reach HousySpace until you send it there.",
