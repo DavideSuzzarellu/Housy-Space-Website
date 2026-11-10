@@ -15,7 +15,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
-import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import PaperHero from "@/shared/ui/organisms/PaperHero.astro";
 
 interface Props {
   locale: Locale;
@@ -27,6 +27,9 @@ interface Props {
 const { locale, content, serviceCards, crumbs } = Astro.props;
 const t = getDictionary(locale);
 const ta = t.about;
+
+const heroKicker = content.head.items.find((item) => item.kind === "tag")?.text;
+const heroSubtitle = content.head.items.find((item) => item.kind === "p")?.text;
 
 const findSection = (id: string) => content.sections.find((s) => s.id === id);
 const historiaSection = findSection("historia");
@@ -62,35 +65,13 @@ const NAV_SECTIONS = [
 
 <div data-about-view>
   {/* ── HERO ──────────────────────────────────────────────────────────── */}
-  <section
-    data-page-head
-    class="bg-canvas flex min-h-[clamp(24rem,52svh,34rem)] flex-col justify-center py-[clamp(2.25rem,5vw,4.375rem)]"
-  >
-    <Container>
-      <Breadcrumbs
-        items={crumbs}
-        label={t.property.detail.breadcrumb}
-        class="mb-[clamp(1.125rem,2.6vw,1.875rem)]"
-      />
-      {content.head.items
-        .filter((item) => item.kind === "tag")
-        .map((item) => (
-          <p class="text-[0.6875rem] font-bold tracking-[0.24em] text-accent">
-            {item.kind === "tag" && item.text}
-          </p>
-        ))}
-      <h1 class="mt-[0.4em] max-w-[10.5em] text-balance text-[clamp(2.75rem,7.4vw,6.75rem)] leading-[0.98]">
-        {content.head.heading}
-      </h1>
-      {content.head.items
-        .filter((item) => item.kind === "p")
-        .map((item) => (
-          <p class="mt-[clamp(1.125rem,2vw,1.75rem)] max-w-[42ch] text-[clamp(0.8125rem,1.15vw,1rem)] font-medium leading-[1.65] tracking-[0.09em] text-muted">
-            {item.kind === "p" && item.text}
-          </p>
-        ))}
-    </Container>
-  </section>
+  <PaperHero
+    locale={locale}
+    title={content.head.heading}
+    kicker={heroKicker}
+    subtitle={heroSubtitle}
+    crumbs={crumbs}
+  />
 
   {/* ── IN-PAGE STICKY NAV ───────────────────────────────────────────── */}
   <nav
