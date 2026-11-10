@@ -2,6 +2,7 @@
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import Container from "@/shared/ui/atoms/Container.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 
 /**
@@ -42,7 +43,7 @@ const t = getDictionary(locale);
           : "max-w-[10.5em] text-[clamp(2.75rem,7.4vw,6.75rem)]",
       ]}
     >
-      {title}
+      <Emphasis text={title} />
     </h1>
     {subtitle !== undefined && (
       <p
