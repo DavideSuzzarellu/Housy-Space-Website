@@ -54,10 +54,10 @@ const crumbs = [
       transition:name={`post-${post.id}-image`}
       transition:animate={morph}
     />
-    <div class="blog-body mx-auto max-w-180 py-[clamp(2.25rem,5vw,3.5rem)]">
+    <div class="blog-body mx-auto max-w-[68ch] py-[clamp(2.25rem,5vw,3.5rem)]">
       <Content />
     </div>
-    <div class="mx-auto max-w-180 pb-[clamp(2.75rem,5vw,4.125rem)]">
+    <div class="mx-auto max-w-[68ch] pb-[clamp(2.75rem,5vw,4.125rem)]">
       <Button href={getLocalizedPath("blog", locale)}>{dictionary.blog.back}</Button>
     </div>
   </Container>
