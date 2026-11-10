@@ -216,8 +216,9 @@ const districtLabel = formatMessage(t.districtSuffix, { name: district.name });
   <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.compareTag}</p>
   <SectionHeading
     id="barrio-compare"
+    size="data"
     heading={formatMessage(t.barriosOf, { name: district.name })}
-    class="mb-5"
+    class="mb-[22px]"
   />
   <BarrioTable
     locale={locale}
