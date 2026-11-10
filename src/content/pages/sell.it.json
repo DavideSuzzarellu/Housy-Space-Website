@@ -3,12 +3,8 @@
   "description": "Una vendita ben impostata inizia con una conversazione onesta sul valore e sul momento.",
   "head": {
     "heading": "Vendi il tuo immobile con criterio.",
-    "photo": true,
+    "photo": false,
     "items": [
-      {
-        "kind": "image",
-        "src": "../../assets/home/portal-1400.jpg"
-      },
       {
         "kind": "tag",
         "text": "Per i proprietari"
@@ -30,53 +26,22 @@
           "text": "Come lavoriamo"
         },
         {
-          "kind": "card",
+          "kind": "steps",
           "items": [
             {
-              "kind": "h3",
-              "text": "Ascoltiamo"
-            },
-            {
-              "kind": "p",
+              "title": "Ascoltiamo",
               "text": "Una prima conversazione per capire cosa vuoi vendere e perché."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Valutiamo"
             },
             {
-              "kind": "p",
+              "title": "Valutiamo",
               "text": "Rapporto di valutazione immediato e analisi con un consulente."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Commercializziamo"
             },
             {
-              "kind": "p",
+              "title": "Commercializziamo",
               "text": "Prepariamo e presentiamo l'immobile con cura."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Chiudiamo"
             },
             {
-              "kind": "p",
+              "title": "Chiudiamo",
               "text": "Negoziazione e assistenza fino alla firma."
             }
           ]

@@ -3,12 +3,8 @@
   "description": "Una venda ben plantejada comença amb una conversa honesta sobre el valor i el moment.",
   "head": {
     "heading": "Ven el teu immoble amb criteri.",
-    "photo": true,
+    "photo": false,
     "items": [
-      {
-        "kind": "image",
-        "src": "../../assets/home/portal-1400.jpg"
-      },
       {
         "kind": "tag",
         "text": "Per a propietaris"
@@ -30,53 +26,22 @@
           "text": "Com treballem"
         },
         {
-          "kind": "card",
+          "kind": "steps",
           "items": [
             {
-              "kind": "h3",
-              "text": "Escoltem"
-            },
-            {
-              "kind": "p",
+              "title": "Escoltem",
               "text": "Una primera conversa per entendre què vols vendre i per què."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Valorem"
             },
             {
-              "kind": "p",
+              "title": "Valorem",
               "text": "Informe de valoració al moment i anàlisi amb un assessor."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Comercialitzem"
             },
             {
-              "kind": "p",
+              "title": "Comercialitzem",
               "text": "Preparem i presentem l'immoble amb cura."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Tanquem"
             },
             {
-              "kind": "p",
+              "title": "Tanquem",
               "text": "Negociació i acompanyament fins a la signatura."
             }
           ]

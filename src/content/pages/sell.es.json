@@ -3,12 +3,8 @@
   "description": "Una venta bien planteada empieza por una conversación honesta sobre el valor y el momento.",
   "head": {
     "heading": "Vende tu inmueble con criterio.",
-    "photo": true,
+    "photo": false,
     "items": [
-      {
-        "kind": "image",
-        "src": "../../assets/home/portal-1400.jpg"
-      },
       {
         "kind": "tag",
         "text": "Para propietarios"
@@ -30,53 +26,22 @@
           "text": "Cómo trabajamos"
         },
         {
-          "kind": "card",
+          "kind": "steps",
           "items": [
             {
-              "kind": "h3",
-              "text": "Escuchamos"
-            },
-            {
-              "kind": "p",
+              "title": "Escuchamos",
               "text": "Una primera conversación para entender qué quieres vender y por qué."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Valoramos"
             },
             {
-              "kind": "p",
+              "title": "Valoramos",
               "text": "Informe de valoración al momento y análisis con un asesor."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Comercializamos"
             },
             {
-              "kind": "p",
+              "title": "Comercializamos",
               "text": "Preparamos y presentamos el inmueble con cuidado."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Cerramos"
             },
             {
-              "kind": "p",
+              "title": "Cerramos",
               "text": "Negociación y acompañamiento hasta la firma."
             }
           ]

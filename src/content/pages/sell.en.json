@@ -3,12 +3,8 @@
   "description": "A well-planned sale starts with an honest conversation about value and timing.",
   "head": {
     "heading": "Sell your property with judgement.",
-    "photo": true,
+    "photo": false,
     "items": [
-      {
-        "kind": "image",
-        "src": "../../assets/home/portal-1400.jpg"
-      },
       {
         "kind": "tag",
         "text": "For owners"
@@ -30,53 +26,22 @@
           "text": "How we work"
         },
         {
-          "kind": "card",
+          "kind": "steps",
           "items": [
             {
-              "kind": "h3",
-              "text": "We listen"
-            },
-            {
-              "kind": "p",
+              "title": "We listen",
               "text": "A first conversation to understand what you want to sell and why."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "We value"
             },
             {
-              "kind": "p",
+              "title": "We value",
               "text": "An instant valuation report and an analysis with an advisor."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "We market"
             },
             {
-              "kind": "p",
+              "title": "We market",
               "text": "We prepare and present the property with care."
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "We close"
             },
             {
-              "kind": "p",
+              "title": "We close",
               "text": "Negotiation and support all the way to signing."
             }
           ]
