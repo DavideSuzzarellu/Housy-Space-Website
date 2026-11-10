@@ -122,6 +122,7 @@ const editorial =
       ? await getPage(`service-${getServiceSlug(target.service, DEFAULT_LOCALE)}`, locale)
       : undefined;
 
+const isMySearch = target.view === "editorial" && target.key === "mySearch";
 const isAbout = target.view === "editorial" && target.key === "about";
 const aboutServiceCards = isAbout ? await getServiceCards(locale) : undefined;
 
@@ -229,7 +230,14 @@ const crumbs = [
   ...(serviceCrumb === undefined
     ? []
     : [{ label: dictionary.nav.services, href: getServicesAnchorPath(locale) }]),
-  { label: serviceCrumb ?? editorial?.content.head.heading ?? "" },
+  {
+    label:
+      serviceCrumb ??
+      (isMySearch
+        ? dictionary.nav.mySearch
+        : editorial?.content.head.heading.replaceAll("*", "")) ??
+      "",
+  },
 ];
 ---
 
@@ -269,6 +277,7 @@ const crumbs = [
         content={editorial.content}
         crumbs={crumbs}
         fallback={editorial.fallback}
+        hero={isMySearch}
       />
     )
   )}
