@@ -90,12 +90,12 @@ test("frequently asked questions open and close without scripts", async ({ page 
 test("service pages are translated: the head keeps its illustration in every locale", async ({
   page,
 }) => {
-  for (const [locale, segment] of [
-    ["en", "services"],
-    ["it", "servizi"],
-    ["ca", "serveis"],
+  for (const [locale, segment, slug] of [
+    ["en", "services", "property-valuation"],
+    ["it", "servizi", "valutazione-immobiliare"],
+    ["ca", "serveis", "valoracio-immobiliaria"],
   ] as const) {
-    await page.goto(`/${locale}/${segment}/valoracion`);
+    await page.goto(`/${locale}/${segment}/${slug}`);
     await expect(page.locator("[data-page-head] img[alt]:not([alt=''])")).toHaveCount(1);
     await expect(page.locator("#hablemos")).toBeAttached();
   }
@@ -116,7 +116,7 @@ test("barrios are shown in the locale of the page", async ({ page }) => {
 });
 
 test("untranslated prose stays out of the index and is marked as Spanish", async ({ page }) => {
-  await page.goto("/en/services/venta-estrategica");
+  await page.goto("/en/services/property-sales-brokerage");
   await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(1);
   await expect(page.locator("[data-page-view]")).toHaveAttribute("lang", "es");
 });
