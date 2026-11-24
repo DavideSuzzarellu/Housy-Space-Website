@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "Un barrio de laderas y de vecinos, con viaducto, casas singulares y vistas.",
+  "text": [
+    "Surgió de la unión de dos antiguos vecindarios, Vallcarca y els Penitents, y es uno de los barrios más elevados y con más pendiente de la ciudad. Fue lugar de veraneo y de familias del valle que buscaban mejores comunicaciones, y en los años setenta sus vecinos reivindicaron las mejoras que trajeron el metro, el alcantarillado y las escaleras mecánicas.",
+    "Su paisaje mezcla el viaducto de Vallcarca, la iglesia dels Josepets, casas singulares como la Comas d'Argemir, la Marsans o la Barangé, zonas de ciudad jardín como el Torrent Maduixer, promovido en 1950, y torres aisladas en Mas Falcó. Con 4.152 €/m², su precio de compraventa queda por encima del del Coll y por debajo del del resto de Gràcia."
+  ],
+  "housing": "Torres aisladas, ciudad jardín y bloques de pisos, en calles de fuerte pendiente.",
+  "places": ["Viaducte de Vallcarca", "Església dels Josepets", "Parc Sanitari Pere Virgili"]
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El núcleo más antiguo de la ciudad: catedral, plazas y calles peatonales sobre la Barcino romana.",
+  "text": [
+    "Es el corazón del casco antiguo y el barrio más pequeño de Ciutat Vella (0,82 km²). Bajo sus calles quedan restos de la muralla romana, y sobre ellas se levantan la catedral, la plaza de Sant Jaume, sede del Ayuntamiento y de la Generalitat, la Plaça Reial y el Call, el antiguo barrio judío.",
+    "Aquí se vive entre piedra con siglos de historia. Los pisos son pequeños y con encanto, con las limitaciones propias de lo antiguo: escaleras empinadas, ascensor que no siempre existe y ruido en plazas y calles con terrazas. A cambio, el centro entero queda a pie y muchas calles son peatonales."
+  ],
+  "housing": "Pisos pequeños en edificios antiguos, a menudo sin ascensor.",
+  "places": ["Catedral de Barcelona", "Plaça de Sant Jaume", "Plaça Reial", "El Call"]
+}

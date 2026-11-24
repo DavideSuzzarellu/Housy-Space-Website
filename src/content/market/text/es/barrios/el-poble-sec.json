@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Al pie de Montjuïc, con teatros históricos, la calle Blai y un ambiente popular y mestizo.",
+  "text": [
+    "Empezó a levantarse hacia 1858 con casitas sencillas que los propietarios construían para obreros, y hacia 1869 ya estaba urbanizado. Aquel origen popular se mantiene en un barrio multicultural, con los teatros del Paral·lel, como El Molino, el Apolo, el Victòria o el Condal, la calle de Blai con sus bares de pinchos y la montaña de Montjuïc a un paso.",
+    "Vivir en el Poble-sec es tener la montaña, con sus jardines y miradores, a la puerta de casa, y el Paral·lel, el Raval y Sant Antoni a pie. Con 4.013 €/m² de precio medio de compraventa y 943 €/mes de alquiler, sus cifras quedan por debajo de las de Sants, aunque el centro esté igual de cerca."
+  ],
+  "housing": "Edificios de finales del siglo XIX y principios del XX, con calles en pendiente hacia Montjuïc.",
+  "places": [
+    "Carrer de Blai",
+    "Avinguda del Paral·lel",
+    "Teatre El Molino",
+    "Parc de Montjuïc",
+    "Mirador del Poble-sec"
+  ]
+}

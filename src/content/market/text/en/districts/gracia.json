@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": false,
+  "lead": "Un antiguo pueblo dentro de la ciudad: plazas, calles estrechas y mucha vida de barrio.",
+  "history": [
+    "Gràcia fue un municipio independiente hasta 1897 y conserva su trazado de calles estrechas y plazas, como la del Sol, la de la Virreina o la de la Vila, con su torre del reloj, además de comercio de proximidad y una intensa vida asociativa. Cada agosto celebra su Festa Major, que existe desde 1817 y en la que los propios vecinos decoran las calles y compiten por la mejor decoración.",
+    "Sus cinco barrios suben desde la Diagonal hasta los pies de Collserola: la Vila de Gràcia, el Camp d'en Grassot i Gràcia Nova, la Salut, Vallcarca i els Penitents y el Coll. La vivienda combina casas bajas y fincas antiguas con edificios de pisos, y el ambiente cambia mucho entre la animada Vila y las laderas más tranquilas del norte.",
+    "Entre sus 5 barrios, el precio medio de compraventa va de 3.558 €/m² en el Coll a 5.094 €/m² en la Vila de Gràcia, y el alquiler medio, de 906 €/mes en el Coll a 1.105 €/mes en el Camp d'en Grassot i Gràcia Nova.",
+    "Es un distrito muy buscado por su ambiente y por la vida a pie. Conviene visitar cada calle a distintas horas, porque en pocas manzanas cambia mucho de una plaza a otra."
+  ],
+  "summary": "Gràcia tiene 126.830 habitantes en 4,22 km² y 5 barrios. Su precio medio de compraventa fue de 4.818 €/m² en 2025, un 13 % por encima de la media de la ciudad. El alquiler medio, 1.082 €/mes.",
+  "landmarks": [
+    {
+      "name": "Park Güell",
+      "where": "La Salut",
+      "text": "El parque de Antoni Gaudí, Patrimonio Mundial."
+    },
+    {
+      "name": "Casa Vicens",
+      "where": "La Vila de Gràcia",
+      "text": "La primera casa que proyectó Gaudí."
+    },
+    {
+      "name": "Plaça de la Vila de Gràcia",
+      "where": "La Vila de Gràcia",
+      "text": "La plaza del antiguo ayuntamiento, con su torre del reloj."
+    },
+    {
+      "name": "Mercat de la Llibertat",
+      "where": "La Vila de Gràcia",
+      "text": "Mercado de hierro de finales del siglo XIX."
+    },
+    {
+      "name": "Festa Major de Gràcia",
+      "where": "Todo el distrito",
+      "text": "En agosto, las calles se decoran y se llenan de actividades."
+    }
+  ]
+}

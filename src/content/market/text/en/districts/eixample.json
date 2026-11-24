@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": false,
+  "lead": "Cerdà, chaflanes y modernismo: la Barcelona de las manzanas regulares y los edificios señoriales.",
+  "history": [
+    "El Eixample nació a mediados del siglo XIX, cuando Ildefons Cerdà proyectó la ampliación de la ciudad más allá de las murallas: una cuadrícula de manzanas con las esquinas recortadas en chaflán, calles anchas y patios interiores pensados para dar luz y aire. La burguesía de la época lo llenó de edificios modernistas, como la Casa Batlló o La Pedrera, y más tarde llegó la Sagrada Família, que acabó siendo el símbolo de Barcelona.",
+    "Sus seis barrios se reparten a ambos lados de la calle Balmes, en la Dreta y la Esquerra, y cada uno tiene su carácter, de la elegancia del Passeig de Gràcia al ambiente de mercado de Sant Antoni. Quien busca piso en el Eixample suele encontrar techos altos, suelos hidráulicos, balcones y galerías, y una vida diaria en la que casi todo queda a pocos pasos: comercio, colegios, transporte y servicios.",
+    "Entre sus 6 barrios, el precio medio de compraventa va de 4.603 €/m² en Sant Antoni a 6.224 €/m² en la Dreta de l'Eixample, y el alquiler medio, de 1.107 €/mes en la Sagrada Família a 1.596 €/mes en la Dreta de l'Eixample.",
+    "Aquí pesan mucho la planta, la orientación, si el piso da a la calle o al interior de manzana, la altura y el estado de la finca y de su comunidad. Por eso conviene estudiar cada inmueble con detalle antes de decidir."
+  ],
+  "summary": "Eixample tiene 277.353 habitantes en 7,46 km² y 6 barrios. Es el distrito más poblado de Barcelona. Su precio medio de compraventa fue de 5.323 €/m² en 2025, un 25 % por encima de la media de la ciudad. El alquiler medio, 1.284 €/mes.",
+  "landmarks": [
+    {
+      "name": "Sagrada Família",
+      "where": "La Sagrada Família",
+      "text": "El templo de Antoni Gaudí, en obras desde 1882."
+    },
+    {
+      "name": "Passeig de Gràcia",
+      "where": "La Dreta de l'Eixample",
+      "text": "Con la Casa Batlló y la Casa Milà, La Pedrera."
+    },
+    {
+      "name": "Rambla de Catalunya",
+      "where": "La Dreta de l'Eixample",
+      "text": "Paseo arbolado paralelo al Passeig de Gràcia."
+    },
+    {
+      "name": "Mercat de Sant Antoni",
+      "where": "Sant Antoni",
+      "text": "Mercado de hierro del siglo XIX, rehabilitado en 2018."
+    },
+    {
+      "name": "Universitat de Barcelona",
+      "where": "L'Antiga Esquerra de l'Eixample",
+      "text": "El edificio histórico de la universidad, en la plaza Universitat."
+    }
+  ]
+}

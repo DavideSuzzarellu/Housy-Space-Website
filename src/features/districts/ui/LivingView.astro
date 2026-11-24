@@ -18,11 +18,11 @@ import { DISTRICT_IMAGES } from "./districtImages";
 interface Props {
   locale: Locale;
   market: MarketData;
-  /** Spanish district teasers shown on an untranslated locale. */
-  fallback: boolean;
 }
 
-const { locale, market, fallback } = Astro.props;
+const { locale, market } = Astro.props;
+/** Spanish teasers of districts not translated yet. */
+const fallback = market.districts.some((district) => district.proseFallback);
 const dictionary = getDictionary(locale);
 const t = dictionary.zones;
 const crumbs = [

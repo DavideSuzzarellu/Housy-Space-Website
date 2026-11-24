@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "El barrio que vive a la sombra del templo de Gaudí, con comercio de proximidad y vida de vecindario.",
+  "text": [
+    "Hasta hace no tanto se le llamaba «el Poblet»: durante años fue sobre todo campo, con un pequeño núcleo de casas bajas en torno a la calle de València, y no tuvo entidad propia hasta principios del siglo XX, como barrio obrero junto a muchas industrias. El templo se proyectó en 1881, en terrenos del término de Sant Martí donde alrededor todo era campo, y desde 1882 crece en su centro; Gaudí, entonces joven y poco conocido, tomó el relevo cuando empezaba la cripta.",
+    "De la fachada parte la avenida de Gaudí, que lleva a pie hasta el Hospital de la Santa Creu i Sant Pau, de Domènech i Montaner, y ambos edificios son patrimonio de la humanidad de la Unesco. En las calles junto al templo se convive con visitantes de todo el mundo, pero a pocas manzanas la vida es la de un barrio de vecinos, con mercado, comercio y colegios. Con 53.201 habitantes en 1,04 km², es uno de los más poblados del Eixample, y su alquiler medio, 1.107 €/mes, es el más bajo del distrito."
+  ],
+  "housing": "Pisos en fincas de la trama de Cerdà, con más tránsito de visitantes junto al templo.",
+  "places": [
+    "Basílica de la Sagrada Família",
+    "Avinguda de Gaudí",
+    "Recinte Modernista de Sant Pau"
+  ]
+}

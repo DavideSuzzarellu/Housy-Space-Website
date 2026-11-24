@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": false,
+  "lead": "El norte de la ciudad: trece barrios con identidad propia, mucha vida vecinal y parques con vistas.",
+  "history": [
+    "Nou Barris ocupa el extremo norte de Barcelona, entre la sierra de Collserola y la avenida Meridiana. Sus trece barrios crecieron sobre todo entre los años cincuenta y setenta, con la llegada de miles de personas de otras regiones de España, y muchos se transformaron gracias a la lucha de sus asociaciones de vecinos, que reclamaron servicios, transporte y equipamientos.",
+    "Hoy el distrito combina bloques de aquella época con barrios en rehabilitación, grandes parques como el Parc Central de Nou Barris, donde está la sede del distrito, laderas con vistas a la ciudad y varias líneas de metro. Sus precios están entre los más contenidos de Barcelona, por lo que suele interesar a quien busca una primera vivienda o una inversión con una entrada más baja.",
+    "Entre sus 13 barrios, el precio medio de compraventa va de 1.697 €/m² en Vallbona a 3.569 €/m² en Vilapicina i la Torre Llobeta, y el alquiler medio, de 395 €/mes en Can Peguera a 902 €/mes en la Guineueta.",
+    "En los bloques de los años cincuenta a setenta conviene revisar a fondo el estado del edificio y de su comunidad, y posibles patologías como la aluminosis."
+  ],
+  "summary": "Nou Barris tiene 183.280 habitantes en 8,06 km² y 13 barrios. Es el distrito con el precio de compraventa más bajo de Barcelona: 2.952 €/m² en 2025. El alquiler medio, 796 €/mes.",
+  "landmarks": [
+    {
+      "name": "Parc Central de Nou Barris",
+      "where": "Centro del distrito",
+      "text": "Gran parque urbano junto a la sede del distrito."
+    },
+    {
+      "name": "Seu del Districte",
+      "where": "Centro del distrito",
+      "text": "El antiguo Institut Mental de la Santa Creu, hoy sede del distrito."
+    },
+    {
+      "name": "Castell de Torre Baró",
+      "where": "Torre Baró",
+      "text": "El castillo que nunca se terminó, convertido en mirador sobre la ciudad."
+    },
+    {
+      "name": "Via Júlia",
+      "where": "La Prosperitat y Verdun",
+      "text": "Rambla con comercio y vida de barrio."
+    },
+    {
+      "name": "Collserola",
+      "where": "Barrios altos del distrito",
+      "text": "Caminos y miradores en la sierra, a pocos minutos."
+    }
+  ]
+}

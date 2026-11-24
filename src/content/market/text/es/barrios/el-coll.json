@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un barrio de ladera con iglesia románica, mucha vida vecinal y un parque en una antigua cantera.",
+  "text": [
+    "Su origen está en la iglesia de Nostra Senyora del Coll, del siglo XI, con referencias escritas desde 1099, y hasta principios del siglo XX siguió siendo un lugar rural. El puente de Vallcarca, de 1923, mejoró sus comunicaciones, y en los años sesenta creció a gran velocidad y llenó los espacios libres que quedaban.",
+    "Hoy es un barrio pequeño (0,35 km²), con un fuerte sentido de vecindad, que tiene en el parque de la Creueta del Coll, creado en una antigua cantera y con esculturas de Ellsworth Kelly y Eduardo Chillida, su rincón más conocido. Con 3.558 €/m² y 906 €/mes, es el barrio más asequible de Gràcia."
+  ],
+  "housing": "Casas y bloques de pisos en calles de ladera, con zonas de casas bajas.",
+  "places": [
+    "Parc de la Creueta del Coll",
+    "Església de Nostra Senyora del Coll",
+    "Can Queralt (Josep Maria Jujol)"
+  ]
+}

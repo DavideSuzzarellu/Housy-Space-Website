@@ -29,11 +29,11 @@ interface Props {
   locale: Locale;
   district: MarketDistrict;
   market: MarketData;
-  /** Spanish prose shown on an untranslated locale. */
-  fallback: boolean;
 }
 
-const { locale, district, market, fallback } = Astro.props;
+const { locale, district, market } = Astro.props;
+/** The district prose is still the Spanish source on this locale. */
+const fallback = district.proseFallback;
 const dictionary = getDictionary(locale);
 const t = dictionary.zones;
 const city = market.city;

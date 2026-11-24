@@ -1,4 +1,5 @@
 import { marketSchema } from "./features/districts/infrastructure/marketSchema";
+import { zoneTextSchema } from "./features/districts/infrastructure/zoneTextSchema";
 import { pageSchema } from "./features/pages/infrastructure/pageSchema";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
@@ -37,6 +38,16 @@ export const collections = {
   market: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/market" }),
     schema: marketSchema,
+  }),
+  // Prose of the districts and barrios, one file per locale and zone (translators never share a file).
+  // Spanish is the source; an entry with `translated: false` falls back to it (zoneText.ts).
+  marketText: defineCollection({
+    loader: glob({
+      pattern: "*/*/*.json",
+      base: "./src/content/market/text",
+      generateId: ({ entry }) => entry.replace(/.json$/, ""),
+    }),
+    schema: zoneTextSchema,
   }),
   home: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/home" }),

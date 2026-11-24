@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Dos barrios, un mismo litoral: viviendas de los sesenta, el río Besòs y el recinto del Fòrum.",
+  "text": [
+    "El Besòs nació como el «Poblado del Sud-Oeste del Besós», con primera piedra en 1959, y se edificó entre finales de los sesenta y principios de los setenta sobre campos y masías cercanos al río; el Maresme, en cambio, se originó en viviendas bajas de principios del siglo XX. Sus nombres vienen del río Besòs y del núcleo tradicional del Maresme.",
+    "Acogió oleadas masivas de inmigrantes y nació sin equipamientos ni servicios: la mejora llegó con la reivindicación vecinal desde los años setenta. Hoy está junto al recinto del Fòrum, con el Centro de Convenciones Internacional y el Edificio Fòrum, sede del museo de ciencias naturales desde 2011. Con 2.837 €/m² y 756 €/mes, es el barrio más asequible de Sant Martí."
+  ],
+  "housing": "Polígonos de vivienda protegida de los sesenta y setenta, y casas bajas en el Maresme.",
+  "places": ["Parc del Fòrum", "Museu Blau", "Centre de Convencions Internacional de Barcelona"]
+}

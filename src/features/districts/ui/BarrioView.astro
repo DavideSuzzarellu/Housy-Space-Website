@@ -21,11 +21,11 @@ interface Props {
   locale: Locale;
   barrio: MarketBarrio;
   market: MarketData;
-  /** The barrio prose is Spanish client copy on another locale. */
-  fallback: boolean;
 }
 
-const { locale, barrio, market, fallback } = Astro.props;
+const { locale, barrio, market } = Astro.props;
+/** The barrio prose is still the Spanish source on this locale. */
+const fallback = barrio.proseFallback;
 const dictionary = getDictionary(locale);
 const t = dictionary.zones;
 const district = market.districts.find((candidate) => candidate.slug === barrio.district);
