@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Ciudad jardín de principios del siglo XX, discreta y pegada a la montaña.",
+  "translated": true,
+  "lead": "An early 20th-century garden city, discreet and tucked against the mountain.",
   "text": [
-    "Se empezó a urbanizar en 1905 sobre las tierras de la masía Can Pujol, por iniciativa de Pere Fargas i Sagristà, con aire de ciudad jardín, y fue lugar de veraneo de la burguesía barcelonesa. Su nombre une el apellido del promotor y el de una fuente cercana, a la que se atribuía muy buena calidad.",
-    "Es un barrio residencial y poco conocido, junto a la montaña, con masías y casas antiguas reformadas, edificios de tres o cuatro plantas y nuevas promociones de pisos de alto nivel con zonas comunes. Entre sus rincones, el antiguo Casino, hoy Casal de Barri, y la Princess Margaret School, uno de los colegios privados más antiguos de la ciudad."
+    "Development began in 1905 on the land of the Can Pujol farmhouse, on the initiative of Pere Fargas i Sagristà, with the air of a garden city, and it was a summer retreat for Barcelona's bourgeoisie. Its name combines the surname of the developer and that of a nearby spring, said to be of very good quality.",
+    "It is a residential, little-known neighbourhood next to the mountain, with farmhouses and renovated old houses, buildings of three or four storeys and new high-end developments with communal areas. Among its corners are the former Casino, now the Casal de Barri, and the Princess Margaret School, one of the oldest private schools in the city."
   ],
-  "housing": "Casas antiguas reformadas, edificios de tres o cuatro plantas y promociones nuevas con zonas comunes.",
-  "places": ["Font d'en Fargues", "Casal de Barri (antiguo Casino)", "Princess Margaret School"]
+  "housing": "Renovated old houses, buildings of three or four storeys and new developments with communal areas.",
+  "places": ["Font d'en Fargues", "Casal de Barri (former Casino)", "Princess Margaret School"]
 }

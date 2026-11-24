@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un antiguo pueblo en el extremo norte de la ciudad, al otro lado de las autopistas.",
+  "translated": true,
+  "lead": "A former village at the northern edge of the city, on the other side of the motorways.",
   "text": [
-    "Vallbona es un barrio pequeño, de 1.440 habitantes en 0,61 km², en la periferia norte de Barcelona, separado del resto de la ciudad por las autopistas y conectado con Torre Baró mediante un puente. Fue un pequeño pueblo hasta mediados del siglo XX, cuando gran parte se demolió y el canal del Rec Comtal quedó casi todo cubierto. El Pla de Barris 2025-2028 prevé rehabilitar con 7 millones de euros los cinco centros educativos públicos de la Zona Norte de Nou Barris, entre ellos los de Vallbona, y convertirlos en institutos escuela.",
-    "Con 1.697 €/m² y 698 €/mes, tiene los precios de compraventa más bajos de Barcelona. Es una opción muy específica: hay muy poca vivienda, y conviene visitar la zona y comprobar con calma las comunicaciones antes de decidir. Si vendes, el precio medio de compraventa está un 43 % por debajo de la media de Nou Barris. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 136.000 €, y el barrio está uno de los más asequibles de Nou Barris (13.º de 13 por precio). Si inviertes, el alquiler medio está un 12 % por debajo del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "Vallbona is a small neighbourhood, of 1,440 inhabitants in 0.61 km², on the northern outskirts of Barcelona, separated from the rest of the city by the motorways and linked to Torre Baró by a bridge. It was a small village until the mid-20th century, when much of it was demolished and the Rec Comtal canal was almost entirely covered over. The Pla de Barris 2025-2028 provides for 7 million euros to renovate the five public schools of the northern part of Nou Barris (Zona Nord), including those of Vallbona, and to turn them into instituts escola (all-through schools).",
+    "At 1,697 €/m² and 698 €/month, it has the lowest sale prices in Barcelona. It is a very specific option: there is very little housing, and it is worth visiting the area and checking the transport links carefully before deciding. If you are selling, the average sale price is 43% below the Nou Barris average. Within the neighbourhood, the price of each flat depends on its condition, its floor and its building, so it is best to compare it with nearby sales rather than with the district average. If you are buying, an 80 m² flat costs about 136,000 € on average, and this is one of the most affordable neighbourhoods in Nou Barris (13th of 13 by price). If you are investing, the average rent is 12% below the district; before deciding, it is worth studying each deal with real figures for purchase, renovation and rental income."
   ],
-  "housing": "Vivienda de mediados del siglo XX que sustituyó parte del antiguo pueblo, en un enclave pequeño.",
+  "housing": "Housing from the mid-20th century that replaced part of the old village, in a small enclave.",
   "places": ["Rec Comtal"]
 }

@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Casas baratas de 1929, con tejados rústicos y jardín: el barrio más pequeño de Barcelona.",
+  "translated": true,
+  "lead": "Low-cost houses from 1929, with rustic roofs and gardens: the smallest neighbourhood in Barcelona.",
   "text": [
-    "Entre 1929 y 1932 se habilitaron aquí 534 casas para trabajadores que vivían en barracas en Montjuïc, coincidiendo con la Exposición Internacional. Su nombre viene de la masía Can Peguera, conocida por fabricar pegamento con la resina de la pineda cercana, y durante muchos años el barrio se llamó Ramón Albó.",
-    "Con 0,12 km², es el barrio más pequeño de Barcelona, y es también el mejor conservado de los cuatro grupos de casas baratas, porque sus propios vecinos las han ido mejorando. Sus calles son de casas unifamiliares de una sola planta, con tejados rústicos y pequeños jardines delanteros, y su única plaza, la de Sant Francesc Xavier, se organiza alrededor de la antigua capilla de la masía."
+    "Between 1929 and 1932, 534 houses were built here for workers who lived in shacks on Montjuïc, coinciding with the International Exposition. Its name comes from the Can Peguera farmhouse (masia), known for making glue from the resin of the nearby pine wood, and for many years the neighbourhood was called Ramón Albó.",
+    "At 0.12 km², it is the smallest neighbourhood in Barcelona, and it is also the best preserved of the four groups of cases barates (low-cost houses), because its own residents have kept improving them. Its streets are lined with single-storey family houses, with rustic roofs and small front gardens, and its only square, Plaça de Sant Francesc Xavier, is laid out around the former chapel of the farmhouse."
   ],
-  "housing": "Casas unifamiliares de una planta con jardín delantero, junto a algún bloque de vivienda social.",
+  "housing": "Single-storey family houses with front gardens, alongside a few social housing blocks.",
   "places": ["Plaça de Sant Francesc Xavier", "Església de Sant Francesc Xavier"]
 }

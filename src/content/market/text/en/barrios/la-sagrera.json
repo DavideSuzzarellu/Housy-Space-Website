@@ -1,17 +1,17 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio que se transforma, entre naves convertidas en espacios de creación y la obra de la nueva estación.",
+  "translated": true,
+  "lead": "A neighbourhood in transformation, between warehouses turned into creative spaces and the works for the new station.",
   "text": [
-    "Su nombre viene de las sagreres: en el siglo XI, el abad Oliba pactó con los nobles crear un espacio de treinta pasos alrededor de las iglesias donde campesinos y bienes estuvieran a salvo, y de allí surgió una zona protegida del pueblo de Sant Martí de Provençals. Aunque hoy pertenece al distrito de Sant Andreu, nunca formó parte del antiguo municipio de Sant Andreu de Palomar.",
-    "Hoy convive con las obras de la futura estación de Barcelona-La Sagrera, en marcha desde 2009, y con espacios culturales y de creación como la Nau Ivanow y la Nau Bostik, el parque de la Pegaso, el mayor del barrio, y el mercat de Felip II. Con 31.247 habitantes en 0,99 km², es un barrio en transición, donde el entorno cambia con cada fase de obra."
+    "Its name comes from the sagreres: in the 11th century, Abbot Oliba agreed with the nobles to create a zone of thirty paces around the churches where peasants and their goods would be safe, and from this arose a protected area of the village of Sant Martí de Provençals. Although it now belongs to the Sant Andreu district, it never formed part of the old municipality of Sant Andreu de Palomar.",
+    "Today it lives alongside the works for the future Barcelona-La Sagrera station, under way since 2009, and cultural and creative spaces such as the Nau Ivanow and the Nau Bostik, the Parc de la Pegaso, the largest in the neighbourhood, and the Mercat de Felip II. With 31,247 inhabitants in 0.99 km², it is a neighbourhood in transition, where the surroundings change with each phase of the works."
   ],
-  "housing": "Edificios de pisos de distintas épocas, con antiguas naves industriales reconvertidas.",
+  "housing": "Blocks of flats from different periods, with former industrial warehouses converted to new uses.",
   "places": [
     "Nau Ivanow",
     "Nau Bostik",
     "Parc de la Pegaso",
     "Mercat de Felip II",
-    "Estació de La Sagrera (en obras)"
+    "Estació de La Sagrera (under construction)"
   ]
 }

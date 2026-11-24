@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El barrio que nació para los Juegos de 1992, entre el puerto olímpico y la playa de Nova Icària.",
+  "translated": true,
+  "lead": "The neighbourhood born for the 1992 Games, between the Olympic marina and the Nova Icària beach.",
   "text": [
-    "Es la zona del Poblenou reformada para alojar a los deportistas de los Juegos Olímpicos de 1992, con el objetivo de modernizar el sector, y se considera el primer barrio marítimo de Barcelona. Entre sus referencias están el Port Olímpic, la playa de Nova Icària, la Torre Mapfre y la biblioteca Xavier Benguerel.",
-    "Es un barrio residencial de baja densidad para el centro de Barcelona, con edificios de arquitectos premiados con los premios FAD. Con 10.046 hab./km², tiene bastante menos población por kilómetro cuadrado que el Poblenou o el Clot, y su alquiler medio, 1.613 €/mes, es el segundo más alto de Sant Martí, solo por detrás de Diagonal Mar."
+    "This is the part of Poblenou redeveloped to house the athletes of the 1992 Olympic Games, with the aim of modernising the area, and it is regarded as Barcelona's first seafront neighbourhood. Its landmarks include the Port Olímpic, the Nova Icària beach, the Torre Mapfre and the Xavier Benguerel library.",
+    "It is a low-density residential neighbourhood by central Barcelona standards, with buildings by architects who won FAD awards. With 10,046 inhabitants/km², it has far fewer people per square kilometre than Poblenou or El Clot, and its average rent, 1,613 €/month, is the second highest in Sant Martí, behind only Diagonal Mar."
   ],
-  "housing": "Edificios residenciales de los años noventa, obra de arquitectos premiados, junto al mar.",
+  "housing": "Residential buildings from the 1990s, by award-winning architects, beside the sea.",
   "places": ["Port Olímpic", "Platja de Nova Icària", "Torre Mapfre", "Biblioteca Xavier Benguerel"]
 }

@@ -98,6 +98,26 @@ Standard IEC norm, tuteo (`tu`) everywhere, voseo-free. The goal is a faithful b
 | UNA MILLA EXTRA                       | the extra mile                                                                           | Fixed phrase.                                                                                                    |
 | «No te preocupes, yo me encargo»      | "Don't worry, I'll take care of it"                                                      | Fixed phrase, always "I".                                                                                        |
 
+### Zone prose (districts and barrios)
+
+| Spanish                          | English                                         | Notes                                                                   |
+| -------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------- |
+| fiesta mayor                     | festa major                                     | Catalan term kept, as in the earlier barrios.                           |
+| masía                            | farmhouse (masia)                               | Gloss once per file, then "farmhouse" or the name.                      |
+| torre (villa)                    | villa                                           | Never "tower" unless it is a high-rise (Diagonal Mar).                  |
+| casas baratas                    | cases barates (low-cost houses)                 | Proper name of the 1929 estates (Bon Pastor, Can Peguera); gloss once.  |
+| aluminosis                       | aluminosis (a structural decay of concrete)     | Gloss once per file.                                                    |
+| indianos                         | indianos                                        | Catalans who returned from the Americas after 1898; gloss once.         |
+| protección oficial / protegidas  | officially protected / subsidised housing       |                                                                         |
+| polígono (de viviendas)          | housing estate                                  |                                                                         |
+| casal de gente mayor             | senior citizens' centre                         |                                                                         |
+| pleno municipal                  | City Council plenary                            |                                                                         |
+| Si vendes / compras / inviertes  | If you are selling / buying / investing         | Formulaic paragraphs: "an 80 m² flat costs about 345,000 € on average". |
+| 7.º de 11 por precio             | 7th of 11 by price                              |                                                                         |
+| un 48 % por debajo               | 48% below                                       | No space before %.                                                      |
+| hab./km², €/m², €/mes            | inhabitants/km², €/m², €/month                  | English number format (4,310 €/m²), figure unchanged.                   |
+| Patronato de la Habitación, etc. | kept in Spanish, with a short gloss in brackets | Official body names are not translated.                                 |
+
 ## Italian (it)
 
 ### Register

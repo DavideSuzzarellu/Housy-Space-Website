@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Dos barrios, un mismo litoral: viviendas de los sesenta, el río Besòs y el recinto del Fòrum.",
+  "translated": true,
+  "lead": "Two neighbourhoods, one shoreline: 1960s housing, the Besòs river and the Fòrum site.",
   "text": [
-    "El Besòs nació como el «Poblado del Sud-Oeste del Besós», con primera piedra en 1959, y se edificó entre finales de los sesenta y principios de los setenta sobre campos y masías cercanos al río; el Maresme, en cambio, se originó en viviendas bajas de principios del siglo XX. Sus nombres vienen del río Besòs y del núcleo tradicional del Maresme.",
-    "Acogió oleadas masivas de inmigrantes y nació sin equipamientos ni servicios: la mejora llegó con la reivindicación vecinal desde los años setenta. Hoy está junto al recinto del Fòrum, con el Centro de Convenciones Internacional y el Edificio Fòrum, sede del museo de ciencias naturales desde 2011. Con 2.837 €/m² y 756 €/mes, es el barrio más asequible de Sant Martí."
+    "El Besòs began as the \"Poblado del Sud-Oeste del Besós\", with its foundation stone laid in 1959, and was built between the late 1960s and the early 1970s on fields and farmhouses near the river; El Maresme, by contrast, grew out of low-rise housing from the early 20th century. Their names come from the river Besòs and from the traditional settlement of El Maresme.",
+    "It took in massive waves of immigrants and was born without facilities or services: improvements came through community campaigning from the 1970s. Today it lies next to the Fòrum site, with the International Convention Centre and the Edificio Fòrum, home to the natural history museum since 2011. At 2,837 €/m² and 756 €/month, it is the most affordable neighbourhood in Sant Martí."
   ],
-  "housing": "Polígonos de vivienda protegida de los sesenta y setenta, y casas bajas en el Maresme.",
+  "housing": "Subsidised housing estates from the 1960s and 1970s, and low-rise houses in El Maresme.",
   "places": ["Parc del Fòrum", "Museu Blau", "Centre de Convencions Internacional de Barcelona"]
 }

@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Tiendas, restaurantes y vida nocturna en torno a la calle Tuset: el Sant Gervasi más animado.",
+  "translated": true,
+  "lead": "Shops, restaurants and nightlife around Carrer Tuset: the liveliest side of Sant Gervasi.",
   "text": [
-    "El Camp d'en Galvany empezó a urbanizarse en 1866 por iniciativa de Josep Castelló i Galvany, y el barrio se acabó llamando así por el mercado de Galvany, entre las calles Santaló, Calaf, Amigó y Madrazo. Su núcleo más antiguo está en torno a las calles Sagués y Amigó, y desde los años cincuenta se levantaron muchos edificios nuevos.",
-    "Su vecindario, de clase media-alta y alta, convive con una gran vida comercial y de ocio, sobre todo en la calle Tuset y sus alrededores: tiendas, restaurantes y locales. Con 49.202 habitantes, es el barrio más poblado de Sarrià-Sant Gervasi, y las viviendas más lujosas se concentran entre las calles Alfons XII y Muntaner."
+    "The Camp d'en Galvany began to be developed in 1866 on the initiative of Josep Castelló i Galvany, and the neighbourhood ended up taking its name from the Galvany market, between Carrer de Santaló, Carrer de Calaf, Carrer d'Amigó and Carrer de Madrazo. Its oldest core is around Carrer de Sagués and Carrer d'Amigó, and many new buildings went up from the 1950s onwards.",
+    "Its residents, mostly upper-middle and upper class, share the streets with a busy shopping and leisure scene, above all on Carrer Tuset and the streets around it: shops, restaurants and bars. With 49,202 inhabitants, it is the most populous neighbourhood in Sarrià-Sant Gervasi, and the most luxurious homes are concentrated between Carrer d'Alfons XII and Carrer de Muntaner."
   ],
-  "housing": "Fincas más antiguas y edificios construidos desde los años cincuenta, con las viviendas más lujosas entre Alfons XII y Muntaner.",
+  "housing": "Older buildings and blocks built from the 1950s onwards, with the most luxurious homes between Alfons XII and Muntaner.",
   "places": ["Mercat de Galvany", "Carrer Tuset", "Plaça de Castelló", "Turó Parc"]
 }
