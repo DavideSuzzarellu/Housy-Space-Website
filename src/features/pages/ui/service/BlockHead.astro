@@ -33,7 +33,7 @@ const { locale, items, spaced = true, narrow = true, class: className } = Astro.
         );
       if (item.kind === "lead")
         return (
-          <p class="mt-4 max-w-149 text-[15px] text-muted">
+          <p class="mt-4 text-[clamp(15px,1.12vw,16.5px)] leading-[1.62] tracking-[0.28px] text-muted normal-case">
             <Inline text={item.text} locale={locale} />
           </p>
         );

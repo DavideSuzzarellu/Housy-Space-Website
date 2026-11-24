@@ -1,7 +1,8 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { itemsOf, type PageItem } from "@/features/pages/application/pages";
 import type { Locale } from "@/shared/i18n/config";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
 import { resolveContentHref } from "@/shared/i18n/contentLinks";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
@@ -54,7 +55,8 @@ const logos = partners?.items.some((entry) => entry.logo !== undefined) ?? false
         {logos && (
           <span class="logo mb-4.5 grid h-[clamp(96px,11vw,128px)] place-items-center border-b-[3px] border-turquoise bg-white px-6.5 py-4.5">
             {entry.logo && (
-              <Image
+              <Picture
+                {...PHOTO_PICTURE}
                 src={entry.logo}
                 alt={entry.title}
                 widths={[240, 480]}
