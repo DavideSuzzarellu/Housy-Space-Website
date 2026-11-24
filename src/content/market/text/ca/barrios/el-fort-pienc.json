@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un rincón del Eixample de ritmo pausado, con teatro nacional, auditorio, mercado y biblioteca propios.",
+  "translated": true,
+  "lead": "Un racó de l'Eixample de ritme pausat, amb teatre nacional, auditori, mercat i biblioteca propis.",
   "text": [
-    "Su nombre viene del Fuerte Pío, que Felipe V mandó levantar tras 1714 y que se bautizó con el nombre del capitán general Francisco Pío de Saboya; el fuerte y la Ciudadela se derribaron en 1869. En 1861 se construyó aquí la estación de ferrocarril de la línea de Lleida, que dio identidad a un barrio entre la vía del tren y la Gran Via, y muchos transportistas se instalaron junto a la antigua carretera de Ribes. La estación cerró en el último cuarto del siglo XX y hoy su edificio, ampliado en 1910 con una gran cubierta de hierro, es la principal estación de autobuses de la ciudad.",
-    "Junto a la estación se hizo un parque urbano y, al otro lado, un conjunto con jardín de infancia, apartamentos tutelados para mayores, mercado y biblioteca que el propio distrito presenta como modelo de integración de equipamientos y espacio público. Hoy es un barrio residencial, con el Teatre Nacional de Catalunya y L'Auditori como grandes referentes culturales. Es una buena opción para quien quiere el Eixample sin el bullicio de sus grandes ejes comerciales: calles más tranquilas, comercio de proximidad y el centro a un paseo. Con 4.806 €/m² de precio medio de compraventa, queda por debajo de la Dreta, la Antiga Esquerra y la Nova Esquerra."
+    "El nom ve del Fort Pius, que Felip V va manar aixecar després del 1714 i que es va batejar amb el nom del capità general Francesc Pius de Savoia; el fort i la Ciutadella es van enderrocar el 1869. El 1861 s'hi va construir l'estació de ferrocarril de la línia de Lleida, que va donar identitat a un barri entre la via del tren i la Gran Via, i molts transportistes es van instal·lar al costat de l'antiga carretera de Ribes. L'estació va tancar en l'últim quart del segle XX i avui el seu edifici, ampliat el 1910 amb una gran coberta de ferro, és la principal estació d'autobusos de la ciutat.",
+    "Al costat de l'estació es va fer un parc urbà i, a l'altra banda, un conjunt amb llar d'infants, apartaments tutelats per a gent gran, mercat i biblioteca que el mateix districte presenta com a model d'integració d'equipaments i espai públic. Avui és un barri residencial, amb el Teatre Nacional de Catalunya i L'Auditori com a grans referents culturals. És una bona opció per a qui vol l'Eixample sense el bullici dels seus grans eixos comercials: carrers més tranquils, comerç de proximitat i el centre a un passeig. Amb 4.806 €/m² de preu mitjà de compravenda, queda per sota de la Dreta, l'Antiga Esquerra i la Nova Esquerra."
   ],
-  "housing": "Pisos en fincas de la trama de Cerdà, en calles de poco tráfico.",
+  "housing": "Pisos en finques de la trama de Cerdà, en carrers de poc trànsit.",
   "places": [
     "Teatre Nacional de Catalunya",
     "L'Auditori",
