@@ -30,8 +30,8 @@ const { locale, list } = Astro.props;
       >
         {String(index + 1).padStart(2, "0")}
       </span>
-      <h3 class="mb-2.5 text-[clamp(21px,1.8vw,25px)] leading-[1.12]">{entry.title}</h3>
-      <p class="text-[13px] leading-[1.6] text-muted">
+      <h3 class="mb-2.5 text-[clamp(16px,1.5vw,21px)] leading-[1.2]">{entry.title}</h3>
+      <p class="text-[13px] leading-[1.6] text-muted normal-case">
         <Inline text={entry.text} locale={locale} />
       </p>
     </li>
