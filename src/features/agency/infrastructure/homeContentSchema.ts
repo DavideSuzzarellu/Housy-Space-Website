@@ -80,11 +80,12 @@ export function homeContentSchema() {
         .strict(),
       philosophy: z
         .object({
-          quoteFirst: text,
-          quoteSecond: text,
-          subLead: text,
-          sub: text,
-          primaryCta: text,
+          heading,
+          lead: text,
+          leadStrong: text,
+          text,
+          quote: text,
+          ctaLabel: text,
         })
         .strict(),
       reviews: z.object({ heading, ctaLabel: text, mapsUrl: z.url() }).strict(),

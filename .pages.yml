@@ -157,11 +157,23 @@ content:
         label: Filosofía
         type: object
         fields:
-          - { name: quoteFirst, label: Cita · primera línea, type: string, required: true }
-          - { name: quoteSecond, label: Cita · segunda línea, type: string, required: true }
-          - { name: subLead, label: Subtítulo · primera parte, type: string, required: true }
-          - { name: sub, label: Subtítulo · segunda parte, type: string, required: true }
-          - { name: primaryCta, label: Botón principal, type: string, required: true }
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte más fina.",
+            }
+          - { name: lead, label: Frase destacada · primera parte, type: string, required: true }
+          - {
+              name: leadStrong,
+              label: Frase destacada · parte en negrita,
+              type: string,
+              required: true,
+            }
+          - { name: text, label: Texto, type: text, required: true }
+          - { name: quote, label: Frase de marca (en negrita), type: string, required: true }
+          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
       - name: reviews
         label: Reseñas
         type: object

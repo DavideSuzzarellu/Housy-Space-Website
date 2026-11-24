@@ -67,11 +67,12 @@
     "item4Subtitle": "Modern spaces, refurbished with respect for the historic architecture."
   },
   "philosophy": {
-    "quoteFirst": "Don't worry,",
-    "quoteSecond": "I'll take care of it!",
-    "subLead": "It's not just a phrase.",
-    "sub": "It's how we work.",
-    "primaryCta": "Discover our philosophy"
+    "heading": "Our *philosophy*",
+    "lead": "We get involved",
+    "leadStrong": "in every transaction",
+    "text": "A single advisor coordinates the paperwork, the viewings, the negotiation and every professional involved. And when something unexpected comes up, our answer is always the same:",
+    "quote": "«Don't worry, I'll take care of it».",
+    "ctaLabel": "See how we work"
   },
   "reviews": {
     "heading": "What people say *about HousySpace*",

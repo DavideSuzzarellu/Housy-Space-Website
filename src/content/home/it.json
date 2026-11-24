@@ -67,11 +67,12 @@
     "item4Subtitle": "Ambienti moderni, ristrutturati nel rispetto dell'architettura storica."
   },
   "philosophy": {
-    "quoteFirst": "Non preoccuparti,",
-    "quoteSecond": "ci penso io!",
-    "subLead": "Non è solo una frase.",
-    "sub": "È il nostro modo di lavorare.",
-    "primaryCta": "Scopri la nostra filosofia"
+    "heading": "La nostra *filosofia*",
+    "lead": "Ci impegniamo",
+    "leadStrong": "in ogni operazione",
+    "text": "Un solo consulente coordina la documentazione, le visite, la trattativa e i professionisti coinvolti. E quando sorge un imprevisto, la nostra risposta è sempre la stessa:",
+    "quote": "«Non preoccuparti, ci penso io».",
+    "ctaLabel": "Scopri come lavoriamo"
   },
   "reviews": {
     "heading": "Cosa dicono *di HousySpace*",

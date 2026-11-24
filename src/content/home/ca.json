@@ -67,11 +67,12 @@
     "item4Subtitle": "Espais moderns rehabilitats respectant l'arquitectura històrica."
   },
   "philosophy": {
-    "quoteFirst": "No et preocupis,",
-    "quoteSecond": "jo me n'encarrego!",
-    "subLead": "No és només una frase.",
-    "sub": "És la nostra manera de treballar.",
-    "primaryCta": "Descobreix la nostra filosofia"
+    "heading": "La nostra *filosofia*",
+    "lead": "Ens impliquem",
+    "leadStrong": "en cada operació",
+    "text": "Un sol assessor coordina la documentació, les visites, la negociació i els professionals que hi intervenen. I quan sorgeix un imprevist, la nostra resposta és la mateixa:",
+    "quote": "«No et preocupis, jo me n'encarrego».",
+    "ctaLabel": "Descobreix com treballem"
   },
   "reviews": {
     "heading": "Què diuen *de HousySpace*",

@@ -67,11 +67,12 @@
     "item4Subtitle": "Espacios modernos rehabilitados respetando la arquitectura histórica."
   },
   "philosophy": {
-    "quoteFirst": "¡No te preocupes,",
-    "quoteSecond": "yo me encargo!",
-    "subLead": "No es solo una frase.",
-    "sub": "Es nuestra forma de trabajar.",
-    "primaryCta": "Descubre nuestra filosofía"
+    "heading": "Nuestra *filosofía*",
+    "lead": "Nos implicamos",
+    "leadStrong": "en cada operación",
+    "text": "Un solo asesor coordina la documentación, las visitas, la negociación y a los profesionales que intervienen. Y cuando surge un imprevisto, nuestra respuesta es la misma:",
+    "quote": "«No te preocupes, yo me encargo».",
+    "ctaLabel": "Descubre cómo trabajamos"
   },
   "reviews": {
     "heading": "Lo que dicen *de HousySpace*",
