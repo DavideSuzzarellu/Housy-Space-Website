@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de ladera entre la Ronda de Dalt y Collserola, de casas con jardín y vida familiar.",
+  "translated": true,
+  "lead": "Un barri de vessant entre la ronda de Dalt i Collserola, de cases amb jardí i vida familiar.",
   "text": [
-    "Sube desde la Ronda de Dalt hacia Collserola y mezcla el antiguo núcleo de Sant Gervasi de Cassoles, municipio independiente hasta 1897, con zonas de casas con jardín y edificios residenciales de poca altura. Fue municipio autónomo desde 1714 hasta su anexión en 1897, y conserva los Jardins de la Tamarita, diseñados por Rubió i Tudurí en 1918 y abiertos como parque público en 1994, además de la Rotonda, el Frare Blanc y Bellesguard, de Gaudí.",
-    "Es una zona de vivienda familiar, con colegios, jardines y buenas conexiones con la Diagonal y las rondas, y con el museo CosmoCaixa a pocos minutos. Con 11.997 hab./km², es mucho menos denso que Sant Gervasi-Galvany o el Putxet, y eso se nota en el ritmo de la calle. Si vendes, el precio medio de compraventa (5.438 €/m² en 2025) está prácticamente en la media de Sarrià-Sant Gervasi. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 435.000 €, y el barrio está en la franja media de Sarrià-Sant Gervasi (4.º de 6 por precio). Si inviertes, el alquiler medio (1.659 €/mes) está en la media del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "Puja des de la ronda de Dalt cap a Collserola i barreja l'antic nucli de Sant Gervasi de Cassoles, municipi independent fins al 1897, amb zones de cases amb jardí i edificis residencials de poca alçada. Va ser municipi autònom des del 1714 fins a l'annexió el 1897, i conserva els Jardins de la Tamarita, dissenyats per Rubió i Tudurí el 1918 i oberts com a parc públic el 1994, a més de la Rotonda, el Frare Blanc i Bellesguard, de Gaudí.",
+    "És una zona d'habitatge familiar, amb escoles, jardins i bones connexions amb la Diagonal i les rondes, i amb el museu CosmoCaixa a pocs minuts. Amb 11.997 hab./km², és molt menys dens que Sant Gervasi-Galvany o el Putxet, i això es nota en el ritme del carrer. Si vens, el preu mitjà de compravenda (5.438 €/m² el 2025) és pràcticament a la mitjana de Sarrià-Sant Gervasi. Dins del barri, el preu de cada pis depèn de l'estat, l'alçada i la finca, així que convé comparar-lo amb vendes properes i no amb la mitjana del districte. Si compres, un pis de 80 m² surt de mitjana per uns 435.000 €, i el barri és a la franja mitjana de Sarrià-Sant Gervasi (4t de 6 per preu). Si inverteixes, el lloguer mitjà (1.659 €/mes) és a la mitjana del districte; abans de decidir, convé estudiar cada operació amb xifres reals de compra, reforma i lloguer."
   ],
-  "housing": "Casas con jardín y edificios residenciales de poca altura, en calles en pendiente.",
+  "housing": "Cases amb jardí i edificis residencials de poca alçada, en carrers en pendent.",
   "places": ["CosmoCaixa", "Passeig de la Bonanova"]
 }

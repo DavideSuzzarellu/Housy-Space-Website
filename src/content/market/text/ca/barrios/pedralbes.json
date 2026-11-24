@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un monasterio del siglo XIV, avenidas arboladas y casas con jardín en uno de los barrios con más renta de la ciudad.",
+  "translated": true,
+  "lead": "Un monestir del segle XIV, avingudes arbrades i cases amb jardí en un dels barris amb més renda de la ciutat.",
   "text": [
-    "El barrio toma su nombre del monasterio de clarisas que la reina Elisenda de Montcada fundó en el siglo XIV, con un claustro de dos pisos y una iglesia gótica de una sola nave; en la capilla de Sant Miquel se conservan las pinturas de Ferrer Bassa, de 1346.",
-    "Hoy es un barrio tranquilo y verde, de casas unifamiliares con jardín y edificios de alto nivel, con la avenida Pearson como emblema. Con 6.079 €/m² y 1.948 €/mes, tiene los precios más altos de Les Corts. Junto a la Diagonal están además el Palau Reial y los Pavellons Güell, de Gaudí."
+    "El barri pren el nom del monestir de clarisses que la reina Elisenda de Montcada va fundar al segle XIV, amb un claustre de dos pisos i una església gòtica d'una sola nau; a la capella de Sant Miquel es conserven les pintures de Ferrer Bassa, del 1346.",
+    "Avui és un barri tranquil i verd, de cases unifamiliars amb jardí i edificis d'alt nivell, amb l'avinguda Pearson com a emblema. Amb 6.079 €/m² i 1.948 €/mes, té els preus més alts de les Corts. Al costat de la Diagonal hi ha, a més, el Palau Reial i els Pavellons Güell, de Gaudí."
   ],
-  "housing": "Casas unifamiliares con jardín y edificios residenciales de alto nivel, de superficies amplias.",
+  "housing": "Cases unifamiliars amb jardí i edificis residencials d'alt nivell, de superfícies àmplies.",
   "places": [
     "Monestir de Pedralbes",
     "Palau Reial de Pedralbes",

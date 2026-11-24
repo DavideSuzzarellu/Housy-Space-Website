@@ -33,6 +33,20 @@ Standard IEC norm, tuteo (`tu`) everywhere, voseo-free. The goal is a faithful b
 | broker                        | broker                        | Kept as loanword, consistent across pages                           |
 | tour virtual                  | visita virtual                |                                                                     |
 
+### District and barrio prose
+
+| es                        | ca                         | Notes                                              |
+| ------------------------- | -------------------------- | -------------------------------------------------- |
+| manzana (Eixample)        | illa                       | `interior d'illa`; never "mançana"                 |
+| chaflán                   | xamfrà                     |                                                    |
+| casco antiguo             | nucli antic                |                                                    |
+| villa (mansion)           | vil·la                     |                                                    |
+| suelos hidráulicos        | mosaics hidràulics         |                                                    |
+| comunidad de propietarios | comunitat de propietaris   |                                                    |
+| renta (income of an area) | renda                      | Rental income is `lloguer`                         |
+| Nth of M by price         | 1r, 2n, 3r, 4t, 5è... de 8 | Not `1.º`                                          |
+| plaza / calle / avenida   | plaça / carrer / avinguda  | Lowercase in running text (`el passeig de Gràcia`) |
+
 ### Fixed phrases
 
 | es                             | ca                                 |
