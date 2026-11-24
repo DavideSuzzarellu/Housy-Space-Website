@@ -1,0 +1,30 @@
+---
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+
+/**
+ * Heading and plain lead of a contact-page block (reference `ct6-head`): a 38 px title and a
+ * 16 px lead in running case, in a column of about 64 characters at the reference's 14 px body.
+ */
+interface Props {
+  title: string;
+  lead?: string | undefined;
+  /** Space below the block; blocks that follow a lead closely use a smaller one. */
+  tight?: boolean;
+  class?: string;
+}
+
+const { title, lead, tight = false, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "max-w-148",
+    tight ? "mb-[clamp(0.5rem,1.2vw,0.875rem)]" : "mb-[clamp(1.25rem,2.6vw,2.125rem)]",
+    className,
+  ]}
+>
+  <h2 class="mb-3 text-[clamp(1.5625rem,2.65vw,2.375rem)] leading-[1.08]">
+    <Emphasis text={title} />
+  </h2>
+  {lead !== undefined && <p class="text-base/[1.7] text-fg normal-case">{lead}</p>}
+</div>
