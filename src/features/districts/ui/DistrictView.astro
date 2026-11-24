@@ -296,7 +296,7 @@ const TAG = "text-[0.6875rem] tracking-[0.16em] text-accent";
     class="mt-3 mb-[26px]"
   />
   <p class="mt-[-4px] mb-[26px] text-[0.8125rem] leading-[1.7] text-muted">{t.barriosSub}</p>
-  <div class="grid items-start gap-7 min-[980px]:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+  <div class="grid grid-cols-[minmax(0,1fr)] items-start gap-7 min-[980px]:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
     <BarrioMap locale={locale} market={market} district={district.slug} />
     <div class="mt-3.5 mb-1.5">
       <BarrioTable locale={locale} barrios={barrios} numbered />

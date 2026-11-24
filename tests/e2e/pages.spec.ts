@@ -149,6 +149,15 @@ test("the district map recolours by metric, shows a district and search lists th
   await expect(page.locator('#barrio-results li[data-kind="b"]:visible')).toHaveCount(1);
 });
 
+test("'view on the map' opens the district on the map and marks the barrio", async ({ page }) => {
+  await page.goto("/es/zonas/barcelona");
+  await page.locator("#barrio-search").fill("verdun");
+  await page.locator('#barrio-results li[data-kind="b"]:visible [data-view-map]').click();
+  await expect(page.locator("#zd-nou-barris")).toBeChecked();
+  await expect(page.locator('[data-barrio="verdun"][data-on]')).toHaveCount(1);
+  await expect(page.locator(".zp-nou-barris")).toBeVisible();
+});
+
 test("the lead form opens WhatsApp with the request written", async ({ page, context }) => {
   await page.goto("/es/contacto");
   await context.route("https://wa.me/**", (route) => route.abort());

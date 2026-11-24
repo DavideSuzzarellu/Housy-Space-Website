@@ -209,6 +209,65 @@ export function buildDistrictMap(
   };
 }
 
+export interface Zoom {
+  readonly k: number;
+  readonly tx: number;
+  readonly ty: number;
+}
+
+/** Scale and shift (in map units) that fit `box` in the middle of the map with some air (reference `fit`). */
+export function zoomTransform(box: Bounds, viewBox: MapViewBox, fill = 0.8): Zoom {
+  const w = box.x1 - box.x0;
+  const h = box.y1 - box.y0;
+  const k = Math.min(6, (viewBox.width * fill) / w, (viewBox.height * fill) / h);
+  const cx = (box.x0 + box.x1) / 2;
+  const cy = (box.y0 + box.y1) / 2;
+  return { k, tx: viewBox.width / 2 - cx * k, ty: viewBox.height / 2 - cy * k };
+}
+
+export interface ZoomedBarrio {
+  readonly slug: string;
+  readonly name: string;
+  readonly district: string;
+  readonly d: string;
+  /** Label anchor in map units. */
+  readonly x: number;
+  readonly y: number;
+  readonly tones: Readonly<Record<MetricKey, number>>;
+}
+
+/** Barrios drawn under their district when it is selected, toned among the 73 barrios per metric. */
+export function buildBarrioLayer(
+  market: MarketData,
+  shapes: { readonly barrios: Readonly<Record<string, string>> },
+): ZoomedBarrio[] {
+  const all = {
+    sale: market.barrios.map((barrio) => barrio.sale),
+    rent: market.barrios.map((barrio) => barrio.rent),
+    density: market.barrios.map((barrio) => barrio.density),
+  };
+  return market.barrios.flatMap((barrio) => {
+    const d = shapes.barrios[barrio.slug];
+    if (d === undefined) return [];
+    const centre = pathCentroid(d);
+    return [
+      {
+        slug: barrio.slug,
+        name: barrio.name,
+        district: barrio.district,
+        d,
+        x: centre.x,
+        y: centre.y,
+        tones: {
+          sale: toneOf(all.sale, barrio.sale, TONES),
+          rent: toneOf(all.rent, barrio.rent, TONES),
+          density: toneOf(all.density, barrio.density, TONES),
+        },
+      },
+    ];
+  });
+}
+
 export interface BarrioMapItem {
   readonly slug: string;
   readonly name: string;

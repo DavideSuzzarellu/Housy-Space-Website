@@ -32,6 +32,8 @@ const districtName = new Map(market.districts.map((district) => [district.slug, 
 const rows = [
   ...market.districts.map((district) => ({
     kind: "d" as const,
+    mapDistrict: district.slug,
+    mapBarrio: "",
     name: district.name,
     note: formatMessage(t.districtTag, { count: district.barrioCount }),
     keys: norm(district.name),
@@ -41,6 +43,8 @@ const rows = [
   })),
   ...market.barrios.map((barrio) => ({
     kind: "b" as const,
+    mapDistrict: barrio.district,
+    mapBarrio: barrio.slug,
     name: barrio.name,
     note: formatMessage(t.barrioIn, { district: districtName.get(barrio.district) ?? "" }),
     keys: norm(`${barrio.name} ${districtName.get(barrio.district) ?? ""}`),
@@ -88,12 +92,14 @@ const rows = [
         <li
           data-kind={row.kind}
           data-keys={row.keys}
+          data-map-district={row.mapDistrict}
+          data-map-barrio={row.mapBarrio}
           hidden={row.kind === "b"}
-          class="border-b border-line"
+          class="flex items-center border-b border-line"
         >
           <a
             href={row.href}
-            class="group grid grid-cols-[minmax(0,1fr)_auto_auto_1.5rem] items-center gap-x-6 py-[15px] no-underline hover:text-accent focus-visible:text-accent max-[640px]:grid-cols-[minmax(0,1fr)_auto_1.5rem] max-[640px]:gap-x-3"
+            class="group grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto_auto_1.5rem] items-center gap-x-6 py-[15px] no-underline hover:text-accent focus-visible:text-accent max-[640px]:grid-cols-[minmax(0,1fr)_auto_1.5rem] max-[640px]:gap-x-3"
           >
             <span class="min-w-0">
               <b class="block text-[clamp(1.125rem,1.6vw,1.4375rem)] leading-[1.15] font-normal">
@@ -117,6 +123,14 @@ const rows = [
             </span>
             <ArrowUpRight class="ml-auto size-3 text-muted" />
           </a>
+          <button
+            type="button"
+            data-view-map
+            aria-label={formatMessage(t.viewOnMapOf, { name: row.name })}
+            class="ml-3 flex-none cursor-pointer self-stretch px-4 text-[0.625rem] font-medium tracking-[0.14em] text-taupe-tx hover:text-fg focus-visible:text-fg"
+          >
+            {t.viewOnMap}
+          </button>
         </li>
       ))}
     </ul>
@@ -167,6 +181,29 @@ const rows = [
       panel.hidden = false;
       render();
     };
+    panel.addEventListener("click", (event) => {
+      const button =
+        event.target instanceof Element ? event.target.closest("[data-view-map]") : null;
+      const row = button?.closest<HTMLElement>("li[data-map-district]");
+      if (!button || !row) return;
+      const radio = document.getElementById(`zd-${row.dataset["mapDistrict"] ?? ""}`);
+      if (!(radio instanceof HTMLInputElement)) return;
+      radio.checked = true;
+      document
+        .querySelectorAll("[data-barrio][data-on]")
+        .forEach((node) => node.removeAttribute("data-on"));
+      const slug = row.dataset["mapBarrio"] ?? "";
+      if (slug !== "")
+        document.querySelector(`[data-barrio="${slug}"]`)?.setAttribute("data-on", "");
+      panel.hidden = true;
+      const map = document.querySelector<HTMLElement>("[data-district-map]");
+      if (!map) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({
+        top: Math.max(0, map.getBoundingClientRect().top + window.scrollY - 150),
+        behavior: reduce ? "auto" : "smooth",
+      });
+    });
     input.addEventListener("focus", open);
     input.addEventListener("click", open);
     input.addEventListener("input", open);
