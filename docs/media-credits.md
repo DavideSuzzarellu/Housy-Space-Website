@@ -55,3 +55,7 @@ Added 2026-11-10 from the client's static reference site (`assets/img/nosotros/i
 ## Blog article valuation block
 
 Added 2026-11-24 from the client's static reference site (`assets/img/valoracion/online-960.webp`, `asesor-960.webp`): `src/assets/valoracion/`, the two photos of the valuation block at the end of every blog article (online valuation, valuation with an advisor). Same status as the reference photos (client-supplied, AI-generated placeholders to confirm before launch).
+
+## Home page (reference alignment)
+
+Added 2026-11-24 from the client's static reference site: `src/assets/brand/housyspace-word.svg`, the white HousySpace wordmark the reference draws at the end of the reviews heading (copied from the inline SVG of `index.html`, brand logo, no licence issue). The home valuation block now reuses the blog valuation photos in `src/assets/valoracion/`, and the removed full-bleed valuation banner (`src/assets/home/valoracion-fachada-2880.webp`) was deleted with it.
