@@ -4,19 +4,9 @@
  */
 
 @theme {
-  --animate-kenburns: kenburns 24s ease-in-out infinite alternate;
   --animate-scroll-cue: scroll-cue 2.2s ease-in-out infinite;
   --animate-intro-logo: intro-fade 1.4s 0.3s both;
   --animate-intro-line: intro-line 1.6s 0.9s forwards;
-
-  @keyframes kenburns {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.06);
-    }
-  }
 
   /* The 16 px segment starts above its 54 px hairline (top: -16 px) and slides to top: 42 px. */
   @keyframes scroll-cue {
