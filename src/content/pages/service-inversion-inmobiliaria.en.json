@@ -29,6 +29,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us your goal",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -216,8 +226,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Real estate personal shopper",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Financial advice",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Rentals and property management",
+              "text": "",
+              "href": "service:alquiler-gestion"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

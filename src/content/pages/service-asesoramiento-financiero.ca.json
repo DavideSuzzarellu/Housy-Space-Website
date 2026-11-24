@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/oficina-1672.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns el teu cas",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -291,8 +301,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliari",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Inversió immobiliària",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

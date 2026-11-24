@@ -24,7 +24,6 @@ const ca = {
     opensInNewTab: "(s'obre en una pestanya nova)",
   },
   nav: {
-    otherServices: "Altres serveis",
     mySearch: "La meva cerca",
     whereWeAre: "On som",
     neighbourhoodSearch: "Mapa i cercador de barris",

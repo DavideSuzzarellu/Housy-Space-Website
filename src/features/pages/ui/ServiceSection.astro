@@ -6,7 +6,6 @@ import {
   type PageSection,
 } from "@/features/pages/application/pages";
 import type { Locale } from "@/shared/i18n/config";
-import type { ServiceKey } from "@/shared/i18n/services";
 import Container from "@/shared/ui/atoms/Container.astro";
 import BlockHead from "./service/BlockHead.astro";
 import Band from "./service/Band.astro";
@@ -34,13 +33,12 @@ import Valuation from "./service/Valuation.astro";
  */
 interface Props {
   locale: Locale;
-  service: ServiceKey;
   section: PageContent["sections"][number];
   /** Far below the head: the browser skips its layout and paint until it nears the viewport. */
   defer?: boolean;
 }
 
-const { locale, service, section, defer = false } = Astro.props;
+const { locale, section, defer = false } = Astro.props;
 const { head, body } = splitBlockHead(section.items);
 const lists = itemsOf(body, "list");
 const steps = itemsOf(body, "steps");
@@ -148,6 +146,6 @@ const band = layout === "band";
     {layout === "colab" && <Collaborators locale={locale} head={head} body={body} />}
     {layout === "call" && <Call locale={locale} head={head} body={body} />}
     {layout === "valuation" && <Valuation locale={locale} items={section.items} />}
-    {layout === "cta" && <Closing locale={locale} service={service} items={section.items} />}
+    {layout === "cta" && <Closing locale={locale} items={section.items} />}
   </Container>
 </section>

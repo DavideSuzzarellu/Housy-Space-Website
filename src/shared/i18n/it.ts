@@ -24,7 +24,6 @@ const it = {
     opensInNewTab: "(si apre in una nuova scheda)",
   },
   nav: {
-    otherServices: "Altri servizi",
     mySearch: "La mia ricerca",
     whereWeAre: "Dove siamo",
     neighbourhoodSearch: "Mappa e ricerca quartieri",

@@ -103,6 +103,16 @@ describe("service pages", () => {
     }
   });
 
+  it.each(services)("%s closes with its related services and the link to the index", (file) => {
+    const page = schema.parse(read(file));
+    const cta = page.sections.find((section) => section.layout === "cta");
+    const list = cta?.items.find((item) => item.kind === "list");
+    const hrefs = list?.kind === "list" ? list.items.map((entry) => entry.href) : [];
+    expect(hrefs.length).toBeGreaterThanOrEqual(2);
+    expect(hrefs.at(-1)).toBe("route:services");
+    expect(cta?.items.some((item) => item.kind === "note")).toBe(false);
+  });
+
   it("rejects an illustration without a text alternative", () => {
     const base = schema.parse(read("service-valoracion.es.json"));
     const broken = {

@@ -24,7 +24,6 @@ const en = {
     opensInNewTab: "(opens in a new tab)",
   },
   nav: {
-    otherServices: "Other services",
     mySearch: "My search",
     whereWeAre: "Where we are",
     neighbourhoodSearch: "Map and neighbourhood search",

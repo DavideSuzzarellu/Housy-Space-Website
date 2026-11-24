@@ -29,7 +29,6 @@ const es = {
     opensInNewTab: "(se abre en una pestaña nueva)",
   },
   nav: {
-    otherServices: "Otros servicios",
     mySearch: "Mi búsqueda",
     whereWeAre: "Dónde estamos",
     neighbourhoodSearch: "Mapa y buscador de barrios",

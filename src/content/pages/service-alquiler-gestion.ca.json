@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Vull llogar el meu habitatge",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -203,6 +213,10 @@
           "kind": "faq",
           "q": "I si hi ha un problema durant el contracte?",
           "a": "Si contractes la gestió, ens ocupem de les incidències. I si sorgeix un conflicte legal, el coordinem amb el despatx jurídic amb qui treballem. [Veure assessorament jurídic i fiscal](service:asesoramiento-juridico-fiscal)."
+        },
+        {
+          "kind": "p",
+          "text": "No saps si et convé llogar o vendre? Ho veiem amb tu en una [consulta d'orientació](route:services#asesoramiento)."
         }
       ]
     },
@@ -245,8 +259,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Assessorament jurídic i fiscal",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Reformes i interiorisme",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

@@ -32,6 +32,7 @@ const lead = head.items.find((item) => item.kind === "lead");
 const tag = head.items.find((item) => item.kind === "tag");
 const { illustration } = head;
 const jump = itemsOf(head.items, "list")[0];
+const cta = itemsOf(head.items, "buttons")[0]?.items[0];
 ---
 
 <section
@@ -97,7 +98,7 @@ const jump = itemsOf(head.items, "list")[0];
           ))}
         </ul>
       )}
-      {talk !== undefined && (
+      {(cta !== undefined || talk !== undefined) && (
         <Button
           href="#hablemos"
           size="lg"
@@ -105,7 +106,7 @@ const jump = itemsOf(head.items, "list")[0];
           arrow
           class="leading-[1.35]! max-[520px]:w-full"
         >
-          {talk}
+          {cta?.label ?? talk}
         </Button>
       )}
     </div>

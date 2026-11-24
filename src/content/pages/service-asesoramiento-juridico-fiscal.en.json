@@ -21,6 +21,16 @@
       {
         "kind": "lead",
         "text": "When the transaction requires it, we coordinate with trusted independent professionals."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us your case",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -411,8 +421,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Property sales and brokerage",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Financial advice",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

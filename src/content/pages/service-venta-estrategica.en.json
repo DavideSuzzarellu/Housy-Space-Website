@@ -362,8 +362,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Property valuation",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Legal and tax advice",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }
