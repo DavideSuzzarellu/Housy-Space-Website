@@ -7,23 +7,54 @@
     "items": [
       {
         "kind": "tag",
-        "text": "HousySpace presentation"
+        "text": "Introducing HousySpace"
       },
       {
         "kind": "p",
-        "text": "A different way of understanding the real estate sector."
+        "text": "At HousySpace we believe every property decision deserves time, judgement and personal attention. We go with you to find the best way to take the next step."
       }
     ]
   },
   "sections": [
     {
       "id": "historia",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "h2",
+          "kind": "tag",
           "text": "Our story"
+        },
+        {
+          "kind": "h2",
+          "text": "A very simple idea: people, at the centre."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace was born five years ago. Those of us behind it had already been working in the sector for some time and knew what could be done differently: with more closeness, truly personal attention, and treating each client's concerns as our own."
+        },
+        {
+          "kind": "p",
+          "text": "That is why we did not want to be just another estate agency, but a project true to how we understand this profession."
+        },
+        {
+          "kind": "p",
+          "text": "We still get the same satisfaction from sharing the joy of someone finding their first home, helping a family start a new chapter or accompanying a client in making the right decision."
+        },
+        {
+          "kind": "quote",
+          "text": "Behind every property there is a story, an important decision and people who trust us."
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "In figures"
         },
         {
           "kind": "list",
@@ -31,192 +62,46 @@
           "items": [
             {
               "title": "9",
-              "text": "years of experience in the real estate sector"
+              "kicker": "years",
+              "text": "of experience in the real estate sector"
             },
             {
               "title": "5",
-              "text": "years since HousySpace was born"
+              "kicker": "years",
+              "text": "since HousySpace was born"
             },
             {
               "title": "Today",
               "text": "we keep growing with those who choose us again and recommend us"
             }
           ]
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace was born five years ago from a very simple idea: **in every property transaction, people always come first.**"
-        },
-        {
-          "kind": "p",
-          "text": "We had spent years in the industry and knew what could be done differently."
-        },
-        {
-          "kind": "p",
-          "text": "We wanted sincere closeness, truly personal attention, and for every client to feel that their worries were ours too."
-        },
-        {
-          "kind": "p",
-          "text": "That is how HousySpace came about: not to be just another estate agency, but a project true to how we understand this profession, with empathy, honesty, dedication and a commitment that goes beyond closing a deal."
-        },
-        {
-          "kind": "quote",
-          "text": "Behind every property there is a story, an important decision and people who trust us."
-        },
-        {
-          "kind": "p",
-          "text": "It gives us great satisfaction to share the joy of someone finding their first home, to help a family begin a new chapter, or to accompany a client in making the right decision."
-        },
-        {
-          "kind": "p",
-          "text": "Five years later we keep growing with the same philosophy, thanks to those who choose us again and recommend us."
         }
       ]
     },
     {
       "id": "filosofia",
-      "surface": "dark",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Our philosophy"
-        },
-        {
-          "kind": "p",
-          "text": "Real estate consultants, not just sellers."
-        },
-        {
-          "kind": "big",
-          "text": "We advise you on how to do it, whether it suits you and when is the best moment, and we make sure everything you do is correct and safe."
-        },
-        {
-          "kind": "p",
-          "text": "That you are happy at every step, **not only when you sign**."
-        },
-        {
-          "kind": "h3",
-          "text": "We help you with everything, whatever happens"
-        },
-        {
-          "kind": "list",
-          "ordered": true,
-          "items": [
-            {
-              "title": "We advise you",
-              "text": "Honestly: how, whether and when it suits you to buy, sell or wait."
-            },
-            {
-              "title": "We study the property in depth",
-              "text": "Before buying or selling, so there are no surprises at signing."
-            },
-            {
-              "title": "One reference advisor",
-              "text": "Accompanies you from start to finish, from the first conversation."
-            },
-            {
-              "title": "We anticipate",
-              "text": "Every step reviewed so that nothing falls through along the way."
-            },
-            {
-              "title": "We solve whatever comes up",
-              "text": "Solutions, not excuses: the most ingenious and effective way out."
-            },
-            {
-              "title": "A network of professionals",
-              "text": "A single point of entry: we coordinate the rest."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "milla",
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "An extra mile"
-        },
-        {
-          "kind": "p",
-          "text": "Always an **extra mile**"
-        },
-        {
-          "kind": "big",
-          "text": "Everything an estate agency does, and everything that is needed on top."
-        },
-        {
-          "kind": "p",
-          "text": "Many transactions fall through because of an unforeseen problem that nobody knew how to solve. We anticipate, and when it appears, we solve it in the most ingenious and effective way."
-        },
-        {
-          "kind": "p",
-          "text": "Even if it does not depend on us or we cannot solve it directly, our answer is always the same:"
-        },
-        {
-          "kind": "quote",
-          "text": "Don't worry, I'll take care of it."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "We get ahead of the unexpected."
-            },
-            {
-              "title": "",
-              "text": "We solve it when it appears."
-            },
-            {
-              "title": "",
-              "text": "You are calm and happy at every step."
-            }
-          ]
-        },
-        {
-          "kind": "p",
-          "text": "**We will do whatever it takes in your transaction so that you end up happy.**"
-        }
-      ]
-    },
-    {
-      "id": "diferencia",
       "surface": "stone",
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Our philosophy"
+        },
+        {
           "kind": "h2",
-          "text": "What sets us apart"
+          "text": "Every property is different. So is every person."
         },
         {
           "kind": "p",
-          "text": "We do not aim to manage the largest possible number of properties."
+          "text": "We do not believe every property transaction should be approached in the same way. Before proposing a strategy we listen, study the circumstances of each property and weigh the different possibilities."
         },
         {
-          "kind": "big",
-          "text": "We prefer to give each client the time, attention and effort they deserve, with a **close, transparent and truly personal approach**."
+          "kind": "p",
+          "text": "Our job is not just to manage a transaction, but to provide judgement so that you can decide whether to take the step, when and how, with knowledge, transparency and security."
         },
         {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Time",
-              "text": "01"
-            },
-            {
-              "title": "Attention",
-              "text": "02"
-            },
-            {
-              "title": "Effort",
-              "text": "03"
-            }
-          ]
+          "kind": "quote",
+          "text": "That you are happy at every step, not only when you sign."
         }
       ]
     },
@@ -226,62 +111,64 @@
       "band": false,
       "items": [
         {
-          "kind": "h2",
+          "kind": "tag",
           "text": "How we work"
         },
         {
-          "kind": "p",
-          "text": "We are passionate about our work."
+          "kind": "h2",
+          "text": "Four steps and the same advisor from start to finish."
         },
         {
-          "kind": "h3",
-          "text": "The road travelled"
-        },
-        {
-          "kind": "p",
-          "text": "For us, success is simple: **doing our work well** and making sure our clients are satisfied with the road travelled."
-        },
-        {
-          "kind": "h3",
-          "text": "From start to finish"
-        },
-        {
-          "kind": "p",
-          "text": "We get involved in every transaction, look for a solution when difficulties arise and stand by the client from the very first moment to the end of the process."
+          "kind": "steps",
+          "items": [
+            {
+              "title": "We listen",
+              "text": "What you need, what deadlines you have and what state the property is in.",
+              "kicker": "01"
+            },
+            {
+              "title": "We study",
+              "text": "We review the documentation and analyse the market.",
+              "kicker": "02"
+            },
+            {
+              "title": "We define the strategy",
+              "text": "Tailored to each situation and explained before we start.",
+              "kicker": "03"
+            },
+            {
+              "title": "We coordinate",
+              "text": "The same advisor handles the paperwork, keeps you informed and works with the specialised professionals who are needed.",
+              "kicker": "04"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "compromiso",
-      "surface": "stone",
+      "id": "milla",
+      "surface": "dark",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Our commitment"
+          "text": "*Always an* extra mile"
         },
         {
           "kind": "p",
-          "text": "Our greatest satisfaction is knowing that those who have trusted us **would do so again**."
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Talk to HousySpace",
-              "href": "route:contact",
-              "solid": true
-            },
-            {
-              "label": "See the services",
-              "href": "route:home#servicios",
-              "solid": false
-            }
-          ]
+          "text": "In a property transaction, situations nobody had foreseen can arise: pending documents, financing difficulties, technical issues or procedures that require other professionals to step in."
         },
         {
           "kind": "p",
-          "text": "HousySpace. Property Solutions."
+          "text": "We anticipate when we can and, when something unexpected comes up, we get involved in finding a solution and in coordinating those who can help resolve it. For us, going the extra mile means not walking away from a difficulty just because it is not part of the usual brokerage."
+        },
+        {
+          "kind": "note",
+          "text": "That is what we mean by:"
+        },
+        {
+          "kind": "big",
+          "text": "Don't worry, I'll take care of it."
         }
       ]
     },
@@ -291,43 +178,84 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Professional collaborations"
+        },
+        {
           "kind": "h2",
-          "text": "Collaboration with industry professionals"
+          "text": "A trusted team for every need."
         },
         {
           "kind": "p",
-          "text": "Surrounding ourselves with the best is also part of our philosophy."
-        },
-        {
-          "kind": "big",
-          "text": "Over the years we have built a network of professionals specialised in legal advice, architecture, interior design, renovations and other fields linked to housing and property."
+          "text": "For the legal, tax, financial and technical needs of a transaction we work with specialised professionals. We coordinate the consultation and its timing with the transaction; the specialised work is carried out by each professional."
         },
         {
           "kind": "p",
-          "text": "Every collaboration stems from experience, trust and a shared way of understanding work: **providing a close, rigorous service committed to each client.**"
+          "text": "If we recommend someone, it is because we know them well: for years we have surrounded ourselves with professionals who work as well as or better than we do and whom we trust fully."
         },
         {
-          "kind": "p",
-          "text": "Our criterion is simple: **we work with professionals we ourselves would trust.**"
-        },
-        {
-          "kind": "p",
-          "text": "For us, saying «Don't worry, I'll take care of it» means having the people, the knowledge and the will needed to make it happen."
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Law firm in Barcelona: inheritance, income tax and taxes, civil, labour and company law.",
+              "kicker": "Legal and tax firm",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "See the service"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Tax, accounting and labour advisory in Barcelona: taxes, returns and procedures with the tax authorities.",
+              "kicker": "Tax advisory",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "See the service"
+            },
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Architecture and interior design studio in Barcelona, with full renovations of homes and Eixample flats.",
+              "kicker": "Architecture and interior design",
+              "href": "service:reformas-obras",
+              "cta": "See the service"
+            },
+            {
+              "title": "Financial broker",
+              "text": "Studies the viability of each transaction with financing and compares the conditions of different lenders.",
+              "kicker": "Financing",
+              "href": "service:asesoramiento-financiero",
+              "cta": "See the service"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "equipo",
-      "surface": "paper",
+      "id": "cierre",
+      "surface": "stone",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Team"
+          "text": "Good decisions start with a conversation."
         },
         {
-          "kind": "pending",
-          "text": "Name, role, photograph, short bio, languages and direct email for each person: pending receipt. No people or photographs will be published unless they are real."
+          "kind": "p",
+          "text": "If you are thinking about selling, buying or renting, tell us your case. We will be glad to listen."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Let's talk",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "See the services",
+              "href": "route:services",
+              "solid": false
+            }
+          ]
         }
       ]
     },
@@ -337,85 +265,12 @@
       "band": false,
       "items": [
         {
-          "kind": "h2",
-          "text": "What our clients say"
+          "kind": "tag",
+          "text": "Reviews"
         },
         {
           "kind": "p",
-          "text": "[See reviews on the home page](route:home#resenas)"
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/facade-1400.jpg"
-        },
-        {
-          "kind": "big",
-          "text": "Because our greatest satisfaction is knowing that those who have trusted us **would do so again**."
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace. Property Solutions."
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Talk to HousySpace",
-              "href": "route:contact",
-              "solid": true
-            },
-            {
-              "label": "See our services",
-              "href": "route:home#servicios",
-              "solid": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "h3",
-          "text": "Company information"
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Catalonia Real Estate Agents Registry: AICAT nº 14032 Phone [613 084 804](tel:+34613084804) www.housyspace.com"
-        },
-        {
-          "kind": "note",
-          "text": "Pending confirmation:"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "Registered address"
-            },
-            {
-              "title": "",
-              "text": "Company Registry"
-            },
-            {
-              "title": "",
-              "text": "Contact and privacy email addresses"
-            },
-            {
-              "title": "",
-              "text": "Office hours and address"
-            }
-          ]
+          "text": "Our greatest satisfaction is knowing that those who have trusted us would do so again."
         }
       ]
     }

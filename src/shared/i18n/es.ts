@@ -497,15 +497,6 @@ const es = {
     backHome: "Volver al inicio",
   },
   about: {
-    inPageNav: {
-      whoWeAre: "Quiénes somos",
-      experience: "Nuestra experiencia",
-      history: "Nuestra historia",
-      philosophy: "Nuestra filosofía",
-      services: "Servicios integrales",
-      reviews: "Reseñas",
-      whereWeAre: "Dónde estamos",
-    },
     stats: {
       sinceOpening: "Desde que abrimos HousySpace",
       volume: {
@@ -523,17 +514,11 @@ const es = {
         "Cada operación está en el mapa, distrito a distrito, con el precio de anuncio y el mes en que se cerró.",
       cta: "Ver los inmuebles intermediados",
     },
-    services: {
-      intro:
-        "Gracias a ellos ofrecemos soluciones integrales y te acompañamos mucho más allá de una operación inmobiliaria.",
-      previous: "Anterior",
-      next: "Siguiente",
-    },
     reviews: {
       heading: "Qué dicen nuestros clientes",
-      cta: "Ver reseñas en la portada",
     },
     whereWeAre: {
+      title: "Dónde estamos",
       addressLabel: "Dirección",
       hoursLabel: "Horario",
       howToGet: "Cómo llegar",
@@ -544,6 +529,7 @@ const es = {
       openMaps: "Abrir en Google Maps",
       companyDataLabel: "Datos de la empresa",
     },
+    companyData: { show: "Ver datos de la empresa", hide: "Ocultar datos de la empresa" },
     sector: {
       heading: "¿Trabajas en el sector?",
       text: "Si compartes nuestra forma de entender el trabajo, hablemos.",

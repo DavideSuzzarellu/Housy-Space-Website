@@ -490,15 +490,6 @@ const it = {
     backHome: "Torna alla home",
   },
   about: {
-    inPageNav: {
-      whoWeAre: "Chi siamo",
-      experience: "La nostra esperienza",
-      history: "La nostra storia",
-      philosophy: "La nostra filosofia",
-      services: "Servizi integrati",
-      reviews: "Recensioni",
-      whereWeAre: "Dove siamo",
-    },
     stats: {
       sinceOpening: "Da quando abbiamo aperto HousySpace",
       volume: { value: "+35", unit: "milioni €", label: "di volume intermediato in cinque anni" },
@@ -512,17 +503,11 @@ const it = {
         "Ogni operazione è sulla mappa, distretto per distretto, con il prezzo di annuncio e il mese in cui si è conclusa.",
       cta: "Vedi gli immobili intermediati",
     },
-    services: {
-      intro:
-        "Grazie a loro offriamo soluzioni integrate e ti accompagniamo ben oltre una compravendita immobiliare.",
-      previous: "Precedente",
-      next: "Successivo",
-    },
     reviews: {
       heading: "Cosa dicono i nostri clienti",
-      cta: "Leggi le recensioni sulla home",
     },
     whereWeAre: {
+      title: "Dove siamo",
       addressLabel: "Indirizzo",
       hoursLabel: "Orari",
       howToGet: "Come arrivare",
@@ -533,6 +518,7 @@ const it = {
       openMaps: "Apri in Google Maps",
       companyDataLabel: "Dati aziendali",
     },
+    companyData: { show: "Vedi i dati dell'azienda", hide: "Nascondi i dati dell'azienda" },
     sector: {
       heading: "Lavori nel settore?",
       text: "Se condividi il nostro approccio al lavoro, parliamone.",
