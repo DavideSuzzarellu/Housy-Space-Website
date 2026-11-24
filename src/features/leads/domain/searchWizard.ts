@@ -57,6 +57,8 @@ export interface SummaryLabels {
   readonly perMonth: string;
   readonly euro: string;
   readonly squareMetres: string;
+  /** Thousands separator of the language ("." or ","). */
+  readonly thousands: string;
 }
 
 const fill = (template: string, values: Record<string, string>): string =>
@@ -71,14 +73,21 @@ export function parseAmount(raw: string): number | null {
   return digits === "" ? null : Number.parseInt(digits, 10);
 }
 
-export function formatAmount(value: number): string {
-  return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+export function formatAmount(value: number, separator = "."): string {
+  return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 }
 
 function range(min: number | null, max: number | null, unit: string, l: SummaryLabels): string {
-  const values = (n: number | null) => ({ n: n === null ? "" : formatAmount(n), u: unit });
+  const values = (n: number | null) => ({
+    n: n === null ? "" : formatAmount(n, l.thousands),
+    u: unit,
+  });
   if (min !== null && max !== null && min !== 0 && max !== 0) {
-    return fill(l.between, { min: formatAmount(min), max: formatAmount(max), u: unit });
+    return fill(l.between, {
+      min: formatAmount(min, l.thousands),
+      max: formatAmount(max, l.thousands),
+      u: unit,
+    });
   }
   if (max !== null && max !== 0) return fill(l.upTo, values(max));
   if (min !== null && min !== 0) return fill(l.from, values(min));

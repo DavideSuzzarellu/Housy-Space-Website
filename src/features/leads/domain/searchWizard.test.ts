@@ -36,6 +36,7 @@ const labels: SummaryLabels = {
   perMonth: "€/mes",
   euro: "€",
   squareMetres: "m²",
+  thousands: ".",
 };
 
 const empty: SearchState = {
@@ -63,7 +64,8 @@ describe("amounts", () => {
     expect(parseAmount("")).toBeNull();
   });
 
-  it("formats with Spanish thousands dots", () => {
+  it("formats with the thousands separator of the language", () => {
+    expect(formatAmount(650000, ",")).toBe("650,000");
     expect(formatAmount(650000)).toBe("650.000");
     expect(formatAmount(900)).toBe("900");
   });
@@ -103,6 +105,9 @@ describe("summary of the ideal home", () => {
     expect(rows).toEqual([
       ["Operación", "Alquilar"],
       ["Renta", "Hasta 1.800 €/mes"],
+    ]);
+    expect(buildSummaryRows({ ...empty, priceMax: 1800 }, { ...labels, thousands: "," })).toEqual([
+      ["Presupuesto", "Hasta 1,800 €"],
     ]);
     expect(buildSummaryRows({ ...empty, areaMin: 70 }, labels)).toEqual([
       ["Superficie", "Desde 70 m²"],
