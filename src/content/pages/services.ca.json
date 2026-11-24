@@ -62,7 +62,7 @@
           "items": [
             {
               "title": "Compravenda i intermediació immobiliària",
-              "text": "T'assessorem en la venda del teu habitatge, des de l'estudi inicial i l'estratègia comercial fins a la formalització de l'operació.",
+              "text": "T'acompanyem en la venda del teu habitatge, des de l'estudi inicial i l'estratègia comercial fins a la formalització de l'operació.",
               "kicker": "01 · Vendre el meu habitatge",
               "href": "service:venta-estrategica",
               "cta": "Veure el servei"
@@ -76,7 +76,7 @@
             },
             {
               "title": "Lloguer i gestió d'immobles",
-              "text": "Comercialitzem el teu habitatge, seleccionem candidats i, si ho necessites, gestionem el lloguer durant el contracte.",
+              "text": "Comercialitzem el teu habitatge, seleccionem els candidats i, si ho necessites, gestionem el lloguer durant tot el contracte.",
               "kicker": "03",
               "href": "service:alquiler-gestion",
               "cta": "Veure el servei"
@@ -105,7 +105,7 @@
           "items": [
             {
               "title": "Personal shopper immobiliari",
-              "text": "Cerquem i analitzem habitatges segons les teves necessitats i t'acompanyem durant el procés de compra, fins a la signatura.",
+              "text": "Cerquem i analitzem habitatges segons les teves necessitats i t'acompanyem en el procés de compra, fins a la signatura.",
               "kicker": "04",
               "href": "service:personal-shopper",
               "cta": "Veure el servei"
@@ -148,7 +148,7 @@
             },
             {
               "title": "Assessorament jurídic i fiscal",
-              "text": "Coordinem l'assessorament de professionals jurídics i fiscals per a les necessitats legals i tributàries de la teva operació.",
+              "text": "Coordinem professionals jurídics i fiscals per cobrir les necessitats legals i tributàries de la teva operació.",
               "kicker": "07",
               "href": "service:asesoramiento-juridico-fiscal",
               "cta": "Veure el servei"
@@ -196,19 +196,19 @@
             },
             {
               "title": "He heretat un habitatge",
-              "text": "Quins tràmits hi ha, quins impostos pagar i què fer-ne.",
+              "text": "Quins tràmits cal fer, quins impostos pagar i què en pots fer.",
               "kicker": "Assessorament jurídic i fiscal",
               "href": "service:asesoramiento-juridico-fiscal"
             },
             {
               "title": "Reformo abans de vendre?",
-              "text": "Quines millores poden ajudar a la venda i quines no compensen.",
+              "text": "Quines millores poden ajudar a vendre i quines no compensen.",
               "kicker": "Reformes i interiorisme",
               "href": "service:reformas-obras"
             },
             {
               "title": "Vull canviar de casa",
-              "text": "Com coordinar la venda de la teva i la compra de la nova.",
+              "text": "Com coordinar la venda de l'actual i la compra de la nova.",
               "kicker": "Personal shopper immobiliari",
               "href": "service:personal-shopper"
             },
@@ -234,7 +234,7 @@
         },
         {
           "kind": "h2",
-          "text": "Un assessorament *que comença per escoltar-te*"
+          "text": "Un assessorament *que comença escoltant-te*"
         },
         {
           "kind": "p",
@@ -257,7 +257,7 @@
             },
             {
               "title": "Acompanyament",
-              "text": "T'ajudem a decidir i, si vols, a executar-ho."
+              "text": "T'ajudem a decidir i, si vols, a tirar-ho endavant."
             }
           ]
         }
