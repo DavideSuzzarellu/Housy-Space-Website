@@ -62,7 +62,7 @@
             },
             {
               "title": "",
-              "text": "**Technical data of the visit:** when you open the website, our servers and the external services that are loaded (for example, Google maps) receive your IP address and basic data about your browser. How they work is explained in the [cookie policy](route:cookies)."
+              "text": "**Technical data of the visit:** when you open the website, our servers and the external services that are loaded (for example, Google Maps) receive your IP address and basic data about your browser. How they work is explained in the [cookie policy](route:cookies)."
             }
           ]
         },
@@ -81,12 +81,12 @@
             [
               "Handling your enquiries and contact requests (Contact form, email, WhatsApp or phone).",
               "Your consent (Art. 6.1.a GDPR) and the application of pre-contractual measures at your request (Art. 6.1.b).",
-              "The time needed to attend to you. Afterwards, blocked for as long as legal liabilities may arise."
+              "The time needed to attend to you. Afterwards, kept blocked for as long as legal liabilities may arise."
             ],
             [
               "Valuing your home (valuator and request for an in-person valuation).",
               "Your consent (Art. 6.1.a) and pre-contractual measures at your request (Art. 6.1.b).",
-              "The time needed for the valuation and its follow-up. Afterwards, blocked for the time required by law."
+              "The time needed for the valuation and its follow-up. Afterwards, kept blocked for the time required by law."
             ],
             [
               "Keeping your home search in our database of buyers and tenants (“My search” form), matching it with the available properties, notifying you of those that fit and contacting you.",
@@ -94,8 +94,8 @@
               "While your search is active and, at most, 12 months from our last contact with you."
             ],
             [
-              "Providing the services you hire (brokerage, advice, rental management…) and complying with the associated legal obligations.",
-              "Performance of the contract (Art. 6.1.b) and compliance with legal obligations (Art. 6.1.c), for example tax obligations and those of anti-money-laundering.",
+              "Providing the services you engage (brokerage, advice, rental management…) and complying with the associated legal obligations.",
+              "Performance of the contract (Art. 6.1.b) and compliance with legal obligations (Art. 6.1.c), for example tax and anti-money-laundering obligations.",
               "For as long as the relationship lasts and, afterwards, the periods set by law for each obligation."
             ],
             [
@@ -158,7 +158,7 @@
         },
         {
           "kind": "p",
-          "text": "Google (maps) receives your IP address and browser data when those features are loaded; it is an independent company and does not act on our behalf. This is explained in the [cookie policy](route:cookies)."
+          "text": "Google (Maps) receives your IP address and browser data when those features are loaded; it is an independent company and does not act on our behalf. This is explained in the [cookie policy](route:cookies)."
         },
         {
           "kind": "p",
