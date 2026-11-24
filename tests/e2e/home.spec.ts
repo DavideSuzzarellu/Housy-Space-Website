@@ -46,96 +46,71 @@ for (const locale of LOCALES) {
       await expect(page.locator("#main-content")).toBeFocused();
     });
 
-    test("renders every section of the UI proposal in order", async ({ page }) => {
+    test("renders every section of the reference home in order", async ({ page }) => {
       const sections = await page
         .locator("main [data-section]")
         .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-section")));
-      expect(sections).toEqual([
-        "valuation",
-        "featured",
-        "gallery",
+      // The blog block renders only once an article is published (the reference always has one).
+      expect(sections.filter((section) => section !== "blog")).toEqual([
         "services",
+        "valuation",
         "philosophy",
+        "featured",
         "reviews",
         "living",
-        "blog",
-        "contact",
       ]);
-      // The hero and the presentation are not `data-section` blocks: check their headings.
-      await expect(page.locator("#presentation-heading")).toBeVisible();
-      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
-      await expect(page.locator('[data-section="contact"]')).toBeVisible();
+      // The hero and the figures are not `data-section` blocks: check their headings.
+      await expect(page.locator("#home-hero-heading")).toBeVisible();
+      await expect(page.locator("#cifras")).toBeVisible();
+      await expect(page.locator("[data-services-triple] [data-card]")).toHaveCount(8);
+      await expect(page.locator("[data-blog-empty]")).toHaveCount(0);
+    });
+
+    test("the hero offers the valuation and the about page", async ({ page }) => {
+      const hero = page.locator("[data-hero]");
       await expect(
-        page.locator("[data-blog-empty], [data-section=blog] [data-post-card]").first(),
+        hero.locator(`a[href="${getLocalizedPath("valuation", locale)}"]`),
       ).toBeVisible();
+      await expect(hero.locator(`a[href="${getLocalizedPath("about", locale)}"]`)).toBeVisible();
     });
 
-    test("services accordion opens a closed panel before following its link", async ({ page }) => {
-      const panels = page.locator("[data-services-accordion] [data-panel]");
-      await page.locator("[data-rail-wrap]").scrollIntoViewIfNeeded();
-      await expect(page.locator("[data-services-accordion][data-ready]")).toHaveCount(1);
-      await expect(panels.first()).toHaveAttribute("data-active", "true");
-      const url = page.url();
-      // A touch tap: no hover first (with a mouse, hover opens the panel and the click navigates).
-      await panels.nth(2).locator("a").dispatchEvent("click");
-      await expect(panels.nth(2)).toHaveAttribute("data-active", "true");
-      expect(page.url()).toBe(url);
-    });
-
-    test("services carousel shows seven panels in a circle; the others are skipped by Tab", async ({
-      page,
-    }) => {
-      const panels = page.locator("[data-services-accordion] [data-panel]");
+    test("services accordion: three cards open, a closed tab opens its three", async ({ page }) => {
+      const root = page.locator("[data-services-triple]");
+      await root.scrollIntoViewIfNeeded();
+      await expect(page.locator("[data-services-triple][data-ready]")).toHaveCount(1);
+      const panels = root.locator("[data-panel]");
       await expect(panels).toHaveCount(8);
-      await expect(panels.locator("a:visible")).toHaveCount(7);
-      await expect(panels.first()).toHaveAttribute("data-pos", "0");
-      await expect(panels.nth(4)).toHaveAttribute("data-pos", "hl");
-      await expect(panels.nth(4).locator("a")).toBeHidden();
+      await expect(root.locator("[data-panel][data-on]")).toHaveCount(3);
+      await expect(panels.first()).toHaveAttribute("data-on", "");
+      await panels.nth(5).locator("[data-tab]").click();
+      // A tab after the window opens as the last of the three.
+      await expect(panels.nth(3)).toHaveAttribute("data-on", "");
+      await expect(panels.nth(5)).toHaveAttribute("data-on", "");
+      await expect(panels.first()).not.toHaveAttribute("data-on", "");
+      await expect(panels.nth(5).locator("[data-tab]")).toHaveAttribute("aria-expanded", "true");
     });
 
-    test("services carousel turns round with its arrows and the keyboard", async ({ page }) => {
-      const panels = page.locator("[data-services-accordion] [data-panel]");
-      const rail = page.locator("[data-rail-wrap]");
-      await rail.scrollIntoViewIfNeeded();
-      await expect(rail.locator("[data-services-accordion][data-ready]")).toHaveCount(1);
-      await rail.locator("[data-rail-next]").click();
-      await expect(panels.nth(1)).toHaveAttribute("data-active", "true");
-      await rail.locator("[data-rail-prev]").click();
-      await rail.locator("[data-rail-prev]").click();
-      // Circular: before the first comes the last.
-      await expect(panels.nth(7)).toHaveAttribute("data-active", "true");
-      await expect(panels.nth(7)).toHaveAttribute("data-pos", "0");
-
-      await panels.nth(7).locator("a").focus();
-      await page.keyboard.press("ArrowRight");
-      await expect(panels.nth(0)).toHaveAttribute("data-active", "true");
-      await expect(panels.nth(0).locator("a")).toBeFocused();
-    });
-
-    test("services carousel can be paused and resumed (WCAG 2.2.2)", async ({ page }, testInfo) => {
-      test.skip(
-        testInfo.project.name.includes("reduced-motion"),
-        "No auto-advance, so no pause button, under reduced motion",
-      );
-      const rail = page.locator("[data-rail-wrap]");
-      const list = rail.locator("[data-services-accordion]");
-      const toggle = rail.locator("[data-rail-toggle]");
-      await rail.scrollIntoViewIfNeeded();
-      await expect(list).toHaveAttribute("data-ready", "true");
-      await expect(toggle).toBeVisible();
-      const pauseLabel = await toggle.getAttribute("aria-label");
-      await toggle.click();
-      await expect(list).toHaveAttribute("data-held", /.*/);
-      expect(await toggle.getAttribute("aria-label")).not.toBe(pauseLabel);
-      await toggle.click();
-      await expect(toggle).toHaveAttribute("aria-label", pauseLabel ?? "");
+    test("services accordion pages by three with its arrows and wraps", async ({ page }) => {
+      const root = page.locator("[data-services-triple]");
+      await root.scrollIntoViewIfNeeded();
+      await expect(page.locator("[data-services-triple][data-ready]")).toHaveCount(1);
+      const panels = root.locator("[data-panel]");
+      await root.locator('[data-arrow="next"]').click();
+      await expect(panels.nth(3)).toHaveAttribute("data-on", "");
+      await root.locator('[data-arrow="next"]').click();
+      await expect(panels.nth(7)).toHaveAttribute("data-on", "");
+      // Past the end it goes back to the first three; before the first, to the last three.
+      await root.locator('[data-arrow="next"]').click();
+      await expect(panels.first()).toHaveAttribute("data-on", "");
+      await root.locator('[data-arrow="prev"]').click();
+      await expect(panels.nth(7)).toHaveAttribute("data-on", "");
     });
 
     test("stats count up to the figures of the content (CSS counter, no script)", async ({
       page,
     }, testInfo) => {
       // Scroll the whole row into view: the scroll-driven count ends once it has entered.
-      await page.locator("#stats ul").scrollIntoViewIfNeeded();
+      await page.locator("#cifras ul").scrollIntoViewIfNeeded();
       await page.evaluate(() => window.scrollBy(0, 300));
       // The figures are in the markup either way (screen readers, no scroll timeline support).
       await expect(page.locator(".stat-final")).toHaveText(["35", "100", "60", "9"]);
@@ -153,16 +128,25 @@ for (const locale of LOCALES) {
     });
 
     test("districts carousel moves with its buttons", async ({ page }) => {
-      const rail = page.locator("[data-rail]");
+      const rail = page.locator("#districts-rail");
       await rail.scrollIntoViewIfNeeded();
-      await page.locator('[data-rail-step="1"]').click();
+      await page.locator('[data-rail-for="districts-rail"][data-rail-step="1"]').click();
       await expect.poll(() => rail.evaluate((node) => node.scrollLeft)).toBeGreaterThan(0);
     });
 
     test("shows the 3 latest client reviews, newest first", async ({ page }) => {
       const section = page.locator('[data-section="reviews"]');
-      await expect(section.locator("li")).toHaveCount(3);
-      await expect(section.locator("li").first()).toContainText("Bruno Sorrentini");
+      await expect(section.locator("article")).toHaveCount(3);
+      await expect(section.locator("article").first()).toContainText("Bruno Sorrentini");
+    });
+
+    test("reviews rail has previous and next buttons, the first one disabled at the start", async ({
+      page,
+    }) => {
+      const section = page.locator('[data-section="reviews"]');
+      await section.scrollIntoViewIfNeeded();
+      await expect(section.locator('[data-rail-step="-1"]')).toBeDisabled();
+      await expect(section.locator("#reviews-rail")).toHaveAttribute("role", "region");
     });
 
     test("links to the 10 district pages", async ({ page }) => {
