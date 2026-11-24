@@ -1,25 +1,35 @@
 ---
 import type { FormLeaf } from "@/features/pages/infrastructure/pageSchema";
+import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { plainInline } from "@/shared/lib/inline";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 
-/** One control of a `LeadForm`. `data-lead-field` marks what goes into the message. */
+/**
+ * One control of a `LeadForm`. `data-lead-field` marks what goes into the message. `grouped` is the
+ * "Mi búsqueda" wizard layout (block flow, reference `bv2-*`); otherwise the 2-column contact grid.
+ */
 interface Props {
   locale: Locale;
   field: FormLeaf;
+  grouped?: boolean;
 }
 
-const { locale, field } = Astro.props;
+const { locale, field, grouped = false } = Astro.props;
+const t = getDictionary(locale).forms;
+const span = grouped ? "" : "sm:col-span-2";
 const CONTROL =
-  "min-h-13.5 w-full border border-line-strong bg-transparent px-4 py-2.5 text-[0.9375rem] font-normal tracking-[0.02em] text-fg transition-colors hover:border-petrol focus:border-petrol";
+  "min-h-13.5 w-full border border-line-strong bg-transparent px-4 py-2.5 text-[0.9375rem] font-normal tracking-[0.02em] text-fg transition-colors placeholder:text-[#8E9A97] hover:border-petrol focus:border-petrol focus:shadow-[0_0_0_1px_var(--color-petrol)] focus:outline-0 aria-invalid:border-[#B4452F]";
 const LABEL =
-  "flex flex-col gap-2 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.14em] text-fg";
+  "flex flex-col content-start gap-2 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.14em] text-fg";
 const CHIP =
   "relative flex cursor-pointer flex-col justify-center border border-line-strong transition-colors hover:border-petrol has-checked:border-petrol has-checked:bg-petrol has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-3 has-focus-visible:outline-accent";
-/** Small option chips (reference `.bv2-chip`). */
+/** Small option chips (reference `.bv2-chip`); `sm` and `sq` are its variants. */
 const SMALL = "min-h-10.5 px-4 py-2 text-[0.6875rem] font-medium tracking-[0.12em]";
+const SMALLER = "min-h-9 px-3 py-1.5 text-[0.65625rem] font-medium tracking-[0.12em]";
+const SQUARE =
+  "min-h-10.5 min-w-12.5 items-center px-2.5 py-2 text-[0.6875rem] font-medium tracking-[0.12em]";
 /** Option cards (operation, type) are big, as in the reference; two options get taller ones. */
 const CARD =
   "items-center px-3.5 py-4 text-center font-semibold tracking-[0.16em] min-h-19 text-[0.78125rem]";
@@ -27,41 +37,140 @@ const CARD_PAIR =
   "items-center px-3.5 py-4 text-center font-semibold tracking-[0.16em] min-h-28 text-sm";
 /** Reference `.bv2-q`: the question above a group of options; the "(...)" part is light. */
 const QUESTION =
-  "mt-5.5 mb-3 text-[0.6875rem] leading-normal font-semibold tracking-[0.16em] text-fg";
-const [questionMain = "", questionHint = ""] =
-  field.kind === "chips" && field.label !== undefined
-    ? (field.label.match(/^(.*?)\s*(\(.*\))$/)?.slice(1) ?? [field.label])
-    : [];
+  "max-w-118.5 mt-[clamp(1.625rem,3.4vw,2.375rem)] mb-3 text-[0.6875rem] leading-normal font-semibold tracking-[0.16em] text-fg";
+const split = (label: string | undefined): [string, string] => {
+  const parts = label?.match(/^(.*?)\s*(\(.*\))$/)?.slice(1);
+  return [parts?.[0] ?? label ?? "", parts?.[1] ?? ""];
+};
+const [questionMain, questionHint] = split(field.kind === "chips" ? field.label : undefined);
+const [inputMain, inputHint] = split(field.kind === "field" ? field.label : undefined);
 /** A note written "**Label:** text" is a row of the data-protection summary (reference `.bv2-info`). */
 const row = field.kind === "note" ? field.text.match(/^\*\*([^*]+?):\*\*\s*([\s\S]*)$/) : null;
+/** Validation key of a field (wizard error line), see `searchWizard.ts`. */
+const ERRORS: Record<string, string> = {
+  operacion: "operation",
+  precio_max: "price",
+  m2_max: "area",
+  nombre: "name",
+  email: "email",
+  telefono: "phone",
+  c_datos: "consentData",
+  c_canal: "channels",
+};
+const errorKey = field.kind === "field" || field.kind === "chips" ? ERRORS[field.name] : undefined;
+const AUTOCOMPLETE: Record<string, string> = {
+  nombre: "given-name",
+  apellidos: "family-name",
+  email: "email",
+  telefono: "tel",
+};
+const MAXLENGTH: Record<string, number> = {
+  nombre: 80,
+  apellidos: 120,
+  email: 120,
+  telefono: 24,
+  zona_libre: 200,
+  comentarios: 1000,
+};
+/** Message label: the budget and area fields only say "Minimum", so the group name goes first. */
+const messageLabel =
+  field.kind === "field"
+    ? field.unit === true
+      ? `${t.summary.budget} · ${field.label}`
+      : field.name.startsWith("m2_")
+        ? `${t.summary.area} · ${field.label}`
+        : field.label
+    : field.kind === "chips"
+      ? field.name === "operacion"
+        ? t.summary.operation
+        : questionMain === ""
+          ? field.name
+          : questionMain
+      : "";
 ---
 
 {field.kind === "field" && field.type === "consent" && (
+  <>
+    <label
+      data-lead-field
+      data-label={plainInline(field.label)}
+      class="flex cursor-pointer items-start gap-3.5 text-[0.6875rem] leading-normal tracking-[0.04em] text-muted"
+    >
+      <input
+        type="checkbox"
+        name={field.name}
+        required={field.required}
+        aria-describedby={errorKey === undefined ? undefined : `e-${errorKey}`}
+        class="mt-0.5 size-5 shrink-0 accent-petrol"
+      />
+      <span class="[&_strong]:block [&_strong]:text-[0.78125rem] [&_strong]:leading-[1.65] [&_strong]:font-medium [&_strong]:tracking-[0.02em] [&_strong]:text-fg">
+        <Inline text={field.label} locale={locale} />
+      </span>
+    </label>
+    {errorKey !== undefined && (
+      <p
+        id={`e-${errorKey}`}
+        data-error={errorKey}
+        role="alert"
+        hidden
+        class="mt-0.5 text-[0.71875rem] leading-[1.45] font-medium tracking-[0.04em] text-[#B4452F]"
+      ></p>
+    )}
+  </>
+)}
+{field.kind === "field" && field.type === "check" && (
   <label
     data-lead-field
-    data-label={plainInline(field.label)}
-    class="flex cursor-pointer items-start gap-3.5 text-[0.6875rem] leading-normal tracking-[0.04em] text-muted sm:col-span-2"
+    data-label={field.label}
+    class="mt-6 flex cursor-pointer items-center gap-3 text-xs leading-[1.4] font-medium tracking-[0.12em] text-fg"
   >
     <input
       type="checkbox"
       name={field.name}
-      required={field.required}
-      class="mt-0.5 size-5 shrink-0 accent-petrol"
+      class="size-5 shrink-0 accent-petrol"
+      data-value={field.label}
     />
-    <span class="[&_strong]:block [&_strong]:text-[0.78125rem] [&_strong]:leading-[1.65] [&_strong]:font-medium [&_strong]:tracking-[0.02em] [&_strong]:text-fg">
-      <Inline text={field.label} locale={locale} />
-    </span>
+    <span>{field.label}</span>
   </label>
 )}
-{field.kind === "field" && field.type !== "consent" && (
+{field.kind === "field" && field.type !== "consent" && field.type !== "check" && (
   <label
     data-lead-field
-    data-label={field.label}
-    class:list={[LABEL, field.full && "sm:col-span-2"]}
+    data-label={messageLabel}
+    class:list={[
+      LABEL,
+      field.full && "sm:col-span-2",
+      field.full && grouped && "mt-[clamp(1.625rem,3.4vw,2.375rem)] first:mt-0",
+    ]}
   >
     <span>
-      {field.label}
+      {inputMain}
+      {field.unit === true && (
+        <>
+          {" "}
+          <em
+            data-unit
+            data-buy={t.units.buy}
+            data-rent={t.units.rent}
+            class="font-normal tracking-[0.04em] text-muted"
+          >
+            {t.units.either}
+          </em>
+        </>
+      )}
+      {inputHint !== "" && (
+        <>
+          {" "}
+          <em class="font-normal tracking-[0.04em] text-muted">{inputHint}</em>
+        </>
+      )}
       {field.required && " *"}
+      {field.suffix !== undefined && (
+        <>
+          {" "}
+          <i class="font-normal tracking-[0.04em] text-muted">{field.suffix}</i>
+        </>
+      )}
     </span>
     {field.type === "select" ? (
       <select name={field.name} required={field.required} class={CONTROL}>
@@ -71,25 +180,102 @@ const row = field.kind === "note" ? field.text.match(/^\*\*([^*]+?):\*\*\s*([\s\
         ))}
       </select>
     ) : field.type === "textarea" ? (
-      <textarea name={field.name} rows="4" required={field.required} class={CONTROL}></textarea>
+      <textarea
+        name={field.name}
+        rows="4"
+        maxlength={MAXLENGTH[field.name]}
+        required={field.required}
+        placeholder={field.placeholder}
+        class:list={[CONTROL, "min-h-32.5 resize-y py-3.5"]}
+      ></textarea>
     ) : (
       <input
-        type={field.type}
+        type={field.type === "numeric" ? "text" : field.type}
+        inputmode={field.type === "numeric" ? "numeric" : field.type === "tel" ? "tel" : undefined}
+        autocomplete={AUTOCOMPLETE[field.name] ?? "off"}
+        maxlength={MAXLENGTH[field.name]}
         name={field.name}
         required={field.required}
         placeholder={field.placeholder}
+        data-placeholder-rent={field.placeholderRent}
+        data-placeholder-buy={field.placeholderRent === undefined ? undefined : field.placeholder}
+        aria-describedby={errorKey === undefined ? undefined : `e-${errorKey}`}
         class={CONTROL}
       />
     )}
+    {field.small !== undefined && (
+      <small class="text-[0.65625rem] leading-normal font-normal tracking-[0.04em] text-muted">
+        {field.small}
+      </small>
+    )}
+    {errorKey !== undefined && (
+      <p
+        id={`e-${errorKey}`}
+        data-error={errorKey}
+        role="alert"
+        hidden
+        class="mt-0.5 text-[0.71875rem] leading-[1.45] font-medium tracking-[0.04em] text-[#B4452F]"
+      ></p>
+    )}
   </label>
+)}
+{field.kind === "question" && <p class={QUESTION}>{field.text}</p>}
+{field.kind === "zoneSearch" && (
+  <>
+    <div class="relative mb-4" role="search" data-zone-search>
+      <label class="sr-only" for="zone-q">
+        {field.label}
+      </label>
+      <svg
+        viewBox="0 0 20 20"
+        aria-hidden="true"
+        class="pointer-events-none absolute top-1/2 left-4.5 size-4.5 -translate-y-1/2 fill-none stroke-muted stroke-[1.5]"
+        stroke-linecap="round"
+      >
+        <circle cx="9" cy="9" r="5.5"></circle>
+        <path d="m13.2 13.2 4 4"></path>
+      </svg>
+      <input
+        id="zone-q"
+        type="search"
+        autocomplete="off"
+        placeholder={field.placeholder}
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="zone-res"
+        aria-autocomplete="list"
+        class="min-h-14.5 w-full border border-line-strong bg-transparent pr-4.5 pl-12.5 text-[0.9375rem] tracking-[0.02em] text-fg placeholder:text-[#8E9A97] hover:border-petrol focus:border-petrol focus:shadow-[0_0_0_1px_var(--color-petrol)] focus:outline-0"
+      />
+      <div
+        id="zone-res"
+        role="listbox"
+        aria-label={t.zones.results}
+        hidden
+        class="absolute inset-x-0 top-full z-30 -mt-px max-h-87.5 overflow-auto border border-petrol bg-canvas"
+      ></div>
+    </div>
+    <div
+      data-zone-tags
+      aria-live="polite"
+      aria-label={t.zones.chosenLabel}
+      hidden
+      class="mb-1 flex flex-wrap gap-2"
+    ></div>
+  </>
 )}
 {field.kind === "chips" && (
   <div
     data-lead-field
-    data-label={field.label ?? field.name}
+    data-label={messageLabel}
     data-when={field.when}
-    hidden={field.when !== undefined}
-    class="sm:col-span-2"
+    data-when-checked={field.whenChecked}
+    data-exclusive={field.exclusive}
+    hidden={field.when !== undefined || field.whenChecked !== undefined}
+    class:list={[
+      span,
+      grouped && field.when !== undefined && "mt-4.5 border-l border-line-strong py-0.5 pl-4.5",
+      grouped && field.whenChecked !== undefined && "mt-1 ml-8.5",
+    ]}
   >
     {field.label !== undefined && (
       <p class={QUESTION}>
@@ -103,37 +289,84 @@ const row = field.kind === "note" ? field.text.match(/^\*\*([^*]+?):\*\*\s*([\s\
       </p>
     )}
     <div
+      role={field.radio ? "radiogroup" : undefined}
+      aria-label={field.radio ? messageLabel : undefined}
       class:list={[
         "flex flex-wrap gap-2",
         field.cards && "grid grid-cols-2 gap-3",
-        field.cards && field.options.length > 2 && "sm:grid-cols-3",
+        field.cards && field.options.length > 2 && "min-[640px]:grid-cols-3",
       ]}
     >
-      {field.options.map((option) => (
-        <label
-          class:list={[
-            CHIP,
-            !field.cards && SMALL,
-            field.cards && (field.options.length === 2 ? CARD_PAIR : CARD),
-          ]}
-        >
+      {field.blank !== undefined && (
+        <label class:list={[CHIP, SQUARE]}>
           <input
-            type={field.radio ? "radio" : "checkbox"}
+            type="radio"
             name={field.name}
-            value={option.value}
-            data-label={option.label}
-            required={field.required}
+            value=""
+            checked
+            data-label=""
             class="absolute size-px opacity-0"
           />
-          <b class="font-semibold">{option.label}</b>
-          {option.hint !== undefined && <small class="opacity-80">{option.hint}</small>}
+          <b class="font-medium">{field.blank}</b>
         </label>
+      )}
+      {field.options.map((option) => (
+        <div
+          class:list={[field.must !== undefined && "inline-flex items-stretch"]}
+          data-feature={field.must === undefined ? undefined : ""}
+        >
+          <label
+            class:list={[
+              CHIP,
+              !field.cards &&
+                (field.size === "sq" ? SQUARE : field.size === "sm" ? SMALLER : SMALL),
+              field.cards && (field.options.length === 2 ? CARD_PAIR : CARD),
+            ]}
+          >
+            <input
+              type={field.radio ? "radio" : "checkbox"}
+              name={field.name}
+              value={option.value}
+              data-label={option.label}
+              required={field.required}
+              aria-describedby={errorKey === undefined ? undefined : `e-${errorKey}`}
+              class="absolute size-px opacity-0"
+            />
+            <b class="font-semibold">{option.label}</b>
+            {option.hint !== undefined && <small class="opacity-80">{option.hint}</small>}
+          </label>
+          {field.must !== undefined && (
+            <button
+              type="button"
+              data-must
+              aria-pressed="false"
+              hidden
+              class="cursor-pointer border border-l-0 border-petrol bg-transparent px-3 text-[0.59375rem] leading-[1.2] font-medium tracking-[0.12em] text-fg-2 transition-colors hover:bg-taupe/20 aria-pressed:border-taupe aria-pressed:bg-taupe aria-pressed:text-dark"
+            >
+              {field.must}
+            </button>
+          )}
+        </div>
       ))}
     </div>
+    {errorKey !== undefined && (
+      <p
+        id={`e-${errorKey}`}
+        data-error={errorKey}
+        role="alert"
+        hidden
+        class="mt-0.5 text-[0.71875rem] leading-[1.45] font-medium tracking-[0.04em] text-[#B4452F]"
+      ></p>
+    )}
   </div>
 )}
 {field.kind === "note" && row !== null && (
-  <div class="-mb-3.5 grid gap-1 border-b border-line py-3 sm:col-span-2 md:grid-cols-[9.375rem_1fr] md:gap-5">
+  <div
+    class:list={[
+      "grid gap-1 border-b border-line py-3 md:grid-cols-[9.375rem_1fr] md:gap-5",
+      !grouped && "-mb-3.5 sm:col-span-2",
+    ]}
+  >
     <b class="text-[0.625rem] leading-[1.6] font-semibold tracking-[0.16em] text-muted">{row[1]}</b>
     <span class="text-xs leading-[1.7] tracking-[0.02em] text-fg/85">
       <Inline text={row[2] ?? ""} locale={locale} />
@@ -141,7 +374,12 @@ const row = field.kind === "note" ? field.text.match(/^\*\*([^*]+?):\*\*\s*([\s\
   </div>
 )}
 {field.kind === "note" && row === null && (
-  <p class="text-xs leading-[1.65] text-muted sm:col-span-2">
+  <p
+    class:list={[
+      "text-xs leading-[1.65] text-muted",
+      grouped ? "mt-4.5 max-w-127" : "sm:col-span-2",
+    ]}
+  >
     <Inline text={field.text} locale={locale} />
   </p>
 )}
@@ -154,8 +392,8 @@ const row = field.kind === "note" ? field.text.match(/^\*\*([^*]+?):\*\*\s*([\s\
   </details>
 )}
 {field.kind === "submit" && (
-  <div class="sm:col-span-2">
-    <Button type="submit" variant="solid" size="lg">
+  <div class:list={[grouped ? "mt-7.5" : "sm:col-span-2"]}>
+    <Button type="submit" variant="solid" size={grouped ? "big" : "lg"} arrow={grouped}>
       {field.label}
     </Button>
   </div>

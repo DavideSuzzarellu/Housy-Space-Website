@@ -17,7 +17,7 @@ interface Props {
   locale: Locale;
   units: readonly RenderUnit<PageItem>[];
   /** Size of the page-level buttons (the "Mi búsqueda" landing uses large ones). */
-  buttonSize?: "md" | "lg";
+  buttonSize?: "md" | "lg" | "big";
   /** Reference look of "Mi búsqueda": sentence-case lead and step texts, no turquoise rule under the h2. */
   plain?: "head" | "body" | undefined;
 }
@@ -143,7 +143,11 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
         <ol
           class:list={[
             "mt-6 grid gap-x-[clamp(1.75rem,4vw,4rem)] gap-y-8",
-            item.items.length === 3 ? "md:grid-cols-3" : "sm:grid-cols-2 lg:grid-cols-4",
+            item.items.length === 3
+              ? plain === undefined
+                ? "md:grid-cols-3"
+                : "min-[860px]:grid-cols-3"
+              : "sm:grid-cols-2 lg:grid-cols-4",
           ]}
         >
           {item.items.map((entry, index) => (

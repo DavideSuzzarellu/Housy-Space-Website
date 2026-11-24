@@ -130,7 +130,13 @@
             {
               "kind": "group",
               "title": "¿Dónde te gustaría vivir?",
+              "hint": "Elige las zonas que te interesan: un distrito entero o barrios concretos. Puedes marcar varias y señalar cuáles son alternativas.",
               "fields": [
+                {
+                  "kind": "zoneSearch",
+                  "label": "Busca un distrito o barrio",
+                  "placeholder": "Busca un distrito o barrio"
+                },
                 {
                   "kind": "chips",
                   "name": "distrito",
@@ -177,7 +183,8 @@
                       "value": "sant-marti",
                       "label": "Sant Martí"
                     }
-                  ]
+                  ],
+                  "label": "Barcelona (elige uno o varios distritos)"
                 },
                 {
                   "kind": "chips",
@@ -203,7 +210,8 @@
                     }
                   ],
                   "label": "Barrios de Ciutat Vella (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "ciutat-vella"
+                  "when": "ciutat-vella",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -237,7 +245,8 @@
                     }
                   ],
                   "label": "Barrios de Eixample (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "eixample"
+                  "when": "eixample",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -279,7 +288,8 @@
                     }
                   ],
                   "label": "Barrios de Sants-Montjuïc (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "sants-montjuic"
+                  "when": "sants-montjuic",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -301,7 +311,8 @@
                     }
                   ],
                   "label": "Barrios de Les Corts (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "les-corts"
+                  "when": "les-corts",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -335,7 +346,8 @@
                     }
                   ],
                   "label": "Barrios de Sarrià-Sant Gervasi (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "sarria-sant-gervasi"
+                  "when": "sarria-sant-gervasi",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -365,7 +377,8 @@
                     }
                   ],
                   "label": "Barrios de Gràcia (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "gracia"
+                  "when": "gracia",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -419,7 +432,8 @@
                     }
                   ],
                   "label": "Barrios de Horta-Guinardó (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "horta-guinardo"
+                  "when": "horta-guinardo",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -481,7 +495,8 @@
                     }
                   ],
                   "label": "Barrios de Nou Barris (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "nou-barris"
+                  "when": "nou-barris",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -519,7 +534,8 @@
                     }
                   ],
                   "label": "Barrios de Sant Andreu (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "sant-andreu"
+                  "when": "sant-andreu",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -569,135 +585,178 @@
                     }
                   ],
                   "label": "Barrios de Sant Martí (opcional: si no eliges ninguno, nos vale todo el distrito)",
-                  "when": "sant-marti"
+                  "when": "sant-marti",
+                  "size": "sm"
                 },
                 {
                   "name": "zona_libre",
-                  "label": "Otra zona, calle o punto de referencia",
+                  "label": "Otra zona, calle o punto de referencia (opcional)",
                   "required": false,
                   "full": true,
                   "type": "text",
                   "placeholder": "Ej.: Badalona, cerca del mar…",
                   "kind": "field"
-                }
-              ],
-              "hint": "Marca los distritos que te interesan y, si quieres afinar, sus barrios."
-            },
-            {
-              "kind": "group",
-              "title": "Presupuesto y tamaño",
-              "fields": [
-                {
-                  "kind": "note",
-                  "text": "Elige arriba si quieres comprar o alquilar y aquí aparecerá tu presupuesto."
                 },
                 {
-                  "name": "precio_min",
-                  "label": "Presupuesto desde (€)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "Ej.: 400.000",
-                  "kind": "field"
-                },
-                {
-                  "name": "precio_max",
-                  "label": "Presupuesto hasta (€)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "Ej.: 650.000",
-                  "kind": "field"
-                },
-                {
-                  "name": "precio_max",
-                  "label": "Renta máxima (€/mes)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "Ej.: 2.000",
-                  "kind": "field"
-                },
-                {
-                  "name": "m2_min",
-                  "label": "Superficie mínima (m²)",
-                  "required": false,
-                  "full": false,
-                  "type": "number",
-                  "placeholder": "Ej.: 90",
-                  "kind": "field"
-                },
-                {
-                  "name": "dormitorios_min",
-                  "label": "Dormitorios (mínimo)",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["1 o más", "2 o más", "3 o más", "4 o más", "5 o más"],
-                  "kind": "field"
-                },
-                {
-                  "name": "banos_min",
-                  "label": "Baños (mínimo)",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["1 o más", "2 o más", "3 o más"],
-                  "kind": "field"
-                },
-                {
-                  "name": "planta",
-                  "label": "Planta",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Planta alta o ático", "Evitar plantas bajas"],
-                  "kind": "field"
-                },
-                {
-                  "name": "estado",
-                  "label": "Estado de la vivienda",
+                  "kind": "field",
+                  "name": "abierto",
+                  "label": "Estoy abierto a otras zonas",
                   "required": false,
                   "full": true,
-                  "type": "select",
-                  "options": ["A estrenar o reformada", "Para reformar"],
-                  "kind": "field"
+                  "type": "check"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "Lo que no puede faltar",
+              "title": "¿Cuál es tu presupuesto?",
               "fields": [
+                {
+                  "kind": "field",
+                  "name": "precio_min",
+                  "label": "Mínimo",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "unit": true,
+                  "suffix": "opcional",
+                  "placeholder": "Ej.: 300.000",
+                  "placeholderRent": "Ej.: 1.000"
+                },
+                {
+                  "kind": "field",
+                  "name": "precio_max",
+                  "label": "Máximo",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "unit": true,
+                  "placeholder": "Ej.: 650.000",
+                  "placeholderRent": "Ej.: 1.800"
+                },
+                {
+                  "kind": "note",
+                  "text": "Puedes ajustar tu presupuesto más adelante con tu asesor."
+                }
+              ]
+            },
+            {
+              "kind": "group",
+              "title": "¿Cómo imaginas tu nuevo hogar?",
+              "fields": [
+                {
+                  "kind": "question",
+                  "text": "Superficie (m²)"
+                },
+                {
+                  "kind": "field",
+                  "name": "m2_min",
+                  "label": "Mínima",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "placeholder": "Ej.: 70"
+                },
+                {
+                  "kind": "field",
+                  "name": "m2_max",
+                  "label": "Máxima",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "placeholder": "Ej.: 120"
+                },
+                {
+                  "kind": "chips",
+                  "name": "dormitorios_min",
+                  "radio": true,
+                  "required": false,
+                  "size": "sq",
+                  "half": true,
+                  "label": "Habitaciones (mínimo)",
+                  "blank": "Indiferente",
+                  "options": [
+                    {
+                      "value": "1",
+                      "label": "1+"
+                    },
+                    {
+                      "value": "2",
+                      "label": "2+"
+                    },
+                    {
+                      "value": "3",
+                      "label": "3+"
+                    },
+                    {
+                      "value": "4",
+                      "label": "4+"
+                    },
+                    {
+                      "value": "5",
+                      "label": "5+"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
+                  "name": "banos_min",
+                  "radio": true,
+                  "required": false,
+                  "size": "sq",
+                  "half": true,
+                  "label": "Baños (mínimo)",
+                  "blank": "Indiferente",
+                  "options": [
+                    {
+                      "value": "1",
+                      "label": "1+"
+                    },
+                    {
+                      "value": "2",
+                      "label": "2+"
+                    },
+                    {
+                      "value": "3",
+                      "label": "3+"
+                    },
+                    {
+                      "value": "4",
+                      "label": "4+"
+                    },
+                    {
+                      "value": "5",
+                      "label": "5+"
+                    }
+                  ]
+                },
                 {
                   "kind": "chips",
                   "name": "caracteristicas",
                   "radio": false,
                   "required": false,
+                  "must": "Imprescindible",
+                  "label": "Características (elígelas y marca las que sean imprescindibles; el resto serán deseables)",
                   "options": [
                     {
-                      "value": "Ascensor",
-                      "label": "Ascensor"
+                      "value": "Balcón",
+                      "label": "Balcón"
                     },
                     {
                       "value": "Terraza",
                       "label": "Terraza"
                     },
                     {
-                      "value": "Balcón",
-                      "label": "Balcón"
+                      "value": "Jardín",
+                      "label": "Jardín"
                     },
                     {
                       "value": "Exterior",
                       "label": "Exterior"
                     },
                     {
-                      "value": "Aire acondicionado",
-                      "label": "Aire acondicionado"
-                    },
-                    {
-                      "value": "Calefacción",
-                      "label": "Calefacción"
+                      "value": "Ascensor",
+                      "label": "Ascensor"
                     },
                     {
                       "value": "Parking",
@@ -708,210 +767,152 @@
                       "label": "Trastero"
                     },
                     {
-                      "value": "Reformado",
-                      "label": "Reformado"
-                    },
-                    {
-                      "value": "Suelos originales",
-                      "label": "Suelos originales"
-                    },
-                    {
                       "value": "Piscina",
                       "label": "Piscina"
                     },
                     {
-                      "value": "Jardín",
-                      "label": "Jardín"
+                      "value": "Aire acondicionado",
+                      "label": "Aire acondicionado"
                     },
                     {
-                      "value": "Vistas",
-                      "label": "Vistas"
+                      "value": "Calefacción",
+                      "label": "Calefacción"
                     },
                     {
-                      "value": "Accesible",
-                      "label": "Accesible"
-                    },
-                    {
-                      "value": "Amueblado",
-                      "label": "Amueblado"
-                    },
-                    {
-                      "value": "Admite mascotas",
-                      "label": "Admite mascotas"
+                      "value": "Accesibilidad",
+                      "label": "Accesibilidad"
                     }
                   ]
-                }
-              ],
-              "hint": "Los mismos términos que usamos en las fichas de los inmuebles."
-            },
-            {
-              "kind": "group",
-              "title": "Plazos y situación",
-              "fields": [
+                },
                 {
+                  "kind": "chips",
+                  "name": "estado",
+                  "radio": false,
+                  "required": false,
+                  "exclusive": "indiferente",
+                  "label": "Estado de la vivienda (puedes elegir varios)",
+                  "options": [
+                    {
+                      "value": "obra-nueva",
+                      "label": "Obra nueva"
+                    },
+                    {
+                      "value": "reformado",
+                      "label": "Reformado"
+                    },
+                    {
+                      "value": "buen-estado",
+                      "label": "Buen estado"
+                    },
+                    {
+                      "value": "para-reformar",
+                      "label": "Para reformar"
+                    },
+                    {
+                      "value": "indiferente",
+                      "label": "Indiferente"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
                   "name": "plazo",
+                  "radio": true,
+                  "required": false,
                   "label": "¿Para cuándo lo necesitas?",
+                  "options": [
+                    {
+                      "value": "lo-antes-posible",
+                      "label": "Lo antes posible"
+                    },
+                    {
+                      "value": "1-3-meses",
+                      "label": "En 1 a 3 meses"
+                    },
+                    {
+                      "value": "3-6-meses",
+                      "label": "En 3 a 6 meses"
+                    },
+                    {
+                      "value": "mas-adelante",
+                      "label": "Más adelante"
+                    },
+                    {
+                      "value": "sin-prisa",
+                      "label": "Sin prisa"
+                    }
+                  ]
+                },
+                {
+                  "kind": "field",
+                  "name": "comentarios",
+                  "label": "¿Hay algo más que debamos saber? (opcional)",
                   "required": false,
                   "full": true,
-                  "type": "select",
-                  "options": [
-                    "Lo antes posible",
-                    "En 1 a 3 meses",
-                    "En 3 a 6 meses",
-                    "Más adelante",
-                    "Solo estoy explorando"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "uso",
-                  "label": "¿Para qué la quieres?",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Vivienda habitual", "Segunda residencia", "Inversión"],
-                  "kind": "field"
-                },
-                {
-                  "name": "financiacion",
-                  "label": "Financiación",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": [
-                    "Con ahorros, sin hipoteca",
-                    "Necesito financiación",
-                    "Ya tengo la hipoteca preaprobada",
-                    "Aún no lo sé"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "vivienda_actual",
-                  "label": "¿Tienes una vivienda que vender?",
-                  "required": false,
-                  "full": true,
-                  "type": "select",
-                  "options": ["No", "Sí, quiero venderla", "Sí, y ya está en venta"],
-                  "kind": "field"
-                },
-                {
-                  "kind": "note",
-                  "text": "¿Necesitas financiación? Te orientamos con el [asesoramiento financiero](service:asesoramiento-financiero). ¿Tienes que vender antes de comprar? Mira cómo lo hacemos en [Compraventa](service:venta-estrategica)."
-                },
-                {
-                  "name": "fecha_entrada",
-                  "label": "Fecha de entrada",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "kind": "field"
-                },
-                {
-                  "name": "duracion",
-                  "label": "Tipo de contrato",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": [
-                    "Vivienda habitual (larga duración)",
-                    "Por temporada",
-                    "Aún no lo sé"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "personas",
-                  "label": "Personas que vivirán",
-                  "required": false,
-                  "full": false,
-                  "type": "number",
-                  "kind": "field"
+                  "type": "textarea",
+                  "placeholder": "Cuéntanos cualquier detalle que sea importante para ti",
+                  "small": "No incluyas datos que no sean necesarios, como datos de salud o de otras personas."
                 }
               ]
             },
             {
               "kind": "group",
               "title": "¿Hablamos?",
+              "hint": "**Ya casi hemos terminado.** Déjanos tus datos para que podamos avisarte cuando encontremos una vivienda que encaje contigo.",
               "fields": [
                 {
+                  "kind": "field",
                   "name": "nombre",
                   "label": "Nombre",
                   "required": true,
                   "full": false,
-                  "type": "text",
-                  "kind": "field"
+                  "type": "text"
                 },
                 {
+                  "kind": "field",
                   "name": "apellidos",
                   "label": "Apellidos",
                   "required": false,
                   "full": false,
-                  "type": "text",
-                  "kind": "field"
+                  "type": "text"
                 },
                 {
-                  "name": "telefono",
-                  "label": "Teléfono",
-                  "required": true,
-                  "full": false,
-                  "type": "tel",
-                  "kind": "field"
-                },
-                {
+                  "kind": "field",
                   "name": "email",
                   "label": "Correo electrónico",
                   "required": true,
                   "full": false,
-                  "type": "email",
-                  "kind": "field"
+                  "type": "email"
                 },
                 {
-                  "name": "idioma",
-                  "label": "Idioma",
-                  "required": false,
+                  "kind": "field",
+                  "name": "telefono",
+                  "label": "Teléfono",
+                  "required": true,
                   "full": false,
-                  "type": "select",
-                  "options": ["Español", "Català", "English", "Otro"],
-                  "kind": "field"
+                  "type": "tel"
                 },
                 {
+                  "kind": "chips",
                   "name": "canal",
-                  "label": "Cómo prefieres que te contactemos",
+                  "radio": true,
                   "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Teléfono", "WhatsApp", "Correo electrónico"],
-                  "kind": "field"
+                  "label": "¿Cómo prefieres que te contactemos?",
+                  "options": [
+                    {
+                      "value": "telefono",
+                      "label": "Teléfono"
+                    },
+                    {
+                      "value": "whatsapp",
+                      "label": "WhatsApp"
+                    },
+                    {
+                      "value": "email",
+                      "label": "Correo electrónico"
+                    }
+                  ]
                 },
-                {
-                  "name": "franja",
-                  "label": "Mejor momento",
-                  "required": false,
-                  "full": true,
-                  "type": "select",
-                  "options": ["Por la mañana", "A mediodía", "Por la tarde"],
-                  "kind": "field"
-                },
-                {
-                  "name": "comentarios",
-                  "label": "¿Algo más que debamos saber?No incluyas datos que no sean necesarios, como datos de salud o de otras personas.",
-                  "required": false,
-                  "full": true,
-                  "type": "textarea",
-                  "kind": "field"
-                }
-              ],
-              "hint": "Solo te pedimos lo necesario para atender tu búsqueda."
-            },
-            {
-              "kind": "note",
-              "text": "Así quedará guardada tu búsqueda, con los mismos campos que la ficha de un inmueble. Se completa mientras rellenas el formulario."
-            },
-            {
-              "kind": "group",
-              "title": "Tu consentimiento",
-              "fields": [
                 {
                   "kind": "note",
                   "text": "**Responsable:** HousySpace Consultores Inmobiliarios, S.L. · CIF B26903419 · [info@housyspace.com](mailto:info@housyspace.com)."
@@ -975,7 +976,9 @@
                       "label": "Teléfono"
                     }
                   ],
-                  "label": "¿Por qué canal?"
+                  "label": "¿Por qué canal?",
+                  "size": "sm",
+                  "whenChecked": "c_comercial"
                 },
                 {
                   "name": "c_newsletter",
@@ -992,17 +995,16 @@
                 {
                   "kind": "note",
                   "text": "**Textos legales en borrador.** La información sobre protección de datos, las casillas y la política de privacidad están pendientes de revisión por la asesoría jurídica de HousySpace antes de publicar la web."
+                },
+                {
+                  "kind": "submit",
+                  "label": "Guardar mi búsqueda"
+                },
+                {
+                  "kind": "note",
+                  "text": "Todavía no hay una base de datos conectada a este formulario (CRM pendiente). Al pulsar, se abrirá WhatsApp con tu búsqueda ya escrita para que la envíes tú; hasta que no la envíes allí, no se habrá guardado ni habrá llegado a HousySpace."
                 }
-              ],
-              "hint": "Primero, la información básica que exige la ley. Léela antes de marcar nada."
-            },
-            {
-              "kind": "submit",
-              "label": "Guardar mi búsqueda"
-            },
-            {
-              "kind": "note",
-              "text": "Todavía no hay una base de datos conectada a este formulario (CRM pendiente). Al pulsar, se abrirá WhatsApp con tu búsqueda ya escrita para que la envíes tú; hasta que no la envíes allí, no se habrá guardado ni habrá llegado a HousySpace."
+              ]
             }
           ],
           "mode": "whatsapp"
