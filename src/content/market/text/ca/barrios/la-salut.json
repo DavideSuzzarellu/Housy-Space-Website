@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Laderas con vistas, casas de veraneo y el Park Güell a un paso.",
+  "translated": true,
+  "lead": "Vessants amb vistes, cases d'estiueig i el Park Güell a un pas.",
   "text": [
-    "Empezó a urbanizarse en la segunda mitad del siglo XIX alrededor de la iglesia de Nostra Senyora de la Salut, cuando aquí predominaban los campos y las masías. Con la llegada de los tranvías, en 1880 y 1909, pasó a ser zona de veraneo de la burguesía barcelonesa, y de aquella época son el Reial Santuari de Sant Josep de la Muntanya, de 1902, y muchas casas con carácter.",
-    "Está en las laderas meridionales del Carmel y de la Rovira, y se nota en las cuestas y en las vistas. Es un barrio tranquilo y residencial, con el Park Güell, de Gaudí, junto a su frente de montaña y la Travessera de Dalt como eje. Su precio de compraventa, 4.487 €/m², queda entre el de Vallcarca i els Penitents y el de la Vila de Gràcia."
+    "Va començar a urbanitzar-se a la segona meitat del segle XIX al voltant de l'església de Nostra Senyora de la Salut, quan aquí predominaven els camps i les masies. Amb l'arribada dels tramvies, el 1880 i el 1909, va passar a ser zona d'estiueig de la burgesia barcelonina, i d'aquella època són el Reial Santuari de Sant Josep de la Muntanya, del 1902, i moltes cases amb caràcter.",
+    "És als vessants meridionals del Carmel i de la Rovira, i es nota en les costeres i en les vistes. És un barri tranquil i residencial, amb el Park Güell, de Gaudí, al costat del seu front de muntanya i la Travessera de Dalt com a eix. El seu preu de compravenda, 4.487 €/m², queda entre el de Vallcarca i els Penitents i el de la Vila de Gràcia."
   ],
-  "housing": "Casas de veraneo y edificios de pocas plantas, en calles en pendiente.",
+  "housing": "Cases d'estiueig i edificis de poques plantes, en carrers en pendent.",
   "places": ["Park Güell", "Reial Santuari de Sant Josep de la Muntanya", "Travessera de Dalt"]
 }
