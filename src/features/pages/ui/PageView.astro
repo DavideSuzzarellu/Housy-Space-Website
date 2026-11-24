@@ -22,7 +22,7 @@ interface Props {
   /** Oversized plain head (the "Mi búsqueda" landing): big uppercase title, roomy padding. */
   hero?: boolean;
   /** Paper head of the reference (`PaperHero`: kicker, big title, lead) instead of the photo head. */
-  paperHead?: boolean;
+  paperHead?: "lg" | "service" | undefined;
   /** Long text: smaller title and tight head. `legal` = reference `.lg` (narrow sentence-case column), `data` = data sources. */
   longText?: "legal" | "data" | undefined;
 }
@@ -33,7 +33,7 @@ const {
   crumbs,
   fallback = false,
   hero = false,
-  paperHead = false,
+  paperHead,
   longText,
 } = Astro.props;
 const legal = longText !== undefined;
@@ -42,7 +42,7 @@ const image = content.head.items.find((item) => item.kind === "image");
 const headItems = content.head.items.filter(
   (item): item is PageItem & typeof item => item.kind !== "image",
 );
-const hasPhoto = !paperHead && content.head.photo && image !== undefined;
+const hasPhoto = paperHead === undefined && content.head.photo && image !== undefined;
 const headRest = headItems.filter((item) => item.kind !== "tag");
 const tag = headItems.find((item) => item.kind === "tag");
 const lead = headItems.find((item) => item.kind === "lead");
@@ -54,8 +54,9 @@ const SURFACES = {
 ---
 
 <div lang={fallback ? "es" : undefined} data-page-view>
-  {paperHead ? (
+  {paperHead !== undefined ? (
     <PaperHero
+      size={paperHead}
       locale={locale}
       title={content.head.heading}
       kicker={tag?.kind === "tag" ? tag.text : undefined}

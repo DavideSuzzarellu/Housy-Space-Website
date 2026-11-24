@@ -122,6 +122,11 @@ const editorial =
       ? await getPage(`service-${getServiceSlug(target.service, DEFAULT_LOCALE)}`, locale)
       : undefined;
 
+/** Editorial pages with the reference paper head, and its size. */
+const PAPER_HEADS: Readonly<Partial<Record<string, "lg" | "service">>> = {
+  sell: "lg",
+  valuation: "service",
+};
 const isMySearch = target.view === "editorial" && target.key === "mySearch";
 const isAbout = target.view === "editorial" && target.key === "about";
 /** Long text pages: legal (reference `.lg`, also the guide) and the data sources page. */
@@ -234,8 +239,13 @@ const proseFallback =
   (editorial?.fallback ?? false) ||
   (!isSpanish && (target.view === "district" || target.view === "living")) ||
   (target.view === "post" && target.post.data.language !== locale);
+// The valuation page hangs from the services like the reference's valuation service page.
 const serviceCrumb =
-  target.view === "service" ? dictionary.serviceNames[target.service] : undefined;
+  target.view === "service"
+    ? dictionary.serviceNames[target.service]
+    : target.view === "editorial" && target.key === "valuation"
+      ? dictionary.serviceNames.valuation
+      : undefined;
 const crumbs = [
   home,
   ...(serviceCrumb === undefined
@@ -285,7 +295,7 @@ const crumbs = [
         crumbs={crumbs}
         fallback={editorial.fallback}
         hero={isMySearch}
-        paperHead={target.view === "editorial" && target.key === "sell"}
+        paperHead={target.view === "editorial" ? PAPER_HEADS[target.key] : undefined}
         longText={longText}
       />
     )

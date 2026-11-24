@@ -2,20 +2,16 @@
   "title": "Valoració immobiliària · HousySpace",
   "description": "Sol·licita la valoració professional del teu habitatge a Barcelona.",
   "head": {
-    "heading": "Quant val la teva propietat?",
-    "photo": true,
+    "heading": "El valor del teu habitatge *mereix més que una xifra*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Valoració immobiliària"
+        "text": "Valoració immobiliària a Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Descobreix el valor real del teu habitatge amb una anàlisi immobiliària professional, basada en el mercat i les característiques de la teva propietat."
+        "text": "Cada habitatge és diferent, i el seu valor també. Estudiem les seves característiques, la ubicació i les condicions del mercat per oferir-te una valoració raonada i ajudar-te a prendre decisions amb criteri."
       }
     ]
   },

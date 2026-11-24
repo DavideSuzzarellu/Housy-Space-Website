@@ -2,20 +2,16 @@
   "title": "Valutazione immobiliare · HousySpace",
   "description": "Richiedi una valutazione professionale del tuo immobile a Barcellona.",
   "head": {
-    "heading": "Quanto vale il tuo immobile?",
-    "photo": true,
+    "heading": "Il valore della tua casa *merita più di una cifra*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Valutazione immobiliare"
+        "text": "Valutazione immobiliare a Barcellona"
       },
       {
         "kind": "lead",
-        "text": "Scopri il valore reale del tuo immobile con un'analisi immobiliare professionale, basata sul mercato e sulle caratteristiche della tua proprietà."
+        "text": "Ogni casa è diversa, e anche il suo valore. Studiamo le sue caratteristiche, la sua posizione e le condizioni del mercato per offrirti una valutazione ragionata e aiutarti a decidere con criterio."
       }
     ]
   },

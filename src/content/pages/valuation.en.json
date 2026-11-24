@@ -2,20 +2,16 @@
   "title": "Property valuation · HousySpace",
   "description": "Request a professional valuation of your property in Barcelona.",
   "head": {
-    "heading": "What is your property worth?",
-    "photo": true,
+    "heading": "The value of your home *deserves more than a figure*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Property valuation"
+        "text": "Property valuation in Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Discover the real value of your property with a professional real estate analysis, based on the market and your property's characteristics."
+        "text": "Every home is different, and so is its value. We study its features, its location and market conditions to give you a reasoned valuation and help you make decisions with confidence."
       }
     ]
   },

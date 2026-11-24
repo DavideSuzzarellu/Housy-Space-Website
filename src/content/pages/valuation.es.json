@@ -2,20 +2,16 @@
   "title": "Valorador · HousySpace",
   "description": "Solicita la valoración profesional de tu vivienda en Barcelona.",
   "head": {
-    "heading": "¿Cuánto vale tu propiedad?",
-    "photo": true,
+    "heading": "El valor de tu vivienda *merece algo más que una cifra*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Valoración inmobiliaria"
+        "text": "Valoración inmobiliaria en Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Descubre el valor real de tu vivienda con un análisis inmobiliario profesional, basado en el mercado y las características de tu propiedad."
+        "text": "Cada vivienda es diferente, y su valor también. Estudiamos sus características, su ubicación y las condiciones del mercado para ofrecerte una valoración razonada y ayudarte a tomar decisiones con criterio."
       }
     ]
   },
