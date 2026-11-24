@@ -157,3 +157,28 @@ describe("my search form", () => {
     expect(cards.map((c) => ("name" in c ? c.name : ""))).toEqual(["operacion", "tipo"]);
   });
 });
+
+describe("legal pages", () => {
+  const legal = ["legal", "privacy", "cookies"];
+  const kinds = (file: string): string[] =>
+    schema.parse(read(file)).sections.flatMap((section) => section.items.map((item) => item.kind));
+
+  it.each(legal)("%s: the approved Spanish text has no pending notice or draft marker", (key) => {
+    expect(kinds(`${key}.es.json`)).not.toContain("pending");
+    expect(strings(read(`${key}.es.json`)).join(" ")).not.toMatch(/\b(pendiente|borrador)\b/i);
+  });
+
+  it.each(legal.flatMap((key) => ["en", "it", "ca"].map((locale) => `${key}.${locale}.json`)))(
+    "%s keeps the pending lawyer review notice (AGENTS.md section 4)",
+    (file) => {
+      expect(kinds(file)).toContain("pending");
+    },
+  );
+
+  it.each(["en", "it", "ca", "es"])(
+    "privacy.%s has the 10 sections of the approved text",
+    (locale) => {
+      expect(kinds(`privacy.${locale}.json`).filter((kind) => kind === "h2")).toHaveLength(10);
+    },
+  );
+});
