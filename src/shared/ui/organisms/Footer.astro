@@ -51,6 +51,9 @@ const CONTACT_LINK = `justify-self-start py-[3px] ${LINK}`;
       <ContactActions locale={locale} variant="footer" />
     </div>
 
+    <!-- Newsletter (reference `.nl5`) between the CTA row and the columns; the layout provides it -->
+    <slot />
+
     <div class="grid gap-8.5 min-[760px]:grid-cols-[1.4fr_1fr_1fr_1fr]">
       <div>
         <a

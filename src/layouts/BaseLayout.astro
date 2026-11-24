@@ -9,6 +9,7 @@ import { withBase } from "@/shared/lib/basePath";
 import { THEME_COLOR } from "@/shared/lib/seo/webManifest";
 import { MOTION_READY_CLASS } from "@/shared/ui/motion/reveal";
 import ScrollProgress from "@/shared/ui/motion/ScrollProgress.astro";
+import NewsletterForm from "@/features/leads/ui/NewsletterForm.astro";
 import Footer from "@/shared/ui/organisms/Footer.astro";
 import Header from "@/shared/ui/organisms/Header.astro";
 import MobileDrawer from "@/shared/ui/organisms/MobileDrawer.astro";
@@ -104,7 +105,9 @@ const t = getDictionary(locale);
     >
       <slot />
     </main>
-    <Footer locale={locale} company={COMPANY} />
+    <Footer locale={locale} company={COMPANY}>
+      <NewsletterForm locale={locale} />
+    </Footer>
     <QuickActionsBar locale={locale} />
     <script>
       import "@/shared/ui/motion/init";
