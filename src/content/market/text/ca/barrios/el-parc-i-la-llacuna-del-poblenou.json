@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Glòries, la Torre Glòries y el 22@: la cara más nueva del Poblenou.",
+  "translated": true,
+  "lead": "Glòries, la Torre Glòries i el 22@: la cara més nova del Poblenou.",
   "text": [
-    "Su nombre procede de los parques de la antigua estación del Norte y de la Ciutadella, aunque ninguno está dentro del barrio, y de la Llacuna, la vía que unía el Poblenou con el Clot. Su delimitación actual data de 2006, y la zona cercana al parque se conocía antes como Fort Pius.",
-    "Es un barrio de carácter más industrial y comercial, donde el 22@ ha traído arquitectura nueva como la Torre Glòries, junto a la plaça de les Glòries, con su estación de metro y tranvía y el centro comercial Glòries. Comparte con el Poblenou una zona de ocio nocturno, la Marina, con locales como Razzmatazz."
+    "El seu nom prové dels parcs de l'antiga estació del Nord i de la Ciutadella, tot i que cap dels dos és dins del barri, i de la Llacuna, la via que unia el Poblenou amb el Clot. La delimitació actual data del 2006, i la zona propera al parc es coneixia abans com a Fort Pius.",
+    "És un barri de caràcter més industrial i comercial, on el 22@ ha portat arquitectura nova com la Torre Glòries, al costat de la plaça de les Glòries, amb la seva estació de metro i tramvia i el centre comercial Glòries. Comparteix amb el Poblenou una zona d'oci nocturn, la Marina, amb locals com Razzmatazz."
   ],
-  "housing": "Edificios nuevos del 22@ y pisos de distintas épocas, junto a antiguas naves industriales.",
+  "housing": "Edificis nous del 22@ i pisos de diferents èpoques, al costat d'antigues naus industrials.",
   "places": [
     "Torre Glòries",
     "Plaça de les Glòries",

@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Parques, polígonos de vivienda y el antiguo Mental, hoy biblioteca, junto al Parc Central de Nou Barris.",
+  "translated": true,
+  "lead": "Parcs, polígons d'habitatges i l'antic Mental, avui biblioteca, al costat del Parc Central de Nou Barris.",
   "text": [
-    "Su nombre procede de Can Guineueta, una masía situada en el cruce del paseo de Valldaura con la calle Gasela. El barrio empezó a urbanizarse a finales de los sesenta, y en 1971 el torrent de la Guineueta se transformó en el parque de la Guineueta.",
-    "El antiguo Institut Mental de la Santa Creu, inaugurado en 1889, es hoy sede de servicios como la biblioteca de Nou Barris, junto al Parc Central. La vivienda se reparte en dos grandes polígonos: edificios de poca altura al norte y los de Barcinova y Calinova al sur. Es un barrio con larga tradición de luchas vecinales por equipamientos y servicios."
+    "El seu nom prové de Can Guineueta, una masia situada a la cruïlla del passeig de Valldaura amb el carrer de la Gasela. El barri va començar a urbanitzar-se a finals dels seixanta, i el 1971 el torrent de la Guineueta es va transformar en el parc de la Guineueta.",
+    "L'antic Institut Mental de la Santa Creu, inaugurat el 1889, és avui seu de serveis com la biblioteca de Nou Barris, al costat del Parc Central. L'habitatge es reparteix en dos grans polígons: edificis de poca alçada al nord i els de Barcinova i Calinova al sud. És un barri amb una llarga tradició de lluites veïnals per equipaments i serveis."
   ],
-  "housing": "Dos polígonos de vivienda: edificios de poca altura al norte y bloques de Barcinova y Calinova al sur.",
+  "housing": "Dos polígons d'habitatges: edificis de poca alçada al nord i blocs de Barcinova i Calinova al sud.",
   "places": ["Parc de la Guineueta", "Parc Central de Nou Barris", "Antic Institut Mental"]
 }

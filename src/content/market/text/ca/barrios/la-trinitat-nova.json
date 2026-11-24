@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio en renovación, con vivienda pública nueva y tres líneas de metro.",
+  "translated": true,
+  "lead": "Un barri en renovació, amb habitatge públic nou i tres línies de metro.",
   "text": [
-    "En 1997 se aprobó un plan de reforma por las malas condiciones del barrio, y desde 2001 se construyen viviendas públicas nuevas para realojar a vecinos de los bloques antiguos afectados por aluminosis. Los bloques viejos van desapareciendo por fases. Hasta 2017 la remodelación levantó 607 viviendas de realojo, con una inversión municipal de 50 millones de euros, y en 2025 el Ayuntamiento reservó un nuevo solar en la calle Aiguablava, 74-76, para 25 viviendas protegidas en cesión de uso.",
-    "El metro llegó con las líneas 4, en 1999, la 11, en 2003, y la 3, en 2008, y el barrio cuenta con un mercado, un parque grande y una residencia de día para mayores. A veces se confunde con la Trinitat Vella, de la que lo separa la avenida Meridiana. Con 2.505 €/m² y 636 €/mes, es de los más asequibles de Barcelona. Si vendes, el precio medio de compraventa está un 15 % por debajo de la media de Nou Barris. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 200.000 €, y el barrio está en la franja media de Nou Barris (9.º de 13 por precio). Si inviertes, el alquiler medio está un 20 % por debajo del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "El 1997 es va aprovar un pla de reforma per les males condicions del barri, i des del 2001 es construeixen habitatges públics nous per reallotjar veïns dels blocs antics afectats per aluminosi. Els blocs vells van desapareixent per fases. Fins al 2017 la remodelació va aixecar 607 habitatges de reallotjament, amb una inversió municipal de 50 milions d'euros, i el 2025 l'Ajuntament va reservar un nou solar al carrer d'Aiguablava, 74-76, per a 25 habitatges protegits en cessió d'ús.",
+    "El metro hi va arribar amb la línia 4, el 1999, la 11, el 2003, i la 3, el 2008, i el barri compta amb un mercat, un parc gran i una residència de dia per a gent gran. A vegades es confon amb la Trinitat Vella, de la qual el separa l'avinguda Meridiana. Amb 2.505 €/m² i 636 €/mes, és dels més assequibles de Barcelona. Si vens, el preu mitjà de compravenda és un 15 % per sota de la mitjana de Nou Barris. Dins del barri, el preu de cada pis depèn de l'estat, l'alçada i la finca, així que convé comparar-lo amb vendes properes i no amb la mitjana del districte. Si compres, un pis de 80 m² surt de mitjana per uns 200.000 €, i el barri és a la franja mitjana de Nou Barris (9è de 13 per preu). Si inverteixes, el lloguer mitjà és un 20 % per sota del districte; abans de decidir, convé estudiar cada operació amb xifres reals de compra, reforma i lloguer."
   ],
-  "housing": "Vivienda pública nueva, construida por fases para realojar a los vecinos de los bloques antiguos.",
-  "places": ["Estació de metro Trinitat Nova (L3, L4 y L11)"]
+  "housing": "Habitatge públic nou, construït per fases per reallotjar els veïns dels blocs antics.",
+  "places": ["Estació de metro Trinitat Nova (L3, L4 i L11)"]
 }

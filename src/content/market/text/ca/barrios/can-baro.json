@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de ladera alrededor del Turó de la Rovira, con vistas y un pasado de lucha vecinal.",
+  "translated": true,
+  "lead": "Un barri de vessant al voltant del Turó de la Rovira, amb vistes i un passat de lluita veïnal.",
   "text": [
-    "Su nombre viene de la antigua masía de Can Baró, remodelada en 1647 y propiedad en el siglo XIX del barón de Sant Lluís. En 1869 sus propietarios parcelaron la finca, lo que dio origen al barrio, que se anexionó a Barcelona en 1897. Junto al barrio, la batería antiaérea del Turó de la Rovira, de mediados de 1937, se ha rehabilitado, y ese espacio forma parte del parque de los Tres Turons, que el Ayuntamiento aún tiene pendiente de completar.",
-    "Se extiende por el Turó de la Rovira, con calles de fuerte pendiente y restos de las baterías antiaéreas de la Guerra Civil en la cima. En el siglo XX recibió mucha inmigración y careció de servicios básicos hasta los años ochenta y noventa; hoy es una zona en rehabilitación. Con 3.405 €/m² y 847 €/mes, sus precios son contenidos. Si vendes, el precio medio de compraventa está prácticamente en la media de Horta-Guinardó. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 272.000 €, y el barrio está en la franja media de Horta-Guinardó (6.º de 11 por precio). Si inviertes, el alquiler medio está un 7 % por debajo del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "El seu nom ve de l'antiga masia de Can Baró, remodelada el 1647 i propietat al segle XIX del baró de Sant Lluís. El 1869 els seus propietaris van parcel·lar la finca, cosa que va donar origen al barri, que es va annexionar a Barcelona el 1897. Al costat del barri, la bateria antiaèria del Turó de la Rovira, de mitjan 1937, s'ha rehabilitat, i aquest espai forma part del parc dels Tres Turons, que l'Ajuntament encara té pendent de completar.",
+    "S'estén pel Turó de la Rovira, amb carrers de fort pendent i restes de les bateries antiaèries de la Guerra Civil al cim. Al segle XX va rebre molta immigració i va mancar de serveis bàsics fins als anys vuitanta i noranta; avui és una zona en rehabilitació. Amb 3.405 €/m² i 847 €/mes, els seus preus són continguts. Si vens, el preu mitjà de compravenda és pràcticament a la mitjana d'Horta-Guinardó. Dins del barri, el preu de cada pis depèn de l'estat, l'alçada i la finca, així que convé comparar-lo amb vendes properes i no amb la mitjana del districte. Si compres, un pis de 80 m² surt de mitjana per uns 272.000 €, i el barri és a la franja mitjana d'Horta-Guinardó (6è d'11 per preu). Si inverteixes, el lloguer mitjà és un 7 % per sota del districte; abans de decidir, convé estudiar cada operació amb xifres reals de compra, reforma i lloguer."
   ],
-  "housing": "Bloques y casas en calles de fuerte pendiente, con zonas en rehabilitación.",
+  "housing": "Blocs i cases en carrers de fort pendent, amb zones en rehabilitació.",
   "places": [
     "Turó de la Rovira",
     "Parc dels Tres Turons",

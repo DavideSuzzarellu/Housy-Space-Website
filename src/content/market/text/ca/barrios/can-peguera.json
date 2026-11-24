@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Casas baratas de 1929, con tejados rústicos y jardín: el barrio más pequeño de Barcelona.",
+  "translated": true,
+  "lead": "Cases barates del 1929, amb teulades rústegues i jardí: el barri més petit de Barcelona.",
   "text": [
-    "Entre 1929 y 1932 se habilitaron aquí 534 casas para trabajadores que vivían en barracas en Montjuïc, coincidiendo con la Exposición Internacional. Su nombre viene de la masía Can Peguera, conocida por fabricar pegamento con la resina de la pineda cercana, y durante muchos años el barrio se llamó Ramón Albó.",
-    "Con 0,12 km², es el barrio más pequeño de Barcelona, y es también el mejor conservado de los cuatro grupos de casas baratas, porque sus propios vecinos las han ido mejorando. Sus calles son de casas unifamiliares de una sola planta, con tejados rústicos y pequeños jardines delanteros, y su única plaza, la de Sant Francesc Xavier, se organiza alrededor de la antigua capilla de la masía."
+    "Entre el 1929 i el 1932 es van habilitar aquí 534 cases per a treballadors que vivien en barraques a Montjuïc, coincidint amb l'Exposició Internacional. El seu nom ve de la masia Can Peguera, coneguda per fabricar cola amb la resina de la pineda propera, i durant molts anys el barri es va dir Ramon Albó.",
+    "Amb 0,12 km², és el barri més petit de Barcelona, i també el més ben conservat dels quatre grups de cases barates, perquè els seus mateixos veïns les han anat millorant. Els seus carrers són de cases unifamiliars d'una sola planta, amb teulades rústegues i petits jardins al davant, i l'única plaça, la de Sant Francesc Xavier, s'organitza al voltant de l'antiga capella de la masia."
   ],
-  "housing": "Casas unifamiliares de una planta con jardín delantero, junto a algún bloque de vivienda social.",
+  "housing": "Cases unifamiliars d'una planta amb jardí al davant, al costat d'algun bloc d'habitatge social.",
   "places": ["Plaça de Sant Francesc Xavier", "Església de Sant Francesc Xavier"]
 }

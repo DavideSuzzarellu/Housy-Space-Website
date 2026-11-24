@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio circular alrededor de una colina, con parque, mirador y mucho espíritu vecinal.",
+  "translated": true,
+  "lead": "Un barri circular al voltant d'un turó, amb parc, mirador i molt esperit veïnal.",
   "text": [
-    "El barrio se adapta al relieve y rodea el turó de la Peira, una colina que pertenecía a la finca de Can Peguera y cuyo parque se inauguró en 1936, con unas ocho hectáreas de matorrales y pinares y un mirador coronado por una gran cruz de hierro. A principios de los años sesenta, la construcción de viviendas redujo su extensión.",
-    "Los bloques, de ventanas simétricas y sin adornos, trazan a veces curvas alrededor de la colina. Es uno de los barrios más afectados por la aluminosis: tras el derrumbe de un edificio en 1990 se impulsó la remodelación de los bloques afectados, y sus vecinos han tenido un papel activo en ella. Con 49.090 hab./km², es uno de los barrios más densos de Barcelona."
+    "El barri s'adapta al relleu i envolta el turó de la Peira, una elevació que pertanyia a la finca de Can Peguera i el parc del qual es va inaugurar el 1936, amb unes vuit hectàrees de matolls i pinedes i un mirador coronat per una gran creu de ferro. A principis dels anys seixanta, la construcció d'habitatges en va reduir l'extensió.",
+    "Els blocs, de finestres simètriques i sense ornaments, tracen de vegades corbes al voltant del turó. És un dels barris més afectats per l'aluminosi: després de l'ensorrament d'un edifici el 1990 es va impulsar la remodelació dels blocs afectats, i els seus veïns hi han tingut un paper actiu. Amb 49.090 hab./km², és un dels barris més densos de Barcelona."
   ],
-  "housing": "Bloques de pisos de los años cincuenta y sesenta, muchos de ellos remodelados por aluminosis.",
+  "housing": "Blocs de pisos dels anys cinquanta i seixanta, molts d'ells remodelats per aluminosi.",
   "places": ["Parc del Turó de la Peira"]
 }
