@@ -42,7 +42,7 @@
             },
             {
               "kind": "p",
-              "text": "Speak directly with an adviser."
+              "text": "Speak directly with an advisor."
             },
             {
               "kind": "buttons",
@@ -157,7 +157,7 @@
         },
         {
           "kind": "lead",
-          "text": "A HousySpace adviser will personally attend to you."
+          "text": "A HousySpace advisor will deal with you personally."
         },
         {
           "kind": "list",
@@ -233,7 +233,7 @@
                 "Rent out my property",
                 "Find a rental",
                 "Value my property",
-                "Renovation & interior design",
+                "Renovations and interior design",
                 "Financing or mortgage",
                 "Other enquiry"
               ],
@@ -273,7 +273,7 @@
             },
             {
               "kind": "note",
-              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: to handle your request and, only if you tick the boxes, to send you commercial communications and the newsletter. Basis: your consent. Recipients: we do not share your data, except where required by law. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may also lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy)."
+              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: to handle your request and, only if you tick the boxes, to send you commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where required by law. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may also lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy)."
             },
             {
               "kind": "submit",
