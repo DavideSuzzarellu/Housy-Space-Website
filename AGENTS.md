@@ -6,7 +6,7 @@
 ## 1. Project overview
 
 - **Client:** HousySpace Consultores Inmobiliarios, S.L. — CIF B26903419. Brand: **HousySpace · Property Solutions**.
-- **Domain:** www.housyspace.com
+- **Domain:** housyspace.com (apex = canonical origin, single constant in `deploy.config.json`; `www.housyspace.com` 301-redirects to it)
 - **Office:** Travessera de Gràcia 73, 2.º 3.ª · 08006 Barcelona (confirmed).
 - **AICAT:** 14032 (must appear in footer and legal notice).
 - **Goal:** Public website to showcase properties for sale and rent in Barcelona, capture leads into the CRM, and build a premium, trustworthy brand.
@@ -28,7 +28,7 @@
 | Reviews             | Typed by hand in Pages CMS                                                    | See section 6.1                                                              |
 | Maps                | Leaflet + own clustering (`features/properties/ui/mapClusters.ts`), ICGC WMTS colour tiles ("estandard") | No Leaflet.markercluster (UMD needs a global `L`). Listings = approximate zone circles only (§5); attribution "© ICGC (CC BY 4.0)" |
 | Charts              | Own typed SVG chart components (no chart library)                             | Line + bar charts for market data                                            |
-| Hosting + adapter   | `TODO` (Vercel / Netlify / Node) — not decided                                | Keep code adapter-agnostic: no provider-specific APIs outside `astro.config` |
+| Hosting + adapter   | Cloudflare Workers with static assets (replaces the reference site at the same domain); no adapter: the site stays fully static | Deploy files `wrangler.jsonc` + `worker.js` at the root, see `docs/deploy-cloudflare.md`. Code stays host-agnostic: no provider-specific APIs outside `astro.config` |
 | Analytics           | `TODO`                                                                        | Only after cookie consent                                                    |
 | Testing             | Vitest + Playwright + `@axe-core/playwright`                                  | Required by section 8                                                        |
 | Formatting          | Prettier + `prettier-plugin-tailwindcss`                                      | Automatic Tailwind class ordering                                            |
@@ -138,7 +138,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 - Translated path segments per locale (Astro i18n does not translate segments): one route map in `shared/i18n/routes.ts` + a helper `getLocalizedPath(routeKey, locale, params)`. Never build URLs by string concatenation in components.
 - Lowercase, hyphen-separated, ASCII only (strip accents: `gràcia` → `gracia`). `trailingSlash: "never"`, enforced.
 - Each page: self-referencing `canonical`, `hreflang` for the 4 locales + `x-default` → `/es/...`.
-- Real HTTP 301s require an adapter or host-level redirect rules; a static build without them emits meta-refresh redirects, which are NOT acceptable for SEO. Implement redirects only once hosting is decided.
+- Real HTTP 301s require an adapter or host-level redirect rules; a static build without them emits meta-refresh redirects, which are NOT acceptable for SEO. The production build (`bun run build:production`) emits `dist/_redirects` (real 301s on Cloudflare/Netlify, absolute destinations, from `retiredRoutes.ts` + `legacyRoutes.ts`); the meta-refresh pages stay as the fallback for hosts without it (GitHub Pages staging). Only the origin in `deploy.config.json` is indexable (`docs/seo.md`).
 
 | Route key           | es                       | en                        | it                         | ca                       |
 | ------------------- | ------------------------ | ------------------------- | -------------------------- | ------------------------ |
@@ -195,7 +195,7 @@ Property detail rules:
 
 ## 6. Pages / features (MVP)
 
-Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. The services index is a real page, as in the reference site (decision 2026-11-24). The sell page and the advisory service were retired by the client (reference `_redirects`): `/vender` and the old advisory URL 301 to the sale brokerage service and to the services index (`shared/i18n/retiredRoutes.ts`, wired in `astro.config.ts`). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
+Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. The services index is a real page, as in the reference site (decision 2026-11-24). The sell page and the advisory service were retired by the client (reference `_redirects`): `/vender` and the old advisory URL 301 to the sale brokerage service and to the services index (`shared/i18n/retiredRoutes.ts`, wired in `astro.config.ts`). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` are in the production `_redirects`).
 
 1. Home — hero (video/photo with negative logo), search, featured properties (`portadaWeb`), CTA valuation
 2. Properties — filters (operation, type, price, rooms, area, zone), list + map, shareable URL params
