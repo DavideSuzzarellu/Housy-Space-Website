@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Casas del Gobernador, plazas con fuente y una fiesta mayor en mayo.",
+  "translated": true,
+  "lead": "Cases del Governador, piazze con fontana e una festa maggiore a maggio.",
   "text": [
-    "Fue terreno agrícola del municipio de Sant Martí de Provençals, anexionado por Barcelona en 1897, y permaneció casi despoblado hasta el siglo XX; su urbanización empezó en los años cincuenta. Su nombre viene de la calle Navas de Tolosa, uno de sus ejes, donde está la estación de metro del mismo nombre, y desde 1978 sus vecinos reivindicaron una personalidad propia que se reconoció oficialmente en 2006.",
-    "La plaça de Fernando Reyes, con la iglesia de Sant Joan Bosco, es su centro, y la plaça d'Islàndia tiene una fuente de cascadas. Las Casas del Gobernador son 406 casas de poca altura rodeadas de espacios ajardinados, inspiradas en el modelo de ciudad jardín. Con 4.029 €/m², es el barrio con el precio de compraventa más alto de Sant Andreu, y celebra su fiesta mayor cada mayo."
+    "Fu terreno agricolo del comune di Sant Martí de Provençals, annesso a Barcellona nel 1897, e rimase quasi spopolato fino al Novecento; la sua urbanizzazione iniziò negli anni Cinquanta. Il suo nome viene dal carrer de Navas de Tolosa, uno dei suoi assi, dove si trova la stazione della metropolitana omonima, e dal 1978 i suoi abitanti rivendicarono una personalità propria, riconosciuta ufficialmente nel 2006.",
+    "La plaça de Fernando Reyes, con la chiesa di Sant Joan Bosco, è il suo centro, e la plaça d'Islàndia ha una fontana a cascate. Le Cases del Governador sono 406 case di poca altezza circondate da spazi giardino, ispirate al modello della città giardino. Con 4.029 €/m², è il quartiere con il prezzo di compravendita più alto di Sant Andreu, e celebra la sua festa maggiore ogni maggio."
   ],
-  "housing": "Bloques de pisos y las Casas del Gobernador, de poca altura y con jardines comunes.",
+  "housing": "Palazzi di appartamenti e le Cases del Governador, di poca altezza e con giardini comuni.",
   "places": [
     "Plaça de Fernando Reyes",
     "Plaça d'Islàndia",
