@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de clase media, tranquilo y comercial, con parque y estación intermodal.",
+  "translated": true,
+  "lead": "Un barri de classe mitjana, tranquil i comercial, amb parc i estació intermodal.",
   "text": [
-    "Ya existía en la Edad Media con el nombre de «Clotus Melis», que significa «hoyo de la miel» y se documenta en 1208, y era una zona de huertas y molinos junto a la Séquia Comtal. Mantuvo su carácter rural hasta el siglo XIX, cuando se volvió industrial y obrero, y la avenida Meridiana, abierta en 1964, fragmentó el territorio.",
-    "Hoy es un barrio mayoritariamente de clase media, tranquilo, con actividad comercial y terrazas, donde destacan el Parc del Clot, el mercado municipal, junto al que se organiza una feria de artesanos, y la estación intermodal Clot-Aragó, con metro y cercanías. Hay pisos y casas a precios asequibles para la clase media, otros más baratos y también casas de alto valor. Con 4.092 €/m² de compraventa, se sitúa muy cerca de la media del distrito, y su alquiler, 966 €/mes, queda por debajo."
+    "Ja existia a l'edat mitjana amb el nom de «Clotus Melis», que vol dir «clot de la mel» i es documenta el 1208, i era una zona d'horts i molins vora la Sèquia Comtal. Va mantenir el caràcter rural fins al segle XIX, quan es va tornar industrial i obrer, i l'avinguda Meridiana, oberta el 1964, va fragmentar el territori.",
+    "Avui és un barri majoritàriament de classe mitjana, tranquil, amb activitat comercial i terrasses, on destaquen el Parc del Clot, el mercat municipal, al costat del qual s'organitza una fira d'artesans, i l'estació intermodal Clot-Aragó, amb metro i rodalies. Hi ha pisos i cases a preus assequibles per a la classe mitjana, d'altres de més barats i també cases d'alt valor. Amb 4.092 €/m² de compravenda, se situa molt a prop de la mitjana del districte, i el seu lloguer, 966 €/mes, queda per sota."
   ],
-  "housing": "Pisos y casas de perfiles muy distintos, con zonas de casas bajas.",
+  "housing": "Pisos i cases de perfils molt diferents, amb zones de cases baixes.",
   "places": ["Parc del Clot", "Mercat del Clot", "Estació del Clot-Aragó"]
 }
