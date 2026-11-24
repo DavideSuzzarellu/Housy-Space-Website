@@ -5,13 +5,12 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage, formatNumber } from "@/shared/lib/format";
-import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 import FactList from "@/shared/ui/molecules/FactList.astro";
-import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+import ZoneHead from "./ZoneHead.astro";
 
 /**
  * One municipality of the province (AGENTS.md §6 item 20): only the official figures of the
@@ -45,7 +44,7 @@ const crumbs = [
 ];
 ---
 
-<PageHeader
+<ZoneHead
   crumbs={crumbs}
   breadcrumbLabel={dictionary.property.detail.breadcrumb}
   tag={formatMessage(t.municipalityTag, { comarca: municipality.comarca })}
@@ -54,11 +53,17 @@ const crumbs = [
     name: municipality.name,
     comarca: municipality.comarca,
   })}
->
-  <StreetGrid slot="background" placement="heading" />
-</PageHeader>
+  fallback={false}
+  variant="barrio"
+/>
 
-<Section id="datos" labelledBy="municipality-figures" name="municipality-figures" surface="stone">
+<Section
+  id="datos"
+  labelledBy="municipality-figures"
+  name="municipality-figures"
+  surface="stone"
+  spacing="scale"
+>
   <h2 id="municipality-figures" class="sr-only">
     {t.officialData}
   </h2>
@@ -77,7 +82,7 @@ const crumbs = [
 </Section>
 
 {neighbours.length > 0 && (
-  <Section id="comarca" labelledBy="comarca-heading" name="comarca">
+  <Section id="comarca" labelledBy="comarca-heading" name="comarca" spacing="scale">
     <SectionHeading
       id="comarca-heading"
       heading={formatMessage(t.others, { comarca: municipality.comarca })}

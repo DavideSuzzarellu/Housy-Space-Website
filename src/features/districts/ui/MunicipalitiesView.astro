@@ -5,9 +5,8 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage, formatNumber } from "@/shared/lib/format";
 import Inline from "@/shared/ui/atoms/Inline.astro";
-import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
-import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
+import ZoneHead from "./ZoneHead.astro";
 
 /** Province of Barcelona: every municipality with its official figures (AGENTS.md §6 item 20). */
 interface Props {
@@ -22,36 +21,44 @@ const crumbs = [
   { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
   { label: t.heading },
 ];
-const CELL = "border-t border-line px-3 py-2.5 text-left";
+const HEAD =
+  "border-b border-line-strong px-3 py-[13px] text-left text-[0.6875rem] font-medium tracking-[0.12em] text-muted";
+const CELL = "border-b border-line px-3 py-[13px] text-left text-base";
 ---
 
-<PageHeader
+<ZoneHead
   crumbs={crumbs}
   breadcrumbLabel={dictionary.property.detail.breadcrumb}
   heading={t.heading}
   lead={t.lead}
->
-  <StreetGrid slot="background" placement="heading" />
-</PageHeader>
+  fallback={false}
+  variant="barrio"
+/>
 
-<Section id="municipios" labelledBy="municipalities-caption" name="municipalities" surface="stone">
+<Section
+  id="municipios"
+  labelledBy="municipalities-caption"
+  name="municipalities"
+  surface="stone"
+  spacing="scale"
+>
   <div class="overflow-x-auto">
-    <table class="w-full min-w-[36rem] border-collapse text-sm">
+    <table class="w-full min-w-130 border-collapse">
       <caption id="municipalities-caption" class="sr-only">
         {t.tableCaption}
       </caption>
       <thead>
-        <tr class="text-xs tracking-[0.12em] text-muted">
-          <th scope="col" class={`${CELL} font-medium`}>
+        <tr>
+          <th scope="col" class={HEAD}>
             {t.municipality}
           </th>
-          <th scope="col" class={`${CELL} font-medium`}>
+          <th scope="col" class={HEAD}>
             {t.comarca}
           </th>
-          <th scope="col" class={`${CELL} font-medium`}>
+          <th scope="col" class={HEAD}>
             {t.code}
           </th>
-          <th scope="col" class={`${CELL} text-right font-medium`}>
+          <th scope="col" class={HEAD}>
             {t.area} (km²)
           </th>
         </tr>
@@ -59,7 +66,7 @@ const CELL = "border-t border-line px-3 py-2.5 text-left";
       <tbody>
         {data.municipalities.map((item) => (
           <tr>
-            <th scope="row" class={`${CELL} font-semibold`}>
+            <th scope="row" class={`${CELL} text-[1.0625rem] leading-tight font-normal`}>
               <a
                 href={getLocalizedPath("municipality", locale, { municipio: item.slug })}
                 class="hover:text-accent"
@@ -69,7 +76,7 @@ const CELL = "border-t border-line px-3 py-2.5 text-left";
             </th>
             <td class={CELL}>{item.comarca}</td>
             <td class={`${CELL} tabular-nums`}>{item.code}</td>
-            <td class={`${CELL} text-right tabular-nums`}>{formatNumber(item.areaKm2, locale)}</td>
+            <td class={`${CELL} tabular-nums`}>{formatNumber(item.areaKm2, locale)}</td>
           </tr>
         ))}
       </tbody>

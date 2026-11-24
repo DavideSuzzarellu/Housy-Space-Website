@@ -11,7 +11,7 @@ import Breadcrumbs, { type Crumb } from "@/shared/ui/molecules/Breadcrumbs.astro
 interface Props {
   crumbs: readonly Crumb[];
   breadcrumbLabel: string;
-  tag: string;
+  tag?: string;
   heading: string;
   lead: string;
   /** The lead is Spanish client copy on another locale. */
@@ -32,13 +32,16 @@ const district = variant === "district";
   <StreetGrid placement="heading" />
   <Container>
     <Breadcrumbs items={crumbs} label={breadcrumbLabel} tone="compact" />
-    <p class="mt-[22px] text-[0.6875rem] tracking-[0.16em] text-accent">{tag}</p>
+    {tag !== undefined && (
+      <p class="mt-[22px] text-[0.6875rem] tracking-[0.16em] text-accent">{tag}</p>
+    )}
     <h1
       class:list={[
         "leading-[1.08]",
         district
           ? "mt-3.5 mb-[18px] text-[clamp(2rem,3.7vw,3.25rem)]"
           : "mt-2.5 mb-3.5 text-[clamp(2rem,3.47vw,3.125rem)]",
+        tag === undefined && "mt-[22px]",
       ]}
     >
       {heading}
