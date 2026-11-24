@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const PAGES = [
   ["/es/servicios/venta-estrategica", "Compraventa e intermediación inmobiliaria"],
@@ -167,12 +167,70 @@ test("the lead form opens WhatsApp with the request written", async ({ page, con
   await expect(form.locator("[data-lead-status]")).toBeVisible();
 });
 
-test("district barrios appear only after choosing the district", async ({ page }) => {
-  await page.goto("/es/mi-busqueda");
-  const raval = page.locator('input[name="barrio"][value="el-raval"]');
-  await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
-  await page.locator('input[name="distrito"][value="ciutat-vella"]').check({ force: true });
-  await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
+test.describe("my search wizard", () => {
+  const next = (page: Page) => page.locator("[data-next] button");
+
+  test("shows one step at a time and validates the operation before moving on", async ({
+    page,
+  }) => {
+    await page.goto("/es/mi-busqueda");
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 1 de 5");
+    await expect(page.locator("fieldset[data-step]:not([data-step-off])")).toHaveCount(1);
+    await next(page).click();
+    await expect(page.locator('[data-error="operation"]')).toBeVisible();
+    await expect(page.locator('input[name="operacion"]').first()).toBeFocused();
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    await next(page).click();
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 2 de 5");
+    await expect(
+      page.getByRole("heading", { level: 3, name: "¿Dónde te gustaría vivir?" }),
+    ).toBeFocused();
+    await page.getByRole("button", { name: /Atrás/ }).click();
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 1 de 5");
+  });
+
+  test("district barrios appear only after choosing the district", async ({ page }) => {
+    await page.goto("/es/mi-busqueda");
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    await next(page).click();
+    const raval = page.locator('input[name="barrio"][value="el-raval"]');
+    await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
+    await page.locator('label:has(input[name="distrito"][value="ciutat-vella"])').click();
+    await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
+  });
+
+  test("the summary follows the form and the zone search adds zones", async ({ page }) => {
+    await page.goto("/es/mi-busqueda");
+    const summary = page.locator("[data-wizard-summary]");
+    await expect(summary).toContainText("Elige una opción");
+    await page.locator('label:has(input[name="operacion"][value="alquiler"])').click();
+    await expect(summary).toContainText("Alquilar");
+    await next(page).click();
+    await page.locator("#zone-q").fill("clot");
+    await page.getByRole("option", { name: /^El Clot/ }).click();
+    await expect(summary).toContainText("El Clot");
+    await expect(page.locator("[data-zone-tags]")).toContainText("El Clot");
+  });
+
+  test("the last step checks the contact data before the lead form opens WhatsApp", async ({
+    page,
+  }) => {
+    await page.goto("/es/mi-busqueda");
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    for (let step = 0; step < 4; step += 1) await next(page).click();
+    await page.getByRole("button", { name: /Guardar mi búsqueda/ }).click();
+    await expect(page.locator('[data-error="name"]')).toBeVisible();
+    await expect(page.locator('[data-error="consentData"]')).toBeVisible();
+    await page.locator('input[name="nombre"]').fill("Ana");
+    await page.locator('input[name="email"]').fill("ana@example.com");
+    await page.locator('input[name="telefono"]').fill("+34 613 084 804");
+    await page.locator('label:has(input[name="c_datos"])').click();
+    const request = page
+      .context()
+      .waitForEvent("request", (candidate) => candidate.url().startsWith("https://wa.me/"));
+    await page.getByRole("button", { name: /Guardar mi búsqueda/ }).click();
+    expect(decodeURIComponent((await request).url())).toContain("Ana");
+  });
 });
 
 test("the about page keeps its paper head, its in-page anchors and 'where we are'", async ({

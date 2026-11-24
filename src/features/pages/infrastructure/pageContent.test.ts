@@ -197,6 +197,26 @@ describe("my search form", () => {
     return [...own, ...Object.values(value).flatMap(chips)];
   }
 
+  /** Field names per step, in order, of the form of a locale. */
+  function steps(locale: string): string[][] {
+    const page = schema.parse(read(`homeSearch.${locale}.json`));
+    const form = page.sections.flatMap((s) => s.items).find((item) => item.kind === "form");
+    if (form?.kind !== "form") return [];
+    return form.fields.flatMap((group) =>
+      group.kind === "group"
+        ? [group.fields.map((leaf) => ("name" in leaf ? leaf.name : leaf.kind))]
+        : [],
+    );
+  }
+
+  it("has the 5 steps of the reference, identical in the 4 locales", () => {
+    const es = steps("es");
+    expect(es).toHaveLength(5);
+    expect(es[0]).toEqual(["operacion", "tipo"]);
+    expect(es[2]).toEqual(["precio_min", "precio_max", "note"]);
+    for (const locale of ["en", "it", "ca"]) expect(steps(locale), locale).toEqual(es);
+  });
+
   it.each(["es", "en", "it", "ca"])("%s: only the operation and the type are option cards", (l) => {
     const cards = chips(read(`homeSearch.${l}.json`)).filter((c) => "cards" in c);
     expect(cards.map((c) => ("name" in c ? c.name : ""))).toEqual(["operacion", "tipo"]);
