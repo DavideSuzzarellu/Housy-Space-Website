@@ -335,9 +335,6 @@ const it = {
     stats: {
       moreThan: "più di",
     },
-    valuation: {
-      caption: "Immagine concettuale generata con IA.",
-    },
     reviews: {
       viewReview: "Vedi questa recensione su Google",
       orderNotice:

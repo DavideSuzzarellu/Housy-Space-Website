@@ -1,6 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
-import path from "node:path";
-import { z } from "astro/zod";
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import ca from "../../../content/home/ca.json";
 import en from "../../../content/home/en.json";
@@ -8,11 +6,7 @@ import es from "../../../content/home/es.json";
 import it_ from "../../../content/home/it.json";
 import { homeContentSchema } from "./homeContentSchema";
 
-/** Stand-in for Astro's `image()`: a path relative to the content file, resolved by Astro at build. */
-const relativeImage = () =>
-  z.string().regex(/^\.\.\/\.\.\/assets\/[\w./-]+\.(jpe?g|png|webp|avif)$/);
-const schema = homeContentSchema(relativeImage);
-const CONTENT_DIR = "src/content/home";
+const schema = homeContentSchema();
 const files = { es, en, it: it_, ca } as const;
 
 /** Leaf key paths, to compare the shape of every locale with Spanish. */
@@ -36,14 +30,6 @@ describe("home content (Pages CMS files)", () => {
       expect(shape(data)).toEqual(shape(es));
     },
   );
-
-  it.each(Object.entries(files))("%s only references images that exist", (_locale, data) => {
-    const parsed = schema.parse(data);
-    const images = [parsed.valuation.image].filter((img): img is string => img !== undefined);
-    for (const image of images) {
-      expect(existsSync(path.join(CONTENT_DIR, image)), image).toBe(true);
-    }
-  });
 
   it("has a Pages CMS form field for every content key, and one entry per locale", () => {
     const config = readFileSync(".pages.yml", "utf8");

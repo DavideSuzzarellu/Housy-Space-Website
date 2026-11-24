@@ -34,11 +34,21 @@
     "ctaLabel": "Scopri altri immobili"
   },
   "valuation": {
-    "image": "../../assets/home/valoracion-fachada-2880.webp",
-    "imageAlt": "Immagine concettuale: facciata modernista di Barcellona con un balcone in ferro battuto contrassegnato con l'isotipo di HousySpace",
-    "heading": "Scopri quanto *vale la tua casa*",
-    "lead": "In un attimo e online, oppure con un consulente HousySpace.",
-    "ctaLabel": "Richiedi una valutazione"
+    "kicker": "Valutazione immobiliare",
+    "heading": "Quanto vale *la tua casa?*",
+    "lead": "Due modi per conoscere il valore della tua casa.",
+    "online": {
+      "tag": "Subito",
+      "title": "Valutazione online",
+      "text": "Una stima indicativa subito, con il nostro valutatore. È un primo riferimento, non un prezzo di vendita.",
+      "action": "Valuta online ora"
+    },
+    "advisor": {
+      "tag": "Report completo",
+      "title": "Valutazione con un consulente",
+      "text": "Visitiamo l'immobile, esaminiamo la documentazione e analizziamo il mercato. Ti consegniamo il report e lo commentiamo insieme.",
+      "action": "Richiedi una valutazione con un consulente"
+    }
   },
   "services": {
     "heading": "Scopri *i nostri servizi*",

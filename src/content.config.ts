@@ -51,6 +51,6 @@ export const collections = {
   }),
   home: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/home" }),
-    schema: ({ image }) => homeContentSchema(image),
+    schema: homeContentSchema(),
   }),
 };

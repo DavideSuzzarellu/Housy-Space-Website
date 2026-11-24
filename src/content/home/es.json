@@ -34,11 +34,21 @@
     "ctaLabel": "Ver más inmuebles"
   },
   "valuation": {
-    "image": "../../assets/home/valoracion-fachada-2880.webp",
-    "imageAlt": "Imagen conceptual: fachada modernista de Barcelona con un balcón de forja marcado con el isotipo de HousySpace",
-    "heading": "Descubre cuánto *vale tu vivienda*",
-    "lead": "Al momento y online, o con un asesor de HousySpace.",
-    "ctaLabel": "Solicitar valoración"
+    "kicker": "Valoración inmobiliaria",
+    "heading": "¿Cuánto vale *tu vivienda?*",
+    "lead": "Dos formas de conocer el valor de tu vivienda.",
+    "online": {
+      "tag": "Al momento",
+      "title": "Valoración online",
+      "text": "Una estimación orientativa al momento, con nuestro valorador. Es una primera referencia, no un precio de venta.",
+      "action": "Valorar online ahora"
+    },
+    "advisor": {
+      "tag": "Informe completo",
+      "title": "Valoración con un asesor",
+      "text": "Visitamos el inmueble, revisamos su documentación y analizamos el mercado. Te entregamos el informe y lo comentamos contigo.",
+      "action": "Pedir valoración con un asesor"
+    }
   },
   "services": {
     "heading": "Descubre *nuestros servicios*",

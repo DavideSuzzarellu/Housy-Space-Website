@@ -102,19 +102,7 @@ content:
         label: Valoración
         type: object
         fields:
-          - {
-              name: image,
-              label: Fotografía,
-              type: image,
-              required: true,
-              options: { media: images },
-            }
-          - {
-              name: imageAlt,
-              label: Descripción de la fotografía (accesibilidad),
-              type: string,
-              required: true,
-            }
+          - { name: kicker, label: Antetítulo, type: string, required: true }
           - {
               name: heading,
               label: Titular,
@@ -123,7 +111,22 @@ content:
               description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: lead, label: Entradilla, type: text, required: true }
-          - { name: ctaLabel, label: Botón al valorador, type: string, required: true }
+          - name: online
+            label: Opción · valoración online
+            type: object
+            fields:
+              - { name: tag, label: Etiqueta, type: string, required: true }
+              - { name: title, label: Título, type: string, required: true }
+              - { name: text, label: Texto, type: text, required: true }
+              - { name: action, label: Texto del enlace, type: string, required: true }
+          - name: advisor
+            label: Opción · valoración con un asesor
+            type: object
+            fields:
+              - { name: tag, label: Etiqueta, type: string, required: true }
+              - { name: title, label: Título, type: string, required: true }
+              - { name: text, label: Texto, type: text, required: true }
+              - { name: action, label: Texto del enlace, type: string, required: true }
       - name: services
         label: Servicios
         type: object

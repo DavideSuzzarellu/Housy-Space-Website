@@ -335,9 +335,6 @@ const ca = {
     stats: {
       moreThan: "més de",
     },
-    valuation: {
-      caption: "Imatge conceptual generada amb IA.",
-    },
     reviews: {
       viewReview: "Veure aquesta ressenya a Google",
       orderNotice:

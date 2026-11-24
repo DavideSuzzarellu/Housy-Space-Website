@@ -335,9 +335,6 @@ const en = {
     stats: {
       moreThan: "more than",
     },
-    valuation: {
-      caption: "Conceptual AI-generated image.",
-    },
     reviews: {
       viewReview: "See this review on Google",
       orderNotice:

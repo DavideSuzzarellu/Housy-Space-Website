@@ -34,11 +34,21 @@
     "ctaLabel": "View more properties"
   },
   "valuation": {
-    "image": "../../assets/home/valoracion-fachada-2880.webp",
-    "imageAlt": "Concept image: modernist Barcelona façade with a wrought-iron balcony marked with the HousySpace isotype",
-    "heading": "Find out what *your home is worth*",
-    "lead": "Online in an instant, or with a HousySpace advisor.",
-    "ctaLabel": "Request a valuation"
+    "kicker": "Property valuation",
+    "heading": "How much is *your home worth?*",
+    "lead": "Two ways to find out what your home is worth.",
+    "online": {
+      "tag": "Instant",
+      "title": "Online valuation",
+      "text": "A guideline estimate in an instant, with our valuation tool. It is a first reference, not a sale price.",
+      "action": "Value online now"
+    },
+    "advisor": {
+      "tag": "Full report",
+      "title": "Valuation with an advisor",
+      "text": "We visit the property, review its paperwork and analyse the market. We hand you the report and go through it with you.",
+      "action": "Request a valuation with an advisor"
+    }
   },
   "services": {
     "heading": "Discover *our services*",

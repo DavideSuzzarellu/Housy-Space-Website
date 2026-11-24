@@ -11,11 +11,10 @@ import { hasBalancedEmphasis } from "@/shared/lib/emphasis";
 const text = z.string().trim().min(1);
 /** Heading with an optional `*italic part*` (see shared/lib/emphasis.ts). */
 const heading = text.refine(hasBalancedEmphasis, "Unclosed *emphasis* marker");
-/**
- * `image` is Astro's `image()` from the collection schema context: images live in `src/assets`
- * so Astro optimizes them (AGENTS.md §8). Tests pass a stand-in.
- */
-export function homeContentSchema<I extends z.ZodType>(image: () => I) {
+/** One way to ask for a valuation: kicker tag, title, line and action label. */
+const valuationOption = z.object({ tag: text, title: text, text, action: text }).strict();
+
+export function homeContentSchema() {
   return z
     .object({
       hero: z
@@ -57,11 +56,11 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
       featured: z.object({ heading, ctaLabel: text }).strict(),
       valuation: z
         .object({
-          image: image(),
-          imageAlt: text,
+          kicker: text,
           heading,
           lead: text,
-          ctaLabel: text,
+          online: valuationOption,
+          advisor: valuationOption,
         })
         .strict(),
       services: z.object({ heading, ctaLabel: text }).strict(),
