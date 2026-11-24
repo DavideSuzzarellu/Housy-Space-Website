@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
-import { routes } from "./src/shared/i18n/routes";
+import { getRetiredRedirects } from "./src/shared/i18n/retiredRoutes";
 
 const sitemapLocales = Object.fromEntries(
   LOCALES.map((locale) => [locale, LOCALE_META[locale].langTag]),
@@ -32,11 +32,11 @@ export default defineConfig({
   // },
   redirects: {
     "/": `/Housy-Space-Website/${DEFAULT_LOCALE}/`,
-    // The services index is the home accordion, as in the reference site (same meta-refresh caveat).
+    // Pages retired in the reference site: sell page, advisory service (same meta-refresh caveat).
     ...Object.fromEntries(
-      LOCALES.map((locale) => [
-        `/${locale}/${routes.services[locale]}`,
-        `/Housy-Space-Website/${locale}/#servicios`,
+      Object.entries(getRetiredRedirects()).map(([from, to]) => [
+        from,
+        `/Housy-Space-Website${to}`,
       ]),
     ),
   },

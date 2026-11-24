@@ -1,0 +1,48 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+
+/**
+ * Closing "Let's talk" block of the services index (reference `.sc23`, id `hablemos`): question,
+ * the big greeting and the four contact buttons, all centred.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+}
+
+const { locale, items } = Astro.props;
+const heading = itemsOf(items, "h2")[0];
+const big = itemsOf(items, "big")[0];
+const buttons = itemsOf(items, "buttons")[0];
+---
+
+<div class="flex flex-col items-center text-center">
+  {heading && (
+    <h2 data-reveal class="text-[clamp(25px,2.65vw,38px)] leading-[1.1] [&::after]:mx-auto">
+      <Emphasis text={heading.text} />
+    </h2>
+  )}
+  {big && (
+    <p class="mt-[clamp(8px,1vw,14px)] mb-[clamp(22px,2.6vw,34px)] text-[clamp(36px,4.7vw,68px)] leading-none font-black tracking-[0.02em] text-fg">
+      {big.text}
+    </p>
+  )}
+  {buttons && (
+    <div class="mt-6.5 flex flex-wrap justify-center gap-x-3 gap-y-2.5 max-[520px]:grid max-[520px]:grid-cols-2">
+      {buttons.items.map((button) => (
+        <Button
+          href={resolveContentHref(button.href, locale)}
+          variant={button.solid ? "solid" : "outline"}
+          external={button.href.startsWith("https://")}
+          class="leading-none!"
+        >
+          {button.label}
+        </Button>
+      ))}
+    </div>
+  )}
+</div>

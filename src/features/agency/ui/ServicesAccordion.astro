@@ -1,23 +1,14 @@
 ---
-import type { ImageMetadata } from "astro";
-import financial from "@/assets/home/services/financial.webp";
-import legalTax from "@/assets/home/services/legal-tax.webp";
-import advisory from "@/assets/home/services/advisory.webp";
-import investment from "@/assets/home/services/investment.webp";
-import personalShopper from "@/assets/home/services/personal-shopper.webp";
-import renovations from "@/assets/home/services/renovations.webp";
-import rental from "@/assets/home/services/rental.webp";
-import sale from "@/assets/home/services/sale.webp";
-import valuation from "@/assets/home/services/valuation.webp";
 import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import { getServiceSlug, type ServiceKey } from "@/shared/i18n/services";
+import { getServiceSlug } from "@/shared/i18n/services";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import AccordionRail from "@/shared/ui/organisms/AccordionRail.astro";
+import { SERVICE_IMAGES } from "./serviceImages";
 import { SERVICE_PANELS } from "./servicePanels";
 
 /** Services carousel and the collaborators line of the home (reference `#servicios`). */
@@ -31,23 +22,12 @@ const { locale, content, collaborators } = Astro.props;
 const t = getDictionary(locale);
 const copy = t.home.services;
 
-const IMAGES: Record<ServiceKey, ImageMetadata> = {
-  saleBrokerage: sale,
-  valuation,
-  legalTax,
-  renovations,
-  advisory,
-  financial,
-  personalShopper,
-  investment,
-  rentalManagement: rental,
-};
 const panels = SERVICE_PANELS.map(({ service, tint }, index) => ({
   number: String(index + 1).padStart(2, "0"),
   title: t.serviceNames[service],
   tag: copy.tags[service],
   href: getLocalizedPath("serviceDetail", locale, { service: getServiceSlug(service, locale) }),
-  image: IMAGES[service],
+  image: SERVICE_IMAGES[service],
   tone: index % 2 === 0 ? ("a" as const) : ("b" as const),
   tint,
   linkLabel: `${copy.enterLabel} ${t.serviceNames[service]}`,

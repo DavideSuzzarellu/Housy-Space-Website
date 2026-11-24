@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "I want to rent out my home",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -187,7 +197,7 @@
         {
           "kind": "faq",
           "q": "What documents do I need to let my property?",
-          "a": "In Catalonia, the habitation certificate and the energy efficiency certificate. If you don't have them, our architect can arrange them."
+          "a": "In Catalonia, the habitability certificate and the energy performance certificate. If you don't have them, the architect we work with arranges them."
         },
         {
           "kind": "faq",
@@ -203,6 +213,10 @@
           "kind": "faq",
           "q": "What if there's a problem during the tenancy?",
           "a": "If you opt for management, we handle incidents. And if a legal dispute arises, we coordinate with the law firm we work with. [See legal and tax advice](service:asesoramiento-juridico-fiscal)."
+        },
+        {
+          "kind": "p",
+          "text": "Not sure whether renting or selling suits you? We go over it with you in an [orientation consultation](route:services#asesoramiento)."
         }
       ]
     },
@@ -245,8 +259,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Legal and tax advice",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Renovations and interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

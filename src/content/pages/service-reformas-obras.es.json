@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/det-ventanal-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Cuéntanos tu reforma",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -284,7 +294,7 @@
     },
     {
       "layout": "cta",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -321,8 +331,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compraventa e intermediación inmobiliaria",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Personal Shopper inmobiliario",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Valoración inmobiliaria",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

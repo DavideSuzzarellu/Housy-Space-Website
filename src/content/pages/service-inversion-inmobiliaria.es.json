@@ -29,6 +29,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Cuéntanos tu objetivo",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -71,7 +81,7 @@
             },
             {
               "title": "Reforma",
-              "text": "Qué obra necesita, cuánto cuesta y cuánto valor añade."
+              "text": "Qué obra necesita, cuánto cuesta y qué efecto puede tener en la renta o en la venta."
             },
             {
               "title": "Renta esperable",
@@ -216,8 +226,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Los honorarios dependen de cada inmueble."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal Shopper inmobiliario",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Asesoramiento financiero",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Alquiler y gestión de inmuebles",
+              "text": "",
+              "href": "service:alquiler-gestion"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

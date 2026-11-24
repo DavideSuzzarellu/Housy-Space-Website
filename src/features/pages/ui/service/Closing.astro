@@ -2,7 +2,6 @@
 import { itemsOf, type PageItem } from "@/features/pages/application/pages";
 import type { Locale } from "@/shared/i18n/config";
 import { resolveContentHref } from "@/shared/i18n/contentLinks";
-import type { ServiceKey } from "@/shared/i18n/services";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 import OtherServices from "../OtherServices.astro";
@@ -13,15 +12,16 @@ import OtherServices from "../OtherServices.astro";
  */
 interface Props {
   locale: Locale;
-  service: ServiceKey;
   items: readonly PageItem[];
 }
 
-const { locale, service, items } = Astro.props;
+const { locale, items } = Astro.props;
 const title = itemsOf(items, "h2")[0];
 const lead = itemsOf(items, "lead")[0];
 const buttons = itemsOf(items, "buttons")[0];
 const note = itemsOf(items, "note")[0];
+const relatedTag = itemsOf(items, "tag")[0];
+const related = itemsOf(items, "list")[0];
 ---
 
 <div data-service-cta class="grid gap-[clamp(40px,5vw,64px)]">
@@ -56,5 +56,14 @@ const note = itemsOf(items, "note")[0];
       </p>
     )}
   </div>
-  <OtherServices locale={locale} current={service} />
+  {relatedTag && related && (
+    <OtherServices
+      heading={relatedTag.text}
+      links={related.items.flatMap((entry) =>
+        entry.href === undefined
+          ? []
+          : [{ label: entry.title, href: resolveContentHref(entry.href, locale) }],
+      )}
+    />
+  )}
 </div>

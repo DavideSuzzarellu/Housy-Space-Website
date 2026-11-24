@@ -113,6 +113,11 @@ export const SECTION_LAYOUTS = [
   "stepsList",
   "valuation",
   "cta",
+  // Services index (reference `.svi-*`, `.sq26-*`, `.sa25-*`, `.sc23`).
+  "indexGroup",
+  "indexSituations",
+  "indexAdvice",
+  "indexCta",
 ] as const;
 export type SectionLayout = (typeof SECTION_LAYOUTS)[number];
 

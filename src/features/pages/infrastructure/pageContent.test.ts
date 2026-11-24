@@ -22,8 +22,8 @@ function strings(value: unknown): string[] {
 }
 
 describe("editorial pages", () => {
-  it("has the Spanish source of the 22 editorial pages", () => {
-    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(22);
+  it("has the Spanish source of the 21 editorial pages", () => {
+    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(21);
   });
 
   it.each(files)("%s validates against the schema", (file) => {
@@ -50,8 +50,8 @@ describe("editorial pages", () => {
 describe("service pages", () => {
   const services = files.filter((file) => file.startsWith("service-"));
 
-  it("has the 9 services in the 4 locales", () => {
-    expect(services).toHaveLength(36);
+  it("has the 8 services in the 4 locales", () => {
+    expect(services).toHaveLength(32);
   });
 
   it.each(services)("%s opens with its illustration and an emphasised heading", (file) => {
@@ -66,7 +66,6 @@ describe("service pages", () => {
   /** Explicit layout of each section, in order; `-` follows from the items (steps, faq, band, text). */
   const LAYOUTS: Record<string, string> = {
     "alquiler-gestion": "intro split - - cta",
-    asesoramiento: "intro trio sit - - cta",
     "asesoramiento-financiero": "intro split - - colab cta",
     "asesoramiento-juridico-fiscal": "intro split tax - colab cta",
     "inversion-inmobiliaria": "intro cards - route cta",
@@ -104,6 +103,16 @@ describe("service pages", () => {
     }
   });
 
+  it.each(services)("%s closes with its related services and the link to the index", (file) => {
+    const page = schema.parse(read(file));
+    const cta = page.sections.find((section) => section.layout === "cta");
+    const list = cta?.items.find((item) => item.kind === "list");
+    const hrefs = list?.kind === "list" ? list.items.map((entry) => entry.href) : [];
+    expect(hrefs.length).toBeGreaterThanOrEqual(2);
+    expect(hrefs.at(-1)).toBe("route:services");
+    expect(cta?.items.some((item) => item.kind === "note")).toBe(false);
+  });
+
   it("rejects an illustration without a text alternative", () => {
     const base = schema.parse(read("service-valoracion.es.json"));
     const broken = {
@@ -118,6 +127,42 @@ describe("service pages", () => {
       },
     };
     expect(schema.safeParse(broken).success).toBe(false);
+  });
+});
+
+describe("services index", () => {
+  const LOCALES = ["es", "en", "it", "ca"];
+
+  it.each(LOCALES)("%s: lists each of the 8 services once, in 3 groups of 3, 2 and 3", (locale) => {
+    const page = schema.parse(read(`services.${locale}.json`));
+    const groups = page.sections.filter((section) => section.layout === "indexGroup");
+    const hrefs = groups.map((group) =>
+      group.items.flatMap((item) =>
+        item.kind === "list" ? item.items.map((entry) => entry.href) : [],
+      ),
+    );
+    expect(hrefs.map((group) => group.length)).toEqual([3, 2, 3]);
+    expect(new Set(hrefs.flat()).size).toBe(8);
+    expect(hrefs.flat().every((href) => href?.startsWith("service:"))).toBe(true);
+  });
+
+  it.each(LOCALES)("%s: every jump link of the head points to a section of the page", (locale) => {
+    const page = schema.parse(read(`services.${locale}.json`));
+    const ids = page.sections.map((section) => `#${section.id}`);
+    const jump = page.head.items.find((item) => item.kind === "list");
+    for (const entry of jump?.kind === "list" ? jump.items : []) {
+      expect(ids, entry.href).toContain(entry.href);
+    }
+  });
+
+  it.each(LOCALES)("%s: every situation links to a service", (locale) => {
+    const page = schema.parse(read(`services.${locale}.json`));
+    const situations = page.sections.find((section) => section.layout === "indexSituations");
+    const list = situations?.items.find((item) => item.kind === "list");
+    expect(list?.kind === "list" ? list.items : []).toHaveLength(6);
+    for (const entry of list?.kind === "list" ? list.items : []) {
+      expect(entry.href?.startsWith("service:")).toBe(true);
+    }
   });
 });
 

@@ -1,0 +1,59 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import IndexHead from "./IndexHead.astro";
+
+/**
+ * "How we help you" block of the services index (reference `.sa25`): headline beside an intro
+ * and four numbered steps on a hairline; the last bullet is turquoise. One column below 900 px.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const intro = itemsOf(body, "p")[0];
+const steps = itemsOf(body, "steps")[0];
+---
+
+<div class="mb-[clamp(30px,3.8vw,54px)] grid gap-[clamp(14px,2.4vh,22px)]">
+  <IndexHead items={head} id={id} stacked />
+  {intro && (
+    <p
+      data-reveal
+      class="max-w-[56ch] text-[clamp(15px,1.12vw,17px)] leading-[1.65] min-[900px]:max-w-none tracking-[0.03em] text-fg-2 normal-case"
+    >
+      <Inline text={intro.text} locale={locale} />
+    </p>
+  )}
+</div>
+{steps && (
+  <ol class="relative grid gap-0 before:absolute before:top-0 before:bottom-0 before:left-[23px] before:w-px before:bg-line-strong min-[900px]:grid-cols-4 min-[900px]:gap-[clamp(18px,2.6vw,40px)] min-[900px]:before:inset-x-0 min-[900px]:before:top-[23px] min-[900px]:before:bottom-auto min-[900px]:before:h-px min-[900px]:before:w-auto">
+    {steps.items.map((step, index) => (
+      <li
+        data-reveal
+        class="relative grid grid-cols-[46px_minmax(0,1fr)] gap-x-[18px] pb-6.5 last:pb-0 min-[900px]:block min-[900px]:pb-0"
+      >
+        <span
+          aria-hidden="true"
+          class:list={[
+            "relative row-span-2 grid size-11.5 place-items-center rounded-full text-xs leading-none font-bold tracking-[0.08em] shadow-[0_0_0_6px_var(--color-canvas)] min-[900px]:shadow-[0_0_0_8px_var(--color-canvas)]",
+            index === steps.items.length - 1 ? "bg-turquoise text-ink" : "bg-dark text-paper",
+          ]}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <h3 class="mt-1 mb-1.5 font-sans text-[clamp(15px,1.35vw,19px)] leading-[1.15] wrap-anywhere min-[900px]:mt-[clamp(16px,1.8vw,22px)] min-[900px]:mb-2">
+          {step.title}
+        </h3>
+        <p class="max-w-none text-sm leading-[1.6] tracking-[0.03em] text-fg-2 normal-case min-[900px]:max-w-[26ch]">
+          {step.text}
+        </p>
+      </li>
+    ))}
+  </ol>
+)}

@@ -52,7 +52,7 @@ src/
       infrastructure/     # Mobilia adapter, Zod schemas, mappers
       ui/                 # .astro components + islands
     leads/                # contact, visit request, valuation (destination TODO)
-    agency/               # about, team, services, sell your property
+    agency/               # about, team, services
     valuation/            # external valuator iframe embed (no pricing logic)
     reviews/              # Google reviews (Places API adapter)
     blog/
@@ -127,6 +127,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 - UI strings live in `shared/i18n/{locale}.ts`; no hardcoded user-facing text. Missing keys fail the type check.
 - Property titles/descriptions come from Mobilia per locale (`txtTituloWeb{Ca|En|It}`, base field = es). Fallback order: requested locale → `es` → `en`.
 - **All site copy is translated into the 4 locales** (decision 2026-11-04): UI dictionaries, `home`, `pages`, district and barrio prose. The Spanish text of the UI proposal (§11.1) is the source; en/it/ca are translations pending client review (ROADMAP). Not translated: Mobilia data (comes per locale), client reviews (verbatim, §6.1) and blog articles (one language each). Legal texts are translated too (client decision 2026-11-04, exception to §13), marked as pending lawyer review (I11); they will be replaced by the validated versions.
+- **Translation style (client decision 2026-11-24):** the Spanish text is the source (verbatim from the reference, which exists only in Spanish) and en/it/ca are written by us as faithful but NOT literal translations: same meaning, facts, figures, tone and fixed phrases, but natural and idiomatic in each language, as a native copywriter would write it, never word-for-word calques (no Spanish syntax or false friends). Same register as §11.5 (warm, direct, informal "you"). Sentence length and headings may be reshaped when the target language needs it, keeping the `*asterisk*` emphasis on the equivalent part. Legal, tax and financial text stays faithful and precise (natural wording, no changed meaning, no added or dropped clauses) and keeps the pending-lawyer-review notice.
 - Localized slugs: yes (see section 4.1).
 
 ### 4.1 URL structure (SEO)
@@ -151,7 +152,6 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | legal notice        | `/es/aviso-legal`        | `/en/legal-notice`        | `/it/note-legali`          | `/ca/avis-legal`         |
 | privacy             | `/es/privacidad`         | `/en/privacy-policy`      | `/it/privacy`              | `/ca/privacitat`         |
 | cookies             | `/es/cookies`            | `/en/cookie-policy`       | `/it/cookie`               | `/ca/galetes`            |
-| sell                | `/es/vender`             | `/en/sell`                | `/it/vendere`              | `/ca/vendre`             |
 | valuation           | `/es/valoracion`         | `/en/valuation`           | `/it/valutazione`          | `/ca/valoracio`          |
 | blog                | `/es/blog`               | `/en/blog`                | `/it/blog`                 | `/ca/blog`               |
 | blog post           | `/es/blog/{slug}`        | `/en/blog/{slug}`         | `/it/blog/{slug}`          | `/ca/blog/{slug}`        |
@@ -196,7 +196,7 @@ Property detail rules:
 
 ## 6. Pages / features (MVP)
 
-Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. "Sell your property" (footer, owners column) links to the sell page. The services index and the sell page come from the 2026-10-25 design canvas (client decision 2026-11-04: full pages instead of the v3 redirects). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
+Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. The services index is a real page, as in the reference site (decision 2026-11-24). The sell page and the advisory service were retired by the client (reference `_redirects`): `/vender` and the old advisory URL 301 to the sale brokerage service and to the services index (`shared/i18n/retiredRoutes.ts`, wired in `astro.config.ts`). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
 
 1. Home — hero (video/photo with negative logo), search, featured properties (`portadaWeb`), CTA valuation
 2. Properties — filters (operation, type, price, rooms, area, zone), list + map, shareable URL params
@@ -211,7 +211,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
    - Client + server validation with the same Zod schema; honeypot + rate limiting; success/error states translated in the 4 locales.
    - Submitted to a server endpoint in `src/pages/api/`. Delivery destination: `TODO` (Mobilia stays read-only).
 10. Property PDF sheet — in scope, see item 24.
-11. Sell your property — owner-focused page with CTA to valuation and `LeadForm`.
+11. (retired) Sell your property page: replaced by the sale brokerage service.
 12. Valuation tool — provided by an external valuator embedded via iframe; it computes and returns prices itself. This site NEVER calculates, stores, or alters valuation figures.
     - One `ValuationEmbed` component (`features/valuation/ui/`), configured by props; used on the valuation page and anywhere else it appears.
     - Valuator URL/provider: `TODO`. Store the URL and allowed origin in config (`astro:env`, public), never hardcoded in components.
@@ -225,7 +225,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
 15. Google reviews — see section 6.1.
 16. Contact CTAs — tap-to-call, WhatsApp with prefilled localized message, private consultation (`LeadForm`). Company phone/WhatsApp number: `TODO` confirm.
 
-17. Services — index page (design canvas layout, cards built from each service page) + 9 service pages, as in v3: sale brokerage, valuation, legal & tax advice, renovations & interior design, personalised advisory, financial advice, personal shopper, real estate investment, rental & management.
+17. Services — index page (design canvas layout, cards built from each service page) + 8 service pages: sale brokerage, valuation, legal & tax advice, renovations & interior design, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
 20. Barcelona province — index + 311 municipality pages (collection `municipalities`, data from proposal v3: territorial code, comarca and area by the ICGC). Population, density and market data show "not available" until the INE/Idescat datasets (I8) are added.
