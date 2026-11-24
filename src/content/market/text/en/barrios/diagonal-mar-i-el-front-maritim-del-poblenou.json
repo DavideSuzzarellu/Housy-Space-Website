@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Torres frente al mar y un parque grande: el barrio más nuevo de la costa, nacido con el Fòrum de 2004.",
+  "translated": true,
+  "lead": "Towers facing the sea and a large park: the newest neighbourhood on the coast, born with the 2004 Fòrum.",
   "text": [
-    "Surgió del plan urbanístico del Fòrum Universal de las Culturas de 2004, en catorce hectáreas que en parte ocupa hoy el parque y que pertenecieron a la empresa Can Girona. Su nombre se debe a que está al inicio de la avenida Diagonal, junto al Mediterráneo, y es uno de los barrios más nuevos de Barcelona.",
-    "Es un barrio residencial de torres, como Illa de la Llum, Illa del Bosc e Illa del Cel, con el parque de Diagonal Mar y la playa de Llevant como grandes espacios abiertos. Con 5.528 €/m² y 1.732 €/mes, tiene el precio de compraventa y el alquiler más altos de Sant Martí."
+    "It arose from the urban plan for the 2004 Universal Forum of Cultures, on fourteen hectares, part of which the park now occupies, that had belonged to the Can Girona company. It takes its name from its position at the start of Avinguda Diagonal, next to the Mediterranean, and it is one of the newest neighbourhoods in Barcelona.",
+    "It is a residential neighbourhood of towers, such as Illa de la Llum, Illa del Bosc and Illa del Cel, with the Parc de Diagonal Mar and the Llevant beach as its great open spaces. At 5,528 €/m² and 1,732 €/month, it has the highest sale price and rent in Sant Martí."
   ],
-  "housing": "Torres y edificios residenciales de obra nueva, junto al mar.",
+  "housing": "Towers and new-build residential buildings, beside the sea.",
   "places": ["Parc de Diagonal Mar", "Platja de Llevant"]
 }
