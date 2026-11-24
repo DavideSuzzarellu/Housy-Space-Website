@@ -1,7 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// Dedicated port so e2e never reuses a dev/preview server started by someone else.
-const PORT = 4329;
+// Port is overridable (E2E_PORT) so parallel worktrees never share one. A server already on it is
+// NOT reused unless E2E_REUSE_SERVER=1: reusing someone else's stale build silently tests old code.
+const PORT = Number(process.env["E2E_PORT"] ?? 4329);
 // One variable builds the site and tells the specs its base; "/" is the site root.
 const ASTRO_BASE = process.env["ASTRO_BASE"] ?? "/";
 process.env["ASTRO_BASE"] = ASTRO_BASE;
@@ -29,7 +30,7 @@ export default defineConfig({
     command: `bun run build && bun run preview --port ${PORT} --ignore-lock`,
     // The preview serves only under the build base (ASTRO_BASE, "/" = root): wait on a real page.
     url: `http://localhost:${PORT}${ASTRO_BASE.replace(/\/$/, "")}/es`,
-    reuseExistingServer: !isCI,
+    reuseExistingServer: process.env["E2E_REUSE_SERVER"] === "1",
     // Production deploys under a repository sub-path; tests use the site root.
     env: { ASTRO_BASE, ASTRO_SITE: "https://www.housyspace.com" },
     timeout: 300_000,
