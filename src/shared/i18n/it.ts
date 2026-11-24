@@ -104,7 +104,7 @@ const it = {
       plotArea: "Terreno",
       bedrooms: "Camere da letto",
       bathrooms: "Bagni",
-      toilets: "Servizi",
+      toilets: "Toilette",
       floor: "Piano",
       lift: "Ascensore",
       terrace: "Terrazza",
@@ -121,9 +121,9 @@ const it = {
       communalPool: "Piscina condominiale",
       privatePool: "Piscina privata",
       parking: "Parcheggio",
-      storageRoom: "Ripostiglio",
+      storageRoom: "Cantina",
       furnished: "Arredato",
-      exterior: "Esterno",
+      exterior: "Affaccio esterno",
       builtInWardrobes: "Armadi a muro",
       petsAllowed: "Animali ammessi",
       concierge: "Portineria",
@@ -165,7 +165,7 @@ const it = {
       whatsappMessage: "Buongiorno, sono interessato all'immobile con riferimento {ref}: {title}.",
       similarHeading: "Immobili correlati",
       backToCatalog: "← Torna al catalogo",
-      similarCta: "Consulta la scheda completa",
+      similarCta: "Vedi la scheda completa",
     },
     sheet: {
       download: "Scarica la scheda PDF",
@@ -175,7 +175,7 @@ const it = {
       galleryHeading: "Galleria",
       documentationHeading: "Documentazione",
       documentationText:
-        "Documenti disponibili su richiesta. Le visure catastali e la documentazione privata di terzi non vengono pubblicate.",
+        "Documenti disponibili su richiesta. Di norma non pubblichiamo le visure del registro immobiliare (nota simple) né la documentazione privata di terzi.",
       consultationHeading: "Una consulenza privata.",
       consultationText:
         "Indica il riferimento {ref}: un consulente HousySpace ti risponderà personalmente.",
@@ -201,7 +201,7 @@ const it = {
     searchLabel: "Cerca immobili",
     operationLabel: "Operazione",
     operations: { sale: "Comprare", rent: "Affittare" },
-    zone: "Ubicazione",
+    zone: "Zona",
     type: "Tipologia",
     anyZone: "Tutta Barcellona",
     search: "Cerca",
@@ -235,7 +235,7 @@ const it = {
     emptyHint: "Se ci racconti cosa cerchi, lo cerchiamo noi per te.",
     mySearch: "La mia ricerca",
     emptyCatalog: "Al momento non ci sono immobili pubblicati in questa sezione.",
-    cardCta: "Consulta la scheda completa",
+    cardCta: "Vedi la scheda completa",
     mapLabel: "Mappa degli immobili",
     mapLoading: "La mappa si carica quando la mostri.",
     mapApproximate: "Zona approssimativa (orientativa)",
@@ -332,7 +332,7 @@ const it = {
       },
     },
     featured: {
-      cardCta: "Consulta la scheda completa",
+      cardCta: "Vedi la scheda completa",
       empty: "Al momento non ci sono immobili in evidenza pubblicati.",
     },
     stats: {
@@ -367,7 +367,7 @@ const it = {
     ownersKicker: "Per i proprietari",
     ctaHeading: "Stai pensando *di vendere la tua casa?*",
     ctaText:
-      "Ti diciamo con onestà se ti conviene, quando e come. Il primo passo è sapere quanto vale.",
+      "Ti diciamo con sincerità se ti conviene, quando e come. Il primo passo è sapere quanto vale.",
     ctaValue: "Valuta la mia casa",
     ctaTalk: "Parliamo della tua vendita",
     valuation: {
@@ -435,7 +435,7 @@ const it = {
     densityBars: "Densità di popolazione dei suoi quartieri",
     provisional: "Linea tratteggiata: anno in corso, provvisorio",
     saleSource: "Comune di Barcellona · Portal de Dades (Consiglio Generale del Notariato)",
-    rentSource: "Comune di Barcellona · Portal de Dades (cauzioni INCASÒL)",
+    rentSource: "Comune di Barcellona · Portal de Dades (depositi cauzionali INCASÒL)",
     densitySource: "Anagrafe comunale 2026 (Open Data BCN) e superficie ufficiale (CartoBCN)",
     compareTag: "Confronto",
     barriosOf: "I quartieri di {name}",
@@ -447,7 +447,7 @@ const it = {
     barrioDescription:
       "Dati ufficiali del quartiere {name} (Barcellona): prezzo di vendita, affitto, densità e andamento.",
     methodNote:
-      "Vendita: prezzo medio al m² delle abitazioni trasferite (Consiglio Generale del Notariato). Affitto: canone medio mensile dei contratti registrati (cauzioni INCASÒL). Entrambi pubblicati dal Comune di Barcellona nel Portal de Dades; il dato è dell'ultimo anno completo (2025) e, nei grafici, l'anno in corso è provvisorio. Densità: anagrafe comunale 2026 e superficie ufficiale CartoBCN.",
+      "Vendita: prezzo medio al m² delle abitazioni trasferite (Consiglio Generale del Notariato). Affitto: canone medio mensile dei contratti registrati (depositi cauzionali INCASÒL). Entrambi pubblicati dal Comune di Barcellona nel Portal de Dades; il dato è dell'ultimo anno completo (2025) e, nei grafici, l'anno in corso è provvisorio. Densità: anagrafe comunale 2026 e superficie ufficiale CartoBCN.",
     flat80Note:
       "Il prezzo di un appartamento di 80 m² è solo un riferimento: prezzo medio al m² moltiplicato per 80.",
     districtTag: "Distretto · {count} quartieri",
@@ -461,7 +461,7 @@ const it = {
     livingIn: "Vivere a {name}",
     ctaHeading: "Pensi di comprare, vendere o affittare qui?",
     ctaText:
-      "Come consulenti immobiliari, studiamo con te ogni immobile e ogni strada perché tu decida con dati e senza sorprese.",
+      "Come consulenti immobiliari, studiamo con te ogni immobile e ogni strada così da decidere con dati alla mano e senza sorprese.",
     allDistricts: "I 10 distretti",
     barriosShort: "{count} quartieri",
     metricSale: "Prezzo di vendita",
@@ -479,7 +479,7 @@ const it = {
     districtMeta: "{barrios} quartieri · {people} abitanti",
     byDistrict: "{metric} per distretto ({unit})",
     attribution:
-      "Prezzi: Comune di Barcellona · Portal de Dades. Vendita: prezzo medio al m² delle abitazioni trasferite, Consiglio Generale del Notariato; affitto: canone medio mensile dei contratti, cauzioni INCASÒL. Dato principale: ultimo anno completo (2025). Densità: anagrafe comunale 2026 / superficie ufficiale. Confini: Comune di Barcellona · CartoBCN (CC BY 4.0).",
+      "Prezzi: Comune di Barcellona · Portal de Dades. Vendita: prezzo medio al m² delle abitazioni trasferite, Consiglio Generale del Notariato; affitto: canone medio mensile dei contratti, depositi cauzionali INCASÒL. Dato principale: ultimo anno completo (2025). Densità: anagrafe comunale 2026 / superficie ufficiale. Confini: Comune di Barcellona · CartoBCN (CC BY 4.0).",
     chooseDistrict: "Scegli un distretto",
     searchLabel: "Cerchi un quartiere o un distretto?",
     searchPlaceholder: "Tocca o scrivi un nome",
@@ -518,10 +518,10 @@ const it = {
       name: "Dicci come ti chiami.",
       emailEmpty: "Ci serve un indirizzo email.",
       email: "Controlla il formato dell'email.",
-      phoneEmpty: "Ci serve un telefono per contattarti.",
-      phone: "Controlla il telefono: deve avere tra 9 e 15 cifre.",
+      phoneEmpty: "Ci serve un numero di telefono per contattarti.",
+      phone: "Controlla il numero di telefono: deve avere tra 9 e 15 cifre.",
       consentData: "Per salvare la tua ricerca ci serve il tuo consenso.",
-      channels: "Scegli attraverso quale canale vuoi riceverle.",
+      channels: "Scegli su quale canale vuoi riceverle.",
     },
     summary: {
       ariaLabel: "Riepilogo della tua ricerca",
@@ -539,7 +539,7 @@ const it = {
       baths: "Bagni",
       must: "Indispensabile",
       nice: "Preferibile",
-      status: "Stato",
+      status: "Stato dell'immobile",
       term: "Tempistica",
       buy: "Comprare",
       rentOp: "Affittare",
@@ -567,7 +567,7 @@ const it = {
       results: "Zone trovate",
       chosenLabel: "Zone scelte",
     },
-    step: "Passo {n} di {total}",
+    step: "Passaggio {n} di {total}",
     progress: "Avanzamento della tua ricerca",
     emailSubject: "Richiesta dal sito HousySpace",
     sentWhatsapp:
@@ -577,7 +577,7 @@ const it = {
   },
   notFound: {
     kicker: "Errore 404",
-    viewProperties: "Vedi le proprietà",
+    viewProperties: "Vedi gli immobili",
     metaTitle: "Pagina non trovata · HousySpace",
     metaDescription: "La pagina che cerchi non esiste o è stata spostata.",
     heading: "Pagina non trovata",
