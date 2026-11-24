@@ -38,7 +38,7 @@
           "items": [
             {
               "kind": "tag",
-              "text": "Al moment"
+              "text": "A l'instant"
             },
             {
               "kind": "h3",
@@ -54,7 +54,7 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Resultat al moment"
+                  "text": "Resultat a l'instant"
                 },
                 {
                   "title": "",
@@ -220,7 +220,7 @@
             },
             {
               "name": "news",
-              "label": "Vull subscriure'm a la newsletter i als articles de HousySpace per correu electrònic. (Opcional.)",
+              "label": "Vull subscriure'm al butlletí i als articles de HousySpace per correu electrònic. (Opcional.)",
               "required": false,
               "full": true,
               "type": "consent",
@@ -229,7 +229,7 @@
             {
               "kind": "details",
               "summary": "Informació bàsica sobre protecció de dades",
-              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i la newsletter. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
             },
             {
               "kind": "submit",

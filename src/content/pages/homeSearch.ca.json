@@ -11,7 +11,7 @@
       },
       {
         "kind": "lead",
-        "text": "Explica'ns quin tipus d'habitatge busques i apunta't a la nostra base de dades. Quan tinguem una propietat que encaixi amb les teves preferències, ens posarem en contacte amb tu perquè la puguis conèixer abans que es publiqui."
+        "text": "Explica'ns quin tipus d'habitatge busques i apunta't a la nostra base de dades. Quan tinguem un immoble que encaixi amb les teves preferències, ens posarem en contacte amb tu perquè la puguis conèixer abans que es publiqui."
       },
       {
         "kind": "buttons",
@@ -47,7 +47,7 @@
             },
             {
               "title": "T'avisem abans",
-              "text": "Si rebem un habitatge que encaixa amb la teva cerca, et contactem abans de publicar-lo."
+              "text": "Si rebem un habitatge que encaixa amb la teva cerca, ens posem en contacte amb tu abans de publicar-lo."
             }
           ]
         }
@@ -600,7 +600,7 @@
                 {
                   "kind": "field",
                   "name": "abierto",
-                  "label": "Estic obert a altres zones",
+                  "label": "Estic obert/a a altres zones",
                   "required": false,
                   "full": true,
                   "type": "check"
@@ -760,7 +760,7 @@
                     },
                     {
                       "value": "Parking",
-                      "label": "Parking"
+                      "label": "Aparcament"
                     },
                     {
                       "value": "Trastero",
@@ -897,7 +897,7 @@
                   "name": "canal",
                   "radio": true,
                   "required": false,
-                  "label": "Com prefereixes que et contactem?",
+                  "label": "Com prefereixes que ens posem en contacte amb tu??",
                   "options": [
                     {
                       "value": "telefono",
@@ -919,11 +919,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Finalitat:** Guardar la teva cerca a la nostra base de dades de demandants, creuar-la amb els immobles disponibles, avisar-te dels que s'hi ajustin i contactar-te per atendre-la. Només si ho marques, també enviar-te comunicacions comercials i la newsletter."
+                  "text": "**Finalitat:** Guardar la teva cerca a la nostra base de dades de demandants, creuar-la amb els immobles disponibles, avisar-te dels que s'hi ajustin i contactar amb tu per atendre-la. Només si ho marques, també enviar-te comunicacions comercials i el butlletí."
                 },
                 {
                   "kind": "note",
-                  "text": "**Legitimació:** El teu consentiment (art. 6.1.a del RGPD). El de la base de dades és necessari per atendre la teva cerca; els de comunicacions comercials i newsletter són voluntaris i independents."
+                  "text": "**Legitimació:** El teu consentiment (art. 6.1.a del RGPD). El de la base de dades és necessari per atendre la teva cerca; els de comunicacions comercials i butlletí són voluntaris i independents."
                 },
                 {
                   "kind": "note",
@@ -943,7 +943,7 @@
                 },
                 {
                   "name": "c_datos",
-                  "label": "**He llegit la informació sobre protecció de dades i consento que HousySpace guardi les dades d'aquest formulari a la seva base de dades de demandants per gestionar la meva cerca, avisar-me dels immobles que s'hi ajustin i contactar-me. ***Necessari per atendre la teva cerca.",
+                  "label": "**He llegit la informació sobre protecció de dades i consento que HousySpace guardi les dades d'aquest formulari a la seva base de dades de demandants per gestionar la meva cerca, avisar-me dels immobles que s'hi ajustin i contactar amb mi. ***Necessari per atendre la teva cerca.",
                   "required": true,
                   "full": false,
                   "type": "consent",
@@ -982,7 +982,7 @@
                 },
                 {
                   "name": "c_newsletter",
-                  "label": "**Vull subscriure'm a la newsletter i als articles de HousySpace (mercat immobiliari de Barcelona, consells i novetats) per correu electrònic.**Opcional. No marcar-ho no afecta la teva cerca.",
+                  "label": "**Vull subscriure'm al butlletí i als articles de HousySpace (mercat immobiliari de Barcelona, consells i novetats) per correu electrònic.**Opcional. No marcar-ho no afecta la teva cerca.",
                   "required": false,
                   "full": false,
                   "type": "consent",
