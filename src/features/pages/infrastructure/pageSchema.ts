@@ -79,6 +79,8 @@ export const SECTION_LAYOUTS = [
   "doc",
   "swatches",
   "stepsList",
+  // Tiles with a line pictogram (reference `.i46`).
+  "icons",
   "valuation",
   "cta",
   // Services index (reference `.svi-*`, `.sq26-*`, `.sa25-*`, `.sc23`).
@@ -102,6 +104,8 @@ export function pageSchema<I extends z.ZodType>(image: () => I) {
         title: z.string(),
         text: z.string(),
         kicker: text.optional(),
+        /** SVG path data of the 24x24 line pictogram of a tile (`icons` layout). */
+        icon: z.array(text).optional(),
         href: text.optional(),
         cta: text.optional(),
         color: z

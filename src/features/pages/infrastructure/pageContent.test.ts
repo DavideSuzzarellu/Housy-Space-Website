@@ -69,7 +69,7 @@ describe("service pages", () => {
     "asesoramiento-financiero": "intro split - - colab cta",
     "asesoramiento-juridico-fiscal": "intro split tax - colab cta",
     "inversion-inmobiliaria": "intro cards - route cta",
-    "personal-shopper": "intro - cards call - cta",
+    "personal-shopper": "intro - icons call cta",
     "reformas-obras": "intro stepsList swatches cards cards - colab cta",
     valoracion: "cmp doc - cta",
     "venta-estrategica": "introLined - check split - valuation cta",
@@ -111,6 +111,16 @@ describe("service pages", () => {
     expect(hrefs.length).toBeGreaterThanOrEqual(2);
     expect(hrefs.at(-1)).toBe("route:services");
     expect(cta?.items.some((item) => item.kind === "note")).toBe(false);
+  });
+
+  it.each(services)("%s: every pictogram tile has its icon paths", (file) => {
+    const page = schema.parse(read(file));
+    for (const section of page.sections.filter((entry) => entry.layout === "icons")) {
+      const list = section.items.find((item) => item.kind === "list");
+      for (const entry of list?.kind === "list" ? list.items : []) {
+        expect(entry.icon?.length ?? 0, entry.title).toBeGreaterThan(0);
+      }
+    }
   });
 
   it("rejects an illustration without a text alternative", () => {

@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Busquem i visitem amb tu només el que encaixa — i si cal, també ho reformem."
+        "text": "Cerquem i visitem amb tu només el que encaixa i, si cal, també coordinem la reforma."
       },
       {
         "kind": "image",
@@ -54,11 +54,15 @@
         },
         {
           "kind": "p",
-          "text": "Defineixes el que necessites i nosaltres fem la resta: busquem, filtrem i visitem amb tu només el que encaixa. Abans que decideixis, estudiem l'immoble a fons perquè compris sense sorpreses."
+          "text": "Tu defineixes el que necessites i nosaltres ens ocupem de la cerca: localitzem, filtrem i visitem amb tu només el que encaixa. Abans que decideixis, estudiem a fons l'immoble perquè compris sense sorpreses."
         },
         {
           "kind": "p",
-          "text": "I si el pis que t'agrada necessita una reforma, també la fem nosaltres."
+          "text": "I si el pis que t'agrada necessita una reforma, també la coordinem amb l'estudi amb qui col·laborem."
+        },
+        {
+          "kind": "p",
+          "text": "És un servei de cerca activa que es contracta. Si només vols que t'avisem quan surti un habitatge que encaixi, pots [deixar registrada la teva cerca](route:mySearch)."
         }
       ]
     },
@@ -83,7 +87,7 @@
             },
             {
               "title": "Cerca activa",
-              "text": "Rastrejem el mercat segons els teus criteris, també el que encara no s'ha publicat."
+              "text": "Rastregem el mercat segons els teus criteris i, quan n'hi ha, producte que encara no s'ha publicat."
             },
             {
               "title": "Selecció",
@@ -99,14 +103,14 @@
             },
             {
               "title": "Reforma",
-              "text": "Si cal, projectem i fem l'obra perquè hi puguis entrar a viure."
+              "text": "Si cal, coordinem el projecte i l'obra amb l'estudi amb qui col·laborem perquè hi puguis entrar a viure."
             }
           ]
         }
       ]
     },
     {
-      "layout": "cards",
+      "layout": "icons",
       "surface": "stone",
       "band": false,
       "items": [
@@ -124,27 +128,43 @@
           "items": [
             {
               "title": "L'immobile",
-              "text": "Estat real de l'habitatge, instal·lacions i possibles obres amb el seu cost."
+              "text": "Estat real de l'habitatge, instal·lacions i possibles obres amb el seu cost.",
+              "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
             },
             {
               "title": "L'edifici",
-              "text": "Estat de la finca, ITE i obres previstes o derrames de la comunitat."
+              "text": "Estat de la finca, ITE i obres previstes o derrames de la comunitat.",
+              "icon": ["M6 21V4h9v17", "M15 9h4v12", "M3 21h18", "M9 8h3", "M9 12h3", "M9 16h3"]
             },
             {
               "title": "Documentació",
-              "text": "Nota simple del Registre, càrregues, cèdula d'habitabilitat i certificat energètic."
+              "text": "Nota simple del Registre, càrregues, cèdula d'habitabilitat i certificat energètic.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
             },
             {
               "title": "El preu",
-              "text": "Comparació amb vendes recents de la zona per no pagar de més."
+              "text": "Comparació amb vendes recents de la zona per no pagar de més.",
+              "icon": ["M3 12V4h8l10 10-8 8z", "M7 8h1"]
             },
             {
               "title": "Finançament",
-              "text": "Amb el nostre broker financer, la hipoteca estudiada abans de comprometre't. [Veure assessorament financer](service:asesoramiento-financiero)."
+              "text": "Amb el broker financer amb qui col·laborem, la hipoteca estudiada abans de comprometre't. [Veure assessorament financer](service:asesoramiento-financiero).",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
             },
             {
               "title": "L'entorn",
-              "text": "Serveis, transport, soroll i evolució del barri."
+              "text": "Serveis, transport, soroll i evolució del barri.",
+              "icon": [
+                "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z",
+                "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              ]
             }
           ]
         }
@@ -161,7 +181,7 @@
         },
         {
           "kind": "h2",
-          "text": "El pis necessita una reforma? També la fem nosaltres."
+          "text": "El pis necessita una reforma? També la coordinem"
         },
         {
           "kind": "p",
@@ -194,20 +214,6 @@
               "solid": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«No et preocupis, *jo me n'encarrego.*»"
-        },
-        {
-          "kind": "p",
-          "text": "Des de la primera visita fins al dia que hi entres a viure, tens un sol assessor de referència."
         }
       ]
     },

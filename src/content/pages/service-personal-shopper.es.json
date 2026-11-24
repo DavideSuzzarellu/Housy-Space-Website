@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también lo reformamos."
+        "text": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también coordinamos la reforma."
       },
       {
         "kind": "image",
@@ -54,11 +54,15 @@
         },
         {
           "kind": "p",
-          "text": "Defines lo que necesitas y nosotros hacemos el resto: buscamos, filtramos y visitamos contigo solo lo que encaja. Antes de que decidas, estudiamos a fondo el inmueble para que compres sin sorpresas."
+          "text": "Defines lo que necesitas y nosotros nos ocupamos de la búsqueda: localizamos, filtramos y visitamos contigo solo lo que encaja. Antes de que decidas, estudiamos a fondo el inmueble para que compres sin sorpresas."
         },
         {
           "kind": "p",
-          "text": "Y si el piso que te gusta necesita una reforma, también la hacemos nosotros."
+          "text": "Y si el piso que te gusta necesita una reforma, también la coordinamos con el estudio con el que colaboramos."
+        },
+        {
+          "kind": "p",
+          "text": "Es un servicio de búsqueda activa que se contrata. Si solo quieres que te avisemos cuando entre una vivienda que encaje, puedes [dejar tu búsqueda registrada](route:mySearch)."
         }
       ]
     },
@@ -83,7 +87,7 @@
             },
             {
               "title": "Búsqueda activa",
-              "text": "Rastreamos el mercado según tus criterios, también lo que aún no está publicado."
+              "text": "Rastreamos el mercado según tus criterios, y, cuando lo hay, producto que todavía no se ha publicado."
             },
             {
               "title": "Selección",
@@ -99,14 +103,14 @@
             },
             {
               "title": "Reforma",
-              "text": "Si hace falta, proyectamos y hacemos la obra para que entres a vivir."
+              "text": "Si hace falta, coordinamos el proyecto y la obra con el estudio con el que colaboramos para que entres a vivir."
             }
           ]
         }
       ]
     },
     {
-      "layout": "cards",
+      "layout": "icons",
       "surface": "stone",
       "band": false,
       "items": [
@@ -124,27 +128,43 @@
           "items": [
             {
               "title": "El inmueble",
-              "text": "Estado real de la vivienda, instalaciones y posibles reformas con su coste."
+              "text": "Estado real de la vivienda, instalaciones y posibles reformas con su coste.",
+              "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
             },
             {
               "title": "El edificio",
-              "text": "Estado de la finca, ITE y obras previstas o derramas de la comunidad."
+              "text": "Estado de la finca, ITE y obras previstas o derramas de la comunidad.",
+              "icon": ["M6 21V4h9v17", "M15 9h4v12", "M3 21h18", "M9 8h3", "M9 12h3", "M9 16h3"]
             },
             {
               "title": "La documentación",
-              "text": "Nota simple del Registro, cargas, cédula de habitabilidad y certificado energético."
+              "text": "Nota simple del Registro, cargas, cédula de habitabilidad y certificado energético.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
             },
             {
               "title": "El precio",
-              "text": "Comparación con ventas recientes de la zona para no pagar de más."
+              "text": "Comparación con ventas recientes de la zona para no pagar de más.",
+              "icon": ["M3 12V4h8l10 10-8 8z", "M7 8h1"]
             },
             {
               "title": "La financiación",
-              "text": "Con nuestro bróker financiero, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero)."
+              "text": "Con el bróker financiero con el que colaboramos, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero).",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
             },
             {
               "title": "El entorno",
-              "text": "Servicios, transporte, ruido y evolución del barrio."
+              "text": "Servicios, transporte, ruido y evolución del barrio.",
+              "icon": [
+                "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z",
+                "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              ]
             }
           ]
         }
@@ -161,7 +181,7 @@
         },
         {
           "kind": "h2",
-          "text": "¿El piso necesita una reforma? También la hacemos"
+          "text": "¿El piso necesita una reforma? También la coordinamos"
         },
         {
           "kind": "p",
@@ -194,20 +214,6 @@
               "solid": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«No te preocupes, *yo me encargo.*»"
-        },
-        {
-          "kind": "p",
-          "text": "Desde la primera visita hasta el día en que entras a vivir, tienes un solo asesor de referencia."
         }
       ]
     },

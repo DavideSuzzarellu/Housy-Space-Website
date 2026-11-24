@@ -16,6 +16,7 @@ import Collaborators from "./service/Collaborators.astro";
 import Columns from "./service/Columns.astro";
 import Comparison from "./service/Comparison.astro";
 import Faq from "./service/Faq.astro";
+import IconTiles from "./service/IconTiles.astro";
 import Intro from "./service/Intro.astro";
 import NumberedCards from "./service/NumberedCards.astro";
 import ReportDoc from "./service/ReportDoc.astro";
@@ -103,6 +104,12 @@ const band = layout === "band";
       <>
         <BlockHead locale={locale} items={head} />
         <NumberedCards locale={locale} list={lists[0]} />
+      </>
+    )}
+    {layout === "icons" && lists[0] !== undefined && (
+      <>
+        <BlockHead locale={locale} items={head} />
+        <IconTiles locale={locale} list={lists[0]} />
       </>
     )}
     {layout === "trio" && lists[0] !== undefined && (

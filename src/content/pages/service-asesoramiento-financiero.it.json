@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Mutuo e finanziamento studiati con numeri reali, insieme al nostro broker finanziario."
+        "text": "Mutuo e finanziamento studiati con numeri reali, insieme al broker finanziario con cui collaboriamo."
       },
       {
         "kind": "image",
@@ -46,7 +46,7 @@
         },
         {
           "kind": "p",
-          "text": "Sapere quanto puoi finanziare, con quale rata e a quali condizioni evita brutte sorprese. Lo studiamo insieme a te e al nostro broker finanziario, che confronta le condizioni di diverse banche."
+          "text": "Sapere quanto puoi finanziare, con quale rata e a quali condizioni evita brutte sorprese. Lo studiamo insieme a te e al broker finanziario con cui collaboriamo, che confronta le condizioni di diverse banche."
         },
         {
           "kind": "p",
@@ -111,15 +111,15 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Valutazione della capacità finanziaria dell'acquirente"
+                  "text": "Prima di firmare la caparra, il broker verifica se l'acquirente può finanziare l'acquisto"
                 },
                 {
                   "title": "",
-                  "text": "Tempi del mutuo coordinati con il contratto di caparra"
+                  "text": "Tempi del mutuo coordinati con quelli del contratto di caparra"
                 },
                 {
                   "title": "",
-                  "text": "Meno rischio che la vendita salti"
+                  "text": "Riduce il rischio che la vendita salti per il finanziamento; non garantisce che la banca lo conceda"
                 }
               ]
             }
@@ -213,7 +213,7 @@
         {
           "kind": "faq",
           "q": "Chi mi consiglia sul mutuo?",
-          "a": "Il nostro broker finanziario, con cui lavoriamo nelle operazioni con finanziamento. Noi coordiniamo l'intero processo con te."
+          "a": "Il broker finanziario con cui collaboriamo nelle operazioni con finanziamento. Noi coordiniamo l'intero processo con te."
         },
         {
           "kind": "faq",

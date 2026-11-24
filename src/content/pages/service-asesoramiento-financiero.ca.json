@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Hipoteca i finançament estudiats amb números reals, juntament amb el nostre broker financer."
+        "text": "Hipoteca i finançament estudiats amb números reals, juntament amb el broker financer amb qui col·laborem."
       },
       {
         "kind": "image",
@@ -46,7 +46,7 @@
         },
         {
           "kind": "p",
-          "text": "Saber quant pots finançar, amb quina quota i en quines condicions t'estalvia disgustos. Ho estudiem amb tu i amb el nostre broker financer, que compara les condicions de diverses entitats."
+          "text": "Saber quant pots finançar, amb quina quota i en quines condicions t'estalvia disgustos. Ho estudiem amb tu i amb el broker financer amb qui col·laborem, que compara les condicions de diverses entitats."
         },
         {
           "kind": "p",
@@ -111,15 +111,15 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Estudi de la viabilitat del comprador"
+                  "text": "Abans de signar les arres, el broker estudia si el comprador pot finançar la compra"
                 },
                 {
                   "title": "",
-                  "text": "Terminis de la hipoteca coordinats amb el contracte d'arres"
+                  "text": "Terminis de la hipoteca coordinats amb els del contracte d'arres"
                 },
                 {
                   "title": "",
-                  "text": "Menys risc que la venda caigui"
+                  "text": "Redueix el risc que la venda s'enfonsi per qüestions de finançament; no garanteix que el banc el concedeixi"
                 }
               ]
             }
@@ -213,7 +213,7 @@
         {
           "kind": "faq",
           "q": "Qui m'assessora en la hipoteca?",
-          "a": "El nostre broker financer, amb qui treballem en les operacions amb finançament. Nosaltres coordinem tot el procés amb tu."
+          "a": "El broker financer amb qui col·laborem en les operacions amb finançament. Nosaltres coordinem tot el procés amb tu."
         },
         {
           "kind": "faq",
