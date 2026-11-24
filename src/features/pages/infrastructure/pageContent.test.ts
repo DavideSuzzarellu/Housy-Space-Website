@@ -57,9 +57,11 @@ describe("service pages", () => {
   it.each(services)("%s opens with its illustration and an emphasised heading", (file) => {
     const page = schema.parse(read(file));
     expect(page.head.photo).toBe(false);
-    expect(page.head.illustration?.alt.length).toBeGreaterThan(0);
-    expect(page.head.illustration?.scale).toBeGreaterThan(0.5);
-    expect(page.head.illustration?.scale).toBeLessThanOrEqual(1);
+    if (page.head.wide !== true) {
+      expect(page.head.illustration?.alt.length).toBeGreaterThan(0);
+      expect(page.head.illustration?.scale).toBeGreaterThan(0.5);
+      expect(page.head.illustration?.scale).toBeLessThanOrEqual(1);
+    }
     expect(page.head.heading).toMatch(/\*[^*]+\*/);
   });
 
@@ -71,7 +73,7 @@ describe("service pages", () => {
     "inversion-inmobiliaria": "intro cards - route cta",
     "personal-shopper": "intro - icons call cta",
     "reformas-obras": "intro stepsList swatches cards cards - colab cta",
-    valoracion: "cmp doc - cta",
+    valoracion: "valOptions valCriteria valAnalysis valObtain valProcess valFaq cta",
     "venta-estrategica": "introLined - check split - valuation cta",
   };
 

@@ -88,6 +88,13 @@ export const SECTION_LAYOUTS = [
   "indexSituations",
   "indexAdvice",
   "indexCta",
+  // Valuation service page (reference `.v42-*`).
+  "valOptions",
+  "valCriteria",
+  "valAnalysis",
+  "valObtain",
+  "valProcess",
+  "valFaq",
 ] as const;
 export type SectionLayout = (typeof SECTION_LAYOUTS)[number];
 
@@ -104,6 +111,8 @@ export function pageSchema<I extends z.ZodType>(image: () => I) {
         title: z.string(),
         text: z.string(),
         kicker: text.optional(),
+        /** Short checks listed under an option (valuation options). */
+        facts: z.array(text).optional(),
         /** SVG path data of the 24x24 line pictogram of a tile (`icons` layout). */
         icon: z.array(text).optional(),
         href: text.optional(),
@@ -168,6 +177,8 @@ export function pageSchema<I extends z.ZodType>(image: () => I) {
         .object({
           heading: text,
           photo: z.boolean(),
+          /** Service head without illustration: full-width headline that slides in (valuation). */
+          wide: z.boolean().optional(),
           /** Service pages: transparent illustration beside the heading; `scale` = object width / canvas width. */
           illustration: z
             .object({ src: image(), alt: text, scale: z.number().gt(0).lte(1) })

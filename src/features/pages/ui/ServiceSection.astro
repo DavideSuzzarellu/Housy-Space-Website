@@ -26,6 +26,11 @@ import Steps from "./service/Steps.astro";
 import Swatches from "./service/Swatches.astro";
 import Tax from "./service/Tax.astro";
 import Trio from "./service/Trio.astro";
+import ValAnalysis from "./service/ValAnalysis.astro";
+import ValCriteria from "./service/ValCriteria.astro";
+import ValObtain from "./service/ValObtain.astro";
+import ValOptions from "./service/ValOptions.astro";
+import ValProcess from "./service/ValProcess.astro";
 import Valuation from "./service/Valuation.astro";
 
 /**
@@ -67,8 +72,11 @@ const band = layout === "band";
     "scroll-mt-28",
     defer && "defer-render",
     band
-      ? "surface-dark bg-canvas py-[clamp(60px,7.4vw,108px)] text-center"
-      : ["py-[clamp(38px,6.2vh,58px)]", SURFACES[section.surface]],
+      ? "surface-dark bg-canvas py-[clamp(44px,7.4vh,72px)] text-center"
+      : [
+          layout === "valFaq" ? "py-[clamp(28px,4.4vh,44px)]" : "py-[clamp(38px,6.2vh,58px)]",
+          SURFACES[section.surface],
+        ],
   ]}
 >
   <Container>
@@ -150,9 +158,23 @@ const band = layout === "band";
     )}
     {layout === "doc" && <ReportDoc locale={locale} head={head} body={body} />}
     {layout === "faq" && <Faq locale={locale} head={head} body={body} />}
+    {layout === "valFaq" && <Faq locale={locale} head={head} body={body} compact />}
     {layout === "colab" && <Collaborators locale={locale} head={head} body={body} />}
     {layout === "call" && <Call locale={locale} head={head} body={body} />}
     {layout === "valuation" && <Valuation locale={locale} items={section.items} />}
+    {layout === "valOptions" && (
+      <ValOptions locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "valCriteria" && (
+      <ValCriteria locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "valAnalysis" && (
+      <ValAnalysis locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "valObtain" && <ValObtain items={section.items} id={`${section.id}-h`} />}
+    {layout === "valProcess" && (
+      <ValProcess locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
     {layout === "cta" && <Closing locale={locale} items={section.items} />}
   </Container>
 </section>

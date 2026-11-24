@@ -248,6 +248,13 @@ const en = {
   servicePage: {
     /** Button under the head that scrolls to the closing contact block. */
     talk: "Let's talk",
+    /** Online valuator pop-up and adviser form pop-up of the valuation service. */
+    valuator: {
+      title: "HousySpace online valuator",
+      loading: "Loading the valuator…",
+      close: "Close the valuator",
+    },
+    closeLabel: "Close",
   },
   servicesIndex: {
     discover: "Discover the service",

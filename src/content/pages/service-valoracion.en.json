@@ -2,211 +2,449 @@
   "title": "Property valuation service · HousySpace",
   "description": "An instant reference with the online tool or a comprehensive report with a market study.",
   "head": {
-    "heading": "Property *valuation*",
+    "heading": "Your home's value *deserves more than a number*",
     "photo": false,
-    "illustration": {
-      "src": "../../assets/servicios/ill-valoracion-1000.webp",
-      "alt": "Service illustration: A green volume selected among other cream volumes",
-      "scale": 0.744
-    },
+    "wide": true,
     "items": [
       {
         "kind": "tag",
-        "text": "Service"
+        "text": "Property valuation in Barcelona"
       },
       {
         "kind": "lead",
-        "text": "An instant reference with the online tool or a comprehensive report with a market study."
-      },
-      {
-        "kind": "image",
-        "src": "../../assets/home/det-terraza-1400.jpg"
+        "text": "Every home is different, and so is its value. We look at its features, its location and market conditions to give you a well-reasoned valuation and help you decide with confidence."
       }
     ]
   },
   "sections": [
     {
-      "layout": "cmp",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Two ways to know your property's value"
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Instantly"
-            },
-            {
-              "kind": "p",
-              "text": "With our online valuation tool."
-            },
-            {
-              "kind": "list",
-              "ordered": false,
-              "items": [
-                {
-                  "title": "",
-                  "text": "You enter your property details."
-                },
-                {
-                  "title": "",
-                  "text": "You instantly receive an indicative reference value."
-                },
-                {
-                  "title": "",
-                  "text": "If you like, an advisor can review it with you."
-                }
-              ]
-            },
-            {
-              "kind": "buttons",
-              "items": [
-                {
-                  "label": "Request a valuation",
-                  "href": "route:valuation",
-                  "solid": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "h3",
-              "text": "Valuation report"
-            },
-            {
-              "kind": "p",
-              "text": "We study your property in depth."
-            },
-            {
-              "kind": "list",
-              "ordered": false,
-              "items": [
-                {
-                  "title": "",
-                  "text": "We visit the property and review its documentation."
-                },
-                {
-                  "title": "",
-                  "text": "We analyse the neighbourhood, the market and recent sales."
-                },
-                {
-                  "title": "",
-                  "text": "We deliver the report and discuss it with you."
-                }
-              ]
-            },
-            {
-              "kind": "buttons",
-              "items": [
-                {
-                  "label": "Request a report",
-                  "href": "route:contact",
-                  "solid": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "layout": "doc",
+      "id": "opciones",
+      "layout": "valOptions",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "tag",
-          "text": "What's included"
+          "text": "Two ways to get a valuation"
         },
         {
           "kind": "h2",
-          "text": "A report to decide with data"
-        },
-        {
-          "kind": "lead",
-          "text": "It's the same report we prepare before listing a property for sale."
+          "text": "Choose how to find out *what your home is worth*"
         },
         {
           "kind": "p",
-          "text": "Valuation report"
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace"
+          "text": "You can start with an online estimate and, whenever you like, ask an adviser to study your home. The two steps complement each other."
         },
         {
           "kind": "list",
-          "ordered": true,
+          "ordered": false,
           "items": [
             {
-              "title": "Location and neighbourhood",
-              "text": "Property situation and neighbourhood history",
-              "kicker": "01"
+              "title": "Online valuation",
+              "text": "A first indicative estimate based on the details you enter. It is a useful starting point, but it doesn't replace an individual analysis of your home.",
+              "kicker": "Instant",
+              "facts": ["Instant result", "Based on the details you enter", "Indicative estimate"],
+              "cta": "Value it online now",
+              "href": "route:valuation"
             },
             {
-              "title": "Neighbourhood data",
-              "text": "Average price per m² for sales, according to Barcelona City Council",
-              "kicker": "02"
-            },
-            {
-              "title": "Planning and cadastral information",
-              "text": "Cadastral reference, zoning and property data",
-              "kicker": "03"
-            },
-            {
-              "title": "Cadastral reference value",
-              "text": "The value set by the Cadastre for the property",
-              "kicker": "04"
-            },
-            {
-              "title": "Data and measurements",
-              "text": "Built and usable area, room by room",
-              "kicker": "05"
-            },
-            {
-              "title": "Features and condition",
-              "text": "Condition of the property and building, installations, orientation",
-              "kicker": "06"
-            },
-            {
-              "title": "Documentation",
-              "text": "Habitation certificate, energy certificate and ITE",
-              "kicker": "07"
-            },
-            {
-              "title": "Comparables",
-              "text": "Similar properties on portals and sold in the area",
-              "kicker": "08"
-            },
-            {
-              "title": "Market study",
-              "text": "Current supply your property will compete with",
-              "kicker": "09"
-            },
-            {
-              "title": "Valuation",
-              "text": "Market value, price per m² and recommended asking price",
-              "kicker": "10"
+              "title": "Valuation with an adviser",
+              "text": "We analyse your home, its particulars and market conditions, and explain which factors affect its value.",
+              "kicker": "Personal study",
+              "facts": [
+                "Visit to your home",
+                "Review of the documents",
+                "Market study, explained to you"
+              ],
+              "cta": "Request a valuation with an adviser",
+              "href": "route:contact"
             }
           ]
         },
         {
-          "kind": "p",
-          "text": "This is not an official appraisal: it is a market valuation to help you decide with confidence."
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valuation with an adviser"
+            },
+            {
+              "kind": "lead",
+              "text": "Leave us your details and a HousySpace adviser will call you to value your home in person."
+            },
+            {
+              "kind": "form",
+              "id": "valuation-adviser-form",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "Full name",
+                  "required": true,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "telefono",
+                  "label": "Phone",
+                  "required": true,
+                  "full": false,
+                  "type": "tel",
+                  "kind": "field"
+                },
+                {
+                  "name": "email",
+                  "label": "Email address",
+                  "required": true,
+                  "full": true,
+                  "type": "email",
+                  "kind": "field"
+                },
+                {
+                  "name": "direccion",
+                  "label": "Property address or neighbourhood",
+                  "required": true,
+                  "full": true,
+                  "type": "text",
+                  "placeholder": "Street and number, or neighbourhood",
+                  "kind": "field"
+                },
+                {
+                  "name": "mensaje",
+                  "label": "Tell us more (condition, renovations, timeline…)",
+                  "required": false,
+                  "full": true,
+                  "type": "textarea",
+                  "kind": "field"
+                },
+                {
+                  "name": "consent",
+                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+                  "required": true,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "mkt",
+                  "label": "I would like to receive commercial communications from HousySpace about properties, services and news by email, WhatsApp or phone. (Optional.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "news",
+                  "label": "I would like to subscribe to the HousySpace newsletter and articles by email. (Optional.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: handling your request and, only if you tick the boxes, sending commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where legally required. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy). (Legal text draft.)"
+                },
+                {
+                  "kind": "submit",
+                  "label": "Request valuation"
+                },
+                {
+                  "kind": "note",
+                  "text": "No system is yet in place to receive the form (CRM pending). Clicking will open WhatsApp with your request pre-filled for you to send; until you send it there, it will not have reached HousySpace."
+                }
+              ],
+              "mode": "whatsapp"
+            }
+          ]
         }
       ]
     },
     {
+      "id": "criterio",
+      "layout": "valCriteria",
       "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Our approach"
+        },
+        {
+          "kind": "h2",
+          "text": "Not every asking price *reflects the market*"
+        },
+        {
+          "kind": "lead",
+          "text": "The price a home is advertised at isn't necessarily the value it can sell for."
+        },
+        {
+          "kind": "p",
+          "text": "Not all advertised homes are truly comparable, and not every published price reflects market value. That's why we study what's on offer, the references from completed sales, where reliable information is available, and the particulars of each property."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Asking prices",
+              "text": ""
+            },
+            {
+              "title": "References from completed sales",
+              "text": ""
+            },
+            {
+              "title": "Your home",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Illustrative diagram, no real data."
+        }
+      ]
+    },
+    {
+      "id": "que-incluye",
+      "layout": "valAnalysis",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "What our valuation includes"
+        },
+        {
+          "kind": "h2",
+          "text": "Four analyses, *one well-reasoned valuation*"
+        },
+        {
+          "kind": "p",
+          "text": "A valuation with an adviser goes through these four steps. When we hand it over, we explain what we studied in each one and how we reached the conclusion."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Your home"
+            },
+            {
+              "kind": "p",
+              "text": "We look at its surface area, layout, condition, orientation, natural light, construction features and anything else that can affect its value."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Surface areas and measurements"
+                },
+                {
+                  "title": "",
+                  "text": "Condition"
+                },
+                {
+                  "title": "",
+                  "text": "Cadastral data and planning information"
+                },
+                {
+                  "title": "",
+                  "text": "Available documents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Its location"
+            },
+            {
+              "kind": "p",
+              "text": "We analyse the neighbourhood, its surroundings and the features of the local property market."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Location and surroundings"
+                },
+                {
+                  "title": "",
+                  "text": "Neighbourhood profile"
+                },
+                {
+                  "title": "",
+                  "text": "Market trends"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "The real market"
+            },
+            {
+              "kind": "p",
+              "text": "We pick comparable properties, study the competition currently on the market and cross-check the information with the sales references available."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Comparable homes"
+                },
+                {
+                  "title": "",
+                  "text": "Properties currently advertised"
+                },
+                {
+                  "title": "",
+                  "text": "Sales references, when available"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Our valuation"
+            },
+            {
+              "kind": "p",
+              "text": "We interpret what we've gathered to reach a well-reasoned estimate of market value and, if you want to sell, to recommend how to position your home."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Market value estimate"
+                },
+                {
+                  "title": "",
+                  "text": "Commercial positioning"
+                },
+                {
+                  "title": "",
+                  "text": "Asking price, where relevant"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "para-que-sirve",
+      "layout": "valObtain",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "What you get"
+        },
+        {
+          "kind": "h2",
+          "text": "A valuation *to decide with confidence*"
+        },
+        {
+          "kind": "p",
+          "text": "More than a number: information to make decisions about your home, today or later."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Know your home's current value better",
+              "text": "A reasoned reference, not an isolated number."
+            },
+            {
+              "title": "Judge whether it's a good time to sell",
+              "text": "With the state of your area's market in front of you."
+            },
+            {
+              "title": "Understand how it stacks up against the competition",
+              "text": "Which other homes someone searching in your neighbourhood will find."
+            },
+            {
+              "title": "Work out an asking price and a marketing strategy",
+              "text": "If you decide to sell: at what price and how to present it."
+            },
+            {
+              "title": "Plan your next property decisions",
+              "text": "Sell, rent, renovate or wait, with the facts in hand."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proceso",
+      "layout": "valProcess",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Step by step"
+        },
+        {
+          "kind": "h2",
+          "text": "What a valuation *with an adviser* looks like"
+        },
+        {
+          "kind": "p",
+          "text": "We study your home in depth. To get started we only need your name, a phone number, an email and the address or neighbourhood."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Contact",
+              "text": "We call you to arrange the visit."
+            },
+            {
+              "title": "Visit",
+              "text": "We visit the property and review its documents."
+            },
+            {
+              "title": "Analysis",
+              "text": "We analyse the neighbourhood, the market and recent sales."
+            },
+            {
+              "title": "Report",
+              "text": "We hand you the report and talk it through with you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "layout": "valFaq",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -215,42 +453,58 @@
         },
         {
           "kind": "h2",
-          "text": "What people ask us"
+          "text": "What people usually ask us"
         },
         {
           "kind": "faq",
-          "q": "Is it the same as an official appraisal?",
-          "a": "No. An official appraisal is carried out by an accredited valuation firm and is usually required by the bank for a mortgage. Our report is a market valuation: it tells you what a property like yours sells for today."
+          "q": "What's the difference between an online valuation and a professional one?",
+          "a": "The online valuation gives you an indicative estimate instantly, based on the details you enter. The valuation with an adviser studies your home individually — its condition, its documents and its market — and explains which factors affect its value. We go into more detail in the article [Is the online valuation of your flat reliable?](route:blog)"
         },
         {
           "kind": "faq",
-          "q": "What is it useful for?",
-          "a": "To decide whether to sell and at what price, but also when dealing with an inheritance, a divorce or a division between co-owners, or simply to know how much your asset is worth."
+          "q": "How is the market value of a home determined?",
+          "a": "By analysing the property's features, its location and the market: comparable homes, advertised supply and sales references where available. The result is a reasoned estimate, not a guaranteed sale price."
         },
         {
           "kind": "faq",
-          "q": "Is the online tool enough?",
-          "a": "It's a good first reference. For an important decision, we recommend the full report: it takes into account the actual condition of the property and the building."
+          "q": "Is a property valuation the same as an official appraisal?",
+          "a": "No. An official appraisal is carried out by an accredited appraisal company and is usually requested by the bank for a mortgage. Our valuation is a market study to guide your decisions."
         },
         {
           "kind": "faq",
-          "q": "What if I then want to sell?",
-          "a": "The report is the first step of our [sales service](service:venta-estrategica): you will already have the price and the strategy."
+          "q": "Can I ask for a valuation even if I haven't decided to sell?",
+          "a": "Yes. Many owners ask for one to decide whether to sell and when. It's also useful with an inheritance, a divorce or a split between co-owners, or simply to know the value of your assets."
+        },
+        {
+          "kind": "faq",
+          "q": "What happens after I request a valuation?",
+          "a": "With the online valuation you get the estimate instantly. If you ask for one with an adviser, we call you to arrange the visit and follow the four steps above. If you then decide to sell, the valuation is the starting point of our [sales brokerage](service:venta-estrategica) service."
         }
       ]
     },
     {
+      "id": "hablemos",
       "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Let's talk"
+          "text": "Find out what your home is worth. *Decide with peace of mind*"
         },
         {
           "kind": "lead",
-          "text": "Every good decision starts with a conversation. Let's talk about yours."
+          "text": "Start with the option that suits you best. And if you'd rather talk it over first, let's talk."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Choose how to value my home",
+              "href": "#opciones",
+              "solid": true
+            }
+          ]
         },
         {
           "kind": "buttons",
@@ -258,7 +512,7 @@
             {
               "label": "Call",
               "href": "tel:+34613084804",
-              "solid": true
+              "solid": false
             },
             {
               "label": "WhatsApp",
