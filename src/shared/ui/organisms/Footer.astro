@@ -34,6 +34,8 @@ const t = getDictionary(locale);
 const columns = getFooterNavigation(locale);
 const year = new Date().getFullYear();
 const LINK = "text-muted hover:text-accent";
+/** Stacked links in the address: at least 24 px tall (WCAG 2.5.8). */
+const CONTACT_LINK = `justify-self-start py-[3px] ${LINK}`;
 ---
 
 <footer class="surface-dark bg-canvas pt-[clamp(3rem,5vw,4rem)] pb-10 text-[0.6875rem] text-muted max-md:pb-[calc(6rem+env(safe-area-inset-bottom))]">
@@ -69,19 +71,19 @@ const LINK = "text-muted hover:text-accent";
             {company.address.postalCode} {company.address.city}
           </span>
           <span>{t.footer.hours}</span>
-          <a href={telHref(CONTACT_PHONE)} class={LINK}>
+          <a href={telHref(CONTACT_PHONE)} class={CONTACT_LINK}>
             {phoneDisplay(CONTACT_PHONE)}
           </a>
           <a
             href={whatsappHref(CONTACT_PHONE, t.contact.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            class={LINK}
+            class={CONTACT_LINK}
           >
             {t.contact.whatsapp}
             <span class="sr-only"> {t.a11y.opensInNewTab}</span>
           </a>
-          <a href={mailtoHref(COMPANY_EMAIL)} class={LINK}>
+          <a href={mailtoHref(COMPANY_EMAIL)} class={CONTACT_LINK}>
             {COMPANY_EMAIL}
           </a>
         </address>

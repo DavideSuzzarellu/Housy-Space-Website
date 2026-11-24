@@ -317,7 +317,6 @@ const it = {
       pause: "Metti in pausa il carosello",
       play: "Riprendi il carosello",
       carousel: "carosello",
-      enterLabel: "Vedi il servizio:",
       previous: "Servizio precedente",
       next: "Servizio successivo",
       tags: {

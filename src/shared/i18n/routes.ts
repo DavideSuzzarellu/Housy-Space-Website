@@ -1,4 +1,4 @@
-import { withBase } from "@/shared/lib/basePath";
+import { withBase } from "../lib/basePath";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "./config";
 
 /**

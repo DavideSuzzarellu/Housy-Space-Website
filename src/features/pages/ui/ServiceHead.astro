@@ -89,9 +89,12 @@ const cta = itemsOf(head.items, "buttons")[0]?.items[0];
                 <span>{part.text}</span>
               </em>
             ) : (
-              <span class="ln">
-                <span>{part.text.trim()}</span>
-              </span>
+              <>
+                <span class="ln">
+                  <span>{part.text.trim()}</span>
+                </span>
+                {/* The block lines are visually apart; the text must still read "a b", not "ab". */}{" "}
+              </>
             ),
           )
         ) : (

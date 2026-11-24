@@ -317,7 +317,6 @@ const en = {
       pause: "Pause the carousel",
       play: "Resume the carousel",
       carousel: "carousel",
-      enterLabel: "View service:",
       previous: "Previous service",
       next: "Next service",
       tags: {

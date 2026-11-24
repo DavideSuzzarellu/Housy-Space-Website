@@ -21,7 +21,7 @@ const intro = itemsOf(head, "lead")[0]?.text;
 const phases = itemsOf(body, "card");
 let number = 0;
 const SLAB =
-  "relative bg-fg/5 px-5.5 pt-5 pb-5.5 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-fg/[0.085] motion-reduce:transition-none before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:origin-left before:bg-turquoise before:transition-transform before:duration-1100 before:ease-brand motion-reduce:before:transition-none [.motion-ready_&:not(.is-revealed)]:before:scale-x-0";
+  "relative px-5.5 pt-5 pb-5.5 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] motion-reduce:transition-none before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:origin-left before:bg-turquoise before:transition-transform before:duration-1100 before:ease-brand motion-reduce:before:transition-none [.motion-ready_&:not(.is-revealed)]:before:scale-x-0";
 ---
 
 <ValTop locale={locale} head={head} intro={intro} id={id} />
@@ -60,7 +60,10 @@ const SLAB =
             number += 1;
             const dark = last && stepIndex === steps.length - 1;
             return (
-              <li data-reveal class:list={[SLAB, dark && "bg-dark text-paper"]}>
+              <li
+                data-reveal
+                class:list={[SLAB, dark ? "bg-dark text-paper" : "bg-fg/5 hover:bg-fg/[0.085]"]}
+              >
                 <b
                   aria-hidden="true"
                   class:list={[

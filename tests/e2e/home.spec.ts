@@ -47,18 +47,20 @@ for (const locale of LOCALES) {
         .locator("main [data-section]")
         .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-section")));
       expect(sections).toEqual([
-        "hero",
-        "presentation",
-        "featured",
         "valuation",
+        "featured",
+        "gallery",
         "services",
         "philosophy",
         "reviews",
         "living",
         "blog",
+        "contact",
       ]);
+      // The hero and the presentation are not `data-section` blocks: check their headings.
+      await expect(page.locator("#presentation-heading")).toBeVisible();
       await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
-      await expect(page.locator("[data-contact-block]")).toBeVisible();
+      await expect(page.locator('[data-section="contact"]')).toBeVisible();
       await expect(
         page.locator("[data-blog-empty], [data-section=blog] [data-post-card]").first(),
       ).toBeVisible();
@@ -66,6 +68,8 @@ for (const locale of LOCALES) {
 
     test("services accordion opens a closed panel before following its link", async ({ page }) => {
       const panels = page.locator("[data-services-accordion] [data-panel]");
+      await page.locator("[data-rail-wrap]").scrollIntoViewIfNeeded();
+      await expect(page.locator("[data-services-accordion][data-ready]")).toHaveCount(1);
       await expect(panels.first()).toHaveAttribute("data-active", "true");
       const url = page.url();
       // A touch tap: no hover first (with a mouse, hover opens the panel and the click navigates).
@@ -89,15 +93,16 @@ for (const locale of LOCALES) {
       const panels = page.locator("[data-services-accordion] [data-panel]");
       const rail = page.locator("[data-rail-wrap]");
       await rail.scrollIntoViewIfNeeded();
+      await expect(rail.locator("[data-services-accordion][data-ready]")).toHaveCount(1);
       await rail.locator("[data-rail-next]").click();
       await expect(panels.nth(1)).toHaveAttribute("data-active", "true");
       await rail.locator("[data-rail-prev]").click();
       await rail.locator("[data-rail-prev]").click();
       // Circular: before the first comes the last.
-      await expect(panels.nth(8)).toHaveAttribute("data-active", "true");
-      await expect(panels.nth(8)).toHaveAttribute("data-pos", "0");
+      await expect(panels.nth(7)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(7)).toHaveAttribute("data-pos", "0");
 
-      await panels.nth(8).locator("a").focus();
+      await panels.nth(7).locator("a").focus();
       await page.keyboard.press("ArrowRight");
       await expect(panels.nth(0)).toHaveAttribute("data-active", "true");
       await expect(panels.nth(0).locator("a")).toBeFocused();
@@ -112,10 +117,11 @@ for (const locale of LOCALES) {
       const list = rail.locator("[data-services-accordion]");
       const toggle = rail.locator("[data-rail-toggle]");
       await rail.scrollIntoViewIfNeeded();
+      await expect(list).toHaveAttribute("data-ready", "true");
       await expect(toggle).toBeVisible();
       const pauseLabel = await toggle.getAttribute("aria-label");
       await toggle.click();
-      await expect(list).toHaveAttribute("data-held", "");
+      await expect(list).toHaveAttribute("data-held", /.*/);
       expect(await toggle.getAttribute("aria-label")).not.toBe(pauseLabel);
       await toggle.click();
       await expect(toggle).toHaveAttribute("aria-label", pauseLabel ?? "");
@@ -123,10 +129,14 @@ for (const locale of LOCALES) {
 
     test("stats count up to the figures of the content (CSS counter, no script)", async ({
       page,
-    }) => {
+    }, testInfo) => {
       // Scroll the whole row into view: the scroll-driven count ends once it has entered.
       await page.locator("#stats ul").scrollIntoViewIfNeeded();
       await page.evaluate(() => window.scrollBy(0, 300));
+      // The figures are in the markup either way (screen readers, no scroll timeline support).
+      await expect(page.locator(".stat-final")).toHaveText(["35", "100", "60", "9"]);
+      // Under reduced motion the counter is not animated: the final figures are shown as is.
+      if (testInfo.project.name.includes("reduced-motion")) return;
       await expect
         .poll(() =>
           page
@@ -189,7 +199,8 @@ for (const locale of LOCALES) {
     test("shows the company data and AICAT number in the footer", async ({ page }) => {
       const footer = page.getByRole("contentinfo");
       await expect(footer).toContainText("B26903419");
-      await expect(footer).toContainText("14032");
+      // The AICAT number is the alt text of its seal (logo only, AGENTS.md section 11.6).
+      await expect(footer.locator('img[alt*="14032"]')).toHaveCount(1);
     });
 
     test("has no serious or critical axe violations", async ({ page }) => {

@@ -2,6 +2,9 @@ import { defineConfig, devices } from "@playwright/test";
 
 // Dedicated port so e2e never reuses a dev/preview server started by someone else.
 const PORT = 4329;
+// One variable builds the site and tells the specs its base; "/" is the site root.
+const ASTRO_BASE = process.env["ASTRO_BASE"] ?? "/";
+process.env["ASTRO_BASE"] = ASTRO_BASE;
 const isCI = Boolean(process.env["CI"]);
 
 export default defineConfig({
@@ -27,6 +30,8 @@ export default defineConfig({
     // `base` in astro.config.ts: the preview serves nothing outside it, so `/es` would be a 404.
     url: `http://localhost:${PORT}/Housy-Space-Website/es`,
     reuseExistingServer: !isCI,
+    // Production deploys under a repository sub-path; tests use the site root.
+    env: { ASTRO_BASE, ASTRO_SITE: "https://www.housyspace.com" },
     timeout: 180_000,
   },
 });

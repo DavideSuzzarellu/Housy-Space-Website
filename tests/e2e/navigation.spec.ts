@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { getLocalizedPath } from "../../src/shared/i18n/routes";
-import { blockingAxeViolations, skipIntro } from "./support";
+import { blockingAxeViolations, computedRgba, skipIntro } from "./support";
 
 test.beforeEach(async ({ page }) => {
   await skipIntro(page);
@@ -67,13 +67,17 @@ test.describe("header menu fits the available width", () => {
     // The inline menu never overflows into the actions next to it.
     await page.setViewportSize({ width: 1400, height: 900 });
     await expect(nav).toBeVisible();
-    const overflow = await nav.evaluate((element) => {
-      const list = element.querySelector(":scope > ul");
-      return list === null
-        ? 0
-        : list.getBoundingClientRect().right - element.getBoundingClientRect().right;
-    });
-    expect(overflow).toBeLessThanOrEqual(1);
+    // Poll: the header re-measures on resize, so the final layout lands a frame after the flag.
+    await expect
+      .poll(() =>
+        nav.evaluate((element) => {
+          const list = element.querySelector(":scope > ul");
+          return list === null
+            ? 0
+            : list.getBoundingClientRect().right - element.getBoundingClientRect().right;
+        }),
+      )
+      .toBeLessThanOrEqual(1);
   });
 });
 
@@ -86,11 +90,11 @@ test.describe("header over the hero", () => {
     await page.goto(getLocalizedPath("home", "es"));
     const header = page.locator("[data-header]");
     await expect(header).toHaveAttribute("data-overlay", "true");
-    await expect(header).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+    await expect.poll(() => computedRgba(header, "background-color")).toBe("rgba(0, 0, 0, 0)");
 
     await page.evaluate(() => window.scrollTo(0, 600));
     // Reference: solid dark teal #1a2e31, no blur, 92 px bar with the 68 px logo.
-    await expect(header).toHaveCSS("background-color", "rgb(26, 46, 49)");
+    await expect.poll(() => computedRgba(header, "background-color")).toBe("rgba(26, 46, 49, 1)");
     await expect(header).toHaveCSS("backdrop-filter", "none");
     expect((await header.boundingBox())?.height).toBeCloseTo(92, 0);
   });
@@ -99,7 +103,7 @@ test.describe("header over the hero", () => {
     await page.goto(getLocalizedPath("sale", "es"));
     const header = page.locator("[data-header]");
     await expect(header).toHaveAttribute("data-overlay", "false");
-    await expect(header).toHaveCSS("background-color", "rgb(26, 46, 49)");
+    await expect.poll(() => computedRgba(header, "background-color")).toBe("rgba(26, 46, 49, 1)");
   });
 });
 

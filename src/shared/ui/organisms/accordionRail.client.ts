@@ -283,4 +283,6 @@ export function initAccordion(root: HTMLElement): void {
     clearHover();
   });
   syncHold();
+  // Behaviour is attached: specs (and nothing else) wait on this before interacting.
+  root.dataset["ready"] = "true";
 }

@@ -210,6 +210,21 @@ const lastIndex = items.length - 1;
       animation-timeline: scroll(root);
       animation-range: 0 60px;
     }
+
+    /* Astro's ClientRouter CSS sets `animation: none !important` on every element with a view
+       transition name under reduced motion, which would freeze the bar transparent over the page.
+       The bar follows the scroll, it does not play, so it is restored (more specific selector). */
+    @media (prefers-reduced-motion: reduce) {
+      .site-header[data-overlay="true"] {
+        animation: header-solid linear both !important;
+      }
+
+      /* Separate rule for the same reason as above. */
+      [data-header][data-overlay="true"] {
+        animation-timeline: scroll(root) !important;
+        animation-range: 0 60px !important;
+      }
+    }
   }
 </style>
 

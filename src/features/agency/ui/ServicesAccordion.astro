@@ -30,7 +30,6 @@ const panels = SERVICE_PANELS.map(({ service, tint }, index) => ({
   image: SERVICE_IMAGES[service],
   tone: index % 2 === 0 ? ("a" as const) : ("b" as const),
   tint,
-  linkLabel: `${copy.enterLabel} ${t.serviceNames[service]}`,
 }));
 ---
 

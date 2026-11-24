@@ -57,4 +57,4 @@ Built by typed helpers in `shared/lib/seo/structuredData.ts`, serialized by `Jso
 
 - `bun run test`: builders, head parser and audit, sitemap, robots, redirect rules, zone meta.
 - `bun run build && bun run check:seo`: audits every page of `dist` (title, description, `lang`, one `<h1>`, absolute canonical equal to its own hreflang, reciprocal hreflang across locales, JSON-LD parses, `og:image` absolute, redirect pages `noindex` + canonical, sitemap equals the set of indexable pages, robots names the sitemap and blocks no asset).
-- `E2E_BASE=<base> bun run test:e2e tests/e2e/seo.spec.ts`: the same rules in a browser for one page of each template in the 4 locales.
+- `bun run test:e2e tests/e2e/seo.spec.ts` (the base is `ASTRO_BASE`, "/" by default): the same rules in a browser for one page of each template in the 4 locales.

@@ -2,10 +2,10 @@ import { expect, test, type Page } from "@playwright/test";
 
 /**
  * Head tags of the built site in the 4 locales: title, description, canonical, reciprocal
- * hreflang, Open Graph, robots and JSON-LD. Set `E2E_BASE` when the site is built under a
- * sub-path (`astro.config` `base`), e.g. `E2E_BASE=/Housy-Space-Website`.
+ * hreflang, Open Graph, robots and JSON-LD. The base comes from `ASTRO_BASE`, the same variable
+ * that builds the site (`playwright.config.ts` sets it; "/" is the site root).
  */
-const BASE = process.env["E2E_BASE"] ?? "";
+const BASE = (process.env["ASTRO_BASE"] ?? "/").replace(/\/$/, "");
 
 const LOCALES = [
   { locale: "es", lang: "es-ES" },

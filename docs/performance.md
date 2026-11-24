@@ -57,7 +57,7 @@ Kept on purpose:
 - Leaflet is not requested before the map is visible.
 - The hero video never loads before `load`, and never loads under reduced motion or Save-Data.
 
-Budgets have about 25 % headroom over the measured values: home 520 KB total / 380 KB images, detail 220 KB / 160 KB. Raise them only together with a new measurement in this file.
+Budgets have about 25 % headroom over the measured values: home 890 KB total / 790 KB images (measured 712 / 631 on 2026-11-24), catalog 830 KB total / 43 KB JS (measured 663 / 28), zones index 830 KB total / 635 KB images (measured 665 / 506), detail 220 KB / 160 KB. Raise them only together with a new measurement in this file.
 
 ## Hosting recommendations
 
