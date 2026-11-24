@@ -70,13 +70,17 @@ test.describe("header menu fits the available width", () => {
     // The inline menu never overflows into the actions next to it.
     await page.setViewportSize({ width: 1280, height: 900 });
     await expect(header).not.toHaveAttribute("data-nav", "compact");
-    const overflow = await nav.evaluate((element) => {
-      const list = element.querySelector(":scope > ul");
-      return list === null
-        ? 0
-        : list.getBoundingClientRect().right - element.getBoundingClientRect().right;
-    });
-    expect(overflow).toBeLessThanOrEqual(1);
+    // Poll: the header re-measures on resize, so the final layout lands a frame after the flag.
+    await expect
+      .poll(() =>
+        nav.evaluate((element) => {
+          const list = element.querySelector(":scope > ul");
+          return list === null
+            ? 0
+            : list.getBoundingClientRect().right - element.getBoundingClientRect().right;
+        }),
+      )
+      .toBeLessThanOrEqual(1);
   });
 });
 
