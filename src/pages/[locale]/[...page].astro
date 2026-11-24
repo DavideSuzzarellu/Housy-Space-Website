@@ -5,12 +5,15 @@ import { getPosts, type BlogPost } from "@/features/blog/application/posts";
 import BlogIndex from "@/features/blog/ui/BlogIndex.astro";
 import PostView from "@/features/blog/ui/PostView.astro";
 import { getMarket } from "@/features/districts/application/market";
+import { barrioMeta, districtMeta } from "@/features/districts/application/zoneMeta";
+import { DISTRICT_IMAGES } from "@/features/districts/ui/districtImages";
 import BarrioView from "@/features/districts/ui/BarrioView.astro";
 import DistrictView from "@/features/districts/ui/DistrictView.astro";
 import LivingView from "@/features/districts/ui/LivingView.astro";
 import {
   CONTENT_FILE,
   EDITORIAL,
+  getFaqEntries,
   getPage,
   type EditorialKey,
 } from "@/features/pages/application/pages";
@@ -20,12 +23,21 @@ import PageView from "@/features/pages/ui/PageView.astro";
 import ValuationView from "@/features/valuation/ui/ValuationView.astro";
 import ServiceView from "@/features/pages/ui/ServiceView.astro";
 import ServicesIndexView from "@/features/pages/ui/ServicesIndexView.astro";
+import aboutImage from "@/assets/home/oficina-1672.jpg";
 import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
-import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
+import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "@/shared/i18n/config";
 import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
+import { getOgImagePath } from "@/shared/lib/seo/ogImage";
+import {
+  buildPageJsonLd,
+  getSiteUrl,
+  toAbsoluteUrl,
+  type PageJsonLdInput,
+  type WebPageType,
+} from "@/shared/lib/seo/structuredData";
 import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
 
 /**
@@ -123,6 +135,10 @@ const barrio =
     : undefined;
 if (target.view === "district" && district === undefined) throw new Error(target.slug);
 if (target.view === "barrio" && barrio === undefined) throw new Error(target.slug);
+const barrioDistrict =
+  barrio === undefined
+    ? undefined
+    : market.districts.find((candidate) => candidate.slug === barrio.district);
 
 function metaOf(): {
   title: string;
@@ -146,35 +162,36 @@ function metaOf(): {
     };
   }
   if (target.view === "post") {
-    // Each post is single-language: only emit hreflang for the post's own locale + x-default.
-    const all = getAlternates("blogPost", { slug: target.post.id });
+    // A post is written in one language: hreflang lists that version, and x-default points to it too.
+    const own = getAlternates("blogPost", { slug: target.post.id }).find(
+      (candidate) =>
+        candidate.locale === target.post.data.language && candidate.hreflang !== "x-default",
+    );
     return {
       title: `${target.post.data.title} · HousySpace`,
       description: target.post.data.description,
-      alternates: all.filter(
-        (a) => a.locale === target.post.data.language || a.hreflang === "x-default",
-      ),
+      alternates: own === undefined ? [] : [own, { ...own, hreflang: "x-default" }],
     };
   }
   if (district !== undefined) {
     return {
-      title: `${district.name} · ${dictionary.nav.living} · HousySpace`,
-      description: district.lead,
+      ...districtMeta(zones, district),
       alternates: getAlternates("district", { district: district.slug }),
     };
   }
   if (barrio !== undefined) {
     return {
-      title: `${barrio.name} · ${zones.barrioMeta} · HousySpace`,
-      description: zones.barrioDescription.replace("{name}", barrio.name),
-      alternates: getAlternates("barrio", {
-        barrio: barrio.slug,
+      ...barrioMeta(zones, {
+        name: barrio.name,
+        district: barrioDistrict?.name ?? "",
+        lead: barrio.lead,
       }),
+      alternates: getAlternates("barrio", { barrio: barrio.slug }),
     };
   }
   return {
-    title: `${zones.livingHeading} · HousySpace`,
-    description: zones.livingLead,
+    title: zones.metaTitle,
+    description: zones.metaDescription,
     alternates: getAlternates("living"),
   };
 }
@@ -182,15 +199,25 @@ function metaOf(): {
 const meta = metaOf();
 const isPost = target.view === "post";
 const site = Astro.site ?? new URL(Astro.url.origin);
-const siteUrl = site.href.replace(/\/$/, "");
-// All post-specific props grouped so none is `string | undefined` in a spread.
-const blogPostProps = isPost
+const siteUrl = getSiteUrl(site, import.meta.env.BASE_URL);
+// Photo of the page for social cards: the post's own, the district's, or the office (about).
+const zonePhoto = district?.slug ?? barrio?.district;
+const ogPhoto =
+  zonePhoto !== undefined
+    ? DISTRICT_IMAGES[zonePhoto]
+    : target.view === "editorial" && target.key === "about"
+      ? aboutImage
+      : undefined;
+// All head props of the page grouped so none is `string | undefined` in a spread.
+const headProps = isPost
   ? {
       ogImage: target.post.data.image.src,
       ogType: "article" as const,
       publishedTime: target.post.data.date.toISOString(),
     }
-  : undefined;
+  : ogPhoto !== undefined
+    ? { ogImage: await getOgImagePath(ogPhoto) }
+    : {};
 const blogJsonLd = isPost
   ? buildBlogJsonLd({
       post: target.post,
@@ -206,6 +233,8 @@ const proseFallback =
   (district?.proseFallback ?? false) ||
   (barrio?.proseFallback ?? false) ||
   (target.view === "post" && target.post.data.language !== locale);
+// Kept out of the index and the sitemap by decision of the client (reference `excluir_siempre`).
+const noindex = proseFallback || (target.view === "editorial" && target.key === "dataSources");
 // The valuation page hangs from the services like the reference's valuation service page.
 const serviceCrumb =
   target.view === "service"
@@ -231,6 +260,84 @@ const crumbs = [
       "",
   },
 ];
+
+// Structured data: the page, its visible breadcrumb trail, and a Service / FAQ / Place when it is one.
+const canonicalPath =
+  meta.alternates.find(
+    (alternate) => alternate.locale === locale && alternate.hreflang !== "x-default",
+  )?.path ?? Astro.url.pathname;
+const pageUrl = toAbsoluteUrl(canonicalPath, site);
+const livingCrumb = { label: dictionary.nav.living, href: getLocalizedPath("living", locale) };
+const trail: readonly { readonly label: string; readonly href?: string }[] =
+  target.view === "living"
+    ? [home, { label: dictionary.nav.living }]
+    : district !== undefined
+      ? [home, livingCrumb, { label: district.name }]
+      : barrio !== undefined
+        ? [
+            home,
+            livingCrumb,
+            {
+              label: barrioDistrict?.name ?? "",
+              href: getLocalizedPath("district", locale, { district: barrio.district }),
+            },
+            { label: barrio.name },
+          ]
+        : target.view === "post"
+          ? [
+              home,
+              { label: dictionary.nav.blog, href: getLocalizedPath("blog", locale) },
+              { label: target.post.data.title },
+            ]
+          : crumbs;
+const PAGE_TYPE: Partial<Record<EditorialKey, WebPageType>> = {
+  about: "AboutPage",
+  contact: "ContactPage",
+  services: "CollectionPage",
+  blog: "CollectionPage",
+};
+const pageJsonLdInput: PageJsonLdInput = {
+  siteUrl,
+  url: pageUrl,
+  language: LOCALE_META[locale].langTag,
+  name: meta.title,
+  description: meta.description,
+  breadcrumbs: trail.map((item) => ({
+    name: item.label,
+    url: item.href === undefined ? pageUrl : toAbsoluteUrl(item.href, site),
+  })),
+  ...(target.view === "editorial" && PAGE_TYPE[target.key] !== undefined
+    ? { pageType: PAGE_TYPE[target.key] }
+    : {}),
+  ...(target.view === "service" && editorial !== undefined
+    ? {
+        service: { name: dictionary.serviceNames[target.service] },
+        faq: getFaqEntries(editorial.content),
+      }
+    : {}),
+  ...(district !== undefined
+    ? {
+        place: {
+          kind: "district" as const,
+          name: district.name,
+          cityName: COMPANY.address.city,
+          description: district.lead,
+        },
+      }
+    : {}),
+  ...(barrio !== undefined
+    ? {
+        place: {
+          kind: "barrio" as const,
+          name: barrio.name,
+          cityName: COMPANY.address.city,
+          districtName: barrioDistrict?.name ?? "",
+          description: barrio.lead,
+        },
+      }
+    : {}),
+};
+const pageJsonLd = buildPageJsonLd(pageJsonLdInput);
 ---
 
 <BaseLayout
@@ -238,9 +345,10 @@ const crumbs = [
   title={meta.title}
   description={meta.description}
   alternates={meta.alternates}
-  noindex={proseFallback}
-  {...(blogPostProps ?? {})}
+  noindex={noindex}
+  {...headProps}
 >
+  <JsonLd slot="head" data={pageJsonLd} />
   {blogJsonLd !== undefined && <JsonLd slot="head" data={blogJsonLd} />}
   {target.view === "editorial" && target.key === "blog" && editorial !== undefined ? (
     <BlogIndex locale={locale} content={editorial.content} posts={posts} crumbs={crumbs} />

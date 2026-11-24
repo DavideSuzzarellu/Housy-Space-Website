@@ -1,6 +1,7 @@
 import type { Company } from "@/features/agency/domain/company";
 import type { Locale } from "@/shared/i18n/config";
 import { compactJsonLd, type JsonLdObject, type JsonValue } from "@/shared/lib/seo/jsonLd";
+import { breadcrumbNode, type BreadcrumbItem } from "@/shared/lib/seo/structuredData";
 import {
   getOperationPrice,
   getPropertyTitle,
@@ -18,6 +19,8 @@ export interface PropertyJsonLdInput {
   /** Absolute site origin (`Astro.site`). */
   readonly siteUrl: string;
   readonly company: Company;
+  /** Visible breadcrumb trail of the page, last item = this page. */
+  readonly breadcrumbs?: readonly BreadcrumbItem[];
 }
 
 /** Spanish Mobilia type names that are apartments (schema.org `Apartment`). */
@@ -70,7 +73,7 @@ function sellerOf(company: Company, siteUrl: string): JsonLdObject {
  * Only confirmed data; unknown fields are left out (§8, skill seo-multilingual).
  */
 export function buildPropertyJsonLd(input: PropertyJsonLdInput): JsonLdObject {
-  const { property, operation, locale, url, siteUrl, company } = input;
+  const { property, operation, locale, url, siteUrl, company, breadcrumbs } = input;
   const type = residenceType(property);
   const id = `${url}#property`;
   const description = localize(property.summary, locale) ?? localize(property.description, locale);
@@ -117,6 +120,10 @@ export function buildPropertyJsonLd(input: PropertyJsonLdInput): JsonLdObject {
     seller: sellerOf(company, siteUrl),
   };
 
-  const graph: JsonValue[] = [residence, offer];
+  const graph: JsonValue[] = [
+    residence,
+    offer,
+    ...(breadcrumbs === undefined ? [] : [breadcrumbNode(breadcrumbs, `${url}#breadcrumb`)]),
+  ];
   return compactJsonLd({ "@context": "https://schema.org", "@graph": graph });
 }

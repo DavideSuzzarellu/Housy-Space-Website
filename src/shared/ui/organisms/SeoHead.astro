@@ -1,6 +1,7 @@
 ---
 import { LOCALE_META, type Locale } from "@/shared/i18n/config";
 import type { Alternate } from "@/shared/i18n/routes";
+import { LOGO_PNG_FILE, publicPath } from "@/shared/lib/seo/structuredData";
 
 interface Props {
   locale: Locale;
@@ -22,7 +23,7 @@ const {
   title,
   description,
   alternates = [],
-  ogImagePath = "/brand/housyspace-logo-oficial-fondo-blanco-3000.png",
+  ogImagePath = publicPath(import.meta.env.BASE_URL, LOGO_PNG_FILE),
   ogType = "website",
   publishedTime,
   noindex = false,

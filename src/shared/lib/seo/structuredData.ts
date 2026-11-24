@@ -23,10 +23,17 @@ const CONTEXT = "https://schema.org";
 const COUNTRY = "ES";
 /** Public brand name of the agency (the legal name is `legalName`). */
 export const BRAND_NAME = "HousySpace";
+/** Logo PNG in `public/`: the Open Graph image of pages without a photo and the schema.org logo. */
+export const LOGO_PNG_FILE = "brand/housyspace-logo-oficial-fondo-blanco-3000.png";
 
 /** Site root URL including the deploy base and no trailing slash: `https://host` or `https://host/base`. */
 export function getSiteUrl(site: URL, base: string): string {
   return new URL(base, site).href.replace(/\/$/, "");
+}
+
+/** Root-relative URL of a file in `public/`, whether `base` ends with a slash or not. */
+export function publicPath(base: string, file: string): string {
+  return `${base.replace(/\/$/, "")}/${file}`;
 }
 
 /** Absolute URL of a root-relative path that already carries the base (from `getLocalizedPath`). */

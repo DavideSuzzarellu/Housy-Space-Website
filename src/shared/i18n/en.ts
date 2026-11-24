@@ -129,7 +129,7 @@ const en = {
       concierge: "Concierge",
     },
     detail: {
-      metaTitle: "{title} · Ref. {ref} | HousySpace",
+      metaTitle: "{title} · Ref. {ref} · HousySpace",
       metaDescriptionFallback:
         "{title} · {operation} · Ref. {ref}. HousySpace Property Solutions, Barcelona.",
       breadcrumb: "Breadcrumb",
@@ -188,8 +188,8 @@ const en = {
   },
   catalog: {
     metaTitle: {
-      sale: "Properties for sale in Barcelona | HousySpace",
-      rent: "Properties for rent in Barcelona | HousySpace",
+      sale: "Flats for sale in Barcelona · HousySpace",
+      rent: "Flats for rent in Barcelona · HousySpace",
     },
     metaDescription: {
       sale: "Flats, penthouses and houses for sale in Barcelona selected by HousySpace, with search, list and map.",
@@ -304,9 +304,9 @@ const en = {
       "Architecture images are AI-generated illustrations that will be replaced by authentic licensed photography.",
   },
   home: {
-    metaTitle: "HousySpace · Property Solutions",
+    metaTitle: "Real estate agency in Barcelona · HousySpace",
     metaDescription:
-      "Boutique real estate consultants in Barcelona: buying, selling and renting, personalised property search, renovations, interior design and advice, with a personal touch.",
+      "HousySpace, a real estate agency in Barcelona with the soul of a consultancy: we advise you to sell, value, buy or rent your home, with one advisor at every step.",
     hero: {
       label: "Barcelona",
       videoCredit:
@@ -443,9 +443,14 @@ const en = {
     barrioTag: "Neighbourhood · {district} district",
     barrioLead:
       "The official figures of the neighbourhood: sales, rent and population, compared with {district} and Barcelona.",
-    barrioMeta: "Neighbourhood data",
-    barrioDescription:
-      "Official data for {name} (Barcelona): sale price, rent, density and their evolution.",
+    metaTitle: "Barcelona neighbourhoods: prices and area guide · HousySpace",
+    metaDescription:
+      "Barcelona's 10 districts and 73 barrios with an interactive map, sale and rent prices, population density and what living in each area is like.",
+    districtMetaTitle: "Living in {name}: neighbourhoods, prices and atmosphere · HousySpace",
+    districtMetaSuffix: "Sale and rental prices and what each of its neighbourhoods is like.",
+    barrioMetaTitle: "{name}, {district}: prices and atmosphere · HousySpace",
+    barrioMetaSuffix:
+      "Housing prices, local services and what it is like to live in the neighbourhood.",
     methodNote:
       "Sale: average price per m² of homes transferred (General Council of Notaries). Rent: average monthly rent of registered contracts (INCASÒL deposits). Both are published by Barcelona City Council in its Portal de Dades; the figure is the last full year (2025) and, in the charts, the current year is shown as provisional. Density: 2026 municipal register and official CartoBCN area.",
     flat80Note:

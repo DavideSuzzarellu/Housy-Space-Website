@@ -129,4 +129,16 @@ describe("buildPropertyJsonLd", () => {
     expect(offer).not.toHaveProperty("priceCurrency");
     expect(offer["availability"]).toBe("https://schema.org/LimitedAvailability");
   });
+
+  it("adds the visible breadcrumb trail when given", () => {
+    const graph = build({
+      breadcrumbs: [
+        { name: "Inicio", url: `${SITE}/es` },
+        { name: "En venta", url: `${SITE}/es/venta` },
+        { name: "Piso en El Clot", url: URL_ES },
+      ],
+    });
+    const trail = nodeOfType(graph, "BreadcrumbList");
+    expect(trail["itemListElement"]).toHaveLength(3);
+  });
 });

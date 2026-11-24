@@ -5,6 +5,7 @@ import {
   buildPageJsonLd,
   getSiteUrl,
   organizationId,
+  publicPath,
   toAbsoluteUrl,
   websiteId,
   type SeoCompany,
@@ -36,6 +37,14 @@ describe("site URL helpers", () => {
     expect(toAbsoluteUrl("/repo/es/x", new URL("https://h.example"))).toBe(
       "https://h.example/repo/es/x",
     );
+  });
+});
+
+describe("publicPath", () => {
+  it("joins base and file with exactly one slash", () => {
+    expect(publicPath("/", "brand/a.png")).toBe("/brand/a.png");
+    expect(publicPath("/repo", "brand/a.png")).toBe("/repo/brand/a.png");
+    expect(publicPath("/repo/", "brand/a.png")).toBe("/repo/brand/a.png");
   });
 });
 

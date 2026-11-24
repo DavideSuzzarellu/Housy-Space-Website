@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("astro:content", () => ({ getEntry: vi.fn() }));
 
-const { groupItems, splitBlockHead } = await import("./pages");
+const { getFaqEntries, groupItems, splitBlockHead } = await import("./pages");
 
 describe("groupItems", () => {
   it("merges consecutive cards and keeps the rest in order", () => {
@@ -44,5 +44,30 @@ describe("splitBlockHead", () => {
     const { head, body } = splitBlockHead([{ kind: "big" }, { kind: "p" }]);
     expect(head).toEqual([]);
     expect(body).toHaveLength(2);
+  });
+});
+
+describe("getFaqEntries", () => {
+  it("collects the faq items of every section as plain text", () => {
+    const content = {
+      sections: [
+        {
+          items: [
+            { kind: "h2", text: "x" },
+            { kind: "faq", q: "¿**Cuánto**?", a: "Depende." },
+          ],
+        },
+        {
+          items: [
+            { kind: "faq", q: "¿Dónde?", a: "Aquí." },
+            { kind: "p", text: "y" },
+          ],
+        },
+      ],
+    } as unknown as Parameters<typeof getFaqEntries>[0];
+    expect(getFaqEntries(content)).toEqual([
+      { question: "¿Cuánto?", answer: "Depende." },
+      { question: "¿Dónde?", answer: "Aquí." },
+    ]);
   });
 });
