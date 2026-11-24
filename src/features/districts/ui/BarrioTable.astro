@@ -5,11 +5,13 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 
-/** Comparison table of barrios, with optional highlighted and reference rows. */
+/** Comparison table of barrios (reference `stt zd4-t`), with optional numbering, highlighted and reference rows. */
 interface Props {
   locale: Locale;
   barrios: readonly MarketBarrio[];
   current?: string | undefined;
+  /** Shows the 1..n pin of the barrio map before each name. */
+  numbered?: boolean;
   references?: readonly {
     readonly label: string;
     readonly sale: number;
@@ -19,48 +21,67 @@ interface Props {
   }[];
 }
 
-const { locale, barrios, current, references = [] } = Astro.props;
+const { locale, barrios, current, numbered = false, references = [] } = Astro.props;
 const t = getDictionary(locale).zones;
 const format = figureFormat(locale);
-const CELL =
-  "border-b border-line px-3 py-[13px] text-right font-heading text-base font-normal whitespace-nowrap";
+const HEAD =
+  "border-b border-line-strong px-3 py-[13px] text-left text-[0.6875rem] font-medium tracking-[0.12em] text-muted";
+const CELL = "border-b border-line px-3 py-[13px] text-left text-base whitespace-nowrap";
+const NAME =
+  "border-b border-line px-3 py-[13px] text-left text-[0.8125rem] leading-[1.7] font-medium";
+const LINK = "inline-flex items-center gap-3 text-[1.0625rem] leading-tight font-normal";
 ---
 
 <div class="overflow-x-auto">
-  <table class="w-full min-w-120 border-collapse text-[0.8125rem]">
+  <table class="w-full min-w-130 border-collapse">
     <thead>
-      <tr class="text-xs">
-        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-left">
+      <tr>
+        <th scope="col" class={HEAD}>
           {t.barrio}
         </th>
-        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-right">
+        <th scope="col" class={HEAD}>
           {t.saleColumn}
         </th>
-        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-right">
+        <th scope="col" class={HEAD}>
           {t.rentColumn}
         </th>
-        <th scope="col" class="border-b-2 border-fg px-3 py-[13px] text-right">
+        <th scope="col" class={HEAD}>
           {t.densityColumn}
         </th>
       </tr>
     </thead>
     <tbody>
-      {barrios.map((barrio) => (
+      {barrios.map((barrio, index) => (
         <tr class={barrio.slug === current ? "bg-taupe/18" : undefined}>
-          <th
-            scope="row"
-            class="border-b border-line px-3 py-[13px] text-left font-heading text-[1.0625rem] leading-tight font-normal"
-          >
+          <th scope="row" class={NAME}>
             {barrio.slug === current ? (
-              barrio.name
+              <span class={LINK}>
+                {numbered && (
+                  <span
+                    aria-hidden="true"
+                    class="grid size-6 flex-none place-items-center rounded-full border border-fg/35 bg-canvas text-[0.625rem] leading-none font-medium"
+                  >
+                    {index + 1}
+                  </span>
+                )}
+                {barrio.name}
+              </span>
             ) : (
               <a
                 href={getLocalizedPath("barrio", locale, {
                   district: barrio.district,
                   barrio: barrio.slug,
                 })}
-                class="underline-offset-4 hover:text-accent hover:underline"
+                class:list={[LINK, "no-underline hover:text-accent"]}
               >
+                {numbered && (
+                  <span
+                    aria-hidden="true"
+                    class="grid size-6 flex-none place-items-center rounded-full border border-fg/35 bg-canvas text-[0.625rem] leading-none font-medium text-fg"
+                  >
+                    {index + 1}
+                  </span>
+                )}
                 {barrio.name}
               </a>
             )}
@@ -72,14 +93,11 @@ const CELL =
       ))}
       {references.map((reference, index) => (
         <tr class:list={["text-muted", index === 0 && "border-t border-line-strong"]}>
-          <th
-            scope="row"
-            class="border-b border-line px-3 py-[13px] text-left font-heading text-[1.0625rem] leading-tight font-normal"
-          >
+          <th scope="row" class={NAME}>
             {reference.href === undefined ? (
-              reference.label
+              <span class={LINK}>{reference.label}</span>
             ) : (
-              <a href={reference.href} class="hover:text-accent">
+              <a href={reference.href} class:list={[LINK, "no-underline hover:text-accent"]}>
                 {reference.label}
               </a>
             )}

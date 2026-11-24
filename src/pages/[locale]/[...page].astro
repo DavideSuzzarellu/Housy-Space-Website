@@ -307,6 +307,6 @@ const crumbs = [
     <MunicipalityView locale={locale} data={municipalityData} slug={target.municipality.slug} />
   )}
   {target.view === "barrio" && (
-    <BarrioView locale={locale} barrio={target.barrio} market={market} />
+    <BarrioView locale={locale} barrio={target.barrio} market={market} fallback={!isSpanish} />
   )}
 </BaseLayout>

@@ -208,3 +208,63 @@ export function buildDistrictMap(
     range: { sale: range("sale"), rent: range("rent"), density: range("density") },
   };
 }
+
+export interface BarrioMapItem {
+  readonly slug: string;
+  readonly name: string;
+  readonly d: string;
+  /** 1-based number in the official order, drawn as a pin and in the table. */
+  readonly index: number;
+  /** Pin anchor in percent of the crop. */
+  readonly left: number;
+  readonly top: number;
+  /** Colour tone 0-6 of the sale price among the 73 barrios. */
+  readonly tone: number;
+}
+export interface BarrioMapModel {
+  /** SVG viewBox cropped to the district. */
+  readonly viewBox: string;
+  readonly width: number;
+  readonly height: number;
+  readonly barrios: readonly BarrioMapItem[];
+  /** Lowest and highest sale price of the 73 barrios (legend). */
+  readonly range: { readonly min: number; readonly max: number };
+}
+
+/** Barrio map of one district (reference `zd4-bm`): crop to its barrios, tones from all 73 barrios. */
+export function buildBarrioMap(
+  market: MarketData,
+  shapes: { readonly barrios: Readonly<Record<string, string>> },
+  districtSlug: string,
+): BarrioMapModel {
+  const sales = market.barrios.map((barrio) => barrio.sale);
+  const inDistrict = market.barrios.filter((barrio) => barrio.district === districtSlug);
+  const shaped = inDistrict.flatMap((barrio, index) => {
+    const d = shapes.barrios[barrio.slug];
+    return d === undefined ? [] : [{ barrio, d, index: index + 1 }];
+  });
+  const boxes = shaped.map(({ d }) => pathBounds(d));
+  const pad = 6;
+  const x0 = Math.min(...boxes.map((box) => box.x0)) - pad;
+  const y0 = Math.min(...boxes.map((box) => box.y0)) - pad;
+  const width = Math.max(...boxes.map((box) => box.x1)) + pad - x0;
+  const height = Math.max(...boxes.map((box) => box.y1)) + pad - y0;
+  return {
+    viewBox: `${x0.toFixed(1)} ${y0.toFixed(1)} ${width.toFixed(1)} ${height.toFixed(1)}`,
+    width,
+    height,
+    barrios: shaped.map(({ barrio, d, index }) => {
+      const centre = pathCentroid(d);
+      return {
+        slug: barrio.slug,
+        name: barrio.name,
+        d,
+        index,
+        left: ((centre.x - x0) / width) * 100,
+        top: ((centre.y - y0) / height) * 100,
+        tone: toneOf(sales, barrio.sale, TONES),
+      };
+    }),
+    range: { min: Math.min(...sales), max: Math.max(...sales) },
+  };
+}

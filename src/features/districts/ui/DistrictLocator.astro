@@ -1,0 +1,23 @@
+---
+import shapes from "@/features/districts/infrastructure/shapes.json";
+
+/** Where the district sits in the city: the 10 districts in stone, the current one in petrol (reference `zd5-dh` svg). */
+interface Props {
+  slug: string;
+  class?: string;
+}
+
+const { slug, class: className } = Astro.props;
+---
+
+<svg viewBox={shapes.viewBox} aria-hidden="true" focusable="false" class={className}>
+  {Object.entries(shapes.districts).map(([key, d]) => (
+    <path
+      d={d}
+      style={`fill:var(--color-ramp-${key === slug ? 6 : 1})`}
+      stroke="var(--color-canvas)"
+      stroke-width="1.2"
+      stroke-linejoin="round"
+    ></path>
+  ))}
+</svg>

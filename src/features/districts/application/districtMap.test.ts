@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildBarrioMap,
   labelLines,
   labelFits,
   pathBounds,
@@ -52,5 +53,27 @@ describe("labels", () => {
     const box = { x0: 0, y0: 0, x1: 100, y1: 100 };
     expect(labelFits(["Eixample"], box, viewBox, 600, 12.5)).toBe(true);
     expect(labelFits(["Sarrià-Sant", "Gervasi"], box, viewBox, 600, 12.5)).toBe(false);
+  });
+});
+
+describe("buildBarrioMap", () => {
+  const barrio = (slug: string, district: string, sale: number) =>
+    ({ slug, name: slug, district, sale }) as never;
+  const market = {
+    barrios: [barrio("a", "x", 1000), barrio("b", "x", 2000), barrio("c", "y", 3000)],
+  } as never;
+  const shapes = {
+    barrios: { a: "M0 0L10 0L10 10L0 10Z", b: "M10 0L20 0L20 10L10 10Z", c: "M50 50L60 50L60 60Z" },
+  };
+  it("crops to the district, numbers barrios in order and pins their centres", () => {
+    const map = buildBarrioMap(market, shapes, "x");
+    expect(map.barrios.map((item) => item.index)).toEqual([1, 2]);
+    expect(map.viewBox).toBe("-6.0 -6.0 32.0 22.0");
+    expect(map.barrios[0]?.left).toBeCloseTo(((5 + 6) / 32) * 100);
+  });
+  it("tones every barrio among all of them and gives the legend range", () => {
+    const map = buildBarrioMap(market, shapes, "x");
+    expect(map.range).toEqual({ min: 1000, max: 3000 });
+    expect(map.barrios[0]?.tone).toBeLessThan(map.barrios[1]?.tone ?? 0);
   });
 });
