@@ -30,7 +30,7 @@ import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
-import { getAlternates, getLocalizedPath, getServicesAnchorPath } from "@/shared/i18n/routes";
+import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
 import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
@@ -240,7 +240,7 @@ const crumbs = [
   home,
   ...(serviceCrumb === undefined
     ? []
-    : [{ label: dictionary.nav.services, href: getServicesAnchorPath(locale) }]),
+    : [{ label: dictionary.nav.services, href: getLocalizedPath("services", locale) }]),
   {
     label:
       serviceCrumb ??
@@ -285,7 +285,6 @@ const crumbs = [
         crumbs={crumbs}
         fallback={editorial.fallback}
         hero={isMySearch}
-        paperHead={target.view === "editorial" && target.key === "sell"}
         longText={longText}
       />
     )

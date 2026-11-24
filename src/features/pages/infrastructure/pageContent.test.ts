@@ -22,8 +22,8 @@ function strings(value: unknown): string[] {
 }
 
 describe("editorial pages", () => {
-  it("has the Spanish source of the 22 editorial pages", () => {
-    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(22);
+  it("has the Spanish source of the 20 editorial pages", () => {
+    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(20);
   });
 
   it.each(files)("%s validates against the schema", (file) => {
@@ -50,8 +50,8 @@ describe("editorial pages", () => {
 describe("service pages", () => {
   const services = files.filter((file) => file.startsWith("service-"));
 
-  it("has the 9 services in the 4 locales", () => {
-    expect(services).toHaveLength(36);
+  it("has the 8 services in the 4 locales", () => {
+    expect(services).toHaveLength(32);
   });
 
   it.each(services)("%s opens with its illustration and an emphasised heading", (file) => {
@@ -66,7 +66,6 @@ describe("service pages", () => {
   /** Explicit layout of each section, in order; `-` follows from the items (steps, faq, band, text). */
   const LAYOUTS: Record<string, string> = {
     "alquiler-gestion": "intro split - - cta",
-    asesoramiento: "intro trio sit - - cta",
     "asesoramiento-financiero": "intro split - - colab cta",
     "asesoramiento-juridico-fiscal": "intro split tax - colab cta",
     "inversion-inmobiliaria": "intro cards - route cta",
