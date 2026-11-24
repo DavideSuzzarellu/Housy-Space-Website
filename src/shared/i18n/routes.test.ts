@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { LOCALES } from "./config";
 import { getAlternates, getLocalizedPath, ROUTE_KEYS, routes, withUrlExtras } from "./routes";
 
@@ -149,5 +149,24 @@ describe("withUrlExtras", () => {
 
   it("returns the path untouched when there are no extras", () => {
     expect(withUrlExtras("/es", {})).toBe("/es");
+  });
+});
+
+describe("site base (staging under a sub-path)", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  it("puts the base on alternates exactly as on getLocalizedPath, so canonical and hreflang match the links", () => {
+    vi.stubEnv("BASE_URL", "/repo/");
+    const alternates = getAlternates("services");
+    expect(alternates.map((alternate) => alternate.path)).toEqual([
+      "/repo/es/servicios",
+      "/repo/en/services",
+      "/repo/it/servizi",
+      "/repo/ca/serveis",
+      "/repo/es/servicios",
+    ]);
+    expect(getLocalizedPath("services", "en")).toBe("/repo/en/services");
   });
 });
