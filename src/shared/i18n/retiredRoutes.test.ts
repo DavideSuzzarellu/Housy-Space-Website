@@ -1,4 +1,3 @@
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { getRetiredRedirectRules, getRetiredRedirects, renderRedirectRules } from "./retiredRoutes";
 
@@ -92,9 +91,24 @@ describe("host redirect rules", () => {
     const text = renderRedirectRules([{ from: "/", to: "/es", status: 301 }], "/repo/");
     expect(text).toBe("/repo/ /repo/es 301\n");
   });
+});
 
-  it("matches the committed docs/redirects.generated.txt (run `bun run redirects`)", () => {
-    const committed = readFileSync("docs/redirects.generated.txt", "utf8").replaceAll("\r\n", "\n");
-    expect(committed).toBe(renderRedirectRules(rules));
+describe("renderRedirectRules (the production `_redirects` file)", () => {
+  const lines = renderRedirectRules(getRetiredRedirectRules()).trimEnd().split("\n");
+
+  it("is base-free, starts with the root rule and marks every rule 301", () => {
+    expect(lines[0]).toBe("/ /es 301");
+    expect(lines.every((line) => /^\/\S* \/\S* 301$/.test(line))).toBe(true);
+    expect(lines.join("\n")).not.toContain("Housy-Space-Website");
+  });
+
+  it("collapses each old province family into one splat rule", () => {
+    expect(lines).toContain("/es/provincia-de-barcelona/* /es/zonas/barcelona 301");
+    expect(lines.filter((line) => line.includes("/*"))).toHaveLength(4);
+  });
+
+  it("has no duplicated source", () => {
+    const sources = lines.map((line) => line.split(" ")[0]);
+    expect(new Set(sources).size).toBe(sources.length);
   });
 });

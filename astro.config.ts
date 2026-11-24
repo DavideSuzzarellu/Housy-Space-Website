@@ -1,6 +1,7 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
+import { hostFiles } from "./scripts/host-files-integration";
 import { sitemapFromHeads } from "./scripts/sitemap-integration";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
@@ -14,10 +15,12 @@ const sitemapLocales = Object.fromEntries(
 // ASTRO_BASE="/" (and ASTRO_SITE to the production origin the specs assert) so tests run against the site root.
 const BASE = process.env["ASTRO_BASE"] ?? "/Housy-Space-Website";
 const BASE_PREFIX = BASE === "/" ? "" : BASE;
+// Default = GitHub Pages staging (noindex). `bun run build:production` sets the production origin.
+const SITE = process.env["ASTRO_SITE"] ?? "https://DavideSuzzarellu.github.io";
 
 // Hosting/adapter is not decided yet (AGENTS.md §2): keep this config adapter-agnostic.
 export default defineConfig({
-  site: process.env["ASTRO_SITE"] ?? "https://DavideSuzzarellu.github.io",
+  site: SITE,
   // Reemplazá con el nombre exacto de tu repositorio
   base: BASE,
   output: "static",
@@ -40,10 +43,7 @@ export default defineConfig({
     "/": `${BASE_PREFIX}/${DEFAULT_LOCALE}/`,
     // Pages retired in the reference site: sell page, advisory service (same meta-refresh caveat).
     ...Object.fromEntries(
-      Object.entries(getRetiredRedirects()).map(([from, to]) => [
-        from,
-        `${BASE_PREFIX}${to}`,
-      ]),
+      Object.entries(getRetiredRedirects()).map(([from, to]) => [from, `${BASE_PREFIX}${to}`]),
     ),
   },
 
@@ -95,6 +95,8 @@ export default defineConfig({
     }),
     // Rewrites sitemap-0.xml from the emitted heads (translated slugs need real alternates).
     sitemapFromHeads(),
+    // Production build only: `_redirects` (real 301s) and `_headers`.
+    hostFiles(SITE, BASE),
   ],
 
   vite: {
