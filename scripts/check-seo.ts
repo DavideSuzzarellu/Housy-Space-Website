@@ -3,34 +3,16 @@
  * head tags of every page, reciprocal hreflang, redirect pages, sitemap and robots.txt.
  * Exits with 1 and prints every problem; used locally and as a CI gate.
  */
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import {
-  auditRedirects,
-  auditSite,
-  parseHead,
-  type PageHead,
-} from "../src/shared/lib/seo/headAudit.ts";
+import { auditRedirects, auditSite } from "../src/shared/lib/seo/headAudit.ts";
+import { readDistPages } from "./seo-dist.ts";
 
 const DIST = fileURLToPath(new URL("../dist/", import.meta.url));
-/** Internal sources printed to PDF; never public. */
-const INTERNAL = /(^|\/)property-sheet-source\//;
 const HREFLANGS = ["es-ES", "en", "it-IT", "ca-ES"] as const;
 
-function htmlFiles(dir: string): string[] {
-  return readdirSync(dir).flatMap((name) => {
-    const full = path.join(dir, name);
-    if (statSync(full).isDirectory()) return htmlFiles(full);
-    return full.endsWith(".html") ? [full] : [];
-  });
-}
-
-const pages: PageHead[] = htmlFiles(DIST)
-  .map((file) => path.relative(DIST, file).replaceAll("\\", "/"))
-  .filter((file) => !INTERNAL.test(file))
-  .map((file) => parseHead(file, readFileSync(path.join(DIST, file), "utf8")));
-
+const pages = readDistPages(DIST);
 const problems = [...auditSite(pages, { hreflangs: HREFLANGS }), ...auditRedirects(pages)];
 
 // Sitemap: exactly the indexable pages (no redirect or noindex page, no page missing).

@@ -86,7 +86,10 @@ describe("auditSite", () => {
     const partial = page("es/a", {
       lang: "es-ES",
       canonical: ES,
-      alternates: [["es-ES", ES]],
+      alternates: [
+        ["es-ES", ES],
+        ["it-IT", "https://h.example/it/a"],
+      ],
     });
     const problems = auditSite([partial], OPTIONS).join("\n");
     expect(problems).toContain("missing hreflang en");
@@ -109,6 +112,18 @@ describe("auditSite", () => {
         OPTIONS,
       ).join(),
     ).toContain("found 2");
+  });
+
+  it("accepts a single-language page that lists itself and x-default", () => {
+    const post = page("es/blog/x", {
+      lang: "es-ES",
+      canonical: "https://h.example/es/blog/x",
+      alternates: [
+        ["es-ES", "https://h.example/es/blog/x"],
+        ["x-default", "https://h.example/es/blog/x"],
+      ],
+    });
+    expect(auditSite([post], OPTIONS)).toEqual([]);
   });
 
   it("ignores noindex pages", () => {

@@ -110,8 +110,13 @@ function pageProblems(page: PageHead, options: SeoAuditOptions): string[] {
   if (!/^https?:\/\//.test(page.canonical)) add(`canonical is not absolute: ${page.canonical}`);
   const self = page.alternates.filter((alternate) => alternate.href === page.canonical);
   if (self.length === 0) add("canonical is not one of its own hreflang alternates");
+  // A page written in one language (a blog post) lists itself and x-default only.
+  const singleLanguage = page.alternates.every((alternate) => alternate.href === page.canonical);
   const declared = new Set(page.alternates.map((alternate) => alternate.hreflang));
-  for (const hreflang of [...options.hreflangs, "x-default"]) {
+  const required = singleLanguage
+    ? [page.lang ?? "", "x-default"]
+    : [...options.hreflangs, "x-default"];
+  for (const hreflang of required) {
     if (!declared.has(hreflang)) add(`missing hreflang ${hreflang}`);
   }
   return problems;
