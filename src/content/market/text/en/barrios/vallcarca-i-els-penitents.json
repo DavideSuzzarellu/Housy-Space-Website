@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de laderas y de vecinos, con viaducto, casas singulares y vistas.",
+  "translated": true,
+  "lead": "A hillside neighbourhood with a strong community, a viaduct, distinctive houses and views.",
   "text": [
-    "Surgió de la unión de dos antiguos vecindarios, Vallcarca y els Penitents, y es uno de los barrios más elevados y con más pendiente de la ciudad. Fue lugar de veraneo y de familias del valle que buscaban mejores comunicaciones, y en los años setenta sus vecinos reivindicaron las mejoras que trajeron el metro, el alcantarillado y las escaleras mecánicas.",
-    "Su paisaje mezcla el viaducto de Vallcarca, la iglesia dels Josepets, casas singulares como la Comas d'Argemir, la Marsans o la Barangé, zonas de ciudad jardín como el Torrent Maduixer, promovido en 1950, y torres aisladas en Mas Falcó. Con 4.152 €/m², su precio de compraventa queda por encima del del Coll y por debajo del del resto de Gràcia."
+    "It grew out of the union of two old neighbourhoods, Vallcarca and els Penitents, and is one of the highest and steepest in the city. It was a summer retreat and a home for valley families looking for better connections, and in the 1970s its residents campaigned for the improvements that brought the metro, the sewers and the escalators.",
+    "Its landscape mixes the Vallcarca viaduct, the church of els Josepets, distinctive houses such as Casa Comas d'Argemir, Casa Marsans and Casa Barangé, garden-city areas such as the Torrent Maduixer, developed in 1950, and detached villas in Mas Falcó. At 4,152 €/m², its sale price is above that of El Coll and below that of the rest of Gràcia."
   ],
-  "housing": "Torres aisladas, ciudad jardín y bloques de pisos, en calles de fuerte pendiente.",
+  "housing": "Detached villas, garden-city housing and blocks of flats, on steeply sloping streets.",
   "places": ["Viaducte de Vallcarca", "Església dels Josepets", "Parc Sanitari Pere Virgili"]
 }

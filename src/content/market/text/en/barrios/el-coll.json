@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de ladera con iglesia románica, mucha vida vecinal y un parque en una antigua cantera.",
+  "translated": true,
+  "lead": "A hillside neighbourhood with a Romanesque church, a strong community and a park in a former quarry.",
   "text": [
-    "Su origen está en la iglesia de Nostra Senyora del Coll, del siglo XI, con referencias escritas desde 1099, y hasta principios del siglo XX siguió siendo un lugar rural. El puente de Vallcarca, de 1923, mejoró sus comunicaciones, y en los años sesenta creció a gran velocidad y llenó los espacios libres que quedaban.",
-    "Hoy es un barrio pequeño (0,35 km²), con un fuerte sentido de vecindad, que tiene en el parque de la Creueta del Coll, creado en una antigua cantera y con esculturas de Ellsworth Kelly y Eduardo Chillida, su rincón más conocido. Con 3.558 €/m² y 906 €/mes, es el barrio más asequible de Gràcia."
+    "Its origin is the church of Nostra Senyora del Coll, from the 11th century, with written references from 1099, and until the early 20th century it remained a rural place. The Vallcarca bridge, built in 1923, improved its connections, and in the 1960s it grew at great speed and filled the remaining open spaces.",
+    "Today it is a small neighbourhood (0.35 km²) with a strong sense of community, and its best-known corner is the Parc de la Creueta del Coll, created in a former quarry and home to sculptures by Ellsworth Kelly and Eduardo Chillida. At 3,558 €/m² and 906 €/month, it is the most affordable neighbourhood in Gràcia."
   ],
-  "housing": "Casas y bloques de pisos en calles de ladera, con zonas de casas bajas.",
+  "housing": "Houses and blocks of flats on hillside streets, with areas of low-rise houses.",
   "places": [
     "Parc de la Creueta del Coll",
     "Església de Nostra Senyora del Coll",
