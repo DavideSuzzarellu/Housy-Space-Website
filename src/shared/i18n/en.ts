@@ -337,6 +337,9 @@ const en = {
     },
     reviews: {
       viewReview: "See this review on Google",
+      region: "Google reviews",
+      previous: "Previous reviews",
+      next: "Next reviews",
       orderNotice:
         "Client reviews published on Google: we show the most recent. Read them all on our profile.",
     },

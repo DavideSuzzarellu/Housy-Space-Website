@@ -180,10 +180,9 @@ content:
         fields:
           - {
               name: heading,
-              label: Titular,
+              label: Titular (el logotipo de HousySpace se añade solo al final),
               type: string,
               required: true,
-              description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: ctaLabel, label: Botón a Google, type: string, required: true }
           - { name: mapsUrl, label: Enlace a la ficha de Google, type: string, required: true }

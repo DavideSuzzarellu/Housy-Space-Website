@@ -88,7 +88,7 @@ export function homeContentSchema() {
           ctaLabel: text,
         })
         .strict(),
-      reviews: z.object({ heading, ctaLabel: text, mapsUrl: z.url() }).strict(),
+      reviews: z.object({ heading: text, ctaLabel: text, mapsUrl: z.url() }).strict(),
       districts: z.object({ heading, ctaLabel: text }).strict(),
       blog: z.object({ heading, ctaLabel: text }).strict(),
       contact: z

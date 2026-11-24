@@ -343,6 +343,9 @@ const es = {
     },
     reviews: {
       viewReview: "Ver esta reseña en Google",
+      region: "Reseñas de Google",
+      previous: "Reseñas anteriores",
+      next: "Reseñas siguientes",
       orderNotice:
         "Opiniones de clientes publicadas en Google: mostramos las más recientes. Lee todas en nuestra ficha.",
     },

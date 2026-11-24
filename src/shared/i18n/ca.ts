@@ -337,6 +337,9 @@ const ca = {
     },
     reviews: {
       viewReview: "Veure aquesta ressenya a Google",
+      region: "Ressenyes de Google",
+      previous: "Ressenyes anteriors",
+      next: "Ressenyes següents",
       orderNotice:
         "Opinions de clients publicades a Google: mostrem les més recents. Llegeix-les totes a la nostra fitxa.",
     },
