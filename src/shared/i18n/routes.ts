@@ -47,18 +47,6 @@ export const routes = {
     it: "vivere-a-barcellona/{district}/{barrio}",
     ca: "viure-a-barcelona/{district}/{barrio}",
   },
-  municipalities: {
-    es: "provincia-de-barcelona",
-    en: "barcelona-province",
-    it: "provincia-di-barcellona",
-    ca: "provincia-de-barcelona",
-  },
-  municipality: {
-    es: "provincia-de-barcelona/{municipio}",
-    en: "barcelona-province/{municipio}",
-    it: "provincia-di-barcellona/{municipio}",
-    ca: "provincia-de-barcelona/{municipio}",
-  },
   about: { es: "nosotros", en: "about-us", it: "chi-siamo", ca: "qui-som" },
   contact: { es: "contacto", en: "contact", it: "contatti", ca: "contacte" },
   legalNotice: { es: "aviso-legal", en: "legal-notice", it: "note-legali", ca: "avis-legal" },

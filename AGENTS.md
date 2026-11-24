@@ -157,8 +157,6 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | blog post           | `/es/blog/{slug}`        | `/en/blog/{slug}`         | `/it/blog/{slug}`          | `/ca/blog/{slug}`        |
 | district            | `/es/vivir-en-barcelona/{district}` | `/en/living-in-barcelona/{district}` | `/it/vivere-a-barcellona/{district}` | `/ca/viure-a-barcelona/{district}` |
 | barrio              | `/es/vivir-en-barcelona/{district}/{barrio}` | `/en/living-in-barcelona/{district}/{barrio}` | `/it/vivere-a-barcellona/{district}/{barrio}` | `/ca/viure-a-barcelona/{district}/{barrio}` |
-| municipalities      | `/es/provincia-de-barcelona` | `/en/barcelona-province` | `/it/provincia-di-barcellona` | `/ca/provincia-de-barcelona` |
-| municipality        | `/es/provincia-de-barcelona/{municipio}` | `/en/barcelona-province/{municipio}` | `/it/provincia-di-barcellona/{municipio}` | `/ca/provincia-de-barcelona/{municipio}` |
 | service detail      | `/es/servicios/{service}` | `/en/services/{service}` | `/it/servizi/{service}` | `/ca/serveis/{service}` |
 | my search           | `/es/mi-busqueda`        | `/en/my-search`           | `/it/la-mia-ricerca`       | `/ca/la-meva-cerca`      |
 | international guide | `/es/guia-internacional` | `/en/international-guide` | `/it/guida-internazionale` | `/ca/guia-internacional` |
@@ -228,7 +226,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
 17. Services — index page (design canvas layout, cards built from each service page) + 8 service pages: sale brokerage, valuation, legal & tax advice, renovations & interior design, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
-20. Barcelona province — index + 311 municipality pages (collection `municipalities`, data from proposal v3: territorial code, comarca and area by the ICGC). Population, density and market data show "not available" until the INE/Idescat datasets (I8) are added.
+20. ~~Barcelona province~~ — removed (client decision 2026-11-24): no municipality pages, no `municipalities` collection; the old `/provincia-de-barcelona*` URLs 301 to the zones index (`src/shared/i18n/retiredRoutes.ts`).
 21. Custom search ("búsqueda a medida") — `LeadForm` variant.
 22. International guide — NIE, taxes, financing; content pending review by the partner tax advisor/law firm (`TODO`).
 23. Data sources page — every dataset, provider, license, last update, and link (section 6.2).
@@ -243,8 +241,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
   - **Sale prices (€/m²)**: Portal de Dades, Ajuntament de Barcelona (Consejo General del Notariado data).
   - **Rents**: Portal de Dades / **INCASÒL** rental deposits (fianzas).
   - **Population, density**: Padró — Open Data BCN (CKAN API).
-  - **Boundaries**: CartoBCN (districts, barrios, CC BY 4.0); ICGC (municipalities, CC BY 4.0).
-  - **Province**: INE (Padrón), Idescat (area, density, comarca); Agència de l'Habitatge de Catalunya / Ministerio de Vivienda for market data where available.
+  - **Boundaries**: CartoBCN (districts, barrios, CC BY 4.0); ICGC (CC BY 4.0).
 - Exact dataset IDs, endpoints, and update frequency: `TODO` (confirm per source). License/reuse terms for Portal de Dades, Open Data BCN, Notariado, and INCASÒL: `TODO` verify before publishing.
 - Access ONLY through content collections (`marketStats`, `geo`) with loaders in `features/districts/infrastructure/`. Never hardcode figures in pages or components.
 - Every metric is typed: `{ value, unit, year, provisional?: { value, until }, source, sourceUrl }`. Every figure displayed shows its source and year; provisional values are labeled.

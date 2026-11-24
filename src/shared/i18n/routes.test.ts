@@ -71,9 +71,6 @@ describe("getLocalizedPath", () => {
     expect(getLocalizedPath("barrio", "en", { district: "gracia", barrio: "vila-de-gracia" })).toBe(
       "/en/living-in-barcelona/gracia/vila-de-gracia",
     );
-    expect(getLocalizedPath("municipality", "it", { municipio: "sitges" })).toBe(
-      "/it/provincia-di-barcellona/sitges",
-    );
     expect(getLocalizedPath("serviceDetail", "ca", { service: "lloguer-i-gestio" })).toBe(
       "/ca/serveis/lloguer-i-gestio",
     );

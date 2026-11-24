@@ -41,7 +41,7 @@ const METRICS: Readonly<Record<MetricKey, { tab: string; label: string; unit: st
 const total = model.districts.length;
 const signed = (diff: number): string => `${diff > 0 ? "+" : "−"}${Math.abs(diff)} %`;
 const show = (value: number | null): string =>
-  value === null ? dictionary.province.notAvailable : format.format(value);
+  value === null ? t.notAvailable : format.format(value);
 const tone = (metric: MapMetric): string => (metric.tone < 0 ? "nd" : String(metric.tone));
 const inkOf = (metric: MapMetric): string => (metric.tone >= LIGHT_FROM ? "canvas" : "fg");
 const rampStops = Array.from({ length: TONES }, (_, i) => i);

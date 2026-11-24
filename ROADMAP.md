@@ -89,9 +89,8 @@
 - [ ] 10 district pages + 73 barrio pages with typed SVG charts
 - [ ] Source/year/attribution on every figure
 
-### Phase 6 — Barcelona province 🔒 I8
-- [ ] Municipality data loader (INE, Idescat, ICGC boundaries)
-- [~] Index + 311 municipality pages with code, comarca and area (ICGC, from proposal v3); population, density and market data "not available" until I8
+### Phase 6 — Barcelona province (removed 2026-11-24)
+- Removed by client decision: no province pages, collection, loader or data; old URLs redirect to the zones index.
 
 ### Phase 7 — Content pages (Spanish built from the proposal)
 - [x] Service pages (no index: Services links to the home accordion, as the proposal)

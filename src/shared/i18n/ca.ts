@@ -253,31 +253,6 @@ const ca = {
   servicesIndex: {
     discover: "Descobrir el servei",
   },
-  province: {
-    heading: "Província de Barcelona",
-    lead: "Els 311 municipis de la província de Barcelona amb les seves dades oficials: comarca, codi territorial i superfície.",
-    description:
-      "Els 311 municipis de la província de Barcelona: comarca, codi territorial i superfície oficials.",
-    tableCaption: "Municipis de la província de Barcelona",
-    municipality: "Municipi",
-    comarca: "Comarca",
-    code: "Codi territorial",
-    area: "Superfície",
-    population: "Població",
-    density: "Densitat de població",
-    notAvailable: "No disponible",
-    municipalityTag: "Municipi · {comarca}",
-    municipalityLead:
-      "Dades oficials de {name}, municipi de la comarca de {comarca}, a la província de Barcelona.",
-    municipalityDescription:
-      "Comarca, codi territorial i superfície oficials de {name} (província de Barcelona).",
-    officialData: "Dades oficials",
-    sourceNote:
-      "Comarca, codi territorial i superfície: [{provider}]({url}), {license}. La població i els preus de l'habitatge no figuren en aquesta font: es mostren com a no disponibles fins que s'incorporin les dades oficials de l'INE i d'Idescat.",
-    others: "Altres municipis de {comarca}",
-    all: "Tots els municipis",
-    cityLink: "Barcelona, barri a barri",
-  },
   newsletter: {
     formLabel: "Subscripció al butlletí",
     heading: "Butlletí i articles",
@@ -501,6 +476,7 @@ const ca = {
     chooseDistrict: "Tria un districte",
     searchLabel: "Busques un barri o un districte?",
     searchPlaceholder: "Prem o escriu un nom",
+    notAvailable: "No disponible",
     housingType: "Tipus d'habitatge",
     referencePlaces: "Llocs de referència",
     theBarrio: "El barri",

@@ -9,8 +9,6 @@ const PAGES = [
   ["/es/mi-busqueda", "Tu próximo hogar empieza aquí"],
   ["/es/busqueda-a-medida", "Búsqueda a medida"],
   ["/es/valoracion", "El valor de tu vivienda"],
-  ["/es/provincia-de-barcelona", "Provincia de Barcelona"],
-  ["/es/provincia-de-barcelona/abrera", "Abrera"],
   ["/es/blog", "El Blog"],
   ["/es/guia-internacional", "Comprar en Barcelona desde el extranjero"],
   ["/es/datos", "Estado de los datos"],
