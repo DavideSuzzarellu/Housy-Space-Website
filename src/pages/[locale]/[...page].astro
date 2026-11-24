@@ -125,6 +125,18 @@ const editorial =
 
 const isMySearch = target.view === "editorial" && target.key === "mySearch";
 const isAbout = target.view === "editorial" && target.key === "about";
+/** Long text pages: legal (reference `.lg`, also the guide) and the data sources page. */
+const longText =
+  target.view !== "editorial"
+    ? undefined
+    : target.key === "dataSources"
+      ? ("data" as const)
+      : target.key === "legalNotice" ||
+          target.key === "privacy" ||
+          target.key === "cookies" ||
+          target.key === "internationalGuide"
+        ? ("legal" as const)
+        : undefined;
 const aboutServiceCards = isAbout ? await getServiceCards(locale) : undefined;
 
 function metaOf(): {
@@ -279,6 +291,7 @@ const crumbs = [
         fallback={editorial.fallback}
         hero={isMySearch}
         paperHead={target.view === "editorial" && target.key === "sell"}
+        longText={longText}
       />
     )
   )}

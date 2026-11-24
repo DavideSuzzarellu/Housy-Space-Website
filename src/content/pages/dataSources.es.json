@@ -76,6 +76,32 @@
         {
           "kind": "note",
           "text": "El sistema consulta las fuentes cada 6 horas. Si una fuente falla, se conservan los últimos datos válidos y, tras tres fallos seguidos, se avisa al equipo. Generado: 20/10/2026."
+        },
+        {
+          "kind": "h2",
+          "text": "Créditos de mapas y fuentes"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Cartografía: ICGC (CC BY 4.0). Límites de distritos y barrios: Ajuntament de Barcelona · CartoBCN (CC BY 4.0)."
+            },
+            {
+              "title": "",
+              "text": "Precios: Ajuntament de Barcelona · Portal de Dades. Compraventa: precio medio por m² de las viviendas transmitidas según el Consejo General del Notariado; alquiler: renta media mensual de los contratos según las fianzas del INCASÒL. Cifra principal: último año completo (2025); en los gráficos, el año en curso aparece como provisional."
+            },
+            {
+              "title": "",
+              "text": "Densidad: Padró municipal 2026 y superficie oficial de CartoBCN."
+            },
+            {
+              "title": "",
+              "text": "Inmuebles intermediados (Propiedades): la ubicación del mapa es aproximada y no se muestra el número de la calle. El precio es el del anuncio publicado, no el precio final de venta, y las cifras suman esos precios de anuncio. La fecha es el mes en que la vivienda dejó de anunciarse."
+            }
+          ]
         }
       ]
     }

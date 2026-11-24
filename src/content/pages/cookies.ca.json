@@ -1,6 +1,6 @@
 {
   "title": "Política de cookies · HousySpace",
-  "description": "Política de cookies de HousySpace (pendent).",
+  "description": "Política de cookies de HousySpace.",
   "head": {
     "heading": "Política de cookies",
     "photo": false,
@@ -18,15 +18,123 @@
       "items": [
         {
           "kind": "pending",
-          "text": "**Text pendent d'aprovació.** El text legal definitiu l'ha de redactar i aprovar HousySpace amb la seva assessoria jurídica abans del llançament."
-        },
-        {
-          "kind": "p",
-          "text": "Titular: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registre d'Agents Immobiliaris de Catalunya: AICAT nº 14032 Telèfon 613 084 804"
+          "text": "**Traducció automàtica, pendent de revisió jurídica.** Traduïda del text espanyol aprovat."
         },
         {
           "kind": "note",
-          "text": "Pendents: Domicili fiscal, Registre Mercantil, adreça electrònica de contacte i de privacitat, horari i adreça de l'oficina."
+          "text": "Darrera actualització: 21 de novembre de 2026"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Què són les galetes"
+        },
+        {
+          "kind": "p",
+          "text": "Una galeta és un petit fitxer que un lloc web desa al teu dispositiu quan el visites. Altres tecnologies similars, com l'emmagatzematge local o de sessió del navegador, fan una cosa semblant. Serveixen perquè el web funcioni, recordi les teves preferències o mesuri com s'usa."
+        },
+        {
+          "kind": "h2",
+          "text": "2. Responsable"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.**, CIF B26903419. Travessera de Gràcia 73, 2º-3ª, 08006 Barcelona. Correu: [info@housyspace.com](mailto:info@housyspace.com). Més dades a l'[avís legal](route:legal)."
+        },
+        {
+          "kind": "h2",
+          "text": "3. Què fa servir avui aquest web"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Galetes pròpies: cap.** El web d'HousySpace no instal·la galetes al teu dispositiu."
+            },
+            {
+              "title": "",
+              "text": "**Emmagatzematge tècnic de sessió.** Fem servir l'emmagatzematge de sessió del navegador per recordar si has obert el menú («hs_menu») i per no repetir l'animació d'entrada durant la teva visita («hs_intro»). No conté dades personals i s'esborra en tancar la pestanya. És necessari perquè el web funcioni com esperes, per la qual cosa no requereix el teu consentiment (article 22.2 de la LSSI)."
+            },
+            {
+              "title": "",
+              "text": "**Sense analítica ni publicitat.** Aquest web no fa servir galetes d'analítica, de publicitat ni de seguiment."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "4. Serveis de tercers que es carreguen al web"
+        },
+        {
+          "kind": "p",
+          "text": "Algunes funcions es presten amb serveis d'altres empreses. En carregar-los, aquestes empreses reben la teva adreça IP i dades bàsiques del teu navegador i, segons el servei, poden instal·lar galetes o usar emmagatzematge local. HousySpace no instal·la ni controla aquestes galetes. Cada empresa les tracta segons la seva pròpia política."
+        },
+        {
+          "kind": "table",
+          "head": ["Servei", "Per a què", "Quan es carrega", "Què pot passar"],
+          "rows": [
+            [
+              "Google Maps (Google)",
+              "Mapes de Propietats, dels immobles intermediats i de les fitxes d'immoble.",
+              "En obrir aquestes pàgines.",
+              "Google rep la teva adreça IP i dades d'ús del mapa i pot instal·lar galetes o usar emmagatzematge local. [Galetes de Google](https://policies.google.com/technologies/cookies)."
+            ],
+            [
+              "Mapa base de l'ICGC",
+              "Cartografia dels mapes quan el de Google no es carrega.",
+              "En obrir les pàgines amb mapa.",
+              "L'Institut Cartogràfic i Geològic de Catalunya rep la teva adreça IP en servir els mapes. HousySpace no instal·la galetes amb aquest servei."
+            ],
+            [
+              "Mapa d'«On som» (Google)",
+              "Mostrar l'oficina en un mapa.",
+              "Només quan prems «Veure el mapa aquí». Fins aleshores no hi ha connexió amb Google.",
+              "Google rep la teva adreça IP i pot instal·lar galetes."
+            ],
+            [
+              "Valorador en línia (Lystos)",
+              "Calcular el valor orientatiu del teu habitatge a l'instant.",
+              "Només quan obres el valorador des d'«A l'instant».",
+              "Lystos rep les dades que introdueixes i pot fer servir galetes o tecnologies similars. Consulta la seva política de privacitat."
+            ],
+            [
+              "WhatsApp (Meta)",
+              "Obrir una conversa amb nosaltres.",
+              "Només quan prems un botó o enllaç de WhatsApp.",
+              "Et porta a WhatsApp, que té la seva pròpia política de privacitat."
+            ],
+            [
+              "Instagram i LinkedIn",
+              "Enllaços als nostres perfils.",
+              "Només quan prems l'enllaç. El web no incrusta contingut d'aquestes xarxes.",
+              "Et porta al seu lloc, que té les seves pròpies galetes i política."
+            ]
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "5. Com desactivar o esborrar les galetes"
+        },
+        {
+          "kind": "p",
+          "text": "Pots permetre, bloquejar o esborrar les galetes des dels ajustos de privacitat del teu navegador (Chrome, Firefox, Safari, Edge o un altre). Si bloqueges les dels serveis de tercers, els mapes o el valorador podrien no funcionar. L'Agència Espanyola de Protecció de Dades explica com fer-ho a [www.aepd.es](https://www.aepd.es)."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Si afegim altres galetes"
+        },
+        {
+          "kind": "p",
+          "text": "Si en el futur fem servir galetes d'analítica, de publicitat o d'un altre tipus no necessàries, actualitzarem aquesta política i et demanarem el consentiment abans d'instal·lar-les. Podràs acceptar-les, rebutjar-les i canviar d'opinió quan vulguis."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Més informació"
+        },
+        {
+          "kind": "p",
+          "text": "Per saber com tractem les teves dades personals, consulta la [política de privacitat](route:privacy). Si tens dubtes sobre aquesta política, escriu-nos a [info@housyspace.com](mailto:info@housyspace.com)."
         }
       ]
     }

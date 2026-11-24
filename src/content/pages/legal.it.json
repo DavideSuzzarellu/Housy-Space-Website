@@ -1,6 +1,6 @@
 {
   "title": "Note legali · HousySpace",
-  "description": "Note legali di HousySpace (in attesa).",
+  "description": "Note legali di HousySpace.",
   "head": {
     "heading": "Note legali",
     "photo": false,
@@ -18,15 +18,145 @@
       "items": [
         {
           "kind": "pending",
-          "text": "**Testo in attesa di approvazione.** Il testo legale definitivo deve essere redatto e approvato da HousySpace con i propri consulenti legali prima del lancio."
-        },
-        {
-          "kind": "p",
-          "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro degli Agenti Immobiliari della Catalogna: AICAT nº 14032 Telefono 613 084 804"
+          "text": "**Traduzione automatica, in attesa di revisione legale.** Tradotta dal testo spagnolo approvato."
         },
         {
           "kind": "note",
-          "text": "In attesa di completamento: Indirizzo fiscale, Registro delle Imprese, indirizzo e-mail di contatto e privacy, orari e indirizzo dell'ufficio."
+          "text": "Ultimo aggiornamento: 21 novembre 2026"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Titolare del sito web"
+        },
+        {
+          "kind": "p",
+          "text": "In conformità all'articolo 10 della Legge 34/2002 sui Servizi della Società dell'Informazione e il Commercio Elettronico (LSSI-CE), ti informiamo che il titolare di questo sito web è:"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.** (nome commerciale: HousySpace · Property Solutions)\nCIF B26903419\nRegistro degli Agenti Immobiliari della Catalogna: AICAT n. 14032\nSede legale: Travessera de Gràcia 73, 2º-3ª, 08006 Barcellona\nUfficio: Travessera de Gràcia 73, 2º-3ª, 08006 Barcellona (dal lunedì al venerdì, dalle 10:00 alle 19:00)\nRegistro Mercantile di Barcellona: tomo/I.R.U.S. 1000472070976, folio 1, foglio B 655522, iscrizione 1\nTelefono: 613 084 804\nE-mail di contatto e di privacy: [info@housyspace.com](mailto:info@housyspace.com)\nSito web: housyspace.com"
+        },
+        {
+          "kind": "h2",
+          "text": "2. Oggetto"
+        },
+        {
+          "kind": "p",
+          "text": "Questo sito web presenta i servizi di consulenza e intermediazione immobiliare di HousySpace. Ti permette di metterti in contatto con noi, richiedere una valutazione della tua casa, salvare una ricerca di casa e consultare informazioni su immobili e quartieri di Barcellona. Accedendo e usandolo accetti queste note legali."
+        },
+        {
+          "kind": "h2",
+          "text": "3. Condizioni d'uso"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Ti impegni a usare il sito in modo lecito e in buona fede, senza danneggiarlo né impedire ad altre persone di usarlo normalmente."
+            },
+            {
+              "title": "",
+              "text": "I moduli sono solo per i maggiori di 18 anni. I dati che fornisci devono essere tuoi, veritieri e aggiornati; se includi dati di altre persone, devi avere il loro permesso."
+            },
+            {
+              "title": "",
+              "text": "Non è consentito estrarre in modo automatizzato o massivo i contenuti del sito senza la nostra previa autorizzazione."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "4. Informazioni su immobili, cifre e quartieri"
+        },
+        {
+          "kind": "p",
+          "text": "Le informazioni sugli immobili sono quelle che ci fornisce il proprietario o quelle presenti al momento della pubblicazione. I prezzi, le condizioni e la disponibilità possono cambiare senza preavviso e le informazioni di questo sito non costituiscono un'offerta vincolante: prima che tu decida qualsiasi cosa ti daremo per iscritto le informazioni richieste dalla legge. Gli immobili contrassegnati come «DEMO» o «di dimostrazione» sono esempi e non sono in vendita né in affitto."
+        },
+        {
+          "kind": "p",
+          "text": "Le cifre di attività di HousySpace (immobili intermediati, volume, affitti) sono arrotondate per difetto e si riferiscono agli anni di attività dell'azienda. Nelle mappe degli immobili intermediati la posizione è approssimativa e non vengono pubblicati indirizzi né dati dei proprietari."
+        },
+        {
+          "kind": "p",
+          "text": "Le informazioni su distretti e quartieri (Vivere a Barcellona) sono indicative e provengono da fonti pubbliche, come l'Ajuntament de Barcelona e l'Institut Cartogràfic i Geològic de Catalunya, indicate in ogni pagina. Non costituiscono consulenza né garantiscono il risultato di un acquisto o di una vendita."
+        },
+        {
+          "kind": "h2",
+          "text": "5. Immagini e illustrazioni"
+        },
+        {
+          "kind": "p",
+          "text": "Le fotografie, i video e le illustrazioni di questo sito sono di HousySpace o sono usati con licenza dei loro autori o di banche di immagini. Le immagini contrassegnate come «Immagine concettuale» sono state generate con intelligenza artificiale o sono illustrative: non mostrano un immobile reale."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Proprietà intellettuale e industriale"
+        },
+        {
+          "kind": "p",
+          "text": "I testi, il design, il codice, il nome e i loghi di HousySpace, le illustrazioni e il resto dei contenuti del sito sono di HousySpace o di chi ce li concede in licenza, e sono protetti dalla normativa sulla proprietà intellettuale e industriale. Senza la nostra previa autorizzazione scritta non puoi riprodurli, distribuirli, comunicarli al pubblico né trasformarli, salvo per uso personale."
+        },
+        {
+          "kind": "p",
+          "text": "La cartografia di base delle mappe è © Institut Cartogràfic i Geològic de Catalunya (CC BY 4.0). Le mappe di Google sono regolate dalle condizioni di Google. I dati aperti dell'Ajuntament de Barcelona sono usati con la loro licenza di riutilizzo."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Link ad altre pagine"
+        },
+        {
+          "kind": "p",
+          "text": "Questo sito contiene link a siti di terzi: social network, pubbliche amministrazioni e professionisti con cui collaboriamo. Non controlliamo i loro contenuti né le loro politiche e non ne rispondiamo. Ogni professionista risponde dei propri servizi. Se vuoi inserire un link al nostro sito, fallo verso il suo indirizzo principale o verso una pagina concreta, senza dare a intendere che HousySpace approvi il tuo sito."
+        },
+        {
+          "kind": "h2",
+          "text": "8. Responsabilità"
+        },
+        {
+          "kind": "p",
+          "text": "Ci impegniamo a mantenere il sito disponibile e aggiornato, ma non garantiamo che funzioni senza interruzioni né errori. Non rispondiamo dei danni derivanti da guasti tecnici a noi estranei, da un uso improprio del sito o dal contenuto di siti collegati. Ciò non limita i diritti che la legge riconosce ai consumatori."
+        },
+        {
+          "kind": "h2",
+          "text": "9. Protezione dei dati e cookie"
+        },
+        {
+          "kind": "p",
+          "text": "Come trattiamo i tuoi dati personali è spiegato nell'[informativa sulla privacy](route:privacy), e quali cookie e servizi esterni usa il sito, nell'[informativa sui cookie](route:cookies)."
+        },
+        {
+          "kind": "h2",
+          "text": "10. Comunicazioni commerciali"
+        },
+        {
+          "kind": "p",
+          "text": "Non ti inviamo comunicazioni commerciali con mezzi elettronici senza il tuo previo ed espresso consenso (articolo 21 della LSSI). Puoi ritirarlo in qualsiasi momento scrivendo a [info@housyspace.com](mailto:info@housyspace.com)."
+        },
+        {
+          "kind": "h2",
+          "text": "11. Reclami e contestazioni"
+        },
+        {
+          "kind": "p",
+          "text": "Se qualcosa non è andato come ti aspettavi, scrivici a [info@housyspace.com](mailto:info@housyspace.com) o chiamaci al 613 084 804 e lo risolveremo. Come consumatore, puoi anche presentare un reclamo all'Agència Catalana del Consum."
+        },
+        {
+          "kind": "h2",
+          "text": "12. Legislazione e foro competente"
+        },
+        {
+          "kind": "p",
+          "text": "Queste note legali sono regolate dalla legge spagnola. Per qualsiasi controversia, le parti si sottopongono ai giudici e ai tribunali di Barcellona, salvo che la normativa dei consumatori riconosca un altro foro; se sei un consumatore, quello del tuo domicilio."
+        },
+        {
+          "kind": "h2",
+          "text": "13. Modifiche a queste note"
+        },
+        {
+          "kind": "p",
+          "text": "Possiamo modificare queste note. La versione in vigore è quella pubblicata qui, con la sua data di aggiornamento."
         }
       ]
     }
