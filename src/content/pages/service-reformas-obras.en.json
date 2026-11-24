@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/det-ventanal-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us about your renovation",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -284,7 +294,7 @@
     },
     {
       "layout": "cta",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -321,8 +331,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Property sales and brokerage",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Real estate personal shopper",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Property valuation",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

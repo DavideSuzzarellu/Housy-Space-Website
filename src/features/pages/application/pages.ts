@@ -3,6 +3,7 @@ import { DEFAULT_LOCALE, type Locale } from "@/shared/i18n/config";
 
 /** Pages rendered from `src/content/pages`, by route key. */
 export const EDITORIAL = [
+  "services",
   "about",
   "contact",
   "legalNotice",
@@ -13,7 +14,6 @@ export const EDITORIAL = [
   "customSearch",
   "mySearch",
   "valuation",
-  "sell",
   "blog",
 ] as const;
 export type EditorialKey = (typeof EDITORIAL)[number];

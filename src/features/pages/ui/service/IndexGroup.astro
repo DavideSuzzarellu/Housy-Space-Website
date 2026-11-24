@@ -1,0 +1,83 @@
+---
+import { Picture } from "astro:assets";
+import { SERVICE_IMAGES } from "@/features/agency/ui/serviceImages";
+import { SERVICE_PANELS } from "@/features/agency/ui/servicePanels";
+import type { ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import { getServiceKeyBySlug } from "@/shared/i18n/services";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+
+/**
+ * Cards of the services of one group (reference `.svi`): the service illustration on its own
+ * tint, number and label, title, description and a link. On phones the thumbnail sits on the left.
+ */
+interface Props {
+  locale: Locale;
+  list: ItemOf<"list">;
+}
+
+const { locale, list } = Astro.props;
+const cards = list.items.flatMap((entry) => {
+  const service =
+    entry.href === undefined ? undefined : getServiceKeyBySlug(entry.href.replace("service:", ""));
+  const tint = SERVICE_PANELS.find((panel) => panel.service === service)?.tint;
+  return service === undefined || entry.href === undefined || tint === undefined
+    ? []
+    : [
+        {
+          entry,
+          href: resolveContentHref(entry.href, locale),
+          image: SERVICE_IMAGES[service],
+          tint,
+        },
+      ];
+});
+---
+
+<ul
+  class:list={[
+    "grid gap-2.5 min-[700px]:grid-cols-2 min-[700px]:gap-3.5",
+    cards.length === 3 && "min-[1024px]:grid-cols-3",
+  ]}
+>
+  {cards.map(({ entry, href, image, tint }) => (
+    <li data-reveal>
+      <a
+        href={href}
+        aria-label={`${entry.title}: ${entry.cta}`}
+        class="group flex h-full flex-col bg-card text-inherit no-underline transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-card-hover focus-visible:-translate-y-[3px] focus-visible:bg-card-hover max-[699px]:flex-row max-[699px]:items-stretch motion-reduce:transition-none"
+      >
+        <span
+          style={`background:${tint}`}
+          class="block h-37.5 overflow-hidden max-[699px]:flex max-[699px]:h-auto max-[699px]:min-h-full max-[699px]:flex-[0_0_112px] max-[699px]:items-center"
+        >
+          <Picture
+            {...PHOTO_PICTURE}
+            src={image}
+            alt=""
+            widths={[400, 640]}
+            sizes="(max-width: 699px) 112px, 380px"
+            loading="lazy"
+            decoding="async"
+            class="block size-full object-contain max-[699px]:aspect-[640/469] max-[699px]:h-auto"
+          />
+        </span>
+        <span class="flex flex-1 flex-col px-6 pt-5 pb-5.5 max-[699px]:p-4 max-[699px]:pl-4.5">
+          <span class="text-[11px] leading-[1.4] font-semibold tracking-[0.2em] text-accent">
+            {entry.kicker}
+          </span>
+          <h3 class="mt-2 mb-2.5 text-[clamp(19px,calc(1.7vw-2px),23px)] leading-[1.18] max-[699px]:mt-1.5 max-[699px]:mb-2">
+            {entry.title}
+          </h3>
+          <p class="flex-1 text-[13.5px] leading-[1.62] text-muted normal-case">{entry.text}</p>
+          <span class="mt-4 inline-flex items-center gap-2.5 text-[11px] leading-[1.4] font-medium tracking-[0.12em] text-accent max-[699px]:mt-3">
+            {entry.cta}
+            <ArrowUpRight class="size-3 transition-transform duration-400 ease-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-focus-visible:translate-x-0.5 group-focus-visible:-translate-y-0.5 motion-reduce:transition-none" />
+          </span>
+        </span>
+      </a>
+    </li>
+  ))}
+</ul>

@@ -29,6 +29,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us what you are looking for",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -240,8 +250,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Financial advice",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Renovations and interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Real estate investment",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

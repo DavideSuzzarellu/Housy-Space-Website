@@ -362,8 +362,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Valoració immobiliària",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Assessorament jurídic i fiscal",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

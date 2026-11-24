@@ -57,7 +57,7 @@ for (const locale of LOCALES) {
         "living",
         "blog",
       ]);
-      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(9);
+      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
       await expect(page.locator("[data-contact-block]")).toBeVisible();
       await expect(
         page.locator("[data-blog-empty], [data-section=blog] [data-post-card]").first(),
@@ -78,10 +78,10 @@ for (const locale of LOCALES) {
       page,
     }) => {
       const panels = page.locator("[data-services-accordion] [data-panel]");
-      await expect(panels).toHaveCount(9);
+      await expect(panels).toHaveCount(8);
       await expect(panels.locator("a:visible")).toHaveCount(7);
       await expect(panels.first()).toHaveAttribute("data-pos", "0");
-      await expect(panels.nth(4)).toHaveAttribute("data-pos", "hr");
+      await expect(panels.nth(4)).toHaveAttribute("data-pos", "hl");
       await expect(panels.nth(4).locator("a")).toBeHidden();
     });
 

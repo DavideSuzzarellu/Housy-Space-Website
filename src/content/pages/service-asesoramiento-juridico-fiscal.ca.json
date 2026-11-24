@@ -21,6 +21,16 @@
       {
         "kind": "lead",
         "text": "Quan l'operació ho requereix, coordinem la consulta amb professionals independents de confiança."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns el teu cas",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -411,8 +421,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Assessorament financer",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

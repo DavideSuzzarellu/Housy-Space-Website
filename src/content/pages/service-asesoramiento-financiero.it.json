@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/oficina-1672.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci il tuo caso",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -291,8 +301,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliare",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Compravendita e intermediazione immobiliare",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Investimento immobiliare",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

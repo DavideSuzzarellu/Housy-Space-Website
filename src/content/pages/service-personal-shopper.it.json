@@ -29,6 +29,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci cosa cerchi",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -240,8 +250,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Ristrutturazioni e interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Investimento immobiliare",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

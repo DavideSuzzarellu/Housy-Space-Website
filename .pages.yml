@@ -368,28 +368,28 @@ content:
     format: json
     fields: *page_fields
 
-  - name: pages-sell-es
-    label: "Vende tu inmueble (ES)"
+  - name: pages-services-es
+    label: "Servicios (ES)"
     type: file
-    path: src/content/pages/sell.es.json
+    path: src/content/pages/services.es.json
     format: json
     fields: *page_fields
-  - name: pages-sell-en
-    label: "Sell your property (EN)"
+  - name: pages-services-en
+    label: "Services (EN)"
     type: file
-    path: src/content/pages/sell.en.json
+    path: src/content/pages/services.en.json
     format: json
     fields: *page_fields
-  - name: pages-sell-it
-    label: "Vendi il tuo immobile (IT)"
+  - name: pages-services-it
+    label: "Servizi (IT)"
     type: file
-    path: src/content/pages/sell.it.json
+    path: src/content/pages/services.it.json
     format: json
     fields: *page_fields
-  - name: pages-sell-ca
-    label: "Ven el teu immoble (CA)"
+  - name: pages-services-ca
+    label: "Serveis (CA)"
     type: file
-    path: src/content/pages/sell.ca.json
+    path: src/content/pages/services.ca.json
     format: json
     fields: *page_fields
 
@@ -543,7 +543,6 @@ content:
     format: json
     fields: *page_fields
 
-
   # ─── Service detail pages ────────────────────────────────────────────────────
   - name: pages-svc-sale-es
     label: "Servicio: Compraventa (ES)"
@@ -592,31 +591,6 @@ content:
     label: "Servei: Valoració (CA)"
     type: file
     path: src/content/pages/service-valoracion.ca.json
-    format: json
-    fields: *page_fields
-
-  - name: pages-svc-advisory-es
-    label: "Servicio: Asesoramiento (ES)"
-    type: file
-    path: src/content/pages/service-asesoramiento.es.json
-    format: json
-    fields: *page_fields
-  - name: pages-svc-advisory-en
-    label: "Service: Advisory (EN)"
-    type: file
-    path: src/content/pages/service-asesoramiento.en.json
-    format: json
-    fields: *page_fields
-  - name: pages-svc-advisory-it
-    label: "Servizio: Consulenza (IT)"
-    type: file
-    path: src/content/pages/service-asesoramiento.it.json
-    format: json
-    fields: *page_fields
-  - name: pages-svc-advisory-ca
-    label: "Servei: Assessorament (CA)"
-    type: file
-    path: src/content/pages/service-asesoramiento.ca.json
     format: json
     fields: *page_fields
 

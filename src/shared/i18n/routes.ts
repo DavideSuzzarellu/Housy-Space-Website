@@ -64,7 +64,6 @@ export const routes = {
   legalNotice: { es: "aviso-legal", en: "legal-notice", it: "note-legali", ca: "avis-legal" },
   privacy: { es: "privacidad", en: "privacy-policy", it: "privacy", ca: "privacitat" },
   cookies: { es: "cookies", en: "cookie-policy", it: "cookie", ca: "galetes" },
-  sell: { es: "vender", en: "sell", it: "vendere", ca: "vendre" },
   valuation: { es: "valoracion", en: "valuation", it: "valutazione", ca: "valoracio" },
   blog: { es: "blog", en: "blog", it: "blog", ca: "blog" },
   blogPost: { es: "blog/{slug}", en: "blog/{slug}", it: "blog/{slug}", ca: "blog/{slug}" },
@@ -208,10 +207,6 @@ export interface UrlExtras {
  * Appends query params and/or a hash to a path from `getLocalizedPath`.
  * Keeps URL building in one place (no string concatenation in components).
  */
-/** The services accordion of the home: `/servicios` itself only redirects there (astro.config). */
-export const getServicesAnchorPath = (locale: Locale): string =>
-  withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" });
-
 export function withUrlExtras(path: string, extras: UrlExtras): string {
   const search = new URLSearchParams(extras.query).toString();
   const hash =

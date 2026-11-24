@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/det-ventanal-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns la teva reforma",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -284,7 +294,7 @@
     },
     {
       "layout": "cta",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -321,8 +331,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contingut provisional pendent de revisió per part de HousySpace. Els honoraris depenen de cada immoble."
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Personal shopper immobiliari",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Valoració immobiliària",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }
