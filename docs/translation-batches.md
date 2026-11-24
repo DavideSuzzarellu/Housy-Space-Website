@@ -24,7 +24,7 @@ Style: same register as the Spanish (warm, direct), per AGENTS.md section 11.5. 
 ## Progress and strict mode
 
 - `bun run test:translations` prints, per locale, how many files are translated and the first pending slugs.
-- `bun run test:translations:strict` (`STRICT_TRANSLATION=1`) fails while any file of any locale is pending. Run it in CI before launch (or set `STRICT_TRANSLATION=1` on the CI test step) so the pipeline fails until everything is translated.
+- The strict check runs in every `bun run test` now that all 83 zones are translated into en, it and ca: a zone left with `"translated": false` fails the run.
 
 ## Batches
 

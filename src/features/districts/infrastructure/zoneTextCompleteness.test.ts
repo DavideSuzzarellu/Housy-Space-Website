@@ -7,10 +7,9 @@ import { type ZoneKind, zoneTextId } from "./zoneTextSchema";
 
 /**
  * Translation progress of the district and barrio prose (docs/translation-batches.md).
- * Default run: structure checks plus a progress report. Strict run (CI before launch):
- * `STRICT_TRANSLATION=1 bun run test` fails while any file is still pending.
+ * Structure checks, a progress report and, since all 83 zones are translated into en, it and ca
+ * (2026-11-24), a strict check: a new or edited zone left pending fails the test run.
  */
-const strict = process.env["STRICT_TRANSLATION"] === "1";
 const data = marketSchema.parse(market);
 const zones: { kind: ZoneKind; slug: string }[] = [
   ...data.districts.map((zone) => ({ kind: "district" as const, slug: zone.slug })),
@@ -66,7 +65,7 @@ describe("zone prose files", () => {
   });
 });
 
-describe.skipIf(!strict)("zone prose, strict (STRICT_TRANSLATION=1)", () => {
+describe("zone prose, strict", () => {
   it.each(others)("%s: every district and barrio is translated", (locale) => {
     expect(pendingIn(locale), `untranslated in ${locale}`).toEqual([]);
   });

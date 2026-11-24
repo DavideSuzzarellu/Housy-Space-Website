@@ -14,7 +14,6 @@
     "preview": "astro preview",
     "test": "vitest run",
     "test:translations": "vitest run zoneTextCompleteness --silent=false",
-    "test:translations:strict": "STRICT_TRANSLATION=1 vitest run zoneTextCompleteness",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint .",
