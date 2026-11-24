@@ -1,6 +1,6 @@
 {
   "title": "Servei de valoració immobiliària · HousySpace",
-  "description": "Una referència al moment amb el valorador o un informe complet amb estudi de mercat.",
+  "description": "Una referència a l'instant amb el valorador o un informe complet amb estudi de mercat.",
   "head": {
     "heading": "El valor del teu habitatge *mereix més que una xifra*",
     "photo": false,
@@ -53,7 +53,7 @@
             },
             {
               "title": "Valoració amb un assessor",
-              "text": "Analitzem el teu habitatge, les seves particularitats i les condicions del mercat, i t'expliquem quins factors n'influeixen el valor.",
+              "text": "Analitzem el teu habitatge, les seves particularitats i les condicions del mercat, i t'expliquem quins factors influeixen en el valor.",
               "kicker": "Estudi personalitzat",
               "facts": [
                 "Visita a l'habitatge",
@@ -74,7 +74,7 @@
             },
             {
               "kind": "lead",
-              "text": "Deixa'ns les teves dades i un assessor d'HousySpace et trucarà per valorar el teu habitatge en persona."
+              "text": "Deixa'ns les teves dades i un assessor de HousySpace et trucarà per valorar el teu habitatge en persona."
             },
             {
               "kind": "form",
@@ -139,7 +139,7 @@
                 },
                 {
                   "name": "news",
-                  "label": "Vull subscriure'm a la newsletter i als articles de HousySpace per correu electrònic. (Opcional.)",
+                  "label": "Vull subscriure'm al butlletí i als articles de HousySpace per correu electrònic. (Opcional.)",
                   "required": false,
                   "full": true,
                   "type": "consent",
@@ -147,7 +147,7 @@
                 },
                 {
                   "kind": "note",
-                  "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i la newsletter. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+                  "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
                 },
                 {
                   "kind": "submit",
@@ -226,7 +226,7 @@
         },
         {
           "kind": "p",
-          "text": "La valoració amb un assessor recorre aquests quatre passos. En lliurar-te-la, t'expliquem què hem estudiat en cada un i com arribem a la conclusió."
+          "text": "La valoració amb un assessor recorre aquests quatre passos. En lliurar-te-la, t'expliquem què hem estudiat en cadascun i com arribem a la conclusió."
         },
         {
           "kind": "card",
@@ -524,7 +524,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

@@ -6,7 +6,7 @@
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-personal-shopper-1000.webp",
-      "alt": "Il·lustració del servei: Una lupa sobre una opció destacada entre diversos volums",
+      "alt": "Il·lustració del servei: una lupa sobre una opció destacada entre diversos volums",
       "scale": 0.797
     },
     "items": [
@@ -82,12 +82,12 @@
           "kind": "steps",
           "items": [
             {
-              "title": "Perfil de recerca",
+              "title": "Perfil de cerca",
               "text": "Zona, tipologia, pressupost i prioritats: el que busques i el que no."
             },
             {
               "title": "Cerca activa",
-              "text": "Rastregem el mercat segons els teus criteris i, quan n'hi ha, producte que encara no s'ha publicat."
+              "text": "Rastrejem el mercat segons els teus criteris i, quan n'hi ha, immobles que encara no s'han publicat."
             },
             {
               "title": "Selecció",
@@ -99,7 +99,7 @@
             },
             {
               "title": "Negociació i compra",
-              "text": "Negociem el preu i t'acompanyem fins a la firma."
+              "text": "Negociem el preu i t'acompanyem fins a la signatura."
             },
             {
               "title": "Reforma",
@@ -127,7 +127,7 @@
           "ordered": false,
           "items": [
             {
-              "title": "L'immobile",
+              "title": "L'immoble",
               "text": "Estat real de l'habitatge, instal·lacions i possibles obres amb el seu cost.",
               "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
             },
@@ -244,7 +244,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

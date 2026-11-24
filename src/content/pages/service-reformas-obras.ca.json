@@ -85,7 +85,7 @@
             },
             {
               "title": "Per invertir",
-              "text": "Reformes pensades amb els números al davant: cost, termini i efecte esperat en el lloguer o en la venda."
+              "text": "Reformes pensades amb les xifres al davant: cost, termini i efecte esperat en el lloguer o en la venda."
             }
           ]
         }
@@ -260,7 +260,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

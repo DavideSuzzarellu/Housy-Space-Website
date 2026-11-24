@@ -72,14 +72,14 @@
         },
         {
           "kind": "p",
-          "text": "Demana una estimació orientativa en línia, al moment, o una valoració amb un assessor que estudia el teu habitatge a fons."
+          "text": "Demana una estimació orientativa en línia, a l'instant, o una valoració amb un assessor que estudia el teu habitatge a fons."
         },
         {
           "kind": "list",
           "ordered": false,
           "items": [
             {
-              "kicker": "Al moment",
+              "kicker": "A l'instant",
               "title": "Valoració en línia",
               "text": "Introdueix les dades del teu habitatge al nostre valorador i rep una estimació orientativa del seu valor.",
               "cta": "Valorar en línia ara",
@@ -107,7 +107,7 @@
             },
             {
               "kind": "lead",
-              "text": "Deixa'ns les teves dades i un assessor d'HousySpace et trucarà per valorar el teu habitatge en persona."
+              "text": "Deixa'ns les teves dades i un assessor de HousySpace et trucarà per valorar el teu habitatge en persona."
             },
             {
               "kind": "form",
@@ -172,7 +172,7 @@
                 },
                 {
                   "name": "news",
-                  "label": "Vull subscriure'm a la newsletter i als articles de HousySpace per correu electrònic. (Opcional.)",
+                  "label": "Vull subscriure'm al butlletí i als articles de HousySpace per correu electrònic. (Opcional.)",
                   "required": false,
                   "full": true,
                   "type": "consent",
@@ -180,7 +180,7 @@
                 },
                 {
                   "kind": "note",
-                  "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i la newsletter. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+                  "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
                 },
                 {
                   "kind": "submit",
@@ -217,7 +217,7 @@
         },
         {
           "kind": "p",
-          "text": "Te'l expliquem abans de publicar res: valor de mercat, preu aconsellat de sortida i l'oferta amb què competirà el teu habitatge."
+          "text": "Te l'expliquem abans de publicar res: valor de mercat, preu aconsellat de sortida i l'oferta amb què competirà el teu habitatge."
         },
         {
           "kind": "p",
@@ -482,7 +482,7 @@
               "icon": ["M4 10v4h3l7 4V6L7 10z", "M17 9a4 4 0 0 1 0 6"]
             },
             {
-              "title": "Reportatge fotogràfic i tour virtual",
+              "title": "Reportatge fotogràfic i visita virtual",
               "text": "Un fotògraf professional i un recorregut virtual que filtra les visites per curiositat.",
               "icon": ["M4 8h3l2-2h6l2 2h3v11H4z", "M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"]
             },
@@ -695,7 +695,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

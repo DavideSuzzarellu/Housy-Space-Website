@@ -1,12 +1,12 @@
 {
   "title": "Assessorament financer · HousySpace",
-  "description": "Hipoteca i finançament estudiats amb números reals, juntament amb el nostre broker financer.",
+  "description": "Hipoteca i finançament estudiats amb xifres reals, juntament amb el nostre broker financer.",
   "head": {
     "heading": "Assessorament *financer*",
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-financiero-1000.webp",
-      "alt": "Il·lustració del servei: Una estructura recolzada sobre tres suports sòlids",
+      "alt": "Il·lustració del servei: una estructura recolzada sobre tres suports sòlids",
       "scale": 0.739
     },
     "items": [
@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Hipoteca i finançament estudiats amb números reals, juntament amb el broker financer amb qui col·laborem."
+        "text": "Hipoteca i finançament estudiats amb xifres reals, juntament amb el broker financer amb qui col·laborem."
       },
       {
         "kind": "image",
@@ -50,7 +50,7 @@
         },
         {
           "kind": "p",
-          "text": "I quan vens, comprovem que el comprador pot pagar perquè l'operació no caigui per la finançament."
+          "text": "I quan vens, comprovem que el comprador pot pagar perquè l'operació no s'enfonsi per culpa del finançament."
         }
       ]
     },
@@ -142,7 +142,7 @@
                 },
                 {
                   "title": "",
-                  "text": "Números de la inversió amb la quota inclosa"
+                  "text": "Xifres de la inversió amb la quota inclosa"
                 },
                 {
                   "title": "",
@@ -175,7 +175,7 @@
             },
             {
               "title": "Estudi de viabilitat",
-              "text": "Ingressos, estalvi, despeses de la compra: els números reals."
+              "text": "Ingressos, estalvi, despeses de la compra: les xifres reals."
             },
             {
               "title": "Ofertes",
@@ -208,7 +208,7 @@
         {
           "kind": "faq",
           "q": "Quant necessito tenir estalviat?",
-          "a": "Depèn del preu, de la taxació i del teu perfil. A més de la part que no finança el banc, cal comptar amb els impostos i les despeses de la compra. T'ho calculem amb números reals abans de començar a buscar."
+          "a": "Depèn del preu, de la taxació i del teu perfil. A més de la part que no finança el banc, cal comptar amb els impostos i les despeses de la compra. T'ho calculem amb xifres reals abans de començar a buscar."
         },
         {
           "kind": "faq",
@@ -289,7 +289,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

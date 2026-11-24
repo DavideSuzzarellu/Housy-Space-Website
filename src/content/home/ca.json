@@ -3,11 +3,11 @@
     "eyebrow": "HousySpace · Property Solutions",
     "headingFirst": "Cada racó té una història",
     "headingSecond": "Cada persona, un nou començament",
-    "ctaLabel": "Qui som"
+    "ctaLabel": "Coneix-nos"
   },
   "stats": {
     "eyebrow": "Cinc anys de HousySpace",
-    "heading": "El que hem aconseguit *amb els qui han confiat en nosaltres*",
+    "heading": "El que hem aconseguit *amb qui ha confiat en nosaltres*",
     "stat1Number": 35,
     "stat1Plus": true,
     "stat1Unit": "milions €",
@@ -35,7 +35,7 @@
     "image": "../../assets/home/valoracion-fachada-2880.webp",
     "imageAlt": "Imatge conceptual: façana modernista de Barcelona amb un balcó de forja marcat amb l'isotip de HousySpace",
     "heading": "Descobreix quant *val el teu habitatge*",
-    "lead": "Al moment i en línia, o amb un assessor d'HousySpace.",
+    "lead": "A l'instant i en línia, o amb un assessor de HousySpace.",
     "ctaLabel": "Sol·licitar valoració"
   },
   "services": {
@@ -45,9 +45,9 @@
     "heading": "Barcelona, una manera de viure",
     "lead": "Arquitectura modernista, llum mediterrània i finques singulars que defineixen el caràcter de la ciutat.",
     "item1Title": "Eixample Dret",
-    "item1Subtitle": "Sostres alts amb motllures originals i terres hidràulics restaurats.",
+    "item1Subtitle": "Sostres alts amb motllures originals i paviments hidràulics restaurats.",
     "item2Title": "Sarrià - Sant Gervasi",
-    "item2Subtitle": "Finques unifamiliars amb amplis jardins i llum natural ininterrompuda.",
+    "item2Subtitle": "Finques unifamiliars amb jardins amplis i llum natural ininterrompuda.",
     "item3Title": "Ciutat Vella & Born",
     "item3Subtitle": "Bigues de fusta recuperades i arcs de pedra gòtica original.",
     "item4Title": "Gràcia & Pedralbes",
@@ -59,14 +59,14 @@
     "ctaLabel": "Per què confiem en ells"
   },
   "philosophy": {
-    "quoteFirst": "No pateixis,",
+    "quoteFirst": "No et preocupis,",
     "quoteSecond": "jo me n'encarrego!",
     "subLead": "No és només una frase.",
     "sub": "És la nostra manera de treballar.",
     "primaryCta": "Descobreix la nostra filosofia"
   },
   "reviews": {
-    "heading": "Què diuen *d'HousySpace*",
+    "heading": "Què diuen *de HousySpace*",
     "ctaLabel": "Veure ressenyes a Google",
     "mapsUrl": "https://maps.app.goo.gl/9icgw2apDPv4Fy7J9"
   },
@@ -80,11 +80,11 @@
   },
   "contact": {
     "heading": "Consulta *privada*",
-    "lead": "Un consultor d'HousySpace t'acompanyarà des del primer missatge.",
+    "lead": "Un consultor de HousySpace t'acompanya des del primer missatge.",
     "fieldNameLabel": "Nom i cognoms",
     "fieldEmailLabel": "Correu electrònic",
     "fieldMessageLabel": "Explica'ns què necessites",
-    "fieldConsentLabel": "He llegit i accepto la política de privacitat d'HousySpace i consento el tractament de les meves dades per gestionar la meva sol·licitud. (Text legal pendent de validació.)",
+    "fieldConsentLabel": "He llegit i accepto la política de privacitat de HousySpace i consento el tractament de les meves dades per gestionar la meva sol·licitud. (Text legal pendent de validació.)",
     "submitLabel": "Enviar consulta"
   }
 }

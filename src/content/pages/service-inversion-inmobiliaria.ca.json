@@ -1,12 +1,12 @@
 {
   "title": "Inversió immobiliària · HousySpace",
-  "description": "Anàlisi d'oportunitats amb números clars: compra, reforma, lloguer i rendibilitat.",
+  "description": "Anàlisi d'oportunitats amb xifres clares: compra, reforma, lloguer i rendibilitat.",
   "head": {
     "heading": "Inversió *immobiliària*",
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-inversion-1000.webp",
-      "alt": "Il·lustració del servei: Una corba ascendent sobre esglaons amb una clau, un corró i monedes",
+      "alt": "Il·lustració del servei: una corba ascendent sobre esglaons amb una clau, un corró i monedes",
       "scale": 0.77
     },
     "items": [
@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Anàlisi d'oportunitats amb números clars: compra, reforma, lloguer i rendibilitat."
+        "text": "Anàlisi d'oportunitats amb xifres clares: compra, reforma, lloguer i rendibilitat."
       },
       {
         "kind": "image",
@@ -50,7 +50,7 @@
       "items": [
         {
           "kind": "big",
-          "text": "No prometem rendibilitats: posem els números sobre la taula."
+          "text": "No prometem rendibilitats: posem les xifres sobre la taula."
         },
         {
           "kind": "p",
@@ -84,7 +84,7 @@
               "text": "Quina obra necessita, quant costa i quin efecte pot tenir en el lloguer o en la venda."
             },
             {
-              "title": "Renda esperable",
+              "title": "Renda previsible",
               "text": "El que es paga avui per habitatges similars a la zona."
             },
             {
@@ -97,7 +97,7 @@
             },
             {
               "title": "Sortida",
-              "text": "Qu passa si vols vendre d'aquí a uns anys."
+              "text": "Què passa si vols vendre d'aquí a uns anys."
             }
           ]
         }
@@ -128,11 +128,11 @@
             },
             {
               "title": "Anàlisi",
-              "text": "Estudiem les xifres de cadascuna: costos, lloguer esperable, riscos i sortida."
+              "text": "Estudiem les xifres de cadascuna: costos, lloguer previsible, riscos i sortida."
             },
             {
               "title": "Compra",
-              "text": "Negociem i t'acompanyem fins a la firma."
+              "text": "Negociem i t'acompanyem fins a la signatura."
             }
           ]
         }
@@ -214,7 +214,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },
