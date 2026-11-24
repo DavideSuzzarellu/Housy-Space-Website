@@ -68,7 +68,7 @@ Rules:
 
 - `domain` imports nothing from `infrastructure`, `ui`, or Astro.
 - Mobilia data enters ONLY through `features/properties/infrastructure`; it is validated with Zod and mapped to domain types. UI never sees Mobilia field names (`txtTituloWebEn`, `precioVenta`...).
-- Ship zero JS by default; hydrate islands only where interaction is required (`client:visible` preferred).
+- Ship zero JS by default; hydrate islands only where interaction is required (`client:visible` preferred). Interactions and animations the reference has are required interactions (UI parity rule, §11): reproduce them with the smallest lazy script, CSS first where it gives the identical result.
 
 ### 3.1 Componentization & no duplication (mandatory)
 
@@ -320,8 +320,9 @@ bun run build        # astro build + property sheet PDFs (needs Chromium)
 > - `docs/design-system/components/<Name>/README.md` — one per section of the reference site: where it appears, what it needs, rules.
 > - `docs/design-system/assets/<Group>/README.md` — logos, seals, icons, illustrations, photos.
 >
-> This **supersedes** the 2026-11-07 prototype system (Cormorant Garamond, gold accent, ink/graphite, sentence case) and the older v3 artifact. Where the two disagree, the design system wins.
-> The reference site is plain HTML/CSS/JS: never copy its CSS or markup verbatim. Rebuild every section with this project's Tailwind v4 tokens, Astro components, Content Collections and i18n.
+> This **supersedes** the 2026-11-07 prototype system (Cormorant Garamond, gold accent, ink/graphite, sentence case) and the older v3 artifact.
+> **UI parity rule (client decision 2026-11-24, mandatory, wins over every other look/behaviour statement in this file and in the skills):** the UI of every page, section, component, state and breakpoint (1440, 820, 390) must be EXACTLY equal to the client's reference site (`C:\Users\Utente\Desktop\housyspace-web-ref`, always its current `HEAD`, served locally on port 4500). "Equal" means measured in Chrome, not "similar": same sections in the same order, same copy, same sizes, spacing, colours, weights, case, images, interactions, animations and transitions. When the reference changes, the project follows. When this file, the design system or a skill disagrees with the rendered reference on how something looks or behaves, the reference wins. Only these exceptions are allowed, each documented in the commit body: (1) WCAG 2.2 AA colour/contrast and focus (use the nearest passing token); (2) privacy and legal rules (§5 approximate location, §7 consent); (3) real data instead of the reference's demo data (Mobilia listings, client reviews, official figures); (4) the 4 locales and localized routes (§4); (5) `prefers-reduced-motion`. Anything the reference does with JavaScript (steppers, popups, counters, parallax, animated SVG) is reproduced, with a small lazy script on `astro:page-load`; "not ported" is never an acceptable end state, only an interim one reported to the user as an open item.
+> The reference site is plain HTML/CSS/JS: never copy its CSS or markup verbatim. Rebuild every section with this project's Tailwind v4 tokens, Astro components, Content Collections and i18n, so that the rendered result is identical.
 > The component previews and the site's `css/` and image files are NOT in the repo; open the artifact when pixel-level detail is needed (layout at 1440 px, class names).
 
 ### 11.1 Look & feel
@@ -402,7 +403,7 @@ Each section of the reference site has a README under `docs/design-system/compon
 - **About / Contact / Living in Barcelona:** `NosotrosCabecera` · `NosotrosSeccion` · `MillaExtra` · `ServiciosIntegrales` · `ContactoFormas` · `ContactoFormulario` · `PreguntasFrecuentes` · `MiBusquedaFormulario` · `Distritos` · `BarrioCabecera` · `BarrioDatos`.
 - **Shared:** `Cabecera` · `Pie` · `Boton` · `Newsletter` · `TextoLegal`.
 
-Where the reference and this file disagree on behaviour (real listings from Mobilia instead of demo ones, 4 locales, approximate location, consent rules), this file wins; where they disagree on look, the design system wins. Notes on its own limits: the reference has no JavaScript (carousels, counters, map and the Lystos valuator are static there).
+Where the reference and this file disagree on behaviour (real listings from Mobilia instead of demo ones, 4 locales, approximate location, consent rules), this file wins (the exceptions of the UI parity rule above); where they disagree on look or interaction, the rendered reference wins, then the design system. Some parts of the reference are static or popups (e.g. the Lystos valuator opens in a popup there): measure how it renders and behaves before deciding.
 
 ### 11.8 Motion
 
@@ -433,6 +434,7 @@ Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px)
 ## 13. Agent rules
 
 - Read this file before any task. If a request conflicts with it, ask.
+- **UI = the reference site.** Any UI work ends only when the page is measured equal to the reference at 1440, 820 and 390 (§11 UI parity rule). Differences left over are listed as open items with the reason; never silently accepted as "by design".
 - `ROADMAP.md` tracks phases, status, and client inputs. Check it before starting work; update its checkboxes and decisions log when a task lands. Never start work marked 🔒 until its input is resolved.
 - Never invent listings, prices, legal text, company data, or translations of legal text. Exception (client, 2026-11-04): the legal drafts are machine-translated into en/it/ca and marked as pending lawyer review (§4).
 - Do not change the stack or architecture, or add dependencies, without approval.
