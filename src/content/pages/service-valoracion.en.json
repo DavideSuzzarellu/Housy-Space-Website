@@ -241,7 +241,7 @@
     },
     {
       "layout": "cta",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -278,8 +278,24 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. The valuation report is free and without obligation. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Property sales and brokerage",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

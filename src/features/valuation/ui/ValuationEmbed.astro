@@ -2,24 +2,27 @@
 /**
  * The external valuator (Lystos). It computes and returns prices itself: this site never
  * calculates, stores or alters valuation figures (AGENTS.md §6 item 12).
+ * `fill` makes the frame take its parent (the valuation pop-up); otherwise it is a fixed-height block.
  */
 interface Props {
   url: string | undefined;
   title: string;
+  fill?: boolean;
 }
 
-const { url, title } = Astro.props;
+const { url, title, fill = false } = Astro.props;
 ---
 
-{url !== undefined && (
-  <div class="mt-[clamp(1.5rem,3vw,2.25rem)] rounded-2xl bg-stone p-1.5">
-    <iframe
-      src={url}
-      title={title}
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-      class="block h-[min(90vh,50rem)] w-full rounded-[11px] bg-white"
-    ></iframe>
-  </div>
-)}
+{url !== undefined && <iframe
+  src={url}
+  title={title}
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+  class:list={[
+    "block w-full bg-white",
+    fill
+      ? "size-full border-0"
+      : "mt-[clamp(1.5rem,3vw,2.25rem)] h-[min(90vh,50rem)] border border-line-strong",
+  ]}
+></iframe>}

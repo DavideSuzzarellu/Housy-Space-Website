@@ -17,29 +17,126 @@
   },
   "sections": [
     {
-      "id": "informe",
+      "id": "opciones",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "tag",
-          "text": "Al momento"
+          "text": "Dos formas de valorar"
         },
         {
           "kind": "h2",
-          "text": "Valoración online"
+          "text": "Elige cómo conocer *el valor de tu vivienda*"
         },
         {
-          "kind": "lead",
-          "text": "Una primera estimación orientativa a partir de los datos que introduces. Es útil como referencia inicial, pero no sustituye el análisis individual de la vivienda."
+          "kind": "p",
+          "text": "Puedes empezar por una estimación online y, cuando quieras, pedir que un asesor estudie tu vivienda. Son dos pasos que se complementan."
         },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Al momento"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoración online"
+            },
+            {
+              "kind": "p",
+              "text": "Una primera estimación orientativa a partir de los datos que introduces. Es útil como referencia inicial, pero no sustituye el análisis individual de la vivienda."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Resultado al momento"
+                },
+                {
+                  "title": "",
+                  "text": "Con los datos que introduces"
+                },
+                {
+                  "title": "",
+                  "text": "Estimación orientativa"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valorar online ahora",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Estudio personalizado"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoración con un asesor"
+            },
+            {
+              "kind": "p",
+              "text": "Analizamos tu vivienda, sus particularidades y las condiciones del mercado, y te explicamos qué factores influyen en su valor."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visita a la vivienda"
+                },
+                {
+                  "title": "",
+                  "text": "Revisión de la documentación"
+                },
+                {
+                  "title": "",
+                  "text": "Estudio de mercado comentado"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Pedir valoración con un asesor",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
         {
           "kind": "valuator",
           "title": "Valorador online de HousySpace"
         },
         {
           "kind": "p",
-          "text": "¿No se ve el valorador? [Ábrelo en una pestaña nueva](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) o pide la valoración a un asesor con el [formulario de abajo](#solicitud)."
+          "text": "¿No se ve el valorador? [Ábrelo en una pestaña nueva](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
         },
         {
           "kind": "note",
@@ -49,23 +146,15 @@
     },
     {
       "id": "solicitud",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "tag",
-          "text": "Estudio personalizado"
-        },
         {
           "kind": "h2",
           "text": "Valoración con un asesor"
         },
         {
           "kind": "lead",
-          "text": "Analizamos tu vivienda, sus particularidades y las condiciones del mercado, y te explicamos qué factores influyen en su valor."
-        },
-        {
-          "kind": "p",
           "text": "Déjanos tus datos y un asesor de HousySpace te llamará para valorar tu vivienda en persona."
         },
         {
@@ -115,7 +204,7 @@
             },
             {
               "name": "consent",
-              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -152,21 +241,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Sobre el servicio de valoración",
-              "href": "service:valoracion",
-              "solid": false
-            },
-            {
-              "label": "Hablar con un asesor",
-              "href": "route:contact",
-              "solid": false
-            }
-          ]
         }
       ]
     }

@@ -362,8 +362,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Valutazione immobiliare",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Consulenza legale e fiscale",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

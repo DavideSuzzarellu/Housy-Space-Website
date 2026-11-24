@@ -1,13 +1,12 @@
 ---
-import { Picture } from "astro:assets";
 import advisorPhoto from "@/assets/valoracion/asesor-960.webp";
 import onlinePhoto from "@/assets/valoracion/online-960.webp";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import { PHOTO_PICTURE } from "@/shared/lib/images";
 import Container from "@/shared/ui/atoms/Container.astro";
 import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import ValuationOption from "@/features/valuation/ui/ValuationOption.astro";
 
 /**
  * Valuation block at the end of EVERY article (reference `pr-val`): two option rows, online
@@ -22,14 +21,12 @@ const { locale } = Astro.props;
 const copy = getDictionary(locale).blog.valuation;
 const rows = [
   {
-    key: "online",
     photo: onlinePhoto,
     href: getLocalizedPath("valuation", locale),
     dark: false,
     ...copy.online,
   },
   {
-    key: "advisor",
     photo: advisorPhoto,
     href: getLocalizedPath("contact", locale),
     dark: true,
@@ -58,59 +55,7 @@ const rows = [
     </div>
     <div class="grid gap-4 min-[900px]:grid-cols-2">
       {rows.map((row) => (
-        <a
-          href={row.href}
-          class:list={[
-            "group grid grid-cols-[7.5rem_minmax(0,1fr)] items-stretch gap-3.5 rounded-2xl p-1.5 pr-3.5 text-fg no-underline min-[600px]:grid-cols-[clamp(8.75rem,12.4vw,11rem)_minmax(0,1fr)_auto] min-[600px]:gap-[clamp(0.875rem,1.6vw,1.375rem)] min-[600px]:pr-[clamp(1rem,1.9vw,1.625rem)]",
-            "transition-[translate,box-shadow] duration-450 ease-brand hover:-translate-y-0.75 hover:shadow-[0_14px_30px_-18px_rgb(22_43_42/0.55)] focus-visible:-translate-y-0.75",
-            row.dark ? "surface-dark bg-canvas" : "bg-card",
-          ]}
-        >
-          <span class="block min-h-37.5 overflow-hidden rounded-[11px] bg-stone min-[600px]:min-h-[clamp(10.625rem,14.4vw,12.875rem)]">
-            <Picture
-              {...PHOTO_PICTURE}
-              src={row.photo}
-              alt={row.alt}
-              widths={[240, 480]}
-              sizes="(min-width: 900px) 12rem, 30vw"
-              class="size-full object-cover transition-transform duration-900 ease-brand group-hover:scale-105"
-            />
-          </span>
-          <span class="block py-1.5">
-            <span class="mb-1.5 block text-[0.65625rem] leading-[1.4] font-semibold tracking-[0.18em] text-accent">
-              {row.tag}
-            </span>
-            <span class="block text-[1.1875rem] leading-[1.15] font-extrabold text-fg">
-              {row.title}
-            </span>
-            <span
-              class:list={[
-                "mt-2.25 block text-[0.84375rem] leading-[1.55] tracking-[0.03em] normal-case",
-                row.dark ? "text-fg-2" : "text-mid",
-              ]}
-            >
-              {row.text}
-            </span>
-            <span class="mt-3.25 inline-block border-b border-current pb-1 text-[0.71875rem] leading-[1.4] font-bold tracking-[0.14em] text-fg">
-              {row.cta}
-            </span>
-          </span>
-          <span
-            aria-hidden="true"
-            class:list={[
-              "hidden size-12.5 place-items-center self-center rounded-full transition-transform duration-350 group-hover:rotate-45 min-[600px]:grid",
-              row.dark ? "bg-turquoise text-ink" : "bg-dark text-paper",
-            ]}
-          >
-            <svg
-              viewBox="0 0 12 12"
-              focusable="false"
-              class="size-3.5 fill-none stroke-current stroke-[1.4]"
-            >
-              <path d="M2 10 10 2M3.5 2H10v6.5"></path>
-            </svg>
-          </span>
-        </a>
+        <ValuationOption {...row} />
       ))}
     </div>
   </Container>

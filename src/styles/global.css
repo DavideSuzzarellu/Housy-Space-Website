@@ -499,3 +499,8 @@ html body .blog-body :is(p, li, blockquote) * {
 body:has([data-service-cta]) [data-footer-cta] {
   display: none;
 }
+
+/* A pop-up (valuation) locks the page scroll behind it, as the reference does (html.vp-lock). */
+html:has(:popover-open) {
+  overflow: hidden;
+}

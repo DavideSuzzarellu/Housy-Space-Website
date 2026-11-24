@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Voglio affittare la mia casa",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -187,7 +197,7 @@
         {
           "kind": "faq",
           "q": "Quali documenti mi servono per affittare?",
-          "a": "In Catalogna, il certificato di abitabilità e il certificato di efficienza energetica. Se non li hai, il nostro architetto può occuparsene."
+          "a": "In Catalogna, il certificato di abitabilità e l'attestato di prestazione energetica. Se non li hai, se ne occupa l'architetto con cui collaboriamo."
         },
         {
           "kind": "faq",
@@ -203,6 +213,10 @@
           "kind": "faq",
           "q": "E se si verifica un problema durante il contratto?",
           "a": "Se scegli la gestione, ci occupiamo degli inconvenienti. E se sorge una controversia legale, la coordiniamo con lo studio legale con cui lavoriamo. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal)."
+        },
+        {
+          "kind": "p",
+          "text": "Non sai se ti conviene affittare o vendere? Lo valutiamo insieme in una [consulenza di orientamento](route:services#asesoramiento)."
         }
       ]
     },
@@ -245,8 +259,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Consulenza legale e fiscale",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Ristrutturazioni e interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

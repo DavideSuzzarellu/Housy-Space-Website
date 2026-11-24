@@ -1,13 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { LOCALES } from "./config";
-import {
-  getAlternates,
-  getLocalizedPath,
-  getServicesAnchorPath,
-  ROUTE_KEYS,
-  routes,
-  withUrlExtras,
-} from "./routes";
+import { getAlternates, getLocalizedPath, ROUTE_KEYS, routes, withUrlExtras } from "./routes";
 
 describe("getLocalizedPath", () => {
   it("returns the prefixed home path for every locale without trailing slash", () => {
@@ -159,16 +152,5 @@ describe("withUrlExtras", () => {
 
   it("returns the path untouched when there are no extras", () => {
     expect(withUrlExtras("/es", {})).toBe("/es");
-  });
-});
-
-describe("getServicesAnchorPath", () => {
-  it("points every locale to the services accordion of its home", () => {
-    expect(LOCALES.map((locale) => getServicesAnchorPath(locale))).toEqual([
-      "/es#servicios",
-      "/en#servicios",
-      "/it#servicios",
-      "/ca#servicios",
-    ]);
   });
 });

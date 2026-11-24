@@ -18,11 +18,9 @@ interface Props {
   units: readonly RenderUnit<PageItem>[];
   /** Size of the page-level buttons (the "Mi búsqueda" landing uses large ones). */
   buttonSize?: "md" | "lg";
-  /** Body paragraphs and leads keep their case (the reference service pages: only labels are capitals). */
-  plain?: boolean;
 }
 
-const { locale, units, buttonSize = "md", plain = false } = Astro.props;
+const { locale, units, buttonSize = "md" } = Astro.props;
 const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
 ---
 
@@ -72,18 +70,13 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
       return <h3 class="mt-5 mb-2 text-[clamp(1.0625rem,1.7vw,1.375rem)]">{item.text}</h3>;
     case "p":
       return (
-        <p class:list={["mb-3.5 max-w-[72ch]", plain && "normal-case"]}>
+        <p class="mb-3.5 max-w-[72ch]">
           <Inline text={item.text} locale={locale} />
         </p>
       );
     case "lead":
       return (
-        <p
-          class:list={[
-            "mb-4 max-w-[62ch] text-[clamp(1rem,1.3vw,1.125rem)] text-muted",
-            plain && "normal-case",
-          ]}
-        >
+        <p class="mb-4 max-w-[62ch] text-[clamp(1rem,1.3vw,1.125rem)] text-muted">
           <Inline text={item.text} locale={locale} />
         </p>
       );

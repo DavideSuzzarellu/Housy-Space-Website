@@ -52,7 +52,7 @@ src/
       infrastructure/     # Mobilia adapter, Zod schemas, mappers
       ui/                 # .astro components + islands
     leads/                # contact, visit request, valuation (destination TODO)
-    agency/               # about, team, services, sell your property
+    agency/               # about, team, services
     valuation/            # external valuator iframe embed (no pricing logic)
     reviews/              # Google reviews (Places API adapter)
     blog/
@@ -68,7 +68,7 @@ Rules:
 
 - `domain` imports nothing from `infrastructure`, `ui`, or Astro.
 - Mobilia data enters ONLY through `features/properties/infrastructure`; it is validated with Zod and mapped to domain types. UI never sees Mobilia field names (`txtTituloWebEn`, `precioVenta`...).
-- Ship zero JS by default; hydrate islands only where interaction is required (`client:visible` preferred).
+- Ship zero JS by default; hydrate islands only where interaction is required (`client:visible` preferred). Interactions and animations the reference has are required interactions (UI parity rule, §11): reproduce them with the smallest lazy script, CSS first where it gives the identical result.
 
 ### 3.1 Componentization & no duplication (mandatory)
 
@@ -127,6 +127,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 - UI strings live in `shared/i18n/{locale}.ts`; no hardcoded user-facing text. Missing keys fail the type check.
 - Property titles/descriptions come from Mobilia per locale (`txtTituloWeb{Ca|En|It}`, base field = es). Fallback order: requested locale → `es` → `en`.
 - **All site copy is translated into the 4 locales** (decision 2026-11-04): UI dictionaries, `home`, `pages`, district and barrio prose. The Spanish text of the UI proposal (§11.1) is the source; en/it/ca are translations pending client review (ROADMAP). Not translated: Mobilia data (comes per locale), client reviews (verbatim, §6.1) and blog articles (one language each). Legal texts are translated too (client decision 2026-11-04, exception to §13), marked as pending lawyer review (I11); they will be replaced by the validated versions.
+- **Translation style (client decision 2026-11-24):** the Spanish text is the source (verbatim from the reference, which exists only in Spanish) and en/it/ca are written by us as faithful but NOT literal translations: same meaning, facts, figures, tone and fixed phrases, but natural and idiomatic in each language, as a native copywriter would write it, never word-for-word calques (no Spanish syntax or false friends). Same register as §11.5 (warm, direct, informal "you"). Sentence length and headings may be reshaped when the target language needs it, keeping the `*asterisk*` emphasis on the equivalent part. Legal, tax and financial text stays faithful and precise (natural wording, no changed meaning, no added or dropped clauses) and keeps the pending-lawyer-review notice.
 - Localized slugs: yes (see section 4.1).
 
 ### 4.1 URL structure (SEO)
@@ -151,7 +152,6 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | legal notice        | `/es/aviso-legal`        | `/en/legal-notice`        | `/it/note-legali`          | `/ca/avis-legal`         |
 | privacy             | `/es/privacidad`         | `/en/privacy-policy`      | `/it/privacy`              | `/ca/privacitat`         |
 | cookies             | `/es/cookies`            | `/en/cookie-policy`       | `/it/cookie`               | `/ca/galetes`            |
-| sell                | `/es/vender`             | `/en/sell`                | `/it/vendere`              | `/ca/vendre`             |
 | valuation           | `/es/valoracion`         | `/en/valuation`           | `/it/valutazione`          | `/ca/valoracio`          |
 | blog                | `/es/blog`               | `/en/blog`                | `/it/blog`                 | `/ca/blog`               |
 | blog post           | `/es/blog/{slug}`        | `/en/blog/{slug}`         | `/it/blog/{slug}`          | `/ca/blog/{slug}`        |
@@ -196,7 +196,7 @@ Property detail rules:
 
 ## 6. Pages / features (MVP)
 
-Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. "Sell your property" (footer, owners column) links to the sell page. The services index and the sell page come from the 2026-10-25 design canvas (client decision 2026-11-04: full pages instead of the v3 redirects). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
+Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. The services index is a real page, as in the reference site (decision 2026-11-24). The sell page and the advisory service were retired by the client (reference `_redirects`): `/vender` and the old advisory URL 301 to the sale brokerage service and to the services index (`shared/i18n/retiredRoutes.ts`, wired in `astro.config.ts`). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` wait for hosting, I2).
 
 1. Home — hero (video/photo with negative logo), search, featured properties (`portadaWeb`), CTA valuation
 2. Properties — filters (operation, type, price, rooms, area, zone), list + map, shareable URL params
@@ -211,7 +211,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
    - Client + server validation with the same Zod schema; honeypot + rate limiting; success/error states translated in the 4 locales.
    - Submitted to a server endpoint in `src/pages/api/`. Delivery destination: `TODO` (Mobilia stays read-only).
 10. Property PDF sheet — in scope, see item 24.
-11. Sell your property — owner-focused page with CTA to valuation and `LeadForm`.
+11. (retired) Sell your property page: replaced by the sale brokerage service.
 12. Valuation tool — provided by an external valuator embedded via iframe; it computes and returns prices itself. This site NEVER calculates, stores, or alters valuation figures.
     - One `ValuationEmbed` component (`features/valuation/ui/`), configured by props; used on the valuation page and anywhere else it appears.
     - Valuator URL/provider: `TODO`. Store the URL and allowed origin in config (`astro:env`, public), never hardcoded in components.
@@ -225,7 +225,7 @@ Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Pro
 15. Google reviews — see section 6.1.
 16. Contact CTAs — tap-to-call, WhatsApp with prefilled localized message, private consultation (`LeadForm`). Company phone/WhatsApp number: `TODO` confirm.
 
-17. Services — index page (design canvas layout, cards built from each service page) + 9 service pages, as in v3: sale brokerage, valuation, legal & tax advice, renovations & interior design, personalised advisory, financial advice, personal shopper, real estate investment, rental & management.
+17. Services — index page (design canvas layout, cards built from each service page) + 8 service pages: sale brokerage, valuation, legal & tax advice, renovations & interior design, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
 20. Barcelona province — index + 311 municipality pages (collection `municipalities`, data from proposal v3: territorial code, comarca and area by the ICGC). Population, density and market data show "not available" until the INE/Idescat datasets (I8) are added.
@@ -321,8 +321,9 @@ bun run build        # astro build + property sheet PDFs (needs Chromium)
 > - `docs/design-system/components/<Name>/README.md` — one per section of the reference site: where it appears, what it needs, rules.
 > - `docs/design-system/assets/<Group>/README.md` — logos, seals, icons, illustrations, photos.
 >
-> This **supersedes** the 2026-11-07 prototype system (Cormorant Garamond, gold accent, ink/graphite, sentence case) and the older v3 artifact. Where the two disagree, the design system wins.
-> The reference site is plain HTML/CSS/JS: never copy its CSS or markup verbatim. Rebuild every section with this project's Tailwind v4 tokens, Astro components, Content Collections and i18n.
+> This **supersedes** the 2026-11-07 prototype system (Cormorant Garamond, gold accent, ink/graphite, sentence case) and the older v3 artifact.
+> **UI parity rule (client decision 2026-11-24, mandatory, wins over every other look/behaviour statement in this file and in the skills):** the UI of every page, section, component, state and breakpoint (1440, 820, 390) must be EXACTLY equal to the client's reference site (`C:\Users\Utente\Desktop\housyspace-web-ref`, always its current `HEAD`, served locally on port 4500). "Equal" means measured in Chrome, not "similar": same sections in the same order, same copy, same sizes, spacing, colours, weights, case, images, interactions, animations and transitions. When the reference changes, the project follows. When this file, the design system or a skill disagrees with the rendered reference on how something looks or behaves, the reference wins. Only these exceptions are allowed, each documented in the commit body: (1) WCAG 2.2 AA colour/contrast and focus (use the nearest passing token); (2) privacy and legal rules (§5 approximate location, §7 consent); (3) real data instead of the reference's demo data (Mobilia listings, client reviews, official figures); (4) the 4 locales and localized routes (§4); (5) `prefers-reduced-motion`. Anything the reference does with JavaScript (steppers, popups, counters, parallax, animated SVG) is reproduced, with a small lazy script on `astro:page-load`; "not ported" is never an acceptable end state, only an interim one reported to the user as an open item.
+> The reference site is plain HTML/CSS/JS: never copy its CSS or markup verbatim. Rebuild every section with this project's Tailwind v4 tokens, Astro components, Content Collections and i18n, so that the rendered result is identical.
 > The component previews and the site's `css/` and image files are NOT in the repo; open the artifact when pixel-level detail is needed (layout at 1440 px, class names).
 
 ### 11.1 Look & feel
@@ -403,7 +404,7 @@ Each section of the reference site has a README under `docs/design-system/compon
 - **About / Contact / Living in Barcelona:** `NosotrosCabecera` · `NosotrosSeccion` · `MillaExtra` · `ServiciosIntegrales` · `ContactoFormas` · `ContactoFormulario` · `PreguntasFrecuentes` · `MiBusquedaFormulario` · `Distritos` · `BarrioCabecera` · `BarrioDatos`.
 - **Shared:** `Cabecera` · `Pie` · `Boton` · `Newsletter` · `TextoLegal`.
 
-Where the reference and this file disagree on behaviour (real listings from Mobilia instead of demo ones, 4 locales, approximate location, consent rules), this file wins; where they disagree on look, the design system wins. Notes on its own limits: the reference has no JavaScript (carousels, counters, map and the Lystos valuator are static there).
+Where the reference and this file disagree on behaviour (real listings from Mobilia instead of demo ones, 4 locales, approximate location, consent rules), this file wins (the exceptions of the UI parity rule above); where they disagree on look or interaction, the rendered reference wins, then the design system. Some parts of the reference are static or popups (e.g. the Lystos valuator opens in a popup there): measure how it renders and behaves before deciding.
 
 ### 11.8 Motion
 
@@ -434,6 +435,7 @@ Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px)
 ## 13. Agent rules
 
 - Read this file before any task. If a request conflicts with it, ask.
+- **UI = the reference site.** Any UI work ends only when the page is measured equal to the reference at 1440, 820 and 390 (§11 UI parity rule). Differences left over are listed as open items with the reason; never silently accepted as "by design".
 - `ROADMAP.md` tracks phases, status, and client inputs. Check it before starting work; update its checkboxes and decisions log when a task lands. Never start work marked 🔒 until its input is resolved.
 - Never invent listings, prices, legal text, company data, or translations of legal text. Exception (client, 2026-11-04): the legal drafts are machine-translated into en/it/ca and marked as pending lawyer review (§4).
 - Do not change the stack or architecture, or add dependencies, without approval.

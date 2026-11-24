@@ -13,6 +13,7 @@ interface Props {
 
 const { locale, head, body } = Astro.props;
 const questions = itemsOf(body, "faq");
+const more = itemsOf(body, "p");
 const MARK =
   "before:absolute before:top-1/2 before:right-1.5 before:h-[1.5px] before:w-3.5 before:bg-accent after:absolute after:top-1/2 after:right-1.5 after:h-[1.5px] after:w-3.5 after:rotate-90 after:bg-accent after:transition-transform after:duration-400 after:ease-brand group-open:after:rotate-0 motion-reduce:after:transition-none";
 ---
@@ -34,6 +35,11 @@ const MARK =
           <Inline text={item.a} locale={locale} />
         </p>
       </details>
+    ))}
+    {more.map((line) => (
+      <p class="mt-[clamp(18px,2vw,26px)] text-[15px] leading-[1.6] text-fg-2 [&_a]:text-inherit [&_a]:underline-offset-3">
+        <Inline text={line.text} locale={locale} />
+      </p>
     ))}
   </div>
 </div>

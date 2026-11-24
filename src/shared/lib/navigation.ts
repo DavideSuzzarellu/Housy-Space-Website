@@ -1,7 +1,7 @@
 import { DISTRICTS } from "@/features/districts/domain/districts";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
-import { getLocalizedPath, getServicesAnchorPath, withUrlExtras } from "@/shared/i18n/routes";
+import { getLocalizedPath, withUrlExtras } from "@/shared/i18n/routes";
 import { getServiceSlug, SERVICE_KEYS } from "@/shared/i18n/services";
 
 /** Navigation model shared by the header, the mobile drawer and the footer (one source). */
@@ -41,7 +41,7 @@ export function getMainNavigation(locale: Locale): NavItem[] {
     },
     {
       label: nav.services,
-      href: getServicesAnchorPath(locale),
+      href: getLocalizedPath("services", locale),
       children: SERVICE_KEYS.map((service) => ({
         label: serviceNames[service],
         href: getLocalizedPath("serviceDetail", locale, {
@@ -94,7 +94,7 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
       title: footer.columns.explore,
       links: [
         { label: nav.properties, href: getLocalizedPath("sale", locale) },
-        { label: nav.services, href: getServicesAnchorPath(locale) },
+        { label: nav.services, href: getLocalizedPath("services", locale) },
         { label: nav.living, href: getLocalizedPath("living", locale) },
         { label: nav.mySearch, href: getLocalizedPath("mySearch", locale) },
         { label: footer.links.blog, href: getLocalizedPath("blog", locale) },
@@ -102,10 +102,7 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
     },
     {
       title: footer.columns.owners,
-      links: [
-        { label: nav.sell, href: getLocalizedPath("sell", locale) },
-        { label: nav.valuation, href: getLocalizedPath("valuation", locale) },
-      ],
+      links: [{ label: nav.valuation, href: getLocalizedPath("valuation", locale) }],
     },
     {
       title: footer.columns.company,

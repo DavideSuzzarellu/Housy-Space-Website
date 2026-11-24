@@ -17,29 +17,126 @@
   },
   "sections": [
     {
-      "id": "informe",
+      "id": "opciones",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "tag",
-          "text": "Al moment"
+          "text": "Dues maneres de valorar"
         },
         {
           "kind": "h2",
-          "text": "Valoració en línia"
+          "text": "Tria com vols conèixer *el valor del teu habitatge*"
         },
         {
-          "kind": "lead",
-          "text": "Una primera estimació orientativa a partir de les dades que introdueixes. És útil com a referència inicial, però no substitueix l'anàlisi individual de l'habitatge."
+          "kind": "p",
+          "text": "Pots començar per una estimació en línia i, quan vulguis, demanar que un assessor estudiï el teu habitatge. Són dos passos que es complementen."
         },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Al moment"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoració en línia"
+            },
+            {
+              "kind": "p",
+              "text": "Una primera estimació orientativa a partir de les dades que introdueixes. Serveix com a referència inicial, però no substitueix l'anàlisi individual de l'habitatge."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Resultat al moment"
+                },
+                {
+                  "title": "",
+                  "text": "Amb les dades que introdueixes"
+                },
+                {
+                  "title": "",
+                  "text": "Estimació orientativa"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valora en línia ara",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Estudi personalitzat"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoració amb un assessor"
+            },
+            {
+              "kind": "p",
+              "text": "Analitzem el teu habitatge, les seves particularitats i les condicions del mercat, i t'expliquem què en determina el valor."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visita a l'habitatge"
+                },
+                {
+                  "title": "",
+                  "text": "Revisió de la documentació"
+                },
+                {
+                  "title": "",
+                  "text": "Estudi de mercat comentat"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Demana una valoració amb un assessor",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
         {
           "kind": "valuator",
           "title": "Valorador en línia de HousySpace"
         },
         {
           "kind": "p",
-          "text": "No es veu el valorador? [Obre'l en una pestanya nova](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) o demana la valoració a un assessor amb el [formulari de sota](#solicitud)."
+          "text": "No es veu el valorador? [Obre'l en una pestanya nova](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
         },
         {
           "kind": "note",
@@ -49,23 +146,15 @@
     },
     {
       "id": "solicitud",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "tag",
-          "text": "Estudi personalitzat"
-        },
         {
           "kind": "h2",
           "text": "Valoració amb un assessor"
         },
         {
           "kind": "lead",
-          "text": "Analitzem el teu habitatge, les seves particularitats i les condicions del mercat, i t'expliquem quins factors en determinen el valor."
-        },
-        {
-          "kind": "p",
           "text": "Deixa'ns les teves dades i un assessor de HousySpace et trucarà per valorar el teu habitatge en persona."
         },
         {
@@ -115,7 +204,7 @@
             },
             {
               "name": "consent",
-              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud. (Text legal pendent d'aprovació.)",
+              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -152,21 +241,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Sobre el servei de valoració",
-              "href": "service:valoracion",
-              "solid": false
-            },
-            {
-              "label": "Parlar amb un assessor",
-              "href": "route:contact",
-              "solid": false
-            }
-          ]
         }
       ]
     }

@@ -11,35 +11,132 @@
       },
       {
         "kind": "lead",
-        "text": "Ogni casa è diversa, e anche il suo valore. Studiamo le sue caratteristiche, la sua posizione e le condizioni del mercato per offrirti una valutazione ragionata e aiutarti a decidere con criterio."
+        "text": "Ogni casa è diversa, e anche il suo valore. Studiamo le sue caratteristiche, la sua posizione e le condizioni del mercato per offrirti una valutazione fondata e aiutarti a decidere con cognizione di causa."
       }
     ]
   },
   "sections": [
+    {
+      "id": "opciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Due modi per valutare"
+        },
+        {
+          "kind": "h2",
+          "text": "Scegli come scoprire *il valore della tua casa*"
+        },
+        {
+          "kind": "p",
+          "text": "Puoi iniziare da una stima online e, quando vuoi, chiedere a un consulente di analizzare la tua casa. Sono due passaggi che si completano."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Subito"
+            },
+            {
+              "kind": "h3",
+              "text": "Valutazione online"
+            },
+            {
+              "kind": "p",
+              "text": "Una prima stima indicativa in base ai dati che inserisci. Utile come riferimento iniziale, ma non sostituisce l'analisi specifica dell'immobile."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Risultato immediato"
+                },
+                {
+                  "title": "",
+                  "text": "In base ai dati che inserisci"
+                },
+                {
+                  "title": "",
+                  "text": "Stima indicativa"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valuta online ora",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Studio personalizzato"
+            },
+            {
+              "kind": "h3",
+              "text": "Valutazione con un consulente"
+            },
+            {
+              "kind": "p",
+              "text": "Analizziamo la tua casa, le sue particolarità e le condizioni del mercato, e ti spieghiamo cosa incide sul suo valore."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Sopralluogo dell'immobile"
+                },
+                {
+                  "title": "",
+                  "text": "Verifica della documentazione"
+                },
+                {
+                  "title": "",
+                  "text": "Studio di mercato commentato"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Richiedi una valutazione con un consulente",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "informe",
       "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "tag",
-          "text": "Subito"
-        },
-        {
-          "kind": "h2",
-          "text": "Valutazione online"
-        },
-        {
-          "kind": "lead",
-          "text": "Una prima stima indicativa a partire dai dati che inserisci. È utile come riferimento iniziale, ma non sostituisce l'analisi individuale dell'immobile."
-        },
-        {
           "kind": "valuator",
           "title": "Strumento di valutazione online di HousySpace"
         },
         {
           "kind": "p",
-          "text": "Non vedi lo strumento di valutazione? [Aprilo in una nuova scheda](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) oppure richiedi la valutazione a un consulente con il [modulo qui sotto](#solicitud)."
+          "text": "Non vedi lo strumento di valutazione? [Aprilo in una nuova scheda](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
         },
         {
           "kind": "note",
@@ -49,24 +146,16 @@
     },
     {
       "id": "solicitud",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "tag",
-          "text": "Studio personalizzato"
-        },
         {
           "kind": "h2",
           "text": "Valutazione con un consulente"
         },
         {
           "kind": "lead",
-          "text": "Analizziamo il tuo immobile, le sue particolarità e le condizioni del mercato, e ti spieghiamo quali fattori influiscono sul suo valore."
-        },
-        {
-          "kind": "p",
-          "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti chiamerà per valutare il tuo immobile di persona."
+          "text": "Lasciaci i tuoi dati: un consulente di HousySpace ti chiamerà per valutare la tua casa di persona."
         },
         {
           "kind": "form",
@@ -115,7 +204,7 @@
             },
             {
               "name": "consent",
-              "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
+              "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -152,21 +241,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Sul servizio di valutazione",
-              "href": "service:valoracion",
-              "solid": false
-            },
-            {
-              "label": "Parlare con un consulente",
-              "href": "route:contact",
-              "solid": false
-            }
-          ]
         }
       ]
     }

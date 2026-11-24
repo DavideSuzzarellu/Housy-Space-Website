@@ -1,0 +1,308 @@
+{
+  "title": "Servicios inmobiliarios en Barcelona · HousySpace",
+  "description": "Servicios inmobiliarios en Barcelona: compraventa, valoración, alquiler y gestión, personal shopper, inversión, reformas y asesoramiento jurídico, fiscal y financiero.",
+  "head": {
+    "heading": "Los servicios *que te ofrecemos*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servicios"
+      },
+      {
+        "kind": "lead",
+        "text": "Un mismo compromiso, muchas formas de ayudarte."
+      },
+      {
+        "kind": "list",
+        "ordered": false,
+        "items": [
+          {
+            "title": "Propietarios",
+            "text": "",
+            "href": "#propietarios"
+          },
+          {
+            "title": "Compradores e inversores",
+            "text": "",
+            "href": "#compradores"
+          },
+          {
+            "title": "Asesoramiento especializado",
+            "text": "",
+            "href": "#especializados"
+          },
+          {
+            "title": "¿Por dónde empiezo?",
+            "text": "",
+            "href": "#situaciones"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "propietarios",
+      "layout": "indexGroup",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Propietarios"
+        },
+        {
+          "kind": "h2",
+          "text": "Vender, valorar *o alquilar tu vivienda*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compraventa e intermediación inmobiliaria",
+              "text": "Te asesoramos en la venta de tu vivienda, desde el estudio inicial y la estrategia comercial hasta la formalización de la operación.",
+              "kicker": "01 · Vender mi vivienda",
+              "href": "service:venta-estrategica",
+              "cta": "Ver el servicio"
+            },
+            {
+              "title": "Valoración inmobiliaria",
+              "text": "Analizamos el mercado y las características de tu inmueble para ayudarte a determinar su valor y un precio de salida adecuado.",
+              "kicker": "02 · Saber cuánto vale",
+              "href": "service:valoracion",
+              "cta": "Ver el servicio"
+            },
+            {
+              "title": "Alquiler y gestión de inmuebles",
+              "text": "Comercializamos tu vivienda, seleccionamos candidatos y, si lo necesitas, gestionamos el alquiler durante el contrato.",
+              "kicker": "03",
+              "href": "service:alquiler-gestion",
+              "cta": "Ver el servicio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compradores",
+      "layout": "indexGroup",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Compradores e inversores"
+        },
+        {
+          "kind": "h2",
+          "text": "Comprar *o invertir con criterio*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal Shopper inmobiliario",
+              "text": "Buscamos y analizamos viviendas según tus necesidades y te acompañamos durante el proceso de compra, hasta la firma.",
+              "kicker": "04",
+              "href": "service:personal-shopper",
+              "cta": "Ver el servicio"
+            },
+            {
+              "title": "Inversión inmobiliaria",
+              "text": "Estudiamos oportunidades de inversión, costes, rentabilidad potencial y riesgos para ayudarte a tomar decisiones con criterio.",
+              "kicker": "05",
+              "href": "service:inversion-inmobiliaria",
+              "cta": "Ver el servicio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "especializados",
+      "layout": "indexGroup",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Asesoramiento y soluciones especializadas"
+        },
+        {
+          "kind": "h2",
+          "text": "Apoyo profesional *en cada decisión*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Reformas e interiorismo",
+              "text": "Coordinamos proyectos de reforma e interiorismo junto a profesionales especializados, del primer presupuesto a la entrega.",
+              "kicker": "06",
+              "href": "service:reformas-obras",
+              "cta": "Ver el servicio"
+            },
+            {
+              "title": "Asesoramiento jurídico y fiscal",
+              "text": "Coordinamos el asesoramiento de profesionales jurídicos y fiscales para las necesidades legales y tributarias de tu operación.",
+              "kicker": "07",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Ver el servicio"
+            },
+            {
+              "title": "Asesoramiento financiero",
+              "text": "Te ponemos en contacto con especialistas en financiación y coordinamos el estudio de la hipoteca con tu operación inmobiliaria.",
+              "kicker": "08",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Ver el servicio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "situaciones",
+      "layout": "indexSituations",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Situaciones habituales"
+        },
+        {
+          "kind": "h2",
+          "text": "Puede que *estés aquí*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "¿Vendo o alquilo?",
+              "text": "Comparamos las dos opciones con números: precio de venta, renta esperable, impuestos y gastos.",
+              "kicker": "Compraventa e intermediación inmobiliaria",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "¿Vendo ahora o espero?",
+              "text": "Vemos cómo está la demanda en tu zona y qué cambia si esperas.",
+              "kicker": "Valoración inmobiliaria",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "He heredado una vivienda",
+              "text": "Qué trámites hay, qué impuestos pagar y qué hacer con ella.",
+              "kicker": "Asesoramiento jurídico y fiscal",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "¿Reformo antes de vender?",
+              "text": "Qué mejoras pueden ayudar a la venta y cuáles no compensan.",
+              "kicker": "Reformas e interiorismo",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Quiero cambiar de casa",
+              "text": "Cómo coordinar la venta de la tuya y la compra de la nueva.",
+              "kicker": "Personal Shopper inmobiliario",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Quiero invertir en vivienda",
+              "text": "Qué comprar, con qué números y con qué riesgos.",
+              "kicker": "Inversión inmobiliaria",
+              "href": "service:inversion-inmobiliaria"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asesoramiento",
+      "layout": "indexAdvice",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cómo te ayudamos"
+        },
+        {
+          "kind": "h2",
+          "text": "Un asesoramiento *que empieza por escucharte*"
+        },
+        {
+          "kind": "p",
+          "text": "No todas las decisiones inmobiliarias empiezan con una compraventa. A veces, lo primero es entender qué necesitas, analizar las posibilidades y decidir cuál es el mejor camino. En HousySpace estudiamos cada situación para ofrecerte un asesoramiento personalizado, con criterio y sin decisiones precipitadas."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversación",
+              "text": "Hablamos de tu situación y de lo que quieres conseguir."
+            },
+            {
+              "title": "Análisis",
+              "text": "Estudiamos el inmueble, la zona y las alternativas."
+            },
+            {
+              "title": "Hoja de ruta",
+              "text": "Te proponemos los pasos, los plazos y los costes."
+            },
+            {
+              "title": "Acompañamiento",
+              "text": "Te ayudamos a decidir y, si quieres, a ejecutarlo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hablemos",
+      "layout": "indexCta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "¿No tienes claro *qué servicio necesitas?*"
+        },
+        {
+          "kind": "big",
+          "text": "¡Hablemos!"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestros%20servicios.",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Cuéntanos",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
