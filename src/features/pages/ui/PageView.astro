@@ -23,8 +23,8 @@ interface Props {
   hero?: boolean;
   /** Paper head of the reference (`PaperHero`: kicker, big title, lead) instead of the photo head. */
   paperHead?: boolean;
-  /** Long legal text (reference `.lg`): smaller title, one narrow sentence-case column. */
-  legal?: boolean;
+  /** Long text: smaller title and tight head. `legal` = reference `.lg` (narrow sentence-case column), `data` = data sources. */
+  longText?: "legal" | "data" | undefined;
 }
 
 const {
@@ -34,8 +34,9 @@ const {
   fallback = false,
   hero = false,
   paperHead = false,
-  legal = false,
+  longText,
 } = Astro.props;
+const legal = longText !== undefined;
 const t = getDictionary(locale);
 const image = content.head.items.find((item) => item.kind === "image");
 const headItems = content.head.items.filter(
@@ -69,7 +70,9 @@ const SURFACES = {
         hero
           ? "pt-[clamp(1.625rem,4vw,3.25rem)] pb-[clamp(3.5rem,8vw,7rem)]"
           : legal
-            ? "pt-8 pb-12"
+            ? headRest.length > 0
+              ? "pt-8 pb-8.5"
+              : "pt-8 pb-12"
             : "pt-8 pb-[clamp(2.75rem,6vw,4.5rem)]",
         hasPhoto
           ? "surface-dark flex min-h-[clamp(24rem,50vw,34rem)] flex-col justify-end bg-canvas"
@@ -128,7 +131,9 @@ const SURFACES = {
         <div
           hidden={legal && headRest.length === 0}
           class:list={[
-            "mt-4 max-w-[62ch] text-fg/90",
+            legal
+              ? "mt-3.5 max-w-none normal-case [&_p]:mb-3.5 [&_p]:max-w-none [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-fg"
+              : "mt-4 max-w-[62ch] text-fg/90",
             hero &&
               "[&>:last-child]:mb-0 [&_p]:mb-[clamp(1.875rem,4vw,2.875rem)] [&_p]:max-w-[58ch] [&_p]:text-[clamp(0.875rem,1.35vw,1.0625rem)] [&_p]:leading-[1.8] [&_p]:text-fg/85",
           ]}
@@ -159,9 +164,14 @@ const SURFACES = {
       ]}
     >
       <Container>
-        {legal ? (
-          <div class="mx-auto max-w-194 [&_a]:text-fg [&_a]:decoration-taupe [&_a]:underline-offset-[3px] [&_strong]:font-bold">
-            <LegalItems locale={locale} units={groupItems(section.items)} />
+        {longText !== undefined ? (
+          <div
+            class:list={[
+              "[&_a]:text-fg [&_a]:decoration-taupe [&_a]:underline-offset-[3px] [&_strong]:font-bold",
+              longText === "legal" && "mx-auto max-w-194",
+            ]}
+          >
+            <LegalItems locale={locale} units={groupItems(section.items)} variant={longText} />
           </div>
         ) : (
           <PageItems
