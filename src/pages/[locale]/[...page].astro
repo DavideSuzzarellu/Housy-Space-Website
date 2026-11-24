@@ -118,7 +118,7 @@ function metaOf(): {
   }
   if (target.view === "post") {
     return {
-      title: `${target.post.data.title} · HousySpace`,
+      title: `${target.post.data.seoTitle ?? target.post.data.title} · HousySpace`,
       description: target.post.data.description,
       alternates: getAlternates("blogPost", { slug: target.post.id }),
     };
