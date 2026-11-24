@@ -64,7 +64,10 @@ test.describe("scripts bound on astro:page-load", () => {
     const next = page.locator("[data-next] button");
     await expect(count).toContainText("1");
 
-    await page.locator('[name="operacion"]').first().check({ force: true });
+    await page
+      .locator('[name="operacion"]')
+      .first()
+      .evaluate((radio: HTMLElement) => radio.click());
     await next.click();
     await expect(count).toContainText("2");
 
@@ -78,7 +81,10 @@ test.describe("scripts bound on astro:page-load", () => {
     await expect(
       page.locator("[data-wizard] fieldset[data-step]:not([data-step-off])"),
     ).toHaveCount(1);
-    await page.locator('[name="operacion"]').first().check({ force: true });
+    await page
+      .locator('[name="operacion"]')
+      .first()
+      .evaluate((radio: HTMLElement) => radio.click());
     await next.click();
     await expect(count).toContainText("2");
     await expect(
