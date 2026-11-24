@@ -26,6 +26,18 @@ export function propertyTransitionNames(ref: string): PropertyTransitionNames {
   };
 }
 
+/** Blog article parts that morph between the index card and the article header. */
+export type PostTransitionPart = "image";
+
+/** Same contract as `propertyTransitionName`, for blog posts (`id` = the file slug). */
+export function postTransitionName(id: string, part: PostTransitionPart): string {
+  const safeId = slugify(id);
+  if (safeId === "") {
+    throw new RangeError("postTransitionName: id has no usable characters");
+  }
+  return `post-${safeId}-${part}`;
+}
+
 /**
  * `view-transition-class` shared by every property image morph, so the snapshot keeps
  * `object-fit: cover` while the card and the hero have different aspect ratios (motion.css).

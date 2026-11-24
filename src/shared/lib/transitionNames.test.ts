@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   propertyTransitionName,
   propertyTransitionNames,
+  postTransitionName,
   SITE_HEADER_TRANSITION_NAME,
   sharedMorphRefs,
 } from "./transitionNames";
@@ -43,6 +44,18 @@ describe("propertyTransitionNames", () => {
       title: "property-a1-title",
       price: "property-a1-price",
     });
+  });
+});
+
+describe("postTransitionName", () => {
+  it("is deterministic, CSS-safe and never collides with property names", () => {
+    expect(postTransitionName("Mi Post/Ñandú", "image")).toBe("post-mi-post-nandu-image");
+    expect(postTransitionName("a", "image")).toBe(postTransitionName("a", "image"));
+    expect(postTransitionName("a", "image").startsWith("property-")).toBe(false);
+  });
+
+  it("rejects an id with no usable characters", () => {
+    expect(() => postTransitionName(" ", "image")).toThrow(RangeError);
   });
 });
 
