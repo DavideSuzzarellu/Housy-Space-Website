@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Cuestas, miradores y una gran memoria vecinal, con vistas sobre toda Barcelona.",
+  "translated": true,
+  "lead": "Salite, belvedere e una grande memoria di quartiere, con vista su tutta Barcellona.",
   "text": [
-    "Debe su nombre al santuario de Nuestra Señora del Monte Carmelo, construido en 1864 al pie de la colina, antes conocida como Turó d'en Móra. Hasta los años veinte fue un lugar rural; tras la Guerra Civil creció con la llegada de gente de toda España, y las últimas barracas no se derribaron hasta 1990.",
-    "La pendiente es su rasgo más reconocible, y también su carácter: un barrio de asociacionismo marcado, con comercio y servicios, el parque del Carmel y la biblioteca Juan Marsé. Limita con el Park Güell, aunque este pertenece al distrito de Gràcia. La mayoría de las viviendas se construyeron entre 1960 y 1980 y predominan las de 61 a 90 m². Con 2.858 €/m², su precio de compraventa es de los más contenidos del distrito."
+    "Deve il nome al santuario di Nostra Signora del Monte Carmelo, costruito nel 1864 ai piedi della collina, prima conosciuta come Turó d'en Móra. Fino agli anni Venti fu un luogo rurale; dopo la Guerra civile crebbe con l'arrivo di gente da tutta la Spagna, e le ultime baracche non furono demolite fino al 1990.",
+    "La pendenza è il suo tratto più riconoscibile, e anche il suo carattere: un quartiere di forte associazionismo, con commercio e servizi, il parco del Carmel e la biblioteca Juan Marsé. Confina con il Park Güell, anche se questo appartiene al distretto di Gràcia. La maggior parte delle abitazioni fu costruita tra il 1960 e il 1980 e predominano quelle da 61 a 90 m². Con 2.858 €/m², il suo prezzo di compravendita è tra i più contenuti del distretto."
   ],
-  "housing": "Bloques construidos entre 1960 y 1980, sobre todo de 61 a 90 m², y casas bajas con jardín en las zonas más antiguas.",
+  "housing": "Palazzi costruiti tra il 1960 e il 1980, soprattutto da 61 a 90 m², e case basse con giardino nelle zone più antiche.",
   "places": [
     "Santuari del Carmel",
     "Monument «David i Goliat»",

@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Casas baratas de 1929, con tejados rústicos y jardín: el barrio más pequeño de Barcelona.",
+  "translated": true,
+  "lead": "Case economiche del 1929, con tetti rustici e giardino: il quartiere più piccolo di Barcellona.",
   "text": [
-    "Entre 1929 y 1932 se habilitaron aquí 534 casas para trabajadores que vivían en barracas en Montjuïc, coincidiendo con la Exposición Internacional. Su nombre viene de la masía Can Peguera, conocida por fabricar pegamento con la resina de la pineda cercana, y durante muchos años el barrio se llamó Ramón Albó.",
-    "Con 0,12 km², es el barrio más pequeño de Barcelona, y es también el mejor conservado de los cuatro grupos de casas baratas, porque sus propios vecinos las han ido mejorando. Sus calles son de casas unifamiliares de una sola planta, con tejados rústicos y pequeños jardines delanteros, y su única plaza, la de Sant Francesc Xavier, se organiza alrededor de la antigua capilla de la masía."
+    "Tra il 1929 e il 1932 qui furono realizzate 534 case per lavoratori che vivevano in baracche a Montjuïc, in concomitanza con l'Esposizione Internazionale. Il suo nome viene dalla masia Can Peguera, nota per produrre colla con la resina della vicina pineta, e per molti anni il quartiere si chiamò Ramón Albó.",
+    "Con 0,12 km², è il quartiere più piccolo di Barcellona, ed è anche il meglio conservato dei quattro gruppi di case economiche, perché i suoi stessi abitanti le hanno via via migliorate. Le sue strade sono di villette unifamiliari a un solo piano, con tetti rustici e piccoli giardini sul davanti, e la sua unica piazza, quella di Sant Francesc Xavier, si organizza attorno all'antica cappella della masia."
   ],
-  "housing": "Casas unifamiliares de una planta con jardín delantero, junto a algún bloque de vivienda social.",
+  "housing": "Villette unifamiliari a un piano con giardino anteriore, accanto a qualche palazzo di edilizia popolare.",
   "places": ["Plaça de Sant Francesc Xavier", "Església de Sant Francesc Xavier"]
 }

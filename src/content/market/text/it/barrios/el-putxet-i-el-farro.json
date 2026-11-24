@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Pasajes de casas con patio, un parque con vistas y aire de pueblo de veraneo en plena ciudad.",
+  "translated": true,
+  "lead": "Passaggi di case con cortile, un parco con vista e un'aria da paese di villeggiatura in piena città.",
   "text": [
-    "Hacia 1870 se levantaron aquí las primeras torres de la burguesía barcelonesa, que lo usaba como zona de veraneo. El Farró toma el nombre de Silvestre Farró, que construyó las primeras casas a principios del siglo XIX, y en 2007 ambas zonas se agruparon en un solo barrio.",
-    "Su personalidad está en el parque del Putxet, que ocupa buena parte de su superficie, y en pasajes como Sant Felip o Mulet, con casas bajas con patio y hileras de casas adosadas, a menudo en torno a torres de estilo colonial o modernista. Con 1.202 €/mes, tiene el alquiler medio más bajo del distrito."
+    "Intorno al 1870 vi furono costruite le prime ville della borghesia barcellonese, che lo usava come zona di villeggiatura. El Farró prende il nome da Silvestre Farró, che costruì le prime case all'inizio dell'Ottocento, e nel 2007 le due zone sono state riunite in un unico quartiere.",
+    "La sua personalità sta nel parco del Putxet, che occupa buona parte della sua superficie, e in passaggi come Sant Felip o Mulet, con case basse con cortile e file di case a schiera, spesso attorno a ville di stile coloniale o modernista. Con 1.202 €/mese, ha l'affitto medio più basso del distretto."
   ],
-  "housing": "Casas bajas con patio, pasajes de casas adosadas y edificios de poca altura.",
+  "housing": "Case basse con cortile, passaggi di case a schiera ed edifici di poca altezza.",
   "places": ["Parc del Putxet", "Passatge de Sant Felip", "Passatge de Mulet"]
 }

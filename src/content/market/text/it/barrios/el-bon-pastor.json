@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Casas Baratas de 1929 y un barrio renovado, con un museo en antiguas viviendas.",
+  "translated": true,
+  "lead": "Case Economiche del 1929 e un quartiere rinnovato, con un museo in antiche abitazioni.",
   "text": [
-    "Las Casas Baratas se construyeron en 1929 como viviendas de alquiler protegido para los trabajadores de las fábricas del polígono, y son un ejemplo de arquitectura popular de principios del siglo XX. La remodelación de 2003 derribó 784 casas y levantó nuevos bloques con 754 pisos, y la llegada del metro, en 2010, dio un nuevo impulso al barrio.",
-    "Se divide en tres zonas: la Estadella, la más nueva, las Casas Baratas, la más antigua, y el polígono industrial, donde están el centro comercial La Maquinista y la antigua fábrica Can Sala. Desde 2023, el MUHBA Bon Pastor, museo municipal, ocupa una decena de las antiguas Casas Baratas. Con 1,87 km², es uno de los barrios más extensos del distrito."
+    "Le Case Economiche furono costruite nel 1929 come abitazioni in affitto protetto per i lavoratori delle fabbriche del poligono, e sono un esempio di architettura popolare di inizio Novecento. La ristrutturazione del 2003 demolì 784 case e costruì nuovi palazzi con 754 appartamenti, e l'arrivo della metropolitana, nel 2010, diede nuovo slancio al quartiere.",
+    "Si divide in tre zone: la Estadella, la più nuova, le Case Economiche, la più antica, e il poligono industriale, dove si trovano il centro commerciale La Maquinista e l'antica fabbrica Can Sala. Dal 2023 il MUHBA Bon Pastor, museo comunale, occupa una decina delle antiche Case Economiche. Con 1,87 km², è uno dei quartieri più estesi del distretto."
   ],
-  "housing": "Bloques nuevos de la remodelación de 2003 y las Casas Baratas que se han conservado.",
+  "housing": "Palazzi nuovi della ristrutturazione del 2003 e Case Economiche che si sono conservate.",
   "places": ["MUHBA Bon Pastor", "La Maquinista", "Can Sala"]
 }

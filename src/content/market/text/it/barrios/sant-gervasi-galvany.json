@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Tiendas, restaurantes y vida nocturna en torno a la calle Tuset: el Sant Gervasi más animado.",
+  "translated": true,
+  "lead": "Negozi, ristoranti e vita notturna attorno al carrer Tuset: il Sant Gervasi più vivace.",
   "text": [
-    "El Camp d'en Galvany empezó a urbanizarse en 1866 por iniciativa de Josep Castelló i Galvany, y el barrio se acabó llamando así por el mercado de Galvany, entre las calles Santaló, Calaf, Amigó y Madrazo. Su núcleo más antiguo está en torno a las calles Sagués y Amigó, y desde los años cincuenta se levantaron muchos edificios nuevos.",
-    "Su vecindario, de clase media-alta y alta, convive con una gran vida comercial y de ocio, sobre todo en la calle Tuset y sus alrededores: tiendas, restaurantes y locales. Con 49.202 habitantes, es el barrio más poblado de Sarrià-Sant Gervasi, y las viviendas más lujosas se concentran entre las calles Alfons XII y Muntaner."
+    "Il Camp d'en Galvany cominciò a urbanizzarsi nel 1866 per iniziativa di Josep Castelló i Galvany, e il quartiere finì per prendere questo nome dal mercato di Galvany, tra le strade Santaló, Calaf, Amigó e Madrazo. Il suo nucleo più antico si trova attorno alle strade Sagués e Amigó, e dagli anni Cinquanta sono stati costruiti molti edifici nuovi.",
+    "Il suo vicinato, di classe medio-alta e alta, convive con una grande vita commerciale e di svago, soprattutto in carrer Tuset e dintorni: negozi, ristoranti e locali. Con 49.202 abitanti, è il quartiere più popoloso di Sarrià-Sant Gervasi, e le abitazioni più di lusso si concentrano tra le strade Alfons XII e Muntaner."
   ],
-  "housing": "Fincas más antiguas y edificios construidos desde los años cincuenta, con las viviendas más lujosas entre Alfons XII y Muntaner.",
+  "housing": "Stabili più antichi ed edifici costruiti dagli anni Cinquanta, con le abitazioni più di lusso tra Alfons XII e Muntaner.",
   "places": ["Mercat de Galvany", "Carrer Tuset", "Plaça de Castelló", "Turó Parc"]
 }

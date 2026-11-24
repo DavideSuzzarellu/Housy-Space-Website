@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El núcleo histórico del distrito: carrer Gran, antigua fábrica Fabra i Coats y vida de pueblo.",
+  "translated": true,
+  "lead": "Il nucleo storico del distretto: carrer Gran, antica fabbrica Fabra i Coats e vita da paese.",
   "text": [
-    "Fue un municipio independiente con más de mil años de historia documentada, anexionado a Barcelona el 20 de abril de 1897. Su origen es agrícola: en torno a la iglesia neogótica de Sant Andreu, de 1881, se formó el carrer Gran, antigua vía romana de la que cuelgan las demás calles, y de su parroquia salieron en 1640 los segadores del Corpus de Sang.",
-    "Hoy tiene 59.330 habitantes en 1,87 km², con una vida de barrio muy activa, sobre todo en el deporte, con entidades como la UE Sant Andreu, y un comercio de proximidad que se extiende hasta el passeig de Fabra i Puig. La antigua fábrica Fabra i Coats se recuperó en 1995 como centro cultural y biblioteca, y la Casa Bloc, de los años treinta, es uno de los grandes ejemplos de vivienda racionalista de la ciudad."
+    "Fu un comune indipendente con più di mille anni di storia documentata, annesso a Barcellona il 20 aprile 1897. La sua origine è agricola: attorno alla chiesa neogotica di Sant Andreu, del 1881, si formò il carrer Gran, antica via romana da cui si diramano le altre strade, e dalla sua parrocchia partirono nel 1640 i mietitori del Corpus de Sang.",
+    "Oggi conta 59.330 abitanti su 1,87 km², con una vita di quartiere molto attiva, soprattutto nello sport, con società come la UE Sant Andreu, e un commercio di prossimità che si estende fino al passeig de Fabra i Puig. L'antica fabbrica Fabra i Coats fu recuperata nel 1995 come centro culturale e biblioteca, e la Casa Bloc, degli anni Trenta, è uno dei grandi esempi di edilizia residenziale razionalista della città."
   ],
-  "housing": "Casas bajas del núcleo antiguo y edificios de pisos de distintas épocas.",
+  "housing": "Case basse del nucleo antico e palazzi di appartamenti di epoche diverse.",
   "places": [
     "Carrer Gran de Sant Andreu",
     "Fabra i Coats",

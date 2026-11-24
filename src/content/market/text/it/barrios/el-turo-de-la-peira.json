@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio circular alrededor de una colina, con parque, mirador y mucho espíritu vecinal.",
+  "translated": true,
+  "lead": "Un quartiere circolare attorno a una collina, con parco, belvedere e tanto spirito di vicinato.",
   "text": [
-    "El barrio se adapta al relieve y rodea el turó de la Peira, una colina que pertenecía a la finca de Can Peguera y cuyo parque se inauguró en 1936, con unas ocho hectáreas de matorrales y pinares y un mirador coronado por una gran cruz de hierro. A principios de los años sesenta, la construcción de viviendas redujo su extensión.",
-    "Los bloques, de ventanas simétricas y sin adornos, trazan a veces curvas alrededor de la colina. Es uno de los barrios más afectados por la aluminosis: tras el derrumbe de un edificio en 1990 se impulsó la remodelación de los bloques afectados, y sus vecinos han tenido un papel activo en ella. Con 49.090 hab./km², es uno de los barrios más densos de Barcelona."
+    "Il quartiere si adatta al rilievo e circonda il turó de la Peira, una collina che apparteneva al terreno di Can Peguera e il cui parco fu inaugurato nel 1936, con circa otto ettari di macchia e pineta e un belvedere coronato da una grande croce di ferro. All'inizio degli anni Sessanta la costruzione di abitazioni ne ridusse l'estensione.",
+    "I palazzi, con finestre simmetriche e senza ornamenti, tracciano a volte curve attorno alla collina. È uno dei quartieri più colpiti dall'alluminosi, il degrado del cemento alluminoso: dopo il crollo di un edificio nel 1990 fu promossa la ristrutturazione dei palazzi interessati, e i suoi abitanti vi hanno avuto un ruolo attivo. Con 49.090 ab./km², è uno dei quartieri più densi di Barcellona."
   ],
-  "housing": "Bloques de pisos de los años cincuenta y sesenta, muchos de ellos remodelados por aluminosis.",
+  "housing": "Palazzi di appartamenti degli anni Cinquanta e Sessanta, molti dei quali ristrutturati per l'alluminosi.",
   "places": ["Parc del Turó de la Peira"]
 }

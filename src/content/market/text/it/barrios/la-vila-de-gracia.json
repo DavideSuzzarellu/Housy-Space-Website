@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El corazón de Gràcia: plazas con terrazas, mercado de hierro y una fiesta mayor que llena las calles.",
+  "translated": true,
+  "lead": "Il cuore di Gràcia: piazze con dehors, un mercato di ferro e una festa maggiore che riempie le strade.",
   "text": [
-    "Es el núcleo del antiguo municipio. Gràcia se constituyó como municipio independiente en 1850, con más de 13.000 habitantes; en 1877 ya eran 33.000 y en 1897, cuando volvió a unirse a Barcelona, casi 62.000. Su centro administrativo fue la plaça de la Vila, con la torre del reloj que levantó Antoni Rovira i Trias entre 1862 y 1864.",
-    "Buena parte de la urbanización la hicieron los propietarios de cada finca por su cuenta, y de ahí vienen las calles que cambian de nombre o se interrumpen y las muchas plazas, normalmente una por propiedad: la del Sol y la de la Virreina son los lugares de encuentro de los vecinos. El Mercat de la Llibertat, de hierro, es de 1893, y la Casa Vicens, de Gaudí, de 1883, está en la calle de les Carolines. Hoy la vida se hace en la calle: terrazas, comercio de barrio, cine y pequeños teatros, y cada agosto las Festes de Gràcia con las calles decoradas por los vecinos. Con 51.477 habitantes, es el barrio más poblado de Gràcia, y su precio de compraventa, 5.094 €/m², es el más alto del distrito."
+    "È il nucleo dell'antico comune. Gràcia si costituì come comune indipendente nel 1850, con più di 13.000 abitanti; nel 1877 erano già 33.000 e nel 1897, quando tornò a unirsi a Barcellona, quasi 62.000. Il suo centro amministrativo fu la plaça de la Vila, con la torre dell'orologio che Antoni Rovira i Trias costruì tra il 1862 e il 1864.",
+    "Buona parte dell'urbanizzazione fu fatta dai proprietari di ogni terreno per conto proprio, e da qui vengono le strade che cambiano nome o si interrompono e le numerose piazze, di norma una per proprietà: quella del Sol e quella de la Virreina sono i luoghi di ritrovo degli abitanti. Il Mercat de la Llibertat, in ferro, è del 1893, e la Casa Vicens, di Gaudí, del 1883, si trova in carrer de les Carolines. Oggi la vita si svolge in strada: dehors, commercio di quartiere, cinema e piccoli teatri, e ogni agosto le Festes de Gràcia, con le strade decorate dai vicini. Con 51.477 abitanti, è il quartiere più popoloso di Gràcia, e il suo prezzo di compravendita, 5.094 €/m², è il più alto del distretto."
   ],
-  "housing": "Casas bajas, fincas antiguas y edificios de pisos, en calles estrechas.",
+  "housing": "Case basse, stabili antichi e palazzi di appartamenti, in strade strette.",
   "places": [
     "Plaça de la Vila de Gràcia",
     "Plaça del Sol",
