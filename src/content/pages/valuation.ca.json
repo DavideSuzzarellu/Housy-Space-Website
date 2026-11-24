@@ -22,12 +22,16 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Al moment"
+        },
+        {
           "kind": "h2",
-          "text": "El teu informe de valoració, al moment"
+          "text": "Valoració en línia"
         },
         {
           "kind": "lead",
-          "text": "Introdueix les dades del teu habitatge al valorador i rebràs a l'instant el teu informe de valoració. Si vols, un assessor el revisa després amb tu."
+          "text": "Una primera estimació orientativa a partir de les dades que introdueixes. És útil com a referència inicial, però no substitueix l'anàlisi individual de l'habitatge."
         },
         {
           "kind": "valuator",
@@ -49,12 +53,20 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Estudi personalitzat"
+        },
+        {
           "kind": "h2",
-          "text": "Prefereixes que et truqui un assessor?"
+          "text": "Valoració amb un assessor"
         },
         {
           "kind": "lead",
-          "text": "Deixa'ns les teves dades i un assessor de HousySpace es posarà en contacte amb tu per valorar el teu habitatge en persona."
+          "text": "Analitzem el teu habitatge, les seves particularitats i les condicions del mercat, i t'expliquem quins factors en determinen el valor."
+        },
+        {
+          "kind": "p",
+          "text": "Deixa'ns les teves dades i un assessor de HousySpace et trucarà per valorar el teu habitatge en persona."
         },
         {
           "kind": "form",
@@ -126,7 +138,8 @@
               "kind": "field"
             },
             {
-              "kind": "note",
+              "kind": "details",
+              "summary": "Informació bàsica sobre protecció de dades",
               "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i la newsletter. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
             },
             {

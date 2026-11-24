@@ -22,12 +22,16 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Subito"
+        },
+        {
           "kind": "h2",
-          "text": "Il tuo rapporto di valutazione, all'istante"
+          "text": "Valutazione online"
         },
         {
           "kind": "lead",
-          "text": "Inserisci i dati del tuo immobile nello strumento di valutazione e riceverai immediatamente il tuo rapporto. Se lo desideri, un consulente lo esaminerà con te in seguito."
+          "text": "Una prima stima indicativa a partire dai dati che inserisci. È utile come riferimento iniziale, ma non sostituisce l'analisi individuale dell'immobile."
         },
         {
           "kind": "valuator",
@@ -49,12 +53,20 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Studio personalizzato"
+        },
+        {
           "kind": "h2",
-          "text": "Preferisci che ti chiami un consulente?"
+          "text": "Valutazione con un consulente"
         },
         {
           "kind": "lead",
-          "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti contatterà per valutare il tuo immobile di persona."
+          "text": "Analizziamo il tuo immobile, le sue particolarità e le condizioni del mercato, e ti spieghiamo quali fattori influiscono sul suo valore."
+        },
+        {
+          "kind": "p",
+          "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti chiamerà per valutare il tuo immobile di persona."
         },
         {
           "kind": "form",
@@ -126,7 +138,8 @@
               "kind": "field"
             },
             {
-              "kind": "note",
+              "kind": "details",
+              "summary": "Informazioni di base sulla protezione dei dati",
               "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: gestire la tua richiesta e, solo se lo selezioni, inviarti comunicazioni commerciali e la newsletter. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione, portabilità e revoca del consenso scrivendo a [info@housyspace.com](mailto:info@housyspace.com); puoi presentare reclamo all'AEPD. Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Testo legale in bozza.)"
             },
             {

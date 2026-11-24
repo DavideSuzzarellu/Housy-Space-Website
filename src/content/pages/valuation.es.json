@@ -22,12 +22,16 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Al momento"
+        },
+        {
           "kind": "h2",
-          "text": "Tu informe de valoración, al momento"
+          "text": "Valoración online"
         },
         {
           "kind": "lead",
-          "text": "Introduce los datos de tu vivienda en el valorador y recibirás al instante tu informe de valoración. Si lo deseas, un asesor lo revisa después contigo."
+          "text": "Una primera estimación orientativa a partir de los datos que introduces. Es útil como referencia inicial, pero no sustituye el análisis individual de la vivienda."
         },
         {
           "kind": "valuator",
@@ -49,12 +53,20 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Estudio personalizado"
+        },
+        {
           "kind": "h2",
-          "text": "¿Prefieres que te llame un asesor?"
+          "text": "Valoración con un asesor"
         },
         {
           "kind": "lead",
-          "text": "Déjanos tus datos y un asesor de HousySpace se pondrá en contacto contigo para valorar tu vivienda en persona."
+          "text": "Analizamos tu vivienda, sus particularidades y las condiciones del mercado, y te explicamos qué factores influyen en su valor."
+        },
+        {
+          "kind": "p",
+          "text": "Déjanos tus datos y un asesor de HousySpace te llamará para valorar tu vivienda en persona."
         },
         {
           "kind": "form",
@@ -126,7 +138,8 @@
               "kind": "field"
             },
             {
-              "kind": "note",
+              "kind": "details",
+              "summary": "Información básica sobre protección de datos",
               "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
             },
             {

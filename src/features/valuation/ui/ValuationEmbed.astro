@@ -12,14 +12,14 @@ const { url, title } = Astro.props;
 ---
 
 {url !== undefined && (
-  <>
+  <div class="mt-[clamp(1.5rem,3vw,2.25rem)] rounded-2xl bg-stone p-1.5">
     <iframe
       src={url}
       title={title}
       loading="lazy"
       referrerpolicy="strict-origin-when-cross-origin"
       sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-      class="mt-[clamp(1.5rem,3vw,2.25rem)] h-[min(90vh,50rem)] w-full border border-line-strong bg-white"
+      class="block h-[min(90vh,50rem)] w-full rounded-[11px] bg-white"
     ></iframe>
-  </>
+  </div>
 )}

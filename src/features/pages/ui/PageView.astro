@@ -153,7 +153,9 @@ const SURFACES = {
           ? "py-[clamp(3.5rem,7vw,6rem)]"
           : legal
             ? "py-[clamp(3.25rem,7vw,3.5rem)]"
-            : "py-[clamp(2.75rem,5vw,4.125rem)]",
+            : paperHead === "service"
+              ? "py-[clamp(2.375rem,6.2vh,3.625rem)] [&_h2]:text-[clamp(1.5625rem,2.64vw,2.375rem)] [&_h2]:font-black"
+              : "py-[clamp(2.75rem,5vw,4.125rem)]",
         hero && "[&_ol]:mt-[clamp(1.875rem,4vw,3.375rem)]",
         hero && section.id !== undefined && "[&_h2]:text-[clamp(1.75rem,3.6vw,3rem)]",
         hero &&
@@ -178,6 +180,7 @@ const SURFACES = {
           <PageItems
             locale={locale}
             buttonSize={hero ? "lg" : "md"}
+            plain={paperHead === "service"}
             units={groupItems(section.items)}
           />
         )}
