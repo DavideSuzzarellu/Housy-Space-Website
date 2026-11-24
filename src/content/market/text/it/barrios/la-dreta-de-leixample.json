@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "El corazón señorial de Barcelona: Passeig de Gràcia, Quadrat d'Or y modernismo a cada paso.",
+  "text": [
+    "Entre la calle Balmes y el Passeig de Sant Joan se extiende el barrio al que la burguesía catalana trasladó su vida y sus negocios, y todavía se nota. El plan Cerdà se aprobó en 1859 y un año después la reina Isabel II colocó la primera piedra; las primeras fincas se levantaron en el cruce de Consell de Cent con Roger de Llúria, y al principio acogió industrias, como la fábrica Elizalde, de las primeras de España en fabricar coches y motores.",
+    "Después llegó la burguesía y, con ella, el modernismo: aquí están el Passeig de Gràcia, con la Casa Batlló y La Pedrera, la Rambla de Catalunya y la plaça de Catalunya, que no estaba prevista en el plan Cerdà y acabó siendo el centro de la ciudad, en una zona que se conoce como el Quadrat d'Or. Con el tiempo, comercios, oficinas, cines y teatros fueron ocupando muchas plantas que antes eran vivienda. Es el barrio con los precios más altos del Eixample: 6.224 €/m² de compraventa y 1.596 €/mes de alquiler medio, las cifras más elevadas del distrito. A cambio, los pisos son amplios y de gran calidad constructiva, con techos altos, suelos hidráulicos y molduras originales cuando se han conservado."
+  ],
+  "housing": "Pisos amplios en fincas señoriales y modernistas, con techos altos.",
+  "places": [
+    "Passeig de Gràcia",
+    "Casa Batlló",
+    "La Pedrera",
+    "Rambla de Catalunya",
+    "Plaça de Catalunya"
+  ]
+}

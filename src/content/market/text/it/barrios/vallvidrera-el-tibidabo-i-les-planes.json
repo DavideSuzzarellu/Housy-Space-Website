@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "Collserola en la puerta de casa: casas con jardín, masías y vistas sobre toda la ciudad.",
+  "text": [
+    "Es uno de los barrios más extensos de Barcelona (11,33 km²) y de los menos densos (430 hab./km²), porque casi todo su territorio es la sierra de Collserola. Agrupa tres zonas muy distintas, Vallvidrera, el Tibidabo y les Planes, con el templo del Sagrat Cor y el parque de atracciones en la cima y la Torre de Collserola, de Norman Foster, como referencia visible desde media ciudad.",
+    "Vivir aquí es vivir dentro del parque natural: casas con jardín, calles tranquilas y vistas, con el funicular de Vallvidrera y los trenes de FGC para bajar a la ciudad. Su precio de compraventa, 3.766 €/m², es el más bajo de Sarrià-Sant Gervasi, mientras que el alquiler medio, 1.614 €/mes, está entre los más altos de Barcelona, una cifra que se apoya en pocas operaciones."
+  ],
+  "housing": "Casas unifamiliares con jardín y algunas masías, entre pinares y con vistas.",
+  "places": [
+    "Tibidabo",
+    "Torre de Collserola",
+    "Funicular de Vallvidrera",
+    "Parc Natural de la Serra de Collserola"
+  ]
+}

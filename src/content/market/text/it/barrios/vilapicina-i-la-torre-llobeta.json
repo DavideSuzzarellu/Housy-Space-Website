@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "El Nou Barris más cercano al centro, con un núcleo antiguo de más de cinco siglos y una calle mayor propia.",
+  "text": [
+    "Es el barrio más meridional de Nou Barris y se urbanizó antes que los demás. Su núcleo antiguo reúne la iglesia de Santa Eulàlia de Vilapicina, Ca n'Artés, un hostal de los siglos XV y XVI, y Can Basté, una masía del siglo XVIII. Tras la guerra, los terrenos de la torre Llobeta, propiedad del ejército, se destinaron a vivienda social: un polígono de once bloques ocupados entre 1952 y 1955. En las antiguas cocheras de autobuses de Borbó hay una gran manzana de equipamientos con biblioteca, centro deportivo, casal de gente mayor y centro de salud.",
+    "Ese conjunto forma hoy un vecindario con personalidad propia. La calle Cartellà-Costa i Cuixart funciona como su calle mayor, y la plaça de Virrey Amat, como el punto de encuentro más céntrico. La casa señorial de la Torre Llobeta es centro cívico desde 1983. Con 3.569 €/m², su precio de compraventa es el más alto de Nou Barris. Si vendes, el precio medio de compraventa está un 21 % por encima de la media de Nou Barris. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 286.000 €, y el barrio está uno de los más caros de Nou Barris (1.º de 13 por precio). Si inviertes, el alquiler medio (888 €/mes) está un 12 % por encima del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+  ],
+  "housing": "Polígono de bloques de vivienda social de los años cincuenta y pisos de distintas épocas.",
+  "places": [
+    "Església de Santa Eulàlia de Vilapicina",
+    "Ca n'Artés",
+    "Can Basté",
+    "Torre Llobeta",
+    "Plaça de Virrey Amat"
+  ]
+}

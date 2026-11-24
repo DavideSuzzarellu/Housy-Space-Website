@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "El barrio más poblado de Ciutat Vella, al oeste de La Rambla, con museos, mercados y calles de todos los orígenes.",
+  "text": [
+    "El nombre lo dice: raval significa arrabal, la parte de la ciudad que crecía junto al casco antiguo con conventos, hospitales y talleres. Hoy lo definen la Rambla del Raval, con el gato de Botero, el MACBA, el CCCB y la Biblioteca de Catalunya, instalada en el antiguo Hospital de la Santa Creu, y una población muy diversa que llena la calle a casi cualquier hora.",
+    "Los pisos son pequeños y antiguos, sobre todo en las calles más estrechas, y muchos se han rehabilitado en los últimos años. Con 3.499 €/m², es el precio medio de compraventa más bajo de Ciutat Vella. Conviene visitar la finca de día y de noche antes de decidir, porque el ambiente cambia de una calle a otra."
+  ],
+  "housing": "Fincas antiguas con pisos pequeños, muchas ya rehabilitadas.",
+  "places": [
+    "Rambla del Raval",
+    "MACBA",
+    "CCCB",
+    "Biblioteca de Catalunya",
+    "Mercat de la Boqueria"
+  ]
+}

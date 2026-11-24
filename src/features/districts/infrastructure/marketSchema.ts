@@ -1,4 +1,5 @@
 import { z } from "astro/zod";
+import type { BarrioText, DistrictText } from "./zoneTextSchema";
 
 /**
  * Official figures of Barcelona's districts and barrios (Portal de Dades, Open Data BCN, CartoBCN;
@@ -26,11 +27,6 @@ const barrio = z
     saleProvisional: provisional.nullable().optional(),
     rentSeries: z.array(point),
     rentProvisional: provisional.nullable().optional(),
-    /** Client prose of the reference barrio page (Spanish only, verbatim). */
-    lead: z.string(),
-    text: z.array(z.string()),
-    housing: z.string(),
-    places: z.array(z.string()),
   })
   .strict();
 
@@ -45,12 +41,6 @@ const district = z
     area: z.number(),
     barrioCount: z.number(),
     rentPerM2: z.number(),
-    lead: z.string(),
-    history: z.array(z.string()),
-    summary: z.string(),
-    landmarks: z.array(
-      z.object({ name: z.string(), where: z.string(), text: z.string() }).strict(),
-    ),
     image: z.string(),
     saleSeries: z.array(point),
     rentSeries: z.array(point),
@@ -74,6 +64,18 @@ export const marketSchema = z
   })
   .strict();
 
-export type MarketData = z.infer<typeof marketSchema>;
-export type MarketBarrio = MarketData["barrios"][number];
-export type MarketDistrict = MarketData["districts"][number];
+export type MarketNumbers = z.infer<typeof marketSchema>;
+
+/** A district or barrio with its prose of the page locale (`marketText`) and whether it is the Spanish fallback. */
+type Prose<Text extends { kind: string; translated: boolean }> = Omit<
+  Text,
+  "kind" | "translated"
+> & {
+  proseFallback: boolean;
+};
+export type MarketDistrict = MarketNumbers["districts"][number] & Prose<DistrictText>;
+export type MarketBarrio = MarketNumbers["barrios"][number] & Prose<BarrioText>;
+export type MarketData = Omit<MarketNumbers, "districts" | "barrios"> & {
+  districts: MarketDistrict[];
+  barrios: MarketBarrio[];
+};

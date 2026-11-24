@@ -5,10 +5,6 @@ import { getPosts, type BlogPost } from "@/features/blog/application/posts";
 import BlogIndex from "@/features/blog/ui/BlogIndex.astro";
 import PostView from "@/features/blog/ui/PostView.astro";
 import { getMarket } from "@/features/districts/application/market";
-import type {
-  MarketBarrio,
-  MarketDistrict,
-} from "@/features/districts/infrastructure/marketSchema";
 import BarrioView from "@/features/districts/ui/BarrioView.astro";
 import DistrictView from "@/features/districts/ui/DistrictView.astro";
 import LivingView from "@/features/districts/ui/LivingView.astro";
@@ -42,8 +38,8 @@ type View =
   | { readonly view: "service"; readonly service: ServiceKey }
   | { readonly view: "living" }
   | { readonly view: "post"; readonly post: BlogPost }
-  | { readonly view: "district"; readonly district: MarketDistrict }
-  | { readonly view: "barrio"; readonly barrio: MarketBarrio };
+  | { readonly view: "district"; readonly slug: string }
+  | { readonly view: "barrio"; readonly slug: string };
 
 export const getStaticPaths = (async () => {
   const market = await getMarket();
@@ -74,13 +70,13 @@ export const getStaticPaths = (async () => {
       ...market.districts.map((district) =>
         entry(getLocalizedPath("district", locale, { district: district.slug }), {
           view: "district",
-          district,
+          slug: district.slug,
         }),
       ),
       ...market.barrios.map((barrio) =>
         entry(getLocalizedPath("barrio", locale, { barrio: barrio.slug }), {
           view: "barrio",
-          barrio,
+          slug: barrio.slug,
         }),
       ),
     ];
@@ -95,10 +91,9 @@ interface Props {
 const { locale, target } = Astro.props;
 const dictionary = getDictionary(locale);
 const home = { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) };
-const market = await getMarket();
+const market = await getMarket(locale);
 const posts = await getPosts();
 const zones = dictionary.zones;
-const isSpanish = locale === DEFAULT_LOCALE;
 
 const editorial =
   target.view === "editorial"
@@ -121,6 +116,18 @@ const longText =
           target.key === "internationalGuide"
         ? ("legal" as const)
         : undefined;
+
+// Prose of the zone pages comes in the page locale, or in Spanish per entry (`proseFallback`).
+const district =
+  target.view === "district"
+    ? market.districts.find((candidate) => candidate.slug === target.slug)
+    : undefined;
+const barrio =
+  target.view === "barrio"
+    ? market.barrios.find((candidate) => candidate.slug === target.slug)
+    : undefined;
+if (target.view === "district" && district === undefined) throw new Error(target.slug);
+if (target.view === "barrio" && barrio === undefined) throw new Error(target.slug);
 
 function metaOf(): {
   title: string;
@@ -154,19 +161,19 @@ function metaOf(): {
       ),
     };
   }
-  if (target.view === "district") {
+  if (district !== undefined) {
     return {
-      title: `${target.district.name} · ${dictionary.nav.living} · HousySpace`,
-      description: target.district.lead,
-      alternates: getAlternates("district", { district: target.district.slug }),
+      title: `${district.name} · ${dictionary.nav.living} · HousySpace`,
+      description: district.lead,
+      alternates: getAlternates("district", { district: district.slug }),
     };
   }
-  if (target.view === "barrio") {
+  if (barrio !== undefined) {
     return {
-      title: `${target.barrio.name} · ${zones.barrioMeta} · HousySpace`,
-      description: zones.barrioDescription.replace("{name}", target.barrio.name),
+      title: `${barrio.name} · ${zones.barrioMeta} · HousySpace`,
+      description: zones.barrioDescription.replace("{name}", barrio.name),
       alternates: getAlternates("barrio", {
-        barrio: target.barrio.slug,
+        barrio: barrio.slug,
       }),
     };
   }
@@ -200,7 +207,9 @@ const blogJsonLd = isPost
 // Prose not translated yet: shown in Spanish, kept out of the index until it is (see ROADMAP).
 const proseFallback =
   (editorial?.fallback ?? false) ||
-  (!isSpanish && (target.view === "district" || target.view === "living")) ||
+  (target.view === "living" && market.districts.some((candidate) => candidate.proseFallback)) ||
+  (district?.proseFallback ?? false) ||
+  (barrio?.proseFallback ?? false) ||
   (target.view === "post" && target.post.data.language !== locale);
 // The valuation page hangs from the services like the reference's valuation service page.
 const serviceCrumb =
@@ -278,16 +287,7 @@ const crumbs = [
     )
   )}
   {target.view === "post" && <PostView post={target.post} locale={locale} />}
-  {target.view === "living" && <LivingView locale={locale} market={market} fallback={!isSpanish} />}
-  {target.view === "district" && (
-    <DistrictView
-      locale={locale}
-      district={target.district}
-      market={market}
-      fallback={!isSpanish}
-    />
-  )}
-  {target.view === "barrio" && (
-    <BarrioView locale={locale} barrio={target.barrio} market={market} fallback={!isSpanish} />
-  )}
+  {target.view === "living" && <LivingView locale={locale} market={market} />}
+  {district !== undefined && <DistrictView locale={locale} district={district} market={market} />}
+  {barrio !== undefined && <BarrioView locale={locale} barrio={barrio} market={market} />}
 </BaseLayout>

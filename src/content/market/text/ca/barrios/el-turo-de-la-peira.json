@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": false,
+  "lead": "Un barrio circular alrededor de una colina, con parque, mirador y mucho espíritu vecinal.",
+  "text": [
+    "El barrio se adapta al relieve y rodea el turó de la Peira, una colina que pertenecía a la finca de Can Peguera y cuyo parque se inauguró en 1936, con unas ocho hectáreas de matorrales y pinares y un mirador coronado por una gran cruz de hierro. A principios de los años sesenta, la construcción de viviendas redujo su extensión.",
+    "Los bloques, de ventanas simétricas y sin adornos, trazan a veces curvas alrededor de la colina. Es uno de los barrios más afectados por la aluminosis: tras el derrumbe de un edificio en 1990 se impulsó la remodelación de los bloques afectados, y sus vecinos han tenido un papel activo en ella. Con 49.090 hab./km², es uno de los barrios más densos de Barcelona."
+  ],
+  "housing": "Bloques de pisos de los años cincuenta y sesenta, muchos de ellos remodelados por aluminosis.",
+  "places": ["Parc del Turó de la Peira"]
+}

@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un monasterio del siglo XIV, avenidas arboladas y casas con jardín en uno de los barrios con más renta de la ciudad.",
+  "text": [
+    "El barrio toma su nombre del monasterio de clarisas que la reina Elisenda de Montcada fundó en el siglo XIV, con un claustro de dos pisos y una iglesia gótica de una sola nave; en la capilla de Sant Miquel se conservan las pinturas de Ferrer Bassa, de 1346.",
+    "Hoy es un barrio tranquilo y verde, de casas unifamiliares con jardín y edificios de alto nivel, con la avenida Pearson como emblema. Con 6.079 €/m² y 1.948 €/mes, tiene los precios más altos de Les Corts. Junto a la Diagonal están además el Palau Reial y los Pavellons Güell, de Gaudí."
+  ],
+  "housing": "Casas unifamiliares con jardín y edificios residenciales de alto nivel, de superficies amplias.",
+  "places": [
+    "Monestir de Pedralbes",
+    "Palau Reial de Pedralbes",
+    "Pavellons Güell",
+    "Avinguda Pearson"
+  ]
+}
