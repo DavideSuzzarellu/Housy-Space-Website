@@ -1,4 +1,10 @@
+import { readFileSync } from "node:fs";
 import { defineConfig, devices } from "@playwright/test";
+
+// The production origin the specs assert comes from the same file as the site and the worker.
+const { productionOrigin } = JSON.parse(readFileSync("./deploy.config.json", "utf8")) as {
+  productionOrigin: string;
+};
 
 // Port is overridable (E2E_PORT) so parallel worktrees never share one. A server already on it is
 // NOT reused unless E2E_REUSE_SERVER=1: reusing someone else's stale build silently tests old code.
@@ -32,7 +38,7 @@ export default defineConfig({
     url: `http://localhost:${PORT}${ASTRO_BASE.replace(/\/$/, "")}/es`,
     reuseExistingServer: process.env["E2E_REUSE_SERVER"] === "1",
     // Production deploys under a repository sub-path; tests use the site root.
-    env: { ASTRO_BASE, ASTRO_SITE: "https://www.housyspace.com" },
+    env: { ASTRO_BASE, ASTRO_SITE: productionOrigin },
     timeout: 300_000,
   },
 });

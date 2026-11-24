@@ -3,7 +3,7 @@
  * head tags of every page, reciprocal hreflang, redirect pages, sitemap and robots.txt.
  * Exits with 1 and prints every problem; used locally and as a CI gate.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { auditRedirects, auditSite } from "../src/shared/lib/seo/headAudit.ts";
@@ -48,6 +48,23 @@ for (const url of listed) {
 if (!/^Sitemap: \S*sitemap-index\.xml$/m.test(robots)) problems.push("robots.txt: no Sitemap line");
 if (/^Disallow:\s*\/(_astro|brand|media)?\/?$/m.test(robots)) {
   problems.push("robots.txt: blocks the site or its assets");
+}
+
+// `_redirects` (production build): every destination must be a page of this build.
+const redirectsFile = path.join(DIST, "_redirects");
+if (existsSync(redirectsFile)) {
+  const destinations = new Set(
+    readFileSync(redirectsFile, "utf8")
+      .split("\n")
+      .filter((line) => line.trim() !== "")
+      .map((line) => new URL(line.split(" ")[1] ?? "").pathname),
+  );
+  for (const destination of destinations) {
+    const target = path.join(DIST, destination);
+    if (!existsSync(path.join(target, "index.html")) && !existsSync(`${target}.html`)) {
+      problems.push(`_redirects: destination ${destination} is not a page of this build`);
+    }
+  }
 }
 
 console.log(

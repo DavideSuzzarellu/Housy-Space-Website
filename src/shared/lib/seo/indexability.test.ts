@@ -2,17 +2,20 @@ import { describe, expect, it } from "vitest";
 import { isIndexableSite, PRODUCTION_ORIGIN, robotsMetaContent } from "./indexability";
 
 describe("isIndexableSite", () => {
+  const host = new URL(PRODUCTION_ORIGIN).host;
+  const otherHost = host.startsWith("www.") ? host.slice(4) : `www.${host}`;
+
   it("is true only for the production origin", () => {
     expect(isIndexableSite(new URL(PRODUCTION_ORIGIN))).toBe(true);
-    expect(isIndexableSite(new URL("https://www.housyspace.com/"))).toBe(true);
+    expect(isIndexableSite(new URL(`${PRODUCTION_ORIGIN}/es`))).toBe(true);
   });
 
   it.each([
     "https://DavideSuzzarellu.github.io",
     "http://localhost:4321",
-    "https://housyspace.com",
-    "http://www.housyspace.com",
-    "https://www.housyspace.com.evil.example",
+    `https://${otherHost}`,
+    `http://${host}`,
+    `https://${host}.evil.example`,
   ])("is false for %s", (origin) => {
     expect(isIndexableSite(new URL(origin))).toBe(false);
   });

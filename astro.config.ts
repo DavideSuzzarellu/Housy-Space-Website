@@ -5,6 +5,7 @@ import { hostFiles } from "./scripts/host-files-integration";
 import { sitemapFromHeads } from "./scripts/sitemap-integration";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
+import { PRODUCTION_ORIGIN } from "./src/shared/lib/seo/indexability";
 import { getRetiredRedirects } from "./src/shared/i18n/retiredRoutes";
 
 const sitemapLocales = Object.fromEntries(
@@ -13,10 +14,14 @@ const sitemapLocales = Object.fromEntries(
 
 // GitHub Pages serves the site under the repository name; the e2e build overrides it with
 // ASTRO_BASE="/" (and ASTRO_SITE to the production origin the specs assert) so tests run against the site root.
-const BASE = process.env["ASTRO_BASE"] ?? "/Housy-Space-Website";
+// `bun run build:production` (ASTRO_PRODUCTION=1): the final domain, at its root.
+const IS_PRODUCTION = process.env["ASTRO_PRODUCTION"] === "1";
+const BASE = IS_PRODUCTION ? "/" : (process.env["ASTRO_BASE"] ?? "/Housy-Space-Website");
 const BASE_PREFIX = BASE === "/" ? "" : BASE;
 // Default = GitHub Pages staging (noindex). `bun run build:production` sets the production origin.
-const SITE = process.env["ASTRO_SITE"] ?? "https://DavideSuzzarellu.github.io";
+const SITE = IS_PRODUCTION
+  ? PRODUCTION_ORIGIN
+  : (process.env["ASTRO_SITE"] ?? "https://DavideSuzzarellu.github.io");
 
 // Hosting/adapter is not decided yet (AGENTS.md §2): keep this config adapter-agnostic.
 export default defineConfig({

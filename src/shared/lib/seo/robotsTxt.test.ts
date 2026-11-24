@@ -11,15 +11,15 @@ describe("renderBlockedRobotsTxt", () => {
 
   it("is told apart from the production file", () => {
     expect(blocksWholeSite(text)).toBe(true);
-    expect(blocksWholeSite(renderRobotsTxt("https://www.housyspace.com"))).toBe(false);
+    expect(blocksWholeSite(renderRobotsTxt("https://housyspace.com"))).toBe(false);
   });
 });
 
 describe("renderRobotsTxt", () => {
-  const text = renderRobotsTxt("https://www.housyspace.com");
+  const text = renderRobotsTxt("https://housyspace.com");
 
   it("points to the sitemap index of the site", () => {
-    expect(text).toContain("Sitemap: https://www.housyspace.com/sitemap-index.xml");
+    expect(text).toContain("Sitemap: https://housyspace.com/sitemap-index.xml");
   });
 
   it("allows the site and its assets, and blocks only the internal sheet sources", () => {

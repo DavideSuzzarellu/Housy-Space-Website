@@ -1,10 +1,14 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { DISTRICTS } from "../../src/features/districts/domain/districts";
 import { LOCALE_META, LOCALES } from "../../src/shared/i18n/config";
 import { getAlternates, getLocalizedPath } from "../../src/shared/i18n/routes";
 import { blockingAxeViolations, skipIntro } from "./support";
 
-const SITE = "https://www.housyspace.com";
+// Production origin: the same file the site and the Cloudflare worker read (deploy.config.json).
+const { productionOrigin: SITE } = JSON.parse(readFileSync("deploy.config.json", "utf8")) as {
+  productionOrigin: string;
+};
 
 for (const locale of LOCALES) {
   test.describe(`home (${locale})`, () => {

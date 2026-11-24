@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/build-property-sheets.ts",
-    "build:production": "ASTRO_SITE=https://www.housyspace.com ASTRO_BASE=/ bun run build",
+    "build:production": "ASTRO_PRODUCTION=1 bun run build",
     "build:sheets": "node scripts/build-property-sheets.ts",
     "preview": "astro preview",
     "test": "vitest run",

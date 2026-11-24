@@ -4,7 +4,7 @@ import { toAreaM2 } from "../domain/property";
 import { amount, approximateIn, makeProperty } from "../testing/makeProperty";
 import { buildPropertyJsonLd } from "./propertyJsonLd";
 
-const SITE = "https://www.housyspace.com";
+const SITE = "https://housyspace.com";
 const URL_ES = `${SITE}/es/venta/piso-en-el-clot-1001`;
 
 const property = makeProperty("1001", {

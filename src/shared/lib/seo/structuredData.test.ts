@@ -18,7 +18,7 @@ const company: SeoCompany = {
   aicatNumber: "14032",
   address: { street: "Travessera de Gràcia 73, 2.º 3.ª", postalCode: "08006", city: "Barcelona" },
 };
-const siteUrl = "https://www.housyspace.com";
+const siteUrl = "https://housyspace.com";
 const url = `${siteUrl}/es/servicios/valoracion`;
 const base = { siteUrl, url, language: "es-ES", name: "Valoración", description: "Texto." };
 
