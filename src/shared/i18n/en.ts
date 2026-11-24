@@ -381,6 +381,16 @@ const en = {
     all: "All",
     filterLabel: "Filter by category",
     back: "Back to the blog",
+    listHeading: "Explore *our articles*",
+    explore: "Explore our articles",
+    read: "Read the article",
+    fresh: "New",
+    ownersKicker: "For owners",
+    ctaHeading: "Thinking of *selling your home?*",
+    ctaText:
+      "We tell you honestly whether it makes sense, when and how. The first step is knowing what it is worth.",
+    ctaValue: "Value my home",
+    ctaTalk: "Let's talk about your sale",
   },
   zones: {
     saleLabel: "Sale price",

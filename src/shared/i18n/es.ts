@@ -388,6 +388,16 @@ const es = {
     all: "Todas",
     filterLabel: "Filtrar por categoría",
     back: "Volver al blog",
+    listHeading: "Explora *nuestros artículos*",
+    explore: "Explora nuestros artículos",
+    read: "Leer el artículo",
+    fresh: "Nuevo",
+    ownersKicker: "Para propietarios",
+    ctaHeading: "¿Estás pensando *en vender tu vivienda?*",
+    ctaText:
+      "Te decimos con honestidad si te conviene, cuándo y cómo. El primer paso es saber cuánto vale.",
+    ctaValue: "Valorar mi vivienda",
+    ctaTalk: "Hablemos de tu venta",
   },
   zones: {
     saleLabel: "Precio de compraventa",

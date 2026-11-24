@@ -382,6 +382,16 @@ const it = {
     all: "Tutte",
     filterLabel: "Filtra per categoria",
     back: "Torna al blog",
+    listHeading: "Esplora *i nostri articoli*",
+    explore: "Esplora i nostri articoli",
+    read: "Leggi l'articolo",
+    fresh: "Nuovo",
+    ownersKicker: "Per i proprietari",
+    ctaHeading: "Stai pensando *di vendere la tua casa?*",
+    ctaText:
+      "Ti diciamo con onestà se ti conviene, quando e come. Il primo passo è sapere quanto vale.",
+    ctaValue: "Valuta la mia casa",
+    ctaTalk: "Parliamo della tua vendita",
   },
   zones: {
     saleLabel: "Prezzo di vendita",

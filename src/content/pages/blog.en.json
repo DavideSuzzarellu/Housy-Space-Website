@@ -2,20 +2,16 @@
   "title": "Blog · HousySpace",
   "description": "HousySpace blog about neighbourhoods, architecture, the market and property regulations in Barcelona.",
   "head": {
-    "heading": "Blog",
+    "heading": "The *Blog*",
     "photo": false,
     "items": [
       {
-        "kind": "p",
-        "text": "Blog"
-      },
-      {
-        "kind": "p",
-        "text": "HousySpace · Barcelona"
+        "kind": "tag",
+        "text": "Property knowledge in Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Neighbourhoods, architecture, the market and regulations, explained calmly by those who work in the city every day."
+        "text": "Analysis, advice and property decisions in Barcelona, explained calmly by those who work in the city every day."
       }
     ]
   },
