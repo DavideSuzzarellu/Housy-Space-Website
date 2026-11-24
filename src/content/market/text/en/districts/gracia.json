@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "A former village within the city: squares, narrow streets and a strong neighbourhood spirit.",
+  "history": [
+    "Gràcia was an independent municipality until 1897 and keeps its layout of narrow streets and squares, such as Plaça del Sol, Plaça de la Virreina and Plaça de la Vila, with its clock tower, as well as local shops and a lively community life. Every August it holds its Festa Major, which has existed since 1817 and in which the residents themselves decorate the streets and compete for the best decorations.",
+    "Its five neighbourhoods climb from the Diagonal to the foot of Collserola: La Vila de Gràcia, El Camp d'en Grassot i Gràcia Nova, La Salut, Vallcarca i els Penitents and El Coll. The housing mixes low-rise houses and old buildings with blocks of flats, and the atmosphere changes a lot between the lively Vila and the quieter slopes to the north.",
+    "Across its 5 neighbourhoods, the average sale price ranges from 3,558 €/m² in El Coll to 5,094 €/m² in La Vila de Gràcia, and the average rent from 906 €/month in El Coll to 1,105 €/month in El Camp d'en Grassot i Gràcia Nova.",
+    "It is a district much sought after for its atmosphere and for the chance to live on foot. It is worth visiting each street at different times of day, because within a few blocks it can change a great deal from one square to the next."
+  ],
+  "summary": "Gràcia has 126,830 inhabitants in 4.22 km² and 5 neighbourhoods. Its average sale price was 4,818 €/m² in 2025, 13% above the city average. The average rent is 1,082 €/month.",
+  "landmarks": [
+    {
+      "name": "Park Güell",
+      "where": "La Salut",
+      "text": "Antoni Gaudí's park, a World Heritage Site."
+    },
+    {
+      "name": "Casa Vicens",
+      "where": "La Vila de Gràcia",
+      "text": "The first house Gaudí designed."
+    },
+    {
+      "name": "Plaça de la Vila de Gràcia",
+      "where": "La Vila de Gràcia",
+      "text": "The square of the former town hall, with its clock tower."
+    },
+    {
+      "name": "Mercat de la Llibertat",
+      "where": "La Vila de Gràcia",
+      "text": "An iron market from the late 19th century."
+    },
+    {
+      "name": "Festa Major de Gràcia",
+      "where": "The whole district",
+      "text": "In August the streets are decorated and filled with activities."
+    }
+  ]
+}

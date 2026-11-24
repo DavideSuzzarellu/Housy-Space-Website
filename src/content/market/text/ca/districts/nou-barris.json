@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "El nord de la ciutat: tretze barris amb identitat pròpia, molta vida veïnal i parcs amb vistes.",
+  "history": [
+    "Nou Barris ocupa l'extrem nord de Barcelona, entre la serra de Collserola i l'avinguda Meridiana. Els seus tretze barris van créixer sobretot entre els anys cinquanta i setanta, amb l'arribada de milers de persones d'altres regions d'Espanya, i molts es van transformar gràcies a la lluita de les associacions de veïns, que van reclamar serveis, transport i equipaments.",
+    "Avui el districte combina blocs d'aquella època amb barris en rehabilitació, grans parcs com el Parc Central de Nou Barris, on hi ha la seu del districte, vessants amb vistes a la ciutat i diverses línies de metro. Els seus preus són dels més continguts de Barcelona, per la qual cosa sol interessar a qui busca un primer habitatge o una inversió amb una entrada més baixa.",
+    "Entre els 13 barris, el preu mitjà de compravenda va dels 1.697 €/m² a Vallbona als 3.569 €/m² a Vilapicina i la Torre Llobeta, i el lloguer mitjà, dels 395 €/mes a Can Peguera als 902 €/mes a la Guineueta.",
+    "En els blocs dels anys cinquanta a setanta convé revisar a fons l'estat de l'edifici i de la comunitat, i possibles patologies com l'aluminosi."
+  ],
+  "summary": "Nou Barris té 183.280 habitants en 8,06 km² i 13 barris. És el districte amb el preu de compravenda més baix de Barcelona: 2.952 €/m² el 2025. El lloguer mitjà, 796 €/mes.",
+  "landmarks": [
+    {
+      "name": "Parc Central de Nou Barris",
+      "where": "Centre del districte",
+      "text": "Gran parc urbà al costat de la seu del districte."
+    },
+    {
+      "name": "Seu del Districte",
+      "where": "Centre del districte",
+      "text": "L'antic Institut Mental de la Santa Creu, avui seu del districte."
+    },
+    {
+      "name": "Castell de Torre Baró",
+      "where": "Torre Baró",
+      "text": "El castell que mai no es va acabar, convertit en mirador sobre la ciutat."
+    },
+    {
+      "name": "Via Júlia",
+      "where": "La Prosperitat i Verdun",
+      "text": "Rambla amb comerç i vida de barri."
+    },
+    {
+      "name": "Collserola",
+      "where": "Barris alts del districte",
+      "text": "Camins i miradors a la serra, a pocs minuts."
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "title": "Política de privacitat · HousySpace",
+  "description": "Política de privacitat d'HousySpace: com tractem les teves dades personals i com exercir els teus drets de protecció de dades.",
+  "head": {
+    "heading": "Política de privacitat",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Traducció automàtica, pendent de revisió jurídica.** Traduïda del text espanyol aprovat."
+        },
+        {
+          "kind": "note",
+          "text": "Darrera actualització: 21 de novembre de 2026"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Qui n'és el responsable"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.**\nCIF B26903419\nRegistre d'Agents Immobiliaris de Catalunya: AICAT núm. 14032\nCorreu electrònic: [info@housyspace.com](mailto:info@housyspace.com)\nTelèfon: 613 084 804\nOficina: Travessera de Gràcia 73, 2n 3a, 08006 Barcelona (de dilluns a divendres, de 10:00 a 19:00)\nDomicili fiscal: Travessera de Gràcia 73, 2n 3a, 08006 Barcelona\nRegistre Mercantil de Barcelona: tom/I.R.U.S. 1000472070976, foli 1, full B 655522, inscripció 1"
+        },
+        {
+          "kind": "h2",
+          "text": "2. Quines dades tractem"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Dades de contacte:** nom, cognoms, telèfon, correu electrònic, idioma i canal o franja horària que prefereixis."
+            },
+            {
+              "title": "",
+              "text": "**Dades de la teva cerca** (formulari «La meva cerca»): operació (compra o lloguer), tipus d'immoble, zones, pressupost, superfície, dormitoris, banys, característiques, terminis i, si ens ho expliques, la teva situació de finançament o de venda de l'habitatge actual."
+            },
+            {
+              "title": "",
+              "text": "**Dades del teu habitatge** si demanes una valoració o el vols vendre: adreça o barri, tipologia, superfície i estat."
+            },
+            {
+              "title": "",
+              "text": "**Els teus comentaris** i les dades que decideixis incloure-hi. No hi incloguis dades que no siguin necessàries, com dades de salut o d'altres persones."
+            },
+            {
+              "title": "",
+              "text": "**Prova dels teus consentiments:** text que vas acceptar, versió del text i data."
+            },
+            {
+              "title": "",
+              "text": "**Dades tècniques de la visita:** en obrir el web, els nostres servidors i els serveis externs que es carreguen (per exemple, els mapes de Google) reben la teva adreça IP i dades bàsiques del teu navegador. Com funcionen s'explica a la [política de galetes](route:cookies)."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Les dades ens les dones tu. No demanem dades especialment protegides."
+        },
+        {
+          "kind": "h2",
+          "text": "3. Per a què les fem servir i amb quina base jurídica"
+        },
+        {
+          "kind": "table",
+          "head": ["Finalitat", "Base jurídica", "Quant de temps"],
+          "rows": [
+            [
+              "Atendre les teves consultes i sol·licituds de contacte (formulari de Contacte, correu, WhatsApp o telèfon).",
+              "El teu consentiment (art. 6.1.a RGPD) i l'aplicació de mesures precontractuals a petició teva (art. 6.1.b).",
+              "El temps necessari per atendre't. Després, bloquejades mentre puguin sorgir responsabilitats legals."
+            ],
+            [
+              "Valorar el teu habitatge (valorador i sol·licitud de valoració presencial).",
+              "El teu consentiment (art. 6.1.a) i mesures precontractuals a petició teva (art. 6.1.b).",
+              "El temps necessari per a la valoració i el seu seguiment. Després, bloquejades el temps que exigeixi la llei."
+            ],
+            [
+              "Mantenir la teva cerca d'habitatge a la nostra base de dades de demandants (formulari «La meva cerca»), creuar-la amb els immobles disponibles, avisar-te dels que hi encaixen i contactar amb tu.",
+              "El teu consentiment (art. 6.1.a), que prestes marcant la casella del formulari.",
+              "Mentre la teva cerca estigui activa i, com a màxim, 12 mesos des del nostre darrer contacte amb tu."
+            ],
+            [
+              "Prestar els serveis que contractis (intermediació, assessorament, gestió de lloguer…) i complir les obligacions legals associades.",
+              "Execució del contracte (art. 6.1.b) i compliment d'obligacions legals (art. 6.1.c), per exemple les fiscals i les de prevenció del blanqueig de capitals.",
+              "Mentre duri la relació i, després, els terminis que fixi la llei per a cada obligació."
+            ],
+            [
+              "Enviar-te comunicacions comercials sobre immobles, serveis i novetats per correu electrònic, WhatsApp o telèfon, segons el canal que triïs.",
+              "El teu consentiment (art. 6.1.a RGPD) i l'autorització expressa que exigeix l'art. 21 de la LSSI. És voluntari i no afecta la teva cerca.",
+              "Fins que retiris el teu consentiment o et donis de baixa."
+            ],
+            [
+              "Enviar-te el butlletí i els articles d'HousySpace per correu electrònic.",
+              "El teu consentiment (art. 6.1.a RGPD) i l'autorització expressa que exigeix l'art. 21 de la LSSI. És voluntari i independent dels altres.",
+              "Fins que et donis de baixa amb l'enllaç de cada enviament o escrivint a info@housyspace.com."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Cada consentiment és independent i pots retirar-lo en qualsevol moment, sense que afecti la licitud del tractament anterior. Les caselles de comunicacions comercials i de butlletí vénen sense marcar i no marcar-les no afecta la teva cerca."
+        },
+        {
+          "kind": "h2",
+          "text": "4. Qui rep les teves dades"
+        },
+        {
+          "kind": "p",
+          "text": "No cedim les teves dades a tercers, tret d'obligació legal (per exemple, a l'Administració tributària o a les autoritats competents)."
+        },
+        {
+          "kind": "p",
+          "text": "Si sol·licites un servei que requereix la intervenció d'altres professionals, com assessorament financer o jurídic, una reforma, una notaria o un registre, t'ho direm i només compartirem les teves dades amb ells amb el teu coneixement i, quan escaigui, el teu consentiment."
+        },
+        {
+          "kind": "p",
+          "text": "Per prestar-te el servei, tracten dades per compte nostre i amb contracte, com a encarregats del tractament, aquests proveïdors:"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Cloudflare, Inc.:** allotjament del web i xarxa de distribució de continguts."
+            },
+            {
+              "title": "",
+              "text": "**Resend, Inc.:** enviament de l'avís per correu al nostre equip quan omples un formulari."
+            },
+            {
+              "title": "",
+              "text": "**Mobilia:** CRM en què gestionem contactes i cerques."
+            },
+            {
+              "title": "",
+              "text": "**WhatsApp (Meta Platforms):** missatgeria, només quan tries aquest canal."
+            },
+            {
+              "title": "",
+              "text": "**Proveïdor de correu electrònic** i, quan l'activem, **eina d'enviament del butlletí**."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Google (mapes) rep la teva adreça IP i dades del navegador quan es carreguen aquestes funcions; és una empresa independent, no actua per compte nostre. S'explica a la [política de galetes](route:cookies)."
+        },
+        {
+          "kind": "p",
+          "text": "**Valorador en línia.** El valorador en línia (opció «A l'instant» de la finestra de valoració) l'ofereix un proveïdor extern, Lystos, i es mostra dins la nostra pàgina. Les dades que hi introdueixis les rep Lystos i les tracta segons la seva pròpia informació de privacitat, que et recomanem llegir; no és el formulari de «Sol·licitar valoració» d'HousySpace. Si al valorador ens demanes que contactem amb tu, Lystos ens comunica les teves dades de contacte i les de l'habitatge, i des d'aquell moment les tractem conforme a aquesta política."
+        },
+        {
+          "kind": "h2",
+          "text": "5. Transferències internacionals"
+        },
+        {
+          "kind": "p",
+          "text": "Alguns d'aquests proveïdors (Cloudflare, Resend, Google, WhatsApp) pertanyen a grups amb seu als Estats Units o hi poden tractar dades. Quan és així, la transferència s'empara en la decisió d'adequació de la Comissió Europea per al Marc de Privacitat de Dades UE-EUA, si el proveïdor hi està adherit, o en les clàusules contractuals tipus aprovades per la Comissió. Ens pots demanar més informació a [info@housyspace.com](mailto:info@housyspace.com)."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Els teus drets"
+        },
+        {
+          "kind": "p",
+          "text": "Pots exercir els teus drets d'accés, rectificació, supressió, oposició, limitació del tractament i portabilitat, i retirar els teus consentiments, escrivint a [info@housyspace.com](mailto:info@housyspace.com) i indicant quin dret vols exercir. Per atendre't bé, et podem demanar que acreditis la teva identitat. Responem en el termini d'un mes."
+        },
+        {
+          "kind": "p",
+          "text": "Per donar-te de baixa del butlletí o de les comunicacions comercials, pots fer servir l'enllaç de baixa de cada correu o escriure'ns."
+        },
+        {
+          "kind": "p",
+          "text": "Si creus que no tractem les teves dades conforme a la llei, pots presentar una reclamació davant l'Agència Espanyola de Protecció de Dades ([www.aepd.es](https://www.aepd.es); C/ Jorge Juan, 6, 28001 Madrid)."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Menors d'edat"
+        },
+        {
+          "kind": "p",
+          "text": "Els nostres formularis són només per a majors de 18 anys. No recollim a consciència dades de menors."
+        },
+        {
+          "kind": "h2",
+          "text": "8. Seguretat"
+        },
+        {
+          "kind": "p",
+          "text": "Apliquem mesures tècniques i organitzatives adequades per protegir les teves dades davant d'accessos no autoritzats, pèrdua o alteració."
+        },
+        {
+          "kind": "h2",
+          "text": "9. Decisions automatitzades"
+        },
+        {
+          "kind": "p",
+          "text": "No prenem decisions basades únicament en tractaments automatitzats que produeixin efectes jurídics sobre tu. El valorador en línia ofereix un valor orientatiu i no substitueix una valoració professional."
+        },
+        {
+          "kind": "h2",
+          "text": "10. Canvis en aquesta política"
+        },
+        {
+          "kind": "p",
+          "text": "Si canviem aquesta política, publicarem aquí la nova versió amb la seva data. Si el canvi afecta les finalitats per a les quals ens vas donar el teu consentiment, te'l tornarem a demanar."
+        }
+      ]
+    }
+  ]
+}

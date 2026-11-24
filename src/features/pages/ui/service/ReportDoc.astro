@@ -1,0 +1,50 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import BlockHead from "./BlockHead.astro";
+
+/**
+ * Contents of the valuation report drawn as a sheet (reference `.sx-paper`): the two first
+ * paragraphs are its header (title, brand), the list its numbered lines, the last paragraph its footnote.
+ */
+interface Props {
+  locale: Locale;
+  head: readonly PageItem[];
+  body: readonly PageItem[];
+}
+
+const { locale, head, body } = Astro.props;
+const [title, brand, ...rest] = itemsOf(body, "p");
+const note = rest.at(-1);
+const lines = itemsOf(body, "list")[0];
+---
+
+<div class="grid gap-x-16 gap-y-2.5 min-[960px]:grid-cols-[4fr_6fr] min-[960px]:items-center">
+  <BlockHead locale={locale} items={head} spaced={false} />
+  <div
+    data-reveal="fade"
+    class="surface-stone border-t-[3px] border-turquoise bg-card-hover p-[clamp(24px,3vw,40px)] shadow-[0_1px_0_rgb(23_43_43/.06),0_28px_60px_-24px_rgb(23_43_43/.28)]"
+  >
+    <div class="mb-1.5 flex justify-between gap-3 border-b border-fg/14 pb-4 text-[11px] leading-[normal] font-medium tracking-[0.16em] text-muted">
+      <span>{title?.text}</span>
+      <span class="text-accent">{brand?.text}</span>
+    </div>
+    <ol>
+      {lines?.items.map((entry) => (
+        <li class="grid grid-cols-[38px_1fr] gap-x-2 border-b border-dotted border-fg/18 py-2.75">
+          <span class="row-span-2 text-[10px] leading-[1.6] font-medium tracking-[0.08em] text-accent">
+            {entry.kicker}
+          </span>
+          <b class="font-heading text-[17px] leading-[1.25] font-normal">{entry.title}</b>
+          <em class="text-[11.5px] leading-[1.5] text-muted">{entry.text}</em>
+        </li>
+      ))}
+    </ol>
+    {note && (
+      <p class="mt-4.5 font-heading text-[15px] leading-[1.4] text-muted">
+        <Inline text={note.text} locale={locale} />
+      </p>
+    )}
+  </div>
+</div>

@@ -1,0 +1,483 @@
+{
+  "title": "Assessorament jurídic immobiliari a Barcelona · HousySpace",
+  "description": "Assessorament legal i fiscal per vendre, comprar o heretar a Barcelona, amb el despatx d'advocats i l'assessoria fiscal amb qui col·laborem.",
+  "head": {
+    "heading": "Assessorament *jurídic i fiscal*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
+      "alt": "Il·lustració del servei: una balança esquemàtica en equilibri",
+      "scale": 0.684
+    },
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-hierro-720.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
+      {
+        "kind": "lead",
+        "text": "Quan l'operació ho requereix, coordinem la consulta amb professionals independents de confiança."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns el teu cas",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Cada pas, revisat per especialistes."
+        },
+        {
+          "kind": "p",
+          "text": "Comprar, vendre, heretar o llogar un habitatge té conseqüències legals i fiscals. Les revisem amb el despatx d'advocats i l'assessoria fiscal amb qui col·laborem, t'expliquem les opcions amb paraules clares i ens assegurem que tot estigui en ordre abans de signar."
+        }
+      ]
+    },
+    {
+      "layout": "split",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "En què t'ajudem"
+        },
+        {
+          "kind": "h2",
+          "text": "Segons el moment en què et trobes"
+        },
+        {
+          "kind": "lead",
+          "text": "Aquests tràmits els fan el despatx d'advocats i l'assessoria fiscal amb qui col·laborem. Nosaltres coordinem la consulta i els seus terminis amb la teva operació."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Comprar o vendre"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Nota simple, càrregues i situació registral"
+                },
+                {
+                  "title": "",
+                  "text": "Contracte d'arres i de compravenda"
+                },
+                {
+                  "title": "",
+                  "text": "Revisió de l'escriptura abans de la notaria"
+                },
+                {
+                  "title": "",
+                  "text": "Impostos de l'operació"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Heretar un habitatge"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Documentació per acceptar o renunciar a l'herència"
+                },
+                {
+                  "title": "",
+                  "text": "Impost de successions i plusvàlua municipal"
+                },
+                {
+                  "title": "",
+                  "text": "Inscripció al Registre de la Propietat"
+                },
+                {
+                  "title": "",
+                  "text": "Acords entre hereus per vendre o repartir"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Llogar"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Contracte d'arrendament"
+                },
+                {
+                  "title": "",
+                  "text": "Fiança i garanties"
+                },
+                {
+                  "title": "",
+                  "text": "Impagaments i desnonaments"
+                },
+                {
+                  "title": "",
+                  "text": "Les rendes a la declaració"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Empreses i negocis"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Contractes mercantils"
+                },
+                {
+                  "title": "",
+                  "text": "Societats patrimonials"
+                },
+                {
+                  "title": "",
+                  "text": "Lloguer de locals"
+                },
+                {
+                  "title": "",
+                  "text": "Llicències i permisos"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "tax",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Fiscalitat"
+        },
+        {
+          "kind": "h2",
+          "text": "Quins impostos apareixen en cada moment"
+        },
+        {
+          "kind": "lead",
+          "text": "Una orientació general. El càlcul de cada cas correspon a l'assessoria fiscal."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "En vendre"
+            },
+            {
+              "kind": "p",
+              "text": "Venda d'un habitatge"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Plusvàlua municipal",
+                  "text": "Ajuntament."
+                },
+                {
+                  "title": "IRPF: guany patrimonial",
+                  "text": "Estat. Si vens amb benefici."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "En comprar"
+            },
+            {
+              "kind": "p",
+              "text": "Compra d'un habitatge"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Impost de transmissions patrimonials (ITP)",
+                  "text": "Generalitat. Habitatge de segona mà."
+                },
+                {
+                  "title": "Actes jurídics documentats (AJD)",
+                  "text": "Generalitat. Obra nova o signatura d'una hipoteca."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "En heretar o rebre"
+            },
+            {
+              "kind": "p",
+              "text": "Herències i donacions"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Successions i donacions",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Plusvàlua municipal",
+                  "text": "Ajuntament."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Com a propietari"
+            },
+            {
+              "kind": "p",
+              "text": "Mentre tens l'habitatge"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Impost sobre béns immobles (IBI)",
+                  "text": "Ajuntament. Cada any."
+                },
+                {
+                  "title": "IRPF: rendiments",
+                  "text": "Estat. Si llogues l'habitatge."
+                },
+                {
+                  "title": "Patrimoni",
+                  "text": "Estat. Segons el valor del teu patrimoni."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Com ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Pas a pas"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Explica'ns què et preocupa",
+              "text": "Parlem amb calma de la teva operació i dels teus dubtes."
+            },
+            {
+              "title": "Estudiem el teu cas",
+              "text": "Ho revisem amb els especialistes i t'expliquem les opcions."
+            },
+            {
+              "title": "Decidim junts",
+              "text": "Què farem, com i quan."
+            },
+            {
+              "title": "Ho coordinem",
+              "text": "Coordinem la revisió amb els especialistes fins a la signatura."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Amb qui ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Treballem amb ADV Advocats i Asesoría Edac"
+        },
+        {
+          "kind": "lead",
+          "text": "Un despatx d'advocats i una assessoria fiscal de Barcelona amb qui revisem els aspectes legals i fiscals de les nostres operacions, i molt més."
+        },
+        {
+          "kind": "p",
+          "text": "Si te'ls recomanem és perquè els coneixem bé: fa anys que ens envoltem de professionals que treballen igual o millor que nosaltres i en qui confiem plenament."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Per què confiem en ells",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa.",
+              "kicker": "Despatx jurídic i fiscal",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visita advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Assessoria fiscal, comptable i laboral a Barcelona: impostos, declaracions i tràmits amb Hisenda.",
+              "kicker": "Assessoria fiscal",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visita serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
+        {
+          "kind": "lead",
+          "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal",
+              "solid": false
+            },
+            {
+              "label": "Correu",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Assessorament financer",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

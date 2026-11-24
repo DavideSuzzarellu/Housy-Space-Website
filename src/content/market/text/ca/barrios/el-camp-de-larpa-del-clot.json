@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "La plaça de l'Oca amb la seva fira d'artesans, un cinema de barri i molta vida veïnal.",
+  "text": [
+    "Ocupa l'àrea que abans es coneixia com el Camp de l'Arpa i parts del Clot tradicional. La plaça de l'Oca, amb la seva fira d'artesans, és un dels seus racons més viscuts, i el cinema Foment Martinenc manté l'oferta cultural d'un barri on el cinema tradicional encara té el seu lloc.",
+    "Tot i que no és un barri turístic, compta amb nombrosos centres educatius, sales de teatre, casal de joves i de gent gran, i l'Hospital del Nen Déu. Amb 53.354 hab./km², és un dels barris més densos de Barcelona, i el seu preu mitjà de compravenda és de 4.243 €/m²."
+  ],
+  "housing": "Blocs de pisos de diferents èpoques, en carrers densos i ben equipats.",
+  "places": ["Plaça de l'Oca", "Cinema Foment Martinenc", "Hospital del Nen Déu"]
+}

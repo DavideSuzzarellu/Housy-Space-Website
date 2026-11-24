@@ -3,6 +3,9 @@
  * Key facts. `inline`: "**148** m² · **3** hab. · **2** baños" (cards).
  * `grid`: value over label tiles (property detail).
  * `tone="light"`: grid tiles for white backgrounds (property sheet PDF).
+ * `list`: label over value with a top rule (official data of barrios).
+ * `boxed`: bordered tiles on a 1 px line grid, 2 columns on phones and 4 from 760 px (district data).
+ * `plain`: ruleless 12 px row of the catalog card, "**148** m²   **3** habitaciones".
  */
 export interface Fact {
   readonly value: string;
@@ -11,7 +14,7 @@ export interface Fact {
 
 interface Props {
   facts: readonly Fact[];
-  variant?: "inline" | "grid";
+  variant?: "inline" | "grid" | "list" | "plain" | "boxed";
   tone?: "dark" | "light";
   class?: string;
 }
@@ -19,17 +22,33 @@ interface Props {
 const { facts, variant = "inline", tone = "dark", class: className } = Astro.props;
 
 const TILE_TONES = {
-  dark: { tile: "bg-card", label: "text-muted", value: "text-fg" },
-  light: { tile: "bg-stone", label: "text-petrol", value: "text-ink" },
+  dark: {
+    tile: "bg-card",
+    label: "text-[0.625rem] text-muted",
+    value: "text-fg font-heading text-2xl leading-normal font-normal",
+  },
+  light: {
+    tile: "bg-stone",
+    label: "text-xs text-petrol",
+    value: "text-ink font-heading text-[1.625rem] leading-tight font-bold",
+  },
 } as const;
 const tile = TILE_TONES[tone];
 ---
 
 {facts.length > 0 &&
-  (variant === "inline" ? (
+  (variant === "plain" ? (
+    <ul class:list={["flex flex-wrap gap-x-5.5 gap-y-1 text-xs text-muted", className]}>
+      {facts.map((fact) => (
+        <li>
+          <b class="font-medium text-fg">{fact.value}</b> {fact.label}
+        </li>
+      ))}
+    </ul>
+  ) : variant === "inline" ? (
     <ul
       class:list={[
-        "flex flex-wrap gap-x-5.5 gap-y-1.5 border-t border-line pt-3 text-sm text-muted",
+        "flex flex-wrap gap-x-5.5 gap-y-1.5 border-t border-line pt-3 text-[0.65625rem] text-muted",
         className,
       ]}
     >
@@ -39,12 +58,44 @@ const tile = TILE_TONES[tone];
         </li>
       ))}
     </ul>
+  ) : variant === "boxed" ? (
+    <dl
+      class:list={[
+        "grid grid-cols-2 gap-px border border-line bg-line min-[760px]:grid-cols-4",
+        className,
+      ]}
+    >
+      {facts.map((fact) => (
+        <div class="bg-canvas px-5 py-4">
+          <dt class="mb-1.5 text-[0.65625rem] leading-[1.3] font-medium tracking-[0.14em] text-muted">
+            {fact.label}
+          </dt>
+          <dd class="font-heading text-[clamp(1.125rem,calc(1.8vw-2px),1.375rem)] leading-[1.2] font-normal">
+            {fact.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  ) : variant === "list" ? (
+    <dl
+      class:list={[
+        "grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-x-4.5 border-t border-line",
+        className,
+      ]}
+    >
+      {facts.map((fact) => (
+        <div class="border-b border-line py-2.5">
+          <dt class="text-[0.65625rem] tracking-[0.12em] text-muted">{fact.label}</dt>
+          <dd class="mt-0.75 font-heading text-[1.0625rem] font-normal">{fact.value}</dd>
+        </div>
+      ))}
+    </dl>
   ) : (
     <dl class:list={["grid grid-cols-2 gap-2.5 sm:grid-cols-3", className]}>
       {facts.map((fact) => (
         <div class:list={["flex flex-col-reverse px-4 py-3.5", tile.tile]}>
-          <dt class:list={["text-xs", tile.label]}>{fact.label}</dt>
-          <dd class:list={["text-[1.625rem] leading-tight", tile.value]}>{fact.value}</dd>
+          <dt class={tile.label}>{fact.label}</dt>
+          <dd class={tile.value}>{fact.value}</dd>
         </div>
       ))}
     </dl>

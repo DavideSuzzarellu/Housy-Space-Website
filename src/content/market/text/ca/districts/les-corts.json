@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Avinguda Diagonal, jardins i carrers tranquils: el districte residencial de l'oest, amb el Camp Nou i Pedralbes.",
+  "history": [
+    "Les Corts va ser un municipi independent fins al 1897 i avui és un districte de tres barris, les Corts, la Maternitat i Sant Ramon i Pedralbes, que l'avinguda Diagonal travessa de banda a banda, amb oficines, comerç i la Zona Universitària.",
+    "És un districte sobretot residencial, amb zones verdes i bones comunicacions: pisos amplis, cases amb jardí a Pedralbes i un ambient més tranquil que el del centre. Aquí hi ha el Camp Nou i les instal·lacions del FC Barcelona, que formen part de la vida diària de la Maternitat i Sant Ramon.",
+    "Entre els 3 barris, el preu mitjà de compravenda va dels 4.399 €/m² a la Maternitat i Sant Ramon als 6.079 €/m² a Pedralbes, i el lloguer mitjà, dels 1.160 €/mes a la Maternitat i Sant Ramon als 1.948 €/mes a Pedralbes.",
+    "Entre el nucli antic de les Corts, les zones més populars de la Maternitat i les vil·les de Pedralbes hi ha molta diferència de preus, i convé valorar cada carrer per separat."
+  ],
+  "summary": "Les Corts té 83.773 habitants en 6,01 km² i 3 barris. El seu preu mitjà de compravenda va ser de 5.102 €/m² el 2025, un 20 % per sobre de la mitjana de la ciutat. El lloguer mitjà, 1.335 €/mes.",
+  "landmarks": [
+    {
+      "name": "Spotify Camp Nou",
+      "where": "La Maternitat i Sant Ramon",
+      "text": "L'estadi del FC Barcelona."
+    },
+    {
+      "name": "Monestir de Pedralbes",
+      "where": "Pedralbes",
+      "text": "Monestir gòtic fundat per la reina Elisenda de Montcada al segle XIV."
+    },
+    {
+      "name": "Palau Reial de Pedralbes",
+      "where": "Pedralbes",
+      "text": "Palau i jardins al costat de la Diagonal."
+    },
+    {
+      "name": "Pavellons Güell",
+      "where": "Pedralbes",
+      "text": "Els pavellons de la finca Güell, de Gaudí, amb la porta del drac."
+    },
+    {
+      "name": "Zona Universitària",
+      "where": "Pedralbes",
+      "text": "El campus de la Diagonal, amb facultats de la UB i de la UPC."
+    }
+  ]
+}

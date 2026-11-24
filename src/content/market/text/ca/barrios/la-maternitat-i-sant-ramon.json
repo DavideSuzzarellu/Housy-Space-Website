@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El Camp Nou, l'antiga Maternitat i el barri de Sant Ramon, entre la Diagonal i l'Hospitalet.",
+  "text": [
+    "Són dos barris en un. La Maternitat va néixer al voltant de la Casa de la Maternitat i Expòsits, i Sant Ramon pren el nom de la parròquia de Sant Ramon Nonat i també es coneix com a Collblanc. Entre tots dos hi ha el Camp Nou i les instal·lacions del FC Barcelona, a més del cementiri de les Corts, i una part del barri pertany a la Zona Universitària.",
+    "Viure aquí és tenir l'estadi de veí, i també un barri d'ús diari, amb pisos en blocs residencials i bona connexió amb la Diagonal. Amb 4.399 €/m² i 1.160 €/mes, és el més assequible de les Corts."
+  ],
+  "housing": "Pisos en blocs residencials, amb grans equipaments esportius al voltant.",
+  "places": ["Camp Nou", "Maternitat", "Cementiri de les Corts", "Zona Universitària"]
+}

@@ -1,0 +1,100 @@
+---
+import { COMPANY } from "@/features/agency/domain/company";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Button from "@/shared/ui/atoms/Button.astro";
+
+/**
+ * "Where we are" block of the contact page (reference `dn-g`): address, hours and directions
+ * beside a Google map that only loads when the visitor asks for it (a closed `<details>` keeps the
+ * lazy iframe unrendered, so no request reaches Google before the click and no script is needed).
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const tw = t.about.whereWeAre;
+
+const place = `${COMPANY.address.street}, ${COMPANY.address.postalCode} ${COMPANY.address.city}`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(place)}`;
+const searchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
+const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(place)}&z=17&hl=${locale}&output=embed`;
+const streetLines = COMPANY.address.street.split(", ");
+const hoursLines = t.footer.hours.split(", ");
+const LABEL = "text-[0.6875rem] leading-[1.4] font-bold tracking-[0.22em] text-accent";
+const ROW = "grid min-w-0 gap-2 border-b border-line-strong py-[clamp(1rem,1.8vw,1.375rem)]";
+---
+
+<div class="mt-[clamp(0.875rem,1.8vw,1.375rem)] grid items-stretch gap-[clamp(1.375rem,3.4vw,3.25rem)] min-[900px]:grid-cols-[4fr_8fr]">
+  <dl class="flex flex-col border-t border-line-strong">
+    <div class={ROW}>
+      <dt class={LABEL}>{tw.addressLabel}</dt>
+      <dd class="text-[clamp(0.875rem,1.15vw,1rem)] leading-[1.7] font-medium tracking-[0.05em]">
+        <address class="not-italic">
+          {streetLines.map((line) => (
+            <span class="block">{line}</span>
+          ))}
+          <span class="block">
+            {COMPANY.address.postalCode} {COMPANY.address.city}
+          </span>
+        </address>
+      </dd>
+    </div>
+    <div class={ROW}>
+      <dt class={LABEL}>{tw.hoursLabel}</dt>
+      <dd class="text-[clamp(0.875rem,1.15vw,1rem)] leading-[1.7] font-medium tracking-[0.05em]">
+        {hoursLines.map((line) => (
+          <span class="block first-letter:uppercase">{line}</span>
+        ))}
+      </dd>
+    </div>
+    <div class="grid min-w-0 gap-2 py-[clamp(1rem,1.8vw,1.375rem)] pb-0">
+      <Button
+        href={directionsUrl}
+        variant="solid"
+        external
+        class="justify-self-start leading-[1.2] py-[0.9375rem]!"
+      >
+        {tw.howToGet}
+      </Button>
+    </div>
+  </dl>
+
+  <div>
+    <div class="group relative flex min-h-[clamp(16.25rem,30vw,25rem)] overflow-hidden border border-line-strong bg-bg-deep">
+      <details class="flex w-full">
+        <summary class="m-auto flex max-w-[44ch] cursor-pointer list-none flex-col items-center gap-3 p-[clamp(1.375rem,3vw,2.5rem)] text-center [&::-webkit-details-marker]:hidden">
+          <span class={LABEL}>{tw.mapKicker}</span>
+          <span class="text-[clamp(0.9375rem,1.3vw,1.125rem)] leading-normal font-semibold tracking-[0.03em]">
+            {place}
+          </span>
+          <span class="mt-1 inline-flex min-h-11.5 items-center border border-current px-6.5 text-xs leading-[1.2] font-medium tracking-[0.12em]">
+            {tw.viewMap}
+          </span>
+          <span class="text-[0.625rem] leading-normal tracking-[0.1em] text-muted">
+            {tw.mapNote}
+          </span>
+        </summary>
+        <iframe
+          src={embedUrl}
+          title={tw.mapKicker}
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          class="absolute inset-0 size-full border-0"
+        ></iframe>
+      </details>
+      <p class="absolute inset-x-0 bottom-3 text-center text-[0.6875rem] leading-[1.4] font-medium tracking-[0.14em] group-has-[details[open]]:hidden">
+        <a
+          href={searchUrl}
+          class="text-fg-2 underline decoration-turquoise underline-offset-4 hover:text-accent focus-visible:text-accent"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {tw.openMaps}
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

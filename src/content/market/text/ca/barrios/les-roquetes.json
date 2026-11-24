@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Pedreres, costeres i una llarga tradició d'autoconstrucció i lluita veïnal.",
+  "text": [
+    "El seu nom prové de les pedreres de roca del turó, que van donar materials per construir la ciutat, i carrers com Cantera o Camí Vell de la Pedrera ho recorden. Fins a mitjan segle XX la zona gairebé no estava urbanitzada, i als anys cinquanta van arribar onades d'immigrants: moltes cases del vessant es van autoconstruir, i entre el 1964 i el 1967 els veïns van fer el clavegueram i l'aigua corrent amb la iniciativa «Urbanitzar en diumenge».",
+    "Aquest caràcter veïnal es manté, amb l'Ateneu Popular de Nou Barris, centrat en el circ, el parc del Pla de Fornells, en un antic emplaçament industrial, i l'estació de Roquetes, de la línia 3. Amb 2.465 €/m² i 701 €/mes, és un barri de preus continguts."
+  ],
+  "housing": "Cases de vessant, algunes autoconstruïdes, i blocs d'habitatge petit dels anys cinquanta.",
+  "places": [
+    "Ateneu Popular de Nou Barris",
+    "Parc del Pla de Fornells",
+    "Estació de metro Roquetes (L3)"
+  ]
+}

@@ -1,9 +1,14 @@
 {
-  "title": "Asesoramiento financiero · HousySpace",
-  "description": "Hipoteca y financiación estudiadas con números reales, junto a nuestro bróker financiero.",
+  "title": "Asesoramiento hipotecario en Barcelona · HousySpace",
+  "description": "Financiación hipotecaria en Barcelona con números reales, junto al bróker hipotecario con el que colaboramos, que compara las ofertas de distintas entidades.",
   "head": {
-    "heading": "Asesoramiento financiero",
+    "heading": "Asesoramiento *financiero*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-financiero-1000.webp",
+      "alt": "Ilustración del servicio: Una estructura apoyada sobre tres soportes sólidos",
+      "scale": 0.739
+    },
     "items": [
       {
         "kind": "tag",
@@ -11,16 +16,27 @@
       },
       {
         "kind": "lead",
-        "text": "Hipoteca y financiación estudiadas con números reales, junto a nuestro bróker financiero."
+        "text": "Hipoteca y financiación estudiadas con números reales, junto al bróker financiero con el que colaboramos."
       },
       {
         "kind": "image",
         "src": "../../assets/home/oficina-1672.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Cuéntanos tu caso",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -30,7 +46,7 @@
         },
         {
           "kind": "p",
-          "text": "Saber cuánto puedes financiar, con qué cuota y en qué condiciones te ahorra disgustos. Lo estudiamos contigo y con nuestro bróker financiero, que compara las condiciones de distintas entidades."
+          "text": "Saber cuánto puedes financiar, con qué cuota y en qué condiciones te ahorra disgustos. Lo estudiamos contigo y con el bróker financiero con el que colaboramos, que compara las condiciones de distintas entidades."
         },
         {
           "kind": "p",
@@ -39,6 +55,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -94,15 +111,15 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Estudio de la viabilidad del comprador"
+                  "text": "Antes de firmar arras, el bróker estudia si el comprador puede financiar la compra"
                 },
                 {
                   "title": "",
-                  "text": "Plazos de la hipoteca coordinados con el contrato de arras"
+                  "text": "Plazos de la hipoteca coordinados con los del contrato de arras"
                 },
                 {
                   "title": "",
-                  "text": "Menos riesgo de que la venta se caiga"
+                  "text": "Reduce el riesgo de que la venta se caiga por la financiación; no garantiza que el banco la conceda"
                 }
               ]
             }
@@ -196,7 +213,7 @@
         {
           "kind": "faq",
           "q": "¿Quién me asesora en la hipoteca?",
-          "a": "Nuestro bróker financiero, con el que trabajamos en las operaciones con financiación. Nosotros coordinamos todo el proceso contigo."
+          "a": "El bróker financiero con el que colaboramos en las operaciones con financiación. Nosotros coordinamos todo el proceso contigo."
         },
         {
           "kind": "faq",
@@ -206,6 +223,7 @@
       ]
     },
     {
+      "layout": "colab",
       "surface": "stone",
       "band": false,
       "items": [
@@ -225,7 +243,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "Conoce a nuestros colaboradores",
+              "label": "Por qué confiamos en ellos",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -237,13 +255,15 @@
           "items": [
             {
               "title": "Bróker financiero",
-              "text": "Financiación Estudia la viabilidad de cada operación con financiación y compara las condiciones de distintas entidades."
+              "text": "Estudia la viabilidad de cada operación con financiación y compara las condiciones de distintas entidades.",
+              "kicker": "Financiación"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "paper",
       "band": false,
       "items": [
@@ -281,8 +301,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal Shopper inmobiliario",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Compraventa e intermediación inmobiliaria",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Inversión inmobiliaria",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

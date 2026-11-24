@@ -6,7 +6,6 @@ export const SERVICE_KEYS = [
   "valuation",
   "legalTax",
   "renovations",
-  "advisory",
   "financial",
   "personalShopper",
   "investment",
@@ -15,11 +14,7 @@ export const SERVICE_KEYS = [
 
 export type ServiceKey = (typeof SERVICE_KEYS)[number];
 
-/**
- * `{service}` param of the `serviceDetail` route.
- * TODO: AGENTS.md §4.1 has no localized service slugs yet. The UI proposal's Spanish slugs are
- * used for every locale until the client confirms translations (never invent them).
- */
+/** `{service}` param of the `serviceDetail` route: keyword slugs per locale (SEO, AGENTS.md section 4.1). */
 const SERVICE_SLUGS_ES = {
   saleBrokerage: "venta-estrategica",
   rentalManagement: "alquiler-gestion",
@@ -27,16 +22,42 @@ const SERVICE_SLUGS_ES = {
   renovations: "reformas-obras",
   legalTax: "asesoramiento-juridico-fiscal",
   financial: "asesoramiento-financiero",
-  advisory: "asesoramiento",
   investment: "inversion-inmobiliaria",
   valuation: "valoracion",
 } as const satisfies Record<ServiceKey, string>;
 
 const SERVICE_SLUGS = {
   es: SERVICE_SLUGS_ES,
-  en: SERVICE_SLUGS_ES,
-  it: SERVICE_SLUGS_ES,
-  ca: SERVICE_SLUGS_ES,
+  en: {
+    saleBrokerage: "property-sales-brokerage",
+    rentalManagement: "rentals-property-management",
+    personalShopper: "real-estate-personal-shopper",
+    renovations: "renovations-interior-design",
+    legalTax: "legal-tax-advice",
+    financial: "financial-advice",
+    investment: "real-estate-investment",
+    valuation: "property-valuation",
+  },
+  it: {
+    saleBrokerage: "compravendita-intermediazione",
+    rentalManagement: "affitto-gestione-immobili",
+    personalShopper: "personal-shopper-immobiliare",
+    renovations: "ristrutturazioni-interior-design",
+    legalTax: "consulenza-legale-fiscale",
+    financial: "consulenza-finanziaria",
+    investment: "investimento-immobiliare",
+    valuation: "valutazione-immobiliare",
+  },
+  ca: {
+    saleBrokerage: "compravenda-intermediacio",
+    rentalManagement: "lloguer-gestio-immobles",
+    personalShopper: "personal-shopper-immobiliari",
+    renovations: "reformes-interiorisme",
+    legalTax: "assessorament-juridic-fiscal",
+    financial: "assessorament-financer",
+    investment: "inversio-immobiliaria",
+    valuation: "valoracio-immobiliaria",
+  },
 } as const satisfies Record<Locale, Record<ServiceKey, string>>;
 
 export function getServiceSlug(service: ServiceKey, locale: Locale): string {

@@ -1,0 +1,84 @@
+---
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+
+/**
+ * Plain paper page head of the reference (`np6-hero`): breadcrumbs, accent kicker, very large
+ * title and a subtitle. `size="xl"` is the contact page's oversize title (`ct6-h1`); `"about"` is
+ * the about page's head on white. Both carry the block grid (`hero-grid`).
+ */
+interface Props {
+  locale: Locale;
+  title: string;
+  kicker?: string | undefined;
+  subtitle?: string | undefined;
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+  size?: "lg" | "xl" | "about";
+}
+
+const { locale, title, kicker, subtitle, crumbs, size = "lg" } = Astro.props;
+const t = getDictionary(locale);
+const gridded = size !== "lg";
+---
+
+<section
+  data-page-head
+  class:list={[
+    "flex flex-col justify-center",
+    gridded && "hero-grid",
+    size === "about" &&
+      "bg-white pt-[1.875rem] min-[760px]:pt-[2.375rem] pb-[clamp(1.875rem,6vh,4rem)] min-[760px]:min-h-[calc(clamp(21.25rem,60vh,35rem)-92px)]",
+    size === "xl" &&
+      "bg-canvas pt-7 pb-[clamp(2.75rem,6vw,5.625rem)] min-h-[calc(clamp(27.5rem,66svh,45rem)-76px)] min-[760px]:min-h-[calc(clamp(27.5rem,66svh,45rem)-92px)]",
+    size === "lg" && "min-h-[clamp(24rem,52svh,34rem)] bg-canvas py-[clamp(2.25rem,5vw,4.375rem)]",
+  ]}
+>
+  <Container width={size === "about" ? "editorial" : "page"}>
+    <Breadcrumbs
+      items={crumbs}
+      label={t.property.detail.breadcrumb}
+      tone={gridded ? "compact" : "default"}
+      class="mb-[clamp(1.125rem,2.6vw,1.875rem)]"
+    />
+    {kicker !== undefined && (
+      <p
+        class:list={[
+          "font-bold tracking-[0.24em] text-accent",
+          size === "xl" ? "text-[clamp(0.75rem,1.1vw,0.9375rem)]" : "text-[0.6875rem]",
+        ]}
+      >
+        {kicker}
+      </p>
+    )}
+    <h1
+      class:list={[
+        "text-balance",
+        size === "xl" &&
+          "mt-[0.2em] text-[clamp(3.5rem,9.2vw,8.5rem)] leading-[0.96] tracking-[-0.005em]",
+        size === "about" &&
+          "mt-[0.34em] text-[clamp(2rem,10.2vw,3.125rem)] leading-none tracking-[0.005em] min-[760px]:text-[clamp(3.125rem,6.6vw,6rem)]",
+        size === "lg" &&
+          "mt-[0.4em] max-w-[10.5em] text-[clamp(2.75rem,7.4vw,6.75rem)] leading-[0.98]",
+      ]}
+    >
+      <Emphasis text={title} />
+    </h1>
+    {subtitle !== undefined && (
+      <p
+        class:list={[
+          size === "xl" &&
+            "mt-[clamp(1rem,2vw,1.75rem)] text-[clamp(1.1875rem,1.9vw,1.6875rem)] leading-[1.28] font-semibold tracking-[0.03em] text-balance text-fg normal-case",
+          size === "about" &&
+            "mt-[clamp(0.875rem,2.6vh,1.625rem)] max-w-[52ch] text-[clamp(0.96875rem,1.2vw,1.09375rem)] leading-[1.6] tracking-normal text-muted normal-case",
+          size === "lg" &&
+            "mt-[clamp(1.125rem,2vw,1.75rem)] max-w-[42ch] text-[clamp(0.8125rem,1.15vw,1rem)] leading-[1.65] font-medium tracking-[0.09em] text-muted",
+        ]}
+      >
+        {subtitle}
+      </p>
+    )}
+  </Container>
+</section>

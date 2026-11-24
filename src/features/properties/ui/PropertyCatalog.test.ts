@@ -86,3 +86,46 @@ describe("PropertyCatalog", () => {
     expect(html).not.toContain("data-catalog-ref");
   });
 });
+
+describe("PropertyCatalog search form (reference layout)", () => {
+  it("has a Buscar submit button and zone, operation, more-filters cells in the main row", async () => {
+    const html = await render();
+    const form = /<form[^>]*data-catalog-form[\s\S]*?<\/form>/.exec(html)?.[0] ?? "";
+    expect(form).toMatch(/<button[^>]*type="submit"[\s\S]*?Buscar/);
+    expect(form).toContain("Ubicación");
+    expect(form).toContain("Toda Barcelona");
+  });
+
+  it("moves the property type next to the other extra filters, behind the toggle", async () => {
+    const html = await render();
+    const toggle = html.indexOf("data-more-toggle");
+    expect(toggle).toBeGreaterThan(-1);
+    expect(html.indexOf('name="tipo"')).toBeGreaterThan(toggle);
+    expect(html).toContain("Ver resultados");
+  });
+
+  it("keeps the disclosure toggle out of the form controls the island reads", async () => {
+    const html = await render();
+    const toggle = /<input[^>]*data-more-toggle[^>]*>/.exec(html)?.[0] ?? "";
+    expect(toggle).toContain('type="checkbox"');
+    expect(toggle).not.toContain("name=");
+  });
+});
+
+describe("PropertyCatalog toolbar and empty state (reference copy)", () => {
+  it("offers the reference no-results copy with clear and My search actions", async () => {
+    const html = await render();
+    const empty = /<div[^>]*data-catalog-empty[\s\S]*?<\/div>\s*<\/div>/.exec(html)?.[0] ?? "";
+    expect(empty).toContain("No hay inmuebles con estos criterios ahora mismo.");
+    expect(empty).toContain("Si nos cuentas qué buscas, lo buscamos por ti.");
+    expect(empty).toContain("Limpiar filtros");
+    expect(empty).toContain('href="/es/mi-busqueda"');
+  });
+
+  it("hides the split view button below 900px and keeps the three views", async () => {
+    const html = await render();
+    expect(html).toMatch(/data-catalog-view="split"[^>]*class="[^"]*max-\[899px\]:hidden/);
+    for (const view of ["list", "split", "map"])
+      expect(html).toContain(`data-catalog-view="${view}"`);
+  });
+});

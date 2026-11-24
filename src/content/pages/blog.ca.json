@@ -1,0 +1,71 @@
+{
+  "title": "Blog immobiliari a Barcelona · HousySpace",
+  "description": "Blog immobiliari de Barcelona: valoració, venda d'habitatges, despeses, impostos i mercat, explicats amb calma per consultors que treballen cada dia a la ciutat.",
+  "head": {
+    "heading": "El *Blog*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Coneixement immobiliari a Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Anàlisi, consells i decisions immobiliàries a Barcelona, explicats amb calma per qui treballa cada dia a la ciutat."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "newsletter",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Butlletí"
+        },
+        {
+          "kind": "h2",
+          "text": "Rep els articles al teu correu"
+        },
+        {
+          "kind": "p",
+          "text": "Mercat immobiliari de Barcelona, consells per comprar, vendre i llogar, i novetats d'HousySpace."
+        },
+        {
+          "kind": "form",
+          "id": "newsletter",
+          "fields": [
+            {
+              "name": "email",
+              "label": "Adreça electrònica",
+              "required": true,
+              "full": false,
+              "type": "email",
+              "placeholder": "La teva adreça electrònica",
+              "kind": "field"
+            },
+            {
+              "kind": "submit",
+              "label": "Subscriure's"
+            },
+            {
+              "name": "consent",
+              "label": "**Vull rebre el butlletí i els articles d'HousySpace per correu electrònic.** He llegit la [política de privacitat](route:privacy).",
+              "required": true,
+              "full": false,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "**Informació bàsica.** Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: enviar-te el butlletí i els articles. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal; els proveïdors de correu actuen per compte nostre. Drets: accés, rectificació, supressió, oposició, limitació i portabilitat, i donar-te de baixa quan vulguis amb l'enllaç de cada correu o escrivint a [info@housyspace.com](mailto:info@housyspace.com). Més informació a la [política de privacitat](route:privacy). (Esborrany: encara no hi ha cap eina de butlletí connectada; en fer clic s'obrirà el teu client de correu amb la sol·licitud ja redactada i no estaràs subscrit fins que l'enviïs.)"
+            }
+          ],
+          "mode": "email"
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import MobileDrawer from "@/shared/ui/organisms/MobileDrawer.astro";
 import QuickActionsBar from "@/shared/ui/organisms/QuickActionsBar.astro";
 import SeoHead from "@/shared/ui/organisms/SeoHead.astro";
 import "@/styles/global.css";
+import HeadingFontFace from "./HeadingFontFace.astro";
 
 interface Props {
   locale: Locale;
@@ -25,6 +26,10 @@ interface Props {
   headerOverlay?: boolean;
   /** Open Graph image: root-relative path or absolute URL (e.g. the first property photo). */
   ogImage?: string;
+  /** Open Graph type. Use `"article"` for blog posts. */
+  ogType?: string;
+  /** ISO 8601 string for `article:published_time` (only when `ogType="article"`). */
+  publishedTime?: string;
 }
 
 const {
@@ -35,6 +40,8 @@ const {
   noindex = false,
   headerOverlay = false,
   ogImage,
+  ogType,
+  publishedTime,
 } = Astro.props;
 const t = getDictionary(locale);
 ---
@@ -49,6 +56,7 @@ const t = getDictionary(locale);
       cssVariable="--font-montserrat"
       preload={[{ weight: "400 900", style: "normal", subset: "latin" }]}
     />
+    <HeadingFontFace />
     <SeoHead
       locale={locale}
       title={title}
@@ -56,6 +64,8 @@ const t = getDictionary(locale);
       alternates={alternates}
       noindex={noindex}
       {...(ogImage === undefined ? {} : { ogImagePath: ogImage })}
+      {...(ogType === undefined ? {} : { ogType })}
+      {...(publishedTime === undefined ? {} : { publishedTime })}
     />
     <!-- Pre-paint: enable scroll-reveal hidden states only when motion is allowed (reveal.ts). -->
     <script is:inline define:vars={{ motionClass: MOTION_READY_CLASS }}>

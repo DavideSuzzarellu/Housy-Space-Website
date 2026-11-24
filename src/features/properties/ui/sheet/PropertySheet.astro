@@ -89,7 +89,7 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
       <td class="px-[15mm] pt-[9mm] pb-[6mm]">
         <div class="flex items-end justify-between border-b border-stone pb-[4mm]">
           <Logo alt={dictionary.a11y.logoAlt} class="h-[11mm] w-auto" />
-          <p class="text-right text-[0.625rem] leading-relaxed tracking-[0.2em] text-green-grey uppercase">
+          <p class="text-right text-[0.625rem] leading-relaxed tracking-[0.2em] text-muted uppercase">
             <span class="block text-ink">{reference}</span>
             {s.label}
           </p>
@@ -100,7 +100,7 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
   <tfoot>
     <tr>
       <td class="px-[15mm] pt-[5mm] pb-[8mm]">
-        <div class="flex justify-between gap-6 border-t border-stone pt-[3mm] text-[0.5625rem] text-green-grey">
+        <div class="flex justify-between gap-6 border-t border-stone pt-[3mm] text-[0.5625rem] text-muted">
           <p>{companyLine}</p>
           <p class="shrink-0">
             {site.host} · {phoneDisplay(CONTACT_PHONE)}
@@ -146,16 +146,14 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
                 <p class="text-[0.625rem] tracking-[0.18em] text-petrol uppercase">{location}</p>
               )}
               <h1 class="mt-2 text-[2.125rem] text-ink">{title}</h1>
-              <p class="mt-2 text-xs text-green-grey">
-                {presentMetaLine(property, operation, locale)}
-              </p>
+              <p class="mt-2 text-xs text-muted">{presentMetaLine(property, operation, locale)}</p>
               {property.status === "reserved" && (
                 <p class="mt-3 w-fit bg-petrol px-2.5 py-1 text-[0.625rem] tracking-[0.14em] text-white uppercase">
                   {t.reserved}
                 </p>
               )}
             </div>
-            <div class="surface-dark bg-petrol-dark p-[6mm]">
+            <div class="surface-dark bg-card p-[6mm]">
               <PriceTag
                 locale={locale}
                 price={price}
@@ -236,7 +234,7 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
               <p class="mt-2.5 border-l-2 border-petrol pl-2.5 text-xs text-ink">
                 {d.mapApproximate}
               </p>
-              <p class="mt-1 text-[0.5625rem] text-green-grey">{s.mapAttribution}</p>
+              <p class="mt-1 text-[0.5625rem] text-muted">{s.mapAttribution}</p>
             </DetailBlock>
           )}
 
@@ -265,7 +263,7 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
             <p class="max-w-[140mm] text-sm text-ink">{s.documentationText}</p>
           </DetailBlock>
 
-          <section class="surface-dark mt-6 grid break-inside-avoid grid-cols-[minmax(0,1fr)_26mm] items-center gap-x-[6mm] gap-y-[4mm] bg-petrol-dark px-[6mm] py-[5mm] text-fg">
+          <section class="surface-dark mt-6 grid break-inside-avoid grid-cols-[minmax(0,1fr)_26mm] items-center gap-x-[6mm] gap-y-[4mm] bg-card px-[6mm] py-[5mm] text-fg">
             <div>
               <h2 class="text-[2rem]">{s.consultationHeading}</h2>
               <p class="mt-2 text-sm text-muted">
@@ -282,7 +280,7 @@ const PHOTO = { format: "jpg", quality: 80, loading: "eager" } as const;
             </figure>
             <ContactActions
               locale={locale}
-              variant="footer"
+              variant="row"
               whatsappMessage={whatsappMessage}
               consultation={{ href: propertyUrl, label: s.viewOnline }}
               class="col-span-2"

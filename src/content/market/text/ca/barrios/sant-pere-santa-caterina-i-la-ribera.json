@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El Born i el seu entorn: Santa Maria del Mar, el Palau de la Música i el mercat de Santa Caterina.",
+  "text": [
+    "Són tres barris històrics que avui en formen un de sol: Sant Pere, Santa Caterina i la Ribera, la zona que gairebé tothom anomena el Born. Va ser el barri comercial i mariner de la Barcelona medieval, i ho recorden la basílica de Santa Maria del Mar, el Palau de la Música Catalana, de Domènech i Montaner, i el carrer de Montcada amb el Museu Picasso. El Parc de la Ciutadella en marca un dels límits.",
+    "El mercat de Santa Caterina, amb la coberta ondulada de colors, és el centre de la vida diària, i en els últims anys hi han arribat botigues d'autor, galeries i restaurants. Els edificis barregen finques medievals rehabilitades i d'altres del segle XIX, amb pisos petits o mitjans i sostres alts. És una zona amb molt de turisme, per la qual cosa convé visitar el pis a diferents hores."
+  ],
+  "housing": "Pisos petits i mitjans amb sostres alts, en finques antigues rehabilitades.",
+  "places": [
+    "Santa Maria del Mar",
+    "Palau de la Música Catalana",
+    "Mercat de Santa Caterina",
+    "Museu Picasso",
+    "Parc de la Ciutadella"
+  ]
+}

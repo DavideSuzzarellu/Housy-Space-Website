@@ -1,7 +1,7 @@
 import type { Locale } from "@/shared/i18n/config";
 import { getAlternates, getLocalizedPath, type Alternate } from "@/shared/i18n/routes";
 import { slugify } from "@/shared/lib/slugify";
-import { BASE_PATH } from "@/shared/lib/basePath";
+import { currentBaseUrl } from "@/shared/lib/basePath";
 import {
   getDetailOperations,
   getPropertyTitle,
@@ -83,7 +83,7 @@ export function getDetailRouteParams(
   const path = getLocalizedPath(DETAIL_ROUTE[operation], locale, detailParams(property, locale));
 
   // Limpiamos el BASE_URL (si existe y no es '/') para que la lógica de split siga funcionando
-  const baseUrl = BASE_PATH;
+  const baseUrl = currentBaseUrl() === "/" ? "" : currentBaseUrl();
   const cleanPath = baseUrl && path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
   // Ahora sí cortamos la ruta limpia
   const [, prefix, listing, detail, ...rest] = cleanPath.split("/");
@@ -130,7 +130,7 @@ export function getListingRouteParams(
   const path = getListingPath(operation, locale);
 
   // Limpiamos el BASE_URL (si existe y no es '/')
-  const baseUrl = BASE_PATH;
+  const baseUrl = currentBaseUrl() === "/" ? "" : currentBaseUrl();
   const cleanPath = baseUrl && path.startsWith(baseUrl) ? path.slice(baseUrl.length) : path;
 
   const [, prefix, listing, ...rest] = cleanPath.split("/");

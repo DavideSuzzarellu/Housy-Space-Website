@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The most populated neighbourhood in Ciutat Vella, west of La Rambla, with museums, markets and streets of every origin.",
+  "text": [
+    "The name says it all: raval means suburb, the part of the city that grew up beside the old town with convents, hospitals and workshops. Today it is defined by Rambla del Raval, with Botero's cat, the MACBA, the CCCB and the Biblioteca de Catalunya, housed in the former Hospital de la Santa Creu, and by a very diverse population that fills the streets at almost any hour.",
+    "The flats are small and old, especially on the narrowest streets, and many have been renovated in recent years. At 3,499 €/m², it has the lowest average sale price in Ciutat Vella. It is worth visiting the building by day and by night before deciding, because the atmosphere changes from one street to the next."
+  ],
+  "housing": "Old buildings with small flats, many already renovated.",
+  "places": [
+    "Rambla del Raval",
+    "MACBA",
+    "CCCB",
+    "Biblioteca de Catalunya",
+    "Mercat de la Boqueria"
+  ]
+}

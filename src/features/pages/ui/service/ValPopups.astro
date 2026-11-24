@@ -1,0 +1,93 @@
+---
+import { PUBLIC_VALUATOR_URL } from "astro:env/client";
+import LeadForm from "@/features/leads/ui/LeadForm.astro";
+import { itemsOf, type ItemOf } from "@/features/pages/application/pages";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * The two pop-ups of the valuation options (reference `valorador-popup.js` and
+ * `valoracion-elegir.js`), as native `<dialog>`s (focus trap, Escape and backdrop come with the
+ * platform). The valuator iframe is only created when the dialog opens, so nothing is loaded from
+ * the provider before the visitor asks. The valuator URL comes from the environment config.
+ */
+interface Props {
+  locale: Locale;
+  card: ItemOf<"card"> | undefined;
+}
+
+const { locale, card } = Astro.props;
+const copy = getDictionary(locale).servicePage;
+const title = card && itemsOf(card.items, "h3")[0];
+const lead = card && itemsOf(card.items, "lead")[0];
+const form = card && itemsOf(card.items, "form")[0];
+const CLOSE =
+  "absolute top-3.5 right-3.5 z-10 grid size-10.5 cursor-pointer place-items-center rounded-full border-0 bg-dark text-white hover:bg-petrol";
+---
+
+{PUBLIC_VALUATOR_URL !== undefined && (
+  <dialog
+    id="valuation-online-dialog"
+    aria-label={copy.valuator.title}
+    data-src={PUBLIC_VALUATOR_URL}
+    data-title={copy.valuator.title}
+    class="m-auto h-[min(900px,100%)] w-[min(980px,100%)] max-w-[calc(100%-clamp(24px,6vw,64px))] max-h-[calc(100%-clamp(24px,6vw,64px))] overflow-hidden rounded-xs border-0 bg-white p-0 text-fg shadow-[0_30px_80px_rgb(0_0_0/0.35)] backdrop:bg-[rgb(14_26_28/0.74)] max-[699px]:max-h-none max-[699px]:max-w-none max-[699px]:h-full max-[699px]:w-full max-[699px]:rounded-none"
+  >
+    <button type="button" data-dialog-close aria-label={copy.valuator.close} class={CLOSE}>
+      <svg
+        viewBox="0 0 14 14"
+        aria-hidden="true"
+        class="size-3.5 fill-none stroke-current stroke-[1.6]"
+      >
+        <path d="M2 2l10 10M12 2 2 12" stroke-linecap="round"></path>
+      </svg>
+    </button>
+    <p
+      data-valuator-loading
+      role="status"
+      class="absolute inset-0 grid place-items-center text-xs text-muted normal-case"
+    >
+      {copy.valuator.loading}
+    </p>
+  </dialog>
+)}
+{title && lead && form && (
+  <dialog
+    id="valuation-adviser-dialog"
+    aria-labelledby="valuation-adviser-title"
+    class="m-auto max-h-[calc(100%-clamp(24px,6vw,64px))] w-[min(760px,100%)] max-w-[calc(100%-clamp(24px,6vw,64px))] overflow-auto rounded-xs border-0 bg-canvas p-[clamp(28px,4vw,48px)] text-fg shadow-[0_30px_80px_rgb(0_0_0/0.35)] backdrop:bg-[rgb(14_26_28/0.74)] max-[699px]:max-h-none max-[699px]:h-full max-[699px]:w-full max-[699px]:max-w-none max-[699px]:rounded-none"
+  >
+    <button type="button" data-dialog-close aria-label={copy.closeLabel} class={CLOSE}>
+      <svg
+        viewBox="0 0 14 14"
+        aria-hidden="true"
+        class="size-3.5 fill-none stroke-current stroke-[1.6]"
+      >
+        <path d="M2 2l10 10M12 2 2 12" stroke-linecap="round"></path>
+      </svg>
+    </button>
+    <h2 id="valuation-adviser-title" class="mr-13 mb-5.5 text-[clamp(24px,3vw,34px)] leading-[1.1]">
+      {title.text}
+    </h2>
+    <p class="mb-5 text-[15px] normal-case">
+      <Inline text={lead.text} locale={locale} />
+    </p>
+    <LeadForm
+      locale={locale}
+      id={form.id}
+      mode={form.mode}
+      intro={form.intro}
+      fields={form.fields}
+    />
+  </dialog>
+)}
+<script>
+  import "./valuationPopups.client";
+</script>
+
+<style is:global>
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+</style>

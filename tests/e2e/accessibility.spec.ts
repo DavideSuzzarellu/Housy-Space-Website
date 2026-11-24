@@ -16,6 +16,15 @@ interface PageCase {
   readonly prepare?: (page: Page) => Promise<void>;
 }
 
+/** Chooses an operation (the only required field) and advances the wizard to `step`. */
+async function goToWizardStep(page: Page, step: number): Promise<void> {
+  await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+  for (let current = 1; current < step; current += 1) {
+    await page.locator("[data-next] button").click();
+  }
+  await expect(page.locator("[data-wizard-count]")).toContainText(String(step));
+}
+
 const PAGE_CASES: readonly PageCase[] = [
   { name: "home", path: (l) => getLocalizedPath("home", l) },
   { name: "sale catalog", path: (l) => getLocalizedPath("sale", l) },
@@ -31,25 +40,25 @@ const PAGE_CASES: readonly PageCase[] = [
     path: (l) => getLocalizedPath("serviceDetail", l, { service: getServiceSlug("legalTax", l) }),
   },
   { name: "valuation", path: (l) => getLocalizedPath("valuation", l) },
-  { name: "sell", path: (l) => getLocalizedPath("sell", l) },
   { name: "about", path: (l) => getLocalizedPath("about", l) },
   { name: "contact", path: (l) => getLocalizedPath("contact", l) },
-  { name: "custom search", path: (l) => getLocalizedPath("customSearch", l) },
+  { name: "my search, step 1", path: (l) => getLocalizedPath("mySearch", l) },
   {
-    name: "home search with a district chosen",
-    path: (l) => getLocalizedPath("homeSearch", l),
-    prepare: async (page) => {
-      await page.locator('input[name="distrito"][value="ciutat-vella"]').check({ force: true });
-      await expect(page.locator('input[name="barrio"][value="el-raval"]')).toBeVisible();
-    },
+    name: "my search, step 2",
+    path: (l) => getLocalizedPath("mySearch", l),
+    prepare: (page) => goToWizardStep(page, 2),
+  },
+  {
+    name: "my search, step 5",
+    path: (l) => getLocalizedPath("mySearch", l),
+    prepare: (page) => goToWizardStep(page, 5),
   },
   { name: "living in Barcelona", path: (l) => getLocalizedPath("living", l) },
   { name: "district", path: (l) => getLocalizedPath("district", l, { district: "gracia" }) },
   {
     name: "barrio",
-    path: (l) => getLocalizedPath("barrio", l, { district: "nou-barris", barrio: "verdun" }),
+    path: (l) => getLocalizedPath("barrio", l, { barrio: "verdun" }),
   },
-  { name: "Barcelona province", path: (l) => getLocalizedPath("municipalities", l) },
   { name: "blog", path: (l) => getLocalizedPath("blog", l) },
   { name: "legal notice", path: (l) => getLocalizedPath("legalNotice", l) },
   { name: "privacy policy", path: (l) => getLocalizedPath("privacy", l) },

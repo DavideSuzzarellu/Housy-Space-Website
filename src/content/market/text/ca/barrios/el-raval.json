@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El barri més poblat de Ciutat Vella, a l'oest de la Rambla, amb museus, mercats i carrers de tots els orígens.",
+  "text": [
+    "El nom ho diu: raval vol dir arraval, la part de la ciutat que creixia al costat del nucli antic amb convents, hospitals i tallers. Avui el defineixen la Rambla del Raval, amb el gat de Botero, el MACBA, el CCCB i la Biblioteca de Catalunya, instal·lada a l'antic Hospital de la Santa Creu, i una població molt diversa que omple el carrer a gairebé qualsevol hora.",
+    "Els pisos són petits i antics, sobretot als carrers més estrets, i molts s'han rehabilitat en els últims anys. Amb 3.499 €/m², és el preu mitjà de compravenda més baix de Ciutat Vella. Convé visitar la finca de dia i de nit abans de decidir, perquè l'ambient canvia d'un carrer a l'altre."
+  ],
+  "housing": "Finques antigues amb pisos petits, moltes ja rehabilitades.",
+  "places": [
+    "Rambla del Raval",
+    "MACBA",
+    "CCCB",
+    "Biblioteca de Catalunya",
+    "Mercat de la Boqueria"
+  ]
+}

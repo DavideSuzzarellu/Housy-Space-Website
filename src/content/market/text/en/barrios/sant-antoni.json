@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "A market, Sunday books and street life, where the Eixample meets El Raval and El Poble-sec.",
+  "text": [
+    "Its name comes from the church of Sant Antoni, which stood beside the gate in the Raval wall and no longer exists. The neighbourhood began to be built around 1880 and was a working-class area for much of the 20th century; many of today's buildings date from the 1920s and 1930s.",
+    "The Mercat de Sant Antoni, designed by Antoni Rovira i Trias, was built between 1872 and 1882 and reopened in 2018 after a long renovation; on Sunday mornings it is surrounded by book and collectors' stalls. Around it, Carrer del Parlament and its surroundings add bars, restaurants and terraces. At 4,603 €/m², it has the lowest sale price in the Eixample."
+  ],
+  "housing": "Flats from the early 20th century on the Cerdà grid, with life at street level.",
+  "places": [
+    "Mercat de Sant Antoni",
+    "Sunday book market",
+    "Carrer Parlament",
+    "Ronda de Sant Antoni"
+  ]
+}

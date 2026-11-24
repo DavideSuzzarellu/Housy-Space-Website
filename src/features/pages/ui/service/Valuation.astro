@@ -1,0 +1,73 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * Two ways to ask for a valuation (reference `.pv-val`): heading and line on one row, then an
+ * online card and a dark in-person card. Each card is a kicker, a title, a line and a button.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+}
+
+const { locale, items } = Astro.props;
+const tag = itemsOf(items, "tag")[0];
+const title = itemsOf(items, "h2")[0];
+const line = itemsOf(items, "p")[0];
+const cards = itemsOf(items, "card");
+---
+
+<div class="grid gap-[clamp(28px,3.6vw,48px)]">
+  <div class="min-[960px]:grid min-[960px]:grid-cols-[max-content_minmax(0,46ch)] min-[960px]:items-end min-[960px]:justify-between min-[960px]:gap-x-14">
+    {tag && <p class="col-span-full text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+    {title && (
+      <h2
+        data-reveal
+        class="mt-3.5 mb-0 text-[clamp(34px,4vw,52px)] leading-[1.05] max-[959px]:mb-4.5"
+      >
+        {title.text}
+      </h2>
+    )}
+    {line && (
+      <p class="max-w-[46ch] text-sm leading-[1.7] text-fg-2 min-[960px]:pb-1">
+        <Inline text={line.text} locale={locale} />
+      </p>
+    )}
+  </div>
+  <div class="grid gap-3.5 min-[640px]:grid-cols-2">
+    {cards.map((card, index) => {
+      const [kicker, text] = itemsOf(card.items, "p");
+      const heading = itemsOf(card.items, "h3")[0];
+      const button = itemsOf(card.items, "buttons")[0]?.items[0];
+      return (
+        <div
+          data-reveal
+          class:list={[
+            "flex min-w-0 flex-col items-start p-[clamp(26px,3vw,38px)]",
+            index === 1 ? "surface-dark bg-canvas" : "bg-card",
+          ]}
+        >
+          <span class="text-[11px] tracking-[0.16em] text-taupe-tx">{kicker?.text}</span>
+          {heading && (
+            <h3 class="my-2.5 text-[clamp(26px,2.4vw,32px)] leading-[1.1]">{heading.text}</h3>
+          )}
+          <p class="mb-6.5 flex-1 text-[13px] leading-[1.55] text-fg-2">{text?.text}</p>
+          {button && (
+            <Button
+              href={resolveContentHref(button.href, locale)}
+              variant={button.solid ? "solid" : "outline"}
+              arrow
+              class="leading-none! max-[639px]:w-full"
+            >
+              {button.label}
+            </Button>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>

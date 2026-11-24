@@ -1,0 +1,56 @@
+---
+import { itemsOf, type ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** Two options side by side (reference `.sx-cmp-g`); the second card is dark. */
+interface Props {
+  locale: Locale;
+  cards: readonly ItemOf<"card">[];
+}
+
+const { locale, cards } = Astro.props;
+---
+
+<div class="grid gap-3.5 min-[760px]:grid-cols-2">
+  {cards.map((card, index) => (
+    <div
+      data-reveal
+      class:list={[
+        "flex flex-col p-[clamp(28px,3vw,42px)]",
+        index === 1 ? "surface-dark bg-canvas" : "bg-card",
+      ]}
+    >
+      {itemsOf(card.items, "h3").map((title) => (
+        <h3 class="mb-2 text-[clamp(26px,2.4vw,34px)] leading-[1.08] text-fg">{title.text}</h3>
+      ))}
+      {itemsOf(card.items, "p").map((line) => (
+        <p class="text-[13.5px] text-muted">
+          <Inline text={line.text} locale={locale} />
+        </p>
+      ))}
+      {itemsOf(card.items, "list").map((list) => (
+        <ul class="mt-5.5 mb-7 flex-1">
+          {list.items.map((entry) => (
+            <li class="relative border-t border-line py-3 pl-5.5 text-[13px] leading-[1.5] text-fg-2 before:absolute before:top-5 before:left-0 before:size-1.5 before:rotate-45 before:bg-turquoise">
+              <Inline text={entry.text} locale={locale} />
+            </li>
+          ))}
+        </ul>
+      ))}
+      {itemsOf(card.items, "buttons").flatMap((row) =>
+        row.items.map((button) => (
+          <Button
+            href={resolveContentHref(button.href, locale)}
+            variant={button.solid ? "solid" : "outline"}
+            class="self-start leading-none!"
+          >
+            {button.label}
+          </Button>
+        )),
+      )}
+    </div>
+  ))}
+</div>

@@ -17,13 +17,27 @@ interface Props {
   source: string;
   sourceUrl?: string | undefined;
   locale: string;
+  /** `card`: paper box on a stone block; `rule`: open figure under a 1 px rule (reference index). */
+  variant?: "card" | "rule";
+  /** Word before the source line ("Source:"), shown when given. */
+  sourcePrefix?: string | undefined;
 }
 
-const { title, unit, series, provisionalLabel, source, sourceUrl, locale } = Astro.props;
+const {
+  title,
+  unit,
+  series,
+  provisionalLabel,
+  source,
+  sourceUrl,
+  locale,
+  variant = "card",
+  sourcePrefix,
+} = Astro.props;
 
-const W = 560;
+const W = 500;
 const H = 260;
-const PAD = { top: 12, right: 12, bottom: 26, left: 46 };
+const PAD = { top: 14, right: 62, bottom: 26, left: 46 };
 const all = series.flatMap((line) => [
   ...line.points,
   ...(line.provisional ? ([[line.provisional.x, line.provisional.y]] as const) : []),
@@ -32,22 +46,32 @@ const xs = all.map(([x]) => x);
 const ys = all.map(([, y]) => y);
 const minX = Math.min(...xs);
 const maxX = Math.max(...xs);
-const maxY = Math.ceil(Math.max(...ys) / 1000) * 1000;
+// Axis from a "nice" step below the data (as the reference), not from zero: lines stay readable.
+const rawStep = (Math.max(...ys) - Math.min(...ys)) / 4 || 1;
+const magnitude = 10 ** Math.floor(Math.log10(rawStep));
+const step = ([1, 2, 2.5, 5, 10].find((m) => m * magnitude >= rawStep) ?? 10) * magnitude;
+const minY = Math.floor(Math.min(...ys) / step) * step;
+const maxY = Math.ceil(Math.max(...ys) / step) * step;
 const x = (value: number) =>
   PAD.left + ((value - minX) / (maxX - minX || 1)) * (W - PAD.left - PAD.right);
-const y = (value: number) => H - PAD.bottom - (value / maxY) * (H - PAD.top - PAD.bottom);
+const y = (value: number) =>
+  H - PAD.bottom - ((value - minY) / (maxY - minY || 1)) * (H - PAD.top - PAD.bottom);
 const path = (points: readonly (readonly [number, number])[]) =>
   points
     .map(([px, py], index) => `${index === 0 ? "M" : "L"}${x(px).toFixed(1)} ${y(py).toFixed(1)}`)
     .join("");
 const TONES = {
-  main: "stroke-accent",
-  second: "stroke-taupe",
-  third: "stroke-green-grey",
+  main: "stroke-ch-a stroke-[2.4]",
+  second: "stroke-ch-b stroke-[1.8]",
+  third: "stroke-ch-c stroke-[1.6] [stroke-dasharray:5_4]",
 } as const;
-const SWATCH = { main: "bg-accent", second: "bg-taupe", third: "bg-green-grey" } as const;
-const GRID = [0, 0.25, 0.5, 0.75, 1].map((step) => Math.round(maxY * step));
-const YEARS = [minX, Math.round((minX + maxX) / 2), maxX];
+const DOTS = { main: "fill-ch-a", second: "fill-ch-b", third: "fill-ch-c" } as const;
+const SWATCH = { main: "bg-ch-a", second: "bg-ch-b", third: "bg-ch-c" } as const;
+const GRID = Array.from(
+  { length: Math.round((maxY - minY) / step) + 1 },
+  (_, i) => minY + i * step,
+);
+const YEARS = Array.from({ length: Math.floor((maxX - minX) / 3) + 1 }, (_, i) => minX + i * 3);
 const hasProvisional = series.some((line) => line.provisional);
 const format = figureFormat(locale);
 const latest = series
@@ -55,8 +79,22 @@ const latest = series
   .join(", ");
 ---
 
-<figure class="m-0 border border-line bg-canvas p-4">
-  <figcaption class="mb-2 text-xs font-bold tracking-[0.04em]">{title}</figcaption>
+<figure
+  class:list={[
+    "m-0",
+    variant === "card"
+      ? "border border-line bg-card px-3.5 pt-3.5 pb-2.5"
+      : "border-t border-line-strong pt-[18px]",
+  ]}
+>
+  <figcaption
+    class:list={[
+      "font-medium tracking-[0.04em]",
+      variant === "card" ? "mb-1.5 text-[0.6875rem]" : "mb-2.5 text-xs",
+    ]}
+  >
+    {title}
+  </figcaption>
   <svg
     viewBox={`0 0 ${W} ${H}`}
     role="img"
@@ -65,54 +103,77 @@ const latest = series
   >
     {GRID.map((value) => (
       <>
-        <line x1={PAD.left} x2={W - PAD.right} y1={y(value)} y2={y(value)} class="stroke-line" />
-        <text x={PAD.left - 6} y={y(value) + 3} text-anchor="end" class="fill-muted text-[10px]">
+        <line x1={PAD.left} x2={W - PAD.right} y1={y(value)} y2={y(value)} class="stroke-ch-grid" />
+        <text x={PAD.left - 6} y={y(value) + 3} text-anchor="end" class="fill-ch-ax text-[10px]">
           {format.format(value)}
         </text>
       </>
     ))}
     {YEARS.map((year) => (
-      <text x={x(year)} y={H - 8} text-anchor="middle" class="fill-muted text-[10px]">
+      <text x={x(year)} y={H - 8} text-anchor="middle" class="fill-ch-ax text-[10px]">
         {year}
       </text>
     ))}
     {series.map((line) => {
       const last = line.points.at(-1);
+      const end = line.provisional ? ([line.provisional.x, line.provisional.y] as const) : last;
       return (
         <>
-          <path d={path(line.points)} class:list={["fill-none stroke-2", TONES[line.tone]]} />
+          <path
+            d={path(line.points)}
+            class:list={[
+              "fill-none [stroke-linecap:round] [stroke-linejoin:round]",
+              TONES[line.tone],
+            ]}
+          />
           {line.provisional && last && (
             <path
               d={path([last, [line.provisional.x, line.provisional.y]])}
               stroke-dasharray="4 4"
-              class:list={["fill-none stroke-2", TONES[line.tone]]}
+              class:list={["fill-none opacity-70", TONES[line.tone]]}
             />
+          )}
+          {end && (
+            <>
+              <circle cx={x(end[0])} cy={y(end[1])} r="2.6" class={DOTS[line.tone]} />
+              <text
+                x={x(end[0]) + 8}
+                y={y(end[1]) + 3}
+                class={`${DOTS[line.tone]} text-[10px] font-medium`}
+              >
+                {format.format(end[1])}
+              </text>
+            </>
           )}
         </>
       );
     })}
   </svg>
-  <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[0.6875rem] text-muted">
+  <ul class="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[0.625rem] text-muted">
     {series.map((line) => (
       <li class="flex items-center gap-1.5">
-        <span aria-hidden="true" class:list={["h-0.5 w-4", SWATCH[line.tone]]}></span>
+        <span aria-hidden="true" class:list={["h-[3px] w-4", SWATCH[line.tone]]}></span>
         {line.name}
       </li>
     ))}
     {hasProvisional && <li>{provisionalLabel}</li>}
   </ul>
-  <p class="mt-2 text-[0.625rem] text-muted">
+  <p class="mt-1.5 text-[0.625rem] text-muted">
+    {sourcePrefix !== undefined && `${sourcePrefix} `}
     {sourceUrl === undefined ? (
-      source
+      `${source}.`
     ) : (
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2"
-      >
-        {source}
-      </a>
+      <>
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-2"
+        >
+          {source.split(" (")[0]}
+        </a>
+        {source.includes(" (") ? ` (${source.split(" (").slice(1).join(" (")}.` : "."}
+      </>
     )}
   </p>
 </figure>

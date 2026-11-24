@@ -1,0 +1,71 @@
+{
+  "title": "Blog immobiliare a Barcellona · HousySpace",
+  "description": "Blog immobiliare di Barcellona: valutazione, vendita di case, spese, tasse e mercato, spiegati con calma da consulenti che lavorano ogni giorno in città.",
+  "head": {
+    "heading": "Il *Blog*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Sapere immobiliare a Barcellona"
+      },
+      {
+        "kind": "lead",
+        "text": "Analisi, consigli e decisioni immobiliari a Barcellona, spiegati con calma da chi lavora ogni giorno in città."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "newsletter",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Newsletter"
+        },
+        {
+          "kind": "h2",
+          "text": "Ricevi gli articoli nella tua casella di posta"
+        },
+        {
+          "kind": "p",
+          "text": "Mercato immobiliare di Barcellona, consigli per comprare, vendere e affittare, e novità di HousySpace."
+        },
+        {
+          "kind": "form",
+          "id": "newsletter",
+          "fields": [
+            {
+              "name": "email",
+              "label": "Indirizzo e-mail",
+              "required": true,
+              "full": false,
+              "type": "email",
+              "placeholder": "Il tuo indirizzo e-mail",
+              "kind": "field"
+            },
+            {
+              "kind": "submit",
+              "label": "Iscriviti"
+            },
+            {
+              "name": "consent",
+              "label": "**Desidero ricevere la newsletter e gli articoli di HousySpace via e-mail.** Ho letto la [informativa sulla privacy](route:privacy).",
+              "required": true,
+              "full": false,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "**Informazioni di base.** Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: inviarti la newsletter e gli articoli. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge; i fornitori di posta elettronica agiscono per nostro conto. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione e portabilità, e possibilità di annullare l'iscrizione in qualsiasi momento tramite il link in ogni e-mail o scrivendo a [info@housyspace.com](mailto:info@housyspace.com). Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Bozza: non è ancora connesso alcuno strumento newsletter; cliccando si aprirà il client di posta con la richiesta già compilata e non sarai iscritto finché non la invierai.)"
+            }
+          ],
+          "mode": "email"
+        }
+      ]
+    }
+  ]
+}

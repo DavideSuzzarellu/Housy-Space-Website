@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Il nucleo storico del distretto: carrer Gran, antica fabbrica Fabra i Coats e vita da paese.",
+  "text": [
+    "Fu un comune indipendente con più di mille anni di storia documentata, annesso a Barcellona il 20 aprile 1897. La sua origine è agricola: attorno alla chiesa neogotica di Sant Andreu, del 1881, si formò il carrer Gran, antica via romana da cui si diramano le altre strade, e dalla sua parrocchia partirono nel 1640 i mietitori del Corpus de Sang.",
+    "Oggi conta 59.330 abitanti su 1,87 km², con una vita di quartiere molto attiva, soprattutto nello sport, con società come la UE Sant Andreu, e un commercio di prossimità che si estende fino al passeig de Fabra i Puig. L'antica fabbrica Fabra i Coats fu recuperata nel 1995 come centro culturale e biblioteca, e la Casa Bloc, degli anni Trenta, è uno dei grandi esempi di edilizia residenziale razionalista della città."
+  ],
+  "housing": "Case basse del nucleo antico e palazzi di appartamenti di epoche diverse.",
+  "places": [
+    "Carrer Gran de Sant Andreu",
+    "Fabra i Coats",
+    "Església de Sant Andreu",
+    "Passeig de Fabra i Puig",
+    "Casa Bloc"
+  ]
+}

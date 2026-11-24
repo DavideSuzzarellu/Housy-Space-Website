@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Città giardino di inizio Novecento, discreta e addossata alla montagna.",
+  "text": [
+    "Cominciò a urbanizzarsi nel 1905 sulle terre della masia Can Pujol, per iniziativa di Pere Fargas i Sagristà, con un'aria da città giardino, e fu luogo di villeggiatura della borghesia barcellonese. Il suo nome unisce il cognome del promotore a quello di una fonte vicina, alla quale si attribuiva un'ottima qualità.",
+    "È un quartiere residenziale e poco conosciuto, accanto alla montagna, con masie e case antiche ristrutturate, edifici di tre o quattro piani e nuove promozioni di appartamenti di alto livello con aree comuni. Tra i suoi angoli, l'antico Casino, oggi Casal de Barri, e la Princess Margaret School, una delle scuole private più antiche della città."
+  ],
+  "housing": "Case antiche ristrutturate, edifici di tre o quattro piani e nuove promozioni con aree comuni.",
+  "places": ["Font d'en Fargues", "Casal de Barri (antico Casino)", "Princess Margaret School"]
+}

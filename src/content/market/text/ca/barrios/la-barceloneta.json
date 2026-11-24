@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "L'antic barri de pescadors, amb platja, carrers rectes i pisos petits davant del port.",
+  "text": [
+    "La Barceloneta es va planificar a mitjan segle XVIII, sobre terrenys sorrencs vora el port, per reallotjar els veïns de la Ribera que van perdre les cases amb la construcció de la Ciutadella. El seu traçat, amb carrers rectes i estrets i illes allargades, no s'assembla a res del nucli antic. Entre el mercat, l'església de Sant Miquel del Port i la platja, encara conserva aire de poble mariner.",
+    "Els pisos són petits, molts de menys de 50 m², i això ajuda a entendre'n les xifres: el preu per metre quadrat (5.183 €/m²) és el més alt de Ciutat Vella, però el lloguer mitjà (881 €/mes) és el més baix del districte. És un barri molt buscat per la proximitat al mar, així que convé comparar bé cada finca."
+  ],
+  "housing": "Pisos petits en blocs baixos de carrers rectes, molts de menys de 50 m².",
+  "places": [
+    "Platja de la Barceloneta",
+    "Mercat de la Barceloneta",
+    "Sant Miquel del Port",
+    "Passeig Marítim"
+  ]
+}

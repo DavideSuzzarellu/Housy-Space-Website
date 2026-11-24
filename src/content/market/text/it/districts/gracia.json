@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Un antico paese dentro la città: piazze, vicoli stretti e tanta vita di quartiere.",
+  "history": [
+    "Gràcia è stato un comune indipendente fino al 1897 e conserva il suo reticolo di strade strette e di piazze, come quella del Sol, della Virreina o della Vila, con la sua torre dell'orologio, oltre ai negozi di prossimità e a un'intensa vita associativa. Ogni agosto celebra la sua Festa Major, che esiste dal 1817 e in cui gli abitanti stessi addobbano le strade e gareggiano per la decorazione più bella.",
+    "I suoi cinque quartieri salgono dalla Diagonal fino alle pendici di Collserola: la Vila de Gràcia, il Camp d'en Grassot i Gràcia Nova, la Salut, Vallcarca i els Penitents e il Coll. Le abitazioni alternano case basse e vecchi stabili a palazzi di appartamenti, e l'atmosfera cambia molto tra la vivace Vila e i pendii più tranquilli del nord.",
+    "Tra i suoi 5 quartieri, il prezzo medio di compravendita va dai 3.558 €/m² del Coll ai 5.094 €/m² della Vila de Gràcia, e l'affitto medio dai 906 €/mese del Coll ai 1.105 €/mese del Camp d'en Grassot i Gràcia Nova.",
+    "È un distretto molto ricercato per la sua atmosfera e per la vita a piedi. Conviene visitare ogni strada a diverse ore, perché in pochi isolati si passa da una piazza all'altra e il carattere cambia parecchio."
+  ],
+  "summary": "Gràcia conta 126.830 abitanti su 4,22 km² e 5 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 4.818 €/m², il 13% sopra la media della città. L'affitto medio è di 1.082 €/mese.",
+  "landmarks": [
+    {
+      "name": "Park Güell",
+      "where": "La Salut",
+      "text": "Il parco di Antoni Gaudí, Patrimonio dell'Umanità."
+    },
+    {
+      "name": "Casa Vicens",
+      "where": "La Vila de Gràcia",
+      "text": "La prima casa progettata da Gaudí."
+    },
+    {
+      "name": "Plaça de la Vila de Gràcia",
+      "where": "La Vila de Gràcia",
+      "text": "La piazza dell'antico municipio, con la sua torre dell'orologio."
+    },
+    {
+      "name": "Mercat de la Llibertat",
+      "where": "La Vila de Gràcia",
+      "text": "Mercato in ferro della fine dell'Ottocento."
+    },
+    {
+      "name": "Festa Major de Gràcia",
+      "where": "Tutto il distretto",
+      "text": "Ad agosto le strade si addobbano e si riempiono di eventi."
+    }
+  ]
+}

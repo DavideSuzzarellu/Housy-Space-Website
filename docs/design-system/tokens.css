@@ -1,0 +1,112 @@
+/* HousySpace — generated from tokens.json */
+:root, [data-theme="light"] {
+  --c-bg: #fcfbf8;
+  --c-bg-alt: #f3f1eb;
+  --c-bg-dark: #162b2a;
+  --c-text: #172b2b;
+  --c-text-2: #67716f;
+  --bg: var(--c-bg);
+  --bg-alt: var(--c-bg-alt);
+  --bg-soft: var(--c-bg-alt);
+  --bg-deep: #edeae3;
+  --bg-lift: #ece8df;
+  --card: var(--c-bg-alt);
+  --card-h: #ece8df;
+  --line: rgba(23,43,43,.12);
+  --line-2: rgba(23,43,43,.2);
+  --fg: var(--c-text);
+  --fg-2: var(--c-text);
+  --muted: var(--c-text-2);
+  --accent-tx: #08777b;
+  --taupe-tx: #857a6c;
+  --glass: rgba(252,251,248,.93);
+  --ok: #0a7a73;
+  --ko: #9a6a3a;
+  --nd: #8a6d45;
+  --warn: #9a5b00;
+  --err: #a8322a;
+  --ch-a: #0e8f88;
+  --ch-a-tx: #08777b;
+  --ch-b: #b08f5e;
+  --ch-b-tx: #8a6d45;
+  --ch-c: #3e4e4d;
+  --ch-bar: #a8d5d0;
+  --ch-grid: rgba(23,43,43,.09);
+  --ch-ax: #67716f;
+  --ink: #0b1214;
+  --petrol: #0f5a5e;
+  --teal: #08777b;
+  --accent: #21cec5;
+  --accent-2: #058c93;
+  --stone: #ebe5dc;
+  --taupe: #a99f92;
+  --sombra-ventana: 0 30px 80px rgba(0,0,0,.35);
+  --sombra-ficha: 0 26px 60px rgba(0,0,0,.45);
+  --sombra-boton: 0 18px 40px rgba(23,43,43,.1);
+}
+[data-theme="dark"] {
+  --bg: #162b2a;
+  --bg-alt: #1b3331;
+  --bg-soft: #1b3331;
+  --bg-deep: #102221;
+  --bg-lift: #23403d;
+  --card: #1d3533;
+  --card-h: #23403d;
+  --line: rgba(169,190,188,.16);
+  --line-2: rgba(169,190,188,.28);
+  --fg: #f7f5f1;
+  --fg-2: #d8dedc;
+  --muted: #b4bfbe;
+  --accent-tx: #21cec5;
+  --taupe-tx: #a99f92;
+  --glass: rgba(14,26,28,.88);
+  --ok: #9fe3dc;
+  --ko: #e6c9a8;
+  --nd: #e2d6c4;
+  --warn: #ffcf8a;
+  --err: #ffb4a8;
+  --ch-a: #21cec5;
+  --ch-a-tx: #21cec5;
+  --ch-b: #d7c3a3;
+  --ch-b-tx: #d7c3a3;
+  --ch-c: #e8eeed;
+  --ch-bar: #1f8f88;
+  --ch-grid: rgba(255,255,255,.08);
+  --ch-ax: #8fa3a1;
+}
+:root {
+  --wrap-max: 1120px;
+  --wrap-pad: 22px;
+  --cabecera-alto: 92px;
+  --cabecera-alto-movil: 76px;
+  --seccion-y: 76px;
+  --seccion-y-movil: 54px;
+  --radius-0: 0;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-20: 20px;
+  --radius-full: 50%;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-titulares: "Montserrat Titulares", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.hablemos { font-family: var(--font-titulares); font-size: 103.68px; line-height: 98.5px; font-weight: 800; letter-spacing: 3.11px; }
+.cabecera-h1 { font-family: var(--font-titulares); font-size: 92px; line-height: 92px; font-weight: 900; letter-spacing: 2.76px; }
+.seccion-h2 { font-family: var(--font-titulares); font-size: 60px; line-height: 63.6px; font-weight: 900; letter-spacing: 1.8px; }
+.pagina-h1 { font-family: var(--font-titulares); font-size: 58px; line-height: 62.64px; font-weight: 800; letter-spacing: 1.74px; }
+.presentacion-h1 { font-family: var(--font-titulares); font-size: 50px; line-height: 53px; font-weight: 800; letter-spacing: 1.5px; }
+.h2 { font-family: var(--font-titulares); font-size: 44px; line-height: 47.52px; font-weight: 800; letter-spacing: 1.32px; }
+.h2-s { font-family: var(--font-titulares); font-size: 38px; line-height: 41.04px; font-weight: 800; letter-spacing: 1.14px; }
+.tarjeta-servicio { font-family: var(--font-titulares); font-size: 38px; line-height: 41.8px; font-weight: 800; letter-spacing: 1.14px; }
+.legal-h2 { font-family: var(--font-titulares); font-size: 31px; line-height: 33.48px; font-weight: 800; letter-spacing: 0.93px; }
+.h3 { font-family: var(--font-titulares); font-size: 24px; line-height: 26.88px; font-weight: 700; letter-spacing: 0.72px; }
+.h3-s { font-family: var(--font-titulares); font-size: 18px; line-height: 19.44px; font-weight: 700; letter-spacing: 0.54px; }
+.lead { font-family: var(--font-sans); font-size: 16px; line-height: 27.2px; font-weight: 400; letter-spacing: 0.28px; }
+.cuerpo { font-family: var(--font-sans); font-size: 14px; line-height: 23.8px; font-weight: 400; letter-spacing: 0.28px; }
+.cuerpo-s { font-family: var(--font-sans); font-size: 13px; line-height: 22.1px; font-weight: 400; letter-spacing: 0.28px; }
+.pequeno { font-family: var(--font-sans); font-size: 11px; line-height: 18.7px; font-weight: 400; letter-spacing: 0.28px; }
+.legal { font-family: var(--font-sans); font-size: 10px; line-height: 17px; font-weight: 400; letter-spacing: 0.28px; }
+.boton { font-family: var(--font-sans); font-size: 13px; line-height: 17.55px; font-weight: 500; letter-spacing: 1.56px; }
+.boton-s { font-family: var(--font-sans); font-size: 12px; line-height: 12px; font-weight: 500; letter-spacing: 1.44px; }
+.menu { font-family: var(--font-sans); font-size: 11px; line-height: 11px; font-weight: 500; letter-spacing: 1.1px; }
+.rotulo { font-family: var(--font-sans); font-size: 11px; line-height: 15.4px; font-weight: 700; letter-spacing: 2.42px; }
+.pie-enlace { font-family: var(--font-sans); font-size: 10px; line-height: 17px; font-weight: 400; letter-spacing: 0.6px; }

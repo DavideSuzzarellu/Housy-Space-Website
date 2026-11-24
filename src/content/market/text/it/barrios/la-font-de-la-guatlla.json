@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Case basse con giardino e strade con nomi di fiori, sul pendio di Montjuïc, accanto alla Gran Via.",
+  "text": [
+    "È un quartiere piccolo, di 0,30 km², sul versante nord-occidentale di Montjuïc, nato con vocazione di città giardino. Da qui vengono le sue case basse con giardino e le strade con nomi di fiori, come Dàlia, Lotus, Hortènsia, Begònia o Crisantem, che contrastano con i palazzi alti della Gran Via.",
+    "Qui si vive accanto a plaça d'Espanya e alla montagna, con due opere di Josep Puig i Cadafalch come punti di riferimento: l'ex fabbrica Casarramona, oggi sede di CaixaForum, e il ristorante della Font del Gat. Con 10.869 abitanti, è un quartiere a misura d'uomo accanto a una delle grandi piazze della città."
+  ],
+  "housing": "Case basse con giardino sul pendio e palazzi alti accanto alla Gran Via.",
+  "places": ["CaixaForum Barcelona", "Font del Gat", "Parc de Montjuïc"]
+}

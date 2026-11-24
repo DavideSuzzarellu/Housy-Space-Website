@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Cave, salite e una lunga tradizione di autocostruzione e lotta di vicinato.",
+  "text": [
+    "Il suo nome deriva dalle cave di roccia della collina, che fornirono i materiali per costruire la città, e strade come Cantera o Camí Vell de la Pedrera lo ricordano. Fino alla metà del Novecento la zona era quasi priva di urbanizzazione, e negli anni Cinquanta arrivarono ondate di immigrati: molte case del pendio furono autocostruite, e tra il 1964 e il 1967 gli abitanti realizzarono le fognature e l'acqua corrente con l'iniziativa «Urbanizzare di domenica».",
+    "Quel carattere di vicinato si mantiene, con l'Ateneu Popular de Nou Barris, incentrato sul circo, il parco del Pla de Fornells, in un'antica area industriale, e la stazione di Roquetes, della linea 3. Con 2.465 €/m² e 701 €/mese, è un quartiere dai prezzi contenuti."
+  ],
+  "housing": "Case di pendio, alcune autocostruite, e palazzi di piccoli appartamenti degli anni Cinquanta.",
+  "places": [
+    "Ateneu Popular de Nou Barris",
+    "Parc del Pla de Fornells",
+    "Estació de metro Roquetes (L3)"
+  ]
+}

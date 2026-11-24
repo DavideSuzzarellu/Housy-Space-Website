@@ -34,6 +34,8 @@ describe("ReviewsSection", () => {
             text: "Texto de prueba",
             date: new Date("2026-08-01"),
             language: "es",
+            photoUrl: "https://lh3.googleusercontent.com/a/x",
+            reviewUrl: "https://www.google.com/maps/reviews/x",
           },
         ],
       },
@@ -43,5 +45,7 @@ describe("ReviewsSection", () => {
     expect(html).toContain('aria-label="5 / 5"');
     expect(html).toContain("https://maps.app.goo.gl/test");
     expect(html).toContain("más recientes");
+    expect(html).toContain("https://lh3.googleusercontent.com/a/x");
+    expect(html).toContain("https://www.google.com/maps/reviews/x");
   });
 });

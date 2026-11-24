@@ -1,0 +1,1 @@
+Icono de la web (favicon) en SVG. El resto de iconos de la web son SVG de trazo en línea, no archivos: `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2.2"`, `stroke-linecap="round"`, `stroke-linejoin="round"`, siempre con `aria-hidden="true"` si van junto a texto.

@@ -1,0 +1,307 @@
+{
+  "title": "Ristrutturazioni complete a Barcellona · HousySpace",
+  "description": "Ristrutturazioni complete a Barcellona con un solo interlocutore: progetto e interior design con lo studio con cui collaboriamo e controllo di tempi e budget.",
+  "head": {
+    "heading": "Ristrutturazioni *e interior design*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-reformas-1000.webp",
+      "alt": "Illustrazione del servizio: Volumi crema e verdi che si riordinano",
+      "scale": 0.652
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
+      {
+        "kind": "lead",
+        "text": "Ristrutturazioni per ogni tipo di immobile: progetto, interior design e lavori con un unico interlocutore."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-ventanal-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci la tua ristrutturazione",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Una ristrutturazione, un solo interlocutore."
+        },
+        {
+          "kind": "p",
+          "text": "Coordiniamo ristrutturazioni per ogni tipo di immobile. Ristrutturazione e interior design vengono pensati insieme, così distribuzione, materiali e luce sono definiti prima dell'inizio dei lavori. Poi coordiniamo i professionisti e seguiamo tempi e budget fino alla consegna."
+        },
+        {
+          "kind": "p",
+          "text": "Il progetto viene sviluppato con lo studio di architettura e interior design con cui collaboriamo, e tu hai sempre la stessa persona di riferimento. Gli interventi tecnici e l'esecuzione dei lavori spettano ai professionisti e alle imprese che partecipano a ciascun progetto."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Quando ristrutturare"
+        },
+        {
+          "kind": "h2",
+          "text": "Quando ha senso ristrutturare"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Prima di vendere",
+              "text": "Non tutte le ristrutturazioni convengono prima di vendere. Valutiamo se un miglioramento specifico può agevolare la vendita o se basta offrire all'acquirente un preventivo dei lavori. [Vedi compravendita](service:venta-estrategica)."
+            },
+            {
+              "title": "All'acquisto",
+              "text": "La ristrutturazione valutata prima dell'acquisto, per conoscerne il costo prima di decidere. [Vedi Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "Per affittare",
+              "text": "Preparazione della casa prima di metterla in affitto."
+            },
+            {
+              "title": "Per investire",
+              "text": "Ristrutturazioni pensate con i numeri davanti: costo, tempi ed effetto atteso su affitto o vendita."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "stepsList",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Le fasi"
+        },
+        {
+          "kind": "h2",
+          "text": "Dal primo schizzo alla consegna delle chiavi"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Visita ed esigenze",
+              "text": "Vediamo lo spazio e capiamo come vuoi viverlo."
+            },
+            {
+              "title": "Progetto e interior design",
+              "text": "Distribuzione, materiali, illuminazione e arredi su misura, in un unico progetto."
+            },
+            {
+              "title": "Preventivo",
+              "text": "Un preventivo dettagliato prima di iniziare, per decidere senza sorprese."
+            },
+            {
+              "title": "Permessi e autorizzazioni",
+              "text": "Ci occupiamo noi dei permessi di lavori richiesti dal Comune."
+            },
+            {
+              "title": "Lavori",
+              "text": "Coordiniamo le maestranze (muratori, installatori, falegnami) e seguiamo tempi, budget e qualità."
+            },
+            {
+              "title": "Rifiniture e consegna",
+              "text": "Verifichiamo ogni dettaglio con te e ti consegniamo l'immobile finito."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interiorismo",
+      "layout": "swatches",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Interior design"
+        },
+        {
+          "kind": "h2",
+          "text": "Materiali e finiture"
+        },
+        {
+          "kind": "lead",
+          "text": "Definiamo con te lo stile, i materiali, le texture e i dettagli affinché ogni ambiente funzioni e si senta tuo."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Legno naturale",
+              "text": "Pavimenti, falegnameria e arredi",
+              "color": "#B98A5E"
+            },
+            {
+              "title": "Pietra e marmo",
+              "text": "Piani di lavoro, bagni e dettagli",
+              "color": "#D9D2C5"
+            },
+            {
+              "title": "Microcemento",
+              "text": "Continuità su pavimenti e pareti",
+              "color": "#CDBFA9"
+            },
+            {
+              "title": "Lino e cotone",
+              "text": "Tessuti e tende",
+              "color": "#ECE6DA"
+            },
+            {
+              "title": "Ottone",
+              "text": "Illuminazione e ferramenta",
+              "color": "#B48A45"
+            },
+            {
+              "title": "Verde profondo",
+              "text": "Colore e contrasto",
+              "color": "#2C4A44"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Con chi lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Progetti con Maria Guimerà Arquitectura"
+        },
+        {
+          "kind": "lead",
+          "text": "Per il progetto, l'interior design e la direzione lavori collaboriamo con uno studio di architettura e interior design di Barcellona. HousySpace coordina ed è il tuo interlocutore; lo studio sviluppa il progetto e le imprese edili lo realizzano."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Perché ci fidiamo di loro",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Studio di architettura e interior design a Barcellona, specializzato in ristrutturazioni integrali di abitazioni e appartamenti dell'Eixample.",
+              "kicker": "Architettura e interior design",
+              "href": "https://mariaguimera.com/es/inicio/",
+              "cta": "Visita mariaguimera.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parliamone"
+        },
+        {
+          "kind": "lead",
+          "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravendita e intermediazione immobiliare",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Personal shopper immobiliare",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Valutazione immobiliare",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -57,7 +57,7 @@ for (const locale of LOCALES) {
         "living",
         "blog",
       ]);
-      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(9);
+      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
       await expect(page.locator("[data-contact-block]")).toBeVisible();
       await expect(
         page.locator("[data-blog-empty], [data-section=blog] [data-post-card]").first(),
@@ -74,6 +74,70 @@ for (const locale of LOCALES) {
       expect(page.url()).toBe(url);
     });
 
+    test("services carousel shows seven panels in a circle; the others are skipped by Tab", async ({
+      page,
+    }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      await expect(panels).toHaveCount(8);
+      await expect(panels.locator("a:visible")).toHaveCount(7);
+      await expect(panels.first()).toHaveAttribute("data-pos", "0");
+      await expect(panels.nth(4)).toHaveAttribute("data-pos", "hl");
+      await expect(panels.nth(4).locator("a")).toBeHidden();
+    });
+
+    test("services carousel turns round with its arrows and the keyboard", async ({ page }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      const rail = page.locator("[data-rail-wrap]");
+      await rail.scrollIntoViewIfNeeded();
+      await rail.locator("[data-rail-next]").click();
+      await expect(panels.nth(1)).toHaveAttribute("data-active", "true");
+      await rail.locator("[data-rail-prev]").click();
+      await rail.locator("[data-rail-prev]").click();
+      // Circular: before the first comes the last.
+      await expect(panels.nth(8)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(8)).toHaveAttribute("data-pos", "0");
+
+      await panels.nth(8).locator("a").focus();
+      await page.keyboard.press("ArrowRight");
+      await expect(panels.nth(0)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(0).locator("a")).toBeFocused();
+    });
+
+    test("services carousel can be paused and resumed (WCAG 2.2.2)", async ({ page }, testInfo) => {
+      test.skip(
+        testInfo.project.name.includes("reduced-motion"),
+        "No auto-advance, so no pause button, under reduced motion",
+      );
+      const rail = page.locator("[data-rail-wrap]");
+      const list = rail.locator("[data-services-accordion]");
+      const toggle = rail.locator("[data-rail-toggle]");
+      await rail.scrollIntoViewIfNeeded();
+      await expect(toggle).toBeVisible();
+      const pauseLabel = await toggle.getAttribute("aria-label");
+      await toggle.click();
+      await expect(list).toHaveAttribute("data-held", "");
+      expect(await toggle.getAttribute("aria-label")).not.toBe(pauseLabel);
+      await toggle.click();
+      await expect(toggle).toHaveAttribute("aria-label", pauseLabel ?? "");
+    });
+
+    test("stats count up to the figures of the content (CSS counter, no script)", async ({
+      page,
+    }) => {
+      // Scroll the whole row into view: the scroll-driven count ends once it has entered.
+      await page.locator("#stats ul").scrollIntoViewIfNeeded();
+      await page.evaluate(() => window.scrollBy(0, 300));
+      await expect
+        .poll(() =>
+          page
+            .locator(".stat-count")
+            .evaluateAll((nodes) =>
+              nodes.map((node) => getComputedStyle(node).getPropertyValue("--count").trim()),
+            ),
+        )
+        .toEqual(["35", "100", "60", "9"]);
+    });
+
     test("districts carousel moves with its buttons", async ({ page }) => {
       const rail = page.locator("[data-rail]");
       await rail.scrollIntoViewIfNeeded();
@@ -84,7 +148,7 @@ for (const locale of LOCALES) {
     test("shows the 3 latest client reviews, newest first", async ({ page }) => {
       const section = page.locator('[data-section="reviews"]');
       await expect(section.locator("li")).toHaveCount(3);
-      await expect(section.locator("li").first()).toContainText("Bruno S.");
+      await expect(section.locator("li").first()).toContainText("Bruno Sorrentini");
     });
 
     test("links to the 10 district pages", async ({ page }) => {

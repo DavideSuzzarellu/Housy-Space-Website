@@ -1,0 +1,44 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Dalla montagna di Montjuïc al porto: quartieri di tradizione operaia, vita di strada e la stazione di Sants.",
+  "history": [
+    "Sants-Montjuïc è il distretto più esteso di Barcellona e il più vario: riunisce la montagna di Montjuïc, il porto e la Zona Franca in otto quartieri molto diversi tra loro. Santa Maria de Sants fu un comune indipendente fino all'annessione a Barcellona nel 1897, e di quel passato conserva il suo asse commerciale e la sua vita di quartiere.",
+    "Nel distretto convivono quartieri di radici operaie e commerciali, come Sants, Hostafrancs, la Bordeta o il Poble-sec, la Barcellona delle esposizioni e dei Giochi Olimpici a Montjuïc e zone quasi prive di abitazioni, come la Zona Franca. La stazione di Sants collega la città all'alta velocità e al resto della Spagna, e plaça d'Espanya fa da porta d'ingresso a Montjuïc.",
+    "Tra i suoi 8 quartieri, il prezzo medio di compravendita va dai 2.724 €/m² della Marina del Prat Vermell ai 4.310 €/m² di Sants, e l'affitto medio dagli 885 €/mese della Marina de Port ai 1.390 €/mese della Marina del Prat Vermell.",
+    "Ogni quartiere ha il suo ritmo e i suoi prezzi, quindi conviene confrontare con calma strade e stabili prima di scegliere."
+  ],
+  "summary": "Sants-Montjuïc conta 196.040 abitanti su 22,88 km² e 8 quartieri. È il distretto più esteso della città. Il suo prezzo medio di compravendita nel 2025 è stato di 3.867 €/m², il 9% sotto la media della città. L'affitto medio è di 1.001 €/mese.",
+  "landmarks": [
+    {
+      "name": "Montjuïc",
+      "where": "Parco di Montjuïc",
+      "text": "La montagna con il castello, i giardini e i belvedere sul porto."
+    },
+    {
+      "name": "MNAC e la Font Màgica",
+      "where": "Parco di Montjuïc",
+      "text": "Il Palau Nacional, sede del Museu Nacional d'Art de Catalunya, e la fontana di Carles Buïgas."
+    },
+    {
+      "name": "Anella Olímpica",
+      "where": "Parco di Montjuïc",
+      "text": "L'Estadi Olímpic Lluís Companys e gli impianti del 1992."
+    },
+    {
+      "name": "Plaça d'Espanya",
+      "where": "Ai piedi di Montjuïc",
+      "text": "La grande piazza dell'Esposizione del 1929, con le sue torri veneziane."
+    },
+    {
+      "name": "Poble Espanyol",
+      "where": "Parco di Montjuïc",
+      "text": "Recinto dell'Esposizione del 1929 con architetture di tutta la Spagna."
+    },
+    {
+      "name": "Estació de Sants",
+      "where": "Sants",
+      "text": "La principale stazione ferroviaria di Barcellona."
+    }
+  ]
+}

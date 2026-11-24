@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Mercado, libros de domingo y vida de calle, en el límite del Eixample con el Raval y el Poble-sec.",
+  "text": [
+    "Su nombre viene de la iglesia de Sant Antoni, que se alzaba junto a la puerta de la muralla del Raval y hoy ya no existe. El barrio empezó a edificarse hacia 1880 y fue durante buena parte del siglo XX un barrio obrero; muchos de los edificios actuales datan de los años veinte y treinta.",
+    "El Mercat de Sant Antoni, obra de Antoni Rovira i Trias, se levantó entre 1872 y 1882 y reabrió en 2018 tras una larga rehabilitación; los domingos por la mañana lo rodean los puestos de libros y de coleccionismo. Alrededor, la calle Parlament y su entorno suman bares, restaurantes y terrazas. Con 4.603 €/m², es el barrio con el precio de compraventa más bajo del Eixample."
+  ],
+  "housing": "Pisos de principios del siglo XX en la trama de Cerdà, con vida a pie de calle.",
+  "places": [
+    "Mercat de Sant Antoni",
+    "Mercat dominical del llibre",
+    "Carrer Parlament",
+    "Ronda de Sant Antoni"
+  ]
+}

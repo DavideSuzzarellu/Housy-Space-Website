@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Lanes of houses with courtyards, a park with views and the feel of a summer village in the middle of the city.",
+  "text": [
+    "Around 1870 the first villas of Barcelona's bourgeoisie went up here, as they used it as a summer retreat. El Farró takes its name from Silvestre Farró, who built the first houses in the early 19th century, and in 2007 the two areas were merged into a single neighbourhood.",
+    "Its character lies in the Parc del Putxet, which covers a good part of its surface, and in lanes such as Passatge de Sant Felip and Passatge de Mulet, with low-rise houses with courtyards and rows of terraced houses, often built around villas in a colonial or Modernista style. At 1,202 €/month, it has the lowest average rent in the district."
+  ],
+  "housing": "Low-rise houses with courtyards, lanes of terraced houses and low-rise buildings.",
+  "places": ["Parc del Putxet", "Passatge de Sant Felip", "Passatge de Mulet"]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Dal Poblenou industriale alla Vila Olímpica: spiagge, innovazione e quartieri nuovi sul mare.",
+  "history": [
+    "Sant Martí de Provençals è stato un comune indipendente fino al 1897. Il suo quartiere più noto, il Poblenou, alla fine dell'Ottocento era la zona più industrializzata della Catalogna, la «Manchester catalana», e oggi ospita il distretto dell'innovazione 22@, con vecchie fabbriche recuperate come loft, studi e uffici.",
+    "I Giochi Olimpici del 1992 hanno aperto la città al mare con la Vila Olímpica e le spiagge, e Diagonal Mar e il Fòrum hanno completato la trasformazione della costa. I suoi dieci quartieri uniscono fabbriche riconvertite, nuove costruzioni, torri sul lungomare e i palazzi dei quartieri interni.",
+    "Tra i suoi 10 quartieri, il prezzo medio di compravendita va dai 2.837 €/m² del Besòs i el Maresme ai 5.528 €/m² di Diagonal Mar i el Front Marítim del Poblenou, e l'affitto medio dai 756 €/mese del Besòs i el Maresme agli 1.732 €/mese di Diagonal Mar i el Front Marítim del Poblenou.",
+    "Il prezzo e l'atmosfera cambiano molto tra il lungomare e i quartieri dell'interno, per questo conviene confrontare bene ogni zona."
+  ],
+  "summary": "Sant Martí conta 252.625 abitanti su 10,44 km² e 10 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 4.115 €/m², il 3% sotto la media della città. L'affitto medio è di 1.094 €/mese.",
+  "landmarks": [
+    {
+      "name": "Rambla del Poblenou",
+      "where": "Il Poblenou",
+      "text": "Il viale centrale dell'antico quartiere industriale."
+    },
+    {
+      "name": "Le spiagge",
+      "where": "Litorale del distretto",
+      "text": "Nova Icària, Bogatell, Mar Bella, Nova Mar Bella e Llevant."
+    },
+    {
+      "name": "Torre Glòries",
+      "where": "El Parc i la Llacuna del Poblenou",
+      "text": "La torre di Jean Nouvel accanto a plaça de les Glòries."
+    },
+    {
+      "name": "Parc del Centre del Poblenou",
+      "where": "Provençals del Poblenou",
+      "text": "Parco di Jean Nouvel sull'avinguda Diagonal."
+    },
+    {
+      "name": "Museu del Disseny",
+      "where": "Plaça de les Glòries",
+      "text": "Il museo del design, in plaça de les Glòries."
+    }
+  ]
+}

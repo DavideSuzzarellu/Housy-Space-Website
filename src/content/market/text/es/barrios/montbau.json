@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un barrio proyectado en los años cincuenta, al pie de Collserola, de bloques racionalistas y mucho verde.",
+  "text": [
+    "Se empezó a urbanizar en 1956 en una zona que siempre había estado poco habitada, para acoger a población llegada de otras regiones de España. Lo planificó el Patronat Municipal de l'Habitatge en la línea racionalista del CIAM, con unas 1.300 viviendas, y su segunda fase duplicó la densidad prevista.",
+    "Está al pie de Collserola, por encima de la Ronda de Dalt, y junto a él se encuentran el Campus de Mundet, de la Universitat de Barcelona, con las facultades de Psicología y Pedagogía, el Palau de les Heures, de 1895, rodeado de jardines, y el Hospital Universitari Vall d'Hebron. Con 5.353 habitantes y 2.605 hab./km², es un barrio tranquilo y poco denso."
+  ],
+  "housing": "Bloques racionalistas de los años cincuenta y sesenta, con espacios verdes entre ellos.",
+  "places": ["Campus de Mundet", "Palau de les Heures", "Hospital Universitari Vall d'Hebron"]
+}

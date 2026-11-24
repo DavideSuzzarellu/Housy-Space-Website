@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El Born and its surroundings: Santa Maria del Mar, the Palau de la Música and the Santa Caterina market.",
+  "text": [
+    "These are three historic neighbourhoods that today form one: Sant Pere, Santa Caterina and La Ribera, the area that almost everyone calls El Born. It was the trading and seafaring quarter of medieval Barcelona, and it is remembered in the basilica of Santa Maria del Mar, the Palau de la Música Catalana by Domènech i Montaner, and Carrer de Montcada with the Museu Picasso. The Parc de la Ciutadella marks one of its boundaries.",
+    "The Santa Caterina market, with its undulating, colourful roof, is the centre of daily life, and in recent years designer shops, galleries and restaurants have arrived. The buildings mix renovated medieval properties with others from the 19th century, with small or medium-sized flats and high ceilings. It is an area with a lot of tourism, so it is worth viewing a flat at different times of day."
+  ],
+  "housing": "Small and medium-sized flats with high ceilings, in renovated old buildings.",
+  "places": [
+    "Santa Maria del Mar",
+    "Palau de la Música Catalana",
+    "Mercat de Santa Caterina",
+    "Museu Picasso",
+    "Parc de la Ciutadella"
+  ]
+}

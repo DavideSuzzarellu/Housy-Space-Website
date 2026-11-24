@@ -1,39 +1,68 @@
 {
   "hero": {
-    "videoLandscape": "/media/hero/hero-1280.mp4",
-    "videoPortrait": "/media/hero/hero-720v.mp4",
-    "posterLandscape": "../../assets/home/hero-poster.jpg",
-    "posterPortrait": "../../assets/home/hero-poster-v.jpg"
-  },
-  "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
     "headingFirst": "Every corner has a story",
     "headingSecond": "Every person, a new beginning",
-    "linkLabel": "Get to know us"
+    "ctaLabel": "About us"
+  },
+  "stats": {
+    "eyebrow": "Five years of HousySpace",
+    "heading": "What we have achieved *with those who trusted us*",
+    "stat1Number": 35,
+    "stat1Plus": true,
+    "stat1Unit": "million €",
+    "stat1Label": "in transactions brokered over these five years",
+    "stat2Number": 100,
+    "stat2Plus": true,
+    "stat2Unit": "properties",
+    "stat2Label": "brokered in Barcelona and surroundings",
+    "stat3Number": 60,
+    "stat3Plus": true,
+    "stat3Unit": "flats",
+    "stat3Label": "rented with the same personal support",
+    "stat4Number": 9,
+    "stat4Plus": false,
+    "stat4Unit": "out of 10 districts",
+    "stat4Label": "in Barcelona, plus more than 10 surrounding municipalities",
+    "note": "Every transaction is on the map, district by district, with the listing price and the month it closed.",
+    "ctaLabel": "Properties we have brokered"
   },
   "featured": {
     "heading": "Find *your new beginning* here",
     "ctaLabel": "View more properties"
   },
   "valuation": {
-    "image": "../../assets/home/det-ventanal-1400.jpg",
-    "imageAlt": "Bright living room with French windows onto a balcony",
+    "image": "../../assets/home/valoracion-fachada-2880.webp",
+    "imageAlt": "Concept image: modernist Barcelona façade with a wrought-iron balcony marked with the HousySpace isotype",
     "heading": "Find out what *your home is worth*",
-    "lead": "Instantly online, or with a HousySpace advisor.",
+    "lead": "Online in an instant, or with a HousySpace advisor.",
     "ctaLabel": "Request a valuation"
   },
   "services": {
     "heading": "Discover everything *we can do for you*"
   },
+  "gallery": {
+    "heading": "Barcelona, a way of life",
+    "lead": "Modernist architecture, Mediterranean light and distinctive period buildings that define the character of the city.",
+    "item1Title": "Eixample Dret",
+    "item1Subtitle": "High ceilings with original mouldings and restored hydraulic floors.",
+    "item2Title": "Sarrià - Sant Gervasi",
+    "item2Subtitle": "Detached houses with large gardens and natural light all day long.",
+    "item3Title": "Ciutat Vella & Born",
+    "item3Subtitle": "Reclaimed timber beams and original Gothic stone arches.",
+    "item4Title": "Gràcia & Pedralbes",
+    "item4Subtitle": "Modern spaces, refurbished with respect for the historic architecture."
+  },
   "collaborators": {
-    "text": "We surround ourselves with the best to offer you much more.",
-    "ctaLabel": "Meet our partners"
+    "lineFirst": "We surround ourselves with the best",
+    "lineSecond": "to offer you so much more.",
+    "ctaLabel": "Why we trust them"
   },
   "philosophy": {
     "quoteFirst": "Don't worry,",
     "quoteSecond": "I'll take care of it!",
-    "subLead": "It is not just a phrase.",
-    "sub": "It is how we work.",
+    "subLead": "It's not just a phrase.",
+    "sub": "It's how we work.",
     "primaryCta": "Discover our philosophy"
   },
   "reviews": {
@@ -46,7 +75,16 @@
     "ctaLabel": "Explore the interactive map"
   },
   "blog": {
-    "heading": "Blogs *and news*",
+    "heading": "Blog *and news*",
     "ctaLabel": "See all articles"
+  },
+  "contact": {
+    "heading": "Private *consultation*",
+    "lead": "A HousySpace advisor will be with you from your very first message.",
+    "fieldNameLabel": "Full name",
+    "fieldEmailLabel": "Email address",
+    "fieldMessageLabel": "Tell us what you need",
+    "fieldConsentLabel": "I have read and accept HousySpace's privacy policy and consent to the processing of my data to manage my request.",
+    "submitLabel": "Send enquiry"
   }
 }

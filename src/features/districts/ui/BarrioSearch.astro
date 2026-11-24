@@ -1,0 +1,222 @@
+---
+import type { MarketData } from "@/features/districts/infrastructure/marketSchema";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { figureFormat, formatMessage } from "@/shared/lib/format";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+
+/**
+ * Search of a district or a barrio (reference `vs6`): the 10 districts when the field is empty, every
+ * district and barrio that contains all the typed words (any order, accents ignored) otherwise.
+ * Every row is a plain link rendered at build time; the script only shows and hides rows.
+ */
+interface Props {
+  locale: Locale;
+  market: MarketData;
+  /** Spanish district and barrio names are official, so only the labels change per locale. */
+  fallback?: boolean;
+}
+
+const { locale, market } = Astro.props;
+const t = getDictionary(locale).zones;
+const format = figureFormat(locale);
+const norm = (value: string): string =>
+  value
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+const districtName = new Map(market.districts.map((district) => [district.slug, district.name]));
+const rows = [
+  ...market.districts.map((district) => ({
+    kind: "d" as const,
+    mapDistrict: district.slug,
+    mapBarrio: "",
+    name: district.name,
+    note: formatMessage(t.districtTag, { count: district.barrioCount }),
+    keys: norm(district.name),
+    sale: district.sale,
+    rent: district.rent,
+    href: getLocalizedPath("district", locale, { district: district.slug }),
+  })),
+  ...market.barrios.map((barrio) => ({
+    kind: "b" as const,
+    mapDistrict: barrio.district,
+    mapBarrio: barrio.slug,
+    name: barrio.name,
+    note: formatMessage(t.barrioIn, { district: districtName.get(barrio.district) ?? "" }),
+    keys: norm(`${barrio.name} ${districtName.get(barrio.district) ?? ""}`),
+    sale: barrio.sale,
+    rent: barrio.rent,
+    href: getLocalizedPath("barrio", locale, { barrio: barrio.slug }),
+  })),
+];
+---
+
+<div role="search" data-barrio-search class="max-w-190">
+  <label
+    for="barrio-search"
+    class="mb-3 block text-[0.6875rem] font-medium tracking-[0.14em] text-taupe-tx"
+  >
+    {t.searchLabel}
+  </label>
+  <div class="relative">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      class="pointer-events-none absolute top-1/2 left-5 size-4.5 -translate-y-1/2 fill-none stroke-muted stroke-[2.2] [stroke-linecap:round] [stroke-linejoin:round]"
+    >
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="m20 20-3.5-3.5"></path>
+    </svg>
+    <input
+      id="barrio-search"
+      type="search"
+      autocomplete="off"
+      placeholder={t.searchPlaceholder}
+      aria-controls="barrio-results"
+      class="h-15.5 w-full border border-line-strong bg-canvas pr-14 pl-13.5 text-[0.9375rem] placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent"
+    />
+  </div>
+  <div id="barrio-results" hidden aria-live="polite" class="-mt-3 bg-canvas px-4.5 pt-1 pb-2.5">
+    <p
+      data-search-label
+      class="pt-3.5 pb-1.5 text-[0.65625rem] font-medium tracking-[0.16em] text-taupe-tx"
+    >
+      {t.searchPick}
+    </p>
+    <ul class="m-0 list-none p-0">
+      {rows.map((row) => (
+        <li
+          data-kind={row.kind}
+          data-keys={row.keys}
+          data-map-district={row.mapDistrict}
+          data-map-barrio={row.mapBarrio}
+          hidden={row.kind === "b"}
+          class="flex items-center border-b border-line"
+        >
+          <a
+            href={row.href}
+            class="group grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto_auto_1.5rem] items-center gap-x-6 py-[15px] no-underline hover:text-accent focus-visible:text-accent max-[640px]:grid-cols-[minmax(0,1fr)_auto_1.5rem] max-[640px]:gap-x-3"
+          >
+            <span class="min-w-0">
+              <b class="block text-[clamp(1.125rem,1.6vw,1.4375rem)] leading-[1.15] font-normal">
+                {row.name}
+              </b>
+              <small class="mt-[3px] block text-[0.65625rem] tracking-[0.12em] text-taupe-tx">
+                {row.note}
+              </small>
+            </span>
+            <span class="min-w-[7rem] text-right">
+              <b class="block text-[1.1875rem] font-normal">{format.format(row.sale)}</b>
+              <small class="mt-[3px] block text-[0.65625rem] tracking-[0.12em] text-muted">
+                {t.saleShort}
+              </small>
+            </span>
+            <span class="min-w-[7rem] text-right max-[640px]:hidden">
+              <b class="block text-[1.1875rem] font-normal">{format.format(row.rent)}</b>
+              <small class="mt-[3px] block text-[0.65625rem] tracking-[0.12em] text-muted">
+                {t.rentShort}
+              </small>
+            </span>
+            <ArrowUpRight class="ml-auto size-3 text-muted" />
+          </a>
+          <button
+            type="button"
+            data-view-map
+            aria-label={formatMessage(t.viewOnMapOf, { name: row.name })}
+            class="ml-3 flex-none cursor-pointer self-stretch px-4 text-[0.625rem] font-medium tracking-[0.14em] text-taupe-tx hover:text-fg focus-visible:text-fg"
+          >
+            {t.viewOnMap}
+          </button>
+        </li>
+      ))}
+    </ul>
+    <p data-search-empty hidden class="py-4 text-[0.8125rem] text-muted">
+      {t.searchNone}
+    </p>
+  </div>
+  <template data-count-one>{t.searchOne}</template>
+  <template data-count-many>{t.searchMany}</template>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const root = document.querySelector<HTMLElement>("[data-barrio-search]");
+    const input = root?.querySelector<HTMLInputElement>("input");
+    const panel = root?.querySelector<HTMLElement>("#barrio-results");
+    if (root === null || root === undefined || !input || !panel) return;
+    const rows = [...panel.querySelectorAll<HTMLElement>("li[data-kind]")];
+    const label = panel.querySelector<HTMLElement>("[data-search-label]");
+    const empty = panel.querySelector<HTMLElement>("[data-search-empty]");
+    const pick = label?.textContent ?? "";
+    const one = root.querySelector("[data-count-one]")?.textContent ?? "{count}";
+    const many = root.querySelector("[data-count-many]")?.textContent ?? "{count}";
+    const norm = (value: string) =>
+      value
+        .normalize("NFD")
+        .replace(/\p{M}/gu, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+    const render = () => {
+      const words = norm(input.value).split(" ").filter(Boolean);
+      let shown = 0;
+      rows.forEach((row) => {
+        const keys = row.dataset["keys"] ?? "";
+        const match =
+          words.length === 0 ? row.dataset["kind"] === "d" : words.every((w) => keys.includes(w));
+        row.hidden = !match;
+        if (match) shown += 1;
+      });
+      if (label) {
+        label.textContent =
+          words.length === 0 ? pick : (shown === 1 ? one : many).replace("{count}", String(shown));
+      }
+      if (empty) empty.hidden = shown !== 0;
+    };
+    const open = () => {
+      panel.hidden = false;
+      render();
+    };
+    panel.addEventListener("click", (event) => {
+      const button =
+        event.target instanceof Element ? event.target.closest("[data-view-map]") : null;
+      const row = button?.closest<HTMLElement>("li[data-map-district]");
+      if (!button || !row) return;
+      const radio = document.getElementById(`zd-${row.dataset["mapDistrict"] ?? ""}`);
+      if (!(radio instanceof HTMLInputElement)) return;
+      radio.checked = true;
+      document
+        .querySelectorAll("[data-barrio][data-on]")
+        .forEach((node) => node.removeAttribute("data-on"));
+      const slug = row.dataset["mapBarrio"] ?? "";
+      if (slug !== "")
+        document.querySelector(`[data-barrio="${slug}"]`)?.setAttribute("data-on", "");
+      panel.hidden = true;
+      const map = document.querySelector<HTMLElement>("[data-district-map]");
+      if (!map) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({
+        top: Math.max(0, map.getBoundingClientRect().top + window.scrollY - 150),
+        behavior: reduce ? "auto" : "smooth",
+      });
+    });
+    input.addEventListener("focus", open);
+    input.addEventListener("click", open);
+    input.addEventListener("input", open);
+    input.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (input.value !== "") input.value = "";
+      else panel.hidden = true;
+      render();
+    });
+    document.addEventListener("pointerdown", (event) => {
+      if (!panel.hidden && event.target instanceof Node && !root.contains(event.target)) {
+        panel.hidden = true;
+      }
+    });
+  });
+</script>

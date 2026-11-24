@@ -1,0 +1,335 @@
+---
+import { Picture } from "astro:assets";
+import histImg from "@/assets/nosotros/ill-historia.webp";
+import difImg from "@/assets/nosotros/ill-diferencia.webp";
+import comoImg from "@/assets/nosotros/ill-como-trabajamos.webp";
+import millaImg from "@/assets/nosotros/ill-milla.webp";
+import AboutEnd from "@/features/agency/ui/AboutEnd.astro";
+import AboutTimeline from "@/features/agency/ui/AboutTimeline.astro";
+import type { PageContent, PageItem } from "@/features/pages/application/pages";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import PaperHero from "@/shared/ui/organisms/PaperHero.astro";
+
+/**
+ * About page of the reference (`nosotros`, editorial composition): grid head, history with its
+ * illustration, the "in figures" timeline, philosophy, the four steps, "an extra mile" on dark,
+ * collaborators with the closing panel. Copy and links come from `about.{locale}.json` (sections
+ * `historia`, `experiencia`, `filosofia`, `como-trabajamos`, `milla`, `colaboraciones`, `cierre`,
+ * `opiniones`); company data comes from `company.ts`. Paragraphs run in sentence case, as in the
+ * reference; labels, titles and links stay in capitals.
+ */
+interface Props {
+  locale: Locale;
+  content: PageContent;
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+}
+
+const { locale, content, crumbs } = Astro.props;
+const dictionary = getDictionary(locale);
+const ta = dictionary.about;
+// The reference trail ends with the page name ("Nosotros"), not with the long heading.
+const trail = [...crumbs.slice(0, -1), { label: dictionary.nav.about }];
+
+const items = (id: string): readonly PageItem[] =>
+  content.sections.find((section) => section.id === id)?.items ?? [];
+const all = <K extends PageItem["kind"]>(list: readonly PageItem[], kind: K) =>
+  list.filter((item): item is Extract<PageItem, { kind: K }> => item.kind === kind);
+const text = (list: readonly PageItem[], kind: "tag" | "h2" | "quote" | "note" | "big") => {
+  const found = all(list, kind)[0];
+  return found === undefined ? "" : found.text;
+};
+
+const heroKicker = content.head.items.find((item) => item.kind === "tag")?.text;
+const heroLead = content.head.items.find((item) => item.kind === "p")?.text;
+
+const historia = items("historia");
+const filosofia = items("filosofia");
+const como = items("como-trabajamos");
+const milla = items("milla");
+const colab = items("colaboraciones");
+const cierre = items("cierre");
+const opiniones = items("opiniones");
+
+const timeline = all(items("experiencia"), "list")[0]?.items ?? [];
+const steps = all(como, "steps")[0]?.items ?? [];
+const partners = all(colab, "list")[0]?.items ?? [];
+const cierreButtons = all(cierre, "buttons")[0]?.items ?? [];
+
+const SEC = "py-[clamp(2.375rem,6.2vh,3.625rem)]";
+const LAB =
+  "mb-[clamp(0.625rem,1.8vh,1.125rem)] text-[0.6875rem] leading-[1.4] font-bold tracking-[0.22em] text-accent uppercase";
+const H2 = "text-[clamp(1.5625rem,2.65vw,2.375rem)] leading-[1.08] text-balance";
+const H2_XL = "text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.06] text-balance";
+const TX =
+  "mt-[clamp(0.75rem,2.4vh,1.5rem)] [&>p]:max-w-[60ch] [&>p]:text-[clamp(0.9375rem,1.12vw,1.03125rem)] [&>p]:leading-[1.62] [&>p]:tracking-normal [&>p+p]:mt-[0.8em]";
+const SAY =
+  "max-w-[32ch] text-[clamp(1rem,1.3vw,1.15625rem)] leading-[1.4] font-bold tracking-[0.005em] text-balance";
+const BLEED = "[--bleed:min(90px,max(0px,calc((100vw-1128px)/2-24px)))]";
+const LINK =
+  "inline-block border-b border-current pb-1 text-[0.71875rem] leading-[1.3] font-semibold tracking-[0.13em] whitespace-nowrap uppercase transition-colors hover:text-accent focus-visible:text-accent";
+const IMG = {
+  ...PHOTO_PICTURE,
+  alt: "",
+  loading: "lazy",
+  decoding: "async",
+  class: "block h-auto w-full",
+} as const;
+---
+
+<div data-about-view>
+  <PaperHero
+    locale={locale}
+    title={content.head.heading}
+    kicker={heroKicker}
+    subtitle={heroLead}
+    crumbs={trail}
+    size="about"
+  />
+
+  <div class="normal-case">
+    {/* ── NUESTRA HISTORIA ────────────────────────────────────────────── */}
+    <section
+      id="historia"
+      class="bg-white pt-[clamp(2.375rem,6.2vh,3.625rem)] pb-[clamp(1.375rem,3.6vh,2.5rem)]"
+    >
+      <Container width="editorial">
+        <div class="grid gap-y-[clamp(1.625rem,6vw,2.5rem)] min-[760px]:grid-cols-[5fr_7fr] min-[760px]:grid-rows-[auto_1fr] min-[760px]:items-start min-[760px]:gap-x-[clamp(2.25rem,6vw,5.25rem)] min-[760px]:gap-y-[clamp(0.875rem,2.6vh,1.75rem)]">
+          <figure
+            aria-hidden="true"
+            class="cut-a grid max-w-[460px] place-items-center bg-bg-soft p-[8%_7%] [--cut:clamp(1.25rem,2.8vw,2.5rem)] min-[760px]:col-start-1 min-[760px]:row-start-1 min-[760px]:aspect-[4/3] min-[760px]:w-[min(100%,calc(clamp(200px,34vh,330px)*4/3))] min-[760px]:max-w-none min-[760px]:p-[6%_7%]"
+          >
+            <Picture
+              {...IMG}
+              src={histImg}
+              widths={[400, 800]}
+              sizes="(min-width: 900px) 400px, 76vw"
+            />
+          </figure>
+          <div class="min-[760px]:col-start-2 min-[760px]:row-span-2 min-[760px]:row-start-1">
+            <p class={LAB}>{text(historia, "tag")}</p>
+            <h2 data-no-rule class={H2}>
+              <Emphasis text={text(historia, "h2")} />
+            </h2>
+            <div class={TX}>
+              {all(historia, "p").map((p) => (
+                <p>{p.text}</p>
+              ))}
+            </div>
+          </div>
+          <blockquote class="border-l border-fg pl-[clamp(1.125rem,2vw,1.625rem)] min-[760px]:col-start-1 min-[760px]:row-start-2">
+            <p class="max-w-[30ch] text-[clamp(1rem,1.3vw,1.15625rem)] leading-[1.42] font-bold tracking-[0.005em] text-balance">
+              {text(historia, "quote")}
+            </p>
+          </blockquote>
+        </div>
+      </Container>
+    </section>
+
+    {/* ── EN CIFRAS ───────────────────────────────────────────────────── */}
+    <AboutTimeline locale={locale} label={text(items("experiencia"), "tag")} entries={timeline} />
+
+    {/* ── NUESTRA FILOSOFÍA ───────────────────────────────────────────── */}
+    <section id="filosofia" class:list={["overflow-hidden bg-bg-soft", SEC, BLEED]}>
+      <Container width="editorial">
+        <p class={LAB}>{text(filosofia, "tag")}</p>
+        <h2 data-no-rule class={H2_XL}>
+          {text(filosofia, "h2")
+            .split(/(?<=\.)\s+/)
+            .map((part) => (
+              <span class="block">{part}</span>
+            ))}
+        </h2>
+        <div class="mt-[clamp(1.125rem,3.6vh,2.375rem)] grid gap-y-[clamp(1.375rem,5vw,2.25rem)] min-[900px]:grid-cols-2 min-[900px]:items-center min-[900px]:gap-x-[clamp(2.25rem,5vw,4.5rem)]">
+          <div>
+            <div class="[&>p]:max-w-[60ch] [&>p]:text-[clamp(0.9375rem,1.12vw,1.03125rem)] [&>p]:leading-[1.62] [&>p]:tracking-normal [&>p+p]:mt-[0.8em]">
+              {all(filosofia, "p").map((p) => (
+                <p>{p.text}</p>
+              ))}
+            </div>
+            <p
+              class:list={[
+                "mt-[clamp(0.875rem,2.4vh,1.625rem)] border-t border-fg pt-[clamp(0.75rem,2vh,1.25rem)]",
+                SAY,
+              ]}
+            >
+              {text(filosofia, "quote")}
+            </p>
+          </div>
+          <figure
+            aria-hidden="true"
+            class="min-[900px]:mr-[calc(var(--bleed)*-1)] min-[900px]:w-[min(calc(100%+var(--bleed)),calc(clamp(160px,31vh,290px)*2.193))] min-[900px]:justify-self-end"
+          >
+            <Picture
+              {...IMG}
+              src={difImg}
+              widths={[600, 1200]}
+              sizes="(min-width: 900px) 600px, 92vw"
+            />
+          </figure>
+        </div>
+      </Container>
+    </section>
+
+    {/* ── CÓMO TRABAJAMOS ─────────────────────────────────────────────── */}
+    <section id="como-trabajamos" class={SEC}>
+      <Container width="editorial">
+        <div class="grid gap-y-[clamp(1.5rem,5vw,2.25rem)] min-[900px]:grid-cols-[7fr_5fr] min-[900px]:items-end min-[900px]:gap-x-[clamp(2.25rem,6vw,5.5rem)]">
+          <div>
+            <p class={LAB}>{text(como, "tag")}</p>
+            <h2 data-no-rule class={H2}>
+              {text(como, "h2")}
+            </h2>
+          </div>
+          <figure
+            aria-hidden="true"
+            class="max-w-[460px] min-[900px]:w-[min(100%,calc(clamp(130px,24vh,220px)*1.623))] min-[900px]:max-w-none min-[900px]:justify-self-end"
+          >
+            <Picture
+              {...IMG}
+              src={comoImg}
+              widths={[460, 920]}
+              sizes="(min-width: 900px) 460px, 86vw"
+            />
+          </figure>
+        </div>
+        <ol
+          class="mt-[clamp(1.125rem,3.6vh,2.375rem)] grid border-b border-line-strong min-[720px]:grid-cols-2 min-[720px]:gap-x-[clamp(1.5rem,4vw,3rem)] min-[720px]:border-b-0 min-[900px]:grid-cols-4 min-[900px]:items-start min-[900px]:gap-x-[clamp(1.25rem,2.6vw,2.25rem)]"
+          role="list"
+        >
+          {steps.map((step, i) => (
+            <li
+              style={`--i:${i}`}
+              class="grid grid-cols-[clamp(3.5rem,17vw,5rem)_minmax(0,1fr)] gap-x-2 border-t border-fg pt-4 pb-4.5 min-[720px]:mb-5.5 min-[900px]:mb-0 min-[720px]:block min-[720px]:pt-[clamp(0.625rem,1.6vh,1rem)] min-[720px]:pb-0 min-[900px]:mt-[calc(var(--i)*clamp(6px,1.5vh,16px))]"
+            >
+              <span
+                aria-hidden="true"
+                class="row-span-2 text-[clamp(1.75rem,2.9vw,2.625rem)] leading-none font-extrabold tracking-[-0.03em] text-accent tabular-nums min-[720px]:block"
+              >
+                {step.kicker}
+              </span>
+              <h3 class="self-end text-[clamp(0.84375rem,1.1vw,1rem)] leading-[1.3] font-extrabold tracking-[0.05em] min-[720px]:mt-[clamp(0.5rem,1.4vh,0.875rem)]">
+                {step.title}
+              </h3>
+              <p class="mt-1.5 text-[0.90625rem] leading-[1.55] tracking-normal text-muted">
+                {step.text}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </Container>
+    </section>
+
+    {/* ── SIEMPRE UNA MILLA EXTRA ─────────────────────────────────────── */}
+    <section id="milla" class:list={["surface-dark overflow-hidden bg-canvas text-fg", SEC, BLEED]}>
+      <Container width="editorial">
+        <div class="grid gap-y-[clamp(1.875rem,6vw,2.75rem)] min-[900px]:grid-cols-[6fr_5fr] min-[900px]:items-center min-[900px]:gap-x-[clamp(2.25rem,5vw,4.5rem)]">
+          <div>
+            <h2
+              data-no-rule
+              class="text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.06] font-extrabold min-[900px]:whitespace-nowrap"
+            >
+              <Emphasis text={text(milla, "h2")} />
+            </h2>
+            <div class={TX}>
+              {all(milla, "p").map((p) => (
+                <p class="text-fg-2">{p.text}</p>
+              ))}
+            </div>
+          </div>
+          <figure
+            aria-hidden="true"
+            class="cut-a bg-paper p-[5%_9%] [--cut:clamp(1.25rem,2.8vw,2.5rem)] min-[900px]:mr-[calc(var(--bleed)*-1)] min-[900px]:w-[min(calc(100%+var(--bleed)),calc(clamp(180px,35vh,320px)*1.6))] min-[900px]:justify-self-end"
+          >
+            <Picture
+              {...IMG}
+              src={millaImg}
+              widths={[520, 1040]}
+              sizes="(min-width: 900px) 520px, 84vw"
+            />
+          </figure>
+        </div>
+        <div class="mt-[clamp(1.125rem,3.6vh,2.375rem)] border-t border-line-strong pt-[clamp(0.75rem,2.2vh,1.375rem)]">
+          <p class="text-[clamp(0.875rem,1.05vw,0.96875rem)] leading-[1.5] tracking-normal text-muted">
+            {text(milla, "note")}
+          </p>
+          <p class="mt-[0.28em] text-[clamp(1.25rem,2.8vw,2.5rem)] leading-[1.12] font-black tracking-[0.02em] text-balance uppercase">
+            {text(milla, "big")}
+          </p>
+        </div>
+      </Container>
+    </section>
+
+    {/* ── COLABORACIONES ──────────────────────────────────────────────── */}
+    <section
+      id="colaboraciones"
+      class="pt-[clamp(2.375rem,6.2vh,3.625rem)] pb-[clamp(1.625rem,4.4vh,3rem)]"
+    >
+      <Container width="editorial">
+        <div class="grid gap-y-[clamp(1.75rem,6vw,2.75rem)] min-[900px]:grid-cols-[5fr_6fr] min-[900px]:items-start min-[900px]:gap-x-[clamp(2.25rem,7vw,6.5rem)]">
+          <div class="min-[900px]:sticky min-[900px]:top-30">
+            <p class={LAB}>{text(colab, "tag")}</p>
+            <h2 data-no-rule class={H2}>
+              {text(colab, "h2")}
+            </h2>
+            <div class={TX}>
+              {all(colab, "p").map((p) => (
+                <p>{p.text}</p>
+              ))}
+            </div>
+          </div>
+          <div>
+            <ul class="border-t border-fg" role="list">
+              {partners.map((partner) => (
+                <li class="grid gap-y-[3px] border-b border-line-strong py-[clamp(0.5625rem,1.7vh,1rem)] min-[720px]:grid-cols-[minmax(0,1fr)_auto] min-[720px]:gap-x-7">
+                  <p class="text-[0.65625rem] leading-[1.4] font-bold tracking-[0.18em] text-accent uppercase min-[720px]:col-span-full">
+                    {partner.kicker}
+                  </p>
+                  <h3 class="text-[clamp(0.90625rem,1.15vw,1.03125rem)] leading-[1.3] font-extrabold tracking-[0.04em] min-[720px]:col-start-1">
+                    {partner.title}
+                  </h3>
+                  <p class="max-w-[54ch] text-sm leading-normal tracking-normal text-muted min-[720px]:col-start-1">
+                    {partner.text}
+                  </p>
+                  {partner.href !== undefined && (
+                    <a
+                      href={resolveContentHref(partner.href, locale)}
+                      class:list={[
+                        LINK,
+                        "mt-2 justify-self-start min-[720px]:col-start-2 min-[720px]:row-[2/4] min-[720px]:mt-0 min-[720px]:self-center min-[720px]:justify-self-end",
+                      ]}
+                    >
+                      {partner.cta}
+                      <span class="sr-only"> · {partner.title}</span>
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-[clamp(0.625rem,2vh,1.25rem)] text-sm leading-[1.6] tracking-normal text-muted">
+              <strong class="font-bold text-fg">{ta.sector.heading}</strong> {ta.sector.text}
+              <a
+                href={resolveContentHref("route:contact", locale)}
+                class:list={[LINK, "ml-1.5 text-fg"]}
+              >
+                {ta.sector.cta}
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <AboutEnd
+          locale={locale}
+          title={text(cierre, "h2")}
+          text={all(cierre, "p")[0]?.text ?? ""}
+          actions={cierreButtons}
+          opinions={{ label: text(opiniones, "tag"), text: all(opiniones, "p")[0]?.text ?? "" }}
+        />
+      </Container>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,261 @@
+{
+  "title": "On invertir a Barcelona · HousySpace",
+  "description": "On invertir a Barcelona? Estudiem cada inversió immobiliària amb xifres clares: compra, reforma, lloguer esperable, rendibilitat estimada i riscos.",
+  "head": {
+    "heading": "Inversió *immobiliària*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-inversion-1000.webp",
+      "alt": "Il·lustració del servei: una corba ascendent sobre esglaons amb una clau, un corró i monedes",
+      "scale": 0.77
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
+      {
+        "kind": "lead",
+        "text": "Anàlisi d'oportunitats amb xifres clares: compra, reforma, lloguer i rendibilitat."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns el teu objectiu",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "No prometem rendibilitats: posem les xifres sobre la taula."
+        },
+        {
+          "kind": "p",
+          "text": "Analitzem oportunitats d'inversió residencial amb informació clara, perquè decideixis amb criteri. Et diem també quan una operació no et convé."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Què analitzem"
+        },
+        {
+          "kind": "h2",
+          "text": "Una inversió, mirada des de tots els angles"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Preu i costos de compra",
+              "text": "Preu, impostos, notaria, registre i gestoria: el cost real d'entrada."
+            },
+            {
+              "title": "Reforma",
+              "text": "Quina obra necessita, quant costa i quin efecte pot tenir en el lloguer o en la venda."
+            },
+            {
+              "title": "Renda previsible",
+              "text": "El que es paga avui per habitatges similars a la zona."
+            },
+            {
+              "title": "Rendibilitat estimada",
+              "text": "Bruta i neta, amb despeses, impostos i períodes sense llogatari."
+            },
+            {
+              "title": "Riscs",
+              "text": "Estat de la finca, normativa de lloguer i liquiditat de la zona."
+            },
+            {
+              "title": "Sortida",
+              "text": "Què passa si vols vendre d'aquí a uns anys."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Com ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Pas a pas"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Objectius",
+              "text": "Definim què vols aconseguir, amb quin pressupost i amb quin horitzó."
+            },
+            {
+              "title": "Cerca",
+              "text": "Localitzem opcions que encaixen amb el teu objectiu."
+            },
+            {
+              "title": "Anàlisi",
+              "text": "Estudiem les xifres de cadascuna: costos, lloguer previsible, riscos i sortida."
+            },
+            {
+              "title": "Compra",
+              "text": "Negociem i t'acompanyem fins a la signatura."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "route",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Una sola porta"
+        },
+        {
+          "kind": "h2",
+          "text": "De l'anàlisi a la renda, sense canviar d'interlocutor"
+        },
+        {
+          "kind": "lead",
+          "text": "Si ho necessites, ens ocupem de cada pas després de la compra."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Assessorament financer",
+              "text": "",
+              "kicker": "Financia",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Personal Shopper immobiliari",
+              "text": "",
+              "kicker": "Compra",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Reformes i interiorisme",
+              "text": "",
+              "kicker": "Reforma",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Lloguer i gestió d'immobles",
+              "text": "",
+              "kicker": "Lloga",
+              "href": "service:alquiler-gestion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
+        {
+          "kind": "lead",
+          "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Correu",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliari",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Assessorament financer",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Lloguer i gestió d'immobles",
+              "text": "",
+              "href": "service:alquiler-gestion"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

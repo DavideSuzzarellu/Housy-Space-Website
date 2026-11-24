@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "An early 20th-century garden city, discreet and tucked against the mountain.",
+  "text": [
+    "Development began in 1905 on the land of the Can Pujol farmhouse, on the initiative of Pere Fargas i Sagristà, with the air of a garden city, and it was a summer retreat for Barcelona's bourgeoisie. Its name combines the surname of the developer and that of a nearby spring, said to be of very good quality.",
+    "It is a residential, little-known neighbourhood next to the mountain, with farmhouses and renovated old houses, buildings of three or four storeys and new high-end developments with communal areas. Among its corners are the former Casino, now the Casal de Barri, and the Princess Margaret School, one of the oldest private schools in the city."
+  ],
+  "housing": "Renovated old houses, buildings of three or four storeys and new developments with communal areas.",
+  "places": ["Font d'en Fargues", "Casal de Barri (former Casino)", "Princess Margaret School"]
+}

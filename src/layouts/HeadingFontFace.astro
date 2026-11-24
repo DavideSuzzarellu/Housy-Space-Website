@@ -1,0 +1,9 @@
+---
+import { fontData } from "astro:assets";
+import { headingFontFaceCss } from "@/shared/lib/headingFont";
+
+// Heading family = body Montserrat at 81.9% (AGENTS.md §11.3). Render after `<Font cssVariable="--font-montserrat" />`.
+const css = headingFontFaceCss(fontData["--font-montserrat"]);
+---
+
+<style is:inline set:html={css}></style>

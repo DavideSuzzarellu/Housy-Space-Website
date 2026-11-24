@@ -1,0 +1,60 @@
+---
+import type { HomeContent } from "@/features/agency/application/homeContent";
+import Container from "@/shared/ui/atoms/Container.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
+
+/** Editorial photo gallery: 4 Barcelona neighbourhood photos (placeholder images, §11.1). */
+interface Props {
+  content: HomeContent["gallery"];
+}
+
+const { content } = Astro.props;
+
+// Placeholder Unsplash images — to be replaced with licensed Barcelona photography (§11.1).
+const PHOTOS = [
+  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800",
+  "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800",
+] as const;
+
+const items = [
+  { title: content.item1Title, subtitle: content.item1Subtitle, photo: PHOTOS[0] },
+  { title: content.item2Title, subtitle: content.item2Subtitle, photo: PHOTOS[1] },
+  { title: content.item3Title, subtitle: content.item3Subtitle, photo: PHOTOS[2] },
+  { title: content.item4Title, subtitle: content.item4Subtitle, photo: PHOTOS[3] },
+];
+---
+
+<section
+  id="barcelona"
+  aria-labelledby="gallery-heading"
+  data-section="gallery"
+  class="defer-render bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+>
+  <Container>
+    <SectionHeading id="gallery-heading" heading={content.heading} class="mb-3" />
+    <p data-reveal class="mb-[clamp(1.5rem,3vw,2.5rem)] max-w-[55ch] text-muted">
+      {content.lead}
+    </p>
+    <div class="grid gap-6 sm:grid-cols-2">
+      {items.map((item) => (
+        <figure data-reveal class="m-0">
+          <img
+            src={item.photo}
+            alt={item.title}
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="560"
+            class="block h-[320px] w-full bg-stone object-cover"
+          />
+          <figcaption class="grid gap-1 pt-3">
+            <strong class="font-heading text-2xl font-bold text-fg">{item.title}</strong>
+            <span class="text-sm text-muted">{item.subtitle}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </Container>
+</section>

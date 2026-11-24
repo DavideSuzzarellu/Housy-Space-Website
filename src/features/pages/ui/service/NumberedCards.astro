@@ -1,0 +1,39 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** Numbered cards (reference `.sx-grid`); the number follows the order. */
+interface Props {
+  locale: Locale;
+  list: ItemOf<"list">;
+}
+
+const { locale, list } = Astro.props;
+---
+
+<ul
+  class:list={[
+    "grid gap-3.5 min-[700px]:grid-cols-2",
+    /* Three columns only when the cards fill whole rows of three (reference `.sx-grid.c3`). */
+    list.items.length % 3 === 0 && "min-[1000px]:grid-cols-3",
+  ]}
+>
+  {list.items.map((entry, index) => (
+    <li
+      data-reveal
+      class="bg-card px-6.5 pt-6.5 pb-7 transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-card-hover motion-reduce:transition-none"
+    >
+      <span
+        aria-hidden="true"
+        class="mb-3.5 block text-[10px] leading-[normal] font-medium tracking-[0.14em] text-accent"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h3 class="mb-2.5 text-[clamp(16px,1.5vw,21px)] leading-[1.2]">{entry.title}</h3>
+      <p class="text-[13px] leading-[1.6] text-muted normal-case">
+        <Inline text={entry.text} locale={locale} />
+      </p>
+    </li>
+  ))}
+</ul>

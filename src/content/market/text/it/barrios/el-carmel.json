@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Salite, belvedere e una grande memoria di quartiere, con vista su tutta Barcellona.",
+  "text": [
+    "Deve il nome al santuario di Nostra Signora del Monte Carmelo, costruito nel 1864 ai piedi della collina, prima conosciuta come Turó d'en Móra. Fino agli anni Venti fu un luogo rurale; dopo la Guerra civile crebbe con l'arrivo di gente da tutta la Spagna, e le ultime baracche non furono demolite fino al 1990.",
+    "La pendenza è il suo tratto più riconoscibile, e anche il suo carattere: un quartiere di forte associazionismo, con commercio e servizi, il parco del Carmel e la biblioteca Juan Marsé. Confina con il Park Güell, anche se questo appartiene al distretto di Gràcia. La maggior parte delle abitazioni fu costruita tra il 1960 e il 1980 e predominano quelle da 61 a 90 m². Con 2.858 €/m², il suo prezzo di compravendita è tra i più contenuti del distretto."
+  ],
+  "housing": "Palazzi costruiti tra il 1960 e il 1980, soprattutto da 61 a 90 m², e case basse con giardino nelle zone più antiche.",
+  "places": [
+    "Santuari del Carmel",
+    "Monument «David i Goliat»",
+    "Parc del Carmel",
+    "Biblioteca Juan Marsé",
+    "Búnkers del Carmel"
+  ]
+}

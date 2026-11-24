@@ -1,0 +1,737 @@
+{
+  "title": "Vendere casa a Barcellona · HousySpace",
+  "description": "Vuoi vendere casa a Barcellona? Studiamo il tuo immobile e il suo mercato, definiamo prezzo e strategia, e un unico consulente ti accompagna fino al rogito.",
+  "head": {
+    "heading": "Compravendita *e intermediazione immobiliare*",
+    "photo": false,
+    "wide": true,
+    "illustration": {
+      "src": "../../assets/servicios/ill-compraventa-1000.webp",
+      "alt": "Illustrazione del servizio: due volumi color crema che si incastrano",
+      "scale": 0.737
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Vendere casa a Barcellona"
+      },
+      {
+        "kind": "lead",
+        "text": "Studiamo la tua casa e il suo mercato, definiamo prezzo e strategia, e un unico consulente segue la vendita fino alla firma."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "antes",
+      "layout": "salePoints",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Prima di andare sul mercato"
+        },
+        {
+          "kind": "h2",
+          "text": "Una buona vendita comincia *molto prima di pubblicare l'annuncio*"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Un parere onesto",
+              "text": "Prima di mettere in vendita la tua casa, ti diciamo con franchezza se è il momento giusto, come muoversi e quale strategia seguire."
+            },
+            {
+              "title": "Uno studio preliminare",
+              "text": "Studiamo il tuo immobile, la sua documentazione e il mercato della tua zona, così decidi con i dati in mano e con meno imprevisti lungo la strada."
+            },
+            {
+              "title": "Una relazione di valutazione",
+              "text": "Tutto parte da una [relazione di valutazione](service:valoracion), in cui analizziamo il valore di mercato della tua casa, consigliamo un prezzo di partenza e definiamo la strategia di vendita migliore."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valoracion",
+      "layout": "valOptions",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Valutazione"
+        },
+        {
+          "kind": "h2",
+          "text": "Quanto vale *la tua casa?*"
+        },
+        {
+          "kind": "p",
+          "text": "Richiedi una stima indicativa online, subito, oppure una valutazione con un consulente che studia la tua casa a fondo."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "kicker": "Subito",
+              "title": "Valutazione online",
+              "text": "Inserisci i dati della tua casa nel nostro valutatore e ricevi una stima indicativa del suo valore.",
+              "cta": "Valuta online adesso",
+              "href": "route:valuation"
+            },
+            {
+              "kicker": "Con sopralluogo",
+              "title": "Valutazione con un consulente",
+              "text": "Visitiamo la tua casa, verifichiamo la documentazione e studiamo il mercato del tuo quartiere per darti una relazione completa.",
+              "cta": "Richiedi la valutazione con un consulente",
+              "href": "route:contact"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Se scegli il consulente, ti chiamiamo per fissare la visita, vediamo la casa e la documentazione e ti consegniamo la relazione con i nostri commenti. Puoi richiederla anche se stai ancora decidendo; se non sai ancora se vendere, comincia con una [consulenza di orientamento](route:services#asesoramiento)."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valutazione con un consulente"
+            },
+            {
+              "kind": "lead",
+              "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti chiamerà per valutare la tua casa di persona."
+            },
+            {
+              "kind": "form",
+              "id": "valuation-adviser-form",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "Nome e cognome",
+                  "required": true,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "telefono",
+                  "label": "Telefono",
+                  "required": true,
+                  "full": false,
+                  "type": "tel",
+                  "kind": "field"
+                },
+                {
+                  "name": "email",
+                  "label": "Indirizzo e-mail",
+                  "required": true,
+                  "full": true,
+                  "type": "email",
+                  "kind": "field"
+                },
+                {
+                  "name": "direccion",
+                  "label": "Indirizzo o quartiere dell'immobile",
+                  "required": true,
+                  "full": true,
+                  "type": "text",
+                  "placeholder": "Via e numero, o quartiere",
+                  "kind": "field"
+                },
+                {
+                  "name": "mensaje",
+                  "label": "Raccontaci qualcosa in più (stato, ristrutturazioni, tempistiche…)",
+                  "required": false,
+                  "full": true,
+                  "type": "textarea",
+                  "kind": "field"
+                },
+                {
+                  "name": "consent",
+                  "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta.",
+                  "required": true,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "mkt",
+                  "label": "Desidero ricevere comunicazioni commerciali di HousySpace su immobili, servizi e novità, via e-mail, WhatsApp o telefono. (Facoltativo.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "news",
+                  "label": "Desidero iscrivermi alla newsletter e agli articoli di HousySpace via e-mail. (Facoltativo.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: gestire la tua richiesta e, solo se lo selezioni, inviarti comunicazioni commerciali e la newsletter. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione, portabilità e revoca del consenso scrivendo a [info@housyspace.com](mailto:info@housyspace.com); puoi presentare reclamo all'AEPD. Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Testo legale in bozza.)"
+                },
+                {
+                  "kind": "submit",
+                  "label": "Richiedi valutazione"
+                },
+                {
+                  "kind": "note",
+                  "text": "Non è ancora disponibile un sistema per ricevere il modulo (CRM in attesa). Cliccando si aprirà WhatsApp con la tua richiesta già compilata; finché non la invii lì, non sarà pervenuta a HousySpace."
+                }
+              ],
+              "mode": "whatsapp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "precio",
+      "layout": "salePrice",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Prezzo di partenza"
+        },
+        {
+          "kind": "h2",
+          "text": "Come fissiamo *il prezzo di partenza*"
+        },
+        {
+          "kind": "lead",
+          "text": "Il prezzo non nasce da un portale né da una cifra al metro quadro."
+        },
+        {
+          "kind": "p",
+          "text": "Te lo spieghiamo prima di pubblicare qualsiasi cosa: valore di mercato, prezzo di partenza consigliato e le offerte con cui dovrà confrontarsi la tua casa."
+        },
+        {
+          "kind": "p",
+          "text": "Le operazioni che abbiamo intermediato sono sulla mappa, distretto per distretto: [vedi gli immobili intermediati](route:sale#pisos-vendidos)."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Lo fissiamo con una relazione che raccoglie"
+            },
+            {
+              "kind": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Case simili vendute e in vendita nella zona"
+                },
+                {
+                  "title": "",
+                  "text": "I dati delle compravendite del quartiere"
+                },
+                {
+                  "title": "",
+                  "text": "La situazione catastale e urbanistica"
+                },
+                {
+                  "title": "",
+                  "text": "Lo stato reale della casa e dello stabile"
+                }
+              ]
+            },
+            {
+              "kind": "tag",
+              "text": "Il risultato"
+            },
+            {
+              "kind": "p",
+              "text": "Valore di mercato e prezzo di partenza consigliato"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pasos",
+      "layout": "salePhases",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come lavoriamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Ogni passo conta. *Ce ne occupiamo noi*"
+        },
+        {
+          "kind": "lead",
+          "text": "Otto passi in tre fasi e un unico consulente dall'inizio alla fine. Tu decidi; al resto pensiamo noi."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Fase 1"
+            },
+            {
+              "kind": "h3",
+              "text": "Prima di pubblicare"
+            },
+            {
+              "kind": "p",
+              "text": "Prezzo e documentazione pronti prima di andare sul mercato."
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Valutazione",
+                  "text": "Studiamo l'immobile, il quartiere e il mercato, con un'analisi dei comparabili, per fissare il prezzo di mercato e un prezzo di partenza equo e competitivo."
+                },
+                {
+                  "title": "Preparazione",
+                  "text": "Raccogliamo e verifichiamo tutta la documentazione necessaria per vendere."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Fase 2"
+            },
+            {
+              "kind": "h3",
+              "text": "Sul mercato"
+            },
+            {
+              "kind": "p",
+              "text": "La tua casa, ben presentata e seguita con costanza."
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Pubblicazione",
+                  "text": "Presentiamo la casa sul nostro sito e sui principali portali immobiliari."
+                },
+                {
+                  "title": "Monitoraggio e report di gestione",
+                  "text": "Ogni due settimane ti presentiamo un report di gestione e ci incontriamo per analizzare la risposta del mercato."
+                },
+                {
+                  "title": "Visite",
+                  "text": "Organizziamo, accompagniamo e supervisioniamo le visite con acquirenti davvero interessati."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Fase 3"
+            },
+            {
+              "kind": "h3",
+              "text": "Fino alla firma e dopo"
+            },
+            {
+              "kind": "p",
+              "text": "Negoziamo, chiudiamo e ti restiamo accanto anche dopo la vendita."
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Trattativa",
+                  "text": "Negoziamo a tuo nome e difendiamo il tuo prezzo e le tue condizioni fino alla firma. La decisione di accettare un'offerta è sempre tua."
+                },
+                {
+                  "title": "Firma",
+                  "text": "Verifichiamo la documentazione del rogito e ti accompagniamo dal notaio."
+                },
+                {
+                  "title": "Dopo la vendita",
+                  "text": "Intestiamo le utenze (luce, acqua e gas) al nuovo proprietario e ci occupiamo di liquidare le imposte della vendita."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguimiento",
+      "layout": "saleReport",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Aggiornamenti e trasparenza"
+        },
+        {
+          "kind": "h2",
+          "text": "Ti rendiamo partecipe *di tutto il percorso*"
+        },
+        {
+          "kind": "p",
+          "text": "Vendere casa non significa solo pubblicare l'annuncio e organizzare visite. Durante tutta la commercializzazione analizziamo come risponde il mercato e prepariamo report di gestione, così puoi seguire l'andamento della vendita."
+        },
+        {
+          "kind": "p",
+          "text": "Ti presentiamo i risultati degli annunci, le attività commerciali svolte, le opinioni degli acquirenti e la posizione della tua casa rispetto agli altri immobili della zona."
+        },
+        {
+          "kind": "p",
+          "text": "Ci incontriamo per rivedere i report, spiegarti le nostre conclusioni e decidere insieme i passi successivi. Perché vogliamo che tu abbia tutte le informazioni per decidere con cognizione di causa."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Report di gestione"
+            },
+            {
+              "kind": "p",
+              "text": "Esempio illustrativo"
+            },
+            {
+              "kind": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "title": "Visibilità degli annunci",
+                  "text": "Visualizzazioni, contatti e andamento dell'interesse su portali come Idealista, Fotocasa e Habitaclia."
+                },
+                {
+                  "title": "Attività commerciale",
+                  "text": "Telefonate, e-mail, visite effettuate, seconde visite e offerte ricevute."
+                },
+                {
+                  "title": "Risposta degli acquirenti",
+                  "text": "Cosa apprezzano, quali obiezioni emergono e che cosa può ostacolare la vendita."
+                },
+                {
+                  "title": "Mercato e strategia",
+                  "text": "Confronto con altre case della zona, conclusioni dell'analisi ed eventuali aggiustamenti per migliorare i risultati."
+                }
+              ]
+            },
+            {
+              "kind": "note",
+              "text": "I grafici sono un esempio: non rappresentano dati reali."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "incluye",
+      "layout": "saleIcons",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cosa include"
+        },
+        {
+          "kind": "h2",
+          "text": "Quello che aggiungiamo *a ogni vendita*"
+        },
+        {
+          "kind": "lead",
+          "text": "Oltre agli otto passi, il nostro servizio di intermediazione comprende:"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Lettura del mercato",
+              "text": "Com'è la domanda nella tua zona e cosa aspettarsi nei prossimi mesi.",
+              "icon": ["M3 20h18", "M6 16l4-5 3 3 5-7"]
+            },
+            {
+              "title": "Marketing e pubblicità",
+              "text": "Annuncio sui portali immobiliari, sul nostro sito e su altri canali.",
+              "icon": ["M4 10v4h3l7 4V6L7 10z", "M17 9a4 4 0 0 1 0 6"]
+            },
+            {
+              "title": "Servizio fotografico e tour virtuale",
+              "text": "Un fotografo professionale e un tour virtuale che filtra le visite di semplice curiosità.",
+              "icon": ["M4 8h3l2-2h6l2 2h3v11H4z", "M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"]
+            },
+            {
+              "title": "Documentazione tecnica",
+              "text": "L'architetto con cui collaboriamo si occupa della cédula de habitabilidad e dell'attestato di prestazione energetica, e realizza la planimetria.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
+            },
+            {
+              "title": "Preventivi per i lavori",
+              "text": "Se la casa ha bisogno di lavori, l'acquirente sa fin dall'inizio quanto costeranno.",
+              "icon": ["M4 17 17 4l3 3L7 20z", "M8 13l2 2", "M11 10l2 2", "M14 7l2 2"]
+            },
+            {
+              "title": "Consulenza legale e fiscale",
+              "text": "Ogni passo della vendita verificato da specialisti sul piano legale e fiscale. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal).",
+              "icon": [
+                "M12 4v16",
+                "M7 20h10",
+                "M5 8h14",
+                "M5 8 3 14a2.5 2.5 0 0 0 4 0z",
+                "M19 8l-2 6a2.5 2.5 0 0 0 4 0z"
+              ]
+            },
+            {
+              "title": "Finanziamento dell'acquirente",
+              "text": "Il broker finanziario con cui collaboriamo valuta la fattibilità del finanziamento dell'acquirente, per ridurre il rischio che la vendita salti per il mutuo.",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
+            },
+            {
+              "title": "Sgombero della casa",
+              "text": "Ti aiutiamo a pianificare e organizzare lo sgombero prima della consegna.",
+              "icon": ["M4 8l8-4 8 4v9l-8 4-8-4z", "M4 8l8 4 8-4", "M12 12v9"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exclusiva",
+      "layout": "saleExclusive",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Incarico di mediazione"
+        },
+        {
+          "kind": "h2",
+          "text": "Perché *in esclusiva?*"
+        },
+        {
+          "kind": "lead",
+          "text": "Quando più agenzie si contendono la vendita di una casa, la velocità può prevalere sulla qualità dell'operazione. Con l'esclusiva diamo priorità a una strategia curata, per difendere il prezzo della tua casa e ridurre i rischi dell'operazione."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Senza esclusiva"
+            },
+            {
+              "kind": "p",
+              "text": "Più agenzie, più messaggi"
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "In esclusiva"
+            },
+            {
+              "kind": "p",
+              "text": "Un solo interlocutore, una sola strategia"
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Schema illustrativo."
+        },
+        {
+          "kind": "h3",
+          "text": "Cosa ci guadagni"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "",
+              "text": "Piena dedizione alla tua casa per tutta la durata del contratto."
+            },
+            {
+              "title": "",
+              "text": "Un marketing più curato, perché la presenta una sola agenzia."
+            },
+            {
+              "title": "",
+              "text": "Una trattativa più salda: conosciamo la tua casa a fondo."
+            },
+            {
+              "title": "",
+              "text": "Più sicurezza: nessun altro tratta a tuo nome."
+            },
+            {
+              "title": "",
+              "text": "Meno complicazioni e una comunicazione chiara con gli acquirenti."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "layout": "valFaq",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Domande frequenti"
+        },
+        {
+          "kind": "h2",
+          "text": "Quello che ci chiedono più spesso quando si vende"
+        },
+        {
+          "kind": "faq",
+          "q": "Quanto ci vuole a vendere un appartamento a Barcellona?",
+          "a": "Dipende dal prezzo, dalla zona, dallo stato della casa e dalla domanda del momento, per questo non promettiamo tempi. Ciò che accorcia di più una vendita è arrivare sul mercato con un prezzo di partenza ben studiato e la documentazione pronta. Con i report di gestione vediamo ogni due settimane come risponde il mercato e decidiamo con te se serve qualche aggiustamento."
+        },
+        {
+          "kind": "faq",
+          "q": "Quale documentazione serve per vendere il mio appartamento?",
+          "a": "La raccogliamo e la verifichiamo con te prima di pubblicare: atto di proprietà e visura del registro, cédula de habitabilidad, attestato di prestazione energetica, ultima ricevuta dell'IBI e certificato del condominio, tra gli altri documenti a seconda dei casi. L'architetto con cui collaboriamo si occupa della cédula e dell'attestato energetico."
+        },
+        {
+          "kind": "faq",
+          "q": "Che cos'è il report di gestione e ogni quanto lo ricevo?",
+          "a": "Ogni due settimane ti presentiamo un report con la visibilità degli annunci, l'attività commerciale, le visite e le opinioni degli acquirenti, e la posizione della tua casa rispetto ad altre della zona. Ci incontriamo per commentarlo e decidere insieme i passi successivi."
+        },
+        {
+          "kind": "faq",
+          "q": "Quali spese e imposte ha il venditore?",
+          "a": "Le più comuni sono la plusvalía municipal, la tassazione della plusvalenza ai fini IRPF, la cancellazione dell'ipoteca, se c'è, e i certificati necessari. Ogni caso è diverso: prima di fissare il prezzo ti spieghiamo cosa spetta a te, insieme allo studio di consulenza fiscale con cui collaboriamo."
+        },
+        {
+          "kind": "faq",
+          "q": "Posso vendere se l'appartamento ha un'ipoteca, è affittato o l'ho ereditato?",
+          "a": "Sì. Ogni situazione ha i suoi passaggi: cancellare l'ipoteca alla firma, tenere conto dei diritti dell'inquilino o completare la successione prima di vendere. Li studiamo all'inizio, con lo studio legale con cui collaboriamo, perché non emergano sorprese a metà dell'operazione."
+        },
+        {
+          "kind": "faq",
+          "q": "Mi basta una valutazione online per fissare il prezzo?",
+          "a": "È un buon primo riferimento, ma non sostituisce lo studio della tua casa e delle vendite reali della zona. Ne parliamo nell'articolo [La valutazione online del tuo appartamento è affidabile?](route:blog) e, se vuoi una cifra ragionata, comincia con una [valutazione con un consulente](service:valoracion)."
+        }
+      ]
+    },
+    {
+      "surface": "dark",
+      "band": true,
+      "items": [
+        {
+          "kind": "bandQuote",
+          "text": "«Non preoccuparti, *ci penso io.*»"
+        },
+        {
+          "kind": "p",
+          "text": "Molte vendite saltano per un imprevisto: un certificato di abitabilità mancante, un mutuo che non arriva, una documentazione incompleta. Li anticipiamo e, quando si presentano, li risolviamo."
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parliamone"
+        },
+        {
+          "kind": "lead",
+          "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Compraventa%20e%20intermediaci%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Valutazione immobiliare",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Consulenza legale e fiscale",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

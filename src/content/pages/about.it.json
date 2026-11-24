@@ -1,0 +1,278 @@
+{
+  "title": "HousySpace · Consulenti immobiliari a Barcellona",
+  "description": "HousySpace, agenzia immobiliare a Barcellona: consulenti con 9 anni nel settore che accompagnano ogni cliente in tutto il percorso. Scopri la nostra storia e il nostro modo di lavorare.",
+  "head": {
+    "heading": "Molto più di un'agenzia immobiliare",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Presentazione di HousySpace"
+      },
+      {
+        "kind": "p",
+        "text": "In HousySpace crediamo che ogni decisione immobiliare meriti tempo, criterio e attenzione personale. Ti aiutiamo a trovare il modo migliore di fare il passo successivo."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "historia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "La nostra storia"
+        },
+        {
+          "kind": "h2",
+          "text": "Un'idea molto semplice: le persone, al centro."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace è nata cinque anni fa. Chi c'è dietro lavorava già da tempo nel settore e sapeva cosa si poteva fare in modo diverso: con più vicinanza, con un'attenzione davvero personale e facendo nostre le preoccupazioni di ogni cliente."
+        },
+        {
+          "kind": "p",
+          "text": "Per questo non abbiamo voluto essere un'agenzia immobiliare in più, ma un progetto fedele a come intendiamo questa professione."
+        },
+        {
+          "kind": "p",
+          "text": "Ci dà ancora la stessa soddisfazione condividere l'entusiasmo di chi trova la sua prima casa, aiutare una famiglia a iniziare una nuova fase o accompagnare un cliente a prendere la decisione giusta."
+        },
+        {
+          "kind": "quote",
+          "text": "Dietro ogni immobile c'è una storia, una decisione importante e persone che si fidano di noi."
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "In cifre"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "9",
+              "kicker": "anni",
+              "text": "di esperienza nel settore immobiliare"
+            },
+            {
+              "title": "5",
+              "kicker": "anni",
+              "text": "da quando è nata HousySpace"
+            },
+            {
+              "title": "Oggi",
+              "text": "continuiamo a crescere con chi sceglie di nuovo noi e ci raccomanda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "filosofia",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "La nostra filosofia"
+        },
+        {
+          "kind": "h2",
+          "text": "Ogni immobile è diverso. Ogni persona, anche."
+        },
+        {
+          "kind": "p",
+          "text": "Non crediamo che tutte le operazioni immobiliari vadano affrontate allo stesso modo. Prima di proporre una strategia ascoltiamo, studiamo le circostanze di ogni immobile e valutiamo le diverse possibilità."
+        },
+        {
+          "kind": "p",
+          "text": "Il nostro lavoro non consiste soltanto nel gestire un'operazione, ma nel darti gli elementi per decidere se fare il passo, quando e come, con cognizione di causa, trasparenza e sicurezza."
+        },
+        {
+          "kind": "quote",
+          "text": "Che tu sia soddisfatto a ogni passo, non solo al momento della firma."
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come lavoriamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Quattro passi e lo stesso consulente dall'inizio alla fine."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Ascoltiamo",
+              "text": "Di cosa hai bisogno, che tempi hai e in che situazione si trova l'immobile.",
+              "kicker": "01"
+            },
+            {
+              "title": "Studiamo",
+              "text": "Esaminiamo la documentazione e analizziamo il mercato.",
+              "kicker": "02"
+            },
+            {
+              "title": "Definiamo la strategia",
+              "text": "Adatta a ogni situazione e spiegata prima di iniziare.",
+              "kicker": "03"
+            },
+            {
+              "title": "Coordiniamo",
+              "text": "Lo stesso consulente segue le pratiche, ti tiene informato e lavora con i professionisti specializzati che servono.",
+              "kicker": "04"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milla",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "*Sempre un* miglio in più"
+        },
+        {
+          "kind": "p",
+          "text": "In un'operazione immobiliare possono sorgere situazioni che nessuno aveva previsto: documentazione mancante, difficoltà di finanziamento, questioni tecniche o pratiche che richiedono l'intervento di altri professionisti."
+        },
+        {
+          "kind": "p",
+          "text": "Ci portiamo avanti quando è possibile e, quando compare un imprevisto, ci mettiamo al lavoro per trovare una soluzione e coordinare chi può aiutare a risolverlo. Per noi, fare un miglio in più significa non tirarsi indietro davanti a una difficoltà solo perché esula dalla normale intermediazione."
+        },
+        {
+          "kind": "note",
+          "text": "È ciò che vogliamo dire con:"
+        },
+        {
+          "kind": "big",
+          "text": "Non preoccuparti, ci penso io."
+        }
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Collaborazioni professionali"
+        },
+        {
+          "kind": "h2",
+          "text": "Una squadra di fiducia per ogni esigenza."
+        },
+        {
+          "kind": "p",
+          "text": "Per le esigenze legali, fiscali, finanziarie e tecniche di un'operazione lavoriamo con professionisti specializzati. Noi coordiniamo la consulenza e i suoi tempi con l'operazione; il lavoro specializzato lo svolge ciascun professionista."
+        },
+        {
+          "kind": "p",
+          "text": "Se ti consigliamo qualcuno è perché lo conosciamo bene: da anni ci circondiamo di professionisti che lavorano bene quanto noi o meglio e di cui ci fidiamo pienamente."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Studio legale a Barcellona: successioni, imposte sul reddito, diritto civile, del lavoro e d'impresa.",
+              "kicker": "Studio legale e fiscale",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Scopri il servizio"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Consulenza fiscale, contabile e del lavoro a Barcellona: imposte, dichiarazioni e pratiche con il fisco.",
+              "kicker": "Consulenza fiscale",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Scopri il servizio"
+            },
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Studio di architettura e interior design a Barcellona, con ristrutturazioni integrali di abitazioni e appartamenti dell'Eixample.",
+              "kicker": "Architettura e interior design",
+              "href": "service:reformas-obras",
+              "cta": "Scopri il servizio"
+            },
+            {
+              "title": "Broker finanziario",
+              "text": "Studia la fattibilità di ogni operazione con finanziamento e confronta le condizioni di diversi istituti.",
+              "kicker": "Finanziamento",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Scopri il servizio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Le buone decisioni iniziano con una conversazione."
+        },
+        {
+          "kind": "p",
+          "text": "Se stai valutando di vendere, comprare o affittare, raccontaci il tuo caso. Saremo felici di ascoltarti."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Parliamone",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Vedi i servizi",
+              "href": "route:services",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opiniones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Opinioni"
+        },
+        {
+          "kind": "p",
+          "text": "La nostra più grande soddisfazione è sapere che chi ha riposto fiducia in noi lo rifarebbe."
+        }
+      ]
+    }
+  ]
+}

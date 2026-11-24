@@ -1,0 +1,66 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+
+/**
+ * "What you get" (reference `.v42-dec`): petrol block with the headline and five statements that
+ * step to the right one by one (a staircase from 900 px), each on a hairline with a diamond.
+ */
+interface Props {
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const tag = itemsOf(head, "tag")[0];
+const heading = itemsOf(head, "h2")[0];
+const intro = itemsOf(body, "p")[0];
+const stair = itemsOf(body, "list")[0]?.items ?? [];
+---
+
+<div class="grid gap-[clamp(26px,5vh,44px)] min-[900px]:grid-cols-[5fr_7fr] min-[900px]:items-center min-[900px]:gap-[clamp(28px,5vw,76px)]">
+  <div>
+    {tag && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+    {heading && (
+      <h2 id={id} data-reveal class="mt-2.5 text-[clamp(25px,2.65vw,38px)] [&_em]:block">
+        <Emphasis text={heading.text} />
+      </h2>
+    )}
+    {intro && (
+      <p
+        data-reveal
+        class="mt-[clamp(14px,2.4vh,22px)] max-w-[36ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.65] tracking-[0.03em] text-fg-2 normal-case"
+      >
+        {intro.text}
+      </p>
+    )}
+  </div>
+  <ul role="list" class="m-0 list-none p-0">
+    {stair.map((entry, index) => (
+      <li
+        data-reveal
+        style={`--i:${index}`}
+        class="stair relative border-t border-fg/30 py-[clamp(14px,2.4vh,22px)] before:absolute before:-top-1 before:left-0 before:size-1.75 before:rotate-45 before:bg-turquoise min-[900px]:ml-[calc(var(--i)*clamp(14px,2.4vw,36px))]"
+      >
+        <b class="block text-[clamp(14px,1.3vw,18px)] leading-[1.35] font-semibold tracking-[0.05em]">
+          {entry.title}
+        </b>
+        <span class="mt-1.25 block text-[clamp(12.5px,1vw,14px)] leading-[1.55] tracking-[0.04em] text-fg-2/75 normal-case">
+          {entry.text}
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .stair {
+      transition-delay: calc(var(--i, 0) * 0.1s);
+    }
+    :global(.motion-ready) .stair:not(:global(.is-revealed)) {
+      transform: translateX(-26px);
+    }
+  }
+</style>

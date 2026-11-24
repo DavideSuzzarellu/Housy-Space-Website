@@ -4,26 +4,14 @@
  */
 
 @theme {
-  --animate-kenburns: kenburns 24s ease-in-out infinite alternate;
   --animate-scroll-cue: scroll-cue 2.2s ease-in-out infinite;
   --animate-intro-logo: intro-fade 1.4s 0.3s both;
   --animate-intro-line: intro-line 1.6s 0.9s forwards;
 
-  @keyframes kenburns {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.08);
-    }
-  }
-
+  /* The 16 px segment starts above its 54 px hairline (top: -16 px) and slides to top: 42 px. */
   @keyframes scroll-cue {
-    from {
-      transform: translateY(-16px);
-    }
     to {
-      transform: translateY(54px);
+      transform: translateY(58px);
     }
   }
 
@@ -38,12 +26,10 @@
     }
   }
 
+  /* Transform only: the 7.5 rem line grows from the centre without touching layout. */
   @keyframes intro-line {
-    from {
-      width: 0;
-    }
     to {
-      width: 7.5rem;
+      transform: scaleX(1);
     }
   }
 }
@@ -106,6 +92,76 @@
 
     .motion-ready [data-reveal="lines"]:not(.is-revealed) [data-line] {
       transform: translateY(112%);
+    }
+
+    /* Hairline thread (HairlineThread.astro): draws downwards instead of fading up. */
+    .motion-ready [data-reveal="thread"] {
+      transition: transform 1.6s var(--ease-brand);
+    }
+
+    .motion-ready [data-reveal="thread"]:not(.is-revealed) {
+      opacity: 1;
+      transform: scaleY(0);
+    }
+  }
+
+  /* Short accent rule under every revealed h2 (reference v2.css). Opt out with data-no-rule. */
+  h2[data-reveal]:not([data-no-rule])::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 2px;
+    margin-top: 1rem;
+    background: var(--color-turquoise);
+    transform-origin: left;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .motion-ready h2[data-reveal]:not([data-no-rule])::after {
+      transition: transform 1.2s var(--ease-brand) 0.35s;
+    }
+
+    .motion-ready h2[data-reveal]:not([data-no-rule]):not(.is-revealed)::after {
+      transform: scaleX(0);
+    }
+  }
+
+  /*
+   * Word-by-word headline (WordSplit.astro): each .w lifts in, staggered by its index, while the
+   * heading scrolls into view (scroll-driven, no JavaScript, transform and opacity only). The
+   * "type" line comes in from the left. Without support, or with reduced motion, the words
+   * are simply there.
+   */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      [data-words-line] .w {
+        display: inline-block;
+        animation: word-rise cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+
+      [data-words-line="type"] .w {
+        animation-name: word-slide;
+      }
+
+      /* Separate rule on purpose: a minifier folds the timeline into the shorthand, which browsers reject. */
+      h1 [data-words-line] .w {
+        animation-timeline: view();
+        animation-range: entry calc(var(--i, 0) * 7%) entry calc(60% + var(--i, 0) * 7%);
+      }
+    }
+  }
+
+  @keyframes word-rise {
+    from {
+      opacity: 0;
+      translate: 0 0.34em;
+    }
+  }
+
+  @keyframes word-slide {
+    from {
+      opacity: 0;
+      translate: -0.1em 0;
     }
   }
 }

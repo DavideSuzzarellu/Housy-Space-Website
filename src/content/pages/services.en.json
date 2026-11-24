@@ -1,0 +1,308 @@
+{
+  "title": "Real estate services in Barcelona · HousySpace",
+  "description": "Real estate services in Barcelona: sales, valuation, rentals and management, personal shopper, investment, renovations and legal, tax and financial advice.",
+  "head": {
+    "heading": "The services *we offer*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Services"
+      },
+      {
+        "kind": "lead",
+        "text": "One commitment, many ways to help you."
+      },
+      {
+        "kind": "list",
+        "ordered": false,
+        "items": [
+          {
+            "title": "Owners",
+            "text": "",
+            "href": "#propietarios"
+          },
+          {
+            "title": "Buyers and investors",
+            "text": "",
+            "href": "#compradores"
+          },
+          {
+            "title": "Specialist advice",
+            "text": "",
+            "href": "#especializados"
+          },
+          {
+            "title": "Where do I start?",
+            "text": "",
+            "href": "#situaciones"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "propietarios",
+      "layout": "indexGroup",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Owners"
+        },
+        {
+          "kind": "h2",
+          "text": "Sell, value *or rent out your home*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Property sales and brokerage",
+              "text": "We guide you through the sale of your home, from the initial assessment and sales strategy to closing the deal.",
+              "kicker": "01 · Sell my home",
+              "href": "service:venta-estrategica",
+              "cta": "See the service"
+            },
+            {
+              "title": "Property valuation",
+              "text": "We analyse the market and your property's features to help you work out its value and the right asking price.",
+              "kicker": "02 · Find out what it's worth",
+              "href": "service:valoracion",
+              "cta": "See the service"
+            },
+            {
+              "title": "Rentals and property management",
+              "text": "We market your home, screen candidates and, if you need it, manage the rental throughout the lease.",
+              "kicker": "03",
+              "href": "service:alquiler-gestion",
+              "cta": "See the service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compradores",
+      "layout": "indexGroup",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Buyers and investors"
+        },
+        {
+          "kind": "h2",
+          "text": "Buy *or invest wisely*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Real estate personal shopper",
+              "text": "We search for and assess homes that match your needs and support you through the purchase, all the way to signing.",
+              "kicker": "04",
+              "href": "service:personal-shopper",
+              "cta": "See the service"
+            },
+            {
+              "title": "Real estate investment",
+              "text": "We look at investment opportunities, costs, potential returns and risks, so you can decide with confidence.",
+              "kicker": "05",
+              "href": "service:inversion-inmobiliaria",
+              "cta": "See the service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "especializados",
+      "layout": "indexGroup",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Specialist advice and solutions"
+        },
+        {
+          "kind": "h2",
+          "text": "Professional support *for every decision*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Renovations and interior design",
+              "text": "We coordinate renovation and interior design projects with specialist professionals, from the first quote to handover.",
+              "kicker": "06",
+              "href": "service:reformas-obras",
+              "cta": "See the service"
+            },
+            {
+              "title": "Legal and tax advice",
+              "text": "We coordinate legal and tax professionals to cover the legal and tax needs of your transaction.",
+              "kicker": "07",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "See the service"
+            },
+            {
+              "title": "Financial advice",
+              "text": "We put you in touch with financing specialists and coordinate the mortgage study with your property transaction.",
+              "kicker": "08",
+              "href": "service:asesoramiento-financiero",
+              "cta": "See the service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "situaciones",
+      "layout": "indexSituations",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Common situations"
+        },
+        {
+          "kind": "h2",
+          "text": "You may *be here*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Do I sell or rent?",
+              "text": "We compare both options with numbers: sale price, expected rent, taxes and costs.",
+              "kicker": "Property sales and brokerage",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Do I sell now or wait?",
+              "text": "We look at demand in your area and what changes if you wait.",
+              "kicker": "Property valuation",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "I have inherited a home",
+              "text": "Which formalities apply, which taxes you owe and what to do with the property.",
+              "kicker": "Legal and tax advice",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Do I renovate before selling?",
+              "text": "Which improvements can help the sale and which aren't worth it.",
+              "kicker": "Renovations and interior design",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "I want to move",
+              "text": "How to coordinate selling yours with buying the new one.",
+              "kicker": "Real estate personal shopper",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "I want to invest in property",
+              "text": "What to buy, what the numbers look like and what the risks are.",
+              "kicker": "Real estate investment",
+              "href": "service:inversion-inmobiliaria"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asesoramiento",
+      "layout": "indexAdvice",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we help you"
+        },
+        {
+          "kind": "h2",
+          "text": "Advice *that starts with listening*"
+        },
+        {
+          "kind": "p",
+          "text": "Not every real estate decision starts with a sale. Sometimes the first thing is to understand what you need, analyse the possibilities and decide which is the best path. At HousySpace we study each situation to offer you personalised advice, with judgement and without hasty decisions."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversation",
+              "text": "We talk about your situation and what you want to achieve."
+            },
+            {
+              "title": "Analysis",
+              "text": "We study the property, the area and the alternatives."
+            },
+            {
+              "title": "Roadmap",
+              "text": "We propose the steps, the timings and the costs."
+            },
+            {
+              "title": "Guidance",
+              "text": "We help you decide and, if you wish, put it into action."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hablemos",
+      "layout": "indexCta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Not sure *which service you need?*"
+        },
+        {
+          "kind": "big",
+          "text": "Let's talk!"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestros%20servicios.",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "title": "Comprare a Barcellona dall'estero · HousySpace",
+  "description": "Guida per acquistare casa a Barcellona dall'estero: NIE, imposte e finanziamento, spiegati passo dopo passo.",
+  "head": {
+    "heading": "Comprare a Barcellona dall'estero",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Guida"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "NIE e identificazione"
+            },
+            {
+              "kind": "p",
+              "text": "Cosa ti serve prima di acquistare."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Tasse e spese"
+            },
+            {
+              "kind": "p",
+              "text": "I costi dell'acquisto, spiegati con chiarezza."
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h2",
+              "text": "Finanziamento"
+            },
+            {
+              "kind": "p",
+              "text": "Opzioni di mutuo per residenti e non residenti."
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Contenuto in fase di redazione: prima della pubblicazione sarà rivisto dal consulente fiscale e dallo studio legale con cui collaboriamo."
+        }
+      ]
+    }
+  ]
+}

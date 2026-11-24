@@ -1,0 +1,45 @@
+---
+import { itemsOf, type ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** Taxes by moment (reference `.sx-tax-g`, v46): petrol head with the moment and its label, taxes below. */
+interface Props {
+  locale: Locale;
+  cards: readonly ItemOf<"card">[];
+}
+
+const { locale, cards } = Astro.props;
+---
+
+<div class="grid gap-3 min-[900px]:grid-cols-3 min-[1024px]:grid-cols-4">
+  {cards.map((card) => (
+    <div
+      data-reveal
+      class="border border-fg/14 bg-paper pb-2.5 transition-[translate,box-shadow] duration-500 ease-brand hover:-translate-y-[3px] hover:shadow-[0_14px_30px_-20px_rgb(22_43_42/0.5)] motion-reduce:transition-none"
+    >
+      {itemsOf(card.items, "h3").map((title) => (
+        <h3 class="bg-dark px-5 pt-4 pb-1 font-sans text-[clamp(15px,1.25vw,18px)] leading-[1.2] font-bold tracking-[0.04em] text-paper">
+          {title.text}
+        </h3>
+      ))}
+      {itemsOf(card.items, "p").map((line) => (
+        <p class="mb-1.5 bg-dark px-5 pb-3.5 text-[10.5px] leading-[normal] font-medium tracking-[0.16em] text-turquoise">
+          {line.text}
+        </p>
+      ))}
+      {itemsOf(card.items, "list").map((list) => (
+        <ul class="px-5">
+          {list.items.map((entry, index) => (
+            <li class:list={["py-3", index > 0 && "border-t border-line"]}>
+              <b class="block text-[13.5px] font-bold tracking-[0.03em] text-fg">{entry.title}</b>
+              <span class="mt-1.25 block text-[12.5px] leading-[1.5] text-muted normal-case">
+                <Inline text={entry.text} locale={locale} />
+              </span>
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  ))}
+</div>

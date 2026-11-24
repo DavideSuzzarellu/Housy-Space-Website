@@ -28,6 +28,9 @@ const BUDGETS = {
   // Measured 2026-11-24 (mobile, es): 342 KB total, 34 KB JS, 241 KB images. The filter island
   // bundles full Zod (`astro/zod`, decision 2026-10-22) for §8.1 URL parsing.
   catalog: { totalKB: 430, scriptKB: 43, imageKB: 300, fontFiles: 3, requests: 22 },
+  // Zones: the index ships the 73 barrio shapes (about 27 KB gzip of markup, no extra requests) and the
+  // district photos are lazy; district and barrio pages have one eager photo at most.
+  zones: { totalKB: 420, scriptKB: 12, imageKB: 300, fontFiles: 3, requests: 22 },
 } as const satisfies Record<string, PageBudget>;
 
 const LCP_BUDGET_MS = 2500;
@@ -161,6 +164,18 @@ test.describe("performance budget (mobile, production build)", () => {
     expectWithinBudget(report, BUDGETS.home);
     await expectImageLoadingRules(page);
   });
+
+  for (const path of [
+    getLocalizedPath("living", "es"),
+    getLocalizedPath("district", "es", { district: "eixample" }),
+    getLocalizedPath("barrio", "es", { barrio: "la-dreta-de-leixample" }),
+  ]) {
+    test(`${path} stays within the zones budget`, async ({ page }) => {
+      const report = await measure(page, path);
+      expectWithinBudget(report, BUDGETS.zones);
+      await expectImageLoadingRules(page);
+    });
+  }
 
   test("sale catalog stays within budget and defers Leaflet to the map views", async ({ page }) => {
     const report = await measure(page, getLocalizedPath("sale", "es"));

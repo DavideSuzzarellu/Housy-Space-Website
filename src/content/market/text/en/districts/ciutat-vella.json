@@ -1,0 +1,44 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Where Barcelona began: narrow streets, squares with centuries of history and the sea a short walk away.",
+  "history": [
+    "Ciutat Vella is where the city began. The Roman colony of Barcino stood here, and medieval Barcelona grew up here, enclosed within its walls until the mid-19th century. Today it is divided into four neighbourhoods that could hardly be more different: El Raval, El Barri Gòtic, La Barceloneta and Sant Pere, Santa Caterina i la Ribera.",
+    "Living in Ciutat Vella means living among narrow streets, many of them pedestrianised, and buildings that can be several centuries old. The flats tend to be small and full of character: high ceilings, thick walls and, often, light wells instead of big views. Almost everything is within walking distance, and shops, culture and visitors keep the area busy every day of the year.",
+    "Across its 4 neighbourhoods, the average sale price ranges from 3,499 €/m² in El Raval to 5,183 €/m² in La Barceloneta, and the average rent from 881 €/month in La Barceloneta to 1,172 €/month in El Barri Gòtic.",
+    "Before buying or renting, it is worth studying each building closely: its condition, the owners' association, the paperwork and how noisy the street really is at different times of day."
+  ],
+  "summary": "Ciutat Vella has 115,829 inhabitants in 4.21 km² and 4 neighbourhoods. Its average sale price was 4,126 €/m² in 2025, 3% below the city average. The average rent is 1,019 €/month.",
+  "landmarks": [
+    {
+      "name": "La Rambla",
+      "where": "El Raval and El Barri Gòtic",
+      "text": "The boulevard linking Plaça de Catalunya with the port."
+    },
+    {
+      "name": "Catedral de Barcelona",
+      "where": "El Barri Gòtic",
+      "text": "The Gothic cathedral, beside the remains of Roman Barcino."
+    },
+    {
+      "name": "Santa Maria del Mar",
+      "where": "La Ribera",
+      "text": "A 14th-century Gothic basilica, built by the people of the neighbourhood."
+    },
+    {
+      "name": "Mercat de la Boqueria",
+      "where": "El Raval",
+      "text": "A historic market opening onto La Rambla."
+    },
+    {
+      "name": "Palau de la Música Catalana",
+      "where": "Sant Pere",
+      "text": "A Modernista work by Lluís Domènech i Montaner, a World Heritage Site."
+    },
+    {
+      "name": "La Barceloneta y el Port Vell",
+      "where": "La Barceloneta",
+      "text": "The old fishermen's quarter, with its beach and the harbour."
+    }
+  ]
+}

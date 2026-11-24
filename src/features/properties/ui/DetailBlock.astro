@@ -9,8 +9,11 @@ interface Props {
 const { id, heading, class: className } = Astro.props;
 ---
 
-<section aria-labelledby={id} class:list={["mt-11", className]}>
-  <h2 id={id} class="mb-4 text-[clamp(1.625rem,3vw,2.125rem)]">
+<section aria-labelledby={id} class:list={["mt-9", className]}>
+  <h2
+    id={id}
+    class="mb-2.5 text-[1.4375rem] leading-[1.15] font-bold after:mt-4 after:block after:h-0.5 after:w-16 after:bg-turquoise after:content-['']"
+  >
     {heading}
   </h2>
   <slot />

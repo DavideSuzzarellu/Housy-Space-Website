@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El barri més poblat de l'Eixample, entre el parc de Joan Miró i la Gran Via.",
+  "text": [
+    "Fins ben entrat el segle XX va ser una zona gairebé rural, amb grups de barraques de gent que treballava a les obres de l'Exposició del 1929, i la urbanització no va arrencar amb força fins als anys trenta. Durant dècades va formar una sola unitat amb l'Antiga Esquerra i només se'n va separar per la mida i la densitat. Els seus carrers guarden empremtes d'una altra Barcelona: la Casa Golferichs, que el 1972 es va salvar de l'enderroc per la pressió popular i avui és centre cívic; el parc de Joan Miró, aixecat sobre l'antic escorxador i inaugurat el 1983 amb l'escultura Dona i ocell; les Arenes, una plaça de toros convertida en centre comercial, i l'antiga presó Model, del 1904, el primer edifici de Barcelona construït expressament com a presó.",
+    "Amb 59.117 habitants, és el més poblat de l'Eixample, i es nota en una vida de carrer intensa, amb molt de comerç local i veïns de totes les edats. El seu preu mitjà de compravenda, 5.211 €/m², queda per sota del de l'Antiga Esquerra i la Dreta, i a canvi ofereix la mateixa trama de Cerdà."
+  ],
+  "housing": "Finques de diverses èpoques a la trama de Cerdà, amb preus més continguts que a l'Antiga Esquerra.",
+  "places": [
+    "Parc de Joan Miró",
+    "Casa Golferichs",
+    "Les Arenes de Barcelona",
+    "Antiga presó Model",
+    "Escola Industrial"
+  ]
+}

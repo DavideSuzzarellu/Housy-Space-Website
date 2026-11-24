@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Colinas, parques y miradores entre la ciudad y la sierra de Collserola.",
+  "history": [
+    "Horta-Guinardó se extiende por las laderas de Collserola y de los turons del Carmel y de la Rovira. Reúne once barrios, del Baix Guinardó a la Vall d'Hebron, y entre ellos Horta, que fue un municipio independiente hasta 1904 y aún conserva su aire de pueblo.",
+    "Es un distrito con mucho verde y muchas cuestas, de zonas tranquilas y vistas sobre la ciudad, con equipamientos que marcan su perfil: el Recinte Modernista de Sant Pau, el Parc del Laberint d'Horta, los Búnkers del Carmel y el gran complejo hospitalario de la Vall d'Hebron. La vivienda va de las casas bajas y masías del antiguo pueblo de Horta a barrios de bloques levantados entre los años cincuenta y setenta.",
+    "Entre sus 11 barrios, el precio medio de compraventa va de 2.456 €/m² en Sant Genís dels Agudells a 4.668 €/m² en la Clota, y el alquiler medio, de 781 €/mes en el Carmel a 1.074 €/mes en la Clota.",
+    "Hay barrios muy distintos entre sí, también en precios, y la zona exacta importa mucho."
+  ],
+  "summary": "Horta-Guinardó tiene 183.006 habitantes en 11,92 km² y 11 barrios. Su precio medio de compraventa fue de 3.451 €/m² en 2025, un 19 % por debajo de la media de la ciudad. El alquiler medio, 909 €/mes.",
+  "landmarks": [
+    {
+      "name": "Parc del Laberint d'Horta",
+      "where": "Horta",
+      "text": "Jardín neoclásico del siglo XVIII con un laberinto de cipreses."
+    },
+    {
+      "name": "Búnkers del Carmel",
+      "where": "El Carmel",
+      "text": "Las antiguas baterías antiaéreas del Turó de la Rovira, hoy mirador."
+    },
+    {
+      "name": "Recinte Modernista de Sant Pau",
+      "where": "El Baix Guinardó",
+      "text": "El antiguo hospital de Lluís Domènech i Montaner, Patrimonio Mundial."
+    },
+    {
+      "name": "Hospital Universitari Vall d'Hebron",
+      "where": "Montbau y la Vall d'Hebron",
+      "text": "Uno de los grandes complejos hospitalarios de Cataluña."
+    },
+    {
+      "name": "Collserola",
+      "where": "Barrios altos del distrito",
+      "text": "Acceso directo al parque natural de la sierra."
+    }
+  ]
+}

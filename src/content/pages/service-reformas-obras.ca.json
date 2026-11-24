@@ -1,0 +1,307 @@
+{
+  "title": "Reformes integrals a Barcelona · HousySpace",
+  "description": "Reformes integrals a Barcelona amb un sol interlocutor: projecte i interiorisme amb l'estudi amb què col·laborem, i seguiment de terminis i pressupost.",
+  "head": {
+    "heading": "Reformes *i interiorisme*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-reformas-1000.webp",
+      "alt": "Il·lustració del servei: Volums crema i verds que es reordenen",
+      "scale": 0.652
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
+      {
+        "kind": "lead",
+        "text": "Reformes per a tot tipus d'immoble: projecte, interiorisme i obra amb un sol interlocutor."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-ventanal-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns la teva reforma",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Una reforma, un sol interlocutor."
+        },
+        {
+          "kind": "p",
+          "text": "Coordinem reformes per a tot tipus d'immoble. La reforma i l'interiorisme es pensen alhora, perquè la distribució, els materials i la llum estiguin decidits abans de començar l'obra. Després coordinem els professionals i fem el seguiment de terminis i pressupost fins al lliurament."
+        },
+        {
+          "kind": "p",
+          "text": "El projecte el desenvolupem amb l'estudi d'arquitectura i interiorisme amb qui col·laborem, i tu sempre tens la mateixa persona de referència. Les actuacions tècniques i l'execució de l'obra corresponen als professionals i empreses que intervenen en cada projecte."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Quan reformar"
+        },
+        {
+          "kind": "h2",
+          "text": "Quan té sentit fer una reforma"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Abans de vendre",
+              "text": "No totes les reformes compensen abans de vendre. Estudiem si una millora concreta pot facilitar la venda o si n'hi ha prou d'oferir al comprador un pressupost d'obra. [Veure compravenda](service:venta-estrategica)."
+            },
+            {
+              "title": "En comprar",
+              "text": "La reforma estudiada abans de comprar, per saber-ne el cost abans de decidir. [Veure Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "Per llogar",
+              "text": "Posada a punt de l'habitatge abans d'oferir-lo en lloguer."
+            },
+            {
+              "title": "Per invertir",
+              "text": "Reformes pensades amb les xifres al davant: cost, termini i efecte esperat en el lloguer o en la venda."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "stepsList",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Les fases"
+        },
+        {
+          "kind": "h2",
+          "text": "Del primer esbós al lliurament de claus"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Visita i necessitats",
+              "text": "Veiem l'espai i entenem com vols viure-hi."
+            },
+            {
+              "title": "Projecte i interiorisme",
+              "text": "Distribució, materials, il·luminació i mobiliari a mida, en un mateix projecte."
+            },
+            {
+              "title": "Pressupost",
+              "text": "Un pressupost detallat abans de començar, per decidir sense sorpreses."
+            },
+            {
+              "title": "Llicències i permisos",
+              "text": "Es tramiten els permisos d'obra que demani l'Ajuntament."
+            },
+            {
+              "title": "Obra",
+              "text": "Coordinem els gremis (paletes, instal·ladors, fusters) i fem seguiment de terminis, pressupost i qualitat."
+            },
+            {
+              "title": "Acabats i lliurament",
+              "text": "Revisem cada detall amb tu i et lliurem l'immoble acabat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interiorismo",
+      "layout": "swatches",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Interiorisme"
+        },
+        {
+          "kind": "h2",
+          "text": "Materials i acabats"
+        },
+        {
+          "kind": "lead",
+          "text": "Definim amb tu l'estil, els materials, les textures i els acabats perquè cada estança funcioni i se senti teva."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Fusta natural",
+              "text": "Terres, fusteria i mobiliari",
+              "color": "#B98A5E"
+            },
+            {
+              "title": "Pedra i marbre",
+              "text": "Taulells, banys i detalls",
+              "color": "#D9D2C5"
+            },
+            {
+              "title": "Microciment",
+              "text": "Continuïtat en terres i parets",
+              "color": "#CDBFA9"
+            },
+            {
+              "title": "Lli i cotó",
+              "text": "Tèxtils i cortines",
+              "color": "#ECE6DA"
+            },
+            {
+              "title": "Llautó",
+              "text": "Il·luminació i ferraments",
+              "color": "#B48A45"
+            },
+            {
+              "title": "Verd profund",
+              "text": "Color i contrast",
+              "color": "#2C4A44"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Amb qui ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Projectes amb Maria Guimerà Arquitectura"
+        },
+        {
+          "kind": "lead",
+          "text": "Per al projecte, l'interiorisme i la direcció de les reformes col·laborem amb un estudi d'arquitectura i interiorisme de Barcelona. HousySpace coordina i és el teu interlocutor; l'estudi desenvolupa el projecte i les empreses d'obra l'executen."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Per què confiem en ells",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Estudi d'arquitectura i interiorisme a Barcelona, amb reformes integrals d'habitatges i pisos de l'Eixample.",
+              "kicker": "Arquitectura i interiorisme",
+              "href": "https://mariaguimera.com/es/inicio/",
+              "cta": "Visita mariaguimera.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
+        {
+          "kind": "lead",
+          "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Reformas%20e%20interiorismo",
+              "solid": false
+            },
+            {
+              "label": "Correu",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Personal shopper immobiliari",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Valoració immobiliària",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

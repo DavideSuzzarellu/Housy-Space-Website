@@ -46,7 +46,7 @@ Load before creating or changing any visual element. Also load `tailwind-css` an
 6. Accessibility checklist (WCAG 2.2 AA, §8):
    - [ ] Accessible name for every control (`aria-label` text from i18n when no visible label).
    - [ ] Visible focus style; full keyboard operation; no keyboard trap.
-   - [ ] Contrast: `turquoise` only on dark backgrounds; on light, `turquoise-deep` only for large text/UI; small text and links use `petrol` or `teal` (§8).
+   - [ ] Contrast: `turquoise` only for fills/rules (1.9:1 on paper); text and links use the `accent` role (or `petrol`); `turquoise-deep` only for text ≥ 24px (§8, §11.2). Check the matching `docs/design-system/components/<Name>/README.md` before building a section.
    - [ ] Target size ≥ 24×24 CSS px.
    - [ ] Images via `<Image />`/`<Picture />` with meaningful `alt` (empty `alt=""` only if decorative).
    - [ ] Form inputs have `<label>`, errors linked with `aria-describedby`, status via `aria-live`.

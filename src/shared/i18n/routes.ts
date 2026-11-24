@@ -1,4 +1,4 @@
-import { BASE_PATH } from "../lib/basePath";
+import { currentBaseUrl } from "../lib/basePath";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "./config";
 
 /**
@@ -30,42 +30,31 @@ export const routes = {
     it: "servizi/{service}",
     ca: "serveis/{service}",
   },
+  // Reference structure: /zonas/barcelona, /zonas/barcelona/distritos/{district}, /zonas/barcelona/{barrio}.
+  // Only the fixed segments are translated; "barcelona" and every place slug stay as they are.
   living: {
-    es: "vivir-en-barcelona",
-    en: "living-in-barcelona",
-    it: "vivere-a-barcellona",
-    ca: "viure-a-barcelona",
+    es: "zonas/barcelona",
+    en: "zones/barcelona",
+    it: "zone/barcelona",
+    ca: "zones/barcelona",
   },
   district: {
-    es: "vivir-en-barcelona/{district}",
-    en: "living-in-barcelona/{district}",
-    it: "vivere-a-barcellona/{district}",
-    ca: "viure-a-barcelona/{district}",
+    es: "zonas/barcelona/distritos/{district}",
+    en: "zones/barcelona/districts/{district}",
+    it: "zone/barcelona/distretti/{district}",
+    ca: "zones/barcelona/districtes/{district}",
   },
   barrio: {
-    es: "vivir-en-barcelona/{district}/{barrio}",
-    en: "living-in-barcelona/{district}/{barrio}",
-    it: "vivere-a-barcellona/{district}/{barrio}",
-    ca: "viure-a-barcelona/{district}/{barrio}",
-  },
-  municipalities: {
-    es: "provincia-de-barcelona",
-    en: "barcelona-province",
-    it: "provincia-di-barcellona",
-    ca: "provincia-de-barcelona",
-  },
-  municipality: {
-    es: "provincia-de-barcelona/{municipio}",
-    en: "barcelona-province/{municipio}",
-    it: "provincia-di-barcellona/{municipio}",
-    ca: "provincia-de-barcelona/{municipio}",
+    es: "zonas/barcelona/{barrio}",
+    en: "zones/barcelona/{barrio}",
+    it: "zone/barcelona/{barrio}",
+    ca: "zones/barcelona/{barrio}",
   },
   about: { es: "nosotros", en: "about-us", it: "chi-siamo", ca: "qui-som" },
   contact: { es: "contacto", en: "contact", it: "contatti", ca: "contacte" },
   legalNotice: { es: "aviso-legal", en: "legal-notice", it: "note-legali", ca: "avis-legal" },
   privacy: { es: "privacidad", en: "privacy-policy", it: "privacy", ca: "privacitat" },
   cookies: { es: "cookies", en: "cookie-policy", it: "cookie", ca: "galetes" },
-  sell: { es: "vender", en: "sell", it: "vendere", ca: "vendre" },
   valuation: { es: "valoracion", en: "valuation", it: "valutazione", ca: "valoracio" },
   blog: { es: "blog", en: "blog", it: "blog", ca: "blog" },
   blogPost: { es: "blog/{slug}", en: "blog/{slug}", it: "blog/{slug}", ca: "blog/{slug}" },
@@ -75,11 +64,12 @@ export const routes = {
     it: "ricerca-su-misura",
     ca: "cerca-a-mida",
   },
-  homeSearch: {
-    es: "busco-vivienda",
-    en: "find-a-home",
-    it: "cerco-casa",
-    ca: "busco-habitatge",
+  // Proposal v3 merges "home search" and "custom search" into one page (AGENTS.md §6).
+  mySearch: {
+    es: "mi-busqueda",
+    en: "my-search",
+    it: "la-mia-ricerca",
+    ca: "la-meva-cerca",
   },
   internationalGuide: {
     es: "guia-internacional",
@@ -154,23 +144,21 @@ export function getLocalizedPath<K extends RouteKey>(
   ...args: ParamsArgs<K>
 ): string {
   const [params] = args;
-  const path = buildPath(routeKey, locale, params ?? {});
+  return withBase(buildPath(routeKey, locale, params ?? {}));
+}
 
-  // Limpiamos el BASE_URL por si viene con una barra al final
-  const base = BASE_PATH;
-
-  // Si el path ya tiene el base (raro, pero por las dudas), lo devolvemos
-  if (base && path.startsWith(base)) return path;
-
-  // Le pegamos el nombre del repo adelante a TODOS los links
-  return `${base}${path}`;
+/** Prefixes the site base (`astro.config` `base`, "" in production at the domain root). */
+function withBase(path: string): string {
+  // Vite always adds a trailing slash to BASE_URL: strip it so we never get double slashes.
+  const base = currentBaseUrl().replace(/\/$/, "");
+  return base && !path.startsWith(`${base}/`) ? `${base}${path}` : path;
 }
 
 export interface Alternate {
   /** BCP 47 tag for `hreflang`, or `x-default`. */
   readonly hreflang: string;
   readonly locale: Locale;
-  /** Root-relative path; make it absolute with the site URL when rendering. */
+  /** Root-relative path including the site base; make it absolute with the site URL when rendering. */
   readonly path: string;
 }
 
@@ -184,7 +172,9 @@ export function getAlternates<K extends RouteKey>(
 ): Alternate[] {
   const [params] = args;
   const pathFor = (locale: Locale): string =>
-    buildPath(routeKey, locale, typeof params === "function" ? params(locale) : (params ?? {}));
+    withBase(
+      buildPath(routeKey, locale, typeof params === "function" ? params(locale) : (params ?? {})),
+    );
 
   const alternates = LOCALES.map((locale): Alternate => ({
     hreflang: LOCALE_META[locale].langTag,

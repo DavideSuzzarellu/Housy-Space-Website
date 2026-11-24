@@ -1,0 +1,248 @@
+{
+  "title": "Valorador en línia del teu habitatge · HousySpace",
+  "description": "Calcula a l'instant quant val el teu habitatge a Barcelona amb el valorador en línia i, si vols, demana després una valoració personalitzada a un assessor.",
+  "head": {
+    "heading": "El valor del teu habitatge *mereix més que una xifra*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Valoració immobiliària a Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Cada habitatge és diferent, i el seu valor també. Estudiem les seves característiques, la ubicació i les condicions del mercat per oferir-te una valoració raonada i ajudar-te a prendre decisions amb criteri."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "opciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Dues maneres de valorar"
+        },
+        {
+          "kind": "h2",
+          "text": "Tria com vols conèixer *el valor del teu habitatge*"
+        },
+        {
+          "kind": "p",
+          "text": "Pots començar per una estimació en línia i, quan vulguis, demanar que un assessor estudiï el teu habitatge. Són dos passos que es complementen."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "A l'instant"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoració en línia"
+            },
+            {
+              "kind": "p",
+              "text": "Una primera estimació orientativa a partir de les dades que introdueixes. Serveix com a referència inicial, però no substitueix l'anàlisi individual de l'habitatge."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Resultat a l'instant"
+                },
+                {
+                  "title": "",
+                  "text": "Amb les dades que introdueixes"
+                },
+                {
+                  "title": "",
+                  "text": "Estimació orientativa"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valora en línia ara",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Estudi personalitzat"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoració amb un assessor"
+            },
+            {
+              "kind": "p",
+              "text": "Analitzem el teu habitatge, les seves particularitats i les condicions del mercat, i t'expliquem què en determina el valor."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visita a l'habitatge"
+                },
+                {
+                  "title": "",
+                  "text": "Revisió de la documentació"
+                },
+                {
+                  "title": "",
+                  "text": "Estudi de mercat comentat"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Demana una valoració amb un assessor",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "valuator",
+          "title": "Valorador en línia d'HousySpace"
+        },
+        {
+          "kind": "p",
+          "text": "No es veu el valorador? [Obre'l en una pestanya nova](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
+        },
+        {
+          "kind": "note",
+          "text": "L'estimació del valorador és orientativa; no és una taxació oficial. El valorador el proporciona un proveïdor extern, Lystos: les dades que hi introdueixis es tractaran segons la seva informació de privacitat i la d'HousySpace"
+        }
+      ]
+    },
+    {
+      "id": "solicitud",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Valoració amb un assessor"
+        },
+        {
+          "kind": "lead",
+          "text": "Deixa'ns les teves dades i un assessor d'HousySpace et trucarà per valorar el teu habitatge en persona."
+        },
+        {
+          "kind": "form",
+          "id": "vf",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nom i cognoms",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Telèfon",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Adreça electrònica",
+              "required": true,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "direccion",
+              "label": "Adreça o barri de l'habitatge",
+              "required": true,
+              "full": true,
+              "type": "text",
+              "placeholder": "Carrer i número, o barri",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Explica'ns alguna cosa més (estat, reformes, terminis…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud.",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Vull rebre comunicacions comercials d'HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Vull subscriure'm al butlletí i als articles d'HousySpace per correu electrònic. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "details",
+              "summary": "Informació bàsica sobre protecció de dades",
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Sol·licitar valoració"
+            },
+            {
+              "kind": "note",
+              "text": "Encara no hi ha cap sistema que rebi el formulari (CRM pendent). En prémer, s'obrirà WhatsApp amb la teva sol·licitud ja redactada perquè tu l'enviïs; fins que no l'enviïs allà, no haurà arribat a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "From the hill of Montjuïc to the port: working-class neighbourhoods, street life and Sants station.",
+  "history": [
+    "Sants-Montjuïc is Barcelona's largest district and its most varied: it brings together the hill of Montjuïc, the port and the Zona Franca in eight very different neighbourhoods. Santa Maria de Sants was an independent municipality until Barcelona annexed it in 1897, and it still keeps its main shopping street and its neighbourhood life from that time.",
+    "The district combines neighbourhoods with working-class and trading roots, such as Sants, Hostafrancs, La Bordeta and El Poble-sec, with the Barcelona of the exhibitions and the Olympic Games on Montjuïc, and with areas that have almost no housing, such as the Zona Franca. Sants station links the city to the high-speed train and the rest of Spain, and Plaça d'Espanya is the gateway to Montjuïc.",
+    "Across its 8 neighbourhoods, the average sale price ranges from 2,724 €/m² in La Marina del Prat Vermell to 4,310 €/m² in Sants, and the average rent from 885 €/month in La Marina de Port to 1,390 €/month in La Marina del Prat Vermell.",
+    "Each neighbourhood has its own rhythm and its own prices, so it is best to compare streets and buildings carefully before choosing."
+  ],
+  "summary": "Sants-Montjuïc has 196,040 inhabitants in 22.88 km² and 8 neighbourhoods. It is the largest district in the city. Its average sale price was 3,867 €/m² in 2025, 9% below the city average. The average rent is 1,001 €/month.",
+  "landmarks": [
+    {
+      "name": "Montjuïc",
+      "where": "Montjuïc Park",
+      "text": "The hill with its castle, gardens and viewpoints over the port."
+    },
+    {
+      "name": "MNAC y la Font Màgica",
+      "where": "Montjuïc Park",
+      "text": "The Palau Nacional, home of the Museu Nacional d'Art de Catalunya, and Carles Buïgas's fountain."
+    },
+    {
+      "name": "Anella Olímpica",
+      "where": "Montjuïc Park",
+      "text": "The Estadi Olímpic Lluís Companys and the facilities built for 1992."
+    },
+    {
+      "name": "Plaça d'Espanya",
+      "where": "At the foot of Montjuïc",
+      "text": "The great square of the 1929 Exhibition, with its Venetian towers."
+    },
+    {
+      "name": "Poble Espanyol",
+      "where": "Montjuïc Park",
+      "text": "A site built for the 1929 Exhibition, with architecture from all over Spain."
+    },
+    {
+      "name": "Estació de Sants",
+      "where": "Sants",
+      "text": "Barcelona's main railway station."
+    }
+  ]
+}

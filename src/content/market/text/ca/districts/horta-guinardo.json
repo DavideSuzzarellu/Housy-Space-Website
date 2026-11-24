@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Turons, parcs i miradors entre la ciutat i la serra de Collserola.",
+  "history": [
+    "Horta-Guinardó s'estén pels vessants de Collserola i dels turons del Carmel i de la Rovira. Reuneix onze barris, del Baix Guinardó a la Vall d'Hebron, i entre ells Horta, que va ser un municipi independent fins al 1904 i encara conserva l'aire de poble.",
+    "És un districte amb molt de verd i moltes pujades, de zones tranquil·les i vistes sobre la ciutat, amb equipaments que en marquen el perfil: el Recinte Modernista de Sant Pau, el Parc del Laberint d'Horta, els Búnquers del Carmel i el gran complex hospitalari de la Vall d'Hebron. L'habitatge va de les cases baixes i les masies de l'antic poble d'Horta a barris de blocs aixecats entre els anys cinquanta i setanta.",
+    "Entre els 11 barris, el preu mitjà de compravenda va dels 2.456 €/m² a Sant Genís dels Agudells als 4.668 €/m² a la Clota, i el lloguer mitjà, dels 781 €/mes al Carmel als 1.074 €/mes a la Clota.",
+    "Hi ha barris molt diferents entre ells, també en preus, i la zona exacta importa molt."
+  ],
+  "summary": "Horta-Guinardó té 183.006 habitants en 11,92 km² i 11 barris. El seu preu mitjà de compravenda va ser de 3.451 €/m² el 2025, un 19 % per sota de la mitjana de la ciutat. El lloguer mitjà, 909 €/mes.",
+  "landmarks": [
+    {
+      "name": "Parc del Laberint d'Horta",
+      "where": "Horta",
+      "text": "Jardí neoclàssic del segle XVIII amb un laberint de xiprers."
+    },
+    {
+      "name": "Búnquers del Carmel",
+      "where": "El Carmel",
+      "text": "Les antigues bateries antiaèries del Turó de la Rovira, avui mirador."
+    },
+    {
+      "name": "Recinte Modernista de Sant Pau",
+      "where": "El Baix Guinardó",
+      "text": "L'antic hospital de Lluís Domènech i Montaner, Patrimoni Mundial."
+    },
+    {
+      "name": "Hospital Universitari Vall d'Hebron",
+      "where": "Montbau i la Vall d'Hebron",
+      "text": "Un dels grans complexos hospitalaris de Catalunya."
+    },
+    {
+      "name": "Collserola",
+      "where": "Barris alts del districte",
+      "text": "Accés directe al parc natural de la serra."
+    }
+  ]
+}

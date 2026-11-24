@@ -3,81 +3,64 @@ import type { HomeContent } from "@/features/agency/application/homeContent";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
+import StreetGrid from "./StreetGrid.astro";
+import HairlineThread from "@/shared/ui/atoms/HairlineThread.astro";
+import WordSplit from "@/shared/ui/atoms/WordSplit.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 
-/** Presentation: the page's h1 over a low-presence grid of chamfered tiles (proposal v3). */
+/**
+ * Intro section: the site headline and primary CTA, in its own light section below the
+ * hero video. Matches the `#presentacion` / `.hi2` section of the HousySpace reference.
+ */
 interface Props {
   locale: Locale;
   id: string;
-  content: HomeContent["presentation"];
+  content: HomeContent["hero"];
 }
 
 const { locale, id, content } = Astro.props;
-
-const TILE = 120;
-const tile = (x: number, y: number, size: number, cut: number) =>
-  `M${x + cut} ${y}H${x + size - cut}L${x + size} ${y + cut}V${y + size - cut}L${x + size - cut} ${y + size}H${x + cut}L${x} ${y + size - cut}V${y + cut}Z`;
-const CELLS = Array.from({ length: 66 }, (_, index) => ({
-  x: (index % 11) * TILE,
-  y: Math.floor(index / 11) * TILE,
-  inner: index % 5 === 0,
-  highlight: index === 20,
-}));
 ---
 
 <section
   id={id}
-  aria-labelledby="home-heading"
-  data-section="presentation"
-  class="relative isolate overflow-hidden bg-canvas py-[clamp(4.5rem,10vw,8.5rem)]"
+  aria-labelledby="presentation-heading"
+  class="relative overflow-clip bg-canvas pt-[clamp(0.25rem,1.6vw,1.25rem)]"
 >
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    viewBox="0 0 1320 720"
-    data-reveal="fade"
-    class="absolute top-1/2 left-1/2 -z-10 hidden w-[min(110vw,103rem)] -translate-x-1/2 -translate-y-1/2 fill-none md:block"
-  >
-    {CELLS.map((cell) => (
-      <>
-        <path
-          d={tile(cell.x + 10, cell.y + 10, 100, 15)}
-          class:list={cell.highlight ? "fill-turquoise/7 stroke-turquoise/60" : "stroke-fg/14"}
-        />
-        {cell.inner && <path d={tile(cell.x + 36, cell.y + 36, 48, 8)} class="stroke-fg/8" />}
-      </>
-    ))}
-  </svg>
-  <Container>
-    <div class="text-center">
+  <Container class="relative">
+    <HairlineThread position="top" />
+    <div class="relative isolate mx-auto max-w-[1040px]">
       <p
         data-reveal
-        class="flex items-center justify-center gap-4 text-[0.6875rem] tracking-[0.2em] text-muted before:h-px before:w-8.5 before:bg-taupe after:h-px after:w-8.5 after:bg-taupe max-[479px]:before:hidden max-[479px]:after:hidden"
+        class="mb-[clamp(1.375rem,2.6vw,1.875rem)] flex items-center gap-4 text-[0.6875rem] tracking-[0.24em] text-accent uppercase before:h-px before:w-8.5 before:flex-none before:bg-taupe/70 max-[479px]:tracking-[0.18em] max-[479px]:before:hidden"
       >
         {content.eyebrow}
       </p>
-      <h1
-        id="home-heading"
-        data-reveal="lines"
-        class="mt-[clamp(1.375rem,2.6vw,1.875rem)] text-[clamp(2rem,4.6vw,4.25rem)] leading-[1.06]"
-      >
-        {[content.headingFirst, content.headingSecond].map((line, index) => (
-          <span class="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
-            <span
-              data-line
-              class:list={["block", index === 0 ? "font-black" : "font-normal text-muted"]}
-              style={`--line-index: ${index}`}
-            >
-              {line}
-            </span>
+      <div class="grid gap-[clamp(1.5rem,3vw,2.25rem)] min-[760px]:relative">
+        <StreetGrid />
+        <h1
+          id="presentation-heading"
+          class="leading-[1.06] uppercase text-[clamp(1.875rem,3.5vw,3.125rem)]"
+        >
+          <span data-words-line="rise" class="block font-black text-balance">
+            <WordSplit text={content.headingFirst} />
+          </span>{" "}
+          <span data-words-line="type" class="block font-normal text-muted text-balance">
+            <WordSplit text={content.headingSecond} />
           </span>
-        ))}
-      </h1>
-      <div data-reveal class="mt-[clamp(1.75rem,3vw,2.5rem)]">
-        <Button href={getLocalizedPath("about", locale)} variant="solid" size="lg" arrow>
-          {content.linkLabel}
-        </Button>
+        </h1>
+        <div data-reveal class="min-[760px]:mt-4" style="--reveal-delay: 1.05s">
+          <Button
+            href={getLocalizedPath("about", locale)}
+            variant="solid"
+            size="xl"
+            arrow
+            class="min-[900px]:px-[clamp(3.25rem,4vw,3.6rem)]"
+          >
+            {content.ctaLabel}
+          </Button>
+        </div>
       </div>
     </div>
+    <HairlineThread position="bottom" />
   </Container>
 </section>

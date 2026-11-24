@@ -3,6 +3,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
 
 // Static output serves one 404 document; it is rendered in the default locale with
 // links to every locale's home. Per-locale 404 bodies need on-demand rendering (adapter TODO).
@@ -21,22 +24,34 @@ const homeLinks = LOCALES.map((locale) => ({
   description={t.notFound.metaDescription}
   noindex
 >
-  <section class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-    <h1 class="text-4xl font-medium text-fg sm:text-5xl">{t.notFound.heading}</h1>
-    <p class="mt-6 max-w-2xl text-lg text-muted">{t.notFound.body}</p>
-    <ul class="mt-8 flex flex-wrap gap-4">
-      {homeLinks.map((link) => (
+  <PageHeader
+    crumbs={[{ label: t.property.detail.home, href: getLocalizedPath("home", DEFAULT_LOCALE) }]}
+    breadcrumbLabel={t.property.detail.breadcrumb}
+    tag={t.notFound.kicker}
+    heading={t.notFound.heading}
+  >
+    <p class="mt-4 pb-3">{t.notFound.body}</p>
+  </PageHeader>
+  <section class="surface-stone bg-canvas py-[clamp(2.375rem,6.2vh,3.625rem)]">
+    <Container>
+      <ul class="mt-5.5 flex flex-wrap gap-3">
         <li>
-          <a
-            href={link.href}
-            hreflang={link.langTag}
-            lang={link.langTag}
-            class="text-accent underline underline-offset-4 hover:text-fg"
+          <Button
+            href={getLocalizedPath("sale", DEFAULT_LOCALE)}
+            variant="solid"
+            class="leading-[1.2] py-[0.9375rem]!"
           >
-            {link.label}
-          </a>
+            {t.notFound.viewProperties}
+          </Button>
         </li>
-      ))}
-    </ul>
+        {homeLinks.map((link) => (
+          <li lang={link.langTag}>
+            <Button href={link.href} variant="outline" class="leading-[1.2] py-[0.9375rem]!">
+              {link.label}
+            </Button>
+          </li>
+        ))}
+      </ul>
+    </Container>
   </section>
 </BaseLayout>

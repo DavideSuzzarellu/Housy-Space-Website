@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Un antic poble amb caràcter propi que canvia amb la nova estació de la Sagrera.",
+  "history": [
+    "Sant Andreu de Palomar va ser un municipi independent, amb més de mil anys d'història documentada, fins que Barcelona el va annexionar el 1897, i conserva el nucli antic, amb carrers estrets, places i comerç de barri. El districte té set barris: Sant Andreu, la Sagrera, el Congrés i els Indians, Navas, el Bon Pastor, Baró de Viver i la Trinitat Vella.",
+    "El seu passat industrial es veu en antigues fàbriques convertides en equipaments, com Fabra i Coats, i en la Maquinista, avui centre comercial. Les obres de la nova estació de la Sagrera, en marxa des del 2009, i del futur parc lineal estan canviant aquesta part de la ciutat.",
+    "Entre els 7 barris, el preu mitjà de compravenda va dels 1.801 €/m² a Baró de Viver als 4.029 €/m² a Navas, i el lloguer mitjà, dels 555 €/mes a Baró de Viver als 980 €/mes a Navas.",
+    "És un districte de contrastos, entre la vida de poble de Sant Andreu, els barris en transformació de la Sagrera i el Bon Pastor i zones petites com Baró de Viver. Convé comparar cada barri i estudiar bé l'estat de cada finca."
+  ],
+  "summary": "Sant Andreu té 158.284 habitants en 6,59 km² i 7 barris. El seu preu mitjà de compravenda va ser de 3.460 €/m² el 2025, un 19 % per sota de la mitjana de la ciutat. El lloguer mitjà, 904 €/mes.",
+  "landmarks": [
+    {
+      "name": "Fabra i Coats",
+      "where": "Sant Andreu",
+      "text": "L'antiga fàbrica tèxtil, avui centre de creació i equipaments."
+    },
+    {
+      "name": "Nucli antic de Sant Andreu",
+      "where": "Sant Andreu",
+      "text": "El carrer Gran de Sant Andreu i la plaça d'Orfila, amb l'església."
+    },
+    {
+      "name": "Passeig de Fabra i Puig",
+      "where": "Sant Andreu",
+      "text": "L'eix comercial que porta fins a l'avinguda Meridiana."
+    },
+    {
+      "name": "Estació de la Sagrera",
+      "where": "La Sagrera",
+      "text": "La gran estació en obres i el futur parc lineal."
+    },
+    {
+      "name": "Casa Bloc",
+      "where": "Sant Andreu",
+      "text": "Edifici d'habitatges racionalista dels anys trenta."
+    }
+  ]
+}

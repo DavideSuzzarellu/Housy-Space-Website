@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Cases del Governador, places amb font i una festa major al maig.",
+  "text": [
+    "Va ser terreny agrícola del municipi de Sant Martí de Provençals, annexionat per Barcelona el 1897, i va romandre gairebé despoblat fins al segle XX; la seva urbanització va començar als anys cinquanta. El seu nom ve del carrer de Navas de Tolosa, un dels seus eixos, on hi ha l'estació de metro del mateix nom, i des del 1978 els seus veïns van reivindicar una personalitat pròpia que es va reconèixer oficialment el 2006.",
+    "La plaça de Fernando Reyes, amb l'església de Sant Joan Bosco, n'és el centre, i la plaça d'Islàndia té una font de cascades. Les Cases del Governador són 406 cases de poca alçada envoltades d'espais enjardinats, inspirades en el model de ciutat jardí. Amb 4.029 €/m², és el barri amb el preu de compravenda més alt de Sant Andreu, i celebra la festa major cada maig."
+  ],
+  "housing": "Blocs de pisos i les Cases del Governador, de poca alçada i amb jardins comuns.",
+  "places": [
+    "Plaça de Fernando Reyes",
+    "Plaça d'Islàndia",
+    "Cases del Governador",
+    "Estació de metro Navas (L1)"
+  ]
+}

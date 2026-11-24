@@ -1,23 +1,22 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const PAGES = [
   ["/es/servicios/venta-estrategica", "Compraventa e intermediación inmobiliaria"],
   ["/es/servicios/asesoramiento-juridico-fiscal", "Asesoramiento jurídico y fiscal"],
   ["/es/nosotros", "Mucho más que una inmobiliaria"],
   ["/es/contacto", "Hablemos"],
-  ["/es/busco-vivienda", "Busco vivienda"],
-  ["/es/busqueda-a-medida", "Búsqueda a medida"],
-  ["/es/valoracion", "La próxima propiedad podría ser la tuya"],
-  ["/es/blog", "Blog y noticias"],
+  ["/es/mi-busqueda", "Tu próximo hogar empieza aquí"],
+  ["/es/valoracion", "El valor de tu vivienda"],
+  ["/es/blog", "El Blog"],
   ["/es/guia-internacional", "Comprar en Barcelona desde el extranjero"],
   ["/es/datos", "Estado de los datos"],
   ["/es/aviso-legal", "Aviso legal"],
   ["/es/privacidad", "Política de privacidad"],
   ["/es/cookies", "Política de cookies"],
-  ["/es/vivir-en-barcelona", "Barcelona, barrio a barrio"],
-  ["/es/vivir-en-barcelona/gracia", "Gràcia"],
-  ["/es/vivir-en-barcelona/nou-barris/verdun", "Verdun"],
+  ["/es/zonas/barcelona", "Barcelona, barrio a barrio"],
+  ["/es/zonas/barcelona/distritos/gracia", "Gràcia"],
+  ["/es/zonas/barcelona/verdun", "Verdun"],
 ] as const;
 
 for (const [url, heading] of PAGES) {
@@ -33,8 +32,85 @@ for (const [url, heading] of PAGES) {
   });
 }
 
+const SERVICES = [
+  "venta-estrategica",
+  "valoracion",
+  "asesoramiento-financiero",
+  "asesoramiento-juridico-fiscal",
+  "reformas-obras",
+  "personal-shopper",
+  "inversion-inmobiliaria",
+  "alquiler-gestion",
+] as const;
+
+for (const service of SERVICES) {
+  test(`/es/servicios/${service} has its illustrated head and its own closing block`, async ({
+    page,
+  }) => {
+    await page.goto(`/es/servicios/${service}`);
+    const head = page.locator("[data-page-head]");
+    // The illustration is the only eager image of the page and carries a text alternative.
+    await expect(head.locator("img[fetchpriority='high']")).toHaveCount(1);
+    await expect(head.locator("img[alt]:not([alt=''])")).toHaveCount(1);
+    // "Hablemos" scrolls to the closing block, which lists the other services.
+    await head.getByRole("link", { name: "Hablemos" }).click();
+    await expect(page.locator("#hablemos")).toBeInViewport();
+    await expect(page.locator("#hablemos nav a")).toHaveCount(7);
+    // The footer's own "¡Hablemos!" row is hidden: the page closes with its own.
+    await expect(page.locator("[data-footer-cta]")).toBeHidden();
+  });
+}
+
+test("/es/servicios is a real page with the 8 services, 6 situations and a contact block", async ({
+  page,
+}) => {
+  await page.goto("/es/servicios");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("servicios");
+  await expect(
+    page.locator("#propietarios li a, #compradores li a, #especializados li a"),
+  ).toHaveCount(8);
+  await expect(page.locator("#situaciones li a")).toHaveCount(6);
+  await expect(page.locator("#asesoramiento ol li")).toHaveCount(4);
+  await expect(page.locator("#hablemos a")).toHaveCount(4);
+});
+
+test("the compraventa page lists eight steps and twelve inclusions", async ({ page }) => {
+  await page.goto("/es/servicios/venta-estrategica");
+  await expect(page.locator("main ol li").filter({ has: page.locator("h3") })).toHaveCount(8);
+  await expect(
+    page.getByRole("heading", { name: "Todo lo que hace falta para vender" }),
+  ).toBeVisible();
+  await expect(page.locator("section:has(h2:text('Todo lo que hace falta')) ul > li")).toHaveCount(
+    12,
+  );
+});
+
+test("frequently asked questions open and close without scripts", async ({ page }) => {
+  await page.goto("/es/servicios/alquiler-gestion");
+  const first = page.locator("details").first();
+  await expect(first).not.toHaveAttribute("open", "");
+  await first.locator("summary").click();
+  await expect(first).toHaveAttribute("open", "");
+  await first.locator("summary").click();
+  await expect(first).not.toHaveAttribute("open", "");
+});
+
+test("service pages are translated: the head keeps its illustration in every locale", async ({
+  page,
+}) => {
+  for (const [locale, segment, slug] of [
+    ["en", "services", "property-valuation"],
+    ["it", "servizi", "valutazione-immobiliare"],
+    ["ca", "serveis", "valoracio-immobiliaria"],
+  ] as const) {
+    await page.goto(`/${locale}/${segment}/${slug}`);
+    await expect(page.locator("[data-page-head] img[alt]:not([alt=''])")).toHaveCount(1);
+    await expect(page.locator("#hablemos")).toBeAttached();
+  }
+});
+
 test("barrio figures match the official data, with their source", async ({ page }) => {
-  await page.goto("/es/vivir-en-barcelona/nou-barris/verdun");
+  await page.goto("/es/zonas/barcelona/verdun");
   await expect(page.getByText("2.736", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("−36 % vs. Barcelona")).toBeVisible();
   await expect(page.getByText("62.º de 73 barrios", { exact: false })).toBeVisible();
@@ -42,25 +118,43 @@ test("barrio figures match the official data, with their source", async ({ page 
 });
 
 test("barrios are shown in the locale of the page", async ({ page }) => {
-  await page.goto("/en/living-in-barcelona/nou-barris/verdun");
+  await page.goto("/en/zones/barcelona/verdun");
   await expect(page.getByText("Average rent")).toBeVisible();
   await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
 });
 
 test("untranslated prose stays out of the index and is marked as Spanish", async ({ page }) => {
-  await page.goto("/en/services/venta-estrategica");
+  await page.goto("/en/services/property-sales-brokerage");
   await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(1);
   await expect(page.locator("[data-page-view]")).toHaveAttribute("lang", "es");
 });
 
-test("the map recolours by metric and search filters the table", async ({ page }) => {
-  await page.goto("/es/vivir-en-barcelona");
-  const first = page.locator("path[data-slug]").first();
-  const before = await first.evaluate((node) => node.style.fill);
-  await page.locator('[data-metric="density"]').click();
-  await expect.poll(() => first.evaluate((node) => node.style.fill)).not.toBe(before);
-  await page.locator("[data-barrio-search]").fill("verdun");
-  await expect(page.locator("[data-barrio-row]:visible")).toHaveCount(1);
+test("the district map recolours by metric, shows a district and search lists the matching barrios", async ({
+  page,
+}) => {
+  await page.goto("/es/zonas/barcelona");
+  const first = page.locator(".zs").first();
+  const before = await first.evaluate((node) => getComputedStyle(node).fill);
+  await page.locator('label[for="zm-m-density"]').click();
+  await expect.poll(() => first.evaluate((node) => getComputedStyle(node).fill)).not.toBe(before);
+  await page.locator('label[for="zd-eixample"]').click();
+  await expect(page.locator(".zp-eixample")).toBeVisible();
+  await expect(page.locator(".zp-all")).toBeHidden();
+  await expect(page.locator(".zk-eixample")).toHaveAttribute(
+    "href",
+    /\/zonas\/barcelona\/distritos\/eixample$/,
+  );
+  await page.locator("#barrio-search").fill("verdun");
+  await expect(page.locator('#barrio-results li[data-kind="b"]:visible')).toHaveCount(1);
+});
+
+test("'view on the map' opens the district on the map and marks the barrio", async ({ page }) => {
+  await page.goto("/es/zonas/barcelona");
+  await page.locator("#barrio-search").fill("verdun");
+  await page.locator('#barrio-results li[data-kind="b"]:visible [data-view-map]').click();
+  await expect(page.locator("#zd-nou-barris")).toBeChecked();
+  await expect(page.locator('[data-barrio="verdun"][data-on]')).toHaveCount(1);
+  await expect(page.locator(".zp-nou-barris")).toBeVisible();
 });
 
 test("the lead form opens WhatsApp with the request written", async ({ page, context }) => {
@@ -79,10 +173,97 @@ test("the lead form opens WhatsApp with the request written", async ({ page, con
   await expect(form.locator("[data-lead-status]")).toBeVisible();
 });
 
-test("district barrios appear only after choosing the district", async ({ page }) => {
-  await page.goto("/es/busco-vivienda");
-  const raval = page.locator('input[name="barrio"][value="el-raval"]');
-  await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
-  await page.locator('input[name="distrito"][value="ciutat-vella"]').check({ force: true });
-  await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
+test.describe("my search wizard", () => {
+  const next = (page: Page) => page.locator("[data-next] button");
+
+  test("shows one step at a time and validates the operation before moving on", async ({
+    page,
+  }) => {
+    await page.goto("/es/mi-busqueda");
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 1 de 5");
+    await expect(page.locator("fieldset[data-step]:not([data-step-off])")).toHaveCount(1);
+    await next(page).click();
+    await expect(page.locator('[data-error="operation"]')).toBeVisible();
+    await expect(page.locator('input[name="operacion"]').first()).toBeFocused();
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    await next(page).click();
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 2 de 5");
+    await expect(
+      page.getByRole("heading", { level: 3, name: "¿Dónde te gustaría vivir?" }),
+    ).toBeFocused();
+    await page.getByRole("button", { name: /Atrás/ }).click();
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 1 de 5");
+  });
+
+  test("district barrios appear only after choosing the district", async ({ page }) => {
+    await page.goto("/es/mi-busqueda");
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    await next(page).click();
+    const raval = page.locator('input[name="barrio"][value="el-raval"]');
+    await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
+    await page.locator('label:has(input[name="distrito"][value="ciutat-vella"])').click();
+    await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
+  });
+
+  test("the summary follows the form and the zone search adds zones", async ({ page }) => {
+    await page.goto("/es/mi-busqueda");
+    const summary = page.locator("[data-wizard-summary]");
+    await expect(summary).toContainText("Elige una opción");
+    await page.locator('label:has(input[name="operacion"][value="alquiler"])').click();
+    await expect(summary).toContainText("Alquilar");
+    await next(page).click();
+    await page.locator("#zone-q").fill("clot");
+    await page.getByRole("option", { name: /^El Clot/ }).click();
+    await expect(summary).toContainText("El Clot");
+    await expect(page.locator("[data-zone-tags]")).toContainText("El Clot");
+  });
+
+  test("the last step checks the contact data before the lead form opens WhatsApp", async ({
+    page,
+  }) => {
+    await page.goto("/es/mi-busqueda");
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    for (let step = 0; step < 4; step += 1) await next(page).click();
+    await page.getByRole("button", { name: /Guardar mi búsqueda/ }).click();
+    await expect(page.locator('[data-error="name"]')).toBeVisible();
+    await expect(page.locator('[data-error="consentData"]')).toBeVisible();
+    await page.locator('input[name="nombre"]').fill("Ana");
+    await page.locator('input[name="email"]').fill("ana@example.com");
+    await page.locator('input[name="telefono"]').fill("+34 613 084 804");
+    await page.locator('label:has(input[name="c_datos"])').click();
+    const request = page
+      .context()
+      .waitForEvent("request", (candidate) => candidate.url().startsWith("https://wa.me/"));
+    await page.getByRole("button", { name: /Guardar mi búsqueda/ }).click();
+    expect(decodeURIComponent((await request).url())).toContain("Ana");
+  });
+});
+
+test("the about page keeps its paper head, its in-page anchors and 'where we are'", async ({
+  page,
+}) => {
+  await page.goto("/es/nosotros");
+  await expect(page.locator("[data-page-head] img")).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  for (const id of [
+    "historia",
+    "experiencia",
+    "filosofia",
+    "como-trabajamos",
+    "milla",
+    "colaboraciones",
+  ]) {
+    await expect(page.locator(`#${id}`)).toHaveCount(1);
+  }
+  await page.goto("/es/nosotros#donde-estamos");
+  await expect(page.locator("#donde-estamos")).toBeInViewport();
+});
+
+test("the contact page lists the four contact ways above the form", async ({ page }) => {
+  await page.goto("/es/contacto");
+  await expect(page.locator("#formas li")).toHaveCount(4);
+  await expect(page.locator("#formulario #cf")).toBeVisible();
+  await expect(page.locator("#preguntas")).toHaveCount(0);
+  await page.locator("#formas a", { hasText: "Cuéntanos" }).click();
+  await expect(page.locator("#formulario")).toBeInViewport();
 });

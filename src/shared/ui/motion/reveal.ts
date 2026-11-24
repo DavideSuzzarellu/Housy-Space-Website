@@ -26,8 +26,35 @@ function reveal(element: Element): void {
   element.classList.add(REVEALED_CLASS);
 }
 
+/** What the reference site reveals on its own (v2.js): headings, page-head lead, steps, figures, folds. */
+export const AUTO_REVEAL_SELECTOR =
+  "main section h2, [data-page-head] p, main ol > li, main figure, main details, main aside";
+/** Never auto-reveal inside navigation, the shared chrome or carousels (off-screen panels must stay visible). */
+const AUTO_REVEAL_EXCLUDED =
+  "nav, header, footer, [data-services-accordion], .progress-step, .sr-only";
+
+/** Sibling stagger of the reference: 0.09 s per element, at most 0.45 s. */
+export const staggerDelay = (index: number): number => Math.min(Math.round(index * 9) / 100, 0.45);
+
+/** Marks the reference's automatic targets and staggers siblings, so no page needs its own markers. */
+function markAutoReveal(): void {
+  const seen = new Map<Element, number>();
+  for (const element of document.querySelectorAll<HTMLElement>(AUTO_REVEAL_SELECTOR)) {
+    if (element.hasAttribute("data-reveal") || element.closest(AUTO_REVEAL_EXCLUDED) !== null) {
+      continue;
+    }
+    element.setAttribute("data-reveal", "");
+    const parent = element.parentElement;
+    if (parent === null) continue;
+    const index = seen.get(parent) ?? 0;
+    seen.set(parent, index + 1);
+    if (index > 0) element.style.setProperty("--reveal-delay", `${staggerDelay(index)}s`);
+  }
+}
+
 export function initReveal(): void {
   observer?.disconnect();
+  markAutoReveal();
   const targets = [...document.querySelectorAll(`[data-reveal]:not(.${REVEALED_CLASS})`)];
 
   if (!motionAllowed()) {

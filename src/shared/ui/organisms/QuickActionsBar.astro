@@ -4,8 +4,10 @@ import type { Locale } from "@/shared/i18n/config";
 import ContactActions from "@/shared/ui/molecules/ContactActions.astro";
 
 /**
- * Mobile-only bottom bar with the contact CTAs. Slides in after scrolling past the first
- * screen (Header script toggles `data-visible` and `inert`).
+ * Mobile-only bottom bar with the contact CTAs. It slides in after scrolling past 70% of the first
+ * screen, driven by CSS (scroll-driven animation, no JavaScript). Browsers without support show
+ * it from the start; while it is hidden it is `visibility: hidden`, so it is also out of the
+ * tab order and the accessibility tree.
  */
 interface Props {
   locale: Locale;
@@ -17,10 +19,34 @@ const t = getDictionary(locale);
 
 <nav
   aria-label={t.a11y.quickActions}
-  data-quick-actions
-  data-visible="false"
-  inert
-  class="fixed inset-x-0 bottom-0 z-58 translate-y-[110%] pb-[env(safe-area-inset-bottom)] transition-transform duration-500 ease-brand data-[visible=true]:translate-y-0 md:hidden in-[.overflow-hidden]:translate-y-[110%]"
+  class="quick-bar fixed inset-x-0 bottom-0 z-58 pb-[env(safe-area-inset-bottom)] md:hidden in-[.overflow-hidden]:hidden"
 >
   <ContactActions locale={locale} variant="bar" />
 </nav>
+
+<style>
+  @keyframes quick-bar-in {
+    from {
+      transform: translateY(110%);
+      visibility: hidden;
+    }
+    to {
+      transform: none;
+      visibility: visible;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .quick-bar {
+      transform: translateY(110%);
+      visibility: hidden;
+      animation: quick-bar-in linear both;
+    }
+
+    /* Separate rule on purpose (a minifier folds the timeline into the shorthand, which browsers reject). */
+    nav[aria-label].quick-bar {
+      animation-timeline: scroll(root);
+      animation-range: 70vh calc(70vh + 4rem);
+    }
+  }
+</style>

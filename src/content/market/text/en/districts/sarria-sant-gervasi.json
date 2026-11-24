@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "The upper part of the city, between Collserola and the Diagonal: old villas, schools and residential streets.",
+  "history": [
+    "Sarrià-Sant Gervasi joins two former municipalities: Sant Gervasi de Cassoles, annexed to Barcelona in 1897, and Sarrià, in 1921. Its six neighbourhoods climb from the Diagonal to the Collserola range and Tibidabo, and combine historic centres, such as Sarrià, with streets of stately buildings and houses with gardens.",
+    "It is a district with a residential feel, with many schools, parks and direct access to Collserola. The landscape changes a lot from one neighbourhood to the next: the village life of Sarrià, the shops and leisure of Sant Gervasi-Galvany, the detached houses of Les Tres Torres and La Bonanova, the passageways of El Putxet and the hillside of Vallvidrera.",
+    "Across its 6 neighbourhoods, the average sale price ranges from 3,766 €/m² in Vallvidrera, el Tibidabo i les Planes to 6,294 €/m² in Sarrià, and the average rent from 1,202 €/month in El Putxet i el Farró to 2,014 €/month in Les Tres Torres.",
+    "There is strong demand for large flats and houses, and every street has a different price, so each property needs careful assessment."
+  ],
+  "summary": "Sarrià-Sant Gervasi has 152,943 inhabitants in 19.92 km² and 6 neighbourhoods. It is the district with the highest sale price in Barcelona: 5,635 €/m² in 2025. The average rent is 1,604 €/month.",
+  "landmarks": [
+    {
+      "name": "Tibidabo",
+      "where": "Vallvidrera, el Tibidabo i les Planes",
+      "text": "The summit of Collserola, with the Sagrat Cor church and the amusement park."
+    },
+    {
+      "name": "Torre de Collserola",
+      "where": "Vallvidrera, el Tibidabo i les Planes",
+      "text": "Norman Foster's communications tower, with a viewing platform."
+    },
+    {
+      "name": "Núcleo antiguo de Sarrià",
+      "where": "Sarrià",
+      "text": "The square and Carrer Major de Sarrià, the heart of the old village."
+    },
+    {
+      "name": "CosmoCaixa",
+      "where": "Sant Gervasi-la Bonanova",
+      "text": "The \"la Caixa\" Foundation's science museum."
+    },
+    {
+      "name": "Turó Parc",
+      "where": "Sant Gervasi-Galvany",
+      "text": "A 1930s garden by Nicolau Maria Rubió i Tudurí."
+    }
+  ]
+}

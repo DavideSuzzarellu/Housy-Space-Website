@@ -1,0 +1,483 @@
+{
+  "title": "Consulenza legale immobiliare a Barcellona · HousySpace",
+  "description": "Consulenza legale e fiscale per vendere, comprare o ereditare a Barcellona, con lo studio legale e i consulenti fiscali con cui collaboriamo.",
+  "head": {
+    "heading": "Consulenza *legale e fiscale*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
+      "alt": "Illustrazione del servizio: Una bilancia schematica in equilibrio",
+      "scale": 0.684
+    },
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-hierro-720.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
+      {
+        "kind": "lead",
+        "text": "Quando l'operazione lo richiede, coordiniamo la consulenza con professionisti indipendenti di fiducia."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci il tuo caso",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Ogni passaggio verificato da specialisti."
+        },
+        {
+          "kind": "p",
+          "text": "Comprare, vendere, ereditare o affittare un immobile ha conseguenze legali e fiscali. Le esaminiamo con lo studio legale e i consulenti fiscali con cui collaboriamo, ti spieghiamo le opzioni in modo chiaro e ci assicuriamo che tutto sia in ordine prima di firmare."
+        }
+      ]
+    },
+    {
+      "layout": "split",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come possiamo aiutarti"
+        },
+        {
+          "kind": "h2",
+          "text": "In base alla tua situazione"
+        },
+        {
+          "kind": "lead",
+          "text": "Queste pratiche sono svolte dallo studio legale e dallo studio fiscale con cui collaboriamo. Noi coordiniamo la consulenza e le sue tempistiche con la tua operazione."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Comprare o vendere"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Nota simple (visura del registro immobiliare), gravami e situazione registrale"
+                },
+                {
+                  "title": "",
+                  "text": "Contratto di arras (caparra) e di compravendita"
+                },
+                {
+                  "title": "",
+                  "text": "Revisione dell'atto prima della firma dal notaio"
+                },
+                {
+                  "title": "",
+                  "text": "Imposte sull'operazione"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Ereditare un immobile"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Documentazione per accettare o rinunciare all'eredità"
+                },
+                {
+                  "title": "",
+                  "text": "Imposta di successione e plusvalía municipal"
+                },
+                {
+                  "title": "",
+                  "text": "Iscrizione nel registro immobiliare (Registro de la Propiedad)"
+                },
+                {
+                  "title": "",
+                  "text": "Accordi tra gli eredi per vendere o dividere"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Affittare"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Contratto di locazione"
+                },
+                {
+                  "title": "",
+                  "text": "Deposito cauzionale e garanzie"
+                },
+                {
+                  "title": "",
+                  "text": "Mancato pagamento e sfratti"
+                },
+                {
+                  "title": "",
+                  "text": "I redditi da locazione nella dichiarazione dei redditi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Aziende e attività commerciali"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Contratti commerciali"
+                },
+                {
+                  "title": "",
+                  "text": "Società patrimoniali"
+                },
+                {
+                  "title": "",
+                  "text": "Locazione di locali commerciali"
+                },
+                {
+                  "title": "",
+                  "text": "Licenze e permessi"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "tax",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Fiscalità"
+        },
+        {
+          "kind": "h2",
+          "text": "Quali imposte compaiono in ogni momento"
+        },
+        {
+          "kind": "lead",
+          "text": "Un'indicazione generale. Il calcolo di ogni caso spetta allo studio fiscale."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Quando vendi"
+            },
+            {
+              "kind": "p",
+              "text": "Vendita di un immobile"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Plusvalía municipal",
+                  "text": "Comune."
+                },
+                {
+                  "title": "IRPF: plusvalenza patrimoniale",
+                  "text": "Stato. Se vendi con un guadagno."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Quando compri"
+            },
+            {
+              "kind": "p",
+              "text": "Acquisto di un immobile"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Imposta sui trasferimenti patrimoniali (ITP)",
+                  "text": "Generalitat. Immobili usati."
+                },
+                {
+                  "title": "Imposta sugli atti giuridici documentati (AJD)",
+                  "text": "Generalitat. Nuova costruzione o stipula di un mutuo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Quando erediti o ricevi"
+            },
+            {
+              "kind": "p",
+              "text": "Successioni e donazioni"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Imposta di successione e donazione",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Plusvalía municipal",
+                  "text": "Comune."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Da proprietario"
+            },
+            {
+              "kind": "p",
+              "text": "Finché possiedi l'immobile"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Imposta sui beni immobili (IBI)",
+                  "text": "Comune. Ogni anno."
+                },
+                {
+                  "title": "IRPF: redditi da locazione",
+                  "text": "Stato. Se affitti l'immobile."
+                },
+                {
+                  "title": "Imposta sul patrimonio",
+                  "text": "Stato. In base al valore del tuo patrimonio."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Raccontaci cosa ti preoccupa",
+              "text": "Parliamo con calma della tua operazione e dei tuoi dubbi."
+            },
+            {
+              "title": "Studiamo il tuo caso",
+              "text": "Lo esaminiamo con gli specialisti e ti spieghiamo le opzioni."
+            },
+            {
+              "title": "Decidiamo insieme",
+              "text": "Cosa faremo, come e quando."
+            },
+            {
+              "title": "Lo coordiniamo",
+              "text": "Coordiniamo la verifica con gli specialisti fino alla firma."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Con chi lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Lavoriamo con ADV Advocats e Asesoría Edac"
+        },
+        {
+          "kind": "lead",
+          "text": "Uno studio legale e uno studio fiscale di Barcellona con cui esaminiamo gli aspetti legali e fiscali delle nostre operazioni, e molto altro."
+        },
+        {
+          "kind": "p",
+          "text": "Se te li consigliamo è perché li conosciamo bene: da anni ci circondiamo di professionisti che lavorano bene quanto noi, o meglio, e di cui ci fidiamo pienamente."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Perché ci fidiamo di loro",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Studio legale a Barcellona: successioni, redditi e imposte, diritto civile, del lavoro e d'impresa.",
+              "kicker": "Studio legale e fiscale",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visita advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Consulenza fiscale, contabile e del lavoro a Barcellona: imposte, dichiarazioni e pratiche con il fisco.",
+              "kicker": "Consulenza fiscale",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visita serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parliamone"
+        },
+        {
+          "kind": "lead",
+          "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravendita e intermediazione immobiliare",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

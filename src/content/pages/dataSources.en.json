@@ -1,0 +1,103 @@
+{
+  "title": "Data sources · HousySpace",
+  "description": "Official sources, licences and update dates of the price, population and map data shown in our Barcelona zones guide.",
+  "head": {
+    "heading": "Data sources",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Transparency"
+      },
+      {
+        "kind": "lead",
+        "text": "Where the Barcelona neighbourhood data comes from and when it was last checked."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Current coverage"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Population and density by neighbourhood (Padró municipal, Open Data BCN): 73 of 73 neighbourhoods."
+            },
+            {
+              "title": "",
+              "text": "Average sale price (Portal de Dades, Ajuntament de Barcelona; General Council of Notaries): 73 of 73 neighbourhoods."
+            },
+            {
+              "title": "",
+              "text": "Average rent (Portal de Dades, Ajuntament de Barcelona; INCASÒL rental deposits): 73 of 73 neighbourhoods."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "Sources and last check"
+        },
+        {
+          "kind": "table",
+          "head": ["Source", "Last run", "Date", "Last successful", "Detail"],
+          "rows": [
+            ["Ajuntament de Barcelona · Open Data BCN (API CKAN)", "no runs yet", "—", "—", ""],
+            [
+              "Ajuntament de Barcelona · CartoBCN (administrative boundaries)",
+              "no runs yet",
+              "—",
+              "—",
+              ""
+            ],
+            [
+              "Ajuntament de Barcelona · Portal Barcelona Dades (housing market)",
+              "ok",
+              "20/10/2026",
+              "20/10/2026",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "The system checks sources every 6 hours. If a source fails, the last valid data is kept and, after three consecutive failures, the team is alerted. Generated: 20/10/2026."
+        },
+        {
+          "kind": "h2",
+          "text": "Map and source credits"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Mapping: ICGC (CC BY 4.0). District and neighbourhood boundaries: Ajuntament de Barcelona · CartoBCN (CC BY 4.0)."
+            },
+            {
+              "title": "",
+              "text": "Prices: Ajuntament de Barcelona · Portal de Dades. Sales: average price per m² of the homes transferred according to the General Council of Notaries; rent: average monthly rent of the contracts according to the INCASÒL deposits. Main figure: last full year (2025); in the charts, the current year appears as provisional."
+            },
+            {
+              "title": "",
+              "text": "Density: Padró municipal 2026 and official area from CartoBCN."
+            },
+            {
+              "title": "",
+              "text": "Brokered properties (Properties): the location on the map is approximate and the street number is not shown. The price is that of the published listing, not the final sale price, and the totals add up those listing prices. The date is the month in which the home stopped being advertised."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

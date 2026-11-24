@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Il quartiere che vive all'ombra del tempio di Gaudí, con negozi di prossimità e vita di vicinato.",
+  "text": [
+    "Fino a non molto tempo fa lo chiamavano «el Poblet»: per anni fu soprattutto campagna, con un piccolo nucleo di case basse attorno al carrer de València, e non ebbe un'identità propria fino all'inizio del Novecento, come quartiere operaio accanto a molte industrie. Il tempio fu progettato nel 1881, su terreni del comune di Sant Martí dove tutt'intorno c'erano solo campi, e dal 1882 cresce al suo centro; Gaudí, allora giovane e poco conosciuto, subentrò quando era iniziata la cripta.",
+    "Dalla facciata parte l'avinguda de Gaudí, che porta a piedi fino all'Hospital de la Santa Creu i Sant Pau, di Domènech i Montaner, ed entrambi gli edifici sono Patrimonio dell'Umanità dell'UNESCO. Nelle strade accanto al tempio si convive con visitatori da tutto il mondo, ma a pochi isolati la vita è quella di un quartiere di vicini, con mercato, negozi e scuole. Con 53.201 abitanti su 1,04 km², è uno dei più popolati dell'Eixample, e il suo affitto medio, 1.107 €/mese, è il più basso del distretto."
+  ],
+  "housing": "Appartamenti in stabili dell'impianto di Cerdà, con più viavai di visitatori accanto al tempio.",
+  "places": [
+    "Basílica de la Sagrada Família",
+    "Avinguda de Gaudí",
+    "Recinte Modernista de Sant Pau"
+  ]
+}

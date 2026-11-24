@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un quartiere che si trasforma, tra capannoni convertiti in spazi di creazione e il cantiere della nuova stazione.",
+  "text": [
+    "Il suo nome viene dalle sagreres: nell'XI secolo l'abate Oliba stabilì un patto con i nobili per creare uno spazio di trenta passi attorno alle chiese in cui contadini e beni fossero al sicuro, e da lì nacque una zona protetta del paese di Sant Martí de Provençals. Anche se oggi appartiene al distretto di Sant Andreu, non ha mai fatto parte dell'antico comune di Sant Andreu de Palomar.",
+    "Oggi convive con i lavori della futura stazione di Barcelona-La Sagrera, in corso dal 2009, e con spazi culturali e di creazione come la Nau Ivanow e la Nau Bostik, il parco della Pegaso, il maggiore del quartiere, e il mercat de Felip II. Con 31.247 abitanti su 0,99 km², è un quartiere in transizione, dove l'ambiente cambia a ogni fase dei lavori."
+  ],
+  "housing": "Palazzi di appartamenti di epoche diverse, con antichi capannoni industriali riconvertiti.",
+  "places": [
+    "Nau Ivanow",
+    "Nau Bostik",
+    "Parc de la Pegaso",
+    "Mercat de Felip II",
+    "Estació de La Sagrera (in costruzione)"
+  ]
+}

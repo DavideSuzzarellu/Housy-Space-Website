@@ -1,9 +1,14 @@
 {
-  "title": "Asesoramiento jurídico y fiscal · HousySpace",
-  "description": "Cuando la operación lo requiere, coordinamos la consulta con profesionales independientes de confianza.",
+  "title": "Asesoramiento jurídico inmobiliario en Barcelona · HousySpace",
+  "description": "Asesoramiento legal y fiscal para vender, comprar o heredar en Barcelona, con el despacho de abogados y la asesoría fiscal con los que colaboramos.",
   "head": {
-    "heading": "Asesoramiento jurídico y fiscal",
-    "photo": true,
+    "heading": "Asesoramiento *jurídico y fiscal*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
+      "alt": "Ilustración del servicio: Balanza esquemática en equilibrio",
+      "scale": 0.684
+    },
     "items": [
       {
         "kind": "image",
@@ -16,17 +21,28 @@
       {
         "kind": "lead",
         "text": "Cuando la operación lo requiere, coordinamos la consulta con profesionales independientes de confianza."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Cuéntanos tu caso",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "big",
-          "text": "Cada paso, correcto y seguro."
+          "text": "Cada paso, revisado por especialistas."
         },
         {
           "kind": "p",
@@ -35,6 +51,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "stone",
       "band": false,
       "items": [
@@ -45,6 +62,10 @@
         {
           "kind": "h2",
           "text": "Según el momento en que estés"
+        },
+        {
+          "kind": "lead",
+          "text": "Estas gestiones las realizan el despacho de abogados y la asesoría fiscal con los que colaboramos. Nosotros coordinamos la consulta y sus plazos con tu operación."
         },
         {
           "kind": "card",
@@ -173,6 +194,7 @@
       ]
     },
     {
+      "layout": "tax",
       "surface": "paper",
       "band": false,
       "items": [
@@ -182,83 +204,121 @@
         },
         {
           "kind": "h2",
-          "text": "Los impuestos de la vivienda, por administración"
+          "text": "Qué impuestos aparecen en cada momento"
         },
         {
           "kind": "lead",
-          "text": "Quién cobra cada impuesto y cuándo aparece en una operación."
+          "text": "Una orientación general. El cálculo de cada caso corresponde a la asesoría fiscal."
         },
         {
-          "kind": "h3",
-          "text": "Ayuntamiento"
-        },
-        {
-          "kind": "p",
-          "text": "Impuestos municipales"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Plusvalía municipal",
-              "text": "Al vender, heredar o donar."
+              "kind": "h3",
+              "text": "Al vender"
             },
             {
-              "title": "IBI",
-              "text": "Cada año, como propietario."
+              "kind": "p",
+              "text": "Venta de una vivienda"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Plusvalía municipal",
+                  "text": "Ayuntamiento."
+                },
+                {
+                  "title": "IRPF: ganancia patrimonial",
+                  "text": "Estado. Si vendes con beneficio."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Generalitat"
-        },
-        {
-          "kind": "p",
-          "text": "Agència Tributària de Catalunya"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "Transmisiones patrimoniales",
-              "text": "Al comprar una vivienda de segunda mano."
+              "kind": "h3",
+              "text": "Al comprar"
             },
             {
-              "title": "Actos jurídicos documentados",
-              "text": "Al comprar obra nueva o firmar una hipoteca."
+              "kind": "p",
+              "text": "Compra de una vivienda"
             },
             {
-              "title": "Sucesiones y donaciones",
-              "text": "Al heredar o recibir una vivienda."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Transmisiones patrimoniales",
+                  "text": "Generalitat. Vivienda de segunda mano."
+                },
+                {
+                  "title": "Actos jurídicos documentados",
+                  "text": "Generalitat. Obra nueva o firma de hipoteca."
+                }
+              ]
             }
           ]
         },
         {
-          "kind": "h3",
-          "text": "Estado"
-        },
-        {
-          "kind": "p",
-          "text": "Agencia Tributaria"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
+          "kind": "card",
           "items": [
             {
-              "title": "IRPF: ganancia patrimonial",
-              "text": "Al vender con beneficio."
+              "kind": "h3",
+              "text": "Al heredar o recibir"
             },
             {
-              "title": "IRPF: rendimientos",
-              "text": "Si alquilas la vivienda."
+              "kind": "p",
+              "text": "Herencias y donaciones"
             },
             {
-              "title": "Patrimonio",
-              "text": "Según el valor de tu patrimonio."
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Sucesiones y donaciones",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Plusvalía municipal",
+                  "text": "Ayuntamiento."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Como propietario"
+            },
+            {
+              "kind": "p",
+              "text": "Mientras tienes la vivienda"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "IBI",
+                  "text": "Ayuntamiento. Cada año."
+                },
+                {
+                  "title": "IRPF: rendimientos",
+                  "text": "Estado. Si alquilas la vivienda."
+                },
+                {
+                  "title": "Patrimonio",
+                  "text": "Estado. Según el valor de tu patrimonio."
+                }
+              ]
             }
           ]
         }
@@ -293,13 +353,14 @@
             },
             {
               "title": "Lo coordinamos",
-              "text": "Nos aseguramos de que todo sea correcto y seguro hasta la firma."
+              "text": "Coordinamos la revisión con los especialistas hasta la firma."
             }
           ]
         }
       ]
     },
     {
+      "layout": "colab",
       "surface": "paper",
       "band": false,
       "items": [
@@ -313,13 +374,17 @@
         },
         {
           "kind": "lead",
-          "text": "Un despacho de abogados y una asesoría fiscal de Barcelona con los que revisamos los aspectos legales y fiscales de nuestras operaciones."
+          "text": "Un despacho de abogados y una asesoría fiscal de Barcelona con los que revisamos los aspectos legales y fiscales de nuestras operaciones, y mucho más."
+        },
+        {
+          "kind": "p",
+          "text": "Si te los recomendamos es porque los conocemos bien: llevamos años rodeándonos de profesionales que trabajan igual o mejor que nosotros y en quienes confiamos plenamente."
         },
         {
           "kind": "buttons",
           "items": [
             {
-              "label": "Conoce a nuestros colaboradores",
+              "label": "Por qué confiamos en ellos",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -331,17 +396,26 @@
           "items": [
             {
               "title": "ADV Advocats",
-              "text": "Despacho jurídico y fiscal Despacho de abogados en Barcelona: herencias, renta e impuestos, derecho civil, laboral y de empresa. [Visitar advadvocats.cat](https://advadvocats.cat/es/)"
+              "text": "Despacho de abogados en Barcelona: herencias, renta e impuestos, derecho civil, laboral y de empresa.",
+              "kicker": "Despacho jurídico y fiscal",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visitar advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
             },
             {
               "title": "Asesoría Edac",
-              "text": "Asesoría fiscal Asesoría fiscal, contable y laboral en Barcelona: impuestos, declaraciones y trámites con Hacienda. [Visitar serviciosdac.com](https://www.serviciosdac.com/)"
+              "text": "Asesoría fiscal, contable y laboral en Barcelona: impuestos, declaraciones y trámites con Hacienda.",
+              "kicker": "Asesoría fiscal",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visitar serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
             }
           ]
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -379,8 +453,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compraventa e intermediación inmobiliaria",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Asesoramiento financiero",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

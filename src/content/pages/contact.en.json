@@ -1,0 +1,292 @@
+{
+  "title": "Real estate in Travessera de Gràcia · HousySpace",
+  "description": "HousySpace, real estate agency at Travessera de Gràcia 73, Barcelona. Drop by or call us on 613 084 804, Monday to Friday from 10:00 to 19:00.",
+  "head": {
+    "heading": "Let's talk",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Contact"
+      },
+      {
+        "kind": "lead",
+        "text": "Every good decision starts with a conversation. Let's talk about yours."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-salon-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "formas",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Choose how to talk to us"
+        },
+        {
+          "kind": "lead",
+          "text": "You can call us, write to us or come and see us at the office. Use whichever way suits you best."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Call us"
+            },
+            {
+              "kind": "p",
+              "text": "Speak directly with an advisor."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Call",
+                  "href": "tel:+34613084804",
+                  "solid": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "WhatsApp"
+            },
+            {
+              "kind": "p",
+              "text": "Tell us what you need from your phone."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Open WhatsApp",
+                  "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Email"
+            },
+            {
+              "kind": "p",
+              "text": "To write to us calmly and in more detail."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Write an email",
+                  "href": "mailto:info@housyspace.com",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Come and see us"
+            },
+            {
+              "kind": "p",
+              "text": "Monday to Friday, from 10:00 to 19:00."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Get directions",
+                  "href": "#donde-estamos",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Would you rather leave your enquiry in writing? [Fill in the form](#formulario)."
+        }
+      ]
+    },
+    {
+      "id": "donde-estamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Where we are"
+        },
+        {
+          "kind": "lead",
+          "text": "Our office is in Barcelona. You can come and see us during office hours."
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Tell us what you need"
+        },
+        {
+          "kind": "lead",
+          "text": "A HousySpace advisor will deal with you personally."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Only what is marked with * is required: name, phone and your enquiry."
+            },
+            {
+              "title": "",
+              "text": "The rest helps us serve you better, but it is optional."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Would you rather talk now?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "form",
+          "id": "cf",
+          "intro": "Hello, I'd like to make an enquiry.",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Full name",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Phone",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Email address",
+              "required": false,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "interes",
+              "label": "How can we help you?",
+              "required": false,
+              "full": true,
+              "type": "select",
+              "options": [
+                "Buy a property",
+                "Sell my property",
+                "Rent out my property",
+                "Find a rental",
+                "Value my property",
+                "Renovations and interior design",
+                "Financing or mortgage",
+                "Other enquiry"
+              ],
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Your enquiry",
+              "required": true,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request.",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "I want to receive commercial communications from HousySpace about properties, services and news by email, WhatsApp or phone. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "I want to subscribe to the HousySpace newsletter and articles by email. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: to handle your request and, only if you tick the boxes, to send you commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where required by law. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may also lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy)."
+            },
+            {
+              "kind": "submit",
+              "label": "Send enquiry"
+            },
+            {
+              "kind": "note",
+              "text": "There is no form submission system yet (CRM pending). When you click, WhatsApp will open with your request already written for you to send; your message will not reach HousySpace until you send it there."
+            }
+          ],
+          "mode": "whatsapp"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El nucli més antic de la ciutat: catedral, places i carrers de vianants sobre la Barcino romana.",
+  "text": [
+    "És el cor del nucli antic i el barri més petit de Ciutat Vella (0,82 km²). Sota els seus carrers queden restes de la muralla romana, i damunt seu s'alcen la catedral, la plaça de Sant Jaume, seu de l'Ajuntament i de la Generalitat, la plaça Reial i el Call, l'antic barri jueu.",
+    "Aquí es viu entre pedra amb segles d'història. Els pisos són petits i amb encant, amb les limitacions pròpies del que és antic: escales empinades, ascensor que no sempre hi és i soroll a les places i als carrers amb terrasses. A canvi, tot el centre queda a peu i molts carrers són de vianants."
+  ],
+  "housing": "Pisos petits en edificis antics, sovint sense ascensor.",
+  "places": ["Catedral de Barcelona", "Plaça de Sant Jaume", "Plaça Reial", "El Call"]
+}

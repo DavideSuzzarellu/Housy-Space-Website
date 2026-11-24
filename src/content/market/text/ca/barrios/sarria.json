@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un poble amb història dins de Barcelona: la plaça, l'església i el carrer Major, als peus de Collserola.",
+  "text": [
+    "Sarrià va ser un poble independent fins al 1921, quan Barcelona el va annexionar malgrat l'oposició dels veïns, i els primers documents escrits són del segle X. Conserva el nucli, amb la plaça de Sarrià, que va ser cementiri fins al 1850, l'església de Sant Vicenç, documentada des de l'any 980 i reconstruïda en estil neoclàssic el 1781, i la plaça del Consell de la Vila, amb l'antic ajuntament del 1895.",
+    "La dita ho resumeix: «Sarrià: vents, torrents, torres i convents». Viure a Sarrià és fer-ho en una zona residencial de carrers tranquils, escoles, comerç de proximitat i cases amb jardí, amb accés ràpid a Collserola. Amb 6.294 €/m², és el barri amb el preu de compravenda més alt del districte."
+  ],
+  "housing": "Cases amb jardí i pisos en edificis de poques plantes, en carrers tranquils.",
+  "places": [
+    "Plaça de Sarrià",
+    "Església de Sant Vicenç",
+    "Plaça del Consell de la Vila",
+    "Carrer Major de Sarrià"
+  ]
+}

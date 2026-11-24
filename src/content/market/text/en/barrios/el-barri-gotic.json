@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The oldest part of the city: the cathedral, squares and pedestrian streets on top of Roman Barcino.",
+  "text": [
+    "This is the heart of the old town and the smallest neighbourhood in Ciutat Vella (0.82 km²). Beneath its streets lie remains of the Roman wall, and above them stand the cathedral, Plaça de Sant Jaume, home to the City Council and the Generalitat, Plaça Reial and El Call, the old Jewish quarter.",
+    "Life here is lived among stone with centuries of history. The flats are small and charming, with the drawbacks that come with age: steep stairs, a lift that is not always there and noise from squares and streets with café terraces. In return, the whole centre is within walking distance and many streets are pedestrianised."
+  ],
+  "housing": "Small flats in old buildings, often without a lift.",
+  "places": ["Catedral de Barcelona", "Plaça de Sant Jaume", "Plaça Reial", "El Call"]
+}

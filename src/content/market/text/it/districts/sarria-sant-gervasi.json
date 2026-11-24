@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "La parte alta della città, tra Collserola e la Diagonal: antiche ville, scuole e strade residenziali.",
+  "history": [
+    "Sarrià-Sant Gervasi unisce due antichi comuni, Sant Gervasi de Cassoles, annesso a Barcellona nel 1897, e Sarrià, nel 1921. I suoi sei quartieri salgono dalla Diagonal fino alla serra de Collserola e al Tibidabo, e uniscono nuclei storici, come quello di Sarrià, a strade di palazzi signorili e ville con giardino.",
+    "È un distretto dall'atmosfera residenziale, con molte scuole, parchi e accesso diretto a Collserola. Da un quartiere all'altro il paesaggio cambia molto: la vita da paese di Sarrià, i negozi e il tempo libero di Sant Gervasi-Galvany, le ville di les Tres Torres e della Bonanova, i vicoli del Putxet e il monte di Vallvidrera.",
+    "Tra i suoi 6 quartieri, il prezzo medio di compravendita va dai 3.766 €/m² di Vallvidrera, el Tibidabo i les Planes ai 6.294 €/m² di Sarrià, e l'affitto medio dai 1.202 €/mese del Putxet i el Farró ai 2.014 €/mese di les Tres Torres.",
+    "C'è molta domanda di appartamenti grandi e di ville, e ogni strada ha un prezzo diverso: per questo conviene valutare con rigore ogni immobile."
+  ],
+  "summary": "Sarrià-Sant Gervasi conta 152.943 abitanti su 19,92 km² e 6 quartieri. È il distretto con il prezzo di compravendita più alto di Barcellona: 5.635 €/m² nel 2025. L'affitto medio è di 1.604 €/mese.",
+  "landmarks": [
+    {
+      "name": "Tibidabo",
+      "where": "Vallvidrera, el Tibidabo i les Planes",
+      "text": "La vetta di Collserola, con il tempio del Sagrat Cor e il parco divertimenti."
+    },
+    {
+      "name": "Torre de Collserola",
+      "where": "Vallvidrera, el Tibidabo i les Planes",
+      "text": "La torre di telecomunicazioni di Norman Foster, con belvedere."
+    },
+    {
+      "name": "Nucli antic de Sarrià",
+      "where": "Sarrià",
+      "text": "La piazza e il carrer Major de Sarrià, il centro dell'antico paese."
+    },
+    {
+      "name": "CosmoCaixa",
+      "where": "Sant Gervasi-la Bonanova",
+      "text": "Il museo della scienza della Fundació \"la Caixa\"."
+    },
+    {
+      "name": "Turó Parc",
+      "where": "Sant Gervasi-Galvany",
+      "text": "Giardino degli anni Trenta, opera di Nicolau Maria Rubió i Tudurí."
+    }
+  ]
+}

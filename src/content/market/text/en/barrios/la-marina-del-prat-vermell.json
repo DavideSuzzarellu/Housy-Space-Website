@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The Zona Franca and the port: the largest neighbourhood in Barcelona and one of the least populated.",
+  "text": [
+    "At 14.24 km², it is the largest neighbourhood in the city, yet barely 3,174 people live in it: almost all its land is taken up by the Zona Franca, logistics and industry linked to the port. Its name comes from the fields that once covered this area, in the lower part of the Marina de Sants.",
+    "It is a new neighbourhood in transformation, where housing developments are rising on former industrial land, with the Parc de les Trece Roses, opened in 2024, as its green lung and metro line 10 as its connection. Because there is so little housing, its sale price (2,724 €/m²) and rent (1,390 €/month) are based on very few transactions and should be read with caution."
+  ],
+  "housing": "New and scarce housing, among industrial and logistics estates.",
+  "places": ["Zona Franca", "Port de Barcelona", "Parc de les Trece Roses", "Mercabarna"]
+}

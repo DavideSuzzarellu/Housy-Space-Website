@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un quartiere di poligoni residenziali con un'identità di vicinato molto forte e vari parchi.",
+  "text": [
+    "Fino all'Ottocento fu un territorio rurale quasi spopolato, parte di Santa Eulàlia de Vilapicina, e fu urbanizzato soprattutto nella seconda metà del Novecento con grandi poligoni di abitazioni per immigrati, in particolare del sud della Spagna. Il Comune attribuisce il suo nome a Pasqual Porta Margarit, maestro e direttore del Colegio Peninsular, che sarebbe stato proprietario di terreni a Can Porta.",
+    "Ha un forte senso di identità propria: la sua associazione di quartiere nacque nel 1974 e il suo movimento di vicinato fu molto intenso tra il 1977 e il 1980. Tra i suoi punti di riferimento ci sono la plaça de Sóller, il parco di Can Dragó, il cimitero di Sant Andreu, la plaça de la República e il centro commerciale Heron City. Con 31.199 abitanti su 0,84 km², è il quartiere più popoloso del distretto."
+  ],
+  "housing": "Palazzi residenziali costruiti nella seconda metà del Novecento, con qualche masia che ricorda il passato rurale.",
+  "places": ["Parc de Can Dragó", "Plaça de Sóller", "Plaça de la República", "Heron City"]
+}

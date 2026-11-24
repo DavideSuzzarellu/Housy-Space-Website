@@ -1,6 +1,6 @@
 {
-  "title": "Contacto · HousySpace",
-  "description": "Contacta con HousySpace: teléfono, WhatsApp y consulta privada.",
+  "title": "Inmobiliaria en Travessera de Gràcia · HousySpace",
+  "description": "HousySpace, inmobiliaria en Travessera de Gràcia 73, Barcelona. Ven a vernos o llámanos al 613 084 804, de lunes a viernes de 10:00 a 19:00.",
   "head": {
     "heading": "Hablemos",
     "photo": true,
@@ -21,34 +21,136 @@
   },
   "sections": [
     {
+      "id": "formas",
       "surface": "stone",
       "band": false,
       "items": [
         {
-          "kind": "buttons",
+          "kind": "h2",
+          "text": "Elige cómo hablar con nosotros"
+        },
+        {
+          "kind": "lead",
+          "text": "Puedes llamarnos, escribirnos o venir a vernos a la oficina. Usa la forma que te resulte más cómoda."
+        },
+        {
+          "kind": "card",
           "items": [
             {
-              "label": "Llamar",
-              "href": "tel:+34613084804",
-              "solid": true
+              "kind": "h3",
+              "text": "Llámanos"
             },
             {
-              "label": "WhatsApp",
-              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
-              "solid": false
+              "kind": "p",
+              "text": "Habla directamente con un asesor."
             },
             {
-              "label": "Email",
-              "href": "mailto:info@housyspace.com",
-              "solid": false
-            },
-            {
-              "label": "Cuéntanos",
-              "href": "#formulario",
-              "solid": false
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Llamar",
+                  "href": "tel:+34613084804",
+                  "solid": true
+                }
+              ]
             }
           ]
         },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "WhatsApp"
+            },
+            {
+              "kind": "p",
+              "text": "Cuéntanos qué necesitas desde tu móvil."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Abrir WhatsApp",
+                  "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Email"
+            },
+            {
+              "kind": "p",
+              "text": "Para escribirnos con calma y más detalle."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Escribir email",
+                  "href": "mailto:info@housyspace.com",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Ven a vernos"
+            },
+            {
+              "kind": "p",
+              "text": "Lunes a viernes, de 10:00 a 19:00."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Cómo llegar",
+                  "href": "#donde-estamos",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "¿Prefieres dejarnos tu consulta por escrito? [Rellena el formulario](#formulario)."
+        }
+      ]
+    },
+    {
+      "id": "donde-estamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Dónde estamos"
+        },
+        {
+          "kind": "lead",
+          "text": "Nuestra oficina está en Barcelona. Puedes venir a vernos en horario de oficina."
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
         {
           "kind": "h2",
           "text": "Cuéntanos qué necesitas"
@@ -56,6 +158,39 @@
         {
           "kind": "lead",
           "text": "Te atenderá personalmente un asesor de HousySpace."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Solo es obligatorio lo marcado con *: nombre, teléfono y tu consulta."
+            },
+            {
+              "title": "",
+              "text": "El resto nos ayuda a atenderte mejor, pero es opcional."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "¿Prefieres hablar ahora?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Llamar",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            }
+          ]
         },
         {
           "kind": "form",
@@ -114,7 +249,7 @@
             },
             {
               "name": "consent",
-              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -138,7 +273,7 @@
             },
             {
               "kind": "note",
-              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy)."
             },
             {
               "kind": "submit",
@@ -150,30 +285,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "h2",
-          "text": "Preguntas frecuentes"
-        },
-        {
-          "kind": "faq",
-          "q": "¿Cuáles son vuestros honorarios?",
-          "a": "Respuesta pendiente de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "¿Cuánto tarda una venta?",
-          "a": "Respuesta pendiente de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "¿Cómo solicito una visita?",
-          "a": "Respuesta pendiente de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "¿Atendéis en otros idiomas?",
-          "a": "Respuesta pendiente de HousySpace."
         }
       ]
     }

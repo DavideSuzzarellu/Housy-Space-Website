@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Costeres, miradors i una gran memòria veïnal, amb vistes sobre tota Barcelona.",
+  "text": [
+    "Deu el nom al santuari de Nostra Senyora del Mont Carmel, construït el 1864 al peu del turó, abans conegut com a Turó d'en Móra. Fins als anys vint va ser un lloc rural; després de la Guerra Civil va créixer amb l'arribada de gent de tota Espanya, i les últimes barraques no es van enderrocar fins al 1990.",
+    "El pendent és el seu tret més reconeixible, i també el seu caràcter: un barri d'associacionisme marcat, amb comerç i serveis, el parc del Carmel i la biblioteca Juan Marsé. Limita amb el Park Güell, tot i que aquest pertany al districte de Gràcia. La majoria dels habitatges es van construir entre el 1960 i el 1980 i predominen els de 61 a 90 m². Amb 2.858 €/m², el seu preu de compravenda és dels més continguts del districte."
+  ],
+  "housing": "Blocs construïts entre el 1960 i el 1980, sobretot de 61 a 90 m², i cases baixes amb jardí a les zones més antigues.",
+  "places": [
+    "Santuari del Carmel",
+    "Monument «David i Goliat»",
+    "Parc del Carmel",
+    "Biblioteca Juan Marsé",
+    "Búnquers del Carmel"
+  ]
+}

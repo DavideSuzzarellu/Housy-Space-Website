@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un quartiere di classe media, tranquillo e commerciale, con parco e stazione intermodale.",
+  "text": [
+    "Esisteva già nel Medioevo con il nome di «Clotus Melis», che significa «buca del miele» e si documenta nel 1208, ed era una zona di orti e mulini lungo la Séquia Comtal. Mantenne il suo carattere rurale fino all'Ottocento, quando divenne industriale e operaio, e l'avinguda Meridiana, aperta nel 1964, frammentò il territorio.",
+    "Oggi è un quartiere prevalentemente di classe media, tranquillo, con attività commerciale e dehors, dove spiccano il Parc del Clot, il mercato comunale, accanto al quale si organizza una fiera di artigiani, e la stazione intermodale Clot-Aragó, con metropolitana e Rodalies. Ci sono appartamenti e case a prezzi accessibili per la classe media, altri più economici e anche case di alto valore. Con 4.092 €/m² di compravendita, si colloca molto vicino alla media del distretto, e il suo affitto, 966 €/mese, è inferiore."
+  ],
+  "housing": "Appartamenti e case di profili molto diversi, con zone di case basse.",
+  "places": ["Parc del Clot", "Mercat del Clot", "Estació del Clot-Aragó"]
+}

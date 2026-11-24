@@ -1,0 +1,209 @@
+---
+import { DESKTOP_GRID, MOBILE_GRID, blockPath, gridShapes } from "./streetGrid";
+
+/**
+ * Decorative "Cerdà grid" behind the home headline: fine block outlines that draw themselves
+ * from the centre outwards, plus accent routes ending in a target block. Pure SVG + CSS, no
+ * JS beyond the shared reveal (it is fully drawn without JS or under reduced motion).
+ * Place it inside a positioned parent; it fills it and ignores pointer events.
+ */
+interface Props {
+  /** `home`: phone grid anchored under the button. `heading`: centred, fading out at the bottom (service heads). */
+  placement?: "home" | "heading";
+}
+
+const { placement = "home" } = Astro.props;
+const GRIDS = [
+  { spec: DESKTOP_GRID, className: "hg-w" },
+  { spec: MOBILE_GRID, className: "hg-t" },
+].map(({ spec, className }) => ({
+  spec,
+  className,
+  shapes: gridShapes(spec.rows),
+}));
+---
+
+<div class="hg-box" data-reveal="fade" data-placement={placement} aria-hidden="true">
+  {GRIDS.map(({ spec, className, shapes }) => (
+    <svg class={`hg ${className}`} viewBox={spec.viewBox} focusable="false">
+      {shapes.map((shape) => (
+        <path
+          class={shape.kind === "block" ? "b" : "p"}
+          style={`--d:${shape.delay}s`}
+          d={shape.d}
+          pathLength="1"
+        />
+      ))}
+      {spec.targets.map((target) => (
+        <>
+          <path class="tg" style={`--d:${target.delay}s`} d={blockPath(target.col, target.row)} />
+          <circle
+            class="dr"
+            style={`--d:${target.dot.delay}s`}
+            cx={target.dot.cx}
+            cy={target.dot.cy}
+            r="3.2"
+          />
+        </>
+      ))}
+      {spec.routes.map((route) => (
+        <path
+          class="rt"
+          style={`--d:${route.delay}s;--t:${route.duration}s`}
+          d={route.d}
+          pathLength="1"
+        />
+      ))}
+    </svg>
+  ))}
+</div>
+
+<style>
+  .hg-box {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .hg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: auto;
+    translate: -50% -50%;
+    overflow: visible;
+  }
+
+  .hg-w {
+    width: min(110vw, 1650px);
+    mask-image:
+      linear-gradient(
+        90deg,
+        transparent 2%,
+        #000 14%,
+        #000 22%,
+        rgb(0 0 0 / 0.16) 33%,
+        rgb(0 0 0 / 0.16) 67%,
+        #000 78%,
+        #000 86%,
+        transparent 98%
+      ),
+      linear-gradient(180deg, transparent 0, #000 24%, #000 74%, transparent 100%);
+    mask-composite: intersect;
+  }
+
+  .hg-t {
+    display: none;
+  }
+
+  /* Phones: a narrow grid anchored under the button, the target block beside it. */
+  @media (max-width: 759px) {
+    .hg-w {
+      display: none;
+    }
+
+    .hg-t {
+      display: block;
+      width: 122vw;
+      top: auto;
+      bottom: calc(22px - 36.6vw);
+      translate: -50% 0;
+      mask-image:
+        linear-gradient(180deg, transparent 0, #000 18%, #000 88%, transparent 100%),
+        linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+      mask-composite: intersect;
+    }
+  }
+
+  /* Service heads: grid centred on the head, faded out towards the bottom edge. */
+  .hg-box[data-placement="heading"] {
+    mask-image: linear-gradient(180deg, #000 0, #000 72%, transparent 100%);
+  }
+
+  @media (max-width: 759px) {
+    .hg-box[data-placement="heading"] .hg-t {
+      top: 50%;
+      bottom: auto;
+      width: 150vw;
+      translate: -50% -50%;
+      mask-image:
+        linear-gradient(180deg, transparent 0, #000 18%, #000 88%, transparent 100%),
+        linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+    }
+  }
+
+  .hg path {
+    fill: none;
+    stroke-linejoin: round;
+  }
+
+  .hg .b {
+    stroke: color-mix(in srgb, var(--color-fg) 14%, transparent);
+    stroke-width: 0.9;
+  }
+
+  .hg .p {
+    stroke: color-mix(in srgb, var(--color-fg) 8%, transparent);
+    stroke-width: 0.8;
+  }
+
+  .hg .tg {
+    fill: color-mix(in srgb, var(--color-turquoise) 7%, transparent);
+    stroke: color-mix(in srgb, var(--color-turquoise) 60%, transparent);
+    stroke-width: 1;
+  }
+
+  .hg .rt {
+    stroke: color-mix(in srgb, var(--color-turquoise) 82%, transparent);
+    stroke-width: 1.3;
+    stroke-linecap: round;
+  }
+
+  .hg .dr {
+    fill: var(--color-turquoise);
+  }
+
+  /* Draw-in: lines trace themselves (pathLength is 1), target and dot fade in. */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.motion-ready) .hg :is(.b, .p, .rt) {
+      stroke-dasharray: 1;
+    }
+
+    :global(.motion-ready) .hg .b {
+      transition: stroke-dashoffset 1.8s var(--ease-brand) var(--d);
+    }
+
+    :global(.motion-ready) .hg .p {
+      transition: stroke-dashoffset 1.4s var(--ease-brand) var(--d);
+    }
+
+    :global(.motion-ready) .hg .rt {
+      transition: stroke-dashoffset var(--t) cubic-bezier(0.55, 0.05, 0.35, 1) var(--d);
+    }
+
+    :global(.motion-ready) .hg .tg {
+      transition: opacity 1.4s var(--ease-brand) var(--d);
+    }
+
+    :global(.motion-ready) .hg .dr {
+      transform-box: fill-box;
+      transform-origin: center;
+      transition:
+        opacity 0.6s ease var(--d),
+        scale 0.9s var(--ease-brand) var(--d);
+    }
+
+    :global(.motion-ready) .hg-box:not(:global(.is-revealed)) :is(.b, .p, .rt) {
+      stroke-dashoffset: 1;
+    }
+
+    :global(.motion-ready) .hg-box:not(:global(.is-revealed)) :is(.tg, .dr) {
+      opacity: 0;
+    }
+
+    :global(.motion-ready) .hg-box:not(:global(.is-revealed)) .dr {
+      scale: 0;
+    }
+  }
+</style>

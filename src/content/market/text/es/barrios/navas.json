@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Casas del Gobernador, plazas con fuente y una fiesta mayor en mayo.",
+  "text": [
+    "Fue terreno agrícola del municipio de Sant Martí de Provençals, anexionado por Barcelona en 1897, y permaneció casi despoblado hasta el siglo XX; su urbanización empezó en los años cincuenta. Su nombre viene de la calle Navas de Tolosa, uno de sus ejes, donde está la estación de metro del mismo nombre, y desde 1978 sus vecinos reivindicaron una personalidad propia que se reconoció oficialmente en 2006.",
+    "La plaça de Fernando Reyes, con la iglesia de Sant Joan Bosco, es su centro, y la plaça d'Islàndia tiene una fuente de cascadas. Las Casas del Gobernador son 406 casas de poca altura rodeadas de espacios ajardinados, inspiradas en el modelo de ciudad jardín. Con 4.029 €/m², es el barrio con el precio de compraventa más alto de Sant Andreu, y celebra su fiesta mayor cada mayo."
+  ],
+  "housing": "Bloques de pisos y las Casas del Gobernador, de poca altura y con jardines comunes.",
+  "places": [
+    "Plaça de Fernando Reyes",
+    "Plaça d'Islàndia",
+    "Cases del Governador",
+    "Estació de metro Navas (L1)"
+  ]
+}

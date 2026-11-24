@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "La Zona Franca y el puerto: el barrio más extenso de Barcelona y uno de los menos habitados.",
+  "text": [
+    "Con 14,24 km², es el barrio más grande de la ciudad, pero apenas lo habitan 3.174 personas: casi todo su suelo lo ocupan la Zona Franca, la logística y la industria vinculada al puerto. Su nombre viene de los campos que ocupaban esta zona, en la parte baja de la Marina de Sants.",
+    "Es un barrio nuevo y en transformación, donde se levantan promociones de vivienda sobre antiguos suelos industriales, con el parque de les Trece Roses, inaugurado en 2024, como pulmón verde y la línea 10 del metro como conexión. Al haber tan poca vivienda, sus cifras de precio (2.724 €/m²) y alquiler (1.390 €/mes) se apoyan en pocas operaciones y conviene mirarlas con cautela."
+  ],
+  "housing": "Vivienda nueva y escasa, entre polígonos industriales y logísticos.",
+  "places": ["Zona Franca", "Port de Barcelona", "Parc de les Trece Roses", "Mercabarna"]
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un barri de vessant amb església romànica, molta vida veïnal i un parc en una antiga pedrera.",
+  "text": [
+    "El seu origen és l'església de Nostra Senyora del Coll, del segle XI, amb referències escrites des del 1099, i fins a principis del segle XX va continuar sent un lloc rural. El pont de Vallcarca, del 1923, va millorar-ne les comunicacions, i als anys seixanta va créixer a gran velocitat i va omplir els espais lliures que quedaven.",
+    "Avui és un barri petit (0,35 km²), amb un fort sentit de veïnatge, que té al parc de la Creueta del Coll, creat en una antiga pedrera i amb escultures d'Ellsworth Kelly i Eduardo Chillida, el seu racó més conegut. Amb 3.558 €/m² i 906 €/mes, és el barri més assequible de Gràcia."
+  ],
+  "housing": "Cases i blocs de pisos en carrers de vessant, amb zones de cases baixes.",
+  "places": [
+    "Parc de la Creueta del Coll",
+    "Església de Nostra Senyora del Coll",
+    "Can Queralt (Josep Maria Jujol)"
+  ]
+}

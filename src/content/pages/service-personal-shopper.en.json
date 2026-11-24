@@ -1,0 +1,291 @@
+{
+  "title": "Real Estate Personal Shopper in Barcelona · HousySpace",
+  "description": "Real estate personal shopper in Barcelona: we search for you, visit with you only what fits, and study the property in depth before you buy.",
+  "head": {
+    "heading": "Real estate *personal shopper*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-personal-shopper-1000.webp",
+      "alt": "Service illustration: A magnifying glass over one highlighted option among several volumes",
+      "scale": 0.797
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
+      {
+        "kind": "lead",
+        "text": "We search, and visit with you, only the homes that fit and, if needed, coordinate the renovation too."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us what you are looking for",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "We search for you, visit with you, and hand you the keys."
+        },
+        {
+          "kind": "p",
+          "text": "You tell us what you need and we take care of the search: we find, filter and visit with you only what fits. Before you decide, we study the property in depth so you buy with no surprises."
+        },
+        {
+          "kind": "p",
+          "text": "And if the flat you like needs renovating, we coordinate that too, with the studio we work with."
+        },
+        {
+          "kind": "p",
+          "text": "This is an active search service you commission. If you would just like us to let you know when a suitable home comes up, you can [register your search](route:mySearch)."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "From search to handover"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Search profile",
+              "text": "Area, type, budget and priorities: what you want and what you don't."
+            },
+            {
+              "title": "Active search",
+              "text": "We scan the market against your criteria and, when available, off-market properties that have not been published yet."
+            },
+            {
+              "title": "Selection",
+              "text": "We only show you options that are worth a viewing."
+            },
+            {
+              "title": "Viewings",
+              "text": "We organise them and accompany you with a technical eye."
+            },
+            {
+              "title": "Negotiation and purchase",
+              "text": "We negotiate the price and accompany you to completion."
+            },
+            {
+              "title": "Renovation",
+              "text": "If needed, we coordinate the project and the works with the studio we work with, so you can move straight in."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "icons",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "No surprises"
+        },
+        {
+          "kind": "h2",
+          "text": "What we review before you buy"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "The property",
+              "text": "Real condition of the home, installations and any works with their cost.",
+              "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
+            },
+            {
+              "title": "The building",
+              "text": "Condition of the building, technical inspection and planned works or community charges.",
+              "icon": ["M6 21V4h9v17", "M15 9h4v12", "M3 21h18", "M9 8h3", "M9 12h3", "M9 16h3"]
+            },
+            {
+              "title": "Documentation",
+              "text": "Land registry extract, encumbrances, habitability certificate and energy certificate.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
+            },
+            {
+              "title": "The price",
+              "text": "Comparison with recent sales in the area so you don't overpay.",
+              "icon": ["M3 12V4h8l10 10-8 8z", "M7 8h1"]
+            },
+            {
+              "title": "Financing",
+              "text": "With the financial broker we work with, your mortgage is studied before you commit. [See financial advice](service:asesoramiento-financiero).",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
+            },
+            {
+              "title": "The surroundings",
+              "text": "Services, transport, noise and neighbourhood evolution.",
+              "icon": [
+                "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z",
+                "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "call",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Renovations"
+        },
+        {
+          "kind": "h2",
+          "text": "Does the flat need renovating? We coordinate that too"
+        },
+        {
+          "kind": "p",
+          "text": "Often the right property needs work. Instead of tracking down an architect, quotes and contractors yourself, we do it with the architecture and interior design studio we collaborate with."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Renovation quote before you buy, so you can decide with the full cost in hand."
+            },
+            {
+              "title": "",
+              "text": "Project, permits and works coordinated by us."
+            },
+            {
+              "title": "",
+              "text": "Timeline and finish monitoring until handover."
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Renovations and interior design",
+              "href": "service:reformas-obras",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
+        {
+          "kind": "lead",
+          "text": "Every good decision starts with a conversation. Let's talk about yours."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Financial advice",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Renovations and interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Real estate investment",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -5,15 +5,15 @@ import { getLocalizedPath, type Alternate } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import { getMainNavigation } from "@/shared/lib/navigation";
 import { SITE_HEADER_TRANSITION_NAME } from "@/shared/lib/transitionNames";
-import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
 import Logo from "@/shared/ui/atoms/Logo.astro";
 import LanguageSwitcher from "@/shared/ui/molecules/LanguageSwitcher.astro";
 
 /**
- * Site header (UI proposal v3). A petrol bar with the negative logo; transparent over a full-bleed
- * hero until the page scrolls (home). The horizontal menu shows whenever it fits beside the logo
- * and actions, measured in three densities (`navFit.ts`); otherwise it moves behind the "Menu"
- * button (drawer). Before the script measures (`data-nav="auto"`), CSS falls back to `xl`.
+ * Site header (reference `.hdr`): always a dark teal bar with the white logo. Over a full-bleed
+ * hero (home) it starts transparent with a dark top gradient and a bigger logo, and turns solid
+ * over the first 60 px of scroll with a CSS scroll-driven animation (no JavaScript, see the style
+ * block; without `animation-timeline` support it is simply the solid bar). The horizontal menu
+ * shows from the `nav` breakpoint; below it the "Menu" button opens the drawer.
  */
 interface Props {
   locale: Locale;
@@ -26,10 +26,6 @@ const { locale, alternates, overlay = false } = Astro.props;
 const t = getDictionary(locale);
 const items = getMainNavigation(locale);
 const lastIndex = items.length - 1;
-
-/** Visible while the horizontal menu is shown (a density, or the `xl` fallback before measuring). */
-const SHOW_WITH_NAV =
-  "group-data-[nav=auto]/header:xl:block group-data-[nav=full]/header:block group-data-[nav=tight]/header:block group-data-[nav=xtight]/header:block";
 ---
 
 <!-- Own snapshot without cross-fade: the fixed header never flickers between pages (§3.3). -->
@@ -38,32 +34,19 @@ const SHOW_WITH_NAV =
   transition:animate="none"
   data-header
   data-overlay={overlay ? "true" : "false"}
-  data-theme={overlay ? "overlay" : "solid"}
-  data-nav="auto"
-  class:list={[
-    "surface-dark",
-    "group/header fixed inset-x-0 top-0 z-60 text-fg transition-[background-color,border-color] duration-400",
-    "border-b border-stone/16 bg-bg-dark-1",
-    "data-[theme=overlay]:border-transparent data-[theme=overlay]:bg-transparent",
-    // Soft gradient keeps the negative logo legible over the video.
-    "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[calc(100%+4.375rem)] before:bg-linear-to-b before:from-ink/65 before:via-ink/30 before:to-ink/0 before:opacity-0 before:transition-opacity data-[theme=overlay]:before:opacity-100",
-  ]}
+  class="site-header surface-dark group/header fixed inset-x-0 top-0 z-60 text-fg"
 >
-  <div class="flex h-19 items-center gap-5 px-[clamp(1.125rem,3.2vw,3.25rem)] md:h-23">
+  <div class="flex h-(--bar-h) items-center gap-5 px-[clamp(1.125rem,3.2vw,3.25rem)]">
     <a
       href={getLocalizedPath("home", locale)}
       aria-label={t.a11y.homeLink}
       class="relative block flex-none"
     >
-      <Logo variant="negative" alt="" class="h-13.5 w-auto md:h-17" />
+      <Logo variant="negative" alt="" class="h-(--logo-h) w-auto" />
     </a>
 
-    <nav
-      data-main-nav
-      aria-label={t.a11y.mainNavigation}
-      class:list={["hidden min-w-0 flex-1", SHOW_WITH_NAV]}
-    >
-      <ul class="ml-auto flex w-max items-center gap-[clamp(1rem,1.5vw,1.625rem)] whitespace-nowrap group-data-[nav=tight]/header:gap-3.25 group-data-[nav=xtight]/header:gap-2.5">
+    <nav data-main-nav aria-label={t.a11y.mainNavigation} class="hidden min-w-0 flex-1 nav:block">
+      <ul class="ml-auto flex w-max items-center gap-[clamp(0.625rem,min(1.5vw,calc((100vw-1330px)/7)),1.625rem)] whitespace-nowrap">
         {items.map((item, index) => {
           const submenuId = `submenu-${index}`;
           return (
@@ -72,11 +55,10 @@ const SHOW_WITH_NAV =
                 href={item.href}
                 class:list={[
                   "text-[0.6875rem] leading-none font-medium tracking-[0.1em] uppercase no-underline transition-colors",
-                  "group-data-[nav=tight]/header:tracking-[0.05em] group-data-[nav=xtight]/header:text-[0.65625rem] group-data-[nav=xtight]/header:tracking-[0.03em]",
-                  "hover:border-accent hover:text-accent focus-visible:text-accent",
+                  "hover:border-turquoise hover:text-accent focus-visible:text-accent",
                   // The last entry (Contact) is outlined: it closes the inline menu like a button.
                   index === lastIndex
-                    ? "border border-current px-4 py-2.75 group-data-[nav=xtight]/header:px-2.75 group-data-[nav=xtight]/header:py-2.5"
+                    ? "border border-current px-4 py-2.75"
                     : "border-b border-transparent py-3",
                 ]}
               >
@@ -90,7 +72,7 @@ const SHOW_WITH_NAV =
                     aria-expanded="false"
                     aria-controls={submenuId}
                     aria-label={formatMessage(t.a11y.openSubmenu, { label: item.label })}
-                    class="ml-0.5 grid h-8 w-6 cursor-pointer place-items-center text-current group-data-[nav=xtight]/header:ml-px group-data-[nav=xtight]/header:w-4"
+                    class="ml-0.5 grid h-8 w-6 cursor-pointer place-items-center text-current"
                   >
                     <span
                       aria-hidden="true"
@@ -101,15 +83,12 @@ const SHOW_WITH_NAV =
                     id={submenuId}
                     class="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 translate-y-2.5 pt-3.5 opacity-0 transition-[opacity,translate,visibility] duration-400 ease-brand group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100 group-data-[open=true]/item:visible group-data-[open=true]/item:translate-y-0 group-data-[open=true]/item:opacity-100"
                   >
-                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-accent/20 bg-bg-dark-1/97 py-3 whitespace-normal shadow-2xl shadow-black/45 backdrop-blur-lg">
-                      {item.children.map((child, childIndex) => (
+                    <ul class="max-w-[min(21.25rem,calc(100vw-2rem))] min-w-62.5 border border-turquoise/20 bg-panel/97 py-3 whitespace-normal shadow-[0_28px_60px_rgb(0_0_0/0.45)] backdrop-blur-lg">
+                      {item.children.map((child) => (
                         <li>
                           <a
                             href={child.href}
-                            class:list={[
-                              "block px-5.5 py-2.5 text-sm leading-snug text-fg/90 no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/7 hover:pl-7 hover:text-accent focus-visible:text-accent",
-                              childIndex === 0 && "font-medium text-white",
-                            ]}
+                            class="block px-5.5 py-2.5 text-xs leading-snug font-medium tracking-[0.0233em] text-white no-underline transition-[color,background-color,padding] duration-300 hover:bg-turquoise/8 hover:pl-7 hover:text-accent focus-visible:text-accent"
                           >
                             {child.label}
                           </a>
@@ -136,21 +115,13 @@ const SHOW_WITH_NAV =
         </div>
       )}
 
-      <!-- Only beside the "Menu" button: the inline menu already ends in Contact. -->
-      <a
-        href={getLocalizedPath("contact", locale)}
-        class="hidden min-h-11.5 items-center gap-3 border border-fg bg-fg px-5 text-xs leading-none font-medium tracking-[0.14em] text-ink uppercase no-underline transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-accent hover:bg-turquoise focus-visible:border-accent focus-visible:bg-turquoise min-[35rem]:inline-flex"
-      >
-        {t.contact.letsTalk}
-        <ArrowUpRight />
-      </a>
-
+      <!-- Proposal v3 (2026-10-30): no "Let's talk" CTA; the drawer and the footer carry it. -->
       <button
         type="button"
         data-menu-button
         aria-expanded="false"
         aria-controls="site-drawer"
-        class="flex min-h-11.5 cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors group-data-[nav=auto]/header:xl:hidden group-data-[nav=full]/header:hidden group-data-[nav=tight]/header:hidden group-data-[nav=xtight]/header:hidden hover:border-accent hover:text-accent"
+        class="flex min-h-11.5 cursor-pointer items-center gap-3 border border-current/40 px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors hover:border-turquoise hover:text-accent nav:hidden"
       >
         <span>{t.a11y.openMenu}</span>
         <span aria-hidden="true" class="h-2.5 w-4.5 border-y-[1.5px] border-current"></span>
@@ -159,28 +130,91 @@ const SHOW_WITH_NAV =
   </div>
 </header>
 
-<script>
-  import { chooseNavMode, type NavDensity } from "./navFit";
+<style>
+  /*
+   * `--hdr-t` runs 0 (floating over the hero) to 1 (solid bar). Static default = 1: pages without
+   * a hero, and browsers without scroll-driven animations, get the solid bar. Reference sizes:
+   * solid bar 76/92 px with a 54/68 px logo; over the hero the logo is 76-90 px (mobile),
+   * 108-132 px (tablet) and 86 px beside the inline menu (the bar is 114 px).
+   */
+  @property --hdr-t {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 1;
+  }
 
-  const SCROLLED_PX = 24;
-  let frame = 0;
-  let documentBound = false;
+  .site-header {
+    --hdr-t: 1;
+    --logo-s: 3.375rem;
+    --bar-s: 4.75rem;
+    --logo-o: clamp(4.75rem, 20.5vw, 5.625rem);
+    --bar-o: calc(var(--logo-o) + 2.75rem);
+    --logo-h: calc(var(--logo-s) + (var(--logo-o) - var(--logo-s)) * (1 - var(--hdr-t)));
+    --bar-h: calc(var(--bar-s) + (var(--bar-o) - var(--bar-s)) * (1 - var(--hdr-t)));
+    background-color: color-mix(
+      in srgb,
+      var(--color-header) calc(var(--hdr-t) * 100%),
+      transparent
+    );
+    box-shadow: 0 1px 0
+      color-mix(in srgb, rgb(235 229 220 / 0.16) calc(var(--hdr-t) * 100%), transparent);
+  }
 
-  const currentHeader = (): HTMLElement | null =>
-    document.querySelector<HTMLElement>("[data-header]");
-
-  function syncScrollState(): void {
-    const header = currentHeader();
-    if (header?.dataset["overlay"] === "true") {
-      header.dataset["theme"] = window.scrollY > SCROLLED_PX ? "solid" : "overlay";
-    }
-    const bar = document.querySelector<HTMLElement>("[data-quick-actions]");
-    if (bar !== null) {
-      const visible = window.scrollY > window.innerHeight * 0.7;
-      bar.dataset["visible"] = String(visible);
-      bar.inert = !visible;
+  @media (min-width: 48rem) {
+    .site-header {
+      --logo-s: 4.25rem;
+      --bar-s: 5.75rem;
+      --logo-o: clamp(6.75rem, 9vw, 8.25rem);
     }
   }
+
+  @media (min-width: 64rem) {
+    .site-header {
+      --logo-o: 5.375rem;
+      --bar-o: 7.125rem;
+    }
+  }
+
+  /* Soft gradient that keeps the white logo and menu legible over the video. */
+  .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: -1;
+    height: calc(100% + 4.375rem);
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgb(8 16 18 / 0.66),
+      rgb(8 16 18 / 0.28) 55%,
+      rgb(8 16 18 / 0)
+    );
+    opacity: calc(1 - var(--hdr-t));
+  }
+
+  @keyframes header-solid {
+    to {
+      --hdr-t: 1;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .site-header[data-overlay="true"] {
+      --hdr-t: 0;
+      animation: header-solid linear both;
+    }
+
+    /* Separate rule on purpose: a CSS minifier folds the timeline into the shorthand above, and
+       browsers reject that, which would leave the bar transparent for good. */
+    [data-header][data-overlay="true"] {
+      animation-timeline: scroll(root);
+      animation-range: 0 60px;
+    }
+  }
+</style>
+
+<script>
+  let documentBound = false;
 
   function closeSubmenus(except?: Element): void {
     for (const item of document.querySelectorAll<HTMLElement>(
@@ -190,45 +224,6 @@ const SHOW_WITH_NAV =
       item.dataset["open"] = "false";
       item.querySelector("[data-submenu-toggle]")?.setAttribute("aria-expanded", "false");
     }
-  }
-
-  /**
-   * Measures the menu in each density against the space the header leaves it (the nav is
-   * `flex-1`, so its width does not depend on its content) and keeps the roomiest that fits.
-   */
-  function fitNav(): void {
-    const header = currentHeader();
-    const nav = header?.querySelector<HTMLElement>("[data-main-nav]");
-    const list = nav?.querySelector<HTMLElement>(":scope > ul");
-    if (header === null || header === undefined || nav === null || nav === undefined) return;
-    if (list === null || list === undefined) return;
-    const previous = header.dataset["nav"];
-    const widthIn = (density: NavDensity): number => {
-      header.dataset["nav"] = density;
-      return list.offsetWidth;
-    };
-    header.dataset["nav"] = "full";
-    const available = nav.clientWidth;
-    const mode = chooseNavMode(available, {
-      full: widthIn("full"),
-      tight: widthIn("tight"),
-      xtight: widthIn("xtight"),
-    });
-    header.dataset["nav"] = mode;
-    if (mode !== previous) {
-      closeSubmenus();
-      // The drawer only belongs to the compact header.
-      if (mode !== "compact") document.dispatchEvent(new CustomEvent("site:nav-inline"));
-    }
-  }
-
-  function schedule(): void {
-    if (frame !== 0) return;
-    frame = requestAnimationFrame(() => {
-      frame = 0;
-      syncScrollState();
-      fitNav();
-    });
   }
 
   document.addEventListener("astro:page-load", () => {
@@ -242,25 +237,18 @@ const SHOW_WITH_NAV =
         toggle.setAttribute("aria-expanded", String(open));
       });
     }
-    if (!documentBound) {
-      documentBound = true;
-      window.addEventListener("scroll", schedule, { passive: true });
-      window.addEventListener("resize", schedule, { passive: true });
-      // Web fonts change the menu width: measure again once they are in.
-      void document.fonts.ready.then(fitNav);
-      document.addEventListener("keydown", (event) => {
-        if (event.key !== "Escape") return;
-        const open = document.querySelector<HTMLElement>("[data-nav-item][data-open='true']");
+    if (documentBound) return;
+    documentBound = true;
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      const open = document.querySelector<HTMLElement>("[data-nav-item][data-open='true']");
+      closeSubmenus();
+      open?.querySelector<HTMLButtonElement>("[data-submenu-toggle]")?.focus();
+    });
+    document.addEventListener("click", (event) => {
+      if (event.target instanceof Element && event.target.closest("[data-nav-item]") === null) {
         closeSubmenus();
-        open?.querySelector<HTMLButtonElement>("[data-submenu-toggle]")?.focus();
-      });
-      document.addEventListener("click", (event) => {
-        if (event.target instanceof Element && event.target.closest("[data-nav-item]") === null) {
-          closeSubmenus();
-        }
-      });
-    }
-    syncScrollState();
-    fitNav();
+      }
+    });
   });
 </script>

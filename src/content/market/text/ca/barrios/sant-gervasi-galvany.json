@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Botigues, restaurants i vida nocturna al voltant del carrer de Tuset: el Sant Gervasi més animat.",
+  "text": [
+    "El Camp d'en Galvany va començar a urbanitzar-se el 1866 per iniciativa de Josep Castelló i Galvany, i el barri va acabar dient-se així pel mercat de Galvany, entre els carrers de Santaló, Calaf, Amigó i Madrazo. El seu nucli més antic és al voltant dels carrers de Sagués i d'Amigó, i des dels anys cinquanta es van aixecar molts edificis nous.",
+    "El seu veïnat, de classe mitjana-alta i alta, conviu amb una gran vida comercial i d'oci, sobretot al carrer de Tuset i els seus voltants: botigues, restaurants i locals. Amb 49.202 habitants, és el barri més poblat de Sarrià-Sant Gervasi, i els habitatges més luxosos es concentren entre els carrers d'Alfons XII i de Muntaner."
+  ],
+  "housing": "Finques més antigues i edificis construïts des dels anys cinquanta, amb els habitatges més luxosos entre Alfons XII i Muntaner.",
+  "places": ["Mercat de Galvany", "Carrer de Tuset", "Plaça de Castelló", "Turó Parc"]
+}

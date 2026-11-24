@@ -1,0 +1,291 @@
+{
+  "title": "Personal Shopper Immobiliare a Barcellona · HousySpace",
+  "description": "Personal shopper immobiliare a Barcellona: cerchiamo per te, visitiamo con te solo ciò che fa al caso tuo e studiamo a fondo l'immobile prima che tu compri.",
+  "head": {
+    "heading": "Personal Shopper *immobiliare*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-personal-shopper-1000.webp",
+      "alt": "Illustrazione del servizio: Una lente d'ingrandimento su un'opzione in evidenza tra diversi volumi",
+      "scale": 0.797
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
+      {
+        "kind": "lead",
+        "text": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo e, se serve, coordiniamo anche la ristrutturazione."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/portal-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci cosa cerchi",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Cerchiamo per te, visitiamo insieme e ti consegniamo le chiavi."
+        },
+        {
+          "kind": "p",
+          "text": "Tu definisci ciò che ti serve e noi ci occupiamo della ricerca: individuiamo, selezioniamo e visitiamo con te solo ciò che fa al caso tuo. Prima che tu decida, studiamo a fondo l'immobile, così acquisti senza sorprese."
+        },
+        {
+          "kind": "p",
+          "text": "E se la casa che ti piace ha bisogno di lavori, coordiniamo anche quelli con lo studio con cui collaboriamo."
+        },
+        {
+          "kind": "p",
+          "text": "È un servizio di ricerca attiva, da commissionare. Se vuoi solo essere avvisato quando esce una casa adatta, puoi [registrare la tua ricerca](route:mySearch)."
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Dalla ricerca alla consegna delle chiavi"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Profilo di ricerca",
+              "text": "Zona, tipologia, budget e priorità: cosa cerchi e cosa no."
+            },
+            {
+              "title": "Ricerca attiva",
+              "text": "Setacciamo il mercato in base ai tuoi criteri e, quando ce n'è, anche gli immobili non ancora pubblicati."
+            },
+            {
+              "title": "Selezione",
+              "text": "Ti presentiamo solo le opzioni che meritano una visita."
+            },
+            {
+              "title": "Visite",
+              "text": "Le organizziamo e ti accompagniamo con uno sguardo tecnico."
+            },
+            {
+              "title": "Trattativa e acquisto",
+              "text": "Negoziamo il prezzo e ti accompagniamo fino alla firma."
+            },
+            {
+              "title": "Ristrutturazione",
+              "text": "Se serve, coordiniamo progetto e lavori con lo studio con cui collaboriamo, così puoi entrare in casa e viverci."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "icons",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Nessuna sorpresa"
+        },
+        {
+          "kind": "h2",
+          "text": "Cosa verifichiamo prima che tu compri"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "L'immobile",
+              "text": "Stato reale dell'abitazione, impianti e possibili lavori con il loro costo.",
+              "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
+            },
+            {
+              "title": "L'edificio",
+              "text": "Stato dello stabile, ispezione tecnica (ITE) e lavori previsti o spese straordinarie del condominio.",
+              "icon": ["M6 21V4h9v17", "M15 9h4v12", "M3 21h18", "M9 8h3", "M9 12h3", "M9 16h3"]
+            },
+            {
+              "title": "Documentazione",
+              "text": "Nota simple del registro, gravami, certificato di abitabilità (cédula de habitabilidad) e certificato energetico.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
+            },
+            {
+              "title": "Il prezzo",
+              "text": "Confronto con vendite recenti nella zona per non pagare di più.",
+              "icon": ["M3 12V4h8l10 10-8 8z", "M7 8h1"]
+            },
+            {
+              "title": "Finanziamento",
+              "text": "Con il broker finanziario con cui collaboriamo, il mutuo viene studiato prima che tu ti impegni. [Vedi consulenza finanziaria](service:asesoramiento-financiero).",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
+            },
+            {
+              "title": "L'ambiente",
+              "text": "Servizi, trasporti, rumore ed evoluzione del quartiere.",
+              "icon": [
+                "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z",
+                "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "call",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Ristrutturazioni"
+        },
+        {
+          "kind": "h2",
+          "text": "La casa ha bisogno di lavori? Li coordiniamo noi"
+        },
+        {
+          "kind": "p",
+          "text": "Spesso l'immobile giusto ha bisogno di lavori. Invece di cercare architetti, preventivi e imprese per conto tuo, lo facciamo noi con lo studio di architettura e interior design con cui collaboriamo."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Preventivo della ristrutturazione prima dell'acquisto, per decidere con il costo totale."
+            },
+            {
+              "title": "",
+              "text": "Progetto, permessi e lavori coordinati da noi."
+            },
+            {
+              "title": "",
+              "text": "Monitoraggio dei tempi e delle finiture fino alla consegna."
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Ristrutturazioni e interior design",
+              "href": "service:reformas-obras",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parliamone"
+        },
+        {
+          "kind": "lead",
+          "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Personal%20Shopper%20inmobiliario",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Ristrutturazioni e interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Investimento immobiliare",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

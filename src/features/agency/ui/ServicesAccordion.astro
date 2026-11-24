@@ -1,25 +1,17 @@
 ---
-import type { ImageMetadata } from "astro";
-import financial from "@/assets/home/services/financial.webp";
-import legalTax from "@/assets/home/services/legal-tax.webp";
-import advisory from "@/assets/home/services/advisory.webp";
-import investment from "@/assets/home/services/investment.webp";
-import personalShopper from "@/assets/home/services/personal-shopper.webp";
-import renovations from "@/assets/home/services/renovations.webp";
-import rental from "@/assets/home/services/rental.webp";
-import sale from "@/assets/home/services/sale.webp";
-import valuation from "@/assets/home/services/valuation.webp";
 import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import { getServiceSlug, type ServiceKey } from "@/shared/i18n/services";
+import { getServiceSlug } from "@/shared/i18n/services";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import AccordionRail from "@/shared/ui/organisms/AccordionRail.astro";
+import { SERVICE_IMAGES } from "./serviceImages";
+import { SERVICE_PANELS } from "./servicePanels";
 
-/** Services accordion and the collaborators block of the home (proposal v3). */
+/** Services carousel and the collaborators line of the home (reference `#servicios`). */
 interface Props {
   locale: Locale;
   content: HomeContent["services"];
@@ -28,25 +20,17 @@ interface Props {
 
 const { locale, content, collaborators } = Astro.props;
 const t = getDictionary(locale);
+const copy = t.home.services;
 
-const PANELS: readonly { readonly service: ServiceKey; readonly image: ImageMetadata }[] = [
-  { service: "saleBrokerage", image: sale },
-  { service: "valuation", image: valuation },
-  { service: "legalTax", image: legalTax },
-  { service: "renovations", image: renovations },
-  { service: "advisory", image: advisory },
-  { service: "financial", image: financial },
-  { service: "personalShopper", image: personalShopper },
-  { service: "investment", image: investment },
-  { service: "rentalManagement", image: rental },
-];
-const panels = PANELS.map((panel, index) => ({
+const panels = SERVICE_PANELS.map(({ service, tint }, index) => ({
   number: String(index + 1).padStart(2, "0"),
-  title: t.serviceNames[panel.service],
-  href: getLocalizedPath("serviceDetail", locale, {
-    service: getServiceSlug(panel.service, locale),
-  }),
-  image: panel.image,
+  title: t.serviceNames[service],
+  tag: copy.tags[service],
+  href: getLocalizedPath("serviceDetail", locale, { service: getServiceSlug(service, locale) }),
+  image: SERVICE_IMAGES[service],
+  tone: index % 2 === 0 ? ("a" as const) : ("b" as const),
+  tint,
+  linkLabel: `${copy.enterLabel} ${t.serviceNames[service]}`,
 }));
 ---
 
@@ -54,26 +38,101 @@ const panels = PANELS.map((panel, index) => ({
   id="servicios"
   aria-labelledby="services-heading"
   data-section="services"
-  class="surface-stone overflow-hidden bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  class="defer-render surface-stone overflow-hidden bg-canvas pt-[clamp(2.375rem,4vw,3.5rem)] pb-[clamp(2.625rem,4.2vw,3.75rem)]"
 >
   <Container>
     <SectionHeading
       id="services-heading"
       heading={content.heading}
-      class="mb-[clamp(1.5rem,3vw,2.5rem)]"
+      class="max-w-140 text-balance"
     />
-    <AccordionRail label={t.home.services.regionLabel} panels={panels} />
-
+  </Container>
+  <AccordionRail
+    variant="illustration"
+    label={copy.regionLabel}
+    previousLabel={copy.previous}
+    nextLabel={copy.next}
+    pauseLabel={copy.pause}
+    playLabel={copy.play}
+    roleDescription={copy.carousel}
+    panels={panels}
+  />
+  <Container>
     <div
-      data-reveal
-      class="mt-[clamp(1.625rem,3vw,2.5rem)] grid justify-items-center gap-4 text-center"
+      data-reveal="fade"
+      class="collab mx-auto mt-[clamp(1.625rem,3vw,2.5rem)] grid justify-items-center gap-3 text-center"
     >
-      <p class="max-w-[26ch] text-[clamp(1rem,1.7vw,1.375rem)] leading-tight font-medium text-balance text-fg">
-        {collaborators.text}
+      <svg
+        class="collab-icon h-[42px] w-[120px] overflow-visible"
+        viewBox="0 0 160 56"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          class="line"
+          d="M71 28H44L26 12M44 28L28 46M89 28H116L134 12M116 28L132 46M80 19V6M80 37V50"
+          pathLength="1"
+        ></path>
+        <path
+          class="node"
+          d="M29 12a3 3 0 1 1-6 0a3 3 0 1 1 6 0M31 46a3 3 0 1 1-6 0a3 3 0 1 1 6 0M137 12a3 3 0 1 1-6 0a3 3 0 1 1 6 0M135 46a3 3 0 1 1-6 0a3 3 0 1 1 6 0M83 6a3 3 0 1 1-6 0a3 3 0 1 1 6 0M83 50a3 3 0 1 1-6 0a3 3 0 1 1 6 0"
+          pathLength="1"
+        ></path>
+        <path class="accent" d="M76 19H84L89 24V32L84 37H76L71 32V24Z" pathLength="1"></path>
+      </svg>
+      <p class="m-0 font-heading text-[clamp(1rem,5vw,1.625rem)] leading-tight whitespace-nowrap text-fg">
+        <span class="block">{collaborators.lineFirst}</span>
+        <span class="block">{collaborators.lineSecond}</span>
       </p>
-      <Button href={getLocalizedPath("about", locale)} arrow>
+      <Button
+        href={`${getLocalizedPath("about", locale)}#colaboraciones`}
+        size="wide"
+        arrow
+        class="mt-[clamp(0.625rem,1.4vw,1.125rem)]"
+      >
         {collaborators.ctaLabel}
       </Button>
     </div>
   </Container>
 </section>
+
+<style>
+  .collab-icon path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.1;
+  }
+
+  .collab-icon .line {
+    stroke: color-mix(in srgb, var(--color-fg) 42%, transparent);
+  }
+
+  .collab-icon .node {
+    stroke: color-mix(in srgb, var(--color-fg) 60%, transparent);
+  }
+
+  .collab-icon .accent {
+    stroke: var(--color-turquoise);
+    stroke-width: 1.4;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.motion-ready) .collab-icon path {
+      stroke-dasharray: 1;
+      transition: stroke-dashoffset 1.6s var(--ease-brand) 0.2s;
+    }
+
+    :global(.motion-ready) .collab-icon .node {
+      transition-delay: 0.9s;
+    }
+
+    :global(.motion-ready) .collab-icon .accent {
+      transition-delay: 1.2s;
+    }
+
+    :global(.motion-ready) .collab:not(:global(.is-revealed)) .collab-icon path {
+      stroke-dashoffset: 1;
+    }
+  }
+</style>

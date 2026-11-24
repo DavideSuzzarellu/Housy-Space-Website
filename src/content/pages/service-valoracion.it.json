@@ -1,0 +1,557 @@
+{
+  "title": "Valutazione immobiliare a Barcellona · HousySpace",
+  "description": "Quanto vale il tuo immobile a Barcellona? Una stima immediata con il valutatore online o la valutazione di un consulente che studia la tua casa e i comparabili.",
+  "head": {
+    "heading": "Il valore della tua casa *merita più di una cifra*",
+    "photo": false,
+    "wide": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Valutazione immobiliare a Barcellona"
+      },
+      {
+        "kind": "lead",
+        "text": "Ogni casa è diversa, e lo è anche il suo valore. Studiamo le sue caratteristiche, la zona e le condizioni del mercato per darti una valutazione ragionata e aiutarti a decidere con criterio."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "opciones",
+      "layout": "valOptions",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Due modi per valutare"
+        },
+        {
+          "kind": "h2",
+          "text": "Scegli come scoprire *il valore della tua casa*"
+        },
+        {
+          "kind": "p",
+          "text": "Puoi iniziare con una stima online e, quando vuoi, chiedere a un consulente di studiare la tua casa. Sono due passi che si completano."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Valutazione online",
+              "text": "Una prima stima indicativa basata sui dati che inserisci. È utile come riferimento iniziale, ma non sostituisce l'analisi individuale della casa.",
+              "kicker": "Subito",
+              "facts": ["Risultato immediato", "In base ai dati che inserisci", "Stima indicativa"],
+              "cta": "Valuta online adesso",
+              "href": "route:valuation"
+            },
+            {
+              "title": "Valutazione con un consulente",
+              "text": "Analizziamo la tua casa, le sue particolarità e le condizioni del mercato, e ti spieghiamo quali fattori ne influenzano il valore.",
+              "kicker": "Studio personalizzato",
+              "facts": [
+                "Sopralluogo dell'immobile",
+                "Verifica della documentazione",
+                "Studio di mercato commentato"
+              ],
+              "cta": "Richiedi una valutazione con un consulente",
+              "href": "route:contact"
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valutazione con un consulente"
+            },
+            {
+              "kind": "lead",
+              "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti chiamerà per valutare la tua casa di persona."
+            },
+            {
+              "kind": "form",
+              "id": "valuation-adviser-form",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "Nome e cognome",
+                  "required": true,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "telefono",
+                  "label": "Telefono",
+                  "required": true,
+                  "full": false,
+                  "type": "tel",
+                  "kind": "field"
+                },
+                {
+                  "name": "email",
+                  "label": "Indirizzo e-mail",
+                  "required": true,
+                  "full": true,
+                  "type": "email",
+                  "kind": "field"
+                },
+                {
+                  "name": "direccion",
+                  "label": "Indirizzo o quartiere dell'immobile",
+                  "required": true,
+                  "full": true,
+                  "type": "text",
+                  "placeholder": "Via e numero, o quartiere",
+                  "kind": "field"
+                },
+                {
+                  "name": "mensaje",
+                  "label": "Raccontaci qualcosa in più (stato, ristrutturazioni, tempistiche…)",
+                  "required": false,
+                  "full": true,
+                  "type": "textarea",
+                  "kind": "field"
+                },
+                {
+                  "name": "consent",
+                  "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta.",
+                  "required": true,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "mkt",
+                  "label": "Desidero ricevere comunicazioni commerciali di HousySpace su immobili, servizi e novità, via e-mail, WhatsApp o telefono. (Facoltativo.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "news",
+                  "label": "Desidero iscrivermi alla newsletter e agli articoli di HousySpace via e-mail. (Facoltativo.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: gestire la tua richiesta e, solo se lo selezioni, inviarti comunicazioni commerciali e la newsletter. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione, portabilità e revoca del consenso scrivendo a [info@housyspace.com](mailto:info@housyspace.com); puoi presentare reclamo all'AEPD. Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Testo legale in bozza.)"
+                },
+                {
+                  "kind": "submit",
+                  "label": "Richiedi valutazione"
+                },
+                {
+                  "kind": "note",
+                  "text": "Non è ancora disponibile un sistema per ricevere il modulo (CRM in attesa). Cliccando si aprirà WhatsApp con la tua richiesta già compilata; finché non la invii lì, non sarà pervenuta a HousySpace."
+                }
+              ],
+              "mode": "whatsapp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "criterio",
+      "layout": "valCriteria",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Il nostro criterio"
+        },
+        {
+          "kind": "h2",
+          "text": "Non tutti i prezzi in annuncio *rispecchiano il mercato*"
+        },
+        {
+          "kind": "lead",
+          "text": "Il prezzo a cui viene pubblicata una casa non corrisponde necessariamente al valore a cui può essere venduta."
+        },
+        {
+          "kind": "p",
+          "text": "Non tutte le case in vendita sono davvero confrontabili, e non tutti i prezzi pubblicati rappresentano il valore di mercato. Per questo studiamo l'offerta esistente, i riferimenti delle compravendite concluse, quando disponiamo di dati affidabili, e le particolarità di ogni immobile."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Prezzi di annuncio",
+              "text": ""
+            },
+            {
+              "title": "Riferimenti di vendite concluse",
+              "text": ""
+            },
+            {
+              "title": "La tua casa",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "kind": "note",
+          "text": "Schema illustrativo, senza dati reali."
+        }
+      ]
+    },
+    {
+      "id": "que-incluye",
+      "layout": "valAnalysis",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cosa include la nostra valutazione"
+        },
+        {
+          "kind": "h2",
+          "text": "Quattro analisi, *una valutazione ragionata*"
+        },
+        {
+          "kind": "p",
+          "text": "La valutazione con un consulente segue questi quattro passi. Quando te la consegniamo, ti spieghiamo cosa abbiamo studiato in ciascuno e come siamo arrivati alla conclusione."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "L'immobile"
+            },
+            {
+              "kind": "p",
+              "text": "Studiamo superficie, distribuzione, stato di conservazione, esposizione, luminosità, caratteristiche costruttive e altri elementi che possono incidere sul suo valore."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Superfici e misure"
+                },
+                {
+                  "title": "",
+                  "text": "Stato di conservazione"
+                },
+                {
+                  "title": "",
+                  "text": "Dati catastali e informazioni urbanistiche"
+                },
+                {
+                  "title": "",
+                  "text": "Documentazione disponibile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "La zona"
+            },
+            {
+              "kind": "p",
+              "text": "Analizziamo il quartiere, il contesto e le caratteristiche del mercato immobiliare della zona."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Posizione e contesto"
+                },
+                {
+                  "title": "",
+                  "text": "Caratteristiche del quartiere"
+                },
+                {
+                  "title": "",
+                  "text": "Andamento del mercato"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Il mercato reale"
+            },
+            {
+              "kind": "p",
+              "text": "Selezioniamo immobili confrontabili, studiamo la concorrenza presente sul mercato e confrontiamo i dati con i riferimenti di compravendita disponibili."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Case confrontabili"
+                },
+                {
+                  "title": "",
+                  "text": "Immobili in vendita"
+                },
+                {
+                  "title": "",
+                  "text": "Riferimenti di compravendita, quando disponibili"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "La nostra valutazione"
+            },
+            {
+              "kind": "p",
+              "text": "Interpretiamo le informazioni raccolte per arrivare a una stima ragionata del valore di mercato e, se vuoi vendere, consigliarti come posizionare l'immobile."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Stima del valore di mercato"
+                },
+                {
+                  "title": "",
+                  "text": "Posizionamento commerciale"
+                },
+                {
+                  "title": "",
+                  "text": "Prezzo di partenza, quando serve"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "para-que-sirve",
+      "layout": "valObtain",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cosa ottieni"
+        },
+        {
+          "kind": "h2",
+          "text": "Una valutazione *per decidere con criterio*"
+        },
+        {
+          "kind": "p",
+          "text": "Più di una cifra: informazioni per prendere decisioni sulla tua casa, oggi o in futuro."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Conoscere meglio il valore attuale della tua casa",
+              "text": "Un riferimento ragionato, non una cifra isolata."
+            },
+            {
+              "title": "Capire se è il momento giusto per vendere",
+              "text": "Con la situazione del mercato della tua zona sotto gli occhi."
+            },
+            {
+              "title": "Capire come si posiziona rispetto alla concorrenza",
+              "text": "Quali altre case troverà chi cerca nel tuo quartiere."
+            },
+            {
+              "title": "Definire un prezzo di partenza e una strategia di commercializzazione",
+              "text": "Se decidi di vendere, a quale prezzo e come presentarla."
+            },
+            {
+              "title": "Pianificare le tue prossime decisioni immobiliari",
+              "text": "Vendere, affittare, ristrutturare o aspettare, con le informazioni giuste."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proceso",
+      "layout": "valProcess",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Passo dopo passo"
+        },
+        {
+          "kind": "h2",
+          "text": "Come funziona una valutazione *con un consulente*"
+        },
+        {
+          "kind": "p",
+          "text": "Studiamo la tua casa a fondo. Per iniziare ci bastano il tuo nome, un telefono, un'email e l'indirizzo o il quartiere."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Contatto",
+              "text": "Ti chiamiamo per fissare la visita."
+            },
+            {
+              "title": "Visita",
+              "text": "Visitiamo l'immobile e verifichiamo la documentazione."
+            },
+            {
+              "title": "Analisi",
+              "text": "Analizziamo il quartiere, il mercato e le vendite recenti."
+            },
+            {
+              "title": "Relazione",
+              "text": "Ti consegniamo la relazione e la commentiamo insieme."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "layout": "valFaq",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Domande frequenti"
+        },
+        {
+          "kind": "h2",
+          "text": "Cosa ci chiedono più spesso"
+        },
+        {
+          "kind": "faq",
+          "q": "Che differenza c'è tra una valutazione online e una valutazione professionale?",
+          "a": "La valutazione online ti dà subito una stima indicativa in base ai dati che inserisci. La valutazione con un consulente studia la tua casa singolarmente — stato, documentazione e mercato — e ti spiega quali fattori ne influenzano il valore. Ne parliamo più nel dettaglio nell'articolo [La valutazione online del tuo appartamento è affidabile?](route:blog)"
+        },
+        {
+          "kind": "faq",
+          "q": "Come si determina il valore di mercato di una casa?",
+          "a": "Analizzando le caratteristiche dell'immobile, la posizione e il mercato: case confrontabili, offerta in vendita e riferimenti di compravendita quando disponibili. Il risultato è una stima ragionata, non un prezzo di vendita garantito."
+        },
+        {
+          "kind": "faq",
+          "q": "Una valutazione immobiliare è lo stesso di una perizia ufficiale?",
+          "a": "No. La perizia ufficiale è redatta da una società di perizie abilitata e di solito la richiede la banca per un mutuo. La nostra valutazione è uno studio di mercato per orientare le tue decisioni."
+        },
+        {
+          "kind": "faq",
+          "q": "Posso richiedere una valutazione anche se non ho ancora deciso di vendere?",
+          "a": "Sì. Molti proprietari la richiedono per decidere se vendere e quando. È utile anche in caso di eredità, divorzio o divisione tra comproprietari, o semplicemente per conoscere il valore del proprio patrimonio."
+        },
+        {
+          "kind": "faq",
+          "q": "Cosa succede dopo aver richiesto una valutazione?",
+          "a": "Con la valutazione online ricevi subito la stima. Se la richiedi con un consulente, ti chiamiamo per fissare la visita e seguiamo i quattro passi che vedi qui sopra. Se poi decidi di vendere, la valutazione è il punto di partenza del nostro servizio di [compravendita](service:venta-estrategica)."
+        }
+      ]
+    },
+    {
+      "id": "hablemos",
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Scopri il valore della tua casa. *Decidi con serenità*"
+        },
+        {
+          "kind": "lead",
+          "text": "Parti dall'opzione che fa per te. E se preferisci parlarne prima, ne parliamo."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Scegli come valutare la mia casa",
+              "href": "#opciones",
+              "solid": true
+            }
+          ]
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Valoraci%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravendita e intermediazione immobiliare",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

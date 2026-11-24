@@ -1,0 +1,582 @@
+---
+import {
+  buildBarrioLayer,
+  buildDistrictMap,
+  labelLines,
+  pathBounds,
+  zoomTransform,
+  LIGHT_FROM,
+  METRIC_KEYS,
+  TONES,
+  type MapMetric,
+  type MetricKey,
+} from "@/features/districts/application/districtMap";
+import type { MarketData } from "@/features/districts/infrastructure/marketSchema";
+import shapes from "@/features/districts/infrastructure/shapes.json";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import { figureFormat, formatMessage } from "@/shared/lib/format";
+import { percentDiff } from "@/features/districts/domain/marketStats";
+import Button from "@/shared/ui/atoms/Button.astro";
+import BarChart from "@/shared/ui/organisms/charts/BarChart.astro";
+import LineChart from "@/shared/ui/organisms/charts/LineChart.astro";
+import { SOURCES } from "./marketSources";
+
+/**
+ * Living in Barcelona index map: 10 districts, server-rendered SVG, no JavaScript. The metric tabs and
+ * the district chips are radio inputs; `:has()` shows the matching panel, colours and legend.
+ */
+interface Props {
+  locale: Locale;
+  market: MarketData;
+}
+
+const { locale, market } = Astro.props;
+const dictionary = getDictionary(locale);
+const t = dictionary.zones;
+const model = buildDistrictMap(market, shapes);
+const format = figureFormat(locale);
+const METRICS: Readonly<Record<MetricKey, { tab: string; label: string; unit: string }>> = {
+  sale: { tab: t.metricSale, label: t.saleLabel, unit: t.saleUnit },
+  rent: { tab: t.metricRent, label: t.rentLabel, unit: t.rentUnit },
+  density: { tab: t.metricDensity, label: t.densityLabel, unit: t.densityUnit },
+};
+const total = model.districts.length;
+const signed = (diff: number): string => `${diff > 0 ? "+" : "−"}${Math.abs(diff)} %`;
+const show = (value: number | null): string =>
+  value === null ? t.notAvailable : format.format(value);
+const tone = (metric: MapMetric): string => (metric.tone < 0 ? "nd" : String(metric.tone));
+const inkOf = (metric: MapMetric): string => (metric.tone >= LIGHT_FROM ? "canvas" : "fg");
+const rampStops = Array.from({ length: TONES }, (_, i) => i);
+const people = format.format(model.population);
+const layer = buildBarrioLayer(market, shapes);
+const zooms = Object.fromEntries(
+  model.districts.map((district) => [
+    district.slug,
+    zoomTransform(pathBounds(district.d), model.viewBox),
+  ]),
+);
+const barrioInk = (tones: Readonly<Record<MetricKey, number>>): string =>
+  METRIC_KEYS.map((key) => {
+    const light = tones[key] >= LIGHT_FROM;
+    return `--ink-${key}:var(--color-${light ? "canvas" : "fg"});--halo-${key}:var(--color-${light ? "fg" : "canvas"})`;
+  }).join(";");
+/** One rule set per district: `:has()` can only reach what its radio id names. */
+const districtCss = model.districts
+  .map(
+    ({ slug }) =>
+      `.zm:has(#zd-${slug}:checked) .zp-${slug}{display:block}.zm:has(#zd-${slug}:checked) .zp-all{display:none}.zm:has(#zd-${slug}:checked) .zo-${slug}{opacity:1}.zm:has(.zk-${slug}:focus-visible) .zo-${slug}{opacity:1;stroke:var(--color-accent)}.zm:has(#zd-${slug}:checked){--zk:${zooms[slug]?.k.toFixed(3) ?? 1}}.zm:has(#zd-${slug}:checked) .zw{transform:translate(${zooms[slug]?.tx.toFixed(1) ?? 0}px,${zooms[slug]?.ty.toFixed(1) ?? 0}px) scale(${zooms[slug]?.k.toFixed(3) ?? 1})}.zm:has(#zd-${slug}:checked) .zb-${slug}{display:inline}.zm:has(#zd-${slug}:checked) .zk-${slug},.zm:has(#zd-${slug}:checked) .zo-${slug}{display:none}`,
+  )
+  .join("");
+const sorted = (key: MetricKey) =>
+  [...model.districts].sort((a, b) => (b.metrics[key].value ?? 0) - (a.metrics[key].value ?? 0));
+---
+
+<div class="zm" data-district-map>
+  <style is:inline set:html={districtCss}></style>
+  <div class="mb-[22px] flex flex-wrap items-end justify-between gap-x-8 gap-y-[18px]">
+    <div>
+      <slot />
+    </div>
+    <fieldset class="m-0 flex w-full border-0 p-0 min-[600px]:w-auto">
+      <legend class="sr-only">{t.metricLabel}</legend>
+      {METRIC_KEYS.map((key, index) => (
+        <span class="relative -ml-px flex-auto first:ml-0 min-[600px]:flex-none">
+          <input
+            type="radio"
+            name="zm-metric"
+            id={`zm-m-${key}`}
+            checked={index === 0}
+            class="peer absolute inset-0 size-full cursor-pointer opacity-0"
+          />
+          <label
+            for={`zm-m-${key}`}
+            class="block min-h-11.5 border border-line-strong px-2 py-3 text-center text-[0.625rem] font-medium tracking-[0.08em] whitespace-nowrap min-[600px]:px-4 min-[600px]:py-3.25 min-[600px]:text-[0.6875rem] min-[600px]:tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+          >
+            {METRICS[key].tab}
+          </label>
+        </span>
+      ))}
+    </fieldset>
+  </div>
+
+  <fieldset class="m-0 mb-3 flex gap-2 overflow-x-auto border-0 p-0 pt-0.5 pb-1.5 [scrollbar-width:thin] min-[1000px]:flex-wrap min-[1000px]:overflow-visible">
+    <legend class="sr-only">{t.chooseZone}</legend>
+    {[{ slug: "all", name: t.allCity }, ...model.districts].map((zone, index) => (
+      <span class="relative flex-none">
+        <input
+          type="radio"
+          name="zm-district"
+          id={`zd-${zone.slug}`}
+          checked={index === 0}
+          class="peer absolute inset-0 size-full cursor-pointer opacity-0"
+        />
+        <label
+          for={`zd-${zone.slug}`}
+          class="block min-h-9 border border-line-strong px-3.5 py-2.5 text-[0.65625rem] font-medium tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+        >
+          {zone.name}
+        </label>
+      </span>
+    ))}
+  </fieldset>
+
+  <div class="grid gap-x-[clamp(2rem,4.4vw,4rem)] gap-y-8 min-[1000px]:grid-cols-[minmax(0,18.75rem)_minmax(0,1fr)]">
+    <div class="relative min-[1000px]:col-start-2 min-[1000px]:row-start-1">
+      <div
+        role="group"
+        aria-label={t.mapLabel}
+        class="zm-stage relative mx-auto w-[min(100%,30rem)] min-[1000px]:w-[min(100%,39.75rem)]"
+        style={`aspect-ratio:${model.viewBox.width}/${model.viewBox.height}`}
+      >
+        <svg
+          viewBox={`0 0 ${model.viewBox.width} ${model.viewBox.height}`}
+          class="absolute inset-0 size-full"
+        >
+          <g class="zw">
+            {model.districts.map((district) => (
+              <a
+                href={getLocalizedPath("district", locale, { district: district.slug })}
+                aria-label={district.name}
+                class={`zk zk-${district.slug}`}
+              >
+                <path
+                  d={district.d}
+                  class="zs"
+                  style={`--sale:var(--ramp-${tone(district.metrics.sale)});--rent:var(--ramp-${tone(district.metrics.rent)});--density:var(--ramp-${tone(district.metrics.density)})`}
+                />
+              </a>
+            ))}
+            {layer.map((barrio) => (
+              <a
+                href={getLocalizedPath("barrio", locale, { barrio: barrio.slug })}
+                aria-label={barrio.name}
+                data-barrio={barrio.slug}
+                class={`zb zb-${barrio.district}`}
+              >
+                <path
+                  d={barrio.d}
+                  class="zbs"
+                  style={`--sale:var(--ramp-${barrio.tones.sale});--rent:var(--ramp-${barrio.tones.rent});--density:var(--ramp-${barrio.tones.density})`}
+                />
+                <text
+                  x={barrio.x}
+                  y={barrio.y}
+                  class="zbt"
+                  style={barrioInk(barrio.tones)}
+                  aria-hidden="true"
+                >
+                  {labelLines(barrio.name).map((line, i, all) => (
+                    <tspan x={barrio.x} dy={i === 0 ? `${-(all.length - 1) * 0.55}em` : "1.1em"}>
+                      {line}
+                    </tspan>
+                  ))}
+                </text>
+              </a>
+            ))}
+            {model.districts.map((district) => (
+              <path d={district.d} aria-hidden="true" class={`zo zo-${district.slug}`} />
+            ))}
+          </g>
+        </svg>
+        <!-- Names written on the map; the shapes above are the links. -->
+        {model.districts.map((district) => (
+          <span
+            aria-hidden="true"
+            class:list={["zl", !district.fitsWide && "zl-nw", !district.fitsNarrow && "zl-nn"]}
+            style={`left:${district.left.toFixed(2)}%;top:${district.top.toFixed(2)}%;--ink-sale:var(--color-${inkOf(district.metrics.sale)});--ink-rent:var(--color-${inkOf(district.metrics.rent)});--ink-density:var(--color-${inkOf(district.metrics.density)});--halo-sale:var(--color-${inkOf(district.metrics.sale) === "fg" ? "canvas" : "fg"});--halo-rent:var(--color-${inkOf(district.metrics.rent) === "fg" ? "canvas" : "fg"});--halo-density:var(--color-${inkOf(district.metrics.density) === "fg" ? "canvas" : "fg"})`}
+          >
+            {district.lines.map((line, i) => (
+              <>
+                {i > 0 && <br />}
+                {line}
+              </>
+            ))}
+          </span>
+        ))}
+      </div>
+      {METRIC_KEYS.map((key) => (
+        <div
+          data-show={key}
+          class="zg mt-4 w-56 min-[1000px]:absolute min-[1000px]:bottom-0 min-[1000px]:left-0 min-[1000px]:mt-0"
+        >
+          <p class="mb-1.5 text-[0.625rem] font-medium">{METRICS[key].label}</p>
+          <div aria-hidden="true" class="flex h-2">
+            {rampStops.map((stop) => (
+              <i class="flex-1" style={`background:var(--ramp-${stop})`} />
+            ))}
+          </div>
+          <p class="mt-1 flex justify-between text-[0.625rem] text-muted">
+            <span>{format.format(model.range[key].min)}</span>
+            <span>
+              {format.format(model.range[key].max)} {METRICS[key].unit}
+            </span>
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <aside
+      aria-live="polite"
+      aria-label={t.mapHint}
+      class="min-[1000px]:col-start-1 min-[1000px]:row-start-1"
+    >
+      {[
+        {
+          slug: "all",
+          tag: t.cityTag,
+          name: market.city.name,
+          meta: formatMessage(t.cityMeta, {
+            districts: total,
+            barrios: model.barrioCount,
+            people,
+          }),
+          figures: model.city,
+          cityFigures: null,
+          href: null,
+        },
+        ...model.districts.map((district) => ({
+          slug: district.slug,
+          tag: formatMessage(t.districtTag, { count: district.barrioCount }),
+          name: district.name,
+          meta: formatMessage(t.districtMeta, {
+            barrios: district.barrioCount,
+            people: format.format(district.population),
+          }),
+          figures: {
+            sale: district.metrics.sale,
+            rent: district.metrics.rent,
+            density: district.metrics.density,
+          },
+          cityFigures: model.city,
+          href: getLocalizedPath("district", locale, { district: district.slug }),
+        })),
+      ].map((zone) => (
+        <div class:list={["zp", `zp-${zone.slug}`]} hidden={false}>
+          <p class="mb-3.5 text-[0.625rem] text-muted">
+            {zone.href === null ? (
+              market.city.name
+            ) : (
+              <>
+                <label
+                  for="zd-all"
+                  class="cursor-pointer text-accent underline-offset-2 hover:underline"
+                >
+                  {market.city.name}
+                </label>
+                <span aria-hidden="true" class="mx-1.5 opacity-50">
+                  ›
+                </span>
+                <span class="text-fg">{zone.name}</span>
+              </>
+            )}
+          </p>
+          <p class="text-[0.6875rem] tracking-[0.16em] text-taupe-tx">{zone.tag}</p>
+          <h2 class="mt-2 mb-3 text-[clamp(1.5625rem,2.65vw,2.375rem)] after:mt-4 after:block after:h-0.5 after:w-16 after:bg-turquoise after:content-['']">
+            {zone.name}
+          </h2>
+          <p class="mb-1 text-[0.71875rem] text-muted">{zone.meta}</p>
+          <dl class="m-0 mt-[18px] mb-2">
+            {METRIC_KEYS.map((key) => {
+              const figure = zone.figures[key];
+              const against = zone.cityFigures?.[key].value ?? null;
+              return (
+                <div data-on={key} class="zf pt-2.5 pb-2">
+                  <dt class="text-[0.65625rem] leading-[1.3] tracking-[0.16em] text-muted">
+                    {METRICS[key].label}
+                  </dt>
+                  <dd class="m-0">
+                    <b class="text-[2.5rem] leading-none font-bold">{show(figure.value)}</b>
+                    <span class="ml-2 text-[0.65625rem] text-muted">
+                      {METRICS[key].unit}
+                      {figure.year !== null && ` · ${figure.year}`}
+                    </span>
+                    {figure.value !== null && against !== null && (
+                      <small
+                        class:list={[
+                          "mt-1 block text-[0.625rem]",
+                          figure.value >= against ? "text-ok" : "text-ko",
+                        ]}
+                      >
+                        {formatMessage(t.versus, {
+                          diff: signed(percentDiff(figure.value, against)),
+                          against: market.city.name,
+                        })}
+                      </small>
+                    )}
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+          {zone.href !== null && (
+            <>
+              <p class="mt-3 mb-2.5 border-l-2 border-taupe pl-3 text-[0.6875rem] leading-[1.7] text-muted">
+                {t.pickBarrio}
+              </p>
+              <ul class="m-0 mb-1 flex list-none flex-wrap gap-2 p-0">
+                {market.barrios
+                  .filter((barrio) => barrio.district === zone.slug)
+                  .map((barrio) => (
+                    <li>
+                      <a
+                        href={getLocalizedPath("barrio", locale, { barrio: barrio.slug })}
+                        data-map-barrio={barrio.slug}
+                        class="block border border-line-strong px-3 py-1.5 text-[0.6875rem] tracking-[0.06em] no-underline hover:border-fg"
+                      >
+                        {barrio.name}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </>
+          )}
+          {zone.href === null && (
+            <p class="mt-3 mb-3.5 border-l-2 border-taupe pl-3 text-[0.6875rem] leading-[1.7] text-muted">
+              {t.mapHint}
+            </p>
+          )}
+          <div class="mt-3.5 mb-1.5 grid gap-2.5">
+            {zone.href !== null ? (
+              <Button
+                href={zone.href}
+                variant="solid"
+                arrow
+                class="w-full justify-center gap-3 px-4! py-3.75! leading-3"
+              >
+                {formatMessage(t.discover, { name: zone.name })}
+              </Button>
+            ) : (
+              <>
+                <Button
+                  href={getLocalizedPath("valuation", locale)}
+                  variant="solid"
+                  arrow
+                  class="w-full justify-center gap-3 px-4! py-3.75! leading-3"
+                >
+                  {t.valueHere}
+                </Button>
+                <Button
+                  href={getLocalizedPath("mySearch", locale)}
+                  arrow
+                  class="w-full justify-center gap-3 px-4! py-3.75! leading-3"
+                >
+                  {t.searchHere}
+                </Button>
+              </>
+            )}
+          </div>
+        </div>
+      ))}
+    </aside>
+  </div>
+
+  <!-- The same figures as text and charts: districts by price, then the city trends (reference `vv-charts`). -->
+  <div class="mt-6 grid gap-x-[13.5px] gap-y-6 min-[900px]:grid-cols-3">
+    <BarChart
+      variant="rule"
+      title={t.saleByDistrict}
+      unit={t.saleUnit}
+      locale={locale}
+      sourcePrefix={t.sourcePrefix}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      items={[
+        ...sorted("sale").map((district) => ({
+          label: district.name,
+          value: district.metrics.sale.value ?? 0,
+        })),
+        { label: market.city.name, value: market.city.sale, tone: "third" as const },
+      ]}
+    />
+    <LineChart
+      variant="rule"
+      title={t.saleEvolution}
+      unit={t.saleUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      sourcePrefix={t.sourcePrefix}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      series={[{ name: market.city.name, points: market.city.saleSeries, tone: "main" }]}
+    />
+    <LineChart
+      variant="rule"
+      title={t.rentEvolution}
+      unit={t.rentUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      sourcePrefix={t.sourcePrefix}
+      source={SOURCES.rent(t)}
+      sourceUrl={SOURCES.rentUrl}
+      series={[{ name: market.city.name, points: market.city.rentSeries, tone: "main" }]}
+    />
+  </div>
+</div>
+
+<style>
+  .zm {
+    --ramp-0: var(--color-ramp-0);
+    --ramp-1: var(--color-ramp-1);
+    --ramp-2: var(--color-ramp-2);
+    --ramp-3: var(--color-ramp-3);
+    --ramp-4: var(--color-ramp-4);
+    --ramp-5: var(--color-ramp-5);
+    --ramp-6: var(--color-ramp-6);
+    --ramp-nd: var(--color-ramp-nd);
+  }
+  .zw {
+    transform-origin: 0 0;
+    transition: transform 0.7s var(--ease-brand, ease-out);
+  }
+  .zm {
+    --zk: 1;
+  }
+  .zb {
+    display: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .zbs {
+    fill: var(--sale);
+    stroke: var(--color-muted);
+    stroke-width: 0.8px;
+    vector-effect: non-scaling-stroke;
+    stroke-linejoin: round;
+    transition: opacity 0.25s var(--ease-brand, ease-out);
+  }
+  .zb:hover .zbs,
+  .zb:focus-visible .zbs,
+  .zb[data-on] .zbs {
+    stroke: var(--color-fg);
+    stroke-width: 2.4px;
+  }
+  .zbt {
+    fill: var(--ink-sale);
+    stroke: var(--halo-sale);
+    stroke-width: 2.6px;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
+    text-anchor: middle;
+    font-size: calc(13px / var(--zk));
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  .zm:has(#zm-m-rent:checked) .zbs {
+    fill: var(--rent);
+  }
+  .zm:has(#zm-m-density:checked) .zbs {
+    fill: var(--density);
+  }
+  .zm:has(#zm-m-rent:checked) .zbt {
+    fill: var(--ink-rent);
+    stroke: var(--halo-rent);
+  }
+  .zm:has(#zm-m-density:checked) .zbt {
+    fill: var(--ink-density);
+    stroke: var(--halo-density);
+  }
+  /* A district is open: the other districts fade and the city names go (the barrios carry their own). */
+  .zm:has(input[name="zm-district"]:not(#zd-all):checked) .zk .zs {
+    opacity: 0.38;
+  }
+  .zm:has(input[name="zm-district"]:not(#zd-all):checked) .zl {
+    display: none;
+  }
+  .zs {
+    vector-effect: non-scaling-stroke;
+    fill: var(--sale);
+    /* Boundaries are graphics: muted on paper is 4.9:1. */
+    stroke: var(--color-muted);
+    stroke-width: 0.9;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transition: opacity 0.25s var(--ease-brand, ease-out);
+  }
+  .zs:hover {
+    opacity: 0.78;
+  }
+  .zo {
+    fill: none;
+    stroke: var(--color-fg);
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+    stroke-linejoin: round;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .zl {
+    position: absolute;
+    translate: -50% -50%;
+    text-align: center;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink-sale);
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3.2px var(--halo-sale);
+    pointer-events: none;
+  }
+  .zk {
+    outline: none;
+  }
+  .zl-nn {
+    display: none;
+  }
+  @media (min-width: 520px) {
+    .zl {
+      font-size: 0.58125rem;
+    }
+    .zl-nn {
+      display: block;
+    }
+    .zl-nw {
+      display: none;
+    }
+  }
+  [data-show] {
+    display: none;
+  }
+  .zp {
+    display: none;
+  }
+  .zp-all {
+    display: block;
+  }
+  .zo {
+    transition: opacity 0.25s var(--ease-brand, ease-out);
+  }
+  .zm:has(#zm-m-sale:checked) [data-show="sale"],
+  .zm:has(#zm-m-rent:checked) [data-show="rent"],
+  .zm:has(#zm-m-density:checked) [data-show="density"] {
+    display: block;
+  }
+  .zm:has(#zm-m-rent:checked) .zs {
+    fill: var(--rent);
+  }
+  .zm:has(#zm-m-density:checked) .zs {
+    fill: var(--density);
+  }
+  .zm:has(#zm-m-rent:checked) .zl {
+    color: var(--ink-rent);
+    -webkit-text-stroke-color: var(--halo-rent);
+  }
+  .zm:has(#zm-m-density:checked) .zl {
+    color: var(--ink-density);
+    -webkit-text-stroke-color: var(--halo-density);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .zs,
+    .zbs,
+    .zw,
+    .zo {
+      transition: none;
+    }
+  }
+</style>

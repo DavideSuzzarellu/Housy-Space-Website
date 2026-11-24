@@ -1,0 +1,44 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Allà on va començar Barcelona: carrers estrets, places amb segles d'història i el mar a tocar.",
+  "history": [
+    "Ciutat Vella és l'origen de la ciutat. Aquí hi va haver la colònia romana de Barcino i aquí va créixer la Barcelona medieval, closa entre muralles fins a mitjan segle XIX. Avui es reparteix en quatre barris molt diferents entre ells: el Raval, el Barri Gòtic, la Barceloneta i Sant Pere, Santa Caterina i la Ribera.",
+    "Viure a Ciutat Vella és fer-ho entre carrers estrets, molts dels quals de vianants, i edificis que poden tenir diversos segles. Els pisos solen ser petits i amb molt de caràcter: sostres alts, parets gruixudes i, sovint, patis de llums en comptes de grans vistes. Gairebé tot es resol a peu, i l'activitat comercial, cultural i turística acompanya cada dia de l'any.",
+    "Entre els 4 barris, el preu mitjà de compravenda va dels 3.499 €/m² al Raval als 5.183 €/m² a la Barceloneta, i el lloguer mitjà, dels 881 €/mes a la Barceloneta als 1.172 €/mes al Barri Gòtic.",
+    "Abans de comprar o llogar convé estudiar cada finca amb detall: l'estat, la comunitat de propietaris, la documentació i el soroll real del carrer a diferents hores."
+  ],
+  "summary": "Ciutat Vella té 115.829 habitants en 4,21 km² i 4 barris. El seu preu mitjà de compravenda va ser de 4.126 €/m² el 2025, un 3 % per sota de la mitjana de la ciutat. El lloguer mitjà, 1.019 €/mes.",
+  "landmarks": [
+    {
+      "name": "La Rambla",
+      "where": "El Raval i el Barri Gòtic",
+      "text": "El passeig que uneix la plaça de Catalunya amb el port."
+    },
+    {
+      "name": "Catedral de Barcelona",
+      "where": "Barri Gòtic",
+      "text": "La catedral gòtica, al costat de les restes de la Barcino romana."
+    },
+    {
+      "name": "Santa Maria del Mar",
+      "where": "La Ribera",
+      "text": "Basílica gòtica del segle XIV, aixecada pels veïns del barri."
+    },
+    {
+      "name": "Mercat de la Boqueria",
+      "where": "El Raval",
+      "text": "Mercat històric obert a la Rambla."
+    },
+    {
+      "name": "Palau de la Música Catalana",
+      "where": "Sant Pere",
+      "text": "Obra modernista de Lluís Domènech i Montaner, Patrimoni Mundial."
+    },
+    {
+      "name": "La Barceloneta i el Port Vell",
+      "where": "La Barceloneta",
+      "text": "L'antic barri de pescadors, amb la platja i el port."
+    }
+  ]
+}

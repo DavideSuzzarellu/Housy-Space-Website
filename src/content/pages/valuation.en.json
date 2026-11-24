@@ -1,0 +1,248 @@
+{
+  "title": "Online home valuation tool · HousySpace",
+  "description": "Find out instantly how much your home is worth in Barcelona with the online valuation tool and, if you wish, request a personalised valuation from an advisor.",
+  "head": {
+    "heading": "The value of your home *deserves more than a figure*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Property valuation in Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Every home is different, and so is its value. We study its features, its location and market conditions to give you a well-founded valuation and help you make decisions with confidence."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "opciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Two ways to get a valuation"
+        },
+        {
+          "kind": "h2",
+          "text": "Choose how to find out *what your home is worth*"
+        },
+        {
+          "kind": "p",
+          "text": "You can start with an online estimate and, whenever you like, ask an advisor to look at your home. The two steps complement each other."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Instant"
+            },
+            {
+              "kind": "h3",
+              "text": "Online valuation"
+            },
+            {
+              "kind": "p",
+              "text": "A first indicative estimate based on the details you enter. Useful as an initial reference, but it does not replace an individual assessment of the property."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Instant result"
+                },
+                {
+                  "title": "",
+                  "text": "Based on the details you enter"
+                },
+                {
+                  "title": "",
+                  "text": "Indicative estimate"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Value it online now",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Personalised study"
+            },
+            {
+              "kind": "h3",
+              "text": "Valuation with an advisor"
+            },
+            {
+              "kind": "p",
+              "text": "We look at your home, its specific features and market conditions, and explain what drives its value."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visit to the property"
+                },
+                {
+                  "title": "",
+                  "text": "Review of the documents"
+                },
+                {
+                  "title": "",
+                  "text": "Market study, explained to you"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Request a valuation with an advisor",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "informe",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "valuator",
+          "title": "HousySpace online valuation tool"
+        },
+        {
+          "kind": "p",
+          "text": "Can't see the valuation tool? [Open it in a new tab](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
+        },
+        {
+          "kind": "note",
+          "text": "The valuation tool estimate is indicative; it is not an official appraisal. The tool is provided by an external supplier, Lystos: data you enter will be processed according to their privacy information and that of HousySpace"
+        }
+      ]
+    },
+    {
+      "id": "solicitud",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Valuation with an advisor"
+        },
+        {
+          "kind": "lead",
+          "text": "Leave us your details and a HousySpace advisor will call you to value your home in person."
+        },
+        {
+          "kind": "form",
+          "id": "vf",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Full name",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Phone",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Email address",
+              "required": true,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "direccion",
+              "label": "Property address or neighbourhood",
+              "required": true,
+              "full": true,
+              "type": "text",
+              "placeholder": "Street and number, or neighbourhood",
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "Tell us more (condition, renovations, timeline…)",
+              "required": false,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request.",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "I would like to receive commercial communications from HousySpace about properties, services and news by email, WhatsApp or phone. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "I would like to subscribe to the HousySpace newsletter and articles by email. (Optional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "details",
+              "summary": "Basic data protection information",
+              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: handling your request and, only if you tick the boxes, sending commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where legally required. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy). (Legal text draft.)"
+            },
+            {
+              "kind": "submit",
+              "label": "Request valuation"
+            },
+            {
+              "kind": "note",
+              "text": "No system is yet in place to receive the form (CRM pending). Clicking will open WhatsApp with your request pre-filled for you to send; until you send it there, it will not have reached HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        }
+      ]
+    }
+  ]
+}

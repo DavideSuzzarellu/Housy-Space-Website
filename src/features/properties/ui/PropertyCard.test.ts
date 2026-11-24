@@ -46,9 +46,10 @@ async function render(
   property: Property,
   locale: "es" | "en" = "es",
   priority = false,
+  variant: "feature" | "catalog" = "feature",
 ): Promise<string> {
   const html = await container.renderToString(PropertyCard, {
-    props: { property, locale, ctaLabel: "Consultar la ficha completa", priority },
+    props: { property, locale, ctaLabel: "Consultar la ficha completa", priority, variant },
   });
   return html.replace(/[\u00a0\u202f]/g, " ");
 }
@@ -101,6 +102,37 @@ describe("PropertyCard", () => {
   it("prefetches the detail page when the card scrolls into view (mobile has no hover)", async () => {
     const html = await render(base);
     expect(html).toMatch(/<a[^>]*data-astro-prefetch="viewport"/);
+  });
+
+  describe("catalog variant (reference .pc3)", () => {
+    const withFeatures: Property = { ...base, features: ["terrace", "lift", "garden", "parking"] };
+
+    it("spells the facts out and lists up to three features", async () => {
+      const html = await render(withFeatures, "es", false, "catalog");
+      expect(html).toMatch(/<b[^>]*>3<\/b> habitaciones/);
+      expect(html).toMatch(/<b[^>]*>1<\/b> baño</);
+      expect(html).toContain("Terraza · Ascensor · Jardín");
+      expect(html).not.toContain("Parking");
+    });
+
+    it("marks the zone as approximate and drops the card background", async () => {
+      const html = await render(base, "es", false, "catalog");
+      expect(html).toContain("Ubicación aproximada");
+      expect(html).not.toMatch(/<a[^>]*class="[^"]*\bbg-card\b/);
+      expect(html).toContain("Consultar la ficha completa");
+    });
+
+    it("keeps the certificate line and the transition scopes", async () => {
+      const html = await render(base, "es", false, "catalog");
+      expect(html).toContain("Certificado energético");
+      expect(html.match(/data-astro-transition-scope=/g)).toHaveLength(3);
+    });
+
+    it("leaves the feature variant (home, similar listings) as it was", async () => {
+      const html = await render(withFeatures);
+      expect(html).toMatch(/<b[^>]*>3<\/b> hab\./);
+      expect(html).not.toContain("Ubicación aproximada");
+    });
   });
 
   describe("photo", () => {

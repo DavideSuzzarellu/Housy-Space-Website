@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Cases baixes amb jardí i carrers amb nom de flor, al vessant de Montjuïc, vora la Gran Via.",
+  "text": [
+    "És un barri petit, de 0,30 km², al vessant nord-oest de Montjuïc, que va néixer amb vocació de ciutat jardí. D'aquí venen les cases baixes amb jardí i els carrers amb noms de flor, com Dàlia, Lotus, Hortènsia, Begònia o Crisantem, que contrasten amb els edificis alts de la Gran Via.",
+    "Aquí es viu al costat de la plaça d'Espanya i de la muntanya, amb dues obres de Josep Puig i Cadafalch com a referents: l'antiga fàbrica Casaramona, avui seu de CaixaForum, i el restaurant de la Font del Gat. Amb 10.869 habitants, és un barri d'escala domèstica al costat d'una de les grans places de la ciutat."
+  ],
+  "housing": "Cases baixes amb jardí al vessant i blocs alts vora la Gran Via.",
+  "places": ["CaixaForum Barcelona", "Font del Gat", "Parc de Montjuïc"]
+}

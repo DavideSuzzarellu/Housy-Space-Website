@@ -1,9 +1,14 @@
 {
-  "title": "Alquiler y gestión de inmuebles · HousySpace",
-  "description": "Comercialización, selección de arrendatarios y gestión del alquiler.",
+  "title": "Administración de alquileres en Barcelona · HousySpace",
+  "description": "Gestión de alquileres en Barcelona: seleccionamos al inquilino, preparamos el contrato y, si quieres, llevamos la gestión integral del alquiler.",
   "head": {
-    "heading": "Alquiler y gestión de inmuebles",
-    "photo": true,
+    "heading": "Alquiler *y gestión de inmuebles*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-alquiler-1000.webp",
+      "alt": "Ilustración del servicio: Un arco verde que protege tres edificios",
+      "scale": 0.798
+    },
     "items": [
       {
         "kind": "tag",
@@ -16,11 +21,22 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Quiero alquilar mi vivienda",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -35,6 +51,7 @@
       ]
     },
     {
+      "layout": "split",
       "surface": "paper",
       "band": false,
       "items": [
@@ -180,7 +197,7 @@
         {
           "kind": "faq",
           "q": "¿Qué documentos necesito para alquilar?",
-          "a": "En Cataluña, la cédula de habitabilidad y el certificado de eficiencia energética. Si no los tienes, nuestro arquitecto los tramita."
+          "a": "En Cataluña, la cédula de habitabilidad y el certificado de eficiencia energética. Si no los tienes, el arquitecto con el que colaboramos los tramita."
         },
         {
           "kind": "faq",
@@ -196,10 +213,15 @@
           "kind": "faq",
           "q": "¿Y si hay un problema durante el contrato?",
           "a": "Si contratas la gestión, nos ocupamos de las incidencias. Y si surge un conflicto legal, lo coordinamos con el despacho jurídico con el que trabajamos. [Ver asesoramiento jurídico y fiscal](service:asesoramiento-juridico-fiscal)."
+        },
+        {
+          "kind": "p",
+          "text": "¿No sabes si te conviene alquilar o vender? Lo vemos contigo en una [consulta de orientación](route:services#asesoramiento)."
         }
       ]
     },
     {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -237,8 +259,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Asesoramiento jurídico y fiscal",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Reformas e interiorismo",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

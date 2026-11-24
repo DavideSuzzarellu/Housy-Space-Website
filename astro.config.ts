@@ -1,8 +1,10 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
+import { sitemapFromHeads } from "./scripts/sitemap-integration";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
+import { getRetiredRedirects } from "./src/shared/i18n/retiredRoutes";
 
 const sitemapLocales = Object.fromEntries(
   LOCALES.map((locale) => [locale, LOCALE_META[locale].langTag]),
@@ -36,6 +38,13 @@ export default defineConfig({
   // },
   redirects: {
     "/": `${BASE_PREFIX}/${DEFAULT_LOCALE}/`,
+    // Pages retired in the reference site: sell page, advisory service (same meta-refresh caveat).
+    ...Object.fromEntries(
+      Object.entries(getRetiredRedirects()).map(([from, to]) => [
+        from,
+        `${BASE_PREFIX}${to}`,
+      ]),
+    ),
   },
 
   image: {
@@ -62,7 +71,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: "Montserrat",
       cssVariable: "--font-montserrat",
-      // One variable file covers every weight the v3 design uses (400 body to 900 headings).
+      // Body 400, buttons 500, labels 700, headings 800/900 (design system, AGENTS.md §11.3).
       weights: ["400 900"],
       styles: ["normal"],
       // latin-ext covers Catalan/Italian/Spanish edge glyphs; unicode-range means its files are
@@ -84,6 +93,8 @@ export default defineConfig({
         locales: sitemapLocales,
       },
     }),
+    // Rewrites sitemap-0.xml from the emitted heads (translated slugs need real alternates).
+    sitemapFromHeads(),
   ],
 
   vite: {

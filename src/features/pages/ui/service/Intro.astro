@@ -1,0 +1,47 @@
+---
+import type { PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/** Opening of a service page (reference `.sx-intro`): the big phrase beside the paragraphs. */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  /** Rules between the paragraphs and larger text (`.sx-intro-v`, compraventa). */
+  lined?: boolean;
+}
+
+const { locale, items, lined = false } = Astro.props;
+const big = items.find((item) => item.kind === "big");
+const paragraphs = items.filter((item) => item.kind === "p");
+---
+
+<div
+  class:list={[
+    "grid items-start min-[960px]:grid-cols-[6fr_5fr]",
+    lined ? "gap-x-18 gap-y-6.5" : "gap-x-16 gap-y-5.5",
+  ]}
+>
+  {big?.kind === "big" && (
+    <p
+      data-reveal
+      class="m-0 max-w-[22ch] font-heading text-[clamp(22px,2.4vw,34px)] leading-[1.28] font-extrabold tracking-[0.03em] text-balance text-fg"
+    >
+      <Inline text={big.text} locale={locale} />
+    </p>
+  )}
+  <div data-reveal class:list={[lined ? "min-[960px]:pt-3.5" : "min-[960px]:pt-2.5"]}>
+    {paragraphs.map((item) => (
+      <p
+        class:list={[
+          "max-w-[58ch] text-fg-2 tracking-[0.28px] normal-case last:mb-0",
+          lined
+            ? "mb-4.5 max-w-[56ch] border-b border-fg/14 pb-4.5 text-[clamp(15px,1.12vw,16.5px)] leading-[1.62] min-[960px]:mb-5.5 min-[960px]:pb-5.5 last:border-b-0 last:pb-0"
+            : "mb-3.5 text-[clamp(15px,1.12vw,16.5px)] leading-[1.62]",
+        ]}
+      >
+        {item.kind === "p" && <Inline text={item.text} locale={locale} />}
+      </p>
+    ))}
+  </div>
+</div>

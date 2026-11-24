@@ -1,0 +1,48 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * "Before going to market" of the sale page (reference `.cv42-in`): headline and three numbered
+ * points on a hairline with a turquoise diamond, side by side from 900 px.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const tag = itemsOf(head, "tag")[0];
+const heading = itemsOf(head, "h2")[0];
+const points = itemsOf(body, "list")[0]?.items ?? [];
+---
+
+{tag && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+{heading && (
+  <h2 id={id} data-reveal class="mt-3 text-[clamp(25px,2.65vw,38px)] [&_em]:block">
+    <Emphasis text={heading.text} />
+  </h2>
+)}
+<ol class="mt-[clamp(30px,5.6vh,60px)] grid grid-cols-1 min-[900px]:grid-cols-3">
+  {points.map((point, index) => (
+    <li
+      data-reveal
+      style={`--i:${index}`}
+      class="relative border-t border-fg/30 pt-[clamp(18px,3vh,26px)] pb-[clamp(20px,3.4vh,30px)] before:absolute before:-top-[5px] before:left-0 before:size-[9px] before:rotate-45 before:bg-turquoise min-[900px]:pr-[clamp(20px,3vw,48px)]"
+    >
+      <span class="block text-[clamp(28px,2.6vw,38px)] leading-none tracking-[0.02em] text-accent">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h3 class="mt-[clamp(12px,2vh,18px)] mb-2.5 font-sans text-[clamp(16px,1.4vw,20px)] leading-[1.25] font-extrabold tracking-[0.04em]">
+        {point.title}
+      </h3>
+      <p class="max-w-[44ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case [&_a]:text-accent [&_a]:underline [&_a]:decoration-1 [&_a]:underline-offset-3 [&_a:hover]:text-fg">
+        <Inline text={point.text} locale={locale} />
+      </p>
+    </li>
+  ))}
+</ol>

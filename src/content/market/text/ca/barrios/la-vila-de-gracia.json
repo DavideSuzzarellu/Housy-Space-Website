@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El cor de Gràcia: places amb terrasses, mercat de ferro i una festa major que omple els carrers.",
+  "text": [
+    "És el nucli de l'antic municipi. Gràcia es va constituir com a municipi independent el 1850, amb més de 13.000 habitants; el 1877 ja eren 33.000 i el 1897, quan es va tornar a unir a Barcelona, gairebé 62.000. El seu centre administratiu va ser la plaça de la Vila, amb la torre del rellotge que va aixecar Antoni Rovira i Trias entre el 1862 i el 1864.",
+    "Bona part de la urbanització la van fer els propietaris de cada finca pel seu compte, i d'aquí vénen els carrers que canvien de nom o s'interrompen i les moltes places, normalment una per propietat: la del Sol i la de la Virreina són els llocs de trobada dels veïns. El Mercat de la Llibertat, de ferro, és del 1893, i la Casa Vicens, de Gaudí, del 1883, és al carrer de les Carolines. Avui la vida es fa al carrer: terrasses, comerç de barri, cinema i petits teatres, i cada agost les Festes de Gràcia amb els carrers decorats pels veïns. Amb 51.477 habitants, és el barri més poblat de Gràcia, i el seu preu de compravenda, 5.094 €/m², és el més alt del districte."
+  ],
+  "housing": "Cases baixes, finques antigues i edificis de pisos, en carrers estrets.",
+  "places": [
+    "Plaça de la Vila de Gràcia",
+    "Plaça del Sol",
+    "Plaça de la Virreina",
+    "Mercat de la Llibertat",
+    "Casa Vicens"
+  ]
+}

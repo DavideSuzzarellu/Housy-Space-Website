@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The stately heart of Barcelona: Passeig de Gràcia, the Quadrat d'Or and Modernisme at every step.",
+  "text": [
+    "Between Carrer de Balmes and Passeig de Sant Joan lies the neighbourhood to which the Catalan bourgeoisie moved their lives and businesses, and it still shows. The Cerdà plan was approved in 1859 and a year later Queen Isabella II laid the first stone; the first buildings went up at the junction of Consell de Cent and Roger de Llúria, and at first the area housed industry, such as the Elizalde factory, one of the first in Spain to make cars and engines.",
+    "Then came the bourgeoisie and, with it, Modernisme: here are Passeig de Gràcia, with Casa Batlló and La Pedrera, Rambla de Catalunya and Plaça de Catalunya, which was not part of the Cerdà plan and ended up as the centre of the city, in an area known as the Quadrat d'Or. Over time, shops, offices, cinemas and theatres took over many floors that were once homes. It is the neighbourhood with the highest prices in the Eixample: 6,224 €/m² to buy and 1,596 €/month average rent, the highest figures in the district. In return, the flats are spacious and of high build quality, with high ceilings, hydraulic tile floors and original mouldings where they have been preserved."
+  ],
+  "housing": "Spacious flats in stately and Modernista buildings, with high ceilings.",
+  "places": [
+    "Passeig de Gràcia",
+    "Casa Batlló",
+    "La Pedrera",
+    "Rambla de Catalunya",
+    "Plaça de Catalunya"
+  ]
+}

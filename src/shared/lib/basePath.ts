@@ -1,8 +1,18 @@
 /**
- * Deploy sub-path without trailing slash ("" at the site root). `import.meta.env` is absent when
- * a module runs outside Vite (Playwright specs import the route map), hence the optional read.
+ * Current `import.meta.env.BASE_URL`, "/" when absent: `import.meta.env` does not exist outside
+ * Vite (Playwright specs import the route map). Read per call so tests can stub it.
  */
-const env: Partial<ImportMetaEnv> | undefined = import.meta.env;
-const baseUrl = env?.BASE_URL ?? "/";
+export function currentBaseUrl(): string {
+  const env: Partial<ImportMetaEnv> | undefined = import.meta.env;
+  return env?.BASE_URL ?? "/";
+}
 
-export const BASE_PATH: string = baseUrl === "/" ? "" : baseUrl;
+/**
+ * Root-relative URL of a file in `public/` under the deploy base (`base` in astro.config, e.g. a
+ * GitHub Pages project site). Absolute URLs pass through.
+ */
+export function withBase(path: string, base: string = currentBaseUrl()): string {
+  if (!path.startsWith("/")) return path;
+  const prefix = base.endsWith("/") ? base.slice(0, -1) : base;
+  return `${prefix}${path}`;
+}
