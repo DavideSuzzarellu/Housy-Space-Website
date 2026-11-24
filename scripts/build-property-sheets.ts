@@ -23,6 +23,8 @@ const SOURCE_ROOT = path.join(DIST, PROPERTY_SHEET_SOURCE_DIR);
 const ORIGIN = "http://property-sheets.localhost";
 const CONCURRENCY = 4;
 const NAVIGATION_TIMEOUT_MS = 60_000;
+/** A remote tile that has not answered by then counts as a broken image instead of stalling. */
+const REMOTE_TIMEOUT_MS = 8_000;
 
 /** `dist` file for a URL path (`/a/b` → `a/b/index.html` or `a/b.html`), never outside `dist`. */
 function distFile(urlPath: string): string | undefined {
@@ -57,6 +59,17 @@ async function serveDist(context: BrowserContext): Promise<void> {
       ? route.fulfill({ status: 404, body: "Not found" })
       : route.fulfill({ path: file }));
   });
+  // Remote resources (ICGC tiles): a hung server must not block `load` for the whole timeout.
+  await context.route(
+    (url) => url.origin !== ORIGIN,
+    async (route) => {
+      try {
+        await route.fulfill({ response: await route.fetch({ timeout: REMOTE_TIMEOUT_MS }) });
+      } catch {
+        await route.abort();
+      }
+    },
+  );
 }
 
 /** Prints one source page; returns the written PDF path and how many images failed to load. */
