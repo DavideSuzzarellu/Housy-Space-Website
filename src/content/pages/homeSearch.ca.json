@@ -2,7 +2,7 @@
   "title": "La meva cerca · HousySpace",
   "description": "Explica'ns què cerques en un habitatge per comprar o llogar: ho guardem a la nostra base de dades i t'avisem quan entra un immoble que s'hi ajusta.",
   "head": {
-    "heading": "El teu pròxim habitatge *comença aquí*",
+    "heading": "La teva propera llar *comença aquí*",
     "photo": false,
     "items": [
       {
@@ -72,7 +72,7 @@
           "fields": [
             {
               "kind": "group",
-              "title": "Què cerques?",
+              "title": "Quin tipus d'habitatge cerques?",
               "fields": [
                 {
                   "kind": "chips",
@@ -83,13 +83,11 @@
                   "options": [
                     {
                       "value": "venta",
-                      "label": "Comprar",
-                      "hint": "Vull adquirir un habitatge"
+                      "label": "Comprar"
                     },
                     {
                       "value": "alquiler",
-                      "label": "Llogar",
-                      "hint": "Vull llogar un habitatge"
+                      "label": "Llogar"
                     }
                   ]
                 },
@@ -125,14 +123,20 @@
                       "label": "Estudi"
                     }
                   ],
-                  "label": "Tipus d'immoble (pots marcar-ne més d'un)"
+                  "label": "Tipus d'habitatge (pots triar-ne més d'un)"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "On?",
+              "title": "On t'agradaria viure?",
+              "hint": "Tria les zones que t'interessen: un districte sencer o barris concrets. Pots marcar-ne diverses i indicar quines són alternatives.",
               "fields": [
+                {
+                  "kind": "zoneSearch",
+                  "label": "Cerca un districte o barri",
+                  "placeholder": "Cerca un districte o barri"
+                },
                 {
                   "kind": "chips",
                   "name": "distrito",
@@ -179,7 +183,8 @@
                       "value": "sant-marti",
                       "label": "Sant Martí"
                     }
-                  ]
+                  ],
+                  "label": "Barcelona (tria un o diversos districtes)"
                 },
                 {
                   "kind": "chips",
@@ -204,8 +209,9 @@
                       "label": "Sant Pere, Santa Caterina i la Ribera"
                     }
                   ],
-                  "label": "Barris de Ciutat Vella (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "ciutat-vella"
+                  "label": "Barris de Ciutat Vella (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "ciutat-vella",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -238,8 +244,9 @@
                       "label": "Sant Antoni"
                     }
                   ],
-                  "label": "Barris de l'Eixample (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "eixample"
+                  "label": "Barris de l'Eixample (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "eixample",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -280,8 +287,9 @@
                       "label": "Sants"
                     }
                   ],
-                  "label": "Barris de Sants-Montjuïc (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "sants-montjuic"
+                  "label": "Barris de Sants-Montjuïc (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "sants-montjuic",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -302,8 +310,9 @@
                       "label": "Pedralbes"
                     }
                   ],
-                  "label": "Barris de Les Corts (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "les-corts"
+                  "label": "Barris de Les Corts (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "les-corts",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -336,8 +345,9 @@
                       "label": "El Putxet i el Farró"
                     }
                   ],
-                  "label": "Barris de Sarrià-Sant Gervasi (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "sarria-sant-gervasi"
+                  "label": "Barris de Sarrià-Sant Gervasi (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "sarria-sant-gervasi",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -366,8 +376,9 @@
                       "label": "El Camp d'en Grassot i Gràcia Nova"
                     }
                   ],
-                  "label": "Barris de Gràcia (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "gracia"
+                  "label": "Barris de Gràcia (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "gracia",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -420,8 +431,9 @@
                       "label": "Horta"
                     }
                   ],
-                  "label": "Barris d'Horta-Guinardó (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "horta-guinardo"
+                  "label": "Barris d'Horta-Guinardó (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "horta-guinardo",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -482,8 +494,9 @@
                       "label": "Vallbona"
                     }
                   ],
-                  "label": "Barris de Nou Barris (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "nou-barris"
+                  "label": "Barris de Nou Barris (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "nou-barris",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -520,8 +533,9 @@
                       "label": "Navas"
                     }
                   ],
-                  "label": "Barris de Sant Andreu (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "sant-andreu"
+                  "label": "Barris de Sant Andreu (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "sant-andreu",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -570,136 +584,179 @@
                       "label": "La Verneda i la Pau"
                     }
                   ],
-                  "label": "Barris de Sant Martí (opcional: si no en marques cap, ens val tot el districte)",
-                  "when": "sant-marti"
+                  "label": "Barris de Sant Martí (opcional: si no en tries cap, ens val tot el districte)",
+                  "when": "sant-marti",
+                  "size": "sm"
                 },
                 {
                   "name": "zona_libre",
-                  "label": "Altres zones, carrers o punts de referència",
+                  "label": "Una altra zona, carrer o punt de referència (opcional)",
                   "required": false,
                   "full": true,
                   "type": "text",
-                  "placeholder": "Ex.: a prop de la Diagonal, al costat d'una escola…",
-                  "kind": "field"
-                }
-              ],
-              "hint": "Marca els districtes que t'interessen i, si vols afinar, els seus barris."
-            },
-            {
-              "kind": "group",
-              "title": "Pressupost i mida",
-              "fields": [
-                {
-                  "kind": "note",
-                  "text": "Tria a dalt si vols comprar o llogar i aquí apareixerà el teu pressupost."
-                },
-                {
-                  "name": "precio_min",
-                  "label": "Pressupost des de (€)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "Ex.: 400.000",
+                  "placeholder": "Ex.: Badalona, a prop del mar…",
                   "kind": "field"
                 },
                 {
-                  "name": "precio_max",
-                  "label": "Pressupost fins a (€)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "Ex.: 650.000",
-                  "kind": "field"
-                },
-                {
-                  "name": "precio_max",
-                  "label": "Renda màxima (€/mes)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "Ex.: 2.000",
-                  "kind": "field"
-                },
-                {
-                  "name": "m2_min",
-                  "label": "Superfície mínima (m²)",
-                  "required": false,
-                  "full": false,
-                  "type": "number",
-                  "placeholder": "Ex.: 90",
-                  "kind": "field"
-                },
-                {
-                  "name": "dormitorios_min",
-                  "label": "Habitacions (mínim)",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["1 o més", "2 o més", "3 o més", "4 o més", "5 o més"],
-                  "kind": "field"
-                },
-                {
-                  "name": "banos_min",
-                  "label": "Banys (mínim)",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["1 o més", "2 o més", "3 o més"],
-                  "kind": "field"
-                },
-                {
-                  "name": "planta",
-                  "label": "Planta",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Planta alta o àtic", "Evitar plantes baixes"],
-                  "kind": "field"
-                },
-                {
-                  "name": "estado",
-                  "label": "Estat de l'habitatge",
+                  "kind": "field",
+                  "name": "abierto",
+                  "label": "Estic obert a altres zones",
                   "required": false,
                   "full": true,
-                  "type": "select",
-                  "options": ["A estrenar o reformat", "Per reformar"],
-                  "kind": "field"
+                  "type": "check"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "El que no pot faltar",
+              "title": "Quin és el teu pressupost?",
               "fields": [
+                {
+                  "kind": "field",
+                  "name": "precio_min",
+                  "label": "Mínim",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "unit": true,
+                  "suffix": "opcional",
+                  "placeholder": "Ex.: 300.000",
+                  "placeholderRent": "Ex.: 1.000"
+                },
+                {
+                  "kind": "field",
+                  "name": "precio_max",
+                  "label": "Màxim",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "unit": true,
+                  "placeholder": "Ex.: 650.000",
+                  "placeholderRent": "Ex.: 1.800"
+                },
+                {
+                  "kind": "note",
+                  "text": "Més endavant podràs ajustar el pressupost amb el teu assessor."
+                }
+              ]
+            },
+            {
+              "kind": "group",
+              "title": "Com t'imagines la teva nova llar?",
+              "fields": [
+                {
+                  "kind": "question",
+                  "text": "Superfície (m²)"
+                },
+                {
+                  "kind": "field",
+                  "name": "m2_min",
+                  "label": "Mínima",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "placeholder": "Ex.: 70"
+                },
+                {
+                  "kind": "field",
+                  "name": "m2_max",
+                  "label": "Màxima",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "placeholder": "Ex.: 120"
+                },
+                {
+                  "kind": "chips",
+                  "name": "dormitorios_min",
+                  "radio": true,
+                  "required": false,
+                  "size": "sq",
+                  "half": true,
+                  "label": "Habitacions (mínim)",
+                  "blank": "Indiferent",
+                  "options": [
+                    {
+                      "value": "1",
+                      "label": "1+"
+                    },
+                    {
+                      "value": "2",
+                      "label": "2+"
+                    },
+                    {
+                      "value": "3",
+                      "label": "3+"
+                    },
+                    {
+                      "value": "4",
+                      "label": "4+"
+                    },
+                    {
+                      "value": "5",
+                      "label": "5+"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
+                  "name": "banos_min",
+                  "radio": true,
+                  "required": false,
+                  "size": "sq",
+                  "half": true,
+                  "label": "Banys (mínim)",
+                  "blank": "Indiferent",
+                  "options": [
+                    {
+                      "value": "1",
+                      "label": "1+"
+                    },
+                    {
+                      "value": "2",
+                      "label": "2+"
+                    },
+                    {
+                      "value": "3",
+                      "label": "3+"
+                    },
+                    {
+                      "value": "4",
+                      "label": "4+"
+                    },
+                    {
+                      "value": "5",
+                      "label": "5+"
+                    }
+                  ]
+                },
                 {
                   "kind": "chips",
                   "name": "caracteristicas",
                   "radio": false,
                   "required": false,
+                  "must": "Imprescindible",
+                  "label": "Característiques (tria-les i marca les imprescindibles; la resta seran un plus)",
                   "options": [
                     {
-                      "value": "Ascensor",
-                      "label": "Ascensor"
+                      "value": "Balcón",
+                      "label": "Balcó"
                     },
                     {
                       "value": "Terraza",
                       "label": "Terrassa"
                     },
                     {
-                      "value": "Balcón",
-                      "label": "Balcó"
+                      "value": "Jardín",
+                      "label": "Jardí"
                     },
                     {
                       "value": "Exterior",
                       "label": "Exterior"
                     },
                     {
-                      "value": "Aire acondicionado",
-                      "label": "Aire condicionat"
-                    },
-                    {
-                      "value": "Calefacción",
-                      "label": "Calefacció"
+                      "value": "Ascensor",
+                      "label": "Ascensor"
                     },
                     {
                       "value": "Parking",
@@ -710,210 +767,152 @@
                       "label": "Traster"
                     },
                     {
-                      "value": "Reformado",
-                      "label": "Reformat"
-                    },
-                    {
-                      "value": "Suelos originales",
-                      "label": "Terres originals"
-                    },
-                    {
                       "value": "Piscina",
                       "label": "Piscina"
                     },
                     {
-                      "value": "Jardín",
-                      "label": "Jardí"
+                      "value": "Aire acondicionado",
+                      "label": "Aire condicionat"
                     },
                     {
-                      "value": "Vistas",
-                      "label": "Vistes"
+                      "value": "Calefacción",
+                      "label": "Calefacció"
                     },
                     {
-                      "value": "Accesible",
-                      "label": "Accessible"
-                    },
-                    {
-                      "value": "Amueblado",
-                      "label": "Moblat"
-                    },
-                    {
-                      "value": "Admite mascotas",
-                      "label": "Accepta mascotes"
+                      "value": "Accesibilidad",
+                      "label": "Accessibilitat"
                     }
                   ]
-                }
-              ],
-              "hint": "Els mateixos termes que fem servir a les fitxes dels immobles."
-            },
-            {
-              "kind": "group",
-              "title": "Terminis i situació",
-              "fields": [
+                },
                 {
+                  "kind": "chips",
+                  "name": "estado",
+                  "radio": false,
+                  "required": false,
+                  "exclusive": "indiferente",
+                  "label": "Estat de l'habitatge (en pots triar més d'un)",
+                  "options": [
+                    {
+                      "value": "obra-nueva",
+                      "label": "Obra nova"
+                    },
+                    {
+                      "value": "reformado",
+                      "label": "Reformat"
+                    },
+                    {
+                      "value": "buen-estado",
+                      "label": "Bon estat"
+                    },
+                    {
+                      "value": "para-reformar",
+                      "label": "Per reformar"
+                    },
+                    {
+                      "value": "indiferente",
+                      "label": "Indiferent"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
                   "name": "plazo",
-                  "label": "Per a quan ho necessites?",
+                  "radio": true,
+                  "required": false,
+                  "label": "Per quan ho necessites?",
+                  "options": [
+                    {
+                      "value": "lo-antes-posible",
+                      "label": "Com més aviat millor"
+                    },
+                    {
+                      "value": "1-3-meses",
+                      "label": "En 1 a 3 mesos"
+                    },
+                    {
+                      "value": "3-6-meses",
+                      "label": "En 3 a 6 mesos"
+                    },
+                    {
+                      "value": "mas-adelante",
+                      "label": "Més endavant"
+                    },
+                    {
+                      "value": "sin-prisa",
+                      "label": "Sense pressa"
+                    }
+                  ]
+                },
+                {
+                  "kind": "field",
+                  "name": "comentarios",
+                  "label": "Hi ha alguna cosa més que hauríem de saber? (opcional)",
                   "required": false,
                   "full": true,
-                  "type": "select",
-                  "options": [
-                    "Com més aviat millor",
-                    "En 1 a 3 mesos",
-                    "En 3 a 6 mesos",
-                    "Més endavant",
-                    "Només estic explorant"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "uso",
-                  "label": "Per a què la vols?",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Habitatge habitual", "Segona residència", "Inversió"],
-                  "kind": "field"
-                },
-                {
-                  "name": "financiacion",
-                  "label": "Finançament",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": [
-                    "Amb estalvis, sense hipoteca",
-                    "Necessito finançament",
-                    "Ja tinc la hipoteca preaprovada",
-                    "Encara no ho sé"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "vivienda_actual",
-                  "label": "Tens un habitatge per vendre?",
-                  "required": false,
-                  "full": true,
-                  "type": "select",
-                  "options": ["No", "Sí, el vull vendre", "Sí, i ja és en venda"],
-                  "kind": "field"
-                },
-                {
-                  "kind": "note",
-                  "text": "Necessites finançament? T'orientem amb l'[assessorament financer](service:asesoramiento-financiero). Has de vendre abans de comprar? Mira com ho fem a [Compravenda](service:venta-estrategica)."
-                },
-                {
-                  "name": "fecha_entrada",
-                  "label": "Data d'entrada",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "kind": "field"
-                },
-                {
-                  "name": "duracion",
-                  "label": "Tipus de contracte",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": [
-                    "Habitatge habitual (llarga durada)",
-                    "Per temporada",
-                    "Encara no ho sé"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "personas",
-                  "label": "Persones que hi viuran",
-                  "required": false,
-                  "full": false,
-                  "type": "number",
-                  "kind": "field"
+                  "type": "textarea",
+                  "placeholder": "Explica'ns qualsevol detall que sigui important per a tu",
+                  "small": "No incloguis dades que no siguin necessàries, com ara dades de salut o d'altres persones."
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "Com contactar-te",
+              "title": "Parlem?",
+              "hint": "**Ja gairebé hem acabat.** Deixa'ns les teves dades i t'avisarem quan trobem un habitatge que encaixi amb tu.",
               "fields": [
                 {
+                  "kind": "field",
                   "name": "nombre",
                   "label": "Nom",
                   "required": true,
                   "full": false,
-                  "type": "text",
-                  "kind": "field"
+                  "type": "text"
                 },
                 {
+                  "kind": "field",
                   "name": "apellidos",
                   "label": "Cognoms",
                   "required": false,
                   "full": false,
-                  "type": "text",
-                  "kind": "field"
+                  "type": "text"
                 },
                 {
-                  "name": "telefono",
-                  "label": "Telèfon",
-                  "required": true,
-                  "full": false,
-                  "type": "tel",
-                  "kind": "field"
-                },
-                {
+                  "kind": "field",
                   "name": "email",
                   "label": "Correu electrònic",
                   "required": true,
                   "full": false,
-                  "type": "email",
-                  "kind": "field"
+                  "type": "email"
                 },
                 {
-                  "name": "idioma",
-                  "label": "Idioma",
-                  "required": false,
+                  "kind": "field",
+                  "name": "telefono",
+                  "label": "Telèfon",
+                  "required": true,
                   "full": false,
-                  "type": "select",
-                  "options": ["Español", "Català", "English", "Altre"],
-                  "kind": "field"
+                  "type": "tel"
                 },
                 {
+                  "kind": "chips",
                   "name": "canal",
-                  "label": "Com prefereixes que et contactem",
+                  "radio": true,
                   "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Telèfon", "WhatsApp", "Correu electrònic"],
-                  "kind": "field"
+                  "label": "Com prefereixes que et contactem?",
+                  "options": [
+                    {
+                      "value": "telefono",
+                      "label": "Telèfon"
+                    },
+                    {
+                      "value": "whatsapp",
+                      "label": "WhatsApp"
+                    },
+                    {
+                      "value": "email",
+                      "label": "Correu electrònic"
+                    }
+                  ]
                 },
-                {
-                  "name": "franja",
-                  "label": "Millor moment",
-                  "required": false,
-                  "full": true,
-                  "type": "select",
-                  "options": ["Al matí", "A migdia", "A la tarda"],
-                  "kind": "field"
-                },
-                {
-                  "name": "comentarios",
-                  "label": "Alguna cosa més que hàgim de saber?No incloguis dades que no siguin necessàries, com dades de salut o d'altres persones.",
-                  "required": false,
-                  "full": true,
-                  "type": "textarea",
-                  "kind": "field"
-                }
-              ],
-              "hint": "Només demanem el que és necessari per atendre la teva cerca."
-            },
-            {
-              "kind": "note",
-              "text": "Així quedarà guardada la teva cerca, amb els mateixos camps que la fitxa d'un immoble. Es completa mentre omples el formulari."
-            },
-            {
-              "kind": "group",
-              "title": "El teu consentiment",
-              "fields": [
                 {
                   "kind": "note",
                   "text": "**Responsable:** HousySpace Consultores Inmobiliarios, S.L. · CIF B26903419 · [info@housyspace.com](mailto:info@housyspace.com)."
@@ -928,11 +927,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Conservació:** Mentre la teva cerca estigui activa i, com a màxim, 12 mesos des del nostre últim contacte. Després se suprimeixen o se bloquejen durant el temps que exigeixi la llei. (Termini pendent de confirmar per HousySpace.)"
+                  "text": "**Conservació:** Mentre la teva cerca estigui activa i, com a màxim, 12 mesos des del nostre últim contacte. Després se suprimeixen o se bloquejen durant el temps que exigeixi la llei."
                 },
                 {
                   "kind": "note",
-                  "text": "**Destinataris:** No cedim les teves dades a tercers, tret d'obligació legal. Poden tractar-les per compte nostre, i amb contracte, els proveïdors que donen suport al web, al correu, a la base de dades i a la missatgeria (per exemple, WhatsApp si tries aquest canal). (Llista concreta pendent de confirmar.)"
+                  "text": "**Destinataris:** No cedim les teves dades a tercers, tret d'obligació legal. Poden tractar-les per compte nostre, i amb contracte, els proveïdors que donen suport al web, al correu, a la base de dades i a la missatgeria (per exemple, WhatsApp si tries aquest canal)."
                 },
                 {
                   "kind": "note",
@@ -977,7 +976,9 @@
                       "label": "Telèfon"
                     }
                   ],
-                  "label": "Per quin canal?"
+                  "label": "Per quin canal?",
+                  "size": "sm",
+                  "whenChecked": "c_comercial"
                 },
                 {
                   "name": "c_newsletter",
@@ -992,19 +993,14 @@
                   "text": "Les caselles opcionals venen sense marcar. Pots retirar qualsevol consentiment quan vulguis, amb l'enllaç de baixa de cada correu o escrivint a [info@housyspace.com](mailto:info@housyspace.com)."
                 },
                 {
+                  "kind": "submit",
+                  "label": "Desar la meva cerca"
+                },
+                {
                   "kind": "note",
-                  "text": "**Textos legals en esborrany.** La informació sobre protecció de dades, les caselles i la política de privacitat estan pendents de revisió per l'assessoria jurídica de HousySpace abans de publicar el web."
+                  "text": "Encara no hi ha una base de dades connectada a aquest formulari (CRM pendent). En prémer, s'obrirà WhatsApp amb la teva cerca ja escrita perquè tu l'enviïs; fins que no l'enviïs allà, no s'haurà guardat ni haurà arribat a HousySpace."
                 }
-              ],
-              "hint": "Primer, la informació bàsica que exigeix la llei. Llegeix-la abans de marcar res."
-            },
-            {
-              "kind": "submit",
-              "label": "Desar la meva cerca"
-            },
-            {
-              "kind": "note",
-              "text": "Encara no hi ha una base de dades connectada a aquest formulari (CRM pendent). En prémer, s'obrirà WhatsApp amb la teva cerca ja escrita perquè tu l'enviïs; fins que no l'enviïs allà, no s'haurà guardat ni haurà arribat a HousySpace."
+              ]
             }
           ],
           "mode": "whatsapp"

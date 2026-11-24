@@ -29,6 +29,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci il tuo obiettivo",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -71,7 +81,7 @@
             },
             {
               "title": "Ristrutturazione",
-              "text": "Che lavori servono, quanto costano e quanto valore aggiungono."
+              "text": "Quali lavori servono, quanto costano e che effetto possono avere sull'affitto o sulla vendita."
             },
             {
               "title": "Reddito atteso",
@@ -216,8 +226,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliare",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Affitto e gestione di immobili",
+              "text": "",
+              "href": "service:alquiler-gestion"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

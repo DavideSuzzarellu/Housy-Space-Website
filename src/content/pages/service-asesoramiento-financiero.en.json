@@ -21,6 +21,16 @@
       {
         "kind": "image",
         "src": "../../assets/home/oficina-1672.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us your case",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -291,8 +301,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Provisional content pending review by HousySpace. Fees depend on each property."
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Real estate personal shopper",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Property sales and brokerage",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Real estate investment",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

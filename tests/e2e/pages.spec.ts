@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const PAGES = [
   ["/es/servicios/venta-estrategica", "Compraventa e intermediación inmobiliaria"],
@@ -8,8 +8,7 @@ const PAGES = [
   ["/es/contacto", "Hablemos"],
   ["/es/mi-busqueda", "Tu próximo hogar empieza aquí"],
   ["/es/busqueda-a-medida", "Búsqueda a medida"],
-  ["/es/valoracion", "La próxima propiedad podría ser la tuya"],
-  ["/es/vender", "Vende tu inmueble con criterio."],
+  ["/es/valoracion", "El valor de tu vivienda"],
   ["/es/provincia-de-barcelona", "Provincia de Barcelona"],
   ["/es/provincia-de-barcelona/abrera", "Abrera"],
   ["/es/blog", "El Blog"],
@@ -39,7 +38,6 @@ for (const [url, heading] of PAGES) {
 const SERVICES = [
   "venta-estrategica",
   "valoracion",
-  "asesoramiento",
   "asesoramiento-financiero",
   "asesoramiento-juridico-fiscal",
   "reformas-obras",
@@ -57,14 +55,27 @@ for (const service of SERVICES) {
     // The illustration is the only eager image of the page and carries a text alternative.
     await expect(head.locator("img[fetchpriority='high']")).toHaveCount(1);
     await expect(head.locator("img[alt]:not([alt=''])")).toHaveCount(1);
-    // "Hablemos" scrolls to the closing block, which lists the other eight services.
+    // "Hablemos" scrolls to the closing block, which lists the other services.
     await head.getByRole("link", { name: "Hablemos" }).click();
     await expect(page.locator("#hablemos")).toBeInViewport();
-    await expect(page.locator("#hablemos nav a")).toHaveCount(8);
+    await expect(page.locator("#hablemos nav a")).toHaveCount(7);
     // The footer's own "¡Hablemos!" row is hidden: the page closes with its own.
     await expect(page.locator("[data-footer-cta]")).toBeHidden();
   });
 }
+
+test("/es/servicios is a real page with the 8 services, 6 situations and a contact block", async ({
+  page,
+}) => {
+  await page.goto("/es/servicios");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("servicios");
+  await expect(
+    page.locator("#propietarios li a, #compradores li a, #especializados li a"),
+  ).toHaveCount(8);
+  await expect(page.locator("#situaciones li a")).toHaveCount(6);
+  await expect(page.locator("#asesoramiento ol li")).toHaveCount(4);
+  await expect(page.locator("#hablemos a")).toHaveCount(4);
+});
 
 test("the compraventa page lists eight steps and twelve inclusions", async ({ page }) => {
   await page.goto("/es/servicios/venta-estrategica");
@@ -156,12 +167,70 @@ test("the lead form opens WhatsApp with the request written", async ({ page, con
   await expect(form.locator("[data-lead-status]")).toBeVisible();
 });
 
-test("district barrios appear only after choosing the district", async ({ page }) => {
-  await page.goto("/es/mi-busqueda");
-  const raval = page.locator('input[name="barrio"][value="el-raval"]');
-  await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
-  await page.locator('input[name="distrito"][value="ciutat-vella"]').check({ force: true });
-  await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
+test.describe("my search wizard", () => {
+  const next = (page: Page) => page.locator("[data-next] button");
+
+  test("shows one step at a time and validates the operation before moving on", async ({
+    page,
+  }) => {
+    await page.goto("/es/mi-busqueda");
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 1 de 5");
+    await expect(page.locator("fieldset[data-step]:not([data-step-off])")).toHaveCount(1);
+    await next(page).click();
+    await expect(page.locator('[data-error="operation"]')).toBeVisible();
+    await expect(page.locator('input[name="operacion"]').first()).toBeFocused();
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    await next(page).click();
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 2 de 5");
+    await expect(
+      page.getByRole("heading", { level: 3, name: "¿Dónde te gustaría vivir?" }),
+    ).toBeFocused();
+    await page.getByRole("button", { name: /Atrás/ }).click();
+    await expect(page.locator("[data-wizard-count]")).toHaveText("Paso 1 de 5");
+  });
+
+  test("district barrios appear only after choosing the district", async ({ page }) => {
+    await page.goto("/es/mi-busqueda");
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    await next(page).click();
+    const raval = page.locator('input[name="barrio"][value="el-raval"]');
+    await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeHidden();
+    await page.locator('label:has(input[name="distrito"][value="ciutat-vella"])').click();
+    await expect(raval.locator("xpath=ancestor::*[@data-when]")).toBeVisible();
+  });
+
+  test("the summary follows the form and the zone search adds zones", async ({ page }) => {
+    await page.goto("/es/mi-busqueda");
+    const summary = page.locator("[data-wizard-summary]");
+    await expect(summary).toContainText("Elige una opción");
+    await page.locator('label:has(input[name="operacion"][value="alquiler"])').click();
+    await expect(summary).toContainText("Alquilar");
+    await next(page).click();
+    await page.locator("#zone-q").fill("clot");
+    await page.getByRole("option", { name: /^El Clot/ }).click();
+    await expect(summary).toContainText("El Clot");
+    await expect(page.locator("[data-zone-tags]")).toContainText("El Clot");
+  });
+
+  test("the last step checks the contact data before the lead form opens WhatsApp", async ({
+    page,
+  }) => {
+    await page.goto("/es/mi-busqueda");
+    await page.locator('label:has(input[name="operacion"][value="venta"])').click();
+    for (let step = 0; step < 4; step += 1) await next(page).click();
+    await page.getByRole("button", { name: /Guardar mi búsqueda/ }).click();
+    await expect(page.locator('[data-error="name"]')).toBeVisible();
+    await expect(page.locator('[data-error="consentData"]')).toBeVisible();
+    await page.locator('input[name="nombre"]').fill("Ana");
+    await page.locator('input[name="email"]').fill("ana@example.com");
+    await page.locator('input[name="telefono"]').fill("+34 613 084 804");
+    await page.locator('label:has(input[name="c_datos"])').click();
+    const request = page
+      .context()
+      .waitForEvent("request", (candidate) => candidate.url().startsWith("https://wa.me/"));
+    await page.getByRole("button", { name: /Guardar mi búsqueda/ }).click();
+    expect(decodeURIComponent((await request).url())).toContain("Ana");
+  });
 });
 
 test("the about page keeps its paper head, its in-page anchors and 'where we are'", async ({

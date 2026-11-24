@@ -21,6 +21,16 @@
       {
         "kind": "lead",
         "text": "Quando l'operazione lo richiede, coordiniamo la consulenza con professionisti indipendenti di fiducia."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci il tuo caso",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
@@ -411,8 +421,29 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenuto provvisorio in attesa di revisione da parte di HousySpace. Gli onorari dipendono da ciascun immobile."
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravendita e intermediazione immobiliare",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

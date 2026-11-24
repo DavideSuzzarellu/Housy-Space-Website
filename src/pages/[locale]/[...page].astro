@@ -25,12 +25,14 @@ import {
 import ContactView from "@/features/agency/ui/ContactView.astro";
 import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
+import ValuationView from "@/features/valuation/ui/ValuationView.astro";
 import ServiceView from "@/features/pages/ui/ServiceView.astro";
+import ServicesIndexView from "@/features/pages/ui/ServicesIndexView.astro";
 import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
-import { getAlternates, getLocalizedPath, getServicesAnchorPath } from "@/shared/i18n/routes";
+import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
 import { formatMessage } from "@/shared/lib/format";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
 import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
@@ -234,13 +236,18 @@ const proseFallback =
   (editorial?.fallback ?? false) ||
   (!isSpanish && (target.view === "district" || target.view === "living")) ||
   (target.view === "post" && target.post.data.language !== locale);
+// The valuation page hangs from the services like the reference's valuation service page.
 const serviceCrumb =
-  target.view === "service" ? dictionary.serviceNames[target.service] : undefined;
+  target.view === "service"
+    ? dictionary.serviceNames[target.service]
+    : target.view === "editorial" && target.key === "valuation"
+      ? dictionary.serviceNames.valuation
+      : undefined;
 const crumbs = [
   home,
   ...(serviceCrumb === undefined
     ? []
-    : [{ label: dictionary.nav.services, href: getServicesAnchorPath(locale) }]),
+    : [{ label: dictionary.nav.services, href: getLocalizedPath("services", locale) }]),
   {
     label:
       serviceCrumb ??
@@ -248,7 +255,9 @@ const crumbs = [
         ? dictionary.nav.mySearch
         : target.view === "editorial" && target.key === "blog"
           ? dictionary.nav.blog
-          : editorial?.content.head.heading.replaceAll("*", "")) ??
+          : target.view === "editorial" && target.key === "services"
+            ? dictionary.nav.services
+            : editorial?.content.head.heading.replaceAll("*", "")) ??
       "",
   },
 ];
@@ -269,10 +278,23 @@ const crumbs = [
     <AboutView locale={locale} content={editorial.content} crumbs={crumbs} />
   ) : target.view === "editorial" && target.key === "contact" && editorial !== undefined ? (
     <ContactView locale={locale} content={editorial.content} crumbs={crumbs} />
+  ) : target.view === "editorial" && target.key === "services" && editorial !== undefined ? (
+    <ServicesIndexView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
+  ) : target.view === "editorial" && target.key === "valuation" && editorial !== undefined ? (
+    <ValuationView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
   ) : target.view === "service" && editorial !== undefined ? (
     <ServiceView
       locale={locale}
-      service={target.service}
       content={editorial.content}
       crumbs={crumbs}
       fallback={editorial.fallback}
@@ -285,7 +307,6 @@ const crumbs = [
         crumbs={crumbs}
         fallback={editorial.fallback}
         hero={isMySearch}
-        paperHead={target.view === "editorial" && target.key === "sell"}
         longText={longText}
       />
     )

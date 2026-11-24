@@ -2,44 +2,141 @@
   "title": "Property valuation · HousySpace",
   "description": "Request a professional valuation of your property in Barcelona.",
   "head": {
-    "heading": "What is your property worth?",
-    "photo": true,
+    "heading": "The value of your home *deserves more than a figure*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Property valuation"
+        "text": "Property valuation in Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Discover the real value of your property with a professional real estate analysis, based on the market and your property's characteristics."
+        "text": "Every home is different, and so is its value. We study its features, its location and market conditions to give you a well-founded valuation and help you make decisions with confidence."
       }
     ]
   },
   "sections": [
+    {
+      "id": "opciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Two ways to get a valuation"
+        },
+        {
+          "kind": "h2",
+          "text": "Choose how to find out *what your home is worth*"
+        },
+        {
+          "kind": "p",
+          "text": "You can start with an online estimate and, whenever you like, ask an adviser to look at your home. The two steps complement each other."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Instant"
+            },
+            {
+              "kind": "h3",
+              "text": "Online valuation"
+            },
+            {
+              "kind": "p",
+              "text": "A first indicative estimate based on the details you enter. Useful as an initial reference, but it does not replace an individual assessment of the property."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Instant result"
+                },
+                {
+                  "title": "",
+                  "text": "Based on the details you enter"
+                },
+                {
+                  "title": "",
+                  "text": "Indicative estimate"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Value it online now",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Personalised study"
+            },
+            {
+              "kind": "h3",
+              "text": "Valuation with an adviser"
+            },
+            {
+              "kind": "p",
+              "text": "We look at your home, its particularities and market conditions, and explain what drives its value."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visit to the property"
+                },
+                {
+                  "title": "",
+                  "text": "Review of the documents"
+                },
+                {
+                  "title": "",
+                  "text": "Commented market study"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Request a valuation with an adviser",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "informe",
       "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "h2",
-          "text": "Your valuation report, instantly"
-        },
-        {
-          "kind": "lead",
-          "text": "Enter your property details in the valuation tool and you will instantly receive your valuation report. If you wish, an adviser can review it with you afterwards."
-        },
-        {
           "kind": "valuator",
           "title": "HousySpace online valuation tool"
         },
         {
           "kind": "p",
-          "text": "Can't see the valuation tool? [Open it in a new tab](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) or request a valuation from an adviser using the [form below](#solicitud)."
+          "text": "Can't see the valuation tool? [Open it in a new tab](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
         },
         {
           "kind": "note",
@@ -49,16 +146,16 @@
     },
     {
       "id": "solicitud",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Would you prefer an adviser to call you?"
+          "text": "Valuation with an adviser"
         },
         {
           "kind": "lead",
-          "text": "Leave your details and a HousySpace adviser will get in touch to value your property in person."
+          "text": "Leave us your details and a HousySpace adviser will call you to value your home in person."
         },
         {
           "kind": "form",
@@ -107,7 +204,7 @@
             },
             {
               "name": "consent",
-              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -130,7 +227,8 @@
               "kind": "field"
             },
             {
-              "kind": "note",
+              "kind": "details",
+              "summary": "Basic data protection information",
               "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: handling your request and, only if you tick the boxes, sending commercial communications and the newsletter. Legal basis: your consent. Recipients: we do not share your data, except where legally required. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy). (Legal text draft.)"
             },
             {
@@ -143,21 +241,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "About the valuation service",
-              "href": "service:valoracion",
-              "solid": false
-            },
-            {
-              "label": "Talk to an adviser",
-              "href": "route:contact",
-              "solid": false
-            }
-          ]
         }
       ]
     }

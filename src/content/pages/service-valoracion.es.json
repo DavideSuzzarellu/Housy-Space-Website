@@ -241,7 +241,7 @@
     },
     {
       "layout": "cta",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -278,8 +278,24 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. El informe de valoración es gratuito y sin compromiso. Los honorarios dependen de cada inmueble."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compraventa e intermediación inmobiliaria",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

@@ -9,7 +9,6 @@ export const SERVICE_PANELS: readonly { readonly service: ServiceKey; readonly t
   { service: "valuation", tint: "#f8f2ef" },
   { service: "legalTax", tint: "#fbf9f6" },
   { service: "renovations", tint: "#f9f4f0" },
-  { service: "advisory", tint: "#fbf8f6" },
   { service: "financial", tint: "#f9f5f2" },
   { service: "personalShopper", tint: "#f9f5f2" },
   { service: "investment", tint: "#fbf7f3" },

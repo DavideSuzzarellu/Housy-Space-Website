@@ -72,7 +72,7 @@
           "fields": [
             {
               "kind": "group",
-              "title": "What are you looking for?",
+              "title": "What type of home are you looking for?",
               "fields": [
                 {
                   "kind": "chips",
@@ -83,13 +83,11 @@
                   "options": [
                     {
                       "value": "venta",
-                      "label": "Buy",
-                      "hint": "I want to buy a property"
+                      "label": "Buy"
                     },
                     {
                       "value": "alquiler",
-                      "label": "Rent",
-                      "hint": "I want to rent a property"
+                      "label": "Rent"
                     }
                   ]
                 },
@@ -125,14 +123,20 @@
                       "label": "Studio"
                     }
                   ],
-                  "label": "Property type (you can select more than one)"
+                  "label": "Type of home (you can choose several)"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "Where?",
+              "title": "Where would you like to live?",
+              "hint": "Choose the areas you like: a whole district or specific neighbourhoods. You can pick several and flag which ones are alternatives.",
               "fields": [
+                {
+                  "kind": "zoneSearch",
+                  "label": "Search a district or neighbourhood",
+                  "placeholder": "Search a district or neighbourhood"
+                },
                 {
                   "kind": "chips",
                   "name": "distrito",
@@ -179,7 +183,8 @@
                       "value": "sant-marti",
                       "label": "Sant Martí"
                     }
-                  ]
+                  ],
+                  "label": "Barcelona (choose one or more districts)"
                 },
                 {
                   "kind": "chips",
@@ -205,7 +210,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Ciutat Vella (optional: if none selected, the whole district is fine)",
-                  "when": "ciutat-vella"
+                  "when": "ciutat-vella",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -239,7 +245,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Eixample (optional: if none selected, the whole district is fine)",
-                  "when": "eixample"
+                  "when": "eixample",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -281,7 +288,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Sants-Montjuïc (optional: if none selected, the whole district is fine)",
-                  "when": "sants-montjuic"
+                  "when": "sants-montjuic",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -303,7 +311,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Les Corts (optional: if none selected, the whole district is fine)",
-                  "when": "les-corts"
+                  "when": "les-corts",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -337,7 +346,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Sarrià-Sant Gervasi (optional: if none selected, the whole district is fine)",
-                  "when": "sarria-sant-gervasi"
+                  "when": "sarria-sant-gervasi",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -367,7 +377,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Gràcia (optional: if none selected, the whole district is fine)",
-                  "when": "gracia"
+                  "when": "gracia",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -421,7 +432,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Horta-Guinardó (optional: if none selected, the whole district is fine)",
-                  "when": "horta-guinardo"
+                  "when": "horta-guinardo",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -483,7 +495,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Nou Barris (optional: if none selected, the whole district is fine)",
-                  "when": "nou-barris"
+                  "when": "nou-barris",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -521,7 +534,8 @@
                     }
                   ],
                   "label": "Neighbourhoods of Sant Andreu (optional: if none selected, the whole district is fine)",
-                  "when": "sant-andreu"
+                  "when": "sant-andreu",
+                  "size": "sm"
                 },
                 {
                   "kind": "chips",
@@ -571,135 +585,178 @@
                     }
                   ],
                   "label": "Neighbourhoods of Sant Martí (optional: if none selected, the whole district is fine)",
-                  "when": "sant-marti"
+                  "when": "sant-marti",
+                  "size": "sm"
                 },
                 {
                   "name": "zona_libre",
-                  "label": "Other areas, streets or landmarks",
+                  "label": "Other area, street or landmark (optional)",
                   "required": false,
                   "full": true,
                   "type": "text",
-                  "placeholder": "E.g.: near the Diagonal, next to a school…",
-                  "kind": "field"
-                }
-              ],
-              "hint": "Select the districts you're interested in and, if you wish to narrow it down, their neighbourhoods."
-            },
-            {
-              "kind": "group",
-              "title": "Budget and size",
-              "fields": [
-                {
-                  "kind": "note",
-                  "text": "Choose above whether you want to buy or rent and your budget will appear here."
-                },
-                {
-                  "name": "precio_min",
-                  "label": "Budget from (€)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "E.g.: 400,000",
+                  "placeholder": "E.g. Badalona, near the sea…",
                   "kind": "field"
                 },
                 {
-                  "name": "precio_max",
-                  "label": "Budget up to (€)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "E.g.: 650,000",
-                  "kind": "field"
-                },
-                {
-                  "name": "precio_max",
-                  "label": "Maximum rent (€/month)",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "placeholder": "E.g.: 2,000",
-                  "kind": "field"
-                },
-                {
-                  "name": "m2_min",
-                  "label": "Minimum size (m²)",
-                  "required": false,
-                  "full": false,
-                  "type": "number",
-                  "placeholder": "E.g.: 90",
-                  "kind": "field"
-                },
-                {
-                  "name": "dormitorios_min",
-                  "label": "Bedrooms (minimum)",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["1 or more", "2 or more", "3 or more", "4 or more", "5 or more"],
-                  "kind": "field"
-                },
-                {
-                  "name": "banos_min",
-                  "label": "Bathrooms (minimum)",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["1 or more", "2 or more", "3 or more"],
-                  "kind": "field"
-                },
-                {
-                  "name": "planta",
-                  "label": "Floor",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Upper floor or penthouse", "Avoid lower floors"],
-                  "kind": "field"
-                },
-                {
-                  "name": "estado",
-                  "label": "Condition",
+                  "kind": "field",
+                  "name": "abierto",
+                  "label": "I'm open to other areas",
                   "required": false,
                   "full": true,
-                  "type": "select",
-                  "options": ["New or renovated", "Needs renovation"],
-                  "kind": "field"
+                  "type": "check"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "Must-haves",
+              "title": "What is your budget?",
               "fields": [
+                {
+                  "kind": "field",
+                  "name": "precio_min",
+                  "label": "Minimum",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "unit": true,
+                  "suffix": "optional",
+                  "placeholder": "E.g. 300,000",
+                  "placeholderRent": "E.g. 1,000"
+                },
+                {
+                  "kind": "field",
+                  "name": "precio_max",
+                  "label": "Maximum",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "unit": true,
+                  "placeholder": "E.g. 650,000",
+                  "placeholderRent": "E.g. 1,800"
+                },
+                {
+                  "kind": "note",
+                  "text": "You can adjust your budget later with your advisor."
+                }
+              ]
+            },
+            {
+              "kind": "group",
+              "title": "How do you imagine your new home?",
+              "fields": [
+                {
+                  "kind": "question",
+                  "text": "Area (m²)"
+                },
+                {
+                  "kind": "field",
+                  "name": "m2_min",
+                  "label": "Minimum",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "placeholder": "E.g. 70"
+                },
+                {
+                  "kind": "field",
+                  "name": "m2_max",
+                  "label": "Maximum",
+                  "required": false,
+                  "full": false,
+                  "type": "numeric",
+                  "placeholder": "E.g. 120"
+                },
+                {
+                  "kind": "chips",
+                  "name": "dormitorios_min",
+                  "radio": true,
+                  "required": false,
+                  "size": "sq",
+                  "half": true,
+                  "label": "Bedrooms (minimum)",
+                  "blank": "Any",
+                  "options": [
+                    {
+                      "value": "1",
+                      "label": "1+"
+                    },
+                    {
+                      "value": "2",
+                      "label": "2+"
+                    },
+                    {
+                      "value": "3",
+                      "label": "3+"
+                    },
+                    {
+                      "value": "4",
+                      "label": "4+"
+                    },
+                    {
+                      "value": "5",
+                      "label": "5+"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
+                  "name": "banos_min",
+                  "radio": true,
+                  "required": false,
+                  "size": "sq",
+                  "half": true,
+                  "label": "Bathrooms (minimum)",
+                  "blank": "Any",
+                  "options": [
+                    {
+                      "value": "1",
+                      "label": "1+"
+                    },
+                    {
+                      "value": "2",
+                      "label": "2+"
+                    },
+                    {
+                      "value": "3",
+                      "label": "3+"
+                    },
+                    {
+                      "value": "4",
+                      "label": "4+"
+                    },
+                    {
+                      "value": "5",
+                      "label": "5+"
+                    }
+                  ]
+                },
                 {
                   "kind": "chips",
                   "name": "caracteristicas",
                   "radio": false,
                   "required": false,
+                  "must": "Essential",
+                  "label": "Features (select the ones you want and mark which are essential; the rest will count as nice to have)",
                   "options": [
                     {
-                      "value": "Ascensor",
-                      "label": "Lift"
+                      "value": "Balcón",
+                      "label": "Balcony"
                     },
                     {
                       "value": "Terraza",
                       "label": "Terrace"
                     },
                     {
-                      "value": "Balcón",
-                      "label": "Balcony"
+                      "value": "Jardín",
+                      "label": "Garden"
                     },
                     {
                       "value": "Exterior",
                       "label": "Exterior"
                     },
                     {
-                      "value": "Aire acondicionado",
-                      "label": "Air conditioning"
-                    },
-                    {
-                      "value": "Calefacción",
-                      "label": "Heating"
+                      "value": "Ascensor",
+                      "label": "Lift"
                     },
                     {
                       "value": "Parking",
@@ -710,206 +767,152 @@
                       "label": "Storage room"
                     },
                     {
-                      "value": "Reformado",
-                      "label": "Renovated"
-                    },
-                    {
-                      "value": "Suelos originales",
-                      "label": "Original flooring"
-                    },
-                    {
                       "value": "Piscina",
                       "label": "Swimming pool"
                     },
                     {
-                      "value": "Jardín",
-                      "label": "Garden"
+                      "value": "Aire acondicionado",
+                      "label": "Air conditioning"
                     },
                     {
-                      "value": "Vistas",
-                      "label": "Views"
+                      "value": "Calefacción",
+                      "label": "Heating"
                     },
                     {
-                      "value": "Accesible",
-                      "label": "Accessible"
-                    },
-                    {
-                      "value": "Amueblado",
-                      "label": "Furnished"
-                    },
-                    {
-                      "value": "Admite mascotas",
-                      "label": "Pets allowed"
+                      "value": "Accesibilidad",
+                      "label": "Accessibility"
                     }
                   ]
-                }
-              ],
-              "hint": "The same terms we use in our property listings."
-            },
-            {
-              "kind": "group",
-              "title": "Timeline and situation",
-              "fields": [
+                },
                 {
+                  "kind": "chips",
+                  "name": "estado",
+                  "radio": false,
+                  "required": false,
+                  "exclusive": "indiferente",
+                  "label": "Condition of the home (you can choose several)",
+                  "options": [
+                    {
+                      "value": "obra-nueva",
+                      "label": "New build"
+                    },
+                    {
+                      "value": "reformado",
+                      "label": "Renovated"
+                    },
+                    {
+                      "value": "buen-estado",
+                      "label": "Good condition"
+                    },
+                    {
+                      "value": "para-reformar",
+                      "label": "Needs renovation"
+                    },
+                    {
+                      "value": "indiferente",
+                      "label": "Any"
+                    }
+                  ]
+                },
+                {
+                  "kind": "chips",
                   "name": "plazo",
+                  "radio": true,
+                  "required": false,
                   "label": "When do you need it?",
+                  "options": [
+                    {
+                      "value": "lo-antes-posible",
+                      "label": "As soon as possible"
+                    },
+                    {
+                      "value": "1-3-meses",
+                      "label": "In 1 to 3 months"
+                    },
+                    {
+                      "value": "3-6-meses",
+                      "label": "In 3 to 6 months"
+                    },
+                    {
+                      "value": "mas-adelante",
+                      "label": "Later"
+                    },
+                    {
+                      "value": "sin-prisa",
+                      "label": "No rush"
+                    }
+                  ]
+                },
+                {
+                  "kind": "field",
+                  "name": "comentarios",
+                  "label": "Is there anything else we should know? (optional)",
                   "required": false,
                   "full": true,
-                  "type": "select",
-                  "options": [
-                    "As soon as possible",
-                    "Within 1 to 3 months",
-                    "Within 3 to 6 months",
-                    "Later",
-                    "Just exploring"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "uso",
-                  "label": "What will you use it for?",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Primary residence", "Second home", "Investment"],
-                  "kind": "field"
-                },
-                {
-                  "name": "financiacion",
-                  "label": "Financing",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": [
-                    "Cash, no mortgage",
-                    "I need financing",
-                    "My mortgage is already pre-approved",
-                    "Not sure yet"
-                  ],
-                  "kind": "field"
-                },
-                {
-                  "name": "vivienda_actual",
-                  "label": "Do you have a property to sell?",
-                  "required": false,
-                  "full": true,
-                  "type": "select",
-                  "options": ["No", "Yes, I want to sell it", "Yes, it's already on the market"],
-                  "kind": "field"
-                },
-                {
-                  "kind": "note",
-                  "text": "Need financing? We can help with [financial advice](service:asesoramiento-financiero). Need to sell before buying? See how we do it at [Sale & purchase](service:venta-estrategica)."
-                },
-                {
-                  "name": "fecha_entrada",
-                  "label": "Move-in date",
-                  "required": false,
-                  "full": false,
-                  "type": "text",
-                  "kind": "field"
-                },
-                {
-                  "name": "duracion",
-                  "label": "Contract type",
-                  "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Primary residence (long-term)", "Seasonal", "Not sure yet"],
-                  "kind": "field"
-                },
-                {
-                  "name": "personas",
-                  "label": "Number of occupants",
-                  "required": false,
-                  "full": false,
-                  "type": "number",
-                  "kind": "field"
+                  "type": "textarea",
+                  "placeholder": "Tell us any detail that is important to you",
+                  "small": "Please don't include anything unnecessary, such as health details or information about other people."
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "How to contact you",
+              "title": "Let's talk",
+              "hint": "**We are almost done.** Leave us your details and we'll let you know as soon as we find a home that suits you.",
               "fields": [
                 {
+                  "kind": "field",
                   "name": "nombre",
                   "label": "First name",
                   "required": true,
                   "full": false,
-                  "type": "text",
-                  "kind": "field"
+                  "type": "text"
                 },
                 {
+                  "kind": "field",
                   "name": "apellidos",
                   "label": "Surname",
                   "required": false,
                   "full": false,
-                  "type": "text",
-                  "kind": "field"
+                  "type": "text"
                 },
                 {
-                  "name": "telefono",
-                  "label": "Phone",
-                  "required": true,
-                  "full": false,
-                  "type": "tel",
-                  "kind": "field"
-                },
-                {
+                  "kind": "field",
                   "name": "email",
                   "label": "Email",
                   "required": true,
                   "full": false,
-                  "type": "email",
-                  "kind": "field"
+                  "type": "email"
                 },
                 {
-                  "name": "idioma",
-                  "label": "Language",
-                  "required": false,
+                  "kind": "field",
+                  "name": "telefono",
+                  "label": "Phone",
+                  "required": true,
                   "full": false,
-                  "type": "select",
-                  "options": ["Español", "Català", "English", "Other"],
-                  "kind": "field"
+                  "type": "tel"
                 },
                 {
+                  "kind": "chips",
                   "name": "canal",
-                  "label": "Preferred contact method",
+                  "radio": true,
                   "required": false,
-                  "full": false,
-                  "type": "select",
-                  "options": ["Phone", "WhatsApp", "Email"],
-                  "kind": "field"
+                  "label": "How would you prefer us to contact you?",
+                  "options": [
+                    {
+                      "value": "telefono",
+                      "label": "Phone"
+                    },
+                    {
+                      "value": "whatsapp",
+                      "label": "WhatsApp"
+                    },
+                    {
+                      "value": "email",
+                      "label": "Email"
+                    }
+                  ]
                 },
-                {
-                  "name": "franja",
-                  "label": "Best time",
-                  "required": false,
-                  "full": true,
-                  "type": "select",
-                  "options": ["Morning", "Midday", "Afternoon"],
-                  "kind": "field"
-                },
-                {
-                  "name": "comentarios",
-                  "label": "Anything else we should know?Do not include unnecessary data, such as health information or details about other people.",
-                  "required": false,
-                  "full": true,
-                  "type": "textarea",
-                  "kind": "field"
-                }
-              ],
-              "hint": "We only ask what we need to handle your search."
-            },
-            {
-              "kind": "note",
-              "text": "This is how your search will be saved, using the same fields as a property listing. It updates as you fill in the form."
-            },
-            {
-              "kind": "group",
-              "title": "Your consent",
-              "fields": [
                 {
                   "kind": "note",
                   "text": "**Data controller:** HousySpace Consultores Inmobiliarios, S.L. · CIF B26903419 · [info@housyspace.com](mailto:info@housyspace.com)."
@@ -924,11 +927,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Retention:** While your search is active and, at most, 12 months from our last contact. Afterwards data is deleted or blocked for the period required by law. (Retention period to be confirmed by HousySpace.)"
+                  "text": "**Retention:** While your search is active and, at most, 12 months from our last contact. Afterwards data is deleted or blocked for the period required by law."
                 },
                 {
                   "kind": "note",
-                  "text": "**Recipients:** We do not share your data with third parties, except as required by law. Data processors who act on our behalf and under contract include suppliers supporting the website, email, database and messaging (e.g. WhatsApp if you choose that channel). (Full list to be confirmed.)"
+                  "text": "**Recipients:** We do not share your data with third parties, except as required by law. Data processors who act on our behalf and under contract include suppliers supporting the website, email, database and messaging (e.g. WhatsApp if you choose that channel)."
                 },
                 {
                   "kind": "note",
@@ -973,7 +976,9 @@
                       "label": "Phone"
                     }
                   ],
-                  "label": "Which channel?"
+                  "label": "Which channel?",
+                  "size": "sm",
+                  "whenChecked": "c_comercial"
                 },
                 {
                   "name": "c_newsletter",
@@ -988,19 +993,14 @@
                   "text": "The optional boxes are unticked by default. You can withdraw any consent at any time via the unsubscribe link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com)."
                 },
                 {
+                  "kind": "submit",
+                  "label": "Save my search"
+                },
+                {
                   "kind": "note",
-                  "text": "**Legal texts in draft.** The data protection information, checkboxes and privacy policy are pending review by HousySpace's legal advisers before the website goes live."
+                  "text": "There is no database connected to this form yet (CRM pending). When you press the button, WhatsApp opens with your search already written. Until you send it from there, it won't be saved or reach HousySpace."
                 }
-              ],
-              "hint": "First, the basic information required by law. Please read it before ticking anything."
-            },
-            {
-              "kind": "submit",
-              "label": "Save my search"
-            },
-            {
-              "kind": "note",
-              "text": "There is no database connected to this form yet (CRM pending). When you click, WhatsApp will open with your search already written — it won't be saved or reach HousySpace until you send it there."
+              ]
             }
           ],
           "mode": "whatsapp"

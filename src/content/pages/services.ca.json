@@ -1,0 +1,308 @@
+{
+  "title": "Serveis immobiliaris a Barcelona · HousySpace",
+  "description": "Serveis immobiliaris a Barcelona: compravenda, valoració, lloguer i gestió, personal shopper, inversió, reformes i assessorament jurídic, fiscal i financer.",
+  "head": {
+    "heading": "Els serveis *que t'oferim*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Serveis"
+      },
+      {
+        "kind": "lead",
+        "text": "Un mateix compromís, moltes maneres d'ajudar-te."
+      },
+      {
+        "kind": "list",
+        "ordered": false,
+        "items": [
+          {
+            "title": "Propietaris",
+            "text": "",
+            "href": "#propietarios"
+          },
+          {
+            "title": "Compradors i inversors",
+            "text": "",
+            "href": "#compradores"
+          },
+          {
+            "title": "Assessorament especialitzat",
+            "text": "",
+            "href": "#especializados"
+          },
+          {
+            "title": "Per on començo?",
+            "text": "",
+            "href": "#situaciones"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "propietarios",
+      "layout": "indexGroup",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Propietaris"
+        },
+        {
+          "kind": "h2",
+          "text": "Vendre, valorar *o llogar el teu habitatge*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "T'assessorem en la venda del teu habitatge, des de l'estudi inicial i l'estratègia comercial fins a la formalització de l'operació.",
+              "kicker": "01 · Vendre el meu habitatge",
+              "href": "service:venta-estrategica",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Valoració immobiliària",
+              "text": "Analitzem el mercat i les característiques del teu immoble per ajudar-te a determinar-ne el valor i un preu de sortida adequat.",
+              "kicker": "02 · Saber quant val",
+              "href": "service:valoracion",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Lloguer i gestió d'immobles",
+              "text": "Comercialitzem el teu habitatge, seleccionem candidats i, si ho necessites, gestionem el lloguer durant el contracte.",
+              "kicker": "03",
+              "href": "service:alquiler-gestion",
+              "cta": "Veure el servei"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compradores",
+      "layout": "indexGroup",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Compradors i inversors"
+        },
+        {
+          "kind": "h2",
+          "text": "Comprar *o invertir amb criteri*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliari",
+              "text": "Cerquem i analitzem habitatges segons les teves necessitats i t'acompanyem durant el procés de compra, fins a la signatura.",
+              "kicker": "04",
+              "href": "service:personal-shopper",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Inversió immobiliària",
+              "text": "Estudiem oportunitats d'inversió, costos, rendibilitat potencial i riscos per ajudar-te a prendre decisions amb criteri.",
+              "kicker": "05",
+              "href": "service:inversion-inmobiliaria",
+              "cta": "Veure el servei"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "especializados",
+      "layout": "indexGroup",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Assessorament i solucions especialitzades"
+        },
+        {
+          "kind": "h2",
+          "text": "Suport professional *en cada decisió*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Reformes i interiorisme",
+              "text": "Coordinem projectes de reforma i interiorisme amb professionals especialitzats, del primer pressupost al lliurament.",
+              "kicker": "06",
+              "href": "service:reformas-obras",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Assessorament jurídic i fiscal",
+              "text": "Coordinem l'assessorament de professionals jurídics i fiscals per a les necessitats legals i tributàries de la teva operació.",
+              "kicker": "07",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Assessorament financer",
+              "text": "Et posem en contacte amb especialistes en finançament i coordinem l'estudi de la hipoteca amb la teva operació immobiliària.",
+              "kicker": "08",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Veure el servei"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "situaciones",
+      "layout": "indexSituations",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Situacions habituals"
+        },
+        {
+          "kind": "h2",
+          "text": "Potser *ets aquí*"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Venc o llogo?",
+              "text": "Comparem les dues opcions amb números: preu de venda, renda esperable, impostos i despeses.",
+              "kicker": "Compravenda i intermediació immobiliària",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Venc ara o espero?",
+              "text": "Veiem com està la demanda a la teva zona i què canvia si esperes.",
+              "kicker": "Valoració immobiliària",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "He heretat un habitatge",
+              "text": "Quins tràmits hi ha, quins impostos pagar i què fer-ne.",
+              "kicker": "Assessorament jurídic i fiscal",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Reformo abans de vendre?",
+              "text": "Quines millores poden ajudar a la venda i quines no compensen.",
+              "kicker": "Reformes i interiorisme",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Vull canviar de casa",
+              "text": "Com coordinar la venda de la teva i la compra de la nova.",
+              "kicker": "Personal shopper immobiliari",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Vull invertir en habitatge",
+              "text": "Què comprar, amb quins números i amb quins riscos.",
+              "kicker": "Inversió immobiliària",
+              "href": "service:inversion-inmobiliaria"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asesoramiento",
+      "layout": "indexAdvice",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Com t'ajudem"
+        },
+        {
+          "kind": "h2",
+          "text": "Un assessorament *que comença per escoltar-te*"
+        },
+        {
+          "kind": "p",
+          "text": "No totes les decisions immobiliàries comencen amb una compravenda. De vegades, el primer és entendre què necessites, analitzar les possibilitats i decidir quin és el millor camí. A HousySpace estudiem cada situació per oferir-te un assessorament personalitzat, amb criteri i sense decisions precipitades."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversa",
+              "text": "Parlem de la teva situació i del que vols aconseguir."
+            },
+            {
+              "title": "Anàlisi",
+              "text": "Estudiem l'immoble, la zona i les alternatives."
+            },
+            {
+              "title": "Full de ruta",
+              "text": "Et proposem els passos, els terminis i els costos."
+            },
+            {
+              "title": "Acompanyament",
+              "text": "T'ajudem a decidir i, si vols, a executar-ho."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hablemos",
+      "layout": "indexCta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "No tens clar *quin servei necessites?*"
+        },
+        {
+          "kind": "big",
+          "text": "Parlem-ne!"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20vuestros%20servicios.",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

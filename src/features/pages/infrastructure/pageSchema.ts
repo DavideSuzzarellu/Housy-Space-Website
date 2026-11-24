@@ -16,11 +16,29 @@ const inputFieldSchema = z
     kind: z.literal("field"),
     name: text,
     label: text,
-    type: z.enum(["text", "email", "tel", "number", "select", "textarea", "consent"]),
+    type: z.enum([
+      "text",
+      "numeric",
+      "email",
+      "tel",
+      "number",
+      "select",
+      "textarea",
+      "consent",
+      "check",
+    ]),
     required: z.boolean(),
     full: z.boolean(),
     options: z.array(text).optional(),
     placeholder: text.optional(),
+    /** Budget fields: the operation unit ("(€)", "(€/mes)") is appended to the label by the wizard. */
+    unit: z.boolean().optional(),
+    /** Light tag after the label ("optional"). */
+    suffix: text.optional(),
+    /** Small print under the control. */
+    small: text.optional(),
+    /** Placeholder once the operation is "alquiler". */
+    placeholderRent: text.optional(),
   })
   .strict();
 
@@ -38,9 +56,23 @@ const formLeafSchema = z.discriminatedUnion("kind", [
       label: text.optional(),
       /** Only shown once this value of the `distrito` chips is selected. */
       when: text.optional(),
+      /** Only shown while this checkbox (by name) is ticked. */
+      whenChecked: text.optional(),
+      /** `sm` small chips, `sq` square number chips; default is the regular chip. */
+      size: z.enum(["sm", "sq"]).optional(),
+      /** Sits next to the following `half` group on wide screens (rooms / baths). */
+      half: z.boolean().optional(),
+      /** Each ticked chip gets an "essential" toggle; its label is this text. */
+      must: text.optional(),
+      /** Value that excludes the others ("indifferent"). */
+      exclusive: text.optional(),
+      /** Radio with a first, pre-selected "no preference" option of this label (empty value). */
+      blank: text.optional(),
     })
     .strict(),
   z.object({ kind: z.literal("note"), text }).strict(),
+  z.object({ kind: z.literal("question"), text }).strict(),
+  z.object({ kind: z.literal("zoneSearch"), label: text, placeholder: text }).strict(),
   z.object({ kind: z.literal("details"), summary: text, text }).strict(),
   z.object({ kind: z.literal("submit"), label: text }).strict(),
 ]);
@@ -81,6 +113,11 @@ export const SECTION_LAYOUTS = [
   "stepsList",
   "valuation",
   "cta",
+  // Services index (reference `.svi-*`, `.sq26-*`, `.sa25-*`, `.sc23`).
+  "indexGroup",
+  "indexSituations",
+  "indexAdvice",
+  "indexCta",
 ] as const;
 export type SectionLayout = (typeof SECTION_LAYOUTS)[number];
 

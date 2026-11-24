@@ -16,9 +16,9 @@ describe("getMainNavigation", () => {
     ]);
   });
 
-  it("links Services to the home accordion, My search to its route and Where we are to the about anchor", () => {
+  it("links Services to its index, My search to its route and Where we are to the about anchor", () => {
     const items = getMainNavigation("es");
-    expect(items[1]?.href).toBe("/es#servicios");
+    expect(items[1]?.href).toBe("/es/servicios");
     expect(items[3]?.href).toBe("/es/mi-busqueda");
     expect(items[6]?.href).toBe("/es/nosotros#donde-estamos");
   });
@@ -31,7 +31,7 @@ describe("getMainNavigation", () => {
       "En alquiler",
       "Ver en el mapa",
     ]);
-    expect(services?.children).toHaveLength(9);
+    expect(services?.children).toHaveLength(8);
     expect(living?.children).toHaveLength(11);
     expect(living?.children[0]?.href).toBe("/es/vivir-en-barcelona");
     expect(living?.children[2]?.href).toBe("/es/vivir-en-barcelona/eixample");
@@ -64,12 +64,12 @@ describe("getFooterNavigation", () => {
     ]);
     expect(columns[0]?.links.map((link) => link.href)).toEqual([
       "/es/venta",
-      "/es#servicios",
+      "/es/servicios",
       "/es/vivir-en-barcelona",
       "/es/mi-busqueda",
       "/es/blog",
     ]);
-    expect(columns[1]?.links.map((link) => link.href)).toEqual(["/es/vender", "/es/valoracion"]);
+    expect(columns[1]?.links.map((link) => link.href)).toEqual(["/es/valoracion"]);
     expect(columns[2]?.links.map((link) => link.href)).toEqual([
       "/es/nosotros",
       "/es/contacto",
