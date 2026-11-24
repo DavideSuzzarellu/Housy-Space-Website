@@ -1,5 +1,5 @@
 import market from "../../content/market/barcelona.json";
-import { LOCALES, type Locale } from "./config";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "./config";
 import { RETIRED_MUNICIPALITIES } from "./retiredMunicipalities";
 import { routes } from "./routes";
 import { getServiceSlug } from "./services";
@@ -44,6 +44,8 @@ export function getRetiredRedirects(): Record<string, string> {
     const province = `/${locale}/${OLD_PROVINCE[locale]}`;
     return [
       [`/${locale}/${RETIRED.sell[locale]}`, detail(getServiceSlug("saleBrokerage", locale))],
+      // "Custom search" merged into "My search" (reference `_redirects`).
+      [`/${locale}/${routes.customSearch[locale]}`, `/${locale}/${routes.mySearch[locale]}`],
       [detail(RETIRED.advisory[locale]), services],
       [living, zones],
       // Astro needs a destination route with the same params, so each old district and barrio URL is listed.
@@ -66,4 +68,60 @@ export function getRetiredRedirects(): Record<string, string> {
     ] as const;
   });
   return Object.fromEntries(entries);
+}
+
+export interface RedirectRule {
+  /** Source path, without the site base. A trailing `/*` is a splat (everything below). */
+  readonly from: string;
+  /** Destination path, without the site base. */
+  readonly to: string;
+  readonly status: 301;
+}
+
+/**
+ * Old URLs of the previous WordPress site and of the reference site that sit at the domain root
+ * (no locale prefix). They only exist on production, so they are host rules, never Astro pages.
+ * Source: reference `_redirects` (2026-11); each goes to the Spanish page that replaced it.
+ */
+const LEGACY_ROOT_URLS: readonly (readonly [string, string])[] = [
+  ["/vende", `/es/${routes.services.es}/${getServiceSlug("saleBrokerage", "es")}`],
+  ["/busco-vivienda", `/es/${routes.mySearch.es}`],
+  ["/busqueda-a-medida", `/es/${routes.mySearch.es}`],
+  ["/politica-cookies", `/es/${routes.cookies.es}`],
+  ["/politica-de-privacidad", `/es/${routes.privacy.es}`],
+  ["/housyspace", `/es/${routes.about.es}`],
+  ["/atico-en-ensanche-derecho", `/es/${routes.sale.es}`],
+  ["/housyspace-venta-compra-y-alquiler-de-inmuebles", `/es`],
+];
+
+/**
+ * Every permanent (301) redirect the site needs, for the host (Cloudflare/Netlify `_redirects`).
+ * Same source as `getRetiredRedirects()`, with the 311 retired municipality pages of each locale
+ * collapsed into one splat rule.
+ */
+export function getRetiredRedirectRules(): RedirectRule[] {
+  const provinceRoots = LOCALES.map((locale) => `/${locale}/${OLD_PROVINCE[locale]}`);
+  const explicit = Object.entries(getRetiredRedirects())
+    .filter(([from]) => !provinceRoots.some((root) => from.startsWith(`${root}/`)))
+    .map(([from, to]): RedirectRule => ({ from, to, status: 301 }));
+  const provinceSplats = LOCALES.map((locale): RedirectRule => ({
+    from: `/${locale}/${OLD_PROVINCE[locale]}/*`,
+    to: `/${locale}/${routes.living[locale]}`,
+    status: 301,
+  }));
+  const legacy = LEGACY_ROOT_URLS.map(([from, to]): RedirectRule => ({ from, to, status: 301 }));
+  return [
+    { from: "/", to: `/${DEFAULT_LOCALE}`, status: 301 },
+    ...explicit,
+    ...provinceSplats,
+    ...legacy,
+  ];
+}
+
+/** `_redirects` file text (`from to status` per line), with the deploy base prefixed. */
+export function renderRedirectRules(rules: readonly RedirectRule[], base = ""): string {
+  const prefix = base.replace(/\/$/, "");
+  const withBase = (path: string): string => (path === "/" ? `${prefix}/` : `${prefix}${path}`);
+  const lines = rules.map((rule) => `${withBase(rule.from)} ${withBase(rule.to)} ${rule.status}`);
+  return `${lines.join("\n")}\n`;
 }
