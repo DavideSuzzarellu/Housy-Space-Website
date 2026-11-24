@@ -15,7 +15,7 @@ Load for every page that must match the client's static reference site (plain HT
 
 ## Rule of truth
 
-The reference's RENDERED CSS wins over the design-system docs (`docs/design-system/`) and over earlier assumptions. Measure it in Chrome; do not trust a README. Home, properties, services detail, header, footer, buttons, tokens, global uppercase, heading weights, `stone` alternate surface and the brand logo are already aligned: reuse them, never redo them.
+UI parity rule (`AGENTS.md` §11, mandatory): the page must end EXACTLY equal to the reference's current `HEAD` at 1440, 820 and 390: sections, order, copy, sizes, spacing, colours, interactions, animations. The only exceptions are AA contrast/focus, privacy and legal, real data, the 4 locales/routes and reduced motion, each noted in the commit body. Never leave a reference element or interaction "not ported" as a final state; report it as an open item and implement it. The reference's RENDERED CSS wins over the design-system docs (`docs/design-system/`) and over earlier assumptions. Measure it in Chrome; do not trust a README. Home, properties, services detail, header, footer, buttons, tokens, global uppercase, heading weights, `stone` alternate surface and the brand logo are already aligned: reuse them, never redo them.
 
 ## Hard scope (from the user, non-negotiable)
 
@@ -24,9 +24,9 @@ The reference's RENDERED CSS wins over the design-system docs (`docs/design-syst
 - Privacy rules of `AGENTS.md` §5 stay (approximate location only).
 - Legal, tax and financial copy is client copy: copy it verbatim; never "improve" or invent.
 
-## CSS and Tailwind FIRST; JavaScript only when there is no alternative
+## CSS and Tailwind FIRST; JavaScript when the reference needs it
 
-Zero JS by default (`AGENTS.md` §3). Before adding or keeping a client script, justify in the commit body why CSS/HTML cannot do it. Prefer: `:has()`, container queries, `details/summary`, `:focus-within`, `@property`, `@starting-style`, scroll-driven animations (`animation-timeline`) behind `@supports` with a readable static fallback, `content-visibility: auto` below the fold, and build-time work in Astro frontmatter (e.g. split text in the template). A needed script runs on `astro:page-load`, loads lazily, and stays tiny (estimate gzip with esbuild; budgets in `tests/e2e/performance.spec.ts`). No new dependencies.
+Zero JS by default (`AGENTS.md` §3) EXCEPT where the reference itself does it with a script (steppers, popups, counters, parallax, animated SVG): there the behaviour is reproduced (UI parity). Before adding or keeping a client script, state in the commit body whether CSS/HTML can give the identical result; if it cannot, add the smallest lazy script. Prefer: `:has()`, container queries, `details/summary`, `:focus-within`, `@property`, `@starting-style`, scroll-driven animations (`animation-timeline`) behind `@supports` with a readable static fallback, `content-visibility: auto` below the fold, and build-time work in Astro frontmatter (e.g. split text in the template). A needed script runs on `astro:page-load`, loads lazily, and stays tiny (estimate gzip with esbuild; budgets in `tests/e2e/performance.spec.ts`). No new dependencies.
 
 ## Performance (use Astro's tools)
 
