@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio en renovación, con vivienda pública nueva y tres líneas de metro.",
+  "translated": true,
+  "lead": "Un quartiere in rinnovamento, con nuove abitazioni pubbliche e tre linee di metropolitana.",
   "text": [
-    "En 1997 se aprobó un plan de reforma por las malas condiciones del barrio, y desde 2001 se construyen viviendas públicas nuevas para realojar a vecinos de los bloques antiguos afectados por aluminosis. Los bloques viejos van desapareciendo por fases. Hasta 2017 la remodelación levantó 607 viviendas de realojo, con una inversión municipal de 50 millones de euros, y en 2025 el Ayuntamiento reservó un nuevo solar en la calle Aiguablava, 74-76, para 25 viviendas protegidas en cesión de uso.",
-    "El metro llegó con las líneas 4, en 1999, la 11, en 2003, y la 3, en 2008, y el barrio cuenta con un mercado, un parque grande y una residencia de día para mayores. A veces se confunde con la Trinitat Vella, de la que lo separa la avenida Meridiana. Con 2.505 €/m² y 636 €/mes, es de los más asequibles de Barcelona. Si vendes, el precio medio de compraventa está un 15 % por debajo de la media de Nou Barris. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 200.000 €, y el barrio está en la franja media de Nou Barris (9.º de 13 por precio). Si inviertes, el alquiler medio está un 20 % por debajo del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "Nel 1997 fu approvato un piano di riforma per le cattive condizioni del quartiere, e dal 2001 si costruiscono nuove abitazioni pubbliche per ricollocare gli abitanti dei vecchi palazzi colpiti dall'alluminosi. I vecchi palazzi stanno scomparendo per fasi. Fino al 2017 la ristrutturazione ha realizzato 607 abitazioni di ricollocazione, con un investimento comunale di 50 milioni di euro, e nel 2025 il Comune ha riservato un nuovo lotto in carrer d'Aiguablava, 74-76, per 25 abitazioni protette in cessione d'uso.",
+    "La metropolitana è arrivata con la linea 4, nel 1999, la 11, nel 2003, e la 3, nel 2008, e il quartiere dispone di un mercato, un grande parco e una residenza diurna per anziani. A volte lo si confonde con la Trinitat Vella, da cui lo separa l'avinguda Meridiana. Con 2.505 €/m² e 636 €/mese, è tra i più accessibili di Barcellona. Se vendi, il prezzo medio di compravendita è il 15% sotto la media di Nou Barris. All'interno del quartiere, il prezzo di ogni appartamento dipende dal suo stato, dal piano e dallo stabile, quindi conviene confrontarlo con vendite vicine e non con la media del distretto. Se compri, un appartamento di 80 m² costa in media circa 200.000 €, e il quartiere si colloca nella fascia media di Nou Barris (9º su 13 per prezzo). Se investi, l'affitto medio è il 20% sotto quello del distretto; prima di decidere conviene studiare ogni operazione con numeri reali di acquisto, ristrutturazione e rendita."
   ],
-  "housing": "Vivienda pública nueva, construida por fases para realojar a los vecinos de los bloques antiguos.",
-  "places": ["Estació de metro Trinitat Nova (L3, L4 y L11)"]
+  "housing": "Nuove abitazioni pubbliche, costruite per fasi per ricollocare gli abitanti dei vecchi palazzi.",
+  "places": ["Estació de metro Trinitat Nova (L3, L4 e L11)"]
 }

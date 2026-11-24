@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Calles sinuosas en una montaña: el barrio que se hizo a sí mismo.",
+  "translated": true,
+  "lead": "Strade tortuose su una montagna: il quartiere che si è fatto da sé.",
   "text": [
-    "Su nombre procede de dos torres construidas por la familia Pinós entre los siglos XVI y XVIII. A principios del siglo XX se planeó aquí una ciudad jardín que fracasó por su situación remota, y tras la guerra civil la venta de terrenos a bajo precio atrajo a inmigrantes en los años cincuenta y sesenta, que levantaron sus propias casas.",
-    "Conserva un carácter singular, con calles sinuosas adaptadas al relieve y la avenida de Vallbona como vía de conexión con el resto de Nou Barris. En 1978, Manolo Vital «secuestró» un autobús de la línea 47 para reclamar transporte público, un gesto que resume la historia de esfuerzo de sus vecinos. Con 1.739 €/m², es de los barrios con el precio de compraventa más bajo de Barcelona."
+    "Il suo nome deriva da due torri costruite dalla famiglia Pinós tra il XVI e il XVIII secolo. All'inizio del Novecento qui fu progettata una città giardino fallita per la sua posizione isolata, e dopo la guerra civile la vendita di terreni a basso prezzo attirò immigrati negli anni Cinquanta e Sessanta, che costruirono da sé le proprie case.",
+    "Conserva un carattere singolare, con strade tortuose adattate al rilievo e l'avinguda de Vallbona come via di collegamento con il resto di Nou Barris. Nel 1978 Manolo Vital «sequestrò» un autobus della linea 47 per reclamare un trasporto pubblico, un gesto che riassume la storia di sforzi dei suoi abitanti. Con 1.739 €/m², è tra i quartieri con il prezzo di compravendita più basso di Barcellona."
   ],
-  "housing": "Viviendas autoconstruidas en calles sinuosas de montaña.",
+  "housing": "Abitazioni autocostruite in strade tortuose di montagna.",
   "places": ["Avinguda de Vallbona"]
 }

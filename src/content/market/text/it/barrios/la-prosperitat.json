@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio con uno de los tejidos asociativos más potentes de Barcelona y fiestas hechas por los vecinos.",
+  "translated": true,
+  "lead": "Un quartiere con uno dei tessuti associativi più forti di Barcellona e feste organizzate dai vicini.",
   "text": [
-    "La Prosperitat tiene una vida vecinal muy activa, con casal de barrio, casal de jóvenes, casal para gente mayor, ludotecas y espacios de juego, y con fiestas organizadas por sus propios colectivos. Cada julio, la plaza central acoge el Prospe Beach. En 2026 estrenó un espacio público de unos 5.000 m² junto a la Torre Júlia, con 2,9 millones de euros del Pla de Barris, y está aprobado un nuevo equipamiento cultural en la antigua fábrica Ideal Flor, con biblioteca, auditorio y gimnasio, y un presupuesto previsto de unos 37,5 millones de euros.",
-    "Es un barrio compacto, de 0,59 km² y 28.174 habitantes, con la Via Júlia como eje comercial y de vida de barrio. Su precio de compraventa, 3.159 €/m², queda por debajo del de Porta y del de Vilapicina. Si vendes, el precio medio de compraventa está un 7 % por encima de la media de Nou Barris. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 253.000 €, y el barrio está uno de los más caros de Nou Barris (3.º de 13 por precio). Si inviertes, el alquiler medio (819 €/mes) está en la media del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "La Prosperitat ha una vita di vicinato molto attiva, con casal di quartiere, casal per giovani, casal per anziani, ludoteche e spazi di gioco, e con feste organizzate dalle sue stesse associazioni. Ogni luglio la piazza centrale ospita il Prospe Beach. Nel 2026 ha inaugurato uno spazio pubblico di circa 5.000 m² accanto alla Torre Júlia, con 2,9 milioni di euro del Pla de Barris, ed è stato approvato un nuovo centro culturale nell'antica fabbrica Ideal Flor, con biblioteca, auditorium e palestra, e un budget previsto di circa 37,5 milioni di euro.",
+    "È un quartiere compatto, di 0,59 km² e 28.174 abitanti, con la Via Júlia come asse commerciale e di vita di quartiere. Il suo prezzo di compravendita, 3.159 €/m², è inferiore a quello di Porta e di Vilapicina. Se vendi, il prezzo medio di compravendita è il 7% sopra la media di Nou Barris. All'interno del quartiere, il prezzo di ogni appartamento dipende dal suo stato, dal piano e dallo stabile, quindi conviene confrontarlo con vendite vicine e non con la media del distretto. Se compri, un appartamento di 80 m² costa in media circa 253.000 €, e il quartiere è tra i più cari di Nou Barris (3º su 13 per prezzo). Se investi, l'affitto medio (819 €/mese) è in linea con quello del distretto; prima di decidere conviene studiare ogni operazione con numeri reali di acquisto, ristrutturazione e rendita."
   ],
-  "housing": "Bloques de pisos de la segunda mitad del siglo XX, en calles muy pobladas.",
+  "housing": "Palazzi di appartamenti della seconda metà del Novecento, in strade molto popolate.",
   "places": ["Via Júlia", "Plaça central de la Prosperitat"]
 }
