@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Torres con jardín, avenidas arboladas y una de las rentas más altas de Barcelona.",
+  "translated": true,
+  "lead": "Ville con giardino, viali alberati e uno dei redditi più alti di Barcellona.",
   "text": [
-    "Formaba parte del antiguo municipio de Sarrià y es uno de los barrios donde ha residido buena parte de la burguesía industrial catalana, con casas con jardín y edificios señoriales. Como barrio nació entre 1901 y 1903, cuando unos vecinos llegados de Sants construyeron tres torres, una para cada uno, y su núcleo más antiguo está alrededor del mercado, entre las calles Vergós y Escoles Pies.",
-    "Es un barrio pequeño (0,79 km²) y tranquilo, con la Diagonal y sus centros comerciales, como L'Illa y El Corte Inglés, a un paso. Con 2.014 €/mes, tiene el alquiler medio más alto de Barcelona, y su precio de compraventa, 5.743 €/m², queda por debajo del de Sarrià y Sant Gervasi-Galvany. Si vendes, el precio medio de compraventa está prácticamente en la media de Sarrià-Sant Gervasi. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 459.000 €, y el barrio está en la franja media de Sarrià-Sant Gervasi (3.º de 6 por precio). Si inviertes, el alquiler medio está un 26 % por encima del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "Faceva parte dell'antico comune di Sarrià ed è uno dei quartieri in cui ha risieduto buona parte della borghesia industriale catalana, con ville con giardino e palazzi signorili. Come quartiere nacque tra il 1901 e il 1903, quando alcuni abitanti arrivati da Sants costruirono tre ville, una per ciascuno, e il suo nucleo più antico si trova attorno al mercato, tra i carrers Vergós ed Escoles Pies.",
+    "È un quartiere piccolo (0,79 km²) e tranquillo, con la Diagonal e i suoi centri commerciali, come L'Illa ed El Corte Inglés, a due passi. Con 2.014 €/mese ha l'affitto medio più alto di Barcellona, e il suo prezzo di compravendita, 5.743 €/m², è inferiore a quello di Sarrià e di Sant Gervasi-Galvany. Se vendi, il prezzo medio di compravendita è praticamente in linea con la media di Sarrià-Sant Gervasi. All'interno del quartiere, il prezzo di ogni appartamento dipende dal suo stato, dal piano e dallo stabile, quindi conviene confrontarlo con vendite vicine e non con la media del distretto. Se compri, un appartamento di 80 m² costa in media circa 459.000 €, e il quartiere si colloca nella fascia media di Sarrià-Sant Gervasi (3º su 6 per prezzo). Se investi, l'affitto medio è il 26% sopra quello del distretto; prima di decidere conviene studiare ogni operazione con numeri reali di acquisto, ristrutturazione e rendita."
   ],
-  "housing": "Casas con jardín y edificios señoriales de pocas plantas, con pisos amplios.",
+  "housing": "Ville con giardino e palazzi signorili di pochi piani, con appartamenti ampi.",
   "places": ["Avinguda Diagonal", "L'Illa Diagonal"]
 }

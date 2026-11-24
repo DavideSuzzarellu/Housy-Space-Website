@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un monasterio del siglo XIV, avenidas arboladas y casas con jardín en uno de los barrios con más renta de la ciudad.",
+  "translated": true,
+  "lead": "Un monastero del Trecento, viali alberati e ville con giardino in uno dei quartieri più ricchi della città.",
   "text": [
-    "El barrio toma su nombre del monasterio de clarisas que la reina Elisenda de Montcada fundó en el siglo XIV, con un claustro de dos pisos y una iglesia gótica de una sola nave; en la capilla de Sant Miquel se conservan las pinturas de Ferrer Bassa, de 1346.",
-    "Hoy es un barrio tranquilo y verde, de casas unifamiliares con jardín y edificios de alto nivel, con la avenida Pearson como emblema. Con 6.079 €/m² y 1.948 €/mes, tiene los precios más altos de Les Corts. Junto a la Diagonal están además el Palau Reial y los Pavellons Güell, de Gaudí."
+    "Il quartiere prende il nome dal monastero di clarisse che la regina Elisenda de Montcada fondò nel Trecento, con un chiostro a due piani e una chiesa gotica a navata unica; nella cappella di Sant Miquel si conservano le pitture di Ferrer Bassa, del 1346.",
+    "Oggi è un quartiere tranquillo e verde, di ville unifamiliari con giardino e palazzi di alto livello, con l'avinguda Pearson come emblema. Con 6.079 €/m² e 1.948 €/mese ha i prezzi più alti di Les Corts. Accanto alla Diagonal si trovano inoltre il Palau Reial e i Pavellons Güell, di Gaudí."
   ],
-  "housing": "Casas unifamiliares con jardín y edificios residenciales de alto nivel, de superficies amplias.",
+  "housing": "Ville unifamiliari con giardino e palazzi residenziali di alto livello, di ampia metratura.",
   "places": [
     "Monestir de Pedralbes",
     "Palau Reial de Pedralbes",

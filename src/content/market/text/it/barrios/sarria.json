@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un pueblo con historia dentro de Barcelona: su plaza, su iglesia y su calle Major, a los pies de Collserola.",
+  "translated": true,
+  "lead": "Un paese con una sua storia dentro Barcellona: la piazza, la chiesa e il carrer Major, ai piedi di Collserola.",
   "text": [
-    "Sarrià fue un pueblo independiente hasta 1921, cuando Barcelona lo anexionó pese a la oposición de sus vecinos, y sus primeros documentos escritos son del siglo X. Conserva su núcleo, con la plaça de Sarrià, que fue cementerio hasta 1850, la iglesia de Sant Vicenç, documentada desde el año 980 y reconstruida en estilo neoclásico en 1781, y la plaça del Consell de la Vila, con el antiguo ayuntamiento de 1895.",
-    "El dicho lo resume: «Sarrià: vents, torrents, torres i convents». Vivir en Sarrià es hacerlo en una zona residencial de calles tranquilas, escuelas, comercio de proximidad y casas con jardín, con acceso rápido a Collserola. Con 6.294 €/m², es el barrio con el precio de compraventa más alto del distrito."
+    "Sarrià fu un paese indipendente fino al 1921, quando Barcellona lo annesse nonostante l'opposizione dei suoi abitanti, e i suoi primi documenti scritti risalgono al X secolo. Conserva il suo nucleo, con la plaça de Sarrià, che fu cimitero fino al 1850, la chiesa di Sant Vicenç, documentata dall'anno 980 e ricostruita in stile neoclassico nel 1781, e la plaça del Consell de la Vila, con l'antico municipio del 1895.",
+    "Il detto lo riassume: «Sarrià: vents, torrents, torres i convents» (vento, torrenti, ville e conventi). Vivere a Sarrià significa abitare in una zona residenziale di strade tranquille, scuole, negozi di prossimità e ville con giardino, con un rapido accesso a Collserola. Con 6.294 €/m² è il quartiere con il prezzo di compravendita più alto del distretto."
   ],
-  "housing": "Casas con jardín y pisos en edificios de pocas plantas, en calles tranquilas.",
+  "housing": "Ville con giardino e appartamenti in edifici di pochi piani, in strade tranquille.",
   "places": [
     "Plaça de Sarrià",
     "Església de Sant Vicenç",
