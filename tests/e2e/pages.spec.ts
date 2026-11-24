@@ -12,7 +12,7 @@ const PAGES = [
   ["/es/vender", "Vende tu inmueble con criterio."],
   ["/es/provincia-de-barcelona", "Provincia de Barcelona"],
   ["/es/provincia-de-barcelona/abrera", "Abrera"],
-  ["/es/blog", "Blog y noticias"],
+  ["/es/blog", "El Blog"],
   ["/es/guia-internacional", "Comprar en Barcelona desde el extranjero"],
   ["/es/datos", "Estado de los datos"],
   ["/es/aviso-legal", "Aviso legal"],
