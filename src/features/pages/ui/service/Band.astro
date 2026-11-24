@@ -18,7 +18,7 @@ const line = itemsOf(items, "p")[0];
 {quote && (
   <p
     data-reveal
-    class="mx-auto font-heading text-[clamp(32px,4.4vw,60px)] leading-[1.08] font-black tracking-[0.03em] text-balance text-fg after:mx-auto after:mt-6.5 after:block after:h-0.5 after:w-16 after:bg-turquoise [&_em]:font-normal"
+    class="mx-auto font-heading text-[clamp(22px,2.4vw,34px)] leading-[1.28] font-black tracking-[0.03em] text-balance text-fg after:mx-auto after:mt-6.5 after:block after:h-0.5 after:w-16 after:bg-turquoise [&_em]:font-normal"
   >
     <Emphasis text={quote.text} />
   </p>
@@ -26,7 +26,7 @@ const line = itemsOf(items, "p")[0];
 {line && (
   <p
     data-reveal
-    class="mx-auto mt-5.5 max-w-[62ch] text-[15px] leading-[1.65] text-muted text-pretty"
+    class="mx-auto mt-5.5 max-w-[62ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.62] tracking-[0.28px] text-muted text-pretty"
   >
     <Inline text={line.text} locale={locale} />
   </p>

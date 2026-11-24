@@ -1,5 +1,6 @@
 ---
 import type { PageItem } from "@/features/pages/application/pages";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 import Inline from "@/shared/ui/atoms/Inline.astro";
 import type { Locale } from "@/shared/i18n/config";
 
@@ -27,7 +28,7 @@ const { locale, items, spaced = true, narrow = true, class: className } = Astro.
       if (item.kind === "h2")
         return (
           <h2 data-reveal class="mt-2.5 mb-0 text-[clamp(25px,2.8vw,38px)] first:mt-0">
-            {item.text}
+            <Emphasis text={item.text} />
           </h2>
         );
       if (item.kind === "lead")
