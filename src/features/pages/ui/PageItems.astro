@@ -142,7 +142,8 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
       return (
         <ol
           class:list={[
-            "mt-6 grid gap-x-[clamp(1.75rem,4vw,4rem)] gap-y-8",
+            "mt-6 grid gap-x-[clamp(1.75rem,4vw,4rem)]",
+            plain === undefined ? "gap-y-8" : "gap-y-8.5",
             item.items.length === 3
               ? plain === undefined
                 ? "md:grid-cols-3"
