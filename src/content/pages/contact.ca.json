@@ -249,7 +249,7 @@
             },
             {
               "name": "consent",
-              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud. (Text legal pendent d'aprovació.)",
+              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -273,7 +273,7 @@
             },
             {
               "kind": "note",
-              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy)."
             },
             {
               "kind": "submit",
@@ -285,37 +285,6 @@
             }
           ],
           "mode": "whatsapp"
-        }
-      ]
-    },
-    {
-      "id": "preguntas",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Preguntes freqüents"
-        },
-        {
-          "kind": "faq",
-          "q": "Quins són els vostres honoraris?",
-          "a": "Resposta pendent de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Quant de temps tarda una venda?",
-          "a": "Resposta pendent de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Com sol·licito una visita?",
-          "a": "Resposta pendent de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Ateneu en altres idiomes?",
-          "a": "Resposta pendent de HousySpace."
         }
       ]
     }

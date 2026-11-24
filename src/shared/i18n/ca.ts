@@ -512,22 +512,15 @@ const ca = {
       "S'ha obert el teu correu amb la sol·licitud ja escrita. Fins que no l'enviïs, no haurà arribat a HousySpace.",
   },
   notFound: {
+    kicker: "Error 404",
+    viewProperties: "Veure propietats",
     metaTitle: "Pàgina no trobada · HousySpace",
     metaDescription: "La pàgina que cerques no existeix o s'ha mogut.",
     heading: "Pàgina no trobada",
     body: "La pàgina que cerques no existeix o s'ha mogut.",
-    backHome: "Torna a l'inici",
+    backHome: "Anar a l'inici",
   },
   about: {
-    inPageNav: {
-      whoWeAre: "Qui som",
-      experience: "La nostra experiència",
-      history: "La nostra història",
-      philosophy: "La nostra filosofia",
-      services: "Serveis integrals",
-      reviews: "Ressenyes",
-      whereWeAre: "On som",
-    },
     stats: {
       sinceOpening: "Des que vam obrir HousySpace",
       volume: { value: "+35", unit: "milions €", label: "de volum intermediat en cinc anys" },
@@ -537,17 +530,11 @@ const ca = {
         "Cada operació és al mapa, districte a districte, amb el preu d'anunci i el mes en què es va tancar.",
       cta: "Veure els immobles intermediats",
     },
-    services: {
-      intro:
-        "Gràcies a ells oferim solucions integrals i t'acompanyem molt més enllà d'una operació immobiliària.",
-      previous: "Anterior",
-      next: "Següent",
-    },
     reviews: {
       heading: "Què diuen els nostres clients",
-      cta: "Veure ressenyes a la portada",
     },
     whereWeAre: {
+      title: "On som",
       addressLabel: "Adreça",
       hoursLabel: "Horari",
       howToGet: "Com arribar",
@@ -558,6 +545,7 @@ const ca = {
       openMaps: "Obrir a Google Maps",
       companyDataLabel: "Dades de l'empresa",
     },
+    companyData: { show: "Veure dades de l'empresa", hide: "Amagar dades de l'empresa" },
     sector: {
       heading: "Treballes al sector?",
       text: "Si comparteixes la nostra manera d'entendre la feina, parlem.",

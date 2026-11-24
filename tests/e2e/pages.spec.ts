@@ -170,6 +170,16 @@ test("the about page keeps its paper head, its in-page anchors and 'where we are
   await page.goto("/es/nosotros");
   await expect(page.locator("[data-page-head] img")).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  for (const id of [
+    "historia",
+    "experiencia",
+    "filosofia",
+    "como-trabajamos",
+    "milla",
+    "colaboraciones",
+  ]) {
+    await expect(page.locator(`#${id}`)).toHaveCount(1);
+  }
   await page.goto("/es/nosotros#donde-estamos");
   await expect(page.locator("#donde-estamos")).toBeInViewport();
 });
@@ -178,6 +188,7 @@ test("the contact page lists the four contact ways above the form", async ({ pag
   await page.goto("/es/contacto");
   await expect(page.locator("#formas li")).toHaveCount(4);
   await expect(page.locator("#formulario #cf")).toBeVisible();
+  await expect(page.locator("#preguntas")).toHaveCount(0);
   await page.locator("#formas a", { hasText: "Cuéntanos" }).click();
   await expect(page.locator("#formulario")).toBeInViewport();
 });

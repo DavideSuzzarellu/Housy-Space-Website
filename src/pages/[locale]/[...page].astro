@@ -22,7 +22,6 @@ import {
   getPage,
   type EditorialKey,
 } from "@/features/pages/application/pages";
-import { getServiceCards } from "@/features/pages/application/serviceCards";
 import ContactView from "@/features/agency/ui/ContactView.astro";
 import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
@@ -137,7 +136,6 @@ const longText =
           target.key === "internationalGuide"
         ? ("legal" as const)
         : undefined;
-const aboutServiceCards = isAbout ? await getServiceCards(locale) : undefined;
 
 function metaOf(): {
   title: string;
@@ -267,13 +265,8 @@ const crumbs = [
   {blogJsonLd !== undefined && <JsonLd slot="head" data={blogJsonLd} />}
   {target.view === "editorial" && target.key === "blog" && editorial !== undefined ? (
     <BlogIndex locale={locale} content={editorial.content} posts={posts} crumbs={crumbs} />
-  ) : isAbout && editorial !== undefined && aboutServiceCards !== undefined ? (
-    <AboutView
-      locale={locale}
-      content={editorial.content}
-      serviceCards={aboutServiceCards}
-      crumbs={crumbs}
-    />
+  ) : isAbout && editorial !== undefined ? (
+    <AboutView locale={locale} content={editorial.content} crumbs={crumbs} />
   ) : target.view === "editorial" && target.key === "contact" && editorial !== undefined ? (
     <ContactView locale={locale} content={editorial.content} crumbs={crumbs} />
   ) : target.view === "service" && editorial !== undefined ? (

@@ -249,7 +249,7 @@
             },
             {
               "name": "consent",
-              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -273,7 +273,7 @@
             },
             {
               "kind": "note",
-              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: to handle your request and, only if you tick the boxes, to send you commercial communications and the newsletter. Basis: your consent. Recipients: we do not share your data, except where required by law. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may also lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy). (Legal text in draft.)"
+              "text": "Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: to handle your request and, only if you tick the boxes, to send you commercial communications and the newsletter. Basis: your consent. Recipients: we do not share your data, except where required by law. Rights: access, rectification, erasure, objection, restriction, portability and withdrawal of consent at [info@housyspace.com](mailto:info@housyspace.com); you may also lodge a complaint with the AEPD. More information in the [privacy policy](route:privacy)."
             },
             {
               "kind": "submit",
@@ -285,37 +285,6 @@
             }
           ],
           "mode": "whatsapp"
-        }
-      ]
-    },
-    {
-      "id": "preguntas",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Frequently asked questions"
-        },
-        {
-          "kind": "faq",
-          "q": "What are your fees?",
-          "a": "Answer pending from HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "How long does a sale take?",
-          "a": "Answer pending from HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "How do I request a viewing?",
-          "a": "Answer pending from HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Do you work in other languages?",
-          "a": "Answer pending from HousySpace."
         }
       ]
     }

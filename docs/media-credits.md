@@ -50,7 +50,7 @@ Also 2026-11-09, from the same reference site (`assets/img/colaboradores/edac.pn
 
 ## About us page
 
-Added 2026-11-10 from the client's static reference site (`assets/img/nosotros/ill-*-1248.webp`), same AI-generated placeholder status as the service illustrations: `src/assets/nosotros/ill-*.webp` (8 transparent illustrations: experiencia, historia, filosofia, milla, diferencia, como-trabajamos, compromiso, colaboraciones). The footer already carries the "Imagen conceptual generada con IA" notice. Replace before launch.
+Added 2026-11-10 from the client's static reference site (`assets/img/nosotros/ill-*-1248.webp`), same AI-generated placeholder status as the service illustrations: `src/assets/nosotros/ill-*.webp` (4 transparent illustrations used by the 2026-11-19 reference composition: historia, diferencia (beside the philosophy text), como-trabajamos, milla; the four of the earlier version -- experiencia, filosofia, compromiso, colaboraciones -- were removed because the reference page no longer shows them). The footer already carries the "Imagen conceptual generada con IA" notice. Replace before launch.
 
 ## Blog article valuation block
 

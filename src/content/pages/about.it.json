@@ -11,19 +11,50 @@
       },
       {
         "kind": "p",
-        "text": "Un modo diverso di intendere il settore immobiliare."
+        "text": "In HousySpace crediamo che ogni decisione immobiliare meriti tempo, criterio e attenzione personale. Ti accompagniamo per trovare il modo migliore di fare il passo successivo."
       }
     ]
   },
   "sections": [
     {
       "id": "historia",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "h2",
+          "kind": "tag",
           "text": "La nostra storia"
+        },
+        {
+          "kind": "h2",
+          "text": "Un'idea molto semplice: le persone, al centro."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace è nata cinque anni fa. Chi c'è dietro lavorava già da tempo nel settore e sapeva cosa si poteva fare in modo diverso: con più vicinanza, con un'attenzione davvero personale e trattando le preoccupazioni di ogni cliente come proprie."
+        },
+        {
+          "kind": "p",
+          "text": "Per questo non abbiamo voluto essere un'agenzia immobiliare in più, ma un progetto fedele a come intendiamo questa professione."
+        },
+        {
+          "kind": "p",
+          "text": "Ci dà ancora la stessa soddisfazione condividere l'entusiasmo di chi trova la sua prima casa, aiutare una famiglia a iniziare una nuova fase o accompagnare un cliente a prendere la decisione giusta."
+        },
+        {
+          "kind": "quote",
+          "text": "Dietro ogni immobile c'è una storia, una decisione importante e persone che si fidano di noi."
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "In cifre"
         },
         {
           "kind": "list",
@@ -31,192 +62,46 @@
           "items": [
             {
               "title": "9",
-              "text": "anni di esperienza nel settore immobiliare"
+              "kicker": "anni",
+              "text": "di esperienza nel settore immobiliare"
             },
             {
               "title": "5",
-              "text": "anni da quando è nata HousySpace"
+              "kicker": "anni",
+              "text": "da quando è nata HousySpace"
             },
             {
               "title": "Oggi",
               "text": "continuiamo a crescere con chi sceglie di nuovo noi e ci raccomanda"
             }
           ]
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace è nata cinque anni fa da un'idea molto semplice: **in ogni operazione immobiliare, le persone vengono sempre al centro.**"
-        },
-        {
-          "kind": "p",
-          "text": "Lavoravamo da anni nel settore e sapevamo cosa si poteva fare in modo diverso."
-        },
-        {
-          "kind": "p",
-          "text": "Volevamo una vicinanza sincera, un'attenzione davvero personale e che ogni cliente sentisse che le sue preoccupazioni erano anche le nostre."
-        },
-        {
-          "kind": "p",
-          "text": "Così è nata HousySpace: non per essere un'agenzia immobiliare in più, ma un progetto fedele a come intendiamo questa professione, con empatia, onestà, dedizione e un impegno che va oltre la chiusura di un'operazione."
-        },
-        {
-          "kind": "quote",
-          "text": "Dietro ogni immobile c'è una storia, una decisione importante e persone che si fidano di noi."
-        },
-        {
-          "kind": "p",
-          "text": "Ci dà molta soddisfazione condividere l'entusiasmo di chi trova la sua prima casa, aiutare una famiglia a iniziare una nuova fase o accompagnare un cliente a prendere la decisione giusta."
-        },
-        {
-          "kind": "p",
-          "text": "Cinque anni dopo continuiamo a crescere con la stessa filosofia, grazie a chi sceglie di nuovo noi e ci raccomanda."
         }
       ]
     },
     {
       "id": "filosofia",
-      "surface": "dark",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "La nostra filosofia"
-        },
-        {
-          "kind": "p",
-          "text": "Consulenti immobiliari, non solo venditori."
-        },
-        {
-          "kind": "big",
-          "text": "Ti consigliamo come farlo, se ti conviene e quando è il momento migliore, e vigiliamo affinché tutto ciò che fai sia corretto e sicuro."
-        },
-        {
-          "kind": "p",
-          "text": "Che tu sia contento a ogni passo, **non solo al momento della firma**."
-        },
-        {
-          "kind": "h3",
-          "text": "Ti aiutiamo in tutto, qualunque cosa accada"
-        },
-        {
-          "kind": "list",
-          "ordered": true,
-          "items": [
-            {
-              "title": "Ti consigliamo",
-              "text": "Con onestà: come, se e quando ti conviene comprare, vendere o aspettare."
-            },
-            {
-              "title": "Studiamo l'immobile a fondo",
-              "text": "Prima di comprare o vendere, perché non ci siano sorprese alla firma."
-            },
-            {
-              "title": "Un consulente di riferimento",
-              "text": "Ti accompagna dall'inizio alla fine, dalla prima conversazione."
-            },
-            {
-              "title": "Ci anticipiamo",
-              "text": "Ogni passo verificato perché nulla si perda lungo il cammino."
-            },
-            {
-              "title": "Risolviamo ciò che capita",
-              "text": "Soluzioni, non scuse: l'uscita più ingegnosa ed efficace."
-            },
-            {
-              "title": "Una rete di professionisti",
-              "text": "Un unico punto d'ingresso: coordiniamo noi tutti gli altri."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "milla",
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Un miglio in più"
-        },
-        {
-          "kind": "p",
-          "text": "Sempre un **miglio in più**"
-        },
-        {
-          "kind": "big",
-          "text": "Tutto ciò che fa un'agenzia immobiliare, e tutto ciò che serve in più."
-        },
-        {
-          "kind": "p",
-          "text": "Molte operazioni saltano per un imprevisto che nessuno ha saputo risolvere. Noi ci anticipiamo e, quando si presenta, lo risolviamo nel modo più ingegnoso ed efficace."
-        },
-        {
-          "kind": "p",
-          "text": "Anche se non dipende da noi o non possiamo risolverlo direttamente, la nostra risposta è sempre la stessa:"
-        },
-        {
-          "kind": "quote",
-          "text": "Non preoccuparti, ci penso io."
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "Anticipiamo gli imprevisti."
-            },
-            {
-              "title": "",
-              "text": "Li risolviamo quando si presentano."
-            },
-            {
-              "title": "",
-              "text": "Sei tranquillo e contento a ogni passo."
-            }
-          ]
-        },
-        {
-          "kind": "p",
-          "text": "**Faremo tutto il necessario nella tua operazione perché tu sia soddisfatto.**"
-        }
-      ]
-    },
-    {
-      "id": "diferencia",
       "surface": "stone",
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "La nostra filosofia"
+        },
+        {
           "kind": "h2",
-          "text": "Cosa ci distingue"
+          "text": "Ogni proprietà è diversa. Ogni persona, anche."
         },
         {
           "kind": "p",
-          "text": "Non cerchiamo di gestire il maggior numero possibile di immobili."
+          "text": "Non crediamo che tutte le operazioni immobiliari vadano affrontate allo stesso modo. Prima di proporre una strategia ascoltiamo, studiamo le circostanze di ogni immobile e valutiamo le diverse possibilità."
         },
         {
-          "kind": "big",
-          "text": "Preferiamo dedicare a ogni cliente il tempo, l'attenzione e l'impegno che merita, con un trattamento **vicino, trasparente e davvero personale**."
+          "kind": "p",
+          "text": "Il nostro lavoro non consiste soltanto nel gestire un'operazione, ma nel mettere a disposizione criterio affinché tu decida se fare il passo, quando e come, con conoscenza, trasparenza e sicurezza."
         },
         {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Tempo",
-              "text": "01"
-            },
-            {
-              "title": "Attenzione",
-              "text": "02"
-            },
-            {
-              "title": "Impegno",
-              "text": "03"
-            }
-          ]
+          "kind": "quote",
+          "text": "Che tu sia contento a ogni passo, non solo al momento della firma."
         }
       ]
     },
@@ -226,62 +111,64 @@
       "band": false,
       "items": [
         {
-          "kind": "h2",
+          "kind": "tag",
           "text": "Come lavoriamo"
         },
         {
-          "kind": "p",
-          "text": "Siamo appassionati del nostro lavoro."
+          "kind": "h2",
+          "text": "Quattro passi e lo stesso consulente dall'inizio alla fine."
         },
         {
-          "kind": "h3",
-          "text": "La strada percorsa"
-        },
-        {
-          "kind": "p",
-          "text": "Per noi il successo è semplice: **fare bene il nostro lavoro** e far sì che i nostri clienti siano soddisfatti della strada percorsa."
-        },
-        {
-          "kind": "h3",
-          "text": "Dall'inizio alla fine"
-        },
-        {
-          "kind": "p",
-          "text": "Ci impegniamo in ogni operazione, cerchiamo una soluzione quando sorgono difficoltà e stiamo accanto al cliente dal primo momento fino alla fine del processo."
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Ascoltiamo",
+              "text": "Di cosa hai bisogno, che tempi hai e in che situazione si trova l'immobile.",
+              "kicker": "01"
+            },
+            {
+              "title": "Studiamo",
+              "text": "Esaminiamo la documentazione e analizziamo il mercato.",
+              "kicker": "02"
+            },
+            {
+              "title": "Definiamo la strategia",
+              "text": "Adatta a ogni situazione e spiegata prima di iniziare.",
+              "kicker": "03"
+            },
+            {
+              "title": "Coordiniamo",
+              "text": "Lo stesso consulente segue le pratiche, ti tiene informato e lavora con i professionisti specializzati che servono.",
+              "kicker": "04"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "compromiso",
-      "surface": "stone",
+      "id": "milla",
+      "surface": "dark",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Il nostro impegno"
+          "text": "*Sempre un* miglio in più"
         },
         {
           "kind": "p",
-          "text": "La nostra più grande soddisfazione è sapere che chi ha riposto fiducia in noi **lo rifarebbe**."
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Parla con HousySpace",
-              "href": "route:contact",
-              "solid": true
-            },
-            {
-              "label": "Vedi i servizi",
-              "href": "route:home#servicios",
-              "solid": false
-            }
-          ]
+          "text": "In un'operazione immobiliare possono sorgere situazioni che nessuno aveva previsto: documentazione mancante, difficoltà di finanziamento, questioni tecniche o pratiche che richiedono l'intervento di altri professionisti."
         },
         {
           "kind": "p",
-          "text": "HousySpace. Property Solutions."
+          "text": "Ci anticipiamo quando è possibile e, quando compare un imprevisto, ci impegniamo a cercare una soluzione e a coordinare chi può aiutare a risolverlo. Per noi, fare un miglio in più significa non disinteressarsi di una difficoltà solo perché non fa parte della consueta intermediazione."
+        },
+        {
+          "kind": "note",
+          "text": "È ciò che vogliamo dire con:"
+        },
+        {
+          "kind": "big",
+          "text": "Non preoccuparti, ci penso io."
         }
       ]
     },
@@ -291,43 +178,84 @@
       "band": false,
       "items": [
         {
+          "kind": "tag",
+          "text": "Collaborazioni professionali"
+        },
+        {
           "kind": "h2",
-          "text": "Collaborazioni con professionisti del settore"
+          "text": "Una squadra di fiducia per ogni esigenza."
         },
         {
           "kind": "p",
-          "text": "Circondarci dei migliori fa parte della nostra filosofia."
-        },
-        {
-          "kind": "big",
-          "text": "Negli anni abbiamo formato una rete di professionisti specializzati in consulenza legale, architettura, interior design, ristrutturazioni e altri ambiti legati alla casa e al patrimonio."
+          "text": "Per le esigenze legali, fiscali, finanziarie e tecniche di un'operazione lavoriamo con professionisti specializzati. Noi coordiniamo la consulenza e i suoi tempi con l'operazione; il lavoro specializzato lo svolge ciascun professionista."
         },
         {
           "kind": "p",
-          "text": "Ogni collaborazione nasce dall'esperienza, dalla fiducia e da un modo condiviso di intendere il lavoro: **offrire un servizio vicino, rigoroso e impegnato con ogni cliente.**"
+          "text": "Se ti consigliamo qualcuno è perché lo conosciamo bene: da anni ci circondiamo di professionisti che lavorano bene quanto noi o meglio e di cui ci fidiamo pienamente."
         },
         {
-          "kind": "p",
-          "text": "Il nostro criterio è semplice: **collaboriamo con professionisti di cui noi stessi ci fideremmo.**"
-        },
-        {
-          "kind": "p",
-          "text": "Per noi, dire «Non preoccuparti, ci penso io» significa avere le persone, le conoscenze e la volontà necessarie per renderlo reale."
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Studio legale a Barcellona: successioni, imposte sul reddito, diritto civile, del lavoro e d'impresa.",
+              "kicker": "Studio legale e fiscale",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Vedi il servizio"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Consulenza fiscale, contabile e del lavoro a Barcellona: imposte, dichiarazioni e pratiche con il fisco.",
+              "kicker": "Consulenza fiscale",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Vedi il servizio"
+            },
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Studio di architettura e interior design a Barcellona, con ristrutturazioni integrali di abitazioni e appartamenti dell'Eixample.",
+              "kicker": "Architettura e interior design",
+              "href": "service:reformas-obras",
+              "cta": "Vedi il servizio"
+            },
+            {
+              "title": "Broker finanziario",
+              "text": "Studia la fattibilità di ogni operazione con finanziamento e confronta le condizioni di diversi istituti.",
+              "kicker": "Finanziamento",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Vedi il servizio"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "equipo",
-      "surface": "paper",
+      "id": "cierre",
+      "surface": "stone",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Team"
+          "text": "Le buone decisioni iniziano con una conversazione."
         },
         {
-          "kind": "pending",
-          "text": "Nome, ruolo, fotografia, breve presentazione, lingue e indirizzo e-mail diretto di ogni persona: in attesa di ricevere. Non verranno pubblicati persone o fotografie che non siano reali."
+          "kind": "p",
+          "text": "Se stai valutando di vendere, comprare o affittare, raccontaci il tuo caso. Saremo felici di ascoltarti."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Parliamone",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Vedi i servizi",
+              "href": "route:services",
+              "solid": false
+            }
+          ]
         }
       ]
     },
@@ -337,85 +265,12 @@
       "band": false,
       "items": [
         {
-          "kind": "h2",
-          "text": "Cosa dicono i nostri clienti"
+          "kind": "tag",
+          "text": "Opinioni"
         },
         {
           "kind": "p",
-          "text": "[Vedi le recensioni in home page](route:home#resenas)"
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/facade-1400.jpg"
-        },
-        {
-          "kind": "big",
-          "text": "Perché la nostra più grande soddisfazione è sapere che chi ha riposto fiducia in noi **lo farebbe di nuovo**."
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace. Property Solutions."
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Parla con HousySpace",
-              "href": "route:contact",
-              "solid": true
-            },
-            {
-              "label": "Vedi i servizi",
-              "href": "route:home#servicios",
-              "solid": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "h3",
-          "text": "Dati aziendali"
-        },
-        {
-          "kind": "p",
-          "text": "HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro degli Agenti Immobiliari della Catalogna: AICAT nº 14032 Telefono [613 084 804](tel:+34613084804) www.housyspace.com"
-        },
-        {
-          "kind": "note",
-          "text": "In attesa di conferma:"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "Sede legale"
-            },
-            {
-              "title": "",
-              "text": "Registro delle Imprese"
-            },
-            {
-              "title": "",
-              "text": "Indirizzi e-mail di contatto e privacy"
-            },
-            {
-              "title": "",
-              "text": "Orari e indirizzo dell'ufficio"
-            }
-          ]
+          "text": "La nostra più grande soddisfazione è sapere che chi ha riposto fiducia in noi lo rifarebbe."
         }
       ]
     }

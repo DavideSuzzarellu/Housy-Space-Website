@@ -8,6 +8,7 @@ const CONTENT_ROUTES = {
   contact: "contact",
   valuation: "valuation",
   sell: "sell",
+  services: "services",
   about: "about",
   privacy: "privacy",
   legal: "legalNotice",

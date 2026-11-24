@@ -249,7 +249,7 @@
             },
             {
               "name": "consent",
-              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -273,7 +273,7 @@
             },
             {
               "kind": "note",
-              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy)."
             },
             {
               "kind": "submit",
@@ -285,37 +285,6 @@
             }
           ],
           "mode": "whatsapp"
-        }
-      ]
-    },
-    {
-      "id": "preguntas",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Preguntas frecuentes"
-        },
-        {
-          "kind": "faq",
-          "q": "¿Cuáles son vuestros honorarios?",
-          "a": "Respuesta pendiente de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "¿Cuánto tarda una venta?",
-          "a": "Respuesta pendiente de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "¿Cómo solicito una visita?",
-          "a": "Respuesta pendiente de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "¿Atendéis en otros idiomas?",
-          "a": "Respuesta pendiente de HousySpace."
         }
       ]
     }

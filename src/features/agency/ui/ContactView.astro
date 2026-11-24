@@ -11,16 +11,18 @@ import {
   SOCIAL_LINKS,
 } from "@/features/agency/domain/contact";
 import { COMPANY } from "@/features/agency/domain/company";
+import SectionLead from "@/features/agency/ui/SectionLead.astro";
 import WhereWeAre from "@/features/agency/ui/WhereWeAre.astro";
 import { getDictionary } from "@/shared/i18n";
 import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
 import SocialLinks from "@/shared/ui/molecules/SocialLinks.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import PaperHero from "@/shared/ui/organisms/PaperHero.astro";
 
 /**
- * Contact page of the reference: oversize head, "choose how to talk to us" cards, the form
- * beside its intro, and the FAQ. The copy and links come from the editorial file
+ * Contact page of the reference: oversize head, "choose how to talk to us" cards, "where we are",
+ * and the form beside its intro. The copy and links come from the editorial file
  * (`contact.{locale}.json`); the form itself is the shared LeadForm through PageItems.
  */
 interface Props {
@@ -31,6 +33,8 @@ interface Props {
 
 const { locale, content, crumbs } = Astro.props;
 const t = getDictionary(locale);
+// The reference trail ends with the page name ("Contacto"), not with the big heading.
+const trail = [...crumbs.slice(0, -1), { label: t.nav.contact }];
 
 const kicker = content.head.items.find((item) => item.kind === "tag")?.text;
 const subtitle = content.head.items.find((item) => item.kind === "lead")?.text;
@@ -42,18 +46,17 @@ const pick = <K extends PageItem["kind"]>(items: readonly PageItem[], kind: K) =
 const formas = section("formas")?.items ?? [];
 const formulario = section("formulario")?.items ?? [];
 const donde = section("donde-estamos");
-const preguntas = section("preguntas");
 
 // Each way of contact is a `card` item: h3 title, p description, buttons[0] = its action.
 const cards = formas.filter(
   (item): item is Extract<PageItem, { kind: "card" }> => item.kind === "card",
 );
 const ICONS: Record<string, string> = {
-  tel: "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z",
-  mailto: "M3 6h18v12H3zM3 7l9 6 9-6",
-  chat: "M4 5h16v11H9l-5 4z",
+  tel: "M5 4h3.2l1.6 4.2-2 1.4a11 11 0 0 0 5.6 5.6l1.4-2L19 14.8V18a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2Z",
+  mailto: "M3 5h18v14H3zM3.5 6.5l8.5 6.5 8.5-6.5",
+  chat: "M4 20l1.3-4.2A8 8 0 1 1 8.3 18.8L4 20ZM9.2 8.9c.3 2.2 2.7 4.6 5 5l1.2-1.2-1.9-1-.9.7a4 4 0 0 1-1.6-1.6l.7-.9-1-1.9-1.5 1Z",
   form: "M4 20h4L19 9l-4-4L4 16z",
-  pin: "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
+  pin: "M12 21s-6.5-5.7-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.3-6.5 11-6.5 11ZM12 12.4a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z",
 };
 const kindOf = (href: string) =>
   href.startsWith("tel:")
@@ -74,6 +77,27 @@ const valueOf = (kind: string): string[] =>
       : kind === "pin"
         ? [COMPANY.address.street, `${COMPANY.address.postalCode} ${COMPANY.address.city}`]
         : [];
+
+/** The reference form look (`.ct6-fr .vf`), applied here so the other LeadForm pages keep theirs. */
+const FORM_SKIN = [
+  "[&_form]:mt-0 [&_form]:max-w-none",
+  "[&_label]:font-bold [&_label]:tracking-[0.12em] [&_label:has(input[type=checkbox])]:font-normal [&_label:has(input[type=checkbox])]:tracking-normal",
+  "[&_label:has(input[type=checkbox])]:border-line [&_label:has(input[type=checkbox])]:bg-bg-soft [&_label:has(input[type=checkbox])]:text-[0.6875rem]",
+  "[&_:is(input,select,textarea):not([type=checkbox])]:min-h-13 [&_:is(input,select,textarea):not([type=checkbox])]:bg-white [&_:is(input,select,textarea):not([type=checkbox])]:p-3 [&_:is(input,select,textarea):not([type=checkbox])]:text-[0.8125rem] [&_:is(input,select,textarea):not([type=checkbox])]:tracking-normal [&_:is(input,select,textarea):not([type=checkbox])]:normal-case",
+  "[&_textarea:not([type=checkbox])]:min-h-31 [&_:is(input,select,textarea):not([type=checkbox]):focus]:border-accent-2 [&_:is(input,select,textarea):not([type=checkbox]):focus]:shadow-[0_0_0_3px_rgb(33_206_197/0.28)] [&_:is(input,select,textarea):not([type=checkbox]):focus]:outline-0",
+  "[&_form>p]:border-l-2 [&_form>p]:border-accent-2 [&_form>p]:py-1 [&_form>p]:pl-3 [&_form>p]:text-[0.6875rem] [&_form>p]:normal-case [&_button[type=submit]]:py-5!",
+].join(" ");
+const SEC = "py-[clamp(2.375rem,6.2vh,3.625rem)]";
+const formasLead = pick(formas, "lead")?.text;
+const formasTitle = pick(formas, "h2")?.text ?? "";
+const formasNote = pick(formas, "p");
+const formTitle = pick(formulario, "h2")?.text ?? "";
+const formLead = pick(formulario, "lead")?.text;
+const formBullets = pick(formulario, "list");
+const formAlt = pick(formulario, "p");
+const formAltButtons = pick(formulario, "buttons");
+const dondeTitle = donde === undefined ? undefined : pick(donde.items, "h2")?.text;
+const dondeLead = donde === undefined ? undefined : pick(donde.items, "lead")?.text;
 ---
 
 <div data-contact-view>
@@ -82,19 +106,17 @@ const valueOf = (kind: string): string[] =>
     title={content.head.heading}
     kicker={kicker}
     subtitle={subtitle}
-    crumbs={crumbs}
+    crumbs={trail}
     size="xl"
   />
 
-  <section id="formas" class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
+  <section id="formas" class:list={["surface-stone bg-canvas", SEC]}>
     <Container>
-      <div class="mb-[clamp(1.25rem,2.6vw,2.125rem)] max-w-[64ch]">
-        <PageItems
-          locale={locale}
-          units={groupItems(formas.filter((item) => item.kind === "h2" || item.kind === "lead"))}
-        />
-      </div>
-      <ul class="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4" role="list">
+      <SectionLead title={formasTitle} lead={formasLead} />
+      <ul
+        class="grid gap-2.5 min-[621px]:grid-cols-2 min-[621px]:gap-3.5 min-[1061px]:grid-cols-4"
+        role="list"
+      >
         {cards.map((card) => {
           const title = pick(card.items, "h3")?.text;
           const text = pick(card.items, "p")?.text;
@@ -102,8 +124,11 @@ const valueOf = (kind: string): string[] =>
           if (action === undefined) return null;
           const kind = kindOf(action.href);
           return (
-            <li class="flex min-w-0 flex-col gap-2.5 border border-line-strong bg-canvas p-[clamp(1.25rem,2vw,1.75rem)]">
-              <span aria-hidden="true" class="grid size-12 place-items-center bg-card text-accent">
+            <li class="grid min-w-0 grid-cols-[3rem_minmax(0,1fr)] content-start gap-x-4 gap-y-1.5 border border-line-strong bg-card p-4.5 min-[621px]:flex min-[621px]:flex-col min-[621px]:gap-2.5 min-[621px]:p-[clamp(1.25rem,2vw,1.75rem)]">
+              <span
+                aria-hidden="true"
+                class="row-span-4 grid size-12 flex-none place-items-center bg-bg-deep text-accent min-[621px]:row-auto"
+              >
                 <svg
                   viewBox="0 0 24 24"
                   class="size-[26px]"
@@ -116,20 +141,19 @@ const valueOf = (kind: string): string[] =>
                   <path d={ICONS[kind]} />
                 </svg>
               </span>
-              <h3 class="mt-1.5 text-[clamp(0.9375rem,1.2vw,1.0625rem)] leading-[1.3] tracking-[0.06em]">
-                {title}
-              </h3>
-              <p class="text-[0.8125rem] text-muted">{text}</p>
-              <p class="text-[0.8125rem] font-bold tracking-[0.05em] [overflow-wrap:anywhere]">
+              <h3 class="text-[clamp(0.9375rem,1.2vw,1.0625rem)] leading-[1.3]">{title}</h3>
+              <p class="text-xs leading-[1.65] tracking-[0.05em] text-muted normal-case">{text}</p>
+              <p class="text-[0.8125rem] font-bold tracking-[0.05em] [overflow-wrap:anywhere] min-[621px]:mt-0.5 min-[621px]:min-h-[3em]">
                 {valueOf(kind).map((line) => (
                   <span class="block">{line}</span>
                 ))}
               </p>
-              <div class="mt-auto pt-2">
+              <div class="col-start-2 mt-2.5 min-[621px]:mt-auto">
                 <Button
                   href={resolveContentHref(action.href, locale)}
                   variant={action.solid ? "solid" : "outline"}
                   external={action.href.startsWith("https://")}
+                  class="w-full leading-[1.2] py-[0.9375rem]!"
                 >
                   {action.label}
                 </Button>
@@ -138,10 +162,14 @@ const valueOf = (kind: string): string[] =>
           );
         })}
       </ul>
-      <div class="mt-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
-        <PageItems locale={locale} units={groupItems(formas.filter((item) => item.kind === "p"))} />
-        <div class="flex items-center gap-4">
-          <span class="text-[0.6875rem] font-bold tracking-[0.16em] text-accent">
+      <div class="mt-[clamp(1.125rem,2.4vw,1.75rem)] flex flex-wrap items-center justify-between gap-x-7 gap-y-3.5 border-t border-line-strong pt-[clamp(1rem,2vw,1.375rem)] max-[560px]:flex-col max-[560px]:items-start">
+        {formasNote?.kind === "p" && (
+          <p class="text-xs leading-[1.7] font-medium tracking-[0.06em] text-fg-2 [&_a]:text-fg [&_a]:decoration-turquoise [&_a]:decoration-2 [&_a]:underline-offset-4 [&_a:hover]:text-accent">
+            <Inline text={formasNote.text} locale={locale} />
+          </p>
+        )}
+        <div class="flex items-center gap-3.5">
+          <span class="text-[0.6875rem] leading-none font-bold tracking-[0.2em] text-muted">
             {t.contact.followUs}
           </span>
           <SocialLinks
@@ -154,41 +182,60 @@ const valueOf = (kind: string): string[] =>
     </Container>
   </section>
 
-  {donde !== undefined && (
-    <section id="donde-estamos" class="bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
+  {dondeTitle !== undefined && (
+    <section id="donde-estamos" class:list={["bg-canvas", SEC]}>
       <Container>
-        <div class="mb-[clamp(1.25rem,2.6vw,2.125rem)] max-w-[64ch]">
-          <PageItems locale={locale} units={groupItems(donde.items)} />
-        </div>
+        <SectionLead title={dondeTitle} lead={dondeLead} tight />
         <WhereWeAre locale={locale} />
       </Container>
     </section>
   )}
 
-  <section id="formulario" class="bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
-    <Container>
-      <div class="grid items-start gap-[clamp(1.5rem,4vw,4rem)] lg:grid-cols-[4fr_8fr]">
-        <div class="lg:sticky lg:top-32">
-          <PageItems
-            locale={locale}
-            units={groupItems(formulario.filter((item) => item.kind !== "form"))}
-          />
-        </div>
-        <div class="min-w-0 border border-line-strong bg-white p-[clamp(1.25rem,3vw,2.5rem)]">
-          <PageItems
-            locale={locale}
-            units={groupItems(formulario.filter((item) => item.kind === "form"))}
-          />
-        </div>
+  <section id="formulario" class:list={["surface-stone bg-canvas", SEC]}>
+    <Container class="grid items-start gap-[clamp(1.5rem,4vw,4rem)] min-[960px]:grid-cols-[4fr_8fr]">
+      <div class="min-[960px]:sticky min-[960px]:top-30">
+        <SectionLead title={formTitle} lead={formLead} class="mb-0 max-w-[40ch]" />
+        {formBullets?.kind === "list" && (
+          <ul class="mt-5.5 grid gap-3" role="list">
+            {formBullets.items.map((entry) => (
+              <li class="flex gap-3 text-xs leading-[1.65] font-medium tracking-[0.06em] text-fg-2">
+                <span aria-hidden="true" class="mt-1.5 size-2 flex-none bg-turquoise"></span>
+                <span>{entry.text}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {formAlt?.kind === "p" && (
+          <div class="mt-6.5 grid gap-3 border-t border-line-strong pt-5">
+            <p class="text-[0.6875rem] leading-[1.4] font-bold tracking-[0.2em] text-accent">
+              {formAlt.text}
+            </p>
+            <div class="flex flex-wrap gap-2.5">
+              {formAltButtons?.items.map((action) => (
+                <Button
+                  href={resolveContentHref(action.href, locale)}
+                  variant="outline"
+                  external={action.href.startsWith("https://")}
+                  class="leading-[1.2] py-[0.9375rem]!"
+                >
+                  {action.label}
+                </Button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+      <div
+        class:list={[
+          "min-w-0 border border-line-strong bg-card p-[clamp(1.25rem,3vw,2.5rem)]",
+          FORM_SKIN,
+        ]}
+      >
+        <PageItems
+          locale={locale}
+          units={groupItems(formulario.filter((item) => item.kind === "form"))}
+        />
       </div>
     </Container>
   </section>
-
-  {preguntas !== undefined && (
-    <section id={preguntas.id} class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
-      <Container>
-        <PageItems locale={locale} units={groupItems(preguntas.items)} />
-      </Container>
-    </section>
-  )}
 </div>

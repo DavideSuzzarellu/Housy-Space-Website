@@ -511,22 +511,15 @@ const en = {
       "Your email app has opened with your request written. It will not reach HousySpace until you send it.",
   },
   notFound: {
+    kicker: "Error 404",
+    viewProperties: "View properties",
     metaTitle: "Page not found · HousySpace",
     metaDescription: "The page you are looking for does not exist or has moved.",
     heading: "Page not found",
     body: "The page you are looking for does not exist or has moved.",
-    backHome: "Back to home",
+    backHome: "Go to home",
   },
   about: {
-    inPageNav: {
-      whoWeAre: "Who we are",
-      experience: "Our experience",
-      history: "Our story",
-      philosophy: "Our philosophy",
-      services: "Comprehensive services",
-      reviews: "Reviews",
-      whereWeAre: "Where we are",
-    },
     stats: {
       sinceOpening: "Since opening HousySpace",
       volume: { value: "+35", unit: "million €", label: "in brokered volume over five years" },
@@ -540,17 +533,11 @@ const en = {
         "Every transaction is on the map, district by district, with the listing price and the month it was completed.",
       cta: "See the properties brokered",
     },
-    services: {
-      intro:
-        "Thanks to them, we offer comprehensive solutions and accompany you far beyond a property transaction.",
-      previous: "Previous",
-      next: "Next",
-    },
     reviews: {
       heading: "What our clients say",
-      cta: "Read reviews on the home page",
     },
     whereWeAre: {
+      title: "Where we are",
       addressLabel: "Address",
       hoursLabel: "Hours",
       howToGet: "How to get here",
@@ -561,6 +548,7 @@ const en = {
       openMaps: "Open in Google Maps",
       companyDataLabel: "Company information",
     },
+    companyData: { show: "View company details", hide: "Hide company details" },
     sector: {
       heading: "Do you work in the sector?",
       text: "If you share our approach to the job, let's talk.",
