@@ -19,8 +19,6 @@ export interface AccordionPanel {
   /** `illustration` only: closed-bar colour (alternating) and the light tint of the open card. */
   readonly tone?: "a" | "b";
   readonly tint?: string;
-  /** `illustration` only: accessible name of the panel link ("View service: ..."). */
-  readonly linkLabel?: string;
 }
 
 interface Props {
@@ -97,7 +95,7 @@ const SIDE = 3;
               aria-hidden="true"
               class="absolute inset-0 flex flex-col items-center justify-between py-6 transition-opacity delay-200 duration-300 group-data-[active=true]/panel:opacity-0 group-data-[active=true]/panel:delay-0"
             >
-              <span class="text-[0.6875rem] font-bold text-taupe">{panel.number}</span>
+              <span class="text-[0.6875rem] font-bold text-taupe-on-dark">{panel.number}</span>
               <span class="max-h-[calc(100%-2.5rem)] rotate-180 overflow-hidden text-[0.8125rem] font-bold whitespace-nowrap [writing-mode:vertical-rl] md:text-base">
                 {panel.title}
               </span>
@@ -105,7 +103,7 @@ const SIDE = 3;
             <span class="absolute bottom-0 left-0 w-[calc(100vw-7rem)] translate-y-5 p-5 pr-16 opacity-0 transition-[translate,opacity] duration-500 ease-brand group-data-[active=true]/panel:translate-y-0 group-data-[active=true]/panel:opacity-100 group-data-[active=true]/panel:delay-250 md:w-[min(38rem,62vw)] md:p-8 md:pr-22">
               <span
                 aria-hidden="true"
-                class="mb-2 flex items-center gap-2.5 text-[0.6875rem] font-bold tracking-[0.18em] text-taupe"
+                class="mb-2 flex items-center gap-2.5 text-[0.6875rem] font-bold tracking-[0.18em] text-taupe-on-dark"
               >
                 {panel.number}
                 <span class="h-px w-6 bg-taupe"></span>
@@ -158,9 +156,11 @@ const SIDE = 3;
         >
           <a
             href={panel.href}
-            aria-label={panel.linkLabel}
             class="flex size-full flex-col text-dark no-underline focus-visible:-outline-offset-4"
           >
+            {/* The visible title is hidden while the panel is closed: this is the link's name. A
+                name from content (not aria-label) keeps WCAG 2.5.3 satisfied by construction. */}
+            <span class="sr-only">{panel.title}</span>
             <span
               aria-hidden="true"
               class="absolute inset-x-5 top-5 z-1 h-0.5 overflow-hidden rounded-full bg-dark/14 opacity-0 group-data-[active=true]/panel:opacity-100 motion-reduce:hidden min-[769px]:inset-x-6"
@@ -171,7 +171,7 @@ const SIDE = 3;
               aria-hidden="true"
               class="absolute inset-0 flex flex-col items-center justify-between py-5 text-[#f5f2eb] transition-opacity delay-200 duration-300 group-data-[active=true]/panel:opacity-0 group-data-[active=true]/panel:delay-0 min-[769px]:py-6"
             >
-              <span class="text-[0.6875rem] font-bold text-taupe">{panel.number}</span>
+              <span class="text-[0.6875rem] font-bold text-taupe-on-dark">{panel.number}</span>
               <span class="rail-vertical max-h-[calc(100%-2.5rem)] rotate-180 overflow-hidden font-heading text-base font-bold tracking-[0.01em] uppercase [writing-mode:vertical-rl] max-[380px]:text-[0.9375rem] min-[769px]:max-h-[calc(100%-4.5rem)] min-[769px]:max-w-[calc(100%-1.5rem)] min-[769px]:leading-[1.18]">
                 {panel.title}
               </span>

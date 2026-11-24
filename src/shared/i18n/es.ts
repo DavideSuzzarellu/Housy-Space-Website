@@ -323,7 +323,6 @@ const es = {
       pause: "Pausar el carrusel",
       play: "Reanudar el carrusel",
       carousel: "carrusel",
-      enterLabel: "Ver servicio:",
       previous: "Servicio anterior",
       next: "Servicio siguiente",
       tags: {

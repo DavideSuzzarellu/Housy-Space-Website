@@ -19,6 +19,8 @@
   --color-ink: #0b1214;
   --color-stone: #ebe5dc;
   --color-taupe: #a99f92;
+  /* Taupe for small text on dark photo/illustration panels (4.9:1 on #2a4745; plain taupe is 3.9:1). */
+  --color-taupe-on-dark: #bdb4a8;
   --color-turquoise: #21cec5;
   --color-turquoise-deep: #058c93;
   --color-dark: #162b2a;
@@ -46,8 +48,9 @@
   --color-line-strong: rgb(23 43 43 / 0.2);
   --color-fg: #172b2b;
   --color-fg-2: #172b2b;
-  --color-muted: #67716f;
-  --color-accent: #08777b;
+  /* AA (4.5:1) on paper, cards and stone: the design system values (#67716f, #08777b) give 4.0 to 4.3:1 on stone. */
+  --color-muted: #5f6967;
+  --color-accent: #066f73;
   /* Darker than the design system's #857a6c (3.4 to 4.1:1): AA on paper, stone and cards (§8). */
   --color-taupe-tx: #6b6155;
   /* Reference `--mid`: lead text of the service page heads. */
@@ -62,8 +65,8 @@
   --color-ch-ax: #5a6462;
 
   /* States: always with a word or icon, never colour alone. */
-  --color-ok: #0a7a73;
-  --color-ko: #9a6a3a;
+  --color-ok: #08706a;
+  --color-ko: #8a5c2e;
   --color-warn: #9a5b00;
   --color-err: #a8322a;
 
@@ -144,7 +147,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    *,
+    /* The header's bar follows the scroll (scroll-driven animation); a forced duration would
+       flatten it and leave the bar transparent over the page. */
+    *:not([data-header]),
     *::before,
     *::after {
       animation-duration: 0.01ms !important;

@@ -317,7 +317,6 @@ const ca = {
       pause: "Pausa el carrusel",
       play: "Reprèn el carrusel",
       carousel: "carrusel",
-      enterLabel: "Veure el servei:",
       previous: "Servei anterior",
       next: "Servei següent",
       tags: {
