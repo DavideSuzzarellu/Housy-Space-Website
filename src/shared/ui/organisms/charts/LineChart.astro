@@ -17,9 +17,23 @@ interface Props {
   source: string;
   sourceUrl?: string | undefined;
   locale: string;
+  /** `card`: paper box on a stone block; `rule`: open figure under a 1 px rule (reference index). */
+  variant?: "card" | "rule";
+  /** Word before the source line ("Source:"), shown when given. */
+  sourcePrefix?: string | undefined;
 }
 
-const { title, unit, series, provisionalLabel, source, sourceUrl, locale } = Astro.props;
+const {
+  title,
+  unit,
+  series,
+  provisionalLabel,
+  source,
+  sourceUrl,
+  locale,
+  variant = "card",
+  sourcePrefix,
+} = Astro.props;
 
 const W = 500;
 const H = 260;
@@ -65,8 +79,22 @@ const latest = series
   .join(", ");
 ---
 
-<figure class="m-0 border border-line bg-card px-3.5 pt-3.5 pb-2.5">
-  <figcaption class="mb-1.5 text-[0.6875rem] font-medium tracking-[0.04em]">{title}</figcaption>
+<figure
+  class:list={[
+    "m-0",
+    variant === "card"
+      ? "border border-line bg-card px-3.5 pt-3.5 pb-2.5"
+      : "border-t border-line-strong pt-[18px]",
+  ]}
+>
+  <figcaption
+    class:list={[
+      "font-medium tracking-[0.04em]",
+      variant === "card" ? "mb-1.5 text-[0.6875rem]" : "mb-2.5 text-xs",
+    ]}
+  >
+    {title}
+  </figcaption>
   <svg
     viewBox={`0 0 ${W} ${H}`}
     role="img"
@@ -131,6 +159,7 @@ const latest = series
     {hasProvisional && <li>{provisionalLabel}</li>}
   </ul>
   <p class="mt-1.5 text-[0.625rem] text-muted">
+    {sourcePrefix !== undefined && `${sourcePrefix} `}
     {sourceUrl === undefined ? (
       source
     ) : (
