@@ -287,37 +287,6 @@
           "mode": "whatsapp"
         }
       ]
-    },
-    {
-      "id": "preguntas",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Frequently asked questions"
-        },
-        {
-          "kind": "faq",
-          "q": "What are your fees?",
-          "a": "Answer pending from HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "How long does a sale take?",
-          "a": "Answer pending from HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "How do I request a viewing?",
-          "a": "Answer pending from HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Do you work in other languages?",
-          "a": "Answer pending from HousySpace."
-        }
-      ]
     }
   ]
 }

@@ -287,37 +287,6 @@
           "mode": "whatsapp"
         }
       ]
-    },
-    {
-      "id": "preguntas",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Preguntes freqüents"
-        },
-        {
-          "kind": "faq",
-          "q": "Quins són els vostres honoraris?",
-          "a": "Resposta pendent de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Quant de temps tarda una venda?",
-          "a": "Resposta pendent de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Com sol·licito una visita?",
-          "a": "Resposta pendent de HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Ateneu en altres idiomes?",
-          "a": "Resposta pendent de HousySpace."
-        }
-      ]
     }
   ]
 }

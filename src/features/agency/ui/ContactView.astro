@@ -20,7 +20,7 @@ import PaperHero from "@/shared/ui/organisms/PaperHero.astro";
 
 /**
  * Contact page of the reference: oversize head, "choose how to talk to us" cards, the form
- * beside its intro, and the FAQ. The copy and links come from the editorial file
+ * beside its intro. The copy and links come from the editorial file
  * (`contact.{locale}.json`); the form itself is the shared LeadForm through PageItems.
  */
 interface Props {
@@ -42,7 +42,6 @@ const pick = <K extends PageItem["kind"]>(items: readonly PageItem[], kind: K) =
 const formas = section("formas")?.items ?? [];
 const formulario = section("formulario")?.items ?? [];
 const donde = section("donde-estamos");
-const preguntas = section("preguntas");
 
 // Each way of contact is a `card` item: h3 title, p description, buttons[0] = its action.
 const cards = formas.filter(
@@ -183,12 +182,4 @@ const valueOf = (kind: string): string[] =>
       </div>
     </Container>
   </section>
-
-  {preguntas !== undefined && (
-    <section id={preguntas.id} class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.75rem)]">
-      <Container>
-        <PageItems locale={locale} units={groupItems(preguntas.items)} />
-      </Container>
-    </section>
-  )}
 </div>

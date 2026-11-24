@@ -287,37 +287,6 @@
           "mode": "whatsapp"
         }
       ]
-    },
-    {
-      "id": "preguntas",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "h2",
-          "text": "Domande frequenti"
-        },
-        {
-          "kind": "faq",
-          "q": "Quali sono i vostri onorari?",
-          "a": "Risposta in attesa da HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Quanto tempo richiede una vendita?",
-          "a": "Risposta in attesa da HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Come posso richiedere una visita?",
-          "a": "Risposta in attesa da HousySpace."
-        },
-        {
-          "kind": "faq",
-          "q": "Operate in altre lingue?",
-          "a": "Risposta in attesa da HousySpace."
-        }
-      ]
     }
   ]
 }
