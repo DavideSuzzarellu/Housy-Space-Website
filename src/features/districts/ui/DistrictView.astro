@@ -87,7 +87,7 @@ const crumbs = [
     <p lang={fallback ? "es" : undefined} class="mt-4 max-w-[56ch]">
       {district.lead}
     </p>
-    <nav aria-label={t.districtNavLabel} class="mt-[34px] flex flex-wrap gap-x-8">
+    <nav aria-label={t.districtNavLabel} class="mt-8.5 flex flex-wrap gap-x-8">
       {ANCHORS.map(({ href, label }) => (
         <a href={href} class="py-3.5 text-[0.6875rem] tracking-[0.14em] hover:text-accent">
           {label}
@@ -104,7 +104,7 @@ const crumbs = [
         widths={[560, 1360]}
         sizes="(min-width: 1440px) 1360px, 100vw"
         priority
-        class="size-full object-cover"
+        class="size-full object-contain"
       />
       <MediaCredit tone="onImage" class="absolute right-4 bottom-2">
         {dictionary.media.conceptualImage}
