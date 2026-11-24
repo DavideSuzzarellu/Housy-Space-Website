@@ -1,10 +1,10 @@
-// Machine-translated from es — pending client review
+// Edited for native British English; pending client review. Terms: docs/translation-glossary.md
 import type { Dictionary } from "./es";
 
 const en = {
   site: {
     name: "HousySpace",
-    tagline: "Real estate solutions tailored to you",
+    tagline: "Property solutions tailored to you",
   },
   a11y: {
     skipToContent: "Skip to main content",
@@ -163,7 +163,7 @@ const en = {
       advisorFallback: "HousySpace team",
       requestVisit: "Request a viewing",
       whatsappMessage: "Hello, I am interested in the property with reference {ref}: {title}.",
-      similarHeading: "Related properties",
+      similarHeading: "Similar properties",
       backToCatalog: "← Back to the catalogue",
       similarCta: "View the full listing",
     },
@@ -177,7 +177,8 @@ const en = {
       documentationText:
         "Documents available on request. Land registry extracts and private third-party documents are not published by default.",
       consultationHeading: "A private consultation.",
-      consultationText: "Quote reference {ref}: a HousySpace advisor will reply to you personally.",
+      consultationText:
+        "Quote reference {ref} and a HousySpace advisor will reply to you personally.",
       viewOnline: "View online",
       qrLabel: "Scan to view the property online",
       disclaimer: "Information sheet with no contractual value. Details subject to verification.",
@@ -198,7 +199,7 @@ const en = {
     heading: "Homes we know up close",
     lead: "We work with a limited number of properties so we can give each one, and each client, the attention they deserve.",
     searchLabel: "Search properties",
-    operationLabel: "Operation",
+    operationLabel: "Buy or rent",
     operations: { sale: "Buy", rent: "Rent" },
     zone: "Location",
     type: "Property type",
@@ -305,7 +306,7 @@ const en = {
   home: {
     metaTitle: "HousySpace · Property Solutions",
     metaDescription:
-      "Boutique real estate agency in Barcelona: sales, rentals, personalised property search, renovations, interior design and advice, with a personal touch.",
+      "Boutique real estate consultants in Barcelona: buying, selling and renting, personalised property search, renovations, interior design and advice, with a personal touch.",
     hero: {
       label: "Barcelona",
       videoCredit:
@@ -526,7 +527,7 @@ const en = {
       ariaLabel: "Summary of your search",
       title: "Your ideal home",
       empty: "Choose an option and your ideal home will appear here.",
-      operation: "Operation",
+      operation: "Buy or rent",
       type: "Type of home",
       zones: "Areas",
       altZones: "Alternative areas",
