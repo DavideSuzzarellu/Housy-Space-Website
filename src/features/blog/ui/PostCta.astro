@@ -1,0 +1,32 @@
+---
+import type { CtaObjective } from "@/features/blog/domain/articleModel";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath, type RouteKey } from "@/shared/i18n/routes";
+import Button from "@/shared/ui/atoms/Button.astro";
+
+/** Closing call to action of an article: the `cta` field decides where the reader is sent. */
+interface Props {
+  locale: Locale;
+  objective: CtaObjective;
+}
+
+const TARGET = {
+  valoracion: "valuation",
+  venta: "sell",
+  consulta: "contact",
+} as const satisfies Record<CtaObjective, RouteKey>;
+
+const { locale, objective } = Astro.props;
+const copy = getDictionary(locale).blog.cta[objective];
+---
+
+<aside data-post-cta={objective} class="border-l-2 border-accent bg-card py-6 pr-5 pl-6">
+  <h2 class="text-[clamp(1.125rem,2vw,1.375rem)]">{copy.heading}</h2>
+  <p class="mt-2 max-w-[56ch] text-sm text-muted">{copy.text}</p>
+  <div class="mt-5">
+    <Button href={getLocalizedPath(TARGET[objective], locale)} variant="solid" arrow>
+      {copy.button}
+    </Button>
+  </div>
+</aside>

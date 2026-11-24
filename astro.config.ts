@@ -1,11 +1,21 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
+import { isIndexableArticleUrl } from "./src/features/blog/application/articleUrls";
+import { loadArticles } from "./src/features/blog/infrastructure/articleFiles";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
 
 const sitemapLocales = Object.fromEntries(
   LOCALES.map((locale) => [locale, LOCALE_META[locale].langTag]),
+);
+
+// Language of every article: its pages are indexed only under that locale (articleUrls.ts).
+const articleLanguages = new Map(
+  loadArticles("./src/content/blog").articles.map((article) => [
+    article.slug,
+    article.data.language,
+  ]),
 );
 
 // Hosting/adapter is not decided yet (AGENTS.md §2): keep this config adapter-agnostic.
@@ -73,7 +83,13 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Property sheet sources are internal: printed to PDF and removed after the build.
-      filter: (page) => !new URL(page).pathname.startsWith(`/${PROPERTY_SHEET_SOURCE_DIR}/`),
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return (
+          !pathname.startsWith(`/${PROPERTY_SHEET_SOURCE_DIR}/`) &&
+          isIndexableArticleUrl(pathname, articleLanguages)
+        );
+      },
       i18n: {
         defaultLocale: DEFAULT_LOCALE,
         locales: sitemapLocales,

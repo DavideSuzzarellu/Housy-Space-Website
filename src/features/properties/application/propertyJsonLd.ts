@@ -1,3 +1,4 @@
+import { organizationJsonLd } from "@/features/agency/application/organizationJsonLd";
 import type { Company } from "@/features/agency/domain/company";
 import type { Locale } from "@/shared/i18n/config";
 import { compactJsonLd, type JsonLdObject, type JsonValue } from "@/shared/lib/seo/jsonLd";
@@ -46,21 +47,6 @@ function addressOf(property: Property): JsonLdObject {
     "@type": "PostalAddress",
     addressLocality: property.location?.city,
     addressCountry: COUNTRY,
-  };
-}
-
-function sellerOf(company: Company, siteUrl: string): JsonLdObject {
-  return {
-    "@type": "RealEstateAgent",
-    name: company.legalName,
-    url: siteUrl,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: company.address.street,
-      postalCode: company.address.postalCode,
-      addressLocality: company.address.city,
-      addressCountry: COUNTRY,
-    },
   };
 }
 
@@ -114,7 +100,7 @@ export function buildPropertyJsonLd(input: PropertyJsonLdInput): JsonLdObject {
         ? "https://schema.org/LimitedAvailability"
         : "https://schema.org/InStock",
     itemOffered: { "@id": id },
-    seller: sellerOf(company, siteUrl),
+    seller: organizationJsonLd(company, siteUrl),
   };
 
   const graph: JsonValue[] = [residence, offer];
