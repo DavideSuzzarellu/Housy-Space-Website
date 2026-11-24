@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/build-property-sheets.ts",
+    "blog:check": "bun scripts/blog-check.ts",
+    "blog:inventory": "bun scripts/blog-inventory.ts",
     "build:sheets": "node scripts/build-property-sheets.ts",
     "preview": "astro preview",
     "test": "vitest run",

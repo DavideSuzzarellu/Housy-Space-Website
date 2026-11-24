@@ -116,7 +116,7 @@ type AlternateParamsArgs<K extends RouteKey> = [RouteParamName<K>] extends [neve
 const SLUG_SEGMENT = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const PLACEHOLDER = /\{([a-zA-Z]+)\}/g;
 
-function buildPath(
+export function buildPath(
   routeKey: RouteKey,
   locale: Locale,
   params: Readonly<Record<string, string>>,
