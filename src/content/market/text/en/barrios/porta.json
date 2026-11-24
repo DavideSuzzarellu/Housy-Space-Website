@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de polígonos de vivienda con una identidad vecinal muy fuerte y varios parques.",
+  "translated": true,
+  "lead": "A neighbourhood of housing estates with a very strong community identity and several parks.",
   "text": [
-    "Hasta el siglo XIX fue un territorio rural casi despoblado, parte de Santa Eulàlia de Vilapicina, y se urbanizó sobre todo en la segunda mitad del siglo XX con grandes polígonos de viviendas para inmigrantes, especialmente del sur de España. El Ayuntamiento atribuye su nombre a Pasqual Porta Margarit, maestro y director del Colegio Peninsular, que habría sido propietario de terrenos en Can Porta.",
-    "Tiene un fuerte sentido de identidad propia: su asociación de vecinos se creó en 1974 y su movimiento vecinal fue muy intenso entre 1977 y 1980. Entre sus puntos de referencia están la plaza de Sóller, el parque de Can Dragó, el cementerio de Sant Andreu, la plaça de la República y el centro comercial Heron City. Con 31.199 habitantes en 0,84 km², es el barrio más poblado del distrito."
+    "Until the 19th century it was an almost uninhabited rural area, part of Santa Eulàlia de Vilapicina, and it was developed mainly in the second half of the 20th century with large housing estates for immigrants, especially from the south of Spain. The City Council attributes its name to Pasqual Porta Margarit, a teacher and head of the Colegio Peninsular, who is said to have owned land in Can Porta.",
+    "It has a strong sense of its own identity: its residents' association was founded in 1974 and its community movement was very active between 1977 and 1980. Its landmarks include Plaça de Sóller, the Parc de Can Dragó, the Sant Andreu cemetery, Plaça de la República and the Heron City shopping centre. With 31,199 inhabitants in 0.84 km², it is the most populous neighbourhood in the district."
   ],
-  "housing": "Bloques de vivienda levantados en la segunda mitad del siglo XX, con alguna masía que recuerda el pasado rural.",
+  "housing": "Residential blocks built in the second half of the 20th century, with a farmhouse (masia) here and there recalling the rural past.",
   "places": ["Parc de Can Dragó", "Plaça de Sóller", "Plaça de la República", "Heron City"]
 }
