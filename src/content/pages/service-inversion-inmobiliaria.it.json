@@ -77,14 +77,14 @@
           "items": [
             {
               "title": "Prezzo e costi di acquisto",
-              "text": "Prezzo, imposte, notaio, registro e agenzia: il costo reale di entrata."
+              "text": "Prezzo, imposte, notaio, registro e pratiche: il costo reale di ingresso."
             },
             {
               "title": "Ristrutturazione",
               "text": "Quali lavori servono, quanto costano e che effetto possono avere sull'affitto o sulla vendita."
             },
             {
-              "title": "Reddito atteso",
+              "title": "Canone atteso",
               "text": "Ciò che si paga oggi per immobili simili nella zona."
             },
             {
@@ -93,11 +93,11 @@
             },
             {
               "title": "Rischi",
-              "text": "Stato dell'edificio, normativa sugli affitti e liquidità della zona."
+              "text": "Stato dello stabile, normativa sugli affitti e liquidità della zona."
             },
             {
-              "title": "Strategia",
-              "text": "Exit Cosa succede se vuoi vendere tra qualche anno."
+              "title": "Via d'uscita",
+              "text": "Cosa succede se vuoi vendere tra qualche anno."
             }
           ]
         }
@@ -132,7 +132,7 @@
             },
             {
               "title": "Acquisto",
-              "text": "Trattiamo e ti accompagniamo fino al rogito."
+              "text": "Negoziamo e ti accompagniamo fino alla firma."
             }
           ]
         }
@@ -178,7 +178,7 @@
               "href": "service:reformas-obras"
             },
             {
-              "title": "Locazioni e gestione immobiliare",
+              "title": "Affitto e gestione di immobili",
               "text": "",
               "kicker": "Affitta",
               "href": "service:alquiler-gestion"
@@ -194,7 +194,7 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Parliamo"
+          "text": "Parliamone"
         },
         {
           "kind": "lead",

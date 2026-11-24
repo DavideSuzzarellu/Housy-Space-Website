@@ -7,7 +7,7 @@
     "items": [
       {
         "kind": "tag",
-        "text": "Legal"
+        "text": "Legale"
       }
     ]
   },
@@ -26,7 +26,7 @@
         },
         {
           "kind": "h2",
-          "text": "1. Chi è il responsabile"
+          "text": "1. Titolare del trattamento"
         },
         {
           "kind": "p",
@@ -68,7 +68,7 @@
         },
         {
           "kind": "p",
-          "text": "I dati ce li fornisci tu. Non richiediamo dati particolarmente protetti."
+          "text": "I dati ce li fornisci tu. Non richiediamo categorie particolari di dati personali."
         },
         {
           "kind": "h2",
@@ -80,13 +80,13 @@
           "rows": [
             [
               "Rispondere alle tue richieste e ai tuoi contatti (modulo di Contatto, e-mail, WhatsApp o telefono).",
-              "Il tuo consenso (art. 6.1.a GDPR) e l'applicazione di misure precontrattuali su tua richiesta (art. 6.1.b).",
-              "Il tempo necessario per risponderti. Successivamente, bloccati finché possano sorgere responsabilità legali."
+              "Il tuo consenso (art. 6.1.a GDPR) e l'esecuzione di misure precontrattuali adottate su tua richiesta (art. 6.1.b).",
+              "Il tempo necessario per risponderti. Successivamente, conservati in forma bloccata finché possano sorgere responsabilità legali."
             ],
             [
               "Valutare la tua casa (valutatore e richiesta di valutazione di persona).",
-              "Il tuo consenso (art. 6.1.a) e misure precontrattuali su tua richiesta (art. 6.1.b).",
-              "Il tempo necessario per la valutazione e il suo seguito. Successivamente, bloccati per il tempo richiesto dalla legge."
+              "Il tuo consenso (art. 6.1.a) e l'esecuzione di misure precontrattuali adottate su tua richiesta (art. 6.1.b).",
+              "Il tempo necessario per la valutazione e il suo seguito. Successivamente, conservati in forma bloccata per il tempo richiesto dalla legge."
             ],
             [
               "Mantenere la tua ricerca di casa nella nostra banca dati di richiedenti («La mia ricerca»), confrontarla con gli immobili disponibili, avvisarti di quelli che corrispondono e contattarti.",
@@ -101,18 +101,18 @@
             [
               "Inviarti comunicazioni commerciali su immobili, servizi e novità via e-mail, WhatsApp o telefono, secondo il canale che scegli.",
               "Il tuo consenso (art. 6.1.a GDPR) e l'autorizzazione espressa richiesta dall'art. 21 della LSSI. È volontario e non influisce sulla tua ricerca.",
-              "Finché non ritiri il tuo consenso o ti cancelli."
+              "Finché non revochi il tuo consenso o non annulli l'iscrizione."
             ],
             [
               "Inviarti la newsletter e gli articoli di HousySpace via e-mail.",
               "Il tuo consenso (art. 6.1.a GDPR) e l'autorizzazione espressa richiesta dall'art. 21 della LSSI. È volontario e indipendente dagli altri.",
-              "Finché non ti cancelli con il link di ogni invio o scrivendo a info@housyspace.com."
+              "Finché non annulli l'iscrizione con il link di ogni invio o scrivendo a info@housyspace.com."
             ]
           ]
         },
         {
           "kind": "p",
-          "text": "Ogni consenso è indipendente e puoi ritirarlo in qualsiasi momento, senza che ciò influisca sulla liceità del trattamento precedente. Le caselle delle comunicazioni commerciali e della newsletter sono non selezionate e non selezionarle non influisce sulla tua ricerca."
+          "text": "Ogni consenso è indipendente e puoi revocarlo in qualsiasi momento, senza che ciò influisca sulla liceità del trattamento precedente. Le caselle delle comunicazioni commerciali e della newsletter sono deselezionate per impostazione predefinita e lasciarle vuote non influisce sulla tua ricerca."
         },
         {
           "kind": "h2",
@@ -170,7 +170,7 @@
         },
         {
           "kind": "p",
-          "text": "Alcuni di questi fornitori (Cloudflare, Resend, Google, WhatsApp) appartengono a gruppi con sede negli Stati Uniti o possono trattare dati lì. In tal caso, il trasferimento è coperto dalla decisione di adeguatezza della Commissione europea per il Quadro per la protezione dei dati UE-USA, se il fornitore vi aderisce, o dalle clausole contrattuali tipo approvate dalla Commissione. Puoi chiederci maggiori informazioni a [info@housyspace.com](mailto:info@housyspace.com)."
+          "text": "Alcuni di questi fornitori (Cloudflare, Resend, Google, WhatsApp) appartengono a gruppi con sede negli Stati Uniti o possono trattare dati lì. In tal caso, il trasferimento è coperto dalla decisione di adeguatezza della Commissione europea sul quadro UE-USA per la protezione dei dati (Data Privacy Framework), se il fornitore vi aderisce, o dalle clausole contrattuali tipo approvate dalla Commissione. Puoi chiederci maggiori informazioni a [info@housyspace.com](mailto:info@housyspace.com)."
         },
         {
           "kind": "h2",
@@ -178,11 +178,11 @@
         },
         {
           "kind": "p",
-          "text": "Puoi esercitare i tuoi diritti di accesso, rettifica, cancellazione, opposizione, limitazione del trattamento e portabilità, e ritirare i tuoi consensi, scrivendo a [info@housyspace.com](mailto:info@housyspace.com) e indicando quale diritto vuoi esercitare. Per risponderti correttamente, possiamo chiederti di comprovare la tua identità. Rispondiamo entro un mese."
+          "text": "Puoi esercitare i tuoi diritti di accesso, rettifica, cancellazione, opposizione, limitazione del trattamento e portabilità, e revocare i tuoi consensi, scrivendo a [info@housyspace.com](mailto:info@housyspace.com) e indicando quale diritto vuoi esercitare. Per risponderti correttamente, possiamo chiederti di dimostrare la tua identità. Rispondiamo entro un mese."
         },
         {
           "kind": "p",
-          "text": "Per cancellarti dalla newsletter o dalle comunicazioni commerciali, puoi usare il link di disiscrizione di ogni e-mail o scriverci."
+          "text": "Per cancellarti dalla newsletter o dalle comunicazioni commerciali, puoi usare il link per annullare l'iscrizione presente in ogni e-mail o scriverci."
         },
         {
           "kind": "p",
@@ -194,7 +194,7 @@
         },
         {
           "kind": "p",
-          "text": "I nostri moduli sono solo per i maggiori di 18 anni. Non raccogliamo consapevolmente dati di minori."
+          "text": "I nostri moduli sono riservati ai maggiori di 18 anni. Non raccogliamo consapevolmente dati di minori."
         },
         {
           "kind": "h2",

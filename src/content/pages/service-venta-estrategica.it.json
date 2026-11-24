@@ -359,14 +359,14 @@
             },
             {
               "kind": "p",
-              "text": "Trattiamo, chiudiamo e ti restiamo accanto anche dopo la vendita."
+              "text": "Negoziamo, chiudiamo e ti restiamo accanto anche dopo la vendita."
             },
             {
               "kind": "steps",
               "items": [
                 {
                   "title": "Trattativa",
-                  "text": "Trattiamo a tuo nome e difendiamo il tuo prezzo e le tue condizioni fino alla firma. La decisione di accettare un'offerta è sempre tua."
+                  "text": "Negoziamo a tuo nome e difendiamo il tuo prezzo e le tue condizioni fino alla firma. La decisione di accettare un'offerta è sempre tua."
                 },
                 {
                   "title": "Firma",
@@ -402,7 +402,7 @@
         },
         {
           "kind": "p",
-          "text": "Ti presentiamo i risultati degli annunci, le attività commerciali svolte, le opinioni degli acquirenti e la posizione della tua casa rispetto alle altre proprietà della zona."
+          "text": "Ti presentiamo i risultati degli annunci, le attività commerciali svolte, le opinioni degli acquirenti e la posizione della tua casa rispetto agli altri immobili della zona."
         },
         {
           "kind": "p",
@@ -675,7 +675,7 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Parliamo"
+          "text": "Parliamone"
         },
         {
           "kind": "lead",

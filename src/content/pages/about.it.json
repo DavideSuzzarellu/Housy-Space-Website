@@ -2,7 +2,7 @@
   "title": "Chi siamo · HousySpace",
   "description": "HousySpace, consulenti immobiliari a Barcellona: ci impegniamo in ogni operazione con un approccio vicino, trasparente e personalizzato.",
   "head": {
-    "heading": "Molto più di una semplice agenzia immobiliare",
+    "heading": "Molto più di un'agenzia immobiliare",
     "photo": false,
     "items": [
       {
@@ -11,7 +11,7 @@
       },
       {
         "kind": "p",
-        "text": "In HousySpace crediamo che ogni decisione immobiliare meriti tempo, criterio e attenzione personale. Ti accompagniamo per trovare il modo migliore di fare il passo successivo."
+        "text": "In HousySpace crediamo che ogni decisione immobiliare meriti tempo, criterio e attenzione personale. Ti aiutiamo a trovare il modo migliore di fare il passo successivo."
       }
     ]
   },
@@ -31,7 +31,7 @@
         },
         {
           "kind": "p",
-          "text": "HousySpace è nata cinque anni fa. Chi c'è dietro lavorava già da tempo nel settore e sapeva cosa si poteva fare in modo diverso: con più vicinanza, con un'attenzione davvero personale e trattando le preoccupazioni di ogni cliente come proprie."
+          "text": "HousySpace è nata cinque anni fa. Chi c'è dietro lavorava già da tempo nel settore e sapeva cosa si poteva fare in modo diverso: con più vicinanza, con un'attenzione davvero personale e facendo nostre le preoccupazioni di ogni cliente."
         },
         {
           "kind": "p",
@@ -89,7 +89,7 @@
         },
         {
           "kind": "h2",
-          "text": "Ogni proprietà è diversa. Ogni persona, anche."
+          "text": "Ogni immobile è diverso. Ogni persona, anche."
         },
         {
           "kind": "p",
@@ -97,11 +97,11 @@
         },
         {
           "kind": "p",
-          "text": "Il nostro lavoro non consiste soltanto nel gestire un'operazione, ma nel mettere a disposizione criterio affinché tu decida se fare il passo, quando e come, con conoscenza, trasparenza e sicurezza."
+          "text": "Il nostro lavoro non consiste soltanto nel gestire un'operazione, ma nel darti gli elementi per decidere se fare il passo, quando e come, con cognizione di causa, trasparenza e sicurezza."
         },
         {
           "kind": "quote",
-          "text": "Che tu sia contento a ogni passo, non solo al momento della firma."
+          "text": "Che tu sia soddisfatto a ogni passo, non solo al momento della firma."
         }
       ]
     },
@@ -160,7 +160,7 @@
         },
         {
           "kind": "p",
-          "text": "Ci anticipiamo quando è possibile e, quando compare un imprevisto, ci impegniamo a cercare una soluzione e a coordinare chi può aiutare a risolverlo. Per noi, fare un miglio in più significa non disinteressarsi di una difficoltà solo perché non fa parte della consueta intermediazione."
+          "text": "Ci portiamo avanti quando è possibile e, quando compare un imprevisto, ci mettiamo al lavoro per trovare una soluzione e coordinare chi può aiutare a risolverlo. Per noi, fare un miglio in più significa non tirarsi indietro davanti a una difficoltà solo perché esula dalla normale intermediazione."
         },
         {
           "kind": "note",
@@ -202,28 +202,28 @@
               "text": "Studio legale a Barcellona: successioni, imposte sul reddito, diritto civile, del lavoro e d'impresa.",
               "kicker": "Studio legale e fiscale",
               "href": "service:asesoramiento-juridico-fiscal",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Asesoría Edac",
               "text": "Consulenza fiscale, contabile e del lavoro a Barcellona: imposte, dichiarazioni e pratiche con il fisco.",
               "kicker": "Consulenza fiscale",
               "href": "service:asesoramiento-juridico-fiscal",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Maria Guimerà Arquitectura",
               "text": "Studio di architettura e interior design a Barcellona, con ristrutturazioni integrali di abitazioni e appartamenti dell'Eixample.",
               "kicker": "Architettura e interior design",
               "href": "service:reformas-obras",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Broker finanziario",
               "text": "Studia la fattibilità di ogni operazione con finanziamento e confronta le condizioni di diversi istituti.",
               "kicker": "Finanziamento",
               "href": "service:asesoramiento-financiero",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             }
           ]
         }

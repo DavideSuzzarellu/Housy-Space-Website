@@ -7,7 +7,7 @@
     "items": [
       {
         "kind": "tag",
-        "text": "Conoscenza immobiliare a Barcellona"
+        "text": "Sapere immobiliare a Barcellona"
       },
       {
         "kind": "lead",
@@ -52,7 +52,7 @@
             },
             {
               "name": "consent",
-              "label": "**Desidero ricevere la newsletter e gli articoli di HousySpace via e-mail.** Ho letto la [politica sulla privacy](route:privacy).",
+              "label": "**Desidero ricevere la newsletter e gli articoli di HousySpace via e-mail.** Ho letto la [informativa sulla privacy](route:privacy).",
               "required": true,
               "full": false,
               "type": "consent",
@@ -60,7 +60,7 @@
             },
             {
               "kind": "note",
-              "text": "**Informazioni di base.** Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: inviarti la newsletter e gli articoli. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge; i fornitori di posta elettronica agiscono per nostro conto. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione e portabilità, e disdetta in qualsiasi momento tramite il link in ogni e-mail o scrivendo a [info@housyspace.com](mailto:info@housyspace.com). Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Bozza: non è ancora connesso alcuno strumento newsletter; cliccando si aprirà il client di posta con la richiesta già compilata e non sarai iscritto finché non la invierai.)"
+              "text": "**Informazioni di base.** Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: inviarti la newsletter e gli articoli. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge; i fornitori di posta elettronica agiscono per nostro conto. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione e portabilità, e possibilità di annullare l'iscrizione in qualsiasi momento tramite il link in ogni e-mail o scrivendo a [info@housyspace.com](mailto:info@housyspace.com). Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Bozza: non è ancora connesso alcuno strumento newsletter; cliccando si aprirà il client di posta con la richiesta già compilata e non sarai iscritto finché non la invierai.)"
             }
           ],
           "mode": "email"

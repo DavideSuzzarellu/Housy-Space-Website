@@ -7,7 +7,7 @@
     "items": [
       {
         "kind": "tag",
-        "text": "Legal"
+        "text": "Legale"
       }
     ]
   },
@@ -30,7 +30,7 @@
         },
         {
           "kind": "p",
-          "text": "In conformità all'articolo 10 della Legge 34/2002 sui Servizi della Società dell'Informazione e il Commercio Elettronico (LSSI-CE), ti informiamo che il titolare di questo sito web è:"
+          "text": "In conformità all'articolo 10 della Legge 34/2002 sui servizi della società dell'informazione e del commercio elettronico (LSSI-CE), ti informiamo che il titolare di questo sito web è:"
         },
         {
           "kind": "p",
@@ -58,7 +58,7 @@
             },
             {
               "title": "",
-              "text": "I moduli sono solo per i maggiori di 18 anni. I dati che fornisci devono essere tuoi, veritieri e aggiornati; se includi dati di altre persone, devi avere il loro permesso."
+              "text": "I moduli sono riservati ai maggiori di 18 anni. I dati che fornisci devono essere tuoi, veritieri e aggiornati; se includi dati di altre persone, devi avere il loro permesso."
             },
             {
               "title": "",
@@ -132,7 +132,7 @@
         },
         {
           "kind": "p",
-          "text": "Non ti inviamo comunicazioni commerciali con mezzi elettronici senza il tuo previo ed espresso consenso (articolo 21 della LSSI). Puoi ritirarlo in qualsiasi momento scrivendo a [info@housyspace.com](mailto:info@housyspace.com)."
+          "text": "Non ti inviamo comunicazioni commerciali con mezzi elettronici senza il tuo previo ed espresso consenso (articolo 21 della LSSI). Puoi revocarlo in qualsiasi momento scrivendo a [info@housyspace.com](mailto:info@housyspace.com)."
         },
         {
           "kind": "h2",
@@ -148,7 +148,7 @@
         },
         {
           "kind": "p",
-          "text": "Queste note legali sono regolate dalla legge spagnola. Per qualsiasi controversia, le parti si sottopongono ai giudici e ai tribunali di Barcellona, salvo che la normativa dei consumatori riconosca un altro foro; se sei un consumatore, quello del tuo domicilio."
+          "text": "Queste note legali sono regolate dalla legge spagnola. Per qualsiasi controversia, le parti si sottopongono ai giudici e ai tribunali di Barcellona, salvo che la normativa a tutela dei consumatori preveda un altro foro; se sei un consumatore, quello del tuo domicilio."
         },
         {
           "kind": "h2",

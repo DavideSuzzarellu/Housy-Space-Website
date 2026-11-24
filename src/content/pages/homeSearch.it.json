@@ -11,7 +11,7 @@
       },
       {
         "kind": "lead",
-        "text": "Raccontaci che tipo di casa cerchi e iscriviti al nostro database. Quando avremo un immobile in linea con le tue preferenze, ti contatteremo perché tu possa vederlo prima che venga pubblicato."
+        "text": "Raccontaci che tipo di casa cerchi e iscriviti al nostro database. Quando avremo un immobile in linea con le tue preferenze, ti contatteremo così potrai vederlo prima che venga pubblicato."
       },
       {
         "kind": "buttons",
@@ -47,7 +47,7 @@
             },
             {
               "title": "Ti avvisiamo prima",
-              "text": "Se riceviamo una casa in linea con la tua ricerca, ti contattiamo prima di pubblicarla."
+              "text": "Se ci arriva una casa in linea con la tua ricerca, ti contattiamo prima di pubblicarla."
             }
           ]
         }
@@ -600,7 +600,7 @@
                 {
                   "kind": "field",
                   "name": "abierto",
-                  "label": "Sono aperto ad altre zone",
+                  "label": "Valuto anche altre zone",
                   "required": false,
                   "full": true,
                   "type": "check"
@@ -736,7 +736,7 @@
                   "radio": false,
                   "required": false,
                   "must": "Indispensabile",
-                  "label": "Caratteristiche (selezionale e segna quelle indispensabili; le altre saranno un plus)",
+                  "label": "Caratteristiche (selezionale e segna quelle indispensabili; le altre saranno considerate preferibili)",
                   "options": [
                     {
                       "value": "Balcón",
@@ -752,7 +752,7 @@
                     },
                     {
                       "value": "Exterior",
-                      "label": "Esterno"
+                      "label": "Affaccio esterno"
                     },
                     {
                       "value": "Ascensor",
@@ -760,11 +760,11 @@
                     },
                     {
                       "value": "Parking",
-                      "label": "Parking"
+                      "label": "Parcheggio"
                     },
                     {
                       "value": "Trastero",
-                      "label": "Ripostiglio"
+                      "label": "Cantina"
                     },
                     {
                       "value": "Piscina",
@@ -897,7 +897,7 @@
                   "name": "canal",
                   "radio": true,
                   "required": false,
-                  "label": "Come preferisci essere contattato?",
+                  "label": "Come preferisci che ti contattiamo?",
                   "options": [
                     {
                       "value": "telefono",
@@ -915,7 +915,7 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Responsabile:** HousySpace Consultores Inmobiliarios, S.L. · CIF B26903419 · [info@housyspace.com](mailto:info@housyspace.com)."
+                  "text": "**Titolare del trattamento:** HousySpace Consultores Inmobiliarios, S.L. · CIF B26903419 · [info@housyspace.com](mailto:info@housyspace.com)."
                 },
                 {
                   "kind": "note",
@@ -923,11 +923,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Base giuridica:** Il tuo consenso (art. 6.1.a del RGPD). Il consenso per il database è necessario per gestire la tua ricerca; quelli per le comunicazioni commerciali e la newsletter sono facoltativi e indipendenti."
+                  "text": "**Base giuridica:** Il tuo consenso (art. 6.1.a del GDPR). Il consenso per il database è necessario per gestire la tua ricerca; quelli per le comunicazioni commerciali e la newsletter sono facoltativi e indipendenti."
                 },
                 {
                   "kind": "note",
-                  "text": "**Conservazione:** Finché la tua ricerca è attiva e, al massimo, 12 mesi dall'ultimo contatto. Successivamente i dati vengono cancellati o bloccati per il periodo richiesto dalla legge."
+                  "text": "**Conservazione:** Finché la tua ricerca è attiva e, al massimo, 12 mesi dall'ultimo contatto. Successivamente i dati vengono cancellati o conservati in forma bloccata per il periodo richiesto dalla legge."
                 },
                 {
                   "kind": "note",
@@ -951,7 +951,7 @@
                 },
                 {
                   "name": "c_comercial",
-                  "label": "**Desidero ricevere comunicazioni commerciali da HousySpace su immobili, servizi e novità, tramite i canali che scelgo di seguito.**Facoltativo. Non selezionarlo non influisce sulla tua ricerca.",
+                  "label": "**Desidero ricevere comunicazioni commerciali da HousySpace su immobili, servizi e novità, tramite i canali che scelgo di seguito.**Facoltativo. Se non lo selezioni, la tua ricerca non ne risente.",
                   "required": false,
                   "full": false,
                   "type": "consent",
@@ -982,7 +982,7 @@
                 },
                 {
                   "name": "c_newsletter",
-                  "label": "**Voglio iscrivermi alla newsletter e agli articoli di HousySpace (mercato immobiliare di Barcellona, consigli e novità) tramite email.**Facoltativo. Non selezionarlo non influisce sulla tua ricerca.",
+                  "label": "**Voglio iscrivermi alla newsletter e agli articoli di HousySpace (mercato immobiliare di Barcellona, consigli e novità) tramite email.**Facoltativo. Se non lo selezioni, la tua ricerca non ne risente.",
                   "required": false,
                   "full": false,
                   "type": "consent",
@@ -990,7 +990,7 @@
                 },
                 {
                   "kind": "note",
-                  "text": "Le caselle facoltative non sono spuntate. Puoi revocare qualsiasi consenso in qualsiasi momento tramite il link di disiscrizione in ogni email o scrivendo a [info@housyspace.com](mailto:info@housyspace.com)."
+                  "text": "Le caselle facoltative sono deselezionate per impostazione predefinita. Puoi revocare qualsiasi consenso in qualsiasi momento tramite il link per annullare l'iscrizione presente in ogni email o scrivendo a [info@housyspace.com](mailto:info@housyspace.com)."
                 },
                 {
                   "kind": "submit",

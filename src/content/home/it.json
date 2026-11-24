@@ -11,7 +11,7 @@
     "stat1Number": 35,
     "stat1Plus": true,
     "stat1Unit": "milioni €",
-    "stat1Label": "di volume intermediato in questi cinque anni",
+    "stat1Label": "di volume d'affari intermediato in questi cinque anni",
     "stat2Number": 100,
     "stat2Plus": true,
     "stat2Unit": "immobili",
@@ -19,7 +19,7 @@
     "stat3Number": 60,
     "stat3Plus": true,
     "stat3Unit": "appartamenti",
-    "stat3Label": "affittati con lo stesso accompagnamento",
+    "stat3Label": "affittati con lo stesso supporto",
     "stat4Number": 9,
     "stat4Plus": false,
     "stat4Unit": "su 10 distretti",
@@ -29,13 +29,13 @@
   },
   "featured": {
     "heading": "Trova qui *il tuo nuovo inizio*",
-    "ctaLabel": "Vedi altri immobili"
+    "ctaLabel": "Scopri altri immobili"
   },
   "valuation": {
     "image": "../../assets/home/valoracion-fachada-2880.webp",
     "imageAlt": "Immagine concettuale: facciata modernista di Barcellona con un balcone in ferro battuto contrassegnato con l'isotipo di HousySpace",
     "heading": "Scopri quanto *vale la tua casa*",
-    "lead": "All'istante e online, o con un consulente HousySpace.",
+    "lead": "In un attimo e online, oppure con un consulente HousySpace.",
     "ctaLabel": "Richiedi una valutazione"
   },
   "services": {
@@ -47,11 +47,11 @@
     "item1Title": "Eixample Dret",
     "item1Subtitle": "Soffitti alti con modanature originali e pavimenti idraulici restaurati.",
     "item2Title": "Sarrià - Sant Gervasi",
-    "item2Subtitle": "Ville unifamiliari con ampi giardini e luce naturale ininterrotta.",
+    "item2Subtitle": "Ville unifamiliari con ampi giardini e luce naturale tutto il giorno.",
     "item3Title": "Ciutat Vella & Born",
     "item3Subtitle": "Travi in legno recuperate e archi in pietra gotica originale.",
     "item4Title": "Gràcia & Pedralbes",
-    "item4Subtitle": "Spazi moderni riqualificati nel rispetto dell'architettura storica."
+    "item4Subtitle": "Ambienti moderni, ristrutturati nel rispetto dell'architettura storica."
   },
   "collaborators": {
     "lineFirst": "Ci circondiamo dei migliori",
@@ -67,7 +67,7 @@
   },
   "reviews": {
     "heading": "Cosa dicono *di HousySpace*",
-    "ctaLabel": "Vedi le recensioni su Google",
+    "ctaLabel": "Leggi le recensioni su Google",
     "mapsUrl": "https://maps.app.goo.gl/9icgw2apDPv4Fy7J9"
   },
   "districts": {
@@ -79,12 +79,12 @@
     "ctaLabel": "Vedi tutti gli articoli"
   },
   "contact": {
-    "heading": "Consulta *privata*",
+    "heading": "Consulenza *privata*",
     "lead": "Un consulente di HousySpace ti seguirà dal primo messaggio.",
     "fieldNameLabel": "Nome e cognome",
     "fieldEmailLabel": "Indirizzo e-mail",
     "fieldMessageLabel": "Raccontaci di cosa hai bisogno",
-    "fieldConsentLabel": "Ho letto e accetto la politica sulla privacy di HousySpace e acconsento al trattamento dei miei dati per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
+    "fieldConsentLabel": "Ho letto e accetto l'informativa sulla privacy di HousySpace e acconsento al trattamento dei miei dati per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
     "submitLabel": "Invia richiesta"
   }
 }

@@ -11,7 +11,7 @@
       },
       {
         "kind": "lead",
-        "text": "Ogni casa è diversa, e anche il suo valore. Studiamo le sue caratteristiche, la sua posizione e le condizioni del mercato per offrirti una valutazione fondata e aiutarti a decidere con cognizione di causa."
+        "text": "Ogni casa è diversa, e anche il suo valore. Studiamo le sue caratteristiche, la sua posizione e le condizioni del mercato per offrirti una valutazione ragionata e aiutarti a decidere con cognizione di causa."
       }
     ]
   },
@@ -70,7 +70,7 @@
               "kind": "buttons",
               "items": [
                 {
-                  "label": "Valuta online ora",
+                  "label": "Valuta online adesso",
                   "href": "route:contact",
                   "solid": false
                 }

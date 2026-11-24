@@ -65,21 +65,21 @@
               "text": "Ti seguiamo nella vendita della tua casa, dallo studio iniziale e dalla strategia commerciale fino al rogito.",
               "kicker": "01 · Vendere la mia casa",
               "href": "service:venta-estrategica",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Valutazione immobiliare",
               "text": "Analizziamo il mercato e le caratteristiche del tuo immobile per aiutarti a stabilirne il valore e un prezzo di partenza adeguato.",
               "kicker": "02 · Sapere quanto vale",
               "href": "service:valoracion",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Affitto e gestione di immobili",
               "text": "Mettiamo sul mercato la tua casa, selezioniamo gli inquilini e, se vuoi, gestiamo l'affitto per tutta la durata del contratto.",
               "kicker": "03",
               "href": "service:alquiler-gestion",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             }
           ]
         }
@@ -108,14 +108,14 @@
               "text": "Cerchiamo e analizziamo le case in base alle tue esigenze e ti accompagniamo nell'acquisto, fino alla firma.",
               "kicker": "04",
               "href": "service:personal-shopper",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Investimento immobiliare",
               "text": "Valutiamo opportunità di investimento, costi, redditività potenziale e rischi, per aiutarti a decidere con cognizione di causa.",
               "kicker": "05",
               "href": "service:inversion-inmobiliaria",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             }
           ]
         }
@@ -144,21 +144,21 @@
               "text": "Coordiniamo progetti di ristrutturazione e interior design con professionisti specializzati, dal primo preventivo alla consegna.",
               "kicker": "06",
               "href": "service:reformas-obras",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Consulenza legale e fiscale",
               "text": "Coordiniamo professionisti legali e fiscali per le esigenze giuridiche e tributarie della tua operazione.",
               "kicker": "07",
               "href": "service:asesoramiento-juridico-fiscal",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             },
             {
               "title": "Consulenza finanziaria",
               "text": "Ti mettiamo in contatto con specialisti del finanziamento e coordiniamo lo studio del mutuo con la tua operazione immobiliare.",
               "kicker": "08",
               "href": "service:asesoramiento-financiero",
-              "cta": "Vedi il servizio"
+              "cta": "Scopri il servizio"
             }
           ]
         }
