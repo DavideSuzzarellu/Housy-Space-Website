@@ -46,17 +46,54 @@
         },
         {
           "kind": "p",
-          "text": "We carry out renovations for all types of property. We plan the renovation and interior design together so that the layout, materials and light are decided before work begins. We then coordinate the professionals and monitor timelines and budget through to handover."
+          "text": "We coordinate renovations for every type of property. The renovation and the interior design are planned together, so that the layout, materials and lighting are settled before work begins. Then we coordinate the professionals and keep an eye on timelines and budget through to handover."
         },
         {
           "kind": "p",
-          "text": "The project is developed with the architecture and interior design studio we collaborate with, and you always have the same person to turn to."
+          "text": "The project is developed with the architecture and interior design studio we collaborate with, and you always have the same person to turn to. The technical work and the construction itself are the responsibility of the professionals and companies involved in each project."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "When to renovate"
+        },
+        {
+          "kind": "h2",
+          "text": "When a renovation makes sense"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Before selling",
+              "text": "Not every renovation pays off before a sale. We look at whether a specific improvement can help the sale, or whether it is enough to offer the buyer a works quote. [See property sales](service:venta-estrategica)."
+            },
+            {
+              "title": "When buying",
+              "text": "The renovation costed before you buy, so you know what it will cost before you decide. [See Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "For renting",
+              "text": "Getting the home ready before it is put up for rent."
+            },
+            {
+              "title": "For investing",
+              "text": "Renovations planned with the numbers in front of you: cost, timeline and expected effect on rent or sale."
+            }
+          ]
         }
       ]
     },
     {
       "layout": "stepsList",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -76,7 +113,7 @@
             },
             {
               "title": "Project and interior design",
-              "text": "Layout, materials, lighting and furniture, all in one project."
+              "text": "Layout, materials, lighting and made-to-measure furniture, all in one project."
             },
             {
               "title": "Budget",
@@ -84,11 +121,11 @@
             },
             {
               "title": "Permits and planning consent",
-              "text": "We handle any planning permissions the council requires."
+              "text": "Any works permits the council requires are applied for."
             },
             {
               "title": "Works",
-              "text": "We coordinate the trades and monitor timelines and budget on site."
+              "text": "We coordinate the trades (builders, installers, carpenters) and keep timelines, budget and quality on track."
             },
             {
               "title": "Finishes and handover",
@@ -101,7 +138,7 @@
     {
       "id": "interiorismo",
       "layout": "swatches",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -110,7 +147,7 @@
         },
         {
           "kind": "h2",
-          "text": "A home is also chosen by touch."
+          "text": "Materials and finishes"
         },
         {
           "kind": "lead",
@@ -155,104 +192,8 @@
       ]
     },
     {
-      "layout": "cards",
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "What's included"
-        },
-        {
-          "kind": "h2",
-          "text": "The whole project, in one pair of hands"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Layout",
-              "text": "How light moves and how you move through the home."
-            },
-            {
-              "title": "Materials and finishes",
-              "text": "A coherent palette for the whole property."
-            },
-            {
-              "title": "Lighting",
-              "text": "Natural and artificial light designed for each room."
-            },
-            {
-              "title": "Bespoke furniture",
-              "text": "Design, selection and procurement of furniture and accessories."
-            },
-            {
-              "title": "Permits and trades",
-              "text": "Planning permissions, builders, installers and joiners, all coordinated by us."
-            },
-            {
-              "title": "Site supervision",
-              "text": "Timelines, budget and quality controlled down to the last detail."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "layout": "cards",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "When to renovate"
-        },
-        {
-          "kind": "h2",
-          "text": "A renovation for every occasion"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Before selling",
-              "text": "Renovation quotes for the buyer or small improvements that help you sell. [See property sales](service:venta-estrategica)."
-            },
-            {
-              "title": "When buying",
-              "text": "The renovation planned before purchase and carried out by us. [See Personal Shopper](service:personal-shopper)."
-            },
-            {
-              "title": "For renting",
-              "text": "Refurbishment to let sooner and at a better price."
-            },
-            {
-              "title": "For investing",
-              "text": "Renovations that add value and rental yield, with the numbers in front of you."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "\"Don't worry, *I'll take care of it.*\""
-        },
-        {
-          "kind": "p",
-          "text": "Permits, trades, unexpected issues on site: we manage them so you only have to decide."
-        }
-      ]
-    },
-    {
       "layout": "colab",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -265,7 +206,7 @@
         },
         {
           "kind": "lead",
-          "text": "For the project, interior design and works supervision we collaborate with an architecture and interior design studio in Barcelona."
+          "text": "For the project, interior design and works supervision we collaborate with an architecture and interior design studio in Barcelona. HousySpace coordinates and is your point of contact; the studio develops the project and the building companies carry it out."
         },
         {
           "kind": "buttons",

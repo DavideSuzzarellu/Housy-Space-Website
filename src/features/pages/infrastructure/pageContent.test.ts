@@ -72,7 +72,7 @@ describe("service pages", () => {
     "asesoramiento-juridico-fiscal": "intro split tax - colab cta",
     "inversion-inmobiliaria": "intro cards - route cta",
     "personal-shopper": "intro - icons call cta",
-    "reformas-obras": "intro stepsList swatches cards cards - colab cta",
+    "reformas-obras": "intro cards stepsList swatches colab cta",
     valoracion: "valOptions valCriteria valAnalysis valObtain valProcess valFaq cta",
     "venta-estrategica":
       "salePoints valOptions salePrice salePhases saleReport saleIcons saleExclusive valFaq - cta",
