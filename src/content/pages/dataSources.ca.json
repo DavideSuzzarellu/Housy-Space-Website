@@ -76,6 +76,32 @@
         {
           "kind": "note",
           "text": "El sistema consulta les fonts cada 6 hores. Si una font falla, es conserven les últimes dades vàlides i, després de tres fallades consecutives, s'avisa l'equip. Generat: 20/10/2026."
+        },
+        {
+          "kind": "h2",
+          "text": "Crèdits de mapes i fonts"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Cartografia: ICGC (CC BY 4.0). Límits de districtes i barris: Ajuntament de Barcelona · CartoBCN (CC BY 4.0)."
+            },
+            {
+              "title": "",
+              "text": "Preus: Ajuntament de Barcelona · Portal de Dades. Compravenda: preu mitjà per m² dels habitatges transmesos segons el Consejo General del Notariado; lloguer: renda mitjana mensual dels contractes segons les fiances de l'INCASÒL. Xifra principal: últim any complet (2025); als gràfics, l'any en curs apareix com a provisional."
+            },
+            {
+              "title": "",
+              "text": "Densitat: Padró municipal 2026 i superfície oficial de CartoBCN."
+            },
+            {
+              "title": "",
+              "text": "Immobles intermediats (Propietats): la ubicació del mapa és aproximada i no es mostra el número del carrer. El preu és el de l'anunci publicat, no el preu final de venda, i les xifres sumen aquests preus d'anunci. La data és el mes en què l'habitatge va deixar d'anunciar-se."
+            }
+          ]
         }
       ]
     }

@@ -76,6 +76,32 @@
         {
           "kind": "note",
           "text": "Il sistema controlla le fonti ogni 6 ore. Se una fonte non risponde, vengono conservati gli ultimi dati validi e, dopo tre errori consecutivi, il team viene avvisato. Generato: 20/10/2026."
+        },
+        {
+          "kind": "h2",
+          "text": "Crediti di mappe e fonti"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Cartografia: ICGC (CC BY 4.0). Confini di distretti e quartieri: Ajuntament de Barcelona · CartoBCN (CC BY 4.0)."
+            },
+            {
+              "title": "",
+              "text": "Prezzi: Ajuntament de Barcelona · Portal de Dades. Compravendita: prezzo medio per m² delle case trasferite secondo il Consejo General del Notariado; affitto: canone medio mensile dei contratti secondo i depositi cauzionali dell'INCASÒL. Cifra principale: ultimo anno completo (2025); nei grafici, l'anno in corso appare come provvisorio."
+            },
+            {
+              "title": "",
+              "text": "Densità: Padró municipal 2026 e superficie ufficiale di CartoBCN."
+            },
+            {
+              "title": "",
+              "text": "Immobili intermediati (Immobili): la posizione sulla mappa è approssimativa e non viene mostrato il numero civico. Il prezzo è quello dell'annuncio pubblicato, non il prezzo finale di vendita, e le cifre sommano quei prezzi di annuncio. La data è il mese in cui la casa ha smesso di essere pubblicizzata."
+            }
+          ]
         }
       ]
     }
