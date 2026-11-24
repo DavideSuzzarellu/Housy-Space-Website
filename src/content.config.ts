@@ -2,15 +2,21 @@ import { marketSchema } from "./features/districts/infrastructure/marketSchema";
 import { pageSchema } from "./features/pages/infrastructure/pageSchema";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
-import { CLIENT_ID, CLIENT_SECRET } from "astro:env/server";
+import { CLIENT_ID, CLIENT_SECRET, MOBILIA_OFFLINE } from "astro:env/server";
 import { homeContentSchema } from "@/features/agency/infrastructure/homeContentSchema";
 import { blogSchema } from "@/features/blog/infrastructure/blogSchema";
 import { testimonialSchema } from "@/features/reviews/infrastructure/testimonialSchema";
-import { createMobiliaLoaders } from "@/features/properties/infrastructure/mobilia/loaders";
+import {
+  createMobiliaLoaders,
+  createOfflineMobiliaLoaders,
+} from "@/features/properties/infrastructure/mobilia/loaders";
 
 // Build-time collections backed by the read-only Mobilia CRM (AGENTS.md §3.2, §5).
 // Incremental sync and CI caching: docs/content-sync.md.
-const mobilia = createMobiliaLoaders({ clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
+// MOBILIA_OFFLINE is only for CI checks that need no CRM (docs/blog/flujo-editorial.md).
+const mobilia = MOBILIA_OFFLINE
+  ? createOfflineMobiliaLoaders()
+  : createMobiliaLoaders({ clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
 
 export const collections = {
   properties: defineCollection({ loader: mobilia.properties }),

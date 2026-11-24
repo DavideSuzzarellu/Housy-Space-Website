@@ -75,3 +75,7 @@ Mobilia has not published rate limits for the Public API (ROADMAP input I16), an
 
 - `bunx astro sync` runs the loaders without a full build. The log line `Mobilia full|incremental sync: N upserted, N removed, N skipped` shows what happened.
 - Invalid items are skipped with a warning naming only their reference. Raw payloads are never logged.
+
+## Offline mode (CI checks without the CRM)
+
+`MOBILIA_OFFLINE=true` swaps the Mobilia loaders for empty ones with the same schemas: no credentials, no network. It exists only for CI jobs that type-check or validate content (`.github/workflows/blog-check.yml`, with placeholder `CLIENT_ID`/`CLIENT_SECRET` to satisfy the env schema). Never set it for a real build or deploy: the site would have no properties.

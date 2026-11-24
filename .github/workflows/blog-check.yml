@@ -1,0 +1,42 @@
+name: Blog check
+
+# Editorial and SEO gate for blog pull requests. It never publishes anything: publication is a
+# human approval plus a merge (docs/blog/flujo-editorial.md).
+on:
+  pull_request:
+    paths:
+      - "src/content/blog/**"
+      - "src/content/market/**"
+      - "src/features/blog/**"
+      - "docs/blog/**"
+
+permissions:
+  contents: read
+
+jobs:
+  blog-check:
+    runs-on: ubuntu-latest
+    env:
+      # No Mobilia secrets here. MOBILIA_OFFLINE makes the content sync of `astro check` skip the
+      # CRM (empty property collections); the two variables below only satisfy the env schema.
+      MOBILIA_OFFLINE: "true"
+      CLIENT_ID: offline
+      CLIENT_SECRET: offline
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Blog editorial and SEO checks
+        run: bun run blog:check
+
+      - name: Unit tests
+        run: bun run test
+
+      - name: Type check
+        run: bun run check

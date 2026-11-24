@@ -51,6 +51,8 @@ export default defineConfig({
     schema: {
       CLIENT_ID: envField.string({ context: "server", access: "secret" }),
       CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
+      // true = empty Mobilia collections, no credentials or network (CI checks only).
+      MOBILIA_OFFLINE: envField.boolean({ context: "server", access: "public", default: false }),
       PUBLIC_VALUATOR_URL: envField.string({
         context: "client",
         access: "public",

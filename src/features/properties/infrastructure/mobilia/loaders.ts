@@ -29,6 +29,26 @@ export function mobiliaAgentsLoader(client: MobiliaClient) {
   } satisfies Loader;
 }
 
+/**
+ * Empty collections with the same schemas, for CI jobs that only type-check or validate content
+ * (`MOBILIA_OFFLINE=true`): no credentials, no network. Never for a real build: the site would
+ * have no properties.
+ */
+export function createOfflineMobiliaLoaders() {
+  return {
+    properties: {
+      name: "mobilia-properties-offline",
+      schema: propertySchema,
+      load: () => Promise.resolve(),
+    } satisfies Loader,
+    agents: {
+      name: "mobilia-agents-offline",
+      schema: agentSchema,
+      load: () => Promise.resolve(),
+    } satisfies Loader,
+  };
+}
+
 /** Both loaders share one client, hence one cached OAuth token per build. */
 export function createMobiliaLoaders(credentials: MobiliaCredentials) {
   const client = createMobiliaClient(credentials);
