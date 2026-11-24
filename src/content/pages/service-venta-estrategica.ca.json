@@ -97,6 +97,103 @@
         {
           "kind": "p",
           "text": "Si tries l'assessor, et truquem per concertar la visita, veiem l'habitatge i la seva documentació i et lliurem l'informe comentat. Pots demanar-la encara que estiguis decidint; si encara no saps si vendre, comença per una [consulta d'orientació](route:services#asesoramiento)."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valoració amb un assessor"
+            },
+            {
+              "kind": "lead",
+              "text": "Deixa'ns les teves dades i un assessor d'HousySpace et trucarà per valorar el teu habitatge en persona."
+            },
+            {
+              "kind": "form",
+              "id": "valuation-adviser-form",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "Nom i cognoms",
+                  "required": true,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "telefono",
+                  "label": "Telèfon",
+                  "required": true,
+                  "full": false,
+                  "type": "tel",
+                  "kind": "field"
+                },
+                {
+                  "name": "email",
+                  "label": "Adreça electrònica",
+                  "required": true,
+                  "full": true,
+                  "type": "email",
+                  "kind": "field"
+                },
+                {
+                  "name": "direccion",
+                  "label": "Adreça o barri de l'habitatge",
+                  "required": true,
+                  "full": true,
+                  "type": "text",
+                  "placeholder": "Carrer i número, o barri",
+                  "kind": "field"
+                },
+                {
+                  "name": "mensaje",
+                  "label": "Explica'ns alguna cosa més (estat, reformes, terminis…)",
+                  "required": false,
+                  "full": true,
+                  "type": "textarea",
+                  "kind": "field"
+                },
+                {
+                  "name": "consent",
+                  "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud. (Text legal pendent d'aprovació.)",
+                  "required": true,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "mkt",
+                  "label": "Vull rebre comunicacions comercials de HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "news",
+                  "label": "Vull subscriure'm a la newsletter i als articles de HousySpace per correu electrònic. (Opcional.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i la newsletter. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy). (Text legal en esborrany.)"
+                },
+                {
+                  "kind": "submit",
+                  "label": "Sol·licitar valoració"
+                },
+                {
+                  "kind": "note",
+                  "text": "Encara no hi ha cap sistema que rebi el formulari (CRM pendent). En prémer, s'obrirà WhatsApp amb la teva sol·licitud ja redactada perquè tu l'enviïs; fins que no l'enviïs allà, no haurà arribat a HousySpace."
+                }
+              ],
+              "mode": "whatsapp"
+            }
+          ]
         }
       ]
     },

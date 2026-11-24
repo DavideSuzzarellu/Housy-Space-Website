@@ -97,6 +97,103 @@
         {
           "kind": "p",
           "text": "Si eliges al asesor, te llamamos para concertar la visita, vemos la vivienda y su documentación y te entregamos el informe comentado. Puedes pedirla aunque todavía estés decidiendo; si aún no sabes si vender, empieza por una [consulta de orientación](route:services#asesoramiento)."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Valoración con un asesor"
+            },
+            {
+              "kind": "lead",
+              "text": "Déjanos tus datos y un asesor de HousySpace te llamará para valorar tu vivienda en persona."
+            },
+            {
+              "kind": "form",
+              "id": "valuation-adviser-form",
+              "fields": [
+                {
+                  "name": "nombre",
+                  "label": "Nombre y apellidos",
+                  "required": true,
+                  "full": false,
+                  "type": "text",
+                  "kind": "field"
+                },
+                {
+                  "name": "telefono",
+                  "label": "Teléfono",
+                  "required": true,
+                  "full": false,
+                  "type": "tel",
+                  "kind": "field"
+                },
+                {
+                  "name": "email",
+                  "label": "Correo electrónico",
+                  "required": true,
+                  "full": true,
+                  "type": "email",
+                  "kind": "field"
+                },
+                {
+                  "name": "direccion",
+                  "label": "Dirección o barrio de la vivienda",
+                  "required": true,
+                  "full": true,
+                  "type": "text",
+                  "placeholder": "Calle y número, o barrio",
+                  "kind": "field"
+                },
+                {
+                  "name": "mensaje",
+                  "label": "Cuéntanos algo más (estado, reformas, plazos…)",
+                  "required": false,
+                  "full": true,
+                  "type": "textarea",
+                  "kind": "field"
+                },
+                {
+                  "name": "consent",
+                  "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud.",
+                  "required": true,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "mkt",
+                  "label": "Quiero recibir comunicaciones comerciales de HousySpace sobre inmuebles, servicios y novedades, por correo electrónico, WhatsApp o teléfono. (Opcional.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "name": "news",
+                  "label": "Quiero suscribirme a la newsletter y a los artículos de HousySpace por correo electrónico. (Opcional.)",
+                  "required": false,
+                  "full": true,
+                  "type": "consent",
+                  "kind": "field"
+                },
+                {
+                  "kind": "note",
+                  "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy)."
+                },
+                {
+                  "kind": "submit",
+                  "label": "Solicitar valoración"
+                },
+                {
+                  "kind": "note",
+                  "text": "Todavía no hay un sistema que reciba el formulario (CRM pendiente). Al pulsar, se abrirá WhatsApp con tu solicitud ya escrita para que la envíes tú; hasta que no la envíes allí, no habrá llegado a HousySpace."
+                }
+              ],
+              "mode": "whatsapp"
+            }
+          ]
         }
       ]
     },
