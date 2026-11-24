@@ -27,11 +27,11 @@ export default defineConfig({
   // Tests run against the production build served by `astro preview`.
   webServer: {
     command: `bun run build && bun run preview --port ${PORT} --ignore-lock`,
-    // `base` in astro.config.ts: the preview serves nothing outside it, so `/es` would be a 404.
-    url: `http://localhost:${PORT}/Housy-Space-Website/es`,
+    // The preview serves only under the build base (ASTRO_BASE, "/" = root): wait on a real page.
+    url: `http://localhost:${PORT}${ASTRO_BASE === "/" ? "" : ASTRO_BASE.replace(//$/, "")}/es`,
     reuseExistingServer: !isCI,
     // Production deploys under a repository sub-path; tests use the site root.
     env: { ASTRO_BASE, ASTRO_SITE: "https://www.housyspace.com" },
-    timeout: 180_000,
+    timeout: 300_000,
   },
 });
