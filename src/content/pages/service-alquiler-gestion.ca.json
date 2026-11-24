@@ -6,7 +6,7 @@
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-alquiler-1000.webp",
-      "alt": "Il·lustració del servei: Un arc verd que protegeix tres edificis",
+      "alt": "Il·lustració del servei: un arc verd que protegeix tres edificis",
       "scale": 0.798
     },
     "items": [
@@ -168,7 +168,7 @@
             },
             {
               "title": "Comercialització",
-              "text": "Presentem la propietat i atenem els interessats."
+              "text": "Presentem l'immoble i atenem els interessats."
             },
             {
               "title": "Selecció",
@@ -247,7 +247,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

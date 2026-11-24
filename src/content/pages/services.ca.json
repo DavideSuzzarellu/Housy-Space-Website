@@ -184,7 +184,7 @@
           "items": [
             {
               "title": "Venc o llogo?",
-              "text": "Comparem les dues opcions amb números: preu de venda, renda esperable, impostos i despeses.",
+              "text": "Comparem les dues opcions amb xifres: preu de venda, renda previsible, impostos i despeses.",
               "kicker": "Compravenda i intermediació immobiliària",
               "href": "service:venta-estrategica"
             },
@@ -214,7 +214,7 @@
             },
             {
               "title": "Vull invertir en habitatge",
-              "text": "Què comprar, amb quins números i amb quins riscos.",
+              "text": "Què comprar, amb quines xifres i amb quins riscos.",
               "kicker": "Inversió immobiliària",
               "href": "service:inversion-inmobiliaria"
             }
@@ -291,7 +291,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },

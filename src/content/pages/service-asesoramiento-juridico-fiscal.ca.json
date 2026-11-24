@@ -6,7 +6,7 @@
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
-      "alt": "Il·lustració del servei: Una balança esquemàtica en equilibri",
+      "alt": "Il·lustració del servei: una balança esquemàtica en equilibri",
       "scale": 0.684
     },
     "items": [
@@ -154,7 +154,7 @@
                 },
                 {
                   "title": "",
-                  "text": "Les rendes en la declaració"
+                  "text": "Les rendes a la declaració"
                 }
               ]
             }
@@ -312,7 +312,7 @@
                 },
                 {
                   "title": "IRPF: rendiments",
-                  "text": "Estat. Si lloguers l'habitatge."
+                  "text": "Estat. Si llogues l'habitatge."
                 },
                 {
                   "title": "Patrimoni",
@@ -441,7 +441,7 @@
               "solid": false
             },
             {
-              "label": "Email",
+              "label": "Correu",
               "href": "mailto:info@housyspace.com",
               "solid": false
             },
