@@ -927,11 +927,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Conservación:** Mientras tu búsqueda esté activa y, como máximo, 12 meses desde nuestro último contacto contigo. Después se suprimen o se bloquean durante el tiempo que exija la ley. (Plazo pendiente de confirmar por HousySpace.)"
+                  "text": "**Conservación:** Mientras tu búsqueda esté activa y, como máximo, 12 meses desde nuestro último contacto contigo. Después se suprimen o se bloquean durante el tiempo que exija la ley."
                 },
                 {
                   "kind": "note",
-                  "text": "**Destinatarios:** No cedemos tus datos a terceros, salvo obligación legal. Pueden tratarlos por nuestra cuenta, y con contrato, los proveedores que dan soporte a la web, al correo, a la base de datos y a la mensajería (por ejemplo, WhatsApp si eliges ese canal). (Lista concreta pendiente de confirmar.)"
+                  "text": "**Destinatarios:** No cedemos tus datos a terceros, salvo obligación legal. Pueden tratarlos por nuestra cuenta, y con contrato, los proveedores que dan soporte a la web, al correo, a la base de datos y a la mensajería (por ejemplo, WhatsApp si eliges ese canal)."
                 },
                 {
                   "kind": "note",
@@ -991,10 +991,6 @@
                 {
                   "kind": "note",
                   "text": "Las casillas opcionales vienen sin marcar. Puedes retirar cualquier consentimiento cuando quieras, con el enlace de baja de cada correo o escribiendo a [info@housyspace.com](mailto:info@housyspace.com)."
-                },
-                {
-                  "kind": "note",
-                  "text": "**Textos legales en borrador.** La información sobre protección de datos, las casillas y la política de privacidad están pendientes de revisión por la asesoría jurídica de HousySpace antes de publicar la web."
                 },
                 {
                   "kind": "submit",

@@ -927,11 +927,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Retention:** While your search is active and, at most, 12 months from our last contact. Afterwards data is deleted or blocked for the period required by law. (Retention period to be confirmed by HousySpace.)"
+                  "text": "**Retention:** While your search is active and, at most, 12 months from our last contact. Afterwards data is deleted or blocked for the period required by law."
                 },
                 {
                   "kind": "note",
-                  "text": "**Recipients:** We do not share your data with third parties, except as required by law. Data processors who act on our behalf and under contract include suppliers supporting the website, email, database and messaging (e.g. WhatsApp if you choose that channel). (Full list to be confirmed.)"
+                  "text": "**Recipients:** We do not share your data with third parties, except as required by law. Data processors who act on our behalf and under contract include suppliers supporting the website, email, database and messaging (e.g. WhatsApp if you choose that channel)."
                 },
                 {
                   "kind": "note",
@@ -991,10 +991,6 @@
                 {
                   "kind": "note",
                   "text": "The optional boxes are unticked by default. You can withdraw any consent at any time via the unsubscribe link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com)."
-                },
-                {
-                  "kind": "note",
-                  "text": "**Legal texts in draft.** The data protection information, checkboxes and privacy policy are pending review by HousySpace's legal advisers before the website goes live."
                 },
                 {
                   "kind": "submit",

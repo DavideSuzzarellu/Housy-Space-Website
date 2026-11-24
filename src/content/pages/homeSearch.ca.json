@@ -927,11 +927,11 @@
                 },
                 {
                   "kind": "note",
-                  "text": "**Conservació:** Mentre la teva cerca estigui activa i, com a màxim, 12 mesos des del nostre últim contacte. Després se suprimeixen o se bloquejen durant el temps que exigeixi la llei. (Termini pendent de confirmar per HousySpace.)"
+                  "text": "**Conservació:** Mentre la teva cerca estigui activa i, com a màxim, 12 mesos des del nostre últim contacte. Després se suprimeixen o se bloquejen durant el temps que exigeixi la llei."
                 },
                 {
                   "kind": "note",
-                  "text": "**Destinataris:** No cedim les teves dades a tercers, tret d'obligació legal. Poden tractar-les per compte nostre, i amb contracte, els proveïdors que donen suport al web, al correu, a la base de dades i a la missatgeria (per exemple, WhatsApp si tries aquest canal). (Llista concreta pendent de confirmar.)"
+                  "text": "**Destinataris:** No cedim les teves dades a tercers, tret d'obligació legal. Poden tractar-les per compte nostre, i amb contracte, els proveïdors que donen suport al web, al correu, a la base de dades i a la missatgeria (per exemple, WhatsApp si tries aquest canal)."
                 },
                 {
                   "kind": "note",
@@ -991,10 +991,6 @@
                 {
                   "kind": "note",
                   "text": "Les caselles opcionals venen sense marcar. Pots retirar qualsevol consentiment quan vulguis, amb l'enllaç de baixa de cada correu o escrivint a [info@housyspace.com](mailto:info@housyspace.com)."
-                },
-                {
-                  "kind": "note",
-                  "text": "**Textos legals en esborrany.** La informació sobre protecció de dades, les caselles i la política de privacitat estan pendents de revisió per l'assessoria jurídica de HousySpace abans de publicar el web."
                 },
                 {
                   "kind": "submit",
