@@ -2,20 +2,16 @@
   "title": "Blog · HousySpace",
   "description": "Blog di HousySpace su quartieri, architettura, mercato e normativa immobiliare a Barcellona.",
   "head": {
-    "heading": "Blog",
+    "heading": "Il *Blog*",
     "photo": false,
     "items": [
       {
-        "kind": "p",
-        "text": "Blog"
-      },
-      {
-        "kind": "p",
-        "text": "HousySpace · Barcelona"
+        "kind": "tag",
+        "text": "Conoscenza immobiliare a Barcellona"
       },
       {
         "kind": "lead",
-        "text": "Quartieri, architettura, mercato e normativa, spiegati con calma da chi lavora ogni giorno in città."
+        "text": "Analisi, consigli e decisioni immobiliari a Barcellona, spiegati con calma da chi lavora ogni giorno in città."
       }
     ]
   },

@@ -51,3 +51,7 @@ Also 2026-11-09, from the same reference site (`assets/img/colaboradores/edac.pn
 ## About us page
 
 Added 2026-11-10 from the client's static reference site (`assets/img/nosotros/ill-*-1248.webp`), same AI-generated placeholder status as the service illustrations: `src/assets/nosotros/ill-*.webp` (8 transparent illustrations: experiencia, historia, filosofia, milla, diferencia, como-trabajamos, compromiso, colaboraciones). The footer already carries the "Imagen conceptual generada con IA" notice. Replace before launch.
+
+## Blog article valuation block
+
+Added 2026-11-24 from the client's static reference site (`assets/img/valoracion/online-960.webp`, `asesor-960.webp`): `src/assets/valoracion/`, the two photos of the valuation block at the end of every blog article (online valuation, valuation with an advisor). Same status as the reference photos (client-supplied, AI-generated placeholders to confirm before launch).

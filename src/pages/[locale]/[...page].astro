@@ -248,7 +248,9 @@ const crumbs = [
       serviceCrumb ??
       (isMySearch
         ? dictionary.nav.mySearch
-        : editorial?.content.head.heading.replaceAll("*", "")) ??
+        : target.view === "editorial" && target.key === "blog"
+          ? dictionary.nav.blog
+          : editorial?.content.head.heading.replaceAll("*", "")) ??
       "",
   },
 ];
