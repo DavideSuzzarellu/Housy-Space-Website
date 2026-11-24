@@ -80,15 +80,15 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Visura ipotecaria, gravami e situazione al Registro della Proprietà"
+                  "text": "Nota simple (visura del registro immobiliare), gravami e situazione registrale"
                 },
                 {
                   "title": "",
-                  "text": "Contratto di caparra e contratto di compravendita"
+                  "text": "Contratto di arras (caparra) e di compravendita"
                 },
                 {
                   "title": "",
-                  "text": "Revisione dell'atto prima del notaio"
+                  "text": "Revisione dell'atto prima della firma dal notaio"
                 },
                 {
                   "title": "",
@@ -115,15 +115,15 @@
                 },
                 {
                   "title": "",
-                  "text": "Imposta sulle successioni e plusvalenza municipale"
+                  "text": "Imposta di successione e plusvalía municipal"
                 },
                 {
                   "title": "",
-                  "text": "Trascrizione al Registro della Proprietà"
+                  "text": "Iscrizione nel registro immobiliare (Registro de la Propiedad)"
                 },
                 {
                   "title": "",
-                  "text": "Accordi tra eredi per vendere o dividere"
+                  "text": "Accordi tra gli eredi per vendere o dividere"
                 }
               ]
             }
@@ -226,11 +226,11 @@
               "ordered": false,
               "items": [
                 {
-                  "title": "Imposta sulle plusvalenze municipali (plusvalía)",
+                  "title": "Plusvalía municipal",
                   "text": "Comune."
                 },
                 {
-                  "title": "IRPEF: plusvalenza immobiliare",
+                  "title": "IRPF: plusvalenza patrimoniale",
                   "text": "Stato. Se vendi con un guadagno."
                 }
               ]
@@ -253,12 +253,12 @@
               "ordered": false,
               "items": [
                 {
-                  "title": "Imposta di trasferimento immobiliare (ITP)",
+                  "title": "Imposta sui trasferimenti patrimoniali (ITP)",
                   "text": "Generalitat. Immobili usati."
                 },
                 {
                   "title": "Imposta sugli atti giuridici documentati (AJD)",
-                  "text": "Generalitat. Immobili nuovi o stipula di un mutuo."
+                  "text": "Generalitat. Nuova costruzione o stipula di un mutuo."
                 }
               ]
             }
@@ -280,11 +280,11 @@
               "ordered": false,
               "items": [
                 {
-                  "title": "Imposta sulle successioni e donazioni",
+                  "title": "Imposta di successione e donazione",
                   "text": "Generalitat."
                 },
                 {
-                  "title": "Imposta sulle plusvalenze municipali (plusvalía)",
+                  "title": "Plusvalía municipal",
                   "text": "Comune."
                 }
               ]
@@ -307,15 +307,15 @@
               "ordered": false,
               "items": [
                 {
-                  "title": "Imposta municipale sugli immobili (IBI)",
+                  "title": "Imposta sui beni immobili (IBI)",
                   "text": "Comune. Ogni anno."
                 },
                 {
-                  "title": "IRPEF: redditi da locazione",
+                  "title": "IRPF: redditi da locazione",
                   "text": "Stato. Se affitti l'immobile."
                 },
                 {
-                  "title": "Imposta patrimoniale",
+                  "title": "Imposta sul patrimonio",
                   "text": "Stato. In base al valore del tuo patrimonio."
                 }
               ]
@@ -421,7 +421,7 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Parliamo"
+          "text": "Parliamone"
         },
         {
           "kind": "lead",

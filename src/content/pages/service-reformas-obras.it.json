@@ -81,7 +81,7 @@
             },
             {
               "title": "Per affittare",
-              "text": "Messa a punto della casa prima di metterla in affitto."
+              "text": "Preparazione della casa prima di metterla in affitto."
             },
             {
               "title": "Per investire",
@@ -108,7 +108,7 @@
           "kind": "steps",
           "items": [
             {
-              "title": "Visita e esigenze",
+              "title": "Visita ed esigenze",
               "text": "Vediamo lo spazio e capiamo come vuoi viverlo."
             },
             {
@@ -121,7 +121,7 @@
             },
             {
               "title": "Permessi e autorizzazioni",
-              "text": "Si gestiscono i permessi per i lavori richiesti dal Comune."
+              "text": "Ci occupiamo noi dei permessi di lavori richiesti dal Comune."
             },
             {
               "title": "Lavori",
@@ -240,7 +240,7 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Parliamo"
+          "text": "Parliamone"
         },
         {
           "kind": "lead",

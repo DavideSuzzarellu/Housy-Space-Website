@@ -1,8 +1,8 @@
 {
-  "title": "Locazioni e gestione immobiliare · HousySpace",
+  "title": "Affitto e gestione di immobili · HousySpace",
   "description": "Commercializzazione, selezione degli inquilini e gestione della locazione.",
   "head": {
-    "heading": "Locazioni *e gestione immobiliare*",
+    "heading": "Affitto *e gestione di immobili*",
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-alquiler-1000.webp",
@@ -88,7 +88,7 @@
                 },
                 {
                   "title": "",
-                  "text": "Verifica della solvibilità e documentazione"
+                  "text": "Verifica della solvibilità e della documentazione"
                 },
                 {
                   "title": "",
@@ -119,7 +119,7 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Assistenza all'inquilino e gestione degli inconvenienti"
+                  "text": "Assistenza all'inquilino e gestione dei problemi"
                 },
                 {
                   "title": "",
@@ -127,11 +127,11 @@
                 },
                 {
                   "title": "",
-                  "text": "Monitoraggio dei pagamenti e delle utenze"
+                  "text": "Controllo dei pagamenti e delle utenze"
                 },
                 {
                   "title": "",
-                  "text": "Rinnovi, aggiornamenti e fine contratto"
+                  "text": "Rinnovi, aggiornamento del canone e fine contratto"
                 },
                 {
                   "title": "",
@@ -168,7 +168,7 @@
             },
             {
               "title": "Commercializzazione",
-              "text": "Presentiamo la proprietà e rispondiamo agli interessati."
+              "text": "Presentiamo l'immobile e rispondiamo agli interessati."
             },
             {
               "title": "Selezione",
@@ -197,7 +197,7 @@
         {
           "kind": "faq",
           "q": "Quali documenti mi servono per affittare?",
-          "a": "In Catalogna, il certificato di abitabilità e l'attestato di prestazione energetica. Se non li hai, se ne occupa l'architetto con cui collaboriamo."
+          "a": "In Catalogna servono il certificato di abitabilità (cédula de habitabilidad) e l'attestato di prestazione energetica. Se non li hai, se ne occupa l'architetto con cui collaboriamo."
         },
         {
           "kind": "faq",
@@ -207,12 +207,12 @@
         {
           "kind": "faq",
           "q": "Vi occupate del contratto e del deposito cauzionale?",
-          "a": "Sì. Prepariamo il contratto e gestiamo il deposito del deposito cauzionale presso l'INCASÒL, come previsto dalla normativa catalana."
+          "a": "Sì. Prepariamo il contratto e versiamo il deposito cauzionale all'INCASÒL, come previsto dalla normativa catalana."
         },
         {
           "kind": "faq",
           "q": "E se si verifica un problema durante il contratto?",
-          "a": "Se scegli la gestione, ci occupiamo degli inconvenienti. E se sorge una controversia legale, la coordiniamo con lo studio legale con cui lavoriamo. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal)."
+          "a": "Se scegli la gestione, ci occupiamo noi dei problemi. E se sorge una controversia legale, la coordiniamo con lo studio legale con cui lavoriamo. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal)."
         },
         {
           "kind": "p",
@@ -227,7 +227,7 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Parliamo"
+          "text": "Parliamone"
         },
         {
           "kind": "lead",
