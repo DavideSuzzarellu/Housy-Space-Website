@@ -2,44 +2,141 @@
   "title": "Valutazione immobiliare · HousySpace",
   "description": "Richiedi una valutazione professionale del tuo immobile a Barcellona.",
   "head": {
-    "heading": "Quanto vale il tuo immobile?",
-    "photo": true,
+    "heading": "Il valore della tua casa *merita più di una cifra*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Valutazione immobiliare"
+        "text": "Valutazione immobiliare a Barcellona"
       },
       {
         "kind": "lead",
-        "text": "Scopri il valore reale del tuo immobile con un'analisi immobiliare professionale, basata sul mercato e sulle caratteristiche della tua proprietà."
+        "text": "Ogni casa è diversa, e anche il suo valore. Studiamo le sue caratteristiche, la sua posizione e le condizioni del mercato per offrirti una valutazione fondata e aiutarti a decidere con cognizione di causa."
       }
     ]
   },
   "sections": [
+    {
+      "id": "opciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Due modi per valutare"
+        },
+        {
+          "kind": "h2",
+          "text": "Scegli come scoprire *il valore della tua casa*"
+        },
+        {
+          "kind": "p",
+          "text": "Puoi iniziare da una stima online e, quando vuoi, chiedere a un consulente di analizzare la tua casa. Sono due passaggi che si completano."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Subito"
+            },
+            {
+              "kind": "h3",
+              "text": "Valutazione online"
+            },
+            {
+              "kind": "p",
+              "text": "Una prima stima indicativa in base ai dati che inserisci. Utile come riferimento iniziale, ma non sostituisce l'analisi specifica dell'immobile."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Risultato immediato"
+                },
+                {
+                  "title": "",
+                  "text": "In base ai dati che inserisci"
+                },
+                {
+                  "title": "",
+                  "text": "Stima indicativa"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valuta online ora",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Studio personalizzato"
+            },
+            {
+              "kind": "h3",
+              "text": "Valutazione con un consulente"
+            },
+            {
+              "kind": "p",
+              "text": "Analizziamo la tua casa, le sue particolarità e le condizioni del mercato, e ti spieghiamo cosa incide sul suo valore."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Sopralluogo dell'immobile"
+                },
+                {
+                  "title": "",
+                  "text": "Verifica della documentazione"
+                },
+                {
+                  "title": "",
+                  "text": "Studio di mercato commentato"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Richiedi una valutazione con un consulente",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "informe",
       "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "h2",
-          "text": "Il tuo rapporto di valutazione, all'istante"
-        },
-        {
-          "kind": "lead",
-          "text": "Inserisci i dati del tuo immobile nello strumento di valutazione e riceverai immediatamente il tuo rapporto. Se lo desideri, un consulente lo esaminerà con te in seguito."
-        },
-        {
           "kind": "valuator",
           "title": "Strumento di valutazione online di HousySpace"
         },
         {
           "kind": "p",
-          "text": "Non vedi lo strumento di valutazione? [Aprilo in una nuova scheda](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) oppure richiedi la valutazione a un consulente con il [modulo qui sotto](#solicitud)."
+          "text": "Non vedi lo strumento di valutazione? [Aprilo in una nuova scheda](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
         },
         {
           "kind": "note",
@@ -49,16 +146,16 @@
     },
     {
       "id": "solicitud",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "Preferisci che ti chiami un consulente?"
+          "text": "Valutazione con un consulente"
         },
         {
           "kind": "lead",
-          "text": "Lasciaci i tuoi dati e un consulente di HousySpace ti contatterà per valutare il tuo immobile di persona."
+          "text": "Lasciaci i tuoi dati: un consulente di HousySpace ti chiamerà per valutare la tua casa di persona."
         },
         {
           "kind": "form",
@@ -107,7 +204,7 @@
             },
             {
               "name": "consent",
-              "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
+              "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -130,7 +227,8 @@
               "kind": "field"
             },
             {
-              "kind": "note",
+              "kind": "details",
+              "summary": "Informazioni di base sulla protezione dei dati",
               "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: gestire la tua richiesta e, solo se lo selezioni, inviarti comunicazioni commerciali e la newsletter. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione, portabilità e revoca del consenso scrivendo a [info@housyspace.com](mailto:info@housyspace.com); puoi presentare reclamo all'AEPD. Ulteriori informazioni nell'[informativa sulla privacy](route:privacy). (Testo legale in bozza.)"
             },
             {
@@ -143,21 +241,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Sul servizio di valutazione",
-              "href": "service:valoracion",
-              "solid": false
-            },
-            {
-              "label": "Parlare con un consulente",
-              "href": "route:contact",
-              "solid": false
-            }
-          ]
         }
       ]
     }

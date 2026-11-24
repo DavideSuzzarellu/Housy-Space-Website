@@ -25,6 +25,7 @@ import {
 import ContactView from "@/features/agency/ui/ContactView.astro";
 import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
+import ValuationView from "@/features/valuation/ui/ValuationView.astro";
 import ServiceView from "@/features/pages/ui/ServiceView.astro";
 import ServicesIndexView from "@/features/pages/ui/ServicesIndexView.astro";
 import { COMPANY } from "@/features/agency/domain/company";
@@ -235,8 +236,13 @@ const proseFallback =
   (editorial?.fallback ?? false) ||
   (!isSpanish && (target.view === "district" || target.view === "living")) ||
   (target.view === "post" && target.post.data.language !== locale);
+// The valuation page hangs from the services like the reference's valuation service page.
 const serviceCrumb =
-  target.view === "service" ? dictionary.serviceNames[target.service] : undefined;
+  target.view === "service"
+    ? dictionary.serviceNames[target.service]
+    : target.view === "editorial" && target.key === "valuation"
+      ? dictionary.serviceNames.valuation
+      : undefined;
 const crumbs = [
   home,
   ...(serviceCrumb === undefined
@@ -274,6 +280,13 @@ const crumbs = [
     <ContactView locale={locale} content={editorial.content} crumbs={crumbs} />
   ) : target.view === "editorial" && target.key === "services" && editorial !== undefined ? (
     <ServicesIndexView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
+  ) : target.view === "editorial" && target.key === "valuation" && editorial !== undefined ? (
+    <ValuationView
       locale={locale}
       content={editorial.content}
       crumbs={crumbs}

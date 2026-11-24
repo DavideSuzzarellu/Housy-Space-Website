@@ -1,0 +1,213 @@
+---
+import { PUBLIC_VALUATOR_URL } from "astro:env/client";
+import advisorPhoto from "@/assets/valoracion/asesor-960.webp";
+import onlinePhoto from "@/assets/valoracion/online-960.webp";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
+import LeadForm from "@/features/leads/ui/LeadForm.astro";
+import { itemsOf, type PageContent } from "@/features/pages/application/pages";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import ValuationEmbed from "./ValuationEmbed.astro";
+import ValuationOption from "./ValuationOption.astro";
+
+/**
+ * The valuation page (reference: the valuation service page, `/servicios/valoracion/`): head with
+ * the street grid, the two ways to value (online / with an advisor) and, as in the reference, two
+ * pop-ups the rows open: the external valuator and the adviser request form. Pop-ups are native
+ * `popover` elements (light dismiss, Esc and focus return without JS); the valuator iframe is lazy,
+ * so nothing is requested from the provider until the visitor opens it. This site never computes
+ * valuation figures (AGENTS.md §6 item 12).
+ */
+interface Props {
+  locale: Locale;
+  content: PageContent;
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+  fallback?: boolean;
+}
+
+const { locale, content, crumbs, fallback = false } = Astro.props;
+const t = getDictionary(locale);
+const sectionItems = (id: string) => content.sections.find((s) => s.id === id)?.items ?? [];
+const tag = itemsOf(content.head.items, "tag")[0];
+const lead = itemsOf(content.head.items, "lead")[0];
+const options = sectionItems("opciones");
+const [onlineCard, advisorCard] = itemsOf(options, "card");
+const valuator = itemsOf(sectionItems("informe"), "valuator")[0];
+const fallbackLine = itemsOf(sectionItems("informe"), "p")[0];
+const legalNote = itemsOf(sectionItems("informe"), "note")[0];
+const request = sectionItems("solicitud");
+const form = itemsOf(request, "form")[0];
+
+const rowOf = (card: typeof onlineCard) => ({
+  tag: itemsOf(card?.items ?? [], "tag")[0]?.text ?? "",
+  title: itemsOf(card?.items ?? [], "h3")[0]?.text ?? "",
+  text: itemsOf(card?.items ?? [], "p")[0]?.text ?? "",
+  facts: (itemsOf(card?.items ?? [], "list")[0]?.items ?? []).map((entry) => entry.text),
+  cta: itemsOf(card?.items ?? [], "buttons")[0]?.items[0]?.label ?? "",
+});
+const online = rowOf(onlineCard);
+const advisor = rowOf(advisorCard);
+const POP =
+  "m-auto overflow-auto bg-canvas text-fg opacity-0 shadow-[0_30px_80px_rgb(0_0_0/0.35)] backdrop:bg-ink/75 open:opacity-100 starting:open:opacity-0 transition-opacity duration-250 max-[699px]:inset-0 max-[699px]:size-full max-[699px]:max-h-none max-[699px]:max-w-none max-[699px]:rounded-none min-[700px]:rounded-sm";
+const CLOSE =
+  "absolute top-3.5 right-3.5 z-3 grid size-10.5 cursor-pointer place-items-center rounded-full bg-dark text-paper shadow-[0_2px_10px_rgb(0_0_0/0.25)] hover:bg-petrol max-[699px]:top-2.5 max-[699px]:right-2.5";
+---
+
+<div lang={fallback ? "es" : undefined} data-page-view data-valuation-view>
+  <section
+    data-page-head
+    class="relative isolate overflow-clip border-b border-fg/10 bg-canvas pt-9 pb-[clamp(2.875rem,3.5vw,3.125rem)]"
+  >
+    <StreetGrid placement="heading" />
+    <Container>
+      <Breadcrumbs
+        items={crumbs}
+        label={t.property.detail.breadcrumb}
+        tone="compact"
+        class="mb-[clamp(1.125rem,4vh,2.75rem)]"
+      />
+      {tag !== undefined && (
+        <p class="text-[0.6875rem] font-normal tracking-[0.16em] text-accent">{tag.text}</p>
+      )}
+      <h1 class="mt-3.5 mb-[clamp(1.125rem,3.4vh,2.125rem)] text-[clamp(1.875rem,8.2vw,2.75rem)] leading-[1.05] min-[760px]:text-[clamp(2.5rem,4.7vw,4.25rem)] [&_em]:block">
+        <Emphasis text={content.head.heading} />
+      </h1>
+      {lead !== undefined && (
+        <p class="text-[clamp(1rem,1.3vw,1.1875rem)] leading-[1.6] tracking-[0.02em] text-mid normal-case">
+          {lead.text}
+        </p>
+      )}
+    </Container>
+  </section>
+
+  <section id="opciones" class="py-[clamp(2.375rem,6.2vh,3.625rem)]">
+    <Container>
+      <div class="mb-[clamp(1.625rem,5vh,3.375rem)] grid items-end gap-x-[clamp(1.5rem,5vw,4.75rem)] gap-y-[clamp(0.875rem,2.6vh,1.5rem)] min-[900px]:grid-cols-2">
+        <div>
+          <p class="text-[0.6875rem] tracking-[0.16em] text-accent">
+            {itemsOf(options, "tag")[0]?.text}
+          </p>
+          <h2 class="mt-2.5 text-[clamp(1.5625rem,2.64vw,2.375rem)] font-black after:mt-4 after:block after:h-0.5 after:w-16 after:bg-turquoise after:content-[''] [&_em]:block">
+            <Emphasis text={itemsOf(options, "h2")[0]?.text ?? ""} />
+          </h2>
+        </div>
+        <p class="max-w-[60ch] text-[clamp(0.9375rem,1.12vw,1.1rem)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case">
+          {itemsOf(options, "p")[0]?.text}
+        </p>
+      </div>
+      <div class="grid gap-3 min-[900px]:gap-4">
+        <ValuationOption
+          photo={onlinePhoto}
+          alt=""
+          {...online}
+          tone="stone"
+          popoverTarget="valuation-online"
+        />
+        <ValuationOption
+          photo={advisorPhoto}
+          alt=""
+          {...advisor}
+          dark
+          popoverTarget="valuation-advisor"
+        />
+      </div>
+    </Container>
+  </section>
+
+  {valuator !== undefined && (
+    <div
+      id="valuation-online"
+      popover
+      role="dialog"
+      aria-label={valuator.title}
+      class:list={[
+        POP,
+        "flex-col min-[700px]:h-[min(56.25rem,calc(100dvh-clamp(1.5rem,6vw,4rem)))] min-[700px]:w-[min(61.25rem,calc(100vw-clamp(1.5rem,6vw,4rem)))] [&:popover-open]:flex",
+      ]}
+    >
+      <button
+        type="button"
+        popovertarget="valuation-online"
+        popovertargetaction="hide"
+        aria-label={t.property.detail.close}
+        autofocus
+        class={CLOSE}
+      >
+        <svg
+          viewBox="0 0 14 14"
+          aria-hidden="true"
+          focusable="false"
+          class="size-3.5 fill-none stroke-current stroke-[1.6]"
+          stroke-linecap="round"
+        >
+          <path d="M2 2l10 10M12 2 2 12"></path>
+        </svg>
+      </button>
+      <div class="relative min-h-0 flex-1">
+        <ValuationEmbed url={PUBLIC_VALUATOR_URL} title={valuator.title} fill />
+      </div>
+      <div class="border-t border-line bg-canvas px-4 py-2 text-[0.6875rem] leading-[1.5] text-muted normal-case [&_a]:text-fg [&_a]:underline">
+        {fallbackLine !== undefined && (
+          <p>
+            <Inline text={fallbackLine.text} locale={locale} />
+          </p>
+        )}
+        {legalNote !== undefined && (
+          <p>
+            <Inline text={legalNote.text} locale={locale} />
+          </p>
+        )}
+      </div>
+    </div>
+  )}
+
+  {form !== undefined && (
+    <div
+      id="valuation-advisor"
+      popover
+      role="dialog"
+      aria-labelledby="valuation-advisor-heading"
+      class:list={[
+        POP,
+        "p-[clamp(1.75rem,4vw,3rem)] min-[700px]:max-h-[calc(100dvh-clamp(1.5rem,6vw,4rem))] min-[700px]:w-[min(47.5rem,calc(100vw-clamp(1.5rem,6vw,4rem)))]",
+      ]}
+    >
+      <button
+        type="button"
+        popovertarget="valuation-advisor"
+        popovertargetaction="hide"
+        aria-label={t.property.detail.close}
+        autofocus
+        class={CLOSE}
+      >
+        <svg
+          viewBox="0 0 14 14"
+          aria-hidden="true"
+          focusable="false"
+          class="size-3.5 fill-none stroke-current stroke-[1.6]"
+          stroke-linecap="round"
+        >
+          <path d="M2 2l10 10M12 2 2 12"></path>
+        </svg>
+      </button>
+      <h2
+        id="valuation-advisor-heading"
+        class="mr-13 mb-5.5 text-[clamp(1.5rem,3vw,2.125rem)] leading-[1.1]"
+      >
+        {itemsOf(request, "h2")[0]?.text}
+      </h2>
+      <p class="mb-5 text-[0.9375rem] normal-case">{itemsOf(request, "lead")[0]?.text}</p>
+      <LeadForm
+        locale={locale}
+        id={form.id}
+        mode={form.mode}
+        intro={form.intro}
+        fields={form.fields}
+      />
+    </div>
+  )}
+</div>

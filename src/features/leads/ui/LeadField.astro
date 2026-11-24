@@ -121,8 +121,8 @@ const messageLabel =
 {field.kind === "field" && field.type === "check" && (
   <label
     data-lead-field
-    data-label={field.label}
-    class="mt-6 flex cursor-pointer items-center gap-3 text-xs leading-[1.4] font-medium tracking-[0.12em] text-fg"
+    data-label={plainInline(field.label)}
+    class="mt-6 flex cursor-pointer items-center gap-3 text-xs leading-[1.4] font-medium tracking-[0.12em] text-fg normal-case"
   >
     <input
       type="checkbox"
