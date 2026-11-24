@@ -504,6 +504,13 @@ const en = {
     chooseDistrict: "Choose a district",
     searchLabel: "Looking for a neighbourhood or district?",
     searchPlaceholder: "Tap or type a name",
+    barrioIn: "Neighbourhood · {district}",
+    searchPick: "Pick a district to see its neighbourhoods",
+    saleShort: "€/m² · sale",
+    rentShort: "€/month · rent",
+    searchNone: "No district or neighbourhood in Barcelona has that name.",
+    searchOne: "1 result",
+    searchMany: "{count} results",
   },
   forms: {
     step: "Step {n} of {total}",

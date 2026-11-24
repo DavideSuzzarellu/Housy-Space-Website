@@ -121,7 +121,7 @@ test("untranslated prose stays out of the index and is marked as Spanish", async
   await expect(page.locator("[data-page-view]")).toHaveAttribute("lang", "es");
 });
 
-test("the district map recolours by metric, shows a district and search filters the table", async ({
+test("the district map recolours by metric, shows a district and search lists the matching barrios", async ({
   page,
 }) => {
   await page.goto("/es/vivir-en-barcelona");
@@ -136,8 +136,8 @@ test("the district map recolours by metric, shows a district and search filters 
     "href",
     /\/vivir-en-barcelona\/eixample$/,
   );
-  await page.locator("[data-barrio-search]").fill("verdun");
-  await expect(page.locator("[data-barrio-row]:visible")).toHaveCount(1);
+  await page.locator("#barrio-search").fill("verdun");
+  await expect(page.locator('#barrio-results li[data-kind="b"]:visible')).toHaveCount(1);
 });
 
 test("the lead form opens WhatsApp with the request written", async ({ page, context }) => {

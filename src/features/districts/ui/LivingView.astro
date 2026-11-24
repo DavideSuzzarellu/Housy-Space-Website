@@ -10,10 +10,9 @@ import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 import Section from "@/shared/ui/molecules/Section.astro";
 import AccordionRail from "@/shared/ui/organisms/AccordionRail.astro";
-import BarrioTable from "./BarrioTable.astro";
+import BarrioSearch from "./BarrioSearch.astro";
 import DistrictMap from "./DistrictMap.astro";
 import { DISTRICT_IMAGES } from "./districtImages";
-import { byDescending } from "./marketSources";
 
 /** Living in Barcelona: district map (no map tiles, no JS), district accordion and barrio search. */
 interface Props {
@@ -83,7 +82,7 @@ const panels = market.districts.flatMap((district, index) => {
 <section
   id="distritos"
   aria-labelledby="living-districts"
-  class="surface-stone overflow-hidden bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]"
+  class="surface-stone overflow-hidden bg-canvas py-[clamp(2.375rem,6.2vh,3.625rem)]"
 >
   <Container>
     <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{t.allDistricts}</p>
@@ -94,33 +93,6 @@ const panels = market.districts.flatMap((district, index) => {
   </Container>
 </section>
 
-<Section id="buscar" labelledBy="living-search" name="living-search">
-  <label
-    id="living-search"
-    for="barrio-search"
-    class="mb-3 block text-[clamp(1.25rem,2.2vw,1.75rem)] font-extrabold"
-  >
-    {t.searchLabel}
-  </label>
-  <input
-    id="barrio-search"
-    type="search"
-    data-barrio-search
-    placeholder={t.searchPlaceholder}
-    class="mb-5 min-h-11 w-full border border-line bg-canvas px-3.5 py-2.5 text-sm"
-  />
-  <BarrioTable locale={locale} barrios={byDescending(market.barrios, (b) => b.sale)} searchable />
+<Section id="buscar" labelledBy="barrio-search" name="living-search" spacing="scale">
+  <BarrioSearch locale={locale} market={market} />
 </Section>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const search = document.querySelector<HTMLInputElement>("[data-barrio-search]");
-    const clean = (value: string) => value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
-    search?.addEventListener("input", () => {
-      const query = clean(search.value);
-      document.querySelectorAll<HTMLElement>("[data-barrio-row]").forEach((row) => {
-        row.hidden = !clean(row.dataset["barrioRow"] ?? "").includes(query);
-      });
-    });
-  });
-</script>

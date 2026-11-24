@@ -17,11 +17,9 @@ interface Props {
     readonly density: number;
     readonly href?: string | undefined;
   }[];
-  /** Adds the `data-barrio-row` hook used by the barrio search. */
-  searchable?: boolean;
 }
 
-const { locale, barrios, current, references = [], searchable = false } = Astro.props;
+const { locale, barrios, current, references = [] } = Astro.props;
 const t = getDictionary(locale).zones;
 const format = figureFormat(locale);
 const CELL =
@@ -48,10 +46,7 @@ const CELL =
     </thead>
     <tbody>
       {barrios.map((barrio) => (
-        <tr
-          data-barrio-row={searchable ? barrio.name : undefined}
-          class={barrio.slug === current ? "bg-taupe/18" : undefined}
-        >
+        <tr class={barrio.slug === current ? "bg-taupe/18" : undefined}>
           <th
             scope="row"
             class="border-b border-line px-3 py-[13px] text-left font-heading text-[1.0625rem] leading-tight font-normal"

@@ -505,6 +505,13 @@ const it = {
     chooseDistrict: "Scegli un distretto",
     searchLabel: "Cerchi un quartiere o un distretto?",
     searchPlaceholder: "Tocca o scrivi un nome",
+    barrioIn: "Quartiere · {district}",
+    searchPick: "Scegli un distretto per vedere i suoi quartieri",
+    saleShort: "€/m² · vendita",
+    rentShort: "€/mese · affitto",
+    searchNone: "Nessun distretto o quartiere di Barcellona ha questo nome.",
+    searchOne: "1 risultato",
+    searchMany: "{count} risultati",
   },
   forms: {
     step: "Passo {n} di {total}",

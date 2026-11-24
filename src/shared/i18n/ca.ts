@@ -505,6 +505,13 @@ const ca = {
     chooseDistrict: "Tria un districte",
     searchLabel: "Busques un barri o un districte?",
     searchPlaceholder: "Prem o escriu un nom",
+    barrioIn: "Barri · {district}",
+    searchPick: "Tria un districte per veure'n els barris",
+    saleShort: "€/m² · venda",
+    rentShort: "€/mes · lloguer",
+    searchNone: "Cap districte ni barri de Barcelona té aquest nom.",
+    searchOne: "1 resultat",
+    searchMany: "{count} resultats",
   },
   forms: {
     step: "Pas {n} de {total}",
