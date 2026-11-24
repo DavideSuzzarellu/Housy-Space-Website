@@ -314,11 +314,9 @@ const ca = {
     },
     services: {
       regionLabel: "Els nostres serveis",
-      pause: "Pausa el carrusel",
-      play: "Reprèn el carrusel",
-      carousel: "carrusel",
-      previous: "Servei anterior",
-      next: "Servei següent",
+      open: "Obre",
+      previous: "Serveis anteriors",
+      next: "Serveis següents",
       tags: {
         saleBrokerage: "Intermediació",
         valuation: "Preu de mercat",

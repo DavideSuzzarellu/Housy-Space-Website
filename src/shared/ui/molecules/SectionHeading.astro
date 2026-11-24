@@ -5,7 +5,7 @@ import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 interface Props {
   id: string;
   heading: string;
-  size?: "md" | "lg" | "data" | "xl";
+  size?: "md" | "lg" | "data" | "xl" | "home";
   class?: string;
 }
 
@@ -17,6 +17,8 @@ const SIZES = {
   data: "text-[clamp(1.875rem,3.4vw,2.75rem)] text-balance",
   /** Reference `--hs-h2-lg`: 28 px to 44 px at 3vw. */
   xl: "text-[clamp(1.75rem,3vw,2.75rem)]",
+  /** Reference home (`--hs-home-h`): one scale for every home section heading. */
+  home: "text-[clamp(1.6875rem,3.05vw,2.75rem)] leading-[1.08] tracking-[0.02em]",
 } as const;
 ---
 

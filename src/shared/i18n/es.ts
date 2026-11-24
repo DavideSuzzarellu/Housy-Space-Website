@@ -320,11 +320,9 @@ const es = {
     },
     services: {
       regionLabel: "Nuestros servicios",
-      pause: "Pausar el carrusel",
-      play: "Reanudar el carrusel",
-      carousel: "carrusel",
-      previous: "Servicio anterior",
-      next: "Servicio siguiente",
+      open: "Abrir",
+      previous: "Servicios anteriores",
+      next: "Servicios siguientes",
       tags: {
         saleBrokerage: "Intermediación",
         valuation: "Precio de mercado",

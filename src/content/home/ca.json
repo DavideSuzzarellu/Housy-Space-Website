@@ -41,7 +41,8 @@
     "ctaLabel": "Sol·licitar valoració"
   },
   "services": {
-    "heading": "Descobreix tot *el que podem fer per tu*"
+    "heading": "Descobreix *els nostres serveis*",
+    "ctaLabel": "Veure tots els serveis"
   },
   "gallery": {
     "heading": "Barcelona, una manera de viure",
@@ -54,11 +55,6 @@
     "item3Subtitle": "Bigues de fusta recuperades i arcs de pedra gòtica original.",
     "item4Title": "Gràcia & Pedralbes",
     "item4Subtitle": "Espais moderns rehabilitats respectant l'arquitectura històrica."
-  },
-  "collaborators": {
-    "lineFirst": "Ens envoltem dels millors",
-    "lineSecond": "per oferir-te molt més.",
-    "ctaLabel": "Per què confiem en ells"
   },
   "philosophy": {
     "quoteFirst": "No et preocupis,",

@@ -135,6 +135,7 @@ content:
               required: true,
               description: "Pon entre *asteriscos* la parte más fina.",
             }
+          - { name: ctaLabel, label: Botón a todos los servicios, type: string, required: true }
       - name: gallery
         label: Galería editorial
         type: object
@@ -149,13 +150,6 @@ content:
           - { name: item3Subtitle, label: Foto 3 · Subtítulo, type: string, required: true }
           - { name: item4Title, label: Foto 4 · Título, type: string, required: true }
           - { name: item4Subtitle, label: Foto 4 · Subtítulo, type: string, required: true }
-      - name: collaborators
-        label: Colaboradores
-        type: object
-        fields:
-          - { name: lineFirst, label: Frase · primera línea, type: string, required: true }
-          - { name: lineSecond, label: Frase · segunda línea, type: string, required: true }
-          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
       - name: philosophy
         label: Filosofía
         type: object

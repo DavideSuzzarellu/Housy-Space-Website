@@ -314,11 +314,9 @@ const en = {
     },
     services: {
       regionLabel: "Our services",
-      pause: "Pause the carousel",
-      play: "Resume the carousel",
-      carousel: "carousel",
-      previous: "Previous service",
-      next: "Next service",
+      open: "Open",
+      previous: "Previous services",
+      next: "Next services",
       tags: {
         saleBrokerage: "Brokerage",
         valuation: "Market price",

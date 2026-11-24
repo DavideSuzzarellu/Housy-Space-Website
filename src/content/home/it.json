@@ -41,7 +41,8 @@
     "ctaLabel": "Richiedi una valutazione"
   },
   "services": {
-    "heading": "Scopri tutto *ciò che possiamo fare per te*"
+    "heading": "Scopri *i nostri servizi*",
+    "ctaLabel": "Vedi tutti i servizi"
   },
   "gallery": {
     "heading": "Barcellona, un modo di vivere",
@@ -54,11 +55,6 @@
     "item3Subtitle": "Travi in legno recuperate e archi in pietra gotica originale.",
     "item4Title": "Gràcia & Pedralbes",
     "item4Subtitle": "Ambienti moderni, ristrutturati nel rispetto dell'architettura storica."
-  },
-  "collaborators": {
-    "lineFirst": "Ci circondiamo dei migliori",
-    "lineSecond": "per offrirti molto di più.",
-    "ctaLabel": "Perché ci fidiamo di loro"
   },
   "philosophy": {
     "quoteFirst": "Non preoccuparti,",

@@ -314,11 +314,9 @@ const it = {
     },
     services: {
       regionLabel: "I nostri servizi",
-      pause: "Metti in pausa il carosello",
-      play: "Riprendi il carosello",
-      carousel: "carosello",
-      previous: "Servizio precedente",
-      next: "Servizio successivo",
+      open: "Apri",
+      previous: "Servizi precedenti",
+      next: "Servizi successivi",
       tags: {
         saleBrokerage: "Intermediazione",
         valuation: "Prezzo di mercato",

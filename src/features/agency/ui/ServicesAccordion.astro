@@ -1,24 +1,28 @@
 ---
+import { Picture } from "astro:assets";
 import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { getServiceSlug } from "@/shared/i18n/services";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
-import AccordionRail from "@/shared/ui/organisms/AccordionRail.astro";
 import { SERVICE_IMAGES } from "./serviceImages";
 import { SERVICE_PANELS } from "./servicePanels";
 
-/** Services carousel and the collaborators line of the home (reference `#servicios`). */
+/**
+ * Home services (reference `#servicios`, "accordion of three"): the first three services open as
+ * cards, the other five are vertical tabs; the arrows page by three. Below 900 px it is a stack.
+ */
 interface Props {
   locale: Locale;
   content: HomeContent["services"];
-  collaborators: HomeContent["collaborators"];
 }
 
-const { locale, content, collaborators } = Astro.props;
+const { locale, content } = Astro.props;
 const t = getDictionary(locale);
 const copy = t.home.services;
 
@@ -28,110 +32,330 @@ const panels = SERVICE_PANELS.map(({ service, tint }, index) => ({
   tag: copy.tags[service],
   href: getLocalizedPath("serviceDetail", locale, { service: getServiceSlug(service, locale) }),
   image: SERVICE_IMAGES[service],
-  tone: index % 2 === 0 ? ("a" as const) : ("b" as const),
   tint,
 }));
+const ARROW =
+  "absolute top-1/2 -mt-5.5 hidden size-11 cursor-pointer items-center justify-center rounded-full border border-dark/38 bg-transparent text-dark transition-colors duration-250 hover:border-dark hover:bg-dark hover:text-paper focus-visible:border-dark focus-visible:bg-dark focus-visible:text-paper min-[1100px]:inline-flex";
 ---
 
 <section
   id="servicios"
   aria-labelledby="services-heading"
   data-section="services"
-  class="defer-render surface-stone overflow-hidden bg-canvas pt-[clamp(2.375rem,4vw,3.5rem)] pb-[clamp(2.625rem,4.2vw,3.75rem)]"
+  class="defer-render surface-stone bg-canvas py-[clamp(2.375rem,6.2vh,3.625rem)]"
 >
-  <Container>
-    <SectionHeading
-      id="services-heading"
-      heading={content.heading}
-      class="max-w-140 text-balance"
-    />
+  <Container class="mb-[clamp(1.375rem,2.6vw,2.25rem)] flex flex-wrap items-end justify-between gap-x-7 gap-y-3.5">
+    <SectionHeading id="services-heading" heading={content.heading} size="home" />
+    <Button
+      href={getLocalizedPath("services", locale)}
+      size="wide"
+      arrow
+      class="mb-1.5 leading-none!"
+    >
+      {content.ctaLabel}
+    </Button>
   </Container>
-  <AccordionRail
-    variant="illustration"
-    label={copy.regionLabel}
-    previousLabel={copy.previous}
-    nextLabel={copy.next}
-    pauseLabel={copy.pause}
-    playLabel={copy.play}
-    roleDescription={copy.carousel}
-    panels={panels}
-  />
-  <Container>
-    <div
-      data-reveal="fade"
-      class="collab mx-auto mt-[clamp(1.625rem,3vw,2.5rem)] grid justify-items-center gap-3 text-center"
+
+  <div data-services-triple class="relative mx-auto max-w-307 px-5.5 min-[1100px]:px-19">
+    <button
+      type="button"
+      data-arrow="prev"
+      aria-label={copy.previous}
+      class:list={[ARROW, "left-4"]}
     >
       <svg
-        class="collab-icon h-[42px] w-[120px] overflow-visible"
-        viewBox="0 0 160 56"
+        viewBox="0 0 14 14"
         aria-hidden="true"
-        focusable="false"
+        class="size-4 fill-none stroke-current stroke-[1.6]"
       >
-        <path
-          class="line"
-          d="M71 28H44L26 12M44 28L28 46M89 28H116L134 12M116 28L132 46M80 19V6M80 37V50"
-          pathLength="1"
-        ></path>
-        <path
-          class="node"
-          d="M29 12a3 3 0 1 1-6 0a3 3 0 1 1 6 0M31 46a3 3 0 1 1-6 0a3 3 0 1 1 6 0M137 12a3 3 0 1 1-6 0a3 3 0 1 1 6 0M135 46a3 3 0 1 1-6 0a3 3 0 1 1 6 0M83 6a3 3 0 1 1-6 0a3 3 0 1 1 6 0M83 50a3 3 0 1 1-6 0a3 3 0 1 1 6 0"
-          pathLength="1"
-        ></path>
-        <path class="accent" d="M76 19H84L89 24V32L84 37H76L71 32V24Z" pathLength="1"></path>
+        <path d="M9 2 4 7l5 5"></path>
       </svg>
-      <p class="m-0 font-heading text-[clamp(1rem,5vw,1.625rem)] leading-tight whitespace-nowrap text-fg">
-        <span class="block">{collaborators.lineFirst}</span>
-        <span class="block">{collaborators.lineSecond}</span>
-      </p>
-      <Button
-        href={`${getLocalizedPath("about", locale)}#colaboraciones`}
-        size="wide"
-        arrow
-        class="mt-[clamp(0.625rem,1.4vw,1.125rem)]"
+    </button>
+    <ul
+      aria-label={copy.regionLabel}
+      class="m-0 flex list-none gap-[5px] p-0 min-[900px]:h-[clamp(13.375rem,18vw,16.125rem)] min-[900px]:gap-1.5 min-[1100px]:gap-2 max-[899px]:flex-col"
+    >
+      {panels.map((panel) => (
+        <li data-panel style={`--cl:${panel.tint}`} class="ac3-p">
+          <button
+            type="button"
+            data-tab
+            aria-expanded="false"
+            aria-label={`${copy.open}: ${panel.title}`}
+          >
+            <span class="n" aria-hidden="true">
+              {panel.number}
+            </span>
+            <span class="vt">{panel.title}</span>
+          </button>
+          <a data-card href={panel.href} class="ac3-card">
+            <span class="tag">
+              <span>{panel.number}</span>
+              <i></i>
+              {panel.tag}
+            </span>
+            <span class="ti">{panel.title}</span>
+            <Picture
+              {...PHOTO_PICTURE}
+              src={panel.image}
+              alt=""
+              widths={[320, 480]}
+              sizes="(max-width: 899px) 34vw, 280px"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="go" aria-hidden="true">
+              <ArrowUpRight class="size-3" />
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button type="button" data-arrow="next" aria-label={copy.next} class:list={[ARROW, "right-4"]}>
+      <svg
+        viewBox="0 0 14 14"
+        aria-hidden="true"
+        class="size-4 fill-none stroke-current stroke-[1.6]"
       >
-        {collaborators.ctaLabel}
-      </Button>
-    </div>
-  </Container>
+        <path d="m5 2 5 5-5 5"></path>
+      </svg>
+    </button>
+  </div>
 </section>
 
 <style>
-  .collab-icon path {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.1;
+  .ac3-p {
+    position: relative;
+    flex: 0 0 clamp(44px, 3.7vw, 54px);
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--cl);
+    transition:
+      flex-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.5s ease;
+  }
+  .ac3-p[data-on] {
+    flex-grow: 1;
+  }
+  .ac3-p > [data-tab] {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    padding: 13px 0 15px;
+    background: none;
+    color: var(--color-dark);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s;
+  }
+  .ac3-p > [data-tab]:hover,
+  .ac3-p > [data-tab]:focus-visible {
+    background: #fff;
+  }
+  .ac3-p > [data-tab]:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -4px;
+    border-radius: 14px;
+  }
+  .ac3-p[data-on] > [data-tab] {
+    display: none;
+  }
+  .n {
+    font: 600 10px/1 var(--font-sans);
+    letter-spacing: 0.14em;
+    color: var(--color-taupe-tx);
+  }
+  [data-tab]:hover .n,
+  [data-tab]:focus-visible .n {
+    color: var(--color-accent);
+  }
+  .vt {
+    max-height: calc(100% - 32px);
+    font: 700 clamp(10.5px, 0.82vw, 12px) / 1.2 var(--font-sans);
+    letter-spacing: 0.06em;
+    text-align: left;
+    transform: rotate(180deg);
+    white-space: normal;
+    writing-mode: vertical-rl;
+  }
+  .ac3-card {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(12px, 1.1vw, 16px) clamp(12px, 1.2vw, 18px) 12px;
+    color: var(--color-dark);
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease;
+  }
+  .ac3-p[data-on] > .ac3-card {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease 0.25s;
+  }
+  .ac3-card:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -4px;
+    border-radius: 14px;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: 600 9.5px/1.3 var(--font-sans);
+    letter-spacing: 0.16em;
+    color: var(--color-taupe-tx);
+    white-space: nowrap;
+  }
+  .tag i {
+    flex: 0 0 18px;
+    height: 1px;
+    background: currentcolor;
+  }
+  .ti {
+    display: block;
+    min-height: 2.4em;
+    margin-top: 6px;
+    font: 800 clamp(12.5px, 1.08vw, 15.5px) / 1.2 var(--font-sans);
+    letter-spacing: 0.03em;
+  }
+  .ac3-card :global(img) {
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    margin-top: 6px;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ac3-card:hover :global(img),
+  .ac3-card:focus-visible :global(img) {
+    transform: scale(1.05);
+  }
+  .go {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-dark);
+    color: var(--color-paper);
+    transition:
+      background-color 0.3s,
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ac3-card:hover .go,
+  .ac3-card:focus-visible .go {
+    background: var(--color-petrol);
+    transform: rotate(45deg);
   }
 
-  .collab-icon .line {
-    stroke: color-mix(in srgb, var(--color-fg) 42%, transparent);
-  }
-
-  .collab-icon .node {
-    stroke: color-mix(in srgb, var(--color-fg) 60%, transparent);
-  }
-
-  .collab-icon .accent {
-    stroke: var(--color-turquoise);
-    stroke-width: 1.4;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    :global(.motion-ready) .collab-icon path {
-      stroke-dasharray: 1;
-      transition: stroke-dashoffset 1.6s var(--ease-brand) 0.2s;
+  /* 900 to 1279 px: the tag drops its rule for a dot to fit the narrower cards */
+  @media (min-width: 900px) and (max-width: 1279px) {
+    .tag i {
+      display: none;
     }
-
-    :global(.motion-ready) .collab-icon .node {
-      transition-delay: 0.9s;
+    .tag > span::after {
+      content: " ·";
     }
-
-    :global(.motion-ready) .collab-icon .accent {
-      transition-delay: 1.2s;
+  }
+  @media (min-width: 900px) and (max-width: 1099px) {
+    .ac3-p {
+      flex-basis: 40px;
     }
+  }
 
-    :global(.motion-ready) .collab:not(:global(.is-revealed)) .collab-icon path {
-      stroke-dashoffset: 1;
+  /* Below 900 px: a stack; the open cards show title and picture side by side */
+  @media (max-width: 899px) {
+    .ac3-p {
+      flex: none;
+      height: 38px;
+      border-radius: 12px;
+      transition: none;
+    }
+    .ac3-p[data-on] {
+      height: 96px;
+    }
+    .ac3-p > [data-tab] {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 14px;
+      padding: 0 14px;
+    }
+    .vt {
+      max-height: none;
+      font-size: 11.5px;
+      line-height: 1.25;
+      transform: none;
+      writing-mode: horizontal-tb;
+    }
+    .ac3-p > [data-tab]::after {
+      content: "";
+      flex: none;
+      width: 8px;
+      height: 8px;
+      margin-left: auto;
+      border-right: 1.5px solid currentcolor;
+      border-bottom: 1.5px solid currentcolor;
+      opacity: 0.8;
+      transform: rotate(45deg) translateY(-3px);
+    }
+    .ac3-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 32%;
+      grid-template-rows: auto 1fr;
+      column-gap: 10px;
+      padding: 10px 10px 10px 14px;
+    }
+    .tag {
+      grid-column: 1;
+    }
+    .ti {
+      grid-column: 1;
+      align-self: start;
+      min-height: 0;
+      margin-top: 4px;
+      font-size: clamp(13px, 3.4vw, 15px);
+    }
+    .ac3-card :global(img) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      height: 100%;
+      margin: 0;
+    }
+    .go {
+      right: 10px;
+      bottom: 8px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ac3-p,
+    .ac3-card,
+    .ac3-card :global(img),
+    .go {
+      transition: none !important;
     }
   }
 </style>
+
+<script>
+  import { initServicesTriple } from "./servicesTriple";
+
+  document.addEventListener("astro:page-load", () => {
+    const root = document.querySelector<HTMLElement>("[data-services-triple]");
+    if (root !== null) initServicesTriple(root);
+  });
+</script>

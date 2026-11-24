@@ -7,10 +7,10 @@ import type { ServiceKey } from "@/shared/i18n/services";
 export const SERVICE_PANELS: readonly { readonly service: ServiceKey; readonly tint: string }[] = [
   { service: "saleBrokerage", tint: "#faf4f1" },
   { service: "valuation", tint: "#f8f2ef" },
-  { service: "legalTax", tint: "#fbf9f6" },
-  { service: "renovations", tint: "#f9f4f0" },
-  { service: "financial", tint: "#f9f5f2" },
+  { service: "rentalManagement", tint: "#faf7f5" },
   { service: "personalShopper", tint: "#f9f5f2" },
   { service: "investment", tint: "#fbf7f3" },
-  { service: "rentalManagement", tint: "#faf7f5" },
+  { service: "renovations", tint: "#f9f4f0" },
+  { service: "legalTax", tint: "#fbf9f6" },
+  { service: "financial", tint: "#f9f5f2" },
 ];

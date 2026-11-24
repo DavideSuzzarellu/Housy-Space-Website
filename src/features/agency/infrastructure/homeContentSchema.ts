@@ -64,7 +64,7 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
           ctaLabel: text,
         })
         .strict(),
-      services: z.object({ heading }).strict(),
+      services: z.object({ heading, ctaLabel: text }).strict(),
       gallery: z
         .object({
           heading: text,
@@ -79,7 +79,6 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
           item4Subtitle: text,
         })
         .strict(),
-      collaborators: z.object({ lineFirst: text, lineSecond: text, ctaLabel: text }).strict(),
       philosophy: z
         .object({
           quoteFirst: text,

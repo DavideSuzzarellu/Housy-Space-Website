@@ -41,7 +41,8 @@
     "ctaLabel": "Request a valuation"
   },
   "services": {
-    "heading": "Discover everything *we can do for you*"
+    "heading": "Discover *our services*",
+    "ctaLabel": "See all services"
   },
   "gallery": {
     "heading": "Barcelona, a way of life",
@@ -54,11 +55,6 @@
     "item3Subtitle": "Reclaimed timber beams and original Gothic stone arches.",
     "item4Title": "Gràcia & Pedralbes",
     "item4Subtitle": "Modern spaces, refurbished with respect for the historic architecture."
-  },
-  "collaborators": {
-    "lineFirst": "We surround ourselves with the best",
-    "lineSecond": "to offer you so much more.",
-    "ctaLabel": "Why we trust them"
   },
   "philosophy": {
     "quoteFirst": "Don't worry,",

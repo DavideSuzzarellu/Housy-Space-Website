@@ -72,15 +72,11 @@ const ogImage = await getOgImagePath(heroPoster);
   <JsonLd slot="head" data={homeJsonLd} />
   <IntroOverlay locale={locale} />
   <HomeHero locale={locale} content={content.hero} nextSectionId={FIRST_SECTION_ID} />
+  <ServicesAccordion locale={locale} content={content.services} />
   <HomeStats locale={locale} id="stats" content={content.stats} />
   <ValuationExplainer locale={locale} content={content.valuation} />
   <FeaturedProperties locale={locale} properties={featured} content={content.featured} />
   <HomeEditorialGallery content={content.gallery} />
-  <ServicesAccordion
-    locale={locale}
-    content={content.services}
-    collaborators={content.collaborators}
-  />
   <HomePhilosophy locale={locale} content={content.philosophy} />
   <ReviewsSection locale={locale} content={content.reviews} testimonials={testimonials} />
   <LivingInBarcelona locale={locale} content={content.districts} />
