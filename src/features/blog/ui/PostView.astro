@@ -8,6 +8,7 @@ import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { formatDate } from "@/shared/lib/format";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
+import { postTransitionName } from "@/shared/lib/transitionNames";
 import { morph } from "@/shared/ui/motion/transitions";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
@@ -72,7 +73,7 @@ const crumbs = [
       sizes="(min-width: 1120px) 70rem, 100vw"
       priority
       class="aspect-4/3 w-full object-cover min-[700px]:aspect-[1076/414]"
-      transition:name={`post-${post.id}-image`}
+      transition:name={postTransitionName(post.id, "image")}
       transition:animate={morph}
     />
     <div class="blog-body mx-auto max-w-175 pt-[clamp(2.25rem,3.4vw,3.375rem)] pb-[clamp(2.25rem,5vw,3.5rem)]">

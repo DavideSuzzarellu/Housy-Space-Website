@@ -1,3 +1,4 @@
+import { withBase } from "@/shared/lib/basePath";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "./config";
 
 /**
@@ -144,13 +145,6 @@ export function getLocalizedPath<K extends RouteKey>(
 ): string {
   const [params] = args;
   return withBase(buildPath(routeKey, locale, params ?? {}));
-}
-
-/** Prefixes the site base (`astro.config` `base`, "" in production at the domain root). */
-function withBase(path: string): string {
-  // Vite always adds a trailing slash to BASE_URL: strip it so we never get double slashes.
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  return base && !path.startsWith(`${base}/`) ? `${base}${path}` : path;
 }
 
 export interface Alternate {

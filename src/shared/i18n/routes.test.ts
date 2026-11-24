@@ -107,6 +107,23 @@ describe("getAlternates", () => {
     ]);
   });
 
+  it("prefixes the deploy base exactly like getLocalizedPath (language switcher and canonical)", () => {
+    vi.stubEnv("BASE_URL", "/repo/");
+    try {
+      const alternates = getAlternates("services");
+      expect(alternates.map((alternate) => alternate.path)).toEqual([
+        "/repo/es/servicios",
+        "/repo/en/services",
+        "/repo/it/servizi",
+        "/repo/ca/serveis",
+        "/repo/es/servicios",
+      ]);
+      expect(alternates[1]?.path).toBe(getLocalizedPath("services", "en"));
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
   it("applies the same params to every locale", () => {
     const alternates = getAlternates("saleDetail", { slug: "atico", ref: "hs9" });
     expect(alternates.map((alternate) => alternate.path)).toEqual([

@@ -184,6 +184,11 @@ html body ::placeholder {
   contain-intrinsic-size: auto 40rem;
 }
 
+/* Back/forward: full layout while the router restores the scroll position (scrollRestore.ts). */
+html.restore-layout .defer-render {
+  content-visibility: visible;
+}
+
 /* Dark petrol blocks (header over the hero, footer, reviews, photo headers): only the roles change. */
 .surface-dark,
 [data-theme="dark"] {

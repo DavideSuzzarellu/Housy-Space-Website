@@ -1,3 +1,5 @@
+import { pageSignal } from "@/shared/lib/pageScope";
+
 /**
  * Timeline of the valuation service (reference servicios-v42.js): the line advances with the
  * scroll and each step lights up on reaching it. With reduced motion the line stays complete.
@@ -25,16 +27,9 @@ function initTimeline(): void {
     queued = true;
     requestAnimationFrame(update);
   };
-  addEventListener("scroll", schedule, { passive: true });
-  addEventListener("resize", schedule);
-  document.addEventListener(
-    "astro:before-swap",
-    () => {
-      removeEventListener("scroll", schedule);
-      removeEventListener("resize", schedule);
-    },
-    { once: true },
-  );
+  const signal = pageSignal();
+  addEventListener("scroll", schedule, { passive: true, signal });
+  addEventListener("resize", schedule, { signal });
   update();
 }
 

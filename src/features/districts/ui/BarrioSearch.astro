@@ -143,6 +143,8 @@ const rows = [
 </div>
 
 <script>
+  import { pageSignal } from "@/shared/lib/pageScope";
+
   document.addEventListener("astro:page-load", () => {
     const root = document.querySelector<HTMLElement>("[data-barrio-search]");
     const input = root?.querySelector<HTMLInputElement>("input");
@@ -213,10 +215,14 @@ const rows = [
       else panel.hidden = true;
       render();
     });
-    document.addEventListener("pointerdown", (event) => {
-      if (!panel.hidden && event.target instanceof Node && !root.contains(event.target)) {
-        panel.hidden = true;
-      }
-    });
+    document.addEventListener(
+      "pointerdown",
+      (event) => {
+        if (!panel.hidden && event.target instanceof Node && !root.contains(event.target)) {
+          panel.hidden = true;
+        }
+      },
+      { signal: pageSignal() },
+    );
   });
 </script>

@@ -2,6 +2,7 @@ import { initIntro } from "./intro";
 import { initParallax } from "./parallax";
 import { initScrollProgress } from "./progress";
 import { initReveal, MOTION_READY_CLASS, motionAllowed, revealMorphTargets } from "./reveal";
+import { initScrollRestore } from "./scrollRestore";
 
 declare global {
   interface Window {
@@ -21,6 +22,8 @@ document.addEventListener("astro:page-load", () => {
   initParallax();
   window.__hsBooted = true;
 });
+
+initScrollRestore();
 
 // ClientRouter replaces <html> attributes on swap: restore the motion flag before the new
 // page paints so revealed-on-scroll content does not flash.

@@ -77,6 +77,11 @@ export function initWizard(): void {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const controller = new AbortController();
   document.addEventListener("astro:before-swap", () => controller.abort(), { once: true });
+  /** Timer tied to this page: a pending scroll/focus must never fire on the next page. */
+  const later = (callback: () => void, ms: number): void => {
+    const id = window.setTimeout(callback, ms);
+    controller.signal.addEventListener("abort", () => window.clearTimeout(id), { once: true });
+  };
 
   const $ = <T extends Element>(selector: string, scope: ParentNode = form) =>
     scope.querySelector<T>(selector);
@@ -617,7 +622,7 @@ export function initWizard(): void {
     const instant = reduce || (small.matches && !smooth);
     window.scrollTo({ top: y(), left: 0, behavior: instant ? "instant" : "smooth" });
     // The page can move after the jump (collapsing address bar, a step with another height).
-    window.setTimeout(
+    later(
       () => {
         if (Math.abs(window.scrollY - y()) > 6)
           window.scrollTo({ top: y(), left: 0, behavior: "instant" });
@@ -710,9 +715,9 @@ export function initWizard(): void {
     } catch {
       /* history can be blocked in sandboxed frames */
     }
-    window.setTimeout(focusHeading, reduce ? 0 : 650);
+    later(focusHeading, reduce ? 0 : 650);
   });
-  if (location.hash === "#formulario") window.setTimeout(() => toTop(false), 80);
+  if (location.hash === "#formulario") later(() => toTop(false), 80);
 
   top.hidden = false;
   nav.hidden = false;

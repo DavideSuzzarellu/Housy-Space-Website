@@ -24,7 +24,8 @@ export default defineConfig({
   // Tests run against the production build served by `astro preview`.
   webServer: {
     command: `bun run build && bun run preview --port ${PORT} --ignore-lock`,
-    url: `http://localhost:${PORT}/es`,
+    // `base` in astro.config.ts: the preview serves nothing outside it, so `/es` would be a 404.
+    url: `http://localhost:${PORT}/Housy-Space-Website/es`,
     reuseExistingServer: !isCI,
     timeout: 180_000,
   },

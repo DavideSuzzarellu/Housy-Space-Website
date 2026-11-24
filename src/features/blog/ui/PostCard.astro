@@ -6,6 +6,7 @@ import { formatDate } from "@/shared/lib/format";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
+import { postTransitionName } from "@/shared/lib/transitionNames";
 import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
 import { morph } from "@/shared/ui/motion/transitions";
 
@@ -54,7 +55,7 @@ const tone = TONES[index % TONES.length];
   <div class:list={[!teaser && "relative"]}>
     <div
       class:list={["overflow-hidden bg-stone", teaser ? "aspect-4/3" : "aspect-3/2"]}
-      transition:name={`post-${post.id}-image`}
+      transition:name={postTransitionName(post.id, "image")}
       transition:animate={morph}
     >
       <Picture
