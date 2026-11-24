@@ -39,9 +39,7 @@ const cta = itemsOf(head.items, "buttons")[0]?.items[0];
   data-page-head
   class:list={[
     "relative isolate overflow-clip border-b border-fg/10 bg-canvas",
-    illustration === undefined
-      ? "pt-[37.8px] pb-[48.6px]"
-      : "pt-[clamp(1.625rem,4vw,3.25rem)] pb-[clamp(3.5rem,8vw,7rem)]",
+    "pt-[clamp(22px,4.2vh,42px)] pb-[clamp(32px,5.4vh,56px)]",
   ]}
 >
   <StreetGrid placement="heading" />
@@ -66,8 +64,8 @@ const cta = itemsOf(head.items, "buttons")[0]?.items[0];
         class:list={[
           "wrap-break-word",
           illustration === undefined
-            ? "mb-[clamp(24px,3.4vw,28px)] text-[clamp(36px,4.7vw,61.92px)] leading-[1.05] min-[1200px]:mb-px"
-            : "mt-4 mb-[clamp(1.5rem,3.4vw,2.5rem)] text-[clamp(30px,8.4vw,44px)] leading-none min-[521px]:text-[clamp(30px,8.4vw,52px)] min-[761px]:text-[clamp(30px,11cqw,72px)] [&_em]:block",
+            ? "mb-[clamp(24px,3.4vw,28px)] text-[clamp(36px,4.7vw,68px)] leading-[1.05] min-[900px]:text-[clamp(30px,4.3vw,62px)] min-[900px]:whitespace-nowrap min-[1200px]:mb-px"
+            : "mt-0.75 mb-[clamp(23px,3.4vw,41px)] text-[clamp(32px,3.61vw,52px)] leading-[1.08] [&_em]:block",
         ]}
       >
         <Emphasis text={head.heading} />
@@ -75,10 +73,10 @@ const cta = itemsOf(head.items, "buttons")[0]?.items[0];
       {lead?.kind === "lead" && (
         <p
           class:list={[
-            "max-w-[58ch] text-mid",
+            "tracking-[0.28px] text-mid normal-case",
             illustration === undefined
-              ? "text-sm leading-[1.6] min-[1200px]:text-[12.96px]"
-              : "mb-[clamp(1.875rem,4vw,2.875rem)] text-[clamp(14px,1.35vw,17px)] leading-[1.8]",
+              ? "text-sm leading-[1.6] min-[900px]:max-w-[70ch] min-[1200px]:max-w-none min-[1200px]:text-[clamp(10.8px,0.9vw,13px)] min-[1200px]:whitespace-nowrap"
+              : "mb-[clamp(30px,4vw,46px)] text-[clamp(14px,1.18vw,17px)] leading-[1.6]",
           ]}
         >
           {lead.text}
@@ -114,7 +112,7 @@ const cta = itemsOf(head.items, "buttons")[0]?.items[0];
       <figure
         data-reveal
         style={`--w:${illustration.scale}`}
-        class="row-start-2 m-0 mx-auto mt-[-6px] mb-[clamp(0.625rem,3vw,1.25rem)] w-[min(84%,400px)] min-w-0 min-[761px]:row-start-2 min-[761px]:mt-0 min-[761px]:mr-[calc(-1*clamp(0px,3vw,48px))] min-[761px]:mb-0 min-[761px]:ml-0 min-[761px]:w-auto"
+        class="row-start-2 m-0 mx-auto mt-[-6px] mb-[clamp(0.625rem,3vw,1.25rem)] w-[min(84%,400px)] min-w-0 min-[761px]:row-start-2 min-[761px]:mt-0 min-[761px]:mb-0 min-[761px]:ml-0 min-[761px]:w-auto min-[900px]:max-w-90 min-[900px]:justify-self-end"
       >
         <Picture
           {...PHOTO_PICTURE}
