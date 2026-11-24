@@ -4,9 +4,9 @@ import { skipIntro } from "./support";
 /**
  * Client-side navigation regressions (AGENTS.md §3.3). Self-contained on purpose: it does not
  * import the route map, so it keeps working in Node where `import.meta.env` does not exist.
- * Keep `BASE` equal to `base` in astro.config.ts.
+ * `BASE` is the base the e2e build was made with (`ASTRO_BASE`, "/" = root, set by playwright.config).
  */
-const BASE = "/Housy-Space-Website";
+const BASE = (process.env["ASTRO_BASE"] ?? "/").replace(/\/$/, "");
 const LANG_TAG = { es: "es-ES", en: "en", it: "it-IT", ca: "ca-ES" } as const;
 const LOCALES = ["es", "en", "it", "ca"] as const;
 
