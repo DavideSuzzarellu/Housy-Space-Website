@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Mortgage and financing studied with real numbers, together with our financial broker."
+        "text": "Mortgage and financing studied with real numbers, together with the financial broker we work with."
       },
       {
         "kind": "image",
@@ -26,7 +26,7 @@
         "kind": "buttons",
         "items": [
           {
-            "label": "Tell us your case",
+            "label": "Tell us about your case",
             "href": "#hablemos",
             "solid": true
           }
@@ -46,7 +46,7 @@
         },
         {
           "kind": "p",
-          "text": "Knowing how much you can finance, at what monthly payment and on what terms saves headaches. We study it with you and with our financial broker, who compares the conditions offered by different lenders."
+          "text": "Knowing how much you can finance, at what monthly payment and on what terms saves headaches. We study it with you and with the financial broker we work with, who compares the conditions offered by different lenders."
         },
         {
           "kind": "p",
@@ -111,15 +111,15 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Assessment of the buyer's financial viability"
+                  "text": "Before the deposit contract is signed, the broker checks whether the buyer can finance the purchase"
                 },
                 {
                   "title": "",
-                  "text": "Mortgage timelines coordinated with the deposit contract"
+                  "text": "Mortgage timelines coordinated with those of the deposit contract"
                 },
                 {
                   "title": "",
-                  "text": "Less risk of the sale falling through"
+                  "text": "Reduces the risk of the sale falling through over financing; it does not guarantee that the bank will grant it"
                 }
               ]
             }
@@ -213,7 +213,7 @@
         {
           "kind": "faq",
           "q": "Who advises me on the mortgage?",
-          "a": "Our financial broker, with whom we work on transactions that involve financing. We coordinate the whole process with you."
+          "a": "The financial broker we work with on transactions that involve financing. We coordinate the whole process with you."
         },
         {
           "kind": "faq",

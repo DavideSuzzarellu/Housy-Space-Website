@@ -57,9 +57,11 @@ describe("service pages", () => {
   it.each(services)("%s opens with its illustration and an emphasised heading", (file) => {
     const page = schema.parse(read(file));
     expect(page.head.photo).toBe(false);
-    expect(page.head.illustration?.alt.length).toBeGreaterThan(0);
-    expect(page.head.illustration?.scale).toBeGreaterThan(0.5);
-    expect(page.head.illustration?.scale).toBeLessThanOrEqual(1);
+    if (page.head.wide !== true) {
+      expect(page.head.illustration?.alt.length).toBeGreaterThan(0);
+      expect(page.head.illustration?.scale).toBeGreaterThan(0.5);
+      expect(page.head.illustration?.scale).toBeLessThanOrEqual(1);
+    }
     expect(page.head.heading).toMatch(/\*[^*]+\*/);
   });
 
@@ -69,10 +71,11 @@ describe("service pages", () => {
     "asesoramiento-financiero": "intro split - - colab cta",
     "asesoramiento-juridico-fiscal": "intro split tax - colab cta",
     "inversion-inmobiliaria": "intro cards - route cta",
-    "personal-shopper": "intro - cards call - cta",
-    "reformas-obras": "intro stepsList swatches cards cards - colab cta",
-    valoracion: "cmp doc - cta",
-    "venta-estrategica": "introLined - check split - valuation cta",
+    "personal-shopper": "intro - icons call cta",
+    "reformas-obras": "intro cards stepsList swatches colab cta",
+    valoracion: "valOptions valCriteria valAnalysis valObtain valProcess valFaq cta",
+    "venta-estrategica":
+      "salePoints valOptions salePrice salePhases saleReport saleIcons saleExclusive valFaq - cta",
   };
 
   it.each(services)("%s declares the layout of every section", (file) => {
@@ -111,6 +114,16 @@ describe("service pages", () => {
     expect(hrefs.length).toBeGreaterThanOrEqual(2);
     expect(hrefs.at(-1)).toBe("route:services");
     expect(cta?.items.some((item) => item.kind === "note")).toBe(false);
+  });
+
+  it.each(services)("%s: every pictogram tile has its icon paths", (file) => {
+    const page = schema.parse(read(file));
+    for (const section of page.sections.filter((entry) => entry.layout === "icons")) {
+      const list = section.items.find((item) => item.kind === "list");
+      for (const entry of list?.kind === "list" ? list.items : []) {
+        expect(entry.icon?.length ?? 0, entry.title).toBeGreaterThan(0);
+      }
+    }
   });
 
   it("rejects an illustration without a text alternative", () => {

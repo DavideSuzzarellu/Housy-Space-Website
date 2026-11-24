@@ -1,0 +1,79 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * How the asking price is set (reference `.cv42-pr`): text on one side, on the other a cut-corner
+ * card with the four sources of the report and the petrol result line.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const tag = itemsOf(head, "tag")[0];
+const heading = itemsOf(head, "h2")[0];
+const lead = itemsOf(head, "lead")[0];
+const paragraphs = itemsOf(body, "p");
+const card = itemsOf(body, "card")[0]?.items ?? [];
+const title = itemsOf(card, "h3")[0];
+const sources = itemsOf(card, "list")[0]?.items ?? [];
+const resultLabel = itemsOf(card, "tag")[0];
+const result = itemsOf(card, "p")[0];
+const BODY =
+  "max-w-[60ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case [&_a]:text-accent [&_a]:underline [&_a]:decoration-1 [&_a]:underline-offset-3 [&_a:hover]:text-fg";
+---
+
+<div class="grid gap-[clamp(26px,5vh,44px)] min-[900px]:grid-cols-[5fr_6fr] min-[900px]:items-center min-[900px]:gap-[clamp(32px,5.4vw,84px)]">
+  <div>
+    {tag && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+    {heading && (
+      <h2 id={id} data-reveal class="mt-2.5 text-[clamp(25px,2.65vw,38px)] [&_em]:block">
+        <Emphasis text={heading.text} />
+      </h2>
+    )}
+    {lead && (
+      <p
+        data-reveal
+        class="mt-[clamp(16px,2.8vh,26px)] mb-[clamp(12px,2vh,18px)] max-w-[34ch] text-[clamp(16px,1.5vw,21px)] leading-[1.42] font-semibold tracking-[0.03em] text-fg normal-case"
+      >
+        {lead.text}
+      </p>
+    )}
+    {paragraphs.map((line) => (
+      <p data-reveal class:list={[BODY, "[&+&]:mt-[1em]"]}>
+        <Inline text={line.text} locale={locale} />
+      </p>
+    ))}
+  </div>
+  <div
+    data-reveal
+    class="min-w-0 bg-paper px-[clamp(18px,2.6vw,36px)] pt-[clamp(20px,2.6vw,36px)] pb-[clamp(18px,2.2vw,28px)] [clip-path:polygon(0_0,calc(100%-30px)_0,100%_30px,100%_100%,0_100%)]"
+  >
+    {title && (
+      <p class="mb-1.5 text-[11px] leading-[1.5] font-semibold tracking-[0.2em] text-accent">
+        {title.text}
+      </p>
+    )}
+    <ol class="[counter-reset:src]">
+      {sources.map((source) => (
+        <li class="relative border-b border-fg/16 py-[clamp(12px,2.2vh,18px)] pl-11.5 text-[clamp(13.5px,1.15vw,16px)] leading-[1.4] font-semibold tracking-[0.05em] text-fg [counter-increment:src] before:absolute before:top-1/2 before:left-0 before:-translate-y-1/2 before:text-[clamp(18px,1.6vw,22px)] before:leading-none before:font-normal before:tracking-[0.02em] before:text-accent before:content-['0'_counter(src)]">
+          {source.text}
+        </li>
+      ))}
+    </ol>
+    <p class="mt-[clamp(14px,2.4vh,20px)] bg-dark px-[clamp(14px,1.6vw,20px)] py-[clamp(12px,2vh,16px)] text-[clamp(13px,1.1vw,15.5px)] leading-[1.4] font-bold tracking-[0.05em] text-paper">
+      {resultLabel && (
+        <span class="mb-1 block text-[10.5px] leading-[1.4] font-semibold tracking-[0.2em] text-turquoise">
+          {resultLabel.text}
+        </span>
+      )}
+      {result?.text}
+    </p>
+  </div>
+</div>

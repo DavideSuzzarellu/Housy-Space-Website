@@ -46,17 +46,54 @@
         },
         {
           "kind": "p",
-          "text": "Realizziamo ristrutturazioni per ogni tipo di immobile. Pensiamo alla ristrutturazione e all'interior design contemporaneamente, così distribuzione, materiali e luce sono definiti prima di iniziare i lavori. Poi coordiniamo i professionisti e monitoriamo tempi e budget fino alla consegna."
+          "text": "Coordiniamo ristrutturazioni per ogni tipo di immobile. Ristrutturazione e interior design vengono pensati insieme, così distribuzione, materiali e luce sono definiti prima dell'inizio dei lavori. Poi coordiniamo i professionisti e seguiamo tempi e budget fino alla consegna."
         },
         {
           "kind": "p",
-          "text": "Il progetto viene sviluppato con lo studio di architettura e interior design con cui collaboriamo, e tu hai sempre la stessa persona di riferimento."
+          "text": "Il progetto viene sviluppato con lo studio di architettura e interior design con cui collaboriamo, e tu hai sempre la stessa persona di riferimento. Gli interventi tecnici e l'esecuzione dei lavori spettano ai professionisti e alle imprese che partecipano a ciascun progetto."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Quando ristrutturare"
+        },
+        {
+          "kind": "h2",
+          "text": "Quando ha senso ristrutturare"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Prima di vendere",
+              "text": "Non tutte le ristrutturazioni convengono prima di vendere. Valutiamo se un miglioramento specifico può agevolare la vendita o se basta offrire all'acquirente un preventivo dei lavori. [Vedi compravendita](service:venta-estrategica)."
+            },
+            {
+              "title": "All'acquisto",
+              "text": "La ristrutturazione valutata prima dell'acquisto, per conoscerne il costo prima di decidere. [Vedi Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "Per affittare",
+              "text": "Messa a punto della casa prima di metterla in affitto."
+            },
+            {
+              "title": "Per investire",
+              "text": "Ristrutturazioni pensate con i numeri davanti: costo, tempi ed effetto atteso su affitto o vendita."
+            }
+          ]
         }
       ]
     },
     {
       "layout": "stepsList",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -76,7 +113,7 @@
             },
             {
               "title": "Progetto e interior design",
-              "text": "Distribuzione, materiali, illuminazione e arredi, in un unico progetto."
+              "text": "Distribuzione, materiali, illuminazione e arredi su misura, in un unico progetto."
             },
             {
               "title": "Preventivo",
@@ -84,11 +121,11 @@
             },
             {
               "title": "Permessi e autorizzazioni",
-              "text": "Ci occupiamo dei permessi richiesti dal Comune."
+              "text": "Si gestiscono i permessi per i lavori richiesti dal Comune."
             },
             {
               "title": "Lavori",
-              "text": "Coordiniamo le maestranze e monitoriamo tempi e budget in cantiere."
+              "text": "Coordiniamo le maestranze (muratori, installatori, falegnami) e seguiamo tempi, budget e qualità."
             },
             {
               "title": "Rifiniture e consegna",
@@ -101,7 +138,7 @@
     {
       "id": "interiorismo",
       "layout": "swatches",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -110,7 +147,7 @@
         },
         {
           "kind": "h2",
-          "text": "Una casa si sceglie anche con le mani."
+          "text": "Materiali e finiture"
         },
         {
           "kind": "lead",
@@ -155,104 +192,8 @@
       ]
     },
     {
-      "layout": "cards",
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Cosa include"
-        },
-        {
-          "kind": "h2",
-          "text": "L'intero progetto, nelle stesse mani"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Distribuzione",
-              "text": "Come si muove la luce e come ti muovi tu per casa."
-            },
-            {
-              "title": "Materiali e rifiniture",
-              "text": "Palette coerente per tutta l'abitazione."
-            },
-            {
-              "title": "Illuminazione",
-              "text": "Luce naturale e artificiale pensate per ogni ambiente."
-            },
-            {
-              "title": "Arredi su misura",
-              "text": "Progettazione, selezione e acquisto di arredi e dettagli."
-            },
-            {
-              "title": "Permessi e maestranze",
-              "text": "Pratiche, muratori, installatori e falegnami, coordinati da noi."
-            },
-            {
-              "title": "Supervisione cantiere",
-              "text": "Tempo, budget e qualità controllati fino all'ultimo dettaglio."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "layout": "cards",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Quando ristrutturare"
-        },
-        {
-          "kind": "h2",
-          "text": "Una ristrutturazione per ogni momento"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Prima di vendere",
-              "text": "Preventivi per il compratore o piccoli miglioramenti che aiutano la vendita. [Vedi compravendita](service:venta-estrategica)."
-            },
-            {
-              "title": "All'acquisto",
-              "text": "La ristrutturazione studiata prima dell'acquisto e realizzata da noi. [Vedi Personal Shopper](service:personal-shopper)."
-            },
-            {
-              "title": "Per affittare",
-              "text": "Messa a punto per affittare prima e meglio."
-            },
-            {
-              "title": "Per investire",
-              "text": "Ristrutturazioni che aggiungono valore e rendimento, con i numeri davanti."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«Non preoccuparti, *ci penso io.*»"
-        },
-        {
-          "kind": "p",
-          "text": "Permessi, maestranze, imprevisti di cantiere: li gestiamo noi perché tu debba solo decidere."
-        }
-      ]
-    },
-    {
       "layout": "colab",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -265,7 +206,7 @@
         },
         {
           "kind": "lead",
-          "text": "Per il progetto, l'interior design e la direzione lavori collaboriamo con uno studio di architettura e interior design di Barcellona."
+          "text": "Per il progetto, l'interior design e la direzione lavori collaboriamo con uno studio di architettura e interior design di Barcellona. HousySpace coordina ed è il tuo interlocutore; lo studio sviluppa il progetto e le imprese edili lo realizzano."
         },
         {
           "kind": "buttons",

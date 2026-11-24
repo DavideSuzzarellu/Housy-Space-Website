@@ -46,17 +46,54 @@
         },
         {
           "kind": "p",
-          "text": "Hacemos reformas para todo tipo de inmueble. Pensamos la reforma y el interiorismo a la vez, para que la distribución, los materiales y la luz estén decididos antes de empezar la obra. Después coordinamos a los profesionales y seguimos plazos y presupuesto hasta la entrega."
+          "text": "Coordinamos reformas para todo tipo de inmueble. La reforma y el interiorismo se piensan a la vez, para que la distribución, los materiales y la luz estén decididos antes de empezar la obra. Después coordinamos a los profesionales y seguimos plazos y presupuesto hasta la entrega."
         },
         {
           "kind": "p",
-          "text": "El proyecto lo desarrollamos con el estudio de arquitectura e interiorismo con el que colaboramos, y tú tienes siempre a la misma persona de referencia."
+          "text": "El proyecto lo desarrollamos con el estudio de arquitectura e interiorismo con el que colaboramos, y tú tienes siempre a la misma persona de referencia. Las actuaciones técnicas y la ejecución de la obra corresponden a los profesionales y empresas que intervienen en cada proyecto."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cuándo reformar"
+        },
+        {
+          "kind": "h2",
+          "text": "Cuándo tiene sentido una reforma"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Antes de vender",
+              "text": "No toda reforma compensa antes de vender. Estudiamos si una mejora concreta puede facilitar la venta o si basta con ofrecer al comprador un presupuesto de obra. [Ver compraventa](service:venta-estrategica)."
+            },
+            {
+              "title": "Al comprar",
+              "text": "La reforma estudiada antes de comprar, para conocer su coste antes de decidir. [Ver Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "Para alquilar",
+              "text": "Puesta a punto de la vivienda antes de ofrecerla en alquiler."
+            },
+            {
+              "title": "Para invertir",
+              "text": "Reformas pensadas con los números delante: coste, plazo y efecto esperado en la renta o en la venta."
+            }
+          ]
         }
       ]
     },
     {
       "layout": "stepsList",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -76,7 +113,7 @@
             },
             {
               "title": "Proyecto e interiorismo",
-              "text": "Distribución, materiales, iluminación y mobiliario, en un mismo proyecto."
+              "text": "Distribución, materiales, iluminación y mobiliario a medida, en un mismo proyecto."
             },
             {
               "title": "Presupuesto",
@@ -84,11 +121,11 @@
             },
             {
               "title": "Licencias y permisos",
-              "text": "Tramitamos los permisos de obra que pida el Ayuntamiento."
+              "text": "Se tramitan los permisos de obra que pida el Ayuntamiento."
             },
             {
               "title": "Obra",
-              "text": "Coordinamos a los gremios y seguimos plazos y presupuesto en obra."
+              "text": "Coordinamos a los gremios (albañiles, instaladores, carpinteros) y seguimos plazos, presupuesto y calidad."
             },
             {
               "title": "Acabados y entrega",
@@ -101,7 +138,7 @@
     {
       "id": "interiorismo",
       "layout": "swatches",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -110,7 +147,7 @@
         },
         {
           "kind": "h2",
-          "text": "La vivienda se elige también con las manos"
+          "text": "Materiales y acabados"
         },
         {
           "kind": "lead",
@@ -155,104 +192,8 @@
       ]
     },
     {
-      "layout": "cards",
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Qué incluye"
-        },
-        {
-          "kind": "h2",
-          "text": "Todo el proyecto, en las mismas manos"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Distribución",
-              "text": "Cómo se mueve la luz y cómo te mueves tú por la casa."
-            },
-            {
-              "title": "Materiales y acabados",
-              "text": "Una paleta coherente para toda la vivienda."
-            },
-            {
-              "title": "Iluminación",
-              "text": "Luz natural y artificial pensadas para cada estancia."
-            },
-            {
-              "title": "Mobiliario a medida",
-              "text": "Diseño, selección y compra del mobiliario y los detalles."
-            },
-            {
-              "title": "Licencias y gremios",
-              "text": "Permisos, albañiles, instaladores y carpinteros, coordinados por nosotros."
-            },
-            {
-              "title": "Seguimiento de obra",
-              "text": "Plazos, presupuesto y calidad controlados hasta el último detalle."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "layout": "cards",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Cuándo reformar"
-        },
-        {
-          "kind": "h2",
-          "text": "Una reforma para cada momento"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Antes de vender",
-              "text": "Presupuestos de obra para el comprador o pequeñas mejoras que ayudan a vender. [Ver compraventa](service:venta-estrategica)."
-            },
-            {
-              "title": "Al comprar",
-              "text": "La reforma estudiada antes de comprar y hecha por nosotros. [Ver Personal Shopper](service:personal-shopper)."
-            },
-            {
-              "title": "Para alquilar",
-              "text": "Puesta a punto para alquilar antes y mejor."
-            },
-            {
-              "title": "Para invertir",
-              "text": "Reformas que suman valor y rentabilidad, con los números delante."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«No te preocupes, *yo me encargo.*»"
-        },
-        {
-          "kind": "p",
-          "text": "Licencias, gremios, imprevistos de obra: los gestionamos nosotros para que tú solo tengas que decidir."
-        }
-      ]
-    },
-    {
       "layout": "colab",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -265,7 +206,7 @@
         },
         {
           "kind": "lead",
-          "text": "Para el proyecto, el interiorismo y la dirección de las reformas colaboramos con un estudio de arquitectura e interiorismo de Barcelona."
+          "text": "Para el proyecto, el interiorismo y la dirección de las reformas colaboramos con un estudio de arquitectura e interiorismo de Barcelona. HousySpace coordina y es tu interlocutor; el estudio desarrolla el proyecto y las empresas de obra lo ejecutan."
         },
         {
           "kind": "buttons",

@@ -46,17 +46,54 @@
         },
         {
           "kind": "p",
-          "text": "Fem reformes per a tot tipus d'immoble. Pensem la reforma i l'interiorisme alhora, perquè la distribució, els materials i la llum estiguin decidits abans de començar l'obra. Després coordinem els professionals i fem seguiment de terminis i pressupost fins al lliurament."
+          "text": "Coordinem reformes per a tot tipus d'immoble. La reforma i l'interiorisme es pensen alhora, perquè la distribució, els materials i la llum estiguin decidits abans de començar l'obra. Després coordinem els professionals i fem el seguiment de terminis i pressupost fins al lliurament."
         },
         {
           "kind": "p",
-          "text": "El projecte el desenvolupem amb l'estudi d'arquitectura i interiorisme amb qui col·laborem, i tu sempre tens la mateixa persona de referència."
+          "text": "El projecte el desenvolupem amb l'estudi d'arquitectura i interiorisme amb qui col·laborem, i tu sempre tens la mateixa persona de referència. Les actuacions tècniques i l'execució de l'obra corresponen als professionals i empreses que intervenen en cada projecte."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Quan reformar"
+        },
+        {
+          "kind": "h2",
+          "text": "Quan té sentit fer una reforma"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Abans de vendre",
+              "text": "No totes les reformes compensen abans de vendre. Estudiem si una millora concreta pot facilitar la venda o si n'hi ha prou d'oferir al comprador un pressupost d'obra. [Veure compravenda](service:venta-estrategica)."
+            },
+            {
+              "title": "En comprar",
+              "text": "La reforma estudiada abans de comprar, per saber-ne el cost abans de decidir. [Veure Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "Per llogar",
+              "text": "Posada a punt de l'habitatge abans d'oferir-lo en lloguer."
+            },
+            {
+              "title": "Per invertir",
+              "text": "Reformes pensades amb els números al davant: cost, termini i efecte esperat en el lloguer o en la venda."
+            }
+          ]
         }
       ]
     },
     {
       "layout": "stepsList",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -76,7 +113,7 @@
             },
             {
               "title": "Projecte i interiorisme",
-              "text": "Distribució, materials, il·luminació i mobiliari, en un mateix projecte."
+              "text": "Distribució, materials, il·luminació i mobiliari a mida, en un mateix projecte."
             },
             {
               "title": "Pressupost",
@@ -84,11 +121,11 @@
             },
             {
               "title": "Llicències i permisos",
-              "text": "Tramitem els permisos d'obra que demani l'Ajuntament."
+              "text": "Es tramiten els permisos d'obra que demani l'Ajuntament."
             },
             {
               "title": "Obra",
-              "text": "Coordinem els gremis i fem seguiment de terminis i pressupost a l'obra."
+              "text": "Coordinem els gremis (paletes, instal·ladors, fusters) i fem seguiment de terminis, pressupost i qualitat."
             },
             {
               "title": "Acabats i lliurament",
@@ -101,7 +138,7 @@
     {
       "id": "interiorismo",
       "layout": "swatches",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -110,7 +147,7 @@
         },
         {
           "kind": "h2",
-          "text": "L'habitatge es tria també amb les mans."
+          "text": "Materials i acabats"
         },
         {
           "kind": "lead",
@@ -155,104 +192,8 @@
       ]
     },
     {
-      "layout": "cards",
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Què inclou"
-        },
-        {
-          "kind": "h2",
-          "text": "Tot el projecte, en les mateixes mans"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Distribució",
-              "text": "Com es mou la llum i com et mous tu per la casa."
-            },
-            {
-              "title": "Materials i acabats",
-              "text": "Paleta coherent per a tot l'habitatge."
-            },
-            {
-              "title": "Il·luminació",
-              "text": "Llum natural i artificial pensades per a cada estança."
-            },
-            {
-              "title": "Mobiliari a mesura",
-              "text": "Disseny, selecció i compra del mobiliari i els detalls."
-            },
-            {
-              "title": "Llicències i gremis",
-              "text": "Tràmits, paletes, instal·ladors i fusters, coordinats per nosaltres."
-            },
-            {
-              "title": "Seguiment d'obra",
-              "text": "Terminis, pressupost i qualitat controlats fins a l'últim detall."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "layout": "cards",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Quan reformar"
-        },
-        {
-          "kind": "h2",
-          "text": "Una reforma per a cada moment"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "Abans de vendre",
-              "text": "Pressupostos d'obra per al comprador o petites millores que ajuden a vendre. [Veure compravenda](service:venta-estrategica)."
-            },
-            {
-              "title": "En comprar",
-              "text": "La reforma estudiada abans de comprar i feta per nosaltres. [Veure Personal Shopper](service:personal-shopper)."
-            },
-            {
-              "title": "Per llogar",
-              "text": "Posada a punt per llogar abans i millor."
-            },
-            {
-              "title": "Per invertir",
-              "text": "Reformes que sumen valor i rendibilitat, amb els números davant."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«No et preocupis, *jo me n'encarrego.*»"
-        },
-        {
-          "kind": "p",
-          "text": "Llicències, gremis, imprevistos d'obra: els gestionem nosaltres perquè tu només hagis de decidir."
-        }
-      ]
-    },
-    {
       "layout": "colab",
-      "surface": "paper",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -265,7 +206,7 @@
         },
         {
           "kind": "lead",
-          "text": "Per al projecte, l'interiorisme i la direcció de les reformes col·laborem amb un estudi d'arquitectura i interiorisme de Barcelona."
+          "text": "Per al projecte, l'interiorisme i la direcció de les reformes col·laborem amb un estudi d'arquitectura i interiorisme de Barcelona. HousySpace coordina i és el teu interlocutor; l'estudi desenvolupa el projecte i les empreses d'obra l'executen."
         },
         {
           "kind": "buttons",

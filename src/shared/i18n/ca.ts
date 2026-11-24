@@ -249,6 +249,13 @@ const ca = {
   servicePage: {
     /** Button under the head that scrolls to the closing contact block. */
     talk: "Parlem",
+    /** Online valuator pop-up and adviser form pop-up of the valuation service. */
+    valuator: {
+      title: "Valorador en línia d'HousySpace",
+      loading: "Carregant el valorador…",
+      close: "Tanca el valorador",
+    },
+    closeLabel: "Tanca",
   },
   servicesIndex: {
     discover: "Descobrir el servei",

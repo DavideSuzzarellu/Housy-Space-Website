@@ -2,7 +2,7 @@
   "title": "Real estate services in Barcelona · HousySpace",
   "description": "Real estate services in Barcelona: sales, valuation, rentals and management, personal shopper, investment, renovations and legal, tax and financial advice.",
   "head": {
-    "heading": "The services *we offer you*",
+    "heading": "The services *we offer*",
     "photo": false,
     "items": [
       {
@@ -54,7 +54,7 @@
         },
         {
           "kind": "h2",
-          "text": "Sell, value *or rent your home*"
+          "text": "Sell, value *or rent out your home*"
         },
         {
           "kind": "list",
@@ -62,21 +62,21 @@
           "items": [
             {
               "title": "Property sales and brokerage",
-              "text": "We advise you on the sale of your home, from the initial study and the sales strategy to the closing of the transaction.",
+              "text": "We guide you through the sale of your home, from the initial assessment and sales strategy to closing the deal.",
               "kicker": "01 · Sell my home",
               "href": "service:venta-estrategica",
               "cta": "See the service"
             },
             {
               "title": "Property valuation",
-              "text": "We analyse the market and the features of your property to help you determine its value and a suitable asking price.",
-              "kicker": "02 · Know what it is worth",
+              "text": "We analyse the market and your property's features to help you work out its value and the right asking price.",
+              "kicker": "02 · Find out what it's worth",
               "href": "service:valoracion",
               "cta": "See the service"
             },
             {
               "title": "Rentals and property management",
-              "text": "We market your home, select candidates and, if you need it, manage the rental throughout the contract.",
+              "text": "We market your home, screen candidates and, if you need it, manage the rental throughout the lease.",
               "kicker": "03",
               "href": "service:alquiler-gestion",
               "cta": "See the service"
@@ -97,7 +97,7 @@
         },
         {
           "kind": "h2",
-          "text": "Buy *or invest with judgement*"
+          "text": "Buy *or invest wisely*"
         },
         {
           "kind": "list",
@@ -105,14 +105,14 @@
           "items": [
             {
               "title": "Real estate personal shopper",
-              "text": "We search for and analyse homes according to your needs and support you through the purchase process, up to the signing.",
+              "text": "We search for and assess homes that match your needs and support you through the purchase, all the way to signing.",
               "kicker": "04",
               "href": "service:personal-shopper",
               "cta": "See the service"
             },
             {
               "title": "Real estate investment",
-              "text": "We study investment opportunities, costs, potential returns and risks to help you make decisions with judgement.",
+              "text": "We look at investment opportunities, costs, potential returns and risks, so you can decide with confidence.",
               "kicker": "05",
               "href": "service:inversion-inmobiliaria",
               "cta": "See the service"
@@ -133,7 +133,7 @@
         },
         {
           "kind": "h2",
-          "text": "Professional support *at every decision*"
+          "text": "Professional support *for every decision*"
         },
         {
           "kind": "list",
@@ -141,14 +141,14 @@
           "items": [
             {
               "title": "Renovations and interior design",
-              "text": "We coordinate renovation and interior design projects with specialised professionals, from the first quote to the handover.",
+              "text": "We coordinate renovation and interior design projects with specialist professionals, from the first quote to handover.",
               "kicker": "06",
               "href": "service:reformas-obras",
               "cta": "See the service"
             },
             {
               "title": "Legal and tax advice",
-              "text": "We coordinate the advice of legal and tax professionals for the legal and tax needs of your transaction.",
+              "text": "We coordinate legal and tax professionals to cover the legal and tax needs of your transaction.",
               "kicker": "07",
               "href": "service:asesoramiento-juridico-fiscal",
               "cta": "See the service"
@@ -196,25 +196,25 @@
             },
             {
               "title": "I have inherited a home",
-              "text": "What procedures there are, what taxes to pay and what to do with it.",
+              "text": "Which formalities apply, which taxes you owe and what to do with the property.",
               "kicker": "Legal and tax advice",
               "href": "service:asesoramiento-juridico-fiscal"
             },
             {
               "title": "Do I renovate before selling?",
-              "text": "Which improvements can help the sale and which are not worth it.",
+              "text": "Which improvements can help the sale and which aren't worth it.",
               "kicker": "Renovations and interior design",
               "href": "service:reformas-obras"
             },
             {
-              "title": "I want to move home",
-              "text": "How to coordinate the sale of yours and the purchase of the new one.",
+              "title": "I want to move",
+              "text": "How to coordinate selling yours with buying the new one.",
               "kicker": "Real estate personal shopper",
               "href": "service:personal-shopper"
             },
             {
-              "title": "I want to invest in housing",
-              "text": "What to buy, with what numbers and with what risks.",
+              "title": "I want to invest in property",
+              "text": "What to buy, what the numbers look like and what the risks are.",
               "kicker": "Real estate investment",
               "href": "service:inversion-inmobiliaria"
             }
@@ -234,7 +234,7 @@
         },
         {
           "kind": "h2",
-          "text": "Advice *that starts by listening to you*"
+          "text": "Advice *that starts with listening*"
         },
         {
           "kind": "p",
@@ -256,8 +256,8 @@
               "text": "We propose the steps, the timings and the costs."
             },
             {
-              "title": "Support",
-              "text": "We help you decide and, if you want, to carry it out."
+              "title": "Guidance",
+              "text": "We help you decide and, if you wish, put it into action."
             }
           ]
         }

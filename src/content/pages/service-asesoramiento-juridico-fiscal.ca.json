@@ -42,7 +42,7 @@
       "items": [
         {
           "kind": "big",
-          "text": "Cada pas, correcte i segur."
+          "text": "Cada pas, revisat per especialistes."
         },
         {
           "kind": "p",
@@ -62,6 +62,10 @@
         {
           "kind": "h2",
           "text": "Segons el moment en què et trobes"
+        },
+        {
+          "kind": "lead",
+          "text": "Aquests tràmits els fan el despatx d'advocats i l'assessoria fiscal amb qui col·laborem. Nosaltres coordinem la consulta i els seus terminis amb la teva operació."
         },
         {
           "kind": "card",
@@ -200,22 +204,22 @@
         },
         {
           "kind": "h2",
-          "text": "Els impostos de l'habitatge, per administració"
+          "text": "Quins impostos apareixen en cada moment"
         },
         {
           "kind": "lead",
-          "text": "Qui cobra cada impost i quan apareix en una operació."
+          "text": "Una orientació general. El càlcul de cada cas correspon a l'assessoria fiscal."
         },
         {
           "kind": "card",
           "items": [
             {
               "kind": "h3",
-              "text": "Ajuntament"
+              "text": "En vendre"
             },
             {
               "kind": "p",
-              "text": "Impostos municipals"
+              "text": "Venda d'un habitatge"
             },
             {
               "kind": "list",
@@ -223,11 +227,11 @@
               "items": [
                 {
                   "title": "Plusvàlua municipal",
-                  "text": "En vendre, heretar o donar."
+                  "text": "Ajuntament."
                 },
                 {
-                  "title": "Impost sobre béns immobles (IBI)",
-                  "text": "Cada any, com a propietari."
+                  "title": "IRPF: guany patrimonial",
+                  "text": "Estat. Si vens amb benefici."
                 }
               ]
             }
@@ -238,11 +242,11 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Generalitat"
+              "text": "En comprar"
             },
             {
               "kind": "p",
-              "text": "Agència Tributària de Catalunya"
+              "text": "Compra d'un habitatge"
             },
             {
               "kind": "list",
@@ -250,15 +254,11 @@
               "items": [
                 {
                   "title": "Impost de transmissions patrimonials (ITP)",
-                  "text": "En comprar un habitatge de segona mà."
+                  "text": "Generalitat. Habitatge de segona mà."
                 },
                 {
                   "title": "Actes jurídics documentats (AJD)",
-                  "text": "En comprar obra nova o signar una hipoteca."
-                },
-                {
-                  "title": "Successions i donacions",
-                  "text": "En heretar o rebre un habitatge."
+                  "text": "Generalitat. Obra nova o signatura d'una hipoteca."
                 }
               ]
             }
@@ -269,27 +269,54 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Estat Espanyol"
+              "text": "En heretar o rebre"
             },
             {
               "kind": "p",
-              "text": "Agencia Tributaria"
+              "text": "Herències i donacions"
             },
             {
               "kind": "list",
               "ordered": false,
               "items": [
                 {
-                  "title": "IRPF: guany patrimonial",
-                  "text": "En vendre amb benefici."
+                  "title": "Successions i donacions",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Plusvàlua municipal",
+                  "text": "Ajuntament."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Com a propietari"
+            },
+            {
+              "kind": "p",
+              "text": "Mentre tens l'habitatge"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Impost sobre béns immobles (IBI)",
+                  "text": "Ajuntament. Cada any."
                 },
                 {
                   "title": "IRPF: rendiments",
-                  "text": "Si lloga l'habitatge."
+                  "text": "Estat. Si lloguers l'habitatge."
                 },
                 {
                   "title": "Patrimoni",
-                  "text": "Segons el valor del teu patrimoni."
+                  "text": "Estat. Segons el valor del teu patrimoni."
                 }
               ]
             }
@@ -326,7 +353,7 @@
             },
             {
               "title": "Ho coordinem",
-              "text": "Ens assegurem que tot sigui correcte i segur fins a la signatura."
+              "text": "Coordinem la revisió amb els especialistes fins a la signatura."
             }
           ]
         }
@@ -350,6 +377,10 @@
           "text": "Un despatx d'advocats i una assessoria fiscal de Barcelona amb qui revisem els aspectes legals i fiscals de les nostres operacions, i molt més."
         },
         {
+          "kind": "p",
+          "text": "Si te'ls recomanem és perquè els coneixem bé: fa anys que ens envoltem de professionals que treballen igual o millor que nosaltres i en qui confiem plenament."
+        },
+        {
           "kind": "buttons",
           "items": [
             {
@@ -368,7 +399,8 @@
               "text": "Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa.",
               "kicker": "Despatx jurídic i fiscal",
               "href": "https://advadvocats.cat/es/",
-              "cta": "Visita advadvocats.cat"
+              "cta": "Visita advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
             },
             {
               "title": "Asesoría Edac",

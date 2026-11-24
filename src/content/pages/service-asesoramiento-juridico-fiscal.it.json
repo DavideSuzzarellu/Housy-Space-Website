@@ -42,7 +42,7 @@
       "items": [
         {
           "kind": "big",
-          "text": "Ogni passaggio, corretto e sicuro."
+          "text": "Ogni passaggio verificato da specialisti."
         },
         {
           "kind": "p",
@@ -62,6 +62,10 @@
         {
           "kind": "h2",
           "text": "In base alla tua situazione"
+        },
+        {
+          "kind": "lead",
+          "text": "Queste pratiche sono svolte dallo studio legale e dallo studio fiscale con cui collaboriamo. Noi coordiniamo la consulenza e le sue tempistiche con la tua operazione."
         },
         {
           "kind": "card",
@@ -200,22 +204,22 @@
         },
         {
           "kind": "h2",
-          "text": "Le imposte sugli immobili, per ente"
+          "text": "Quali imposte compaiono in ogni momento"
         },
         {
           "kind": "lead",
-          "text": "Chi riscuote ogni imposta e quando compare in un'operazione."
+          "text": "Un'indicazione generale. Il calcolo di ogni caso spetta allo studio fiscale."
         },
         {
           "kind": "card",
           "items": [
             {
               "kind": "h3",
-              "text": "Comune"
+              "text": "Quando vendi"
             },
             {
               "kind": "p",
-              "text": "Imposte municipali"
+              "text": "Vendita di un immobile"
             },
             {
               "kind": "list",
@@ -223,11 +227,11 @@
               "items": [
                 {
                   "title": "Imposta sulle plusvalenze municipali (plusvalía)",
-                  "text": "Al momento della vendita, donazione o eredità."
+                  "text": "Comune."
                 },
                 {
-                  "title": "Imposta municipale sugli immobili (IBI)",
-                  "text": "Ogni anno, in quanto proprietario."
+                  "title": "IRPEF: plusvalenza immobiliare",
+                  "text": "Stato. Se vendi con un guadagno."
                 }
               ]
             }
@@ -238,11 +242,11 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Generalitat (Governo Catalano)"
+              "text": "Quando compri"
             },
             {
               "kind": "p",
-              "text": "Agència Tributària de Catalunya"
+              "text": "Acquisto di un immobile"
             },
             {
               "kind": "list",
@@ -250,15 +254,11 @@
               "items": [
                 {
                   "title": "Imposta di trasferimento immobiliare (ITP)",
-                  "text": "All'acquisto di un immobile usato."
+                  "text": "Generalitat. Immobili usati."
                 },
                 {
                   "title": "Imposta sugli atti giuridici documentati (AJD)",
-                  "text": "All'acquisto di immobile nuovo o alla stipula di un mutuo."
-                },
-                {
-                  "title": "Imposta sulle successioni e donazioni",
-                  "text": "In caso di eredità o donazione di un immobile."
+                  "text": "Generalitat. Immobili nuovi o stipula di un mutuo."
                 }
               ]
             }
@@ -269,27 +269,54 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Stato Spagnolo"
+              "text": "Quando erediti o ricevi"
             },
             {
               "kind": "p",
-              "text": "Agencia Tributaria"
+              "text": "Successioni e donazioni"
             },
             {
               "kind": "list",
               "ordered": false,
               "items": [
                 {
-                  "title": "IRPEF: plusvalenza immobiliare",
-                  "text": "Al momento della vendita con guadagno."
+                  "title": "Imposta sulle successioni e donazioni",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Imposta sulle plusvalenze municipali (plusvalía)",
+                  "text": "Comune."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Da proprietario"
+            },
+            {
+              "kind": "p",
+              "text": "Finché possiedi l'immobile"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Imposta municipale sugli immobili (IBI)",
+                  "text": "Comune. Ogni anno."
                 },
                 {
                   "title": "IRPEF: redditi da locazione",
-                  "text": "Se affitti l'immobile."
+                  "text": "Stato. Se affitti l'immobile."
                 },
                 {
                   "title": "Imposta patrimoniale",
-                  "text": "In base al valore del tuo patrimonio."
+                  "text": "Stato. In base al valore del tuo patrimonio."
                 }
               ]
             }
@@ -326,7 +353,7 @@
             },
             {
               "title": "Lo coordiniamo",
-              "text": "Ci assicuriamo che tutto sia corretto e sicuro fino alla firma."
+              "text": "Coordiniamo la verifica con gli specialisti fino alla firma."
             }
           ]
         }
@@ -350,6 +377,10 @@
           "text": "Uno studio legale e uno studio fiscale di Barcellona con cui esaminiamo gli aspetti legali e fiscali delle nostre operazioni, e molto altro."
         },
         {
+          "kind": "p",
+          "text": "Se te li consigliamo è perché li conosciamo bene: da anni ci circondiamo di professionisti che lavorano bene quanto noi, o meglio, e di cui ci fidiamo pienamente."
+        },
+        {
           "kind": "buttons",
           "items": [
             {
@@ -368,7 +399,8 @@
               "text": "Studio legale a Barcellona: successioni, redditi e imposte, diritto civile, del lavoro e d'impresa.",
               "kicker": "Studio legale e fiscale",
               "href": "https://advadvocats.cat/es/",
-              "cta": "Visita advadvocats.cat"
+              "cta": "Visita advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
             },
             {
               "title": "Asesoría Edac",

@@ -1,0 +1,39 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+
+/**
+ * Numbered steps on a hairline (reference `.sa25-l`): round bullets, the last one turquoise; a
+ * vertical line with the bullets on its left below 900 px. Shared by the services index and the
+ * valuation process.
+ */
+interface Props {
+  item: ItemOf<"steps">;
+}
+
+const { item: steps } = Astro.props;
+---
+
+<ol class="relative grid gap-0 before:absolute before:top-0 before:bottom-0 before:left-[23px] before:w-px before:bg-line-strong min-[900px]:grid-cols-4 min-[900px]:gap-[clamp(18px,2.6vw,40px)] min-[900px]:before:inset-x-0 min-[900px]:before:top-[23px] min-[900px]:before:bottom-auto min-[900px]:before:h-px min-[900px]:before:w-auto">
+  {steps.items.map((step, index) => (
+    <li
+      data-reveal
+      class="relative grid grid-cols-[46px_minmax(0,1fr)] gap-x-[18px] pb-6.5 last:pb-0 min-[900px]:block min-[900px]:pb-0"
+    >
+      <span
+        aria-hidden="true"
+        class:list={[
+          "relative row-span-2 grid size-11.5 place-items-center rounded-full text-xs leading-none font-bold tracking-[0.08em] shadow-[0_0_0_6px_var(--color-canvas)] min-[900px]:shadow-[0_0_0_8px_var(--color-canvas)]",
+          index === steps.items.length - 1 ? "bg-turquoise text-ink" : "bg-dark text-paper",
+        ]}
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h3 class="mt-1 mb-1.5 font-sans text-[clamp(15px,1.35vw,19px)] leading-[1.15] wrap-anywhere min-[900px]:mt-[clamp(16px,1.8vw,22px)] min-[900px]:mb-2">
+        {step.title}
+      </h3>
+      <p class="max-w-none text-sm leading-[1.6] tracking-[0.03em] text-fg-2 normal-case min-[900px]:max-w-[26ch]">
+        {step.text}
+      </p>
+    </li>
+  ))}
+</ol>

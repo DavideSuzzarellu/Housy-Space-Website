@@ -5,7 +5,8 @@ import Inline from "@/shared/ui/atoms/Inline.astro";
 
 /**
  * Numbered process (reference `.svp-steps .svp-tl`, v46): slabs with a cut corner and a turquoise
- * bar that draws in; the last slab is petrol. As `list`, one step per row (reformas).
+ * bar that draws in; the last slab is petrol. As `list` (reformas, `.svp-steps-split`) the block
+ * sits in an 820 px column on the right and every slab puts its number beside the text.
  */
 interface Props {
   locale: Locale;
@@ -24,52 +25,33 @@ const SLAB =
 
 <ol
   class:list={[
-    "grid",
-    list
-      ? "ml-auto max-w-205"
-      : [
-          "mt-[clamp(22px,4vh,40px)] grid-cols-1 gap-3 min-[620px]:grid-cols-2",
-          THREE_COLUMNS.has(count) ? "min-[960px]:grid-cols-3" : "min-[960px]:grid-cols-4",
-        ],
+    "mt-[clamp(22px,4vh,40px)] grid grid-cols-1 gap-3 min-[620px]:grid-cols-2",
+    list && "ml-auto max-w-205",
+    THREE_COLUMNS.has(count) ? "min-[960px]:grid-cols-3" : "min-[960px]:grid-cols-4",
   ]}
 >
   {item.items.map((entry, index) => (
     <li
       data-reveal
       class:list={[
-        list
-          ? "relative grid grid-cols-[90px_1fr] gap-x-5 gap-y-1 border-t border-line-strong py-6.5"
-          : SLAB,
+        SLAB,
+        count === 6 ? "min-[900px]:py-3" : "min-[900px]:py-4",
+        list && "grid grid-cols-[90px_1fr] gap-x-5 gap-y-1",
       ]}
     >
       <b
         aria-hidden="true"
         class:list={[
-          "block leading-none",
-          list
-            ? "row-span-2 mb-2.5 font-heading text-[38px] font-normal text-turquoise-deep/55"
-            : "mb-[clamp(10px,1.8vh,16px)] font-sans text-[clamp(34px,3.2vw,46px)] font-light tracking-[0.01em] text-accent in-[li:last-child]:text-turquoise",
+          "block font-sans text-[clamp(34px,3.2vw,46px)] leading-none font-light tracking-[0.01em] text-accent in-[li:last-child]:text-turquoise",
+          list ? "row-span-2" : "mb-[clamp(10px,1.8vh,16px)]",
         ]}
       >
         {String(index + 1).padStart(2, "0")}
       </b>
-      <h3
-        class:list={[
-          "wrap-break-word",
-          list
-            ? "mb-2 text-[26px] min-[860px]:text-[18px]"
-            : "mb-2 font-sans text-[clamp(14.5px,1.2vw,17px)] leading-[1.25] font-extrabold tracking-[0.04em]",
-        ]}
-      >
+      <h3 class="mb-2 font-sans text-[clamp(14.5px,1.2vw,17px)] leading-[1.25] font-bold tracking-[0.03em] wrap-break-word">
         {entry.title}
       </h3>
-      <p
-        class:list={[
-          list
-            ? "mb-3.5 max-w-137.5 text-[13px] text-muted"
-            : "text-sm leading-[1.6] tracking-[0.02em] text-mid normal-case in-[li:last-child]:text-paper/85",
-        ]}
-      >
+      <p class="text-sm leading-[1.6] tracking-[0.02em] text-mid normal-case in-[li:last-child]:text-paper/85">
         <Inline text={entry.text} locale={locale} />
       </p>
     </li>

@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo — e se serve, lo ristrutturiamo anche noi."
+        "text": "Cerchiamo e visitiamo con te solo ciò che fa al caso tuo e, se serve, coordiniamo anche la ristrutturazione."
       },
       {
         "kind": "image",
@@ -54,11 +54,15 @@
         },
         {
           "kind": "p",
-          "text": "Definisci le tue esigenze e noi facciamo il resto: cerchiamo, filtriamo e visitiamo con te solo ciò che corrisponde al tuo profilo. Prima che tu decida, studiamo l'immobile in profondità per farti comprare senza sorprese."
+          "text": "Tu definisci ciò che ti serve e noi ci occupiamo della ricerca: individuiamo, selezioniamo e visitiamo con te solo ciò che fa al caso tuo. Prima che tu decida, studiamo a fondo l'immobile, così acquisti senza sorprese."
         },
         {
           "kind": "p",
-          "text": "E se l'appartamento che ti piace ha bisogno di ristrutturazione, ce ne occupiamo noi."
+          "text": "E se la casa che ti piace ha bisogno di lavori, coordiniamo anche quelli con lo studio con cui collaboriamo."
+        },
+        {
+          "kind": "p",
+          "text": "È un servizio di ricerca attiva, da commissionare. Se vuoi solo essere avvisato quando esce una casa adatta, puoi [registrare la tua ricerca](route:mySearch)."
         }
       ]
     },
@@ -83,7 +87,7 @@
             },
             {
               "title": "Ricerca attiva",
-              "text": "Monitoriamo il mercato secondo i tuoi criteri, anche per immobili non ancora pubblicati."
+              "text": "Setacciamo il mercato in base ai tuoi criteri e, quando ce n'è, anche gli immobili non ancora pubblicati."
             },
             {
               "title": "Selezione",
@@ -99,14 +103,14 @@
             },
             {
               "title": "Ristrutturazione",
-              "text": "Se necessario, progettiamo ed eseguiamo i lavori per farti entrare direttamente."
+              "text": "Se serve, coordiniamo progetto e lavori con lo studio con cui collaboriamo, così puoi entrare in casa e viverci."
             }
           ]
         }
       ]
     },
     {
-      "layout": "cards",
+      "layout": "icons",
       "surface": "stone",
       "band": false,
       "items": [
@@ -124,27 +128,43 @@
           "items": [
             {
               "title": "L'immobile",
-              "text": "Stato reale dell'abitazione, impianti e possibili lavori con il loro costo."
+              "text": "Stato reale dell'abitazione, impianti e possibili lavori con il loro costo.",
+              "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
             },
             {
               "title": "L'edificio",
-              "text": "Stato dell'immobile, ispezione tecnica e lavori previsti o spese condominiali."
+              "text": "Stato dell'immobile, ispezione tecnica e lavori previsti o spese condominiali.",
+              "icon": ["M6 21V4h9v17", "M15 9h4v12", "M3 21h18", "M9 8h3", "M9 12h3", "M9 16h3"]
             },
             {
               "title": "Documentazione",
-              "text": "Visura catastale, ipoteche, certificato di abitabilità e certificato energetico."
+              "text": "Visura catastale, ipoteche, certificato di abitabilità e certificato energetico.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
             },
             {
               "title": "Il prezzo",
-              "text": "Confronto con vendite recenti nella zona per non pagare di più."
+              "text": "Confronto con vendite recenti nella zona per non pagare di più.",
+              "icon": ["M3 12V4h8l10 10-8 8z", "M7 8h1"]
             },
             {
               "title": "Finanziamento",
-              "text": "Conil nostro broker finanziario, il mutuo studiato prima di impegnarsi. [Vedi consulenza finanziaria](service:asesoramiento-financiero)."
+              "text": "Con il broker finanziario con cui collaboriamo, il mutuo viene studiato prima che tu ti impegni. [Vedi consulenza finanziaria](service:asesoramiento-financiero).",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
             },
             {
               "title": "L'ambiente",
-              "text": "Servizi, trasporti, rumore e evoluzione del quartiere."
+              "text": "Servizi, trasporti, rumore e evoluzione del quartiere.",
+              "icon": [
+                "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z",
+                "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              ]
             }
           ]
         }
@@ -161,7 +181,7 @@
         },
         {
           "kind": "h2",
-          "text": "L'appartamento ha bisogno di ristrutturazione? Ce ne occupiamo noi."
+          "text": "La casa ha bisogno di lavori? Li coordiniamo noi"
         },
         {
           "kind": "p",
@@ -194,20 +214,6 @@
               "solid": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«Non preoccuparti, *ci penso io.*»"
-        },
-        {
-          "kind": "p",
-          "text": "Dalla prima visita al giorno in cui entri a vivere, hai un solo consulente di riferimento."
         }
       ]
     },

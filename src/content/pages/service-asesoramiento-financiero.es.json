@@ -16,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Hipoteca y financiación estudiadas con números reales, junto a nuestro bróker financiero."
+        "text": "Hipoteca y financiación estudiadas con números reales, junto al bróker financiero con el que colaboramos."
       },
       {
         "kind": "image",
@@ -46,7 +46,7 @@
         },
         {
           "kind": "p",
-          "text": "Saber cuánto puedes financiar, con qué cuota y en qué condiciones te ahorra disgustos. Lo estudiamos contigo y con nuestro bróker financiero, que compara las condiciones de distintas entidades."
+          "text": "Saber cuánto puedes financiar, con qué cuota y en qué condiciones te ahorra disgustos. Lo estudiamos contigo y con el bróker financiero con el que colaboramos, que compara las condiciones de distintas entidades."
         },
         {
           "kind": "p",
@@ -111,15 +111,15 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Estudio de la viabilidad del comprador"
+                  "text": "Antes de firmar arras, el bróker estudia si el comprador puede financiar la compra"
                 },
                 {
                   "title": "",
-                  "text": "Plazos de la hipoteca coordinados con el contrato de arras"
+                  "text": "Plazos de la hipoteca coordinados con los del contrato de arras"
                 },
                 {
                   "title": "",
-                  "text": "Menos riesgo de que la venta se caiga"
+                  "text": "Reduce el riesgo de que la venta se caiga por la financiación; no garantiza que el banco la conceda"
                 }
               ]
             }
@@ -213,7 +213,7 @@
         {
           "kind": "faq",
           "q": "¿Quién me asesora en la hipoteca?",
-          "a": "Nuestro bróker financiero, con el que trabajamos en las operaciones con financiación. Nosotros coordinamos todo el proceso contigo."
+          "a": "El bróker financiero con el que colaboramos en las operaciones con financiación. Nosotros coordinamos todo el proceso contigo."
         },
         {
           "kind": "faq",

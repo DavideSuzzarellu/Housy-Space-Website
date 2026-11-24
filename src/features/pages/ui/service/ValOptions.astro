@@ -1,0 +1,115 @@
+---
+import { Picture } from "astro:assets";
+import advisorPhoto from "@/assets/valoracion/asesor-960.webp";
+import onlinePhoto from "@/assets/valoracion/online-960.webp";
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import ValPopups from "./ValPopups.astro";
+import ValTop from "./ValTop.astro";
+
+/**
+ * The two ways to value a home (reference `.v42-op`, the home `.vz-rows`): online (opens the
+ * valuator pop-up) and with an adviser (opens the request form pop-up). Both stay plain links
+ * without JavaScript. This site never computes a valuation.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const intro = itemsOf(body, "p")[0]?.text;
+const rows = itemsOf(body, "list")[0]?.items ?? [];
+const card = itemsOf(body, "card")[0];
+const PHOTOS = [onlinePhoto, advisorPhoto] as const;
+/** Sale page variant (reference `.cv42-two`): the two cards side by side, no fact lists, and a closing line. */
+const two = rows.every((row) => (row.facts ?? []).length === 0);
+const more = itemsOf(body, "p")[1]?.text;
+---
+
+<ValTop locale={locale} head={head} intro={intro} id={id} />
+<div class:list={["grid auto-rows-fr gap-3 min-[900px]:gap-4", two && "min-[900px]:grid-cols-2"]}>
+  {rows.map((row, index) => (
+    <a
+      href={row.href === undefined ? undefined : resolveContentHref(row.href, locale)}
+      data-reveal
+      data-valuation-online={index === 0 ? "" : undefined}
+      data-valuation-adviser={index === 1 ? "" : undefined}
+      class:list={[
+        "group grid grid-cols-[120px_minmax(0,1fr)] items-stretch gap-[clamp(16px,1.8vw,26px)] rounded-2xl p-1.5 pr-3.5 text-inherit no-underline transition-[translate,box-shadow] duration-450 ease-brand hover:-translate-y-0.75 hover:shadow-[0_14px_30px_-18px_rgb(22_43_42/0.55)] focus-visible:-translate-y-0.75 motion-reduce:transition-none",
+        "min-[600px]:grid-cols-[200px_minmax(0,1fr)_auto] min-[600px]:pr-[clamp(16px,1.9vw,26px)]",
+        two
+          ? "min-[900px]:grid-cols-[clamp(140px,12.4vw,178px)_minmax(0,1fr)_auto] min-[900px]:gap-[clamp(14px,1.6vw,22px)]"
+          : "min-[900px]:grid-cols-[clamp(190px,17vw,236px)_minmax(0,1.25fr)_minmax(0,0.85fr)_auto] min-[900px]:gap-[clamp(18px,2.2vw,34px)]",
+        index === 1 ? "surface-dark bg-canvas" : "bg-card",
+      ]}
+    >
+      <span
+        class:list={[
+          "block min-h-37.5 overflow-hidden rounded-[11px] bg-stone min-[600px]:min-h-42.5",
+          two
+            ? "min-[900px]:min-h-[clamp(170px,26vh,214px)]"
+            : "min-[900px]:min-h-[clamp(170px,24vh,214px)]",
+        ]}
+      >
+        <Picture
+          {...PHOTO_PICTURE}
+          src={PHOTOS[index] ?? onlinePhoto}
+          alt=""
+          widths={[240, 480]}
+          sizes="(min-width: 900px) 236px, 200px"
+          class="size-full object-cover transition-transform duration-900 ease-brand group-hover:scale-[1.06] motion-reduce:transition-none"
+        />
+      </span>
+      <span class="block self-center py-2 max-[599px]:self-center">
+        <span class="mb-1.5 block text-[10.5px] leading-[1.4] font-semibold tracking-[0.18em] text-accent">
+          {row.kicker}
+        </span>
+        <h3
+          class:list={[
+            "font-sans leading-[1.15] font-extrabold tracking-[0.03em]",
+            two ? "text-[clamp(16px,1.4vw,19px)]" : "text-[clamp(18px,1.65vw,24px)]",
+          ]}
+        >
+          {row.title}
+        </h3>
+        <span class="mt-2.25 block max-w-[52ch] text-[13.5px] leading-[1.55] tracking-[0.03em] normal-case opacity-90">
+          {row.text}
+        </span>
+        <span class="mt-3.25 inline-block border-b border-current pb-1 text-[11.5px] leading-[1.4] font-bold tracking-[0.14em]">
+          {row.cta}
+        </span>
+      </span>
+      {!two && (
+        <span class="col-span-full block px-2 pb-2 min-[900px]:col-auto min-[900px]:self-center min-[900px]:p-0">
+          {(row.facts ?? []).map((fact) => (
+            <span class="relative block border-t border-current/20 py-2 pl-4 text-[11.5px] leading-[1.45] font-semibold tracking-[0.07em] before:absolute before:top-[1.25em] before:left-0 before:h-0.5 before:w-2 before:bg-accent">
+              {fact}
+            </span>
+          ))}
+        </span>
+      )}
+      <span
+        aria-hidden="true"
+        class:list={[
+          "hidden size-12.5 self-center place-items-center rounded-full bg-dark text-paper group-[.surface-dark]:bg-turquoise group-[.surface-dark]:text-ink transition-transform duration-450 ease-brand group-hover:rotate-45 min-[600px]:grid min-[900px]:row-start-1 min-[900px]:mr-0.5 motion-reduce:transition-none",
+          two ? "min-[600px]:col-start-3 min-[900px]:col-start-3" : "min-[900px]:col-start-4",
+        ]}
+      >
+        <ArrowUpRight class="size-3.5" />
+      </span>
+    </a>
+  ))}
+</div>
+{more && (
+  <p class="mt-[clamp(22px,4vh,38px)] text-[15px] leading-[1.6] tracking-[0.28px] text-fg-2 normal-case [&_a]:underline [&_a]:underline-offset-3">
+    <Inline text={more} locale={locale} />
+  </p>
+)}
+<ValPopups locale={locale} card={card} />

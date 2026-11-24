@@ -1,0 +1,60 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * Tiles with a line pictogram, number and short text (reference `.i46`, v46): the pictogram
+ * draws itself in when the tile is revealed. Six tiles run in three columns, the rest in four.
+ */
+interface Props {
+  locale: Locale;
+  list: ItemOf<"list">;
+}
+
+const { locale, list } = Astro.props;
+const three = list.items.length % 3 === 0;
+---
+
+<ul
+  role="list"
+  class:list={[
+    "grid grid-cols-1 gap-3 min-[620px]:grid-cols-2",
+    three ? "min-[960px]:grid-cols-3" : "min-[960px]:grid-cols-4",
+  ]}
+>
+  {list.items.map((entry, index) => (
+    <li
+      data-reveal
+      style={`--d:${(index * 0.06).toFixed(2)}s`}
+      class="relative bg-fg/5 px-5.5 pt-5.5 pb-6 transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-fg/[0.085] motion-reduce:transition-none [.motion-ready_&:not(.is-revealed)_path]:[stroke-dashoffset:1]"
+    >
+      <span
+        aria-hidden="true"
+        class="mb-[clamp(14px,2.2vh,20px)] grid size-13.5 place-items-center bg-dark [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,0_100%)]"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          focusable="false"
+          class="size-6.5 fill-none stroke-paper stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round] [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:0] [&_path]:transition-[stroke-dashoffset] [&_path]:duration-1400 [&_path]:ease-brand [&_path]:delay-[calc(var(--d,0s)+0.2s)] motion-reduce:[&_path]:transition-none"
+        >
+          {entry.icon?.map((d) => (
+            <path pathLength="1" d={d} />
+          ))}
+        </svg>
+      </span>
+      <span
+        aria-hidden="true"
+        class="absolute top-5 right-5 text-[10.5px] leading-none font-semibold tracking-[0.18em] text-taupe-tx"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h3 class="mb-2 font-sans text-[clamp(14.5px,1.2vw,17px)] leading-[1.25] font-extrabold tracking-[0.04em]">
+        {entry.title}
+      </h3>
+      <p class="text-sm leading-[1.6] tracking-[0.28px] text-mid normal-case">
+        <Inline text={entry.text} locale={locale} />
+      </p>
+    </li>
+  ))}
+</ul>

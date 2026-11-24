@@ -15,9 +15,12 @@ const COLUMNS = new Map([
   [3, "min-[960px]:grid-cols-3"],
   [4, "min-[760px]:grid-cols-2 min-[1080px]:grid-cols-4"],
 ]);
+const numbered = cards.length === 4;
+const SLAB =
+  "relative bg-fg/5 px-5.5 pt-6 pb-5.5 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-fg/[0.085] motion-reduce:transition-none";
 ---
 
-<div class:list={["grid gap-3.5", COLUMNS.get(cards.length)]}>
+<div class:list={["grid", numbered ? "gap-3" : "gap-3.5", COLUMNS.get(cards.length)]}>
   {cards.map((card, index) => {
     const title = itemsOf(card.items, "h3")[0];
     const lines = itemsOf(card.items, "p");
@@ -25,12 +28,30 @@ const COLUMNS = new Map([
     /* Two columns where the first has no list: its text is the big statement of the block. */
     const statement = cards.length === 2 && index === 0 && lists.length === 0;
     return (
-      <div data-reveal class="bg-card px-7 pt-7.5 pb-6.5">
-        {title && <h3 class="mb-2 text-[clamp(23px,2vw,28px)] leading-[1.1]">{title.text}</h3>}
+      <div data-reveal class={numbered ? SLAB : "bg-card px-7 pt-7.5 pb-6.5"}>
+        {numbered && (
+          <b
+            aria-hidden="true"
+            class="mb-[clamp(10px,1.8vh,16px)] block text-[clamp(30px,2.8vw,40px)] leading-none font-light text-accent"
+          >
+            {String(index + 1).padStart(2, "0")}
+          </b>
+        )}
+        {title && (
+          <h3
+            class:list={
+              numbered
+                ? "mb-3 text-[clamp(16px,1.5vw,21px)] leading-[1.2]"
+                : "mb-2 text-[clamp(23px,2vw,28px)] leading-[1.1]"
+            }
+          >
+            {title.text}
+          </h3>
+        )}
         {lines.map((line) => (
           <p
             class:list={[
-              "mb-3.5",
+              "mb-3.5 normal-case",
               statement
                 ? "font-heading text-[clamp(18px,calc(1.8vw-2px),22px)] leading-[1.4] text-fg"
                 : "text-[13px] leading-[1.6] text-muted",
@@ -42,7 +63,7 @@ const COLUMNS = new Map([
         {lists.map((list) => (
           <ul class="mt-4">
             {list.items.map((entry) => (
-              <li class="relative border-t border-line py-2.75 pl-5 text-[13px] leading-[1.5] text-fg-2 before:absolute before:top-4.75 before:left-0 before:size-1.5 before:rotate-45 before:bg-turquoise">
+              <li class="relative border-t border-line py-2.75 pl-5 text-[13.5px] leading-[1.5] text-fg-2 normal-case before:absolute before:top-4.75 before:left-0 before:size-1.5 before:rotate-45 before:bg-turquoise">
                 <Inline text={entry.text} locale={locale} />
               </li>
             ))}

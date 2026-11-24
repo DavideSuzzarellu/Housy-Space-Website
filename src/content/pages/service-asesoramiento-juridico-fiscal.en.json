@@ -26,7 +26,7 @@
         "kind": "buttons",
         "items": [
           {
-            "label": "Tell us your case",
+            "label": "Tell us about your case",
             "href": "#hablemos",
             "solid": true
           }
@@ -42,7 +42,7 @@
       "items": [
         {
           "kind": "big",
-          "text": "Every step, correct and secure."
+          "text": "Every step reviewed by specialists."
         },
         {
           "kind": "p",
@@ -62,6 +62,10 @@
         {
           "kind": "h2",
           "text": "Depending on where you are"
+        },
+        {
+          "kind": "lead",
+          "text": "The law firm and the tax advisory firm we work with carry out these procedures. We coordinate the consultation and its timing with your transaction."
         },
         {
           "kind": "card",
@@ -200,22 +204,22 @@
         },
         {
           "kind": "h2",
-          "text": "Property taxes, by authority"
+          "text": "Which taxes arise at each stage"
         },
         {
           "kind": "lead",
-          "text": "Who collects each tax and when it appears in a transaction."
+          "text": "A general guide. Working out the tax in each case is up to the tax advisory firm."
         },
         {
           "kind": "card",
           "items": [
             {
               "kind": "h3",
-              "text": "Municipal Council"
+              "text": "When selling"
             },
             {
               "kind": "p",
-              "text": "Municipal taxes"
+              "text": "Selling a home"
             },
             {
               "kind": "list",
@@ -223,11 +227,11 @@
               "items": [
                 {
                   "title": "Municipal capital gains tax (plusvalía)",
-                  "text": "On selling, inheriting or gifting."
+                  "text": "Municipal Council."
                 },
                 {
-                  "title": "Municipal property tax (IBI)",
-                  "text": "Every year, as owner."
+                  "title": "Income tax: capital gain (IRPF)",
+                  "text": "State. If you sell at a profit."
                 }
               ]
             }
@@ -238,11 +242,11 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Catalan Government"
+              "text": "When buying"
             },
             {
               "kind": "p",
-              "text": "Agència Tributària de Catalunya"
+              "text": "Buying a home"
             },
             {
               "kind": "list",
@@ -250,15 +254,11 @@
               "items": [
                 {
                   "title": "Property transfer tax (ITP)",
-                  "text": "On buying a second-hand property."
+                  "text": "Generalitat. Second-hand homes."
                 },
                 {
                   "title": "Stamp duty (AJD)",
-                  "text": "On buying a new-build or signing a mortgage."
-                },
-                {
-                  "title": "Inheritance and gift tax",
-                  "text": "On inheriting or receiving a property."
+                  "text": "Generalitat. New builds or signing a mortgage."
                 }
               ]
             }
@@ -269,27 +269,54 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Spanish State"
+              "text": "When inheriting or receiving"
             },
             {
               "kind": "p",
-              "text": "Agencia Tributaria"
+              "text": "Inheritance and gifts"
             },
             {
               "kind": "list",
               "ordered": false,
               "items": [
                 {
-                  "title": "Income tax: capital gain (IRPF)",
-                  "text": "On selling at a profit."
+                  "title": "Inheritance and gift tax",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Municipal capital gains tax (plusvalía)",
+                  "text": "Municipal Council."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "As an owner"
+            },
+            {
+              "kind": "p",
+              "text": "While you own the home"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Municipal property tax (IBI)",
+                  "text": "Municipal Council. Every year."
                 },
                 {
                   "title": "Income tax: rental income (IRPF)",
-                  "text": "If you rent out the property."
+                  "text": "State. If you rent the property out."
                 },
                 {
                   "title": "Wealth tax",
-                  "text": "Depending on the value of your assets."
+                  "text": "State. Depending on the value of your assets."
                 }
               ]
             }
@@ -326,7 +353,7 @@
             },
             {
               "title": "We coordinate it",
-              "text": "We ensure everything is correct and secure through to signing."
+              "text": "We coordinate the review with the specialists right up to signing."
             }
           ]
         }
@@ -350,6 +377,10 @@
           "text": "A law firm and a tax advisory firm in Barcelona with whom we review the legal and tax aspects of our transactions, and much more."
         },
         {
+          "kind": "p",
+          "text": "We recommend them because we know them well: for years we have surrounded ourselves with professionals who work as well as we do, or better, and whom we trust completely."
+        },
+        {
           "kind": "buttons",
           "items": [
             {
@@ -368,7 +399,8 @@
               "text": "Law firm in Barcelona: inheritances, income and taxes, civil, labour and business law.",
               "kicker": "Legal and tax firm",
               "href": "https://advadvocats.cat/es/",
-              "cta": "Visit advadvocats.cat"
+              "cta": "Visit advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
             },
             {
               "title": "Asesoría Edac",

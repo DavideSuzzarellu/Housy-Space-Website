@@ -34,7 +34,7 @@ const paragraphs = items.filter((item) => item.kind === "p");
     {paragraphs.map((item) => (
       <p
         class:list={[
-          "max-w-[58ch] text-fg-2 tracking-[0.28px] last:mb-0",
+          "max-w-[58ch] text-fg-2 tracking-[0.28px] normal-case last:mb-0",
           lined
             ? "mb-4.5 max-w-[56ch] border-b border-fg/14 pb-4.5 text-[clamp(15px,1.12vw,16.5px)] leading-[1.62] min-[960px]:mb-5.5 min-[960px]:pb-5.5 last:border-b-0 last:pb-0"
             : "mb-3.5 text-[clamp(15px,1.12vw,16.5px)] leading-[1.62]",

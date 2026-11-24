@@ -1,0 +1,165 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * "Our approach" (reference `.v42-cri`): text beside an illustrative scatter diagram (advertised
+ * prices, closed-sale references, your home). The diagram carries no data and draws in on reveal.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const tag = itemsOf(head, "tag")[0];
+const heading = itemsOf(head, "h2")[0];
+const lead = itemsOf(head, "lead")[0];
+const paragraph = itemsOf(body, "p")[0];
+const legend = itemsOf(body, "list")[0]?.items ?? [];
+const note = itemsOf(body, "note")[0];
+const DOTS = [
+  [66, 98],
+  [106, 150],
+  [146, 66],
+  [186, 112],
+  [222, 206],
+  [306, 44],
+  [340, 140],
+  [378, 92],
+  [418, 162],
+  [440, 70],
+] as const;
+---
+
+<div class="grid gap-[clamp(28px,5vh,44px)] min-[900px]:grid-cols-2 min-[900px]:items-center min-[900px]:gap-[clamp(32px,5.4vw,84px)]">
+  <div>
+    {tag && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+    {heading && (
+      <h2 id={id} data-reveal class="mt-2.5 text-[clamp(25px,2.65vw,38px)] [&_em]:block">
+        <Emphasis text={heading.text} />
+      </h2>
+    )}
+    {lead && (
+      <p
+        data-reveal
+        class="mt-[clamp(16px,2.8vh,26px)] mb-[clamp(12px,2vh,18px)] max-w-[34ch] text-[clamp(16px,1.5vw,21px)] leading-[1.42] font-semibold tracking-[0.03em] text-fg"
+      >
+        {lead.text}
+      </p>
+    )}
+    {paragraph && (
+      <p
+        data-reveal
+        class="max-w-[60ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case"
+      >
+        <Inline text={paragraph.text} locale={locale} />
+      </p>
+    )}
+  </div>
+  <figure
+    data-reveal
+    class="fig m-0 bg-paper px-[clamp(18px,2.4vw,34px)] pt-[clamp(18px,2.4vw,34px)] pb-[clamp(16px,2vw,24px)] [clip-path:polygon(0_0,calc(100%-30px)_0,100%_30px,100%_100%,0_100%)]"
+  >
+    <svg
+      viewBox="0 0 480 270"
+      aria-hidden="true"
+      focusable="false"
+      class="block h-auto w-full overflow-visible"
+    >
+      <path class="ax" d="M24 250V18M24 250h440"></path>
+      <path class="ax" d="M18 26l6-9 6 9"></path>
+      <rect class="bd" x="25" y="128" width="439" height="54"></rect>
+      <g class="dots">
+        {DOTS.map(([x, y], k) => (
+          <circle style={`--k:${k}`} cx={x} cy={y} r="7" />
+        ))}
+      </g>
+      <path class="me" d="M266 142l13 13-13 13-13-13z"></path>
+    </svg>
+    <figcaption class="mt-[clamp(12px,2vh,18px)] border-t border-fg/16 pt-3">
+      <ul role="list" class="m-0 flex list-none flex-wrap gap-x-5.5 gap-y-2 p-0">
+        {legend.map((entry, index) => (
+          <li
+            class:list={[
+              "relative pl-5.5 text-[11px] leading-[1.5] font-semibold tracking-[0.08em] text-fg before:absolute before:box-border",
+              index === 0 &&
+                "before:top-[0.2em] before:left-0 before:size-3 before:rounded-full before:border-[1.6px] before:border-taupe-tx before:bg-paper",
+              index === 1 &&
+                "before:top-[0.38em] before:left-0 before:h-2 before:w-3 before:border before:border-dashed before:border-accent before:bg-turquoise/40",
+              index === 2 &&
+                "before:top-[0.3em] before:left-px before:size-2.5 before:rotate-45 before:bg-dark",
+            ]}
+          >
+            {entry.title}
+          </li>
+        ))}
+      </ul>
+      {note && (
+        <p class="mt-2.5 text-[10.5px] leading-[1.5] tracking-[0.08em] text-taupe-tx">
+          {note.text}
+        </p>
+      )}
+    </figcaption>
+  </figure>
+</div>
+
+<style>
+  .fig svg :is(.ax, .bd, .dots circle, .me) {
+    vector-effect: non-scaling-stroke;
+  }
+  .ax {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-fg) 45%, transparent);
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .bd {
+    fill: color-mix(in srgb, var(--color-turquoise) 28%, transparent);
+    stroke: var(--color-accent);
+    stroke-width: 1;
+    stroke-dasharray: 5 5;
+    transform-origin: 25px 155px;
+  }
+  .dots circle {
+    fill: var(--color-paper);
+    stroke: var(--color-taupe-tx);
+    stroke-width: 1.6;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .me {
+    fill: var(--color-dark);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  /* Draw-in on reveal (reference servicios-v42.css); without motion preference everything is shown. */
+  @media (prefers-reduced-motion: no-preference) {
+    .bd {
+      transition: transform 1.3s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s;
+    }
+    .dots circle {
+      transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+      transition-delay: calc(var(--k, 0) * 0.09s + 0.7s);
+    }
+    .me {
+      transition:
+        opacity 0.5s ease 1.9s,
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 1.9s;
+    }
+    :global(.motion-ready) .fig:not(:global(.is-revealed)) .bd {
+      transform: scaleX(0);
+    }
+    :global(.motion-ready) .fig:not(:global(.is-revealed)) :is(.dots circle, .me) {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+  }
+</style>
