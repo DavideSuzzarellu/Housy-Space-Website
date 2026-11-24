@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import market from "@/content/market/barcelona.json";
+import { DISTRICTS } from "@/features/districts/domain/districts";
 import { marketSchema } from "./marketSchema";
 
 /** Prose quotes official figures; they must be the ones of the collection (AGENTS.md 6.2). */
@@ -11,6 +12,12 @@ function quoted(text: string): string[] {
 
 describe("market prose", () => {
   const data = marketSchema.parse(market);
+
+  it("district names are the official Catalan ones, the same in every locale", () => {
+    expect(data.districts.map((district) => district.name)).toEqual(
+      DISTRICTS.map((district) => district.name),
+    );
+  });
 
   it("every barrio has its lead, two paragraphs and a housing note", () => {
     for (const barrio of data.barrios) {
