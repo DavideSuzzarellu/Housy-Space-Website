@@ -26,6 +26,7 @@ import ContactView from "@/features/agency/ui/ContactView.astro";
 import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
 import ServiceView from "@/features/pages/ui/ServiceView.astro";
+import ServicesIndexView from "@/features/pages/ui/ServicesIndexView.astro";
 import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
@@ -248,7 +249,9 @@ const crumbs = [
         ? dictionary.nav.mySearch
         : target.view === "editorial" && target.key === "blog"
           ? dictionary.nav.blog
-          : editorial?.content.head.heading.replaceAll("*", "")) ??
+          : target.view === "editorial" && target.key === "services"
+            ? dictionary.nav.services
+            : editorial?.content.head.heading.replaceAll("*", "")) ??
       "",
   },
 ];
@@ -269,6 +272,13 @@ const crumbs = [
     <AboutView locale={locale} content={editorial.content} crumbs={crumbs} />
   ) : target.view === "editorial" && target.key === "contact" && editorial !== undefined ? (
     <ContactView locale={locale} content={editorial.content} crumbs={crumbs} />
+  ) : target.view === "editorial" && target.key === "services" && editorial !== undefined ? (
+    <ServicesIndexView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
   ) : target.view === "service" && editorial !== undefined ? (
     <ServiceView
       locale={locale}

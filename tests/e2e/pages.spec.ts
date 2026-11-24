@@ -64,6 +64,19 @@ for (const service of SERVICES) {
   });
 }
 
+test("/es/servicios is a real page with the 8 services, 6 situations and a contact block", async ({
+  page,
+}) => {
+  await page.goto("/es/servicios");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("servicios");
+  await expect(
+    page.locator("#propietarios li a, #compradores li a, #especializados li a"),
+  ).toHaveCount(8);
+  await expect(page.locator("#situaciones li a")).toHaveCount(6);
+  await expect(page.locator("#asesoramiento ol li")).toHaveCount(4);
+  await expect(page.locator("#hablemos a")).toHaveCount(4);
+});
+
 test("the compraventa page lists eight steps and twelve inclusions", async ({ page }) => {
   await page.goto("/es/servicios/venta-estrategica");
   await expect(page.locator("main ol li").filter({ has: page.locator("h3") })).toHaveCount(8);

@@ -1,26 +1,29 @@
 ---
 import { Picture } from "astro:assets";
 import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
-import type { PageContent } from "@/features/pages/application/pages";
+import { itemsOf, type PageContent } from "@/features/pages/application/pages";
 import Container from "@/shared/ui/atoms/Container.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
 
 /**
  * Head of a service page (reference `.sv5-hero`): paper with the Cerdà street grid, a big
  * headline (second half light) and the service illustration floating on the right (centred
- * above the text on phones). The illustration is the one eager image of the page.
+ * above the text on phones). The illustration is the one eager image of the page. Without an
+ * illustration (the services index) the headline runs on one line, followed by the in-page jump
+ * links (a `list` head item) instead of the contact button.
  */
 interface Props {
   locale: Locale;
   head: PageContent["head"];
   crumbs: readonly { readonly label: string; readonly href?: string }[];
-  /** Label of the button that scrolls to the closing contact block. */
-  talk: string;
+  /** Label of the button that scrolls to the closing contact block; none on the index. */
+  talk?: string;
 }
 
 const { locale, head, crumbs, talk } = Astro.props;
@@ -28,14 +31,26 @@ const t = getDictionary(locale);
 const lead = head.items.find((item) => item.kind === "lead");
 const tag = head.items.find((item) => item.kind === "tag");
 const { illustration } = head;
+const jump = itemsOf(head.items, "list")[0];
 ---
 
 <section
   data-page-head
-  class="relative isolate overflow-clip border-b border-fg/10 bg-canvas pt-[clamp(1.625rem,4vw,3.25rem)] pb-[clamp(3.5rem,8vw,7rem)]"
+  class:list={[
+    "relative isolate overflow-clip border-b border-fg/10 bg-canvas",
+    illustration === undefined
+      ? "pt-[37.8px] pb-[48.6px]"
+      : "pt-[clamp(1.625rem,4vw,3.25rem)] pb-[clamp(3.5rem,8vw,7rem)]",
+  ]}
 >
   <StreetGrid placement="heading" />
-  <Container class="grid grid-cols-1 items-center gap-x-[clamp(1rem,2.4vw,2.5rem)] min-[761px]:grid-cols-[minmax(0,1fr)_clamp(18.75rem,34vw,28.75rem)]">
+  <Container
+    class:list={[
+      "grid grid-cols-1 items-center gap-x-[clamp(1rem,2.4vw,2.5rem)]",
+      illustration !== undefined &&
+        "min-[761px]:grid-cols-[minmax(0,1fr)_clamp(18.75rem,34vw,28.75rem)]",
+    ]}
+  >
     <Breadcrumbs
       items={crumbs}
       label={t.property.detail.breadcrumb}
@@ -46,23 +61,53 @@ const { illustration } = head;
       {tag?.kind === "tag" && (
         <p class="mb-3.5 text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>
       )}
-      <h1 class="mt-4 mb-[clamp(1.5rem,3.4vw,2.5rem)] text-[clamp(30px,8.4vw,44px)] leading-none wrap-break-word min-[521px]:text-[clamp(30px,8.4vw,52px)] min-[761px]:text-[clamp(30px,11cqw,72px)] [&_em]:block">
+      <h1
+        class:list={[
+          "wrap-break-word",
+          illustration === undefined
+            ? "mb-[clamp(24px,3.4vw,28px)] text-[clamp(36px,4.7vw,61.92px)] leading-[1.05] min-[1200px]:mb-px"
+            : "mt-4 mb-[clamp(1.5rem,3.4vw,2.5rem)] text-[clamp(30px,8.4vw,44px)] leading-none min-[521px]:text-[clamp(30px,8.4vw,52px)] min-[761px]:text-[clamp(30px,11cqw,72px)] [&_em]:block",
+        ]}
+      >
         <Emphasis text={head.heading} />
       </h1>
       {lead?.kind === "lead" && (
-        <p class="mb-[clamp(1.875rem,4vw,2.875rem)] max-w-[58ch] text-[clamp(14px,1.35vw,17px)] leading-[1.8] text-mid">
+        <p
+          class:list={[
+            "max-w-[58ch] text-mid",
+            illustration === undefined
+              ? "text-sm leading-[1.6] min-[1200px]:text-[12.96px]"
+              : "mb-[clamp(1.875rem,4vw,2.875rem)] text-[clamp(14px,1.35vw,17px)] leading-[1.8]",
+          ]}
+        >
           {lead.text}
         </p>
       )}
-      <Button
-        href="#hablemos"
-        size="lg"
-        variant="solid"
-        arrow
-        class="leading-[1.35]! max-[520px]:w-full"
-      >
-        {talk}
-      </Button>
+      {jump !== undefined && (
+        <ul class="mt-7.5 flex flex-wrap gap-x-6.5 gap-y-2.5">
+          {jump.items.map((entry) => (
+            <li>
+              <a
+                href={entry.href === undefined ? undefined : resolveContentHref(entry.href, locale)}
+                class="inline-flex min-h-11 items-center border-b border-line-strong text-xs font-semibold tracking-[0.16em] text-fg no-underline hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent"
+              >
+                {entry.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+      {talk !== undefined && (
+        <Button
+          href="#hablemos"
+          size="lg"
+          variant="solid"
+          arrow
+          class="leading-[1.35]! max-[520px]:w-full"
+        >
+          {talk}
+        </Button>
+      )}
     </div>
     {illustration !== undefined && (
       <figure

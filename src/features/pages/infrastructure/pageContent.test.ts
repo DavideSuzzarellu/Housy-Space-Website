@@ -22,8 +22,8 @@ function strings(value: unknown): string[] {
 }
 
 describe("editorial pages", () => {
-  it("has the Spanish source of the 20 editorial pages", () => {
-    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(20);
+  it("has the Spanish source of the 21 editorial pages", () => {
+    expect(files.filter((file) => file.endsWith(".es.json"))).toHaveLength(21);
   });
 
   it.each(files)("%s validates against the schema", (file) => {
@@ -117,6 +117,42 @@ describe("service pages", () => {
       },
     };
     expect(schema.safeParse(broken).success).toBe(false);
+  });
+});
+
+describe("services index", () => {
+  const LOCALES = ["es", "en", "it", "ca"];
+
+  it.each(LOCALES)("%s: lists each of the 8 services once, in 3 groups of 3, 2 and 3", (locale) => {
+    const page = schema.parse(read(`services.${locale}.json`));
+    const groups = page.sections.filter((section) => section.layout === "indexGroup");
+    const hrefs = groups.map((group) =>
+      group.items.flatMap((item) =>
+        item.kind === "list" ? item.items.map((entry) => entry.href) : [],
+      ),
+    );
+    expect(hrefs.map((group) => group.length)).toEqual([3, 2, 3]);
+    expect(new Set(hrefs.flat()).size).toBe(8);
+    expect(hrefs.flat().every((href) => href?.startsWith("service:"))).toBe(true);
+  });
+
+  it.each(LOCALES)("%s: every jump link of the head points to a section of the page", (locale) => {
+    const page = schema.parse(read(`services.${locale}.json`));
+    const ids = page.sections.map((section) => `#${section.id}`);
+    const jump = page.head.items.find((item) => item.kind === "list");
+    for (const entry of jump?.kind === "list" ? jump.items : []) {
+      expect(ids, entry.href).toContain(entry.href);
+    }
+  });
+
+  it.each(LOCALES)("%s: every situation links to a service", (locale) => {
+    const page = schema.parse(read(`services.${locale}.json`));
+    const situations = page.sections.find((section) => section.layout === "indexSituations");
+    const list = situations?.items.find((item) => item.kind === "list");
+    expect(list?.kind === "list" ? list.items : []).toHaveLength(6);
+    for (const entry of list?.kind === "list" ? list.items : []) {
+      expect(entry.href?.startsWith("service:")).toBe(true);
+    }
   });
 });
 

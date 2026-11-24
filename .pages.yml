@@ -368,6 +368,31 @@ content:
     format: json
     fields: *page_fields
 
+  - name: pages-services-es
+    label: "Servicios (ES)"
+    type: file
+    path: src/content/pages/services.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-services-en
+    label: "Services (EN)"
+    type: file
+    path: src/content/pages/services.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-services-it
+    label: "Servizi (IT)"
+    type: file
+    path: src/content/pages/services.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-services-ca
+    label: "Serveis (CA)"
+    type: file
+    path: src/content/pages/services.ca.json
+    format: json
+    fields: *page_fields
+
   - name: pages-valuation-es
     label: "Valoración (ES)"
     type: file
