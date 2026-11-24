@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El Born y su entorno: Santa Maria del Mar, el Palau de la Música y el mercado de Santa Caterina.",
+  "translated": true,
+  "lead": "Il Born e dintorni: Santa Maria del Mar, il Palau de la Música e il mercato di Santa Caterina.",
   "text": [
-    "Son tres barrios históricos que hoy forman uno solo: Sant Pere, Santa Caterina y la Ribera, la zona que casi todo el mundo llama el Born. Fue el barrio comercial y marinero de la Barcelona medieval, y lo recuerdan la basílica de Santa Maria del Mar, el Palau de la Música Catalana, de Domènech i Montaner, y la calle Montcada con el Museu Picasso. El Parc de la Ciutadella marca uno de sus límites.",
-    "El mercado de Santa Caterina, con su cubierta ondulada de colores, es el centro de la vida diaria, y en los últimos años han llegado tiendas de autor, galerías y restaurantes. Los edificios mezclan fincas medievales rehabilitadas y otras del siglo XIX, con pisos pequeños o medianos y techos altos. Es una zona con mucho turismo, por lo que conviene visitar el piso a distintas horas."
+    "Sono tre quartieri storici che oggi ne formano uno solo: Sant Pere, Santa Caterina e la Ribera, la zona che quasi tutti chiamano il Born. Era il quartiere commerciale e marinaro della Barcellona medievale, e lo ricordano la basilica di Santa Maria del Mar, il Palau de la Música Catalana, di Domènech i Montaner, e il carrer de Montcada con il Museu Picasso. Il Parc de la Ciutadella ne segna uno dei confini.",
+    "Il mercato di Santa Caterina, con la sua copertura ondulata e colorata, è il centro della vita quotidiana, e negli ultimi anni sono arrivati negozi d'autore, gallerie e ristoranti. Gli edifici alternano stabili medievali ristrutturati e altri dell'Ottocento, con appartamenti piccoli o medi e soffitti alti. È una zona con molto turismo, quindi conviene visitare l'appartamento a orari diversi."
   ],
-  "housing": "Pisos pequeños y medianos con techos altos, en fincas antiguas rehabilitadas.",
+  "housing": "Appartamenti piccoli e medi con soffitti alti, in stabili antichi ristrutturati.",
   "places": [
     "Santa Maria del Mar",
     "Palau de la Música Catalana",

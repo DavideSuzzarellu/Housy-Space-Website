@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un rincón del Eixample de ritmo pausado, con teatro nacional, auditorio, mercado y biblioteca propios.",
+  "translated": true,
+  "lead": "Un angolo dell'Eixample dal ritmo pacato, con teatro nazionale, auditorium, mercato e biblioteca propri.",
   "text": [
-    "Su nombre viene del Fuerte Pío, que Felipe V mandó levantar tras 1714 y que se bautizó con el nombre del capitán general Francisco Pío de Saboya; el fuerte y la Ciudadela se derribaron en 1869. En 1861 se construyó aquí la estación de ferrocarril de la línea de Lleida, que dio identidad a un barrio entre la vía del tren y la Gran Via, y muchos transportistas se instalaron junto a la antigua carretera de Ribes. La estación cerró en el último cuarto del siglo XX y hoy su edificio, ampliado en 1910 con una gran cubierta de hierro, es la principal estación de autobuses de la ciudad.",
-    "Junto a la estación se hizo un parque urbano y, al otro lado, un conjunto con jardín de infancia, apartamentos tutelados para mayores, mercado y biblioteca que el propio distrito presenta como modelo de integración de equipamientos y espacio público. Hoy es un barrio residencial, con el Teatre Nacional de Catalunya y L'Auditori como grandes referentes culturales. Es una buena opción para quien quiere el Eixample sin el bullicio de sus grandes ejes comerciales: calles más tranquilas, comercio de proximidad y el centro a un paseo. Con 4.806 €/m² de precio medio de compraventa, queda por debajo de la Dreta, la Antiga Esquerra y la Nova Esquerra."
+    "Il suo nome viene dal Forte Pio, fatto costruire da Filippo V dopo il 1714 e battezzato con il nome del capitano generale Francesco Pio di Savoia; il forte e la Cittadella furono demoliti nel 1869. Nel 1861 qui fu costruita la stazione ferroviaria della linea di Lleida, che diede un'identità a un quartiere compreso tra i binari e la Gran Via, e molti trasportatori si stabilirono lungo l'antica strada di Ribes. La stazione chiuse nell'ultimo quarto del Novecento e oggi il suo edificio, ampliato nel 1910 con una grande copertura in ferro, è la principale stazione degli autobus della città.",
+    "Accanto alla stazione è stato creato un parco urbano e, sull'altro lato, un complesso con asilo nido, appartamenti protetti per anziani, mercato e biblioteca che il distretto stesso presenta come modello di integrazione tra servizi e spazio pubblico. Oggi è un quartiere residenziale, con il Teatre Nacional de Catalunya e L'Auditori come grandi riferimenti culturali. È una buona scelta per chi vuole l'Eixample senza il caos dei suoi grandi assi commerciali: strade più tranquille, negozi di prossimità e il centro a una passeggiata. Con 4.806 €/m² di prezzo medio di compravendita, resta sotto la Dreta, l'Antiga Esquerra e la Nova Esquerra."
   ],
-  "housing": "Pisos en fincas de la trama de Cerdà, en calles de poco tráfico.",
+  "housing": "Appartamenti in stabili dell'impianto di Cerdà, su strade con poco traffico.",
   "places": [
     "Teatre Nacional de Catalunya",
     "L'Auditori",
