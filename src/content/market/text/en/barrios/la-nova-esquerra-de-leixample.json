@@ -1,17 +1,17 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El barrio más poblado del Eixample, entre el parque de Joan Miró y la Gran Via.",
+  "translated": true,
+  "lead": "The most populated neighbourhood in the Eixample, between the Joan Miró park and Gran Via.",
   "text": [
-    "Hasta bien entrado el siglo XX fue una zona casi rural, con grupos de barracas de gente que trabajaba en las obras de la Exposición de 1929, y la urbanización no arrancó con fuerza hasta los años treinta. Durante décadas formó una sola unidad con la Antiga Esquerra y solo se separó por su tamaño y su densidad. Sus calles guardan huellas de otra Barcelona: la Casa Golferichs, que en 1972 se salvó del derribo por la presión popular y hoy es centro cívico; el parque de Joan Miró, levantado sobre el antiguo matadero e inaugurado en 1983 con la escultura Dona i ocell; las Arenas, una plaza de toros convertida en centro comercial, y la antigua cárcel Modelo, de 1904, el primer edificio de Barcelona construido expresamente como prisión.",
-    "Con 59.117 habitantes, es el más poblado del Eixample, y se nota en una vida de calle intensa, con mucho comercio local y vecinos de todas las edades. Su precio medio de compraventa, 5.211 €/m², queda por debajo del de la Antiga Esquerra y la Dreta, y a cambio ofrece la misma trama de Cerdà."
+    "Well into the 20th century it was an almost rural area, with clusters of shacks housing people who worked on the 1929 Exhibition, and development did not really take off until the 1930s. For decades it formed a single unit with L'Antiga Esquerra and was only separated because of its size and density. Its streets keep traces of another Barcelona: Casa Golferichs, which was saved from demolition in 1972 by public pressure and is now a civic centre; the Joan Miró park, built on the site of the old slaughterhouse and opened in 1983 with the sculpture Dona i ocell; Las Arenas, a bullring turned shopping centre; and the former Model prison, from 1904, the first building in Barcelona built expressly as a prison.",
+    "With 59,117 inhabitants, it is the most populated in the Eixample, and that shows in an intense street life, with plenty of local shops and neighbours of all ages. Its average sale price, 5,211 €/m², is below that of L'Antiga Esquerra and La Dreta, while offering the same Cerdà grid."
   ],
-  "housing": "Fincas de varias épocas en la trama de Cerdà, con precios más contenidos que en la Antiga Esquerra.",
+  "housing": "Buildings from several periods on the Cerdà grid, with lower prices than in L'Antiga Esquerra.",
   "places": [
     "Parc de Joan Miró",
     "Casa Golferichs",
     "Arenas de Barcelona",
-    "Antigua cárcel Modelo",
+    "Former Model prison",
     "Escola Industrial"
   ]
 }

@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El Camp Nou, la antigua Maternitat y el barrio de Sant Ramon, entre la Diagonal y L'Hospitalet.",
+  "translated": true,
+  "lead": "Camp Nou, the old Maternitat and the Sant Ramon neighbourhood, between the Diagonal and L'Hospitalet.",
   "text": [
-    "Son dos barrios en uno. La Maternitat nació alrededor de la Casa de la Maternitat i Expòsits, y Sant Ramon toma su nombre de la parroquia de Sant Ramon Nonat y también se conoce como Collblanc. Entre ambos están el Camp Nou y las instalaciones del FC Barcelona, además del cementerio de Les Corts, y una parte del barrio pertenece a la Zona Universitària.",
-    "Vivir aquí es tener el estadio como vecino, y también un barrio de uso diario, con pisos en bloques residenciales y buena conexión con la Diagonal. Con 4.399 €/m² y 1.160 €/mes, es el más asequible de Les Corts."
+    "These are two neighbourhoods in one. La Maternitat grew up around the Casa de la Maternitat i Expòsits, and Sant Ramon takes its name from the parish of Sant Ramon Nonat and is also known as Collblanc. Between them lie Camp Nou and FC Barcelona's facilities, as well as the Les Corts cemetery, and part of the neighbourhood belongs to the Zona Universitària.",
+    "Living here means having the stadium as a neighbour, but it is also an everyday neighbourhood, with flats in residential blocks and good links to the Diagonal. At 4,399 €/m² and 1,160 €/month, it is the most affordable in Les Corts."
   ],
-  "housing": "Pisos en bloques residenciales, con grandes equipamientos deportivos alrededor.",
+  "housing": "Flats in residential blocks, with large sports facilities around.",
   "places": ["Camp Nou", "Maternitat", "Cementiri de les Corts", "Zona Universitària"]
 }

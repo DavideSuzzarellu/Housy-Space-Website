@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de bloques y vecindario trabajador, entre Montjuïc, la Zona Franca y L'Hospitalet.",
+  "translated": true,
+  "lead": "A neighbourhood of blocks and working families, between Montjuïc, the Zona Franca and L'Hospitalet.",
   "text": [
-    "Hasta el siglo XX fue una zona agrícola, con masías como Can Mestres. Con el crecimiento del polígono industrial de la Zona Franca llegaron vecinos de muchas regiones de España, y de aquella oleada nació el barrio actual, de calles muy pobladas: 31.768 habitantes en 1,27 km². Su origen se liga al castillo de Port y a su capilla, de finales del siglo X. En febrero de 2025 abrió el parque de Can Clos, con 24.700 m² urbanizados, 14.400 de ellos ajardinados, y el Pla de Barris singular de la Marina suma 50 millones de euros de inversión pública hasta 2028.",
-    "Su alquiler medio, 885 €/mes, es el más bajo de Sants-Montjuïc, y el precio de compraventa, 2.936 €/m², también está entre los más contenidos del distrito. Para quien busca una primera vivienda, es un barrio a considerar, con buena conexión hacia Montjuïc y la Gran Via. Si vendes, el precio medio de compraventa está un 24 % por debajo de la media de Sants-Montjuïc. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 235.000 €, y el barrio está uno de los más asequibles de Sants-Montjuïc (7.º de 8 por precio). Si inviertes, el alquiler medio está un 12 % por debajo del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "Until the 20th century it was farmland, with farmhouses such as Can Mestres. As the Zona Franca industrial estate grew, residents arrived from many regions of Spain, and the present neighbourhood, with its densely populated streets, was born of that wave: 31,768 inhabitants in 1.27 km². Its origin is tied to the castle of Port and its chapel, from the late 10th century. In February 2025 the Can Clos park opened, with 24,700 m² landscaped, 14,400 of them gardens, and the special neighbourhood plan (Pla de Barris) for La Marina adds 50 million euros of public investment until 2028.",
+    "Its average rent, 885 €/month, is the lowest in Sants-Montjuïc, and its sale price, 2,936 €/m², is also among the lowest in the district. For anyone looking for a first home, it is a neighbourhood to consider, with good connections to Montjuïc and Gran Via. If you are selling, the average sale price is 24% below the Sants-Montjuïc average. Within the neighbourhood, the price of each flat depends on its condition, its floor and its building, so it is best to compare it with nearby sales rather than with the district average. If you are buying, an 80 m² flat costs about 235,000 € on average, and this is one of the most affordable neighbourhoods in Sants-Montjuïc (7th of 8 by price). If you are investing, the average rent is 12% below the district; before deciding, it is worth studying each deal with real figures for purchase, renovation and rental income."
   ],
-  "housing": "Bloques de vivienda en calles muy pobladas, con alguna masía que recuerda el pasado agrícola.",
-  "places": ["Passeig de la Zona Franca", "Masia de Can Mestres"]
+  "housing": "Blocks of flats on densely populated streets, with a farmhouse here and there recalling the farming past.",
+  "places": ["Passeig de la Zona Franca", "Can Mestres farmhouse"]
 }
