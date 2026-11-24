@@ -11,7 +11,7 @@
       },
       {
         "kind": "lead",
-        "text": "Tell us what you are looking for and we will find it for you, with a dedicated adviser."
+        "text": "Tell us what you are looking for and we will find it for you, with a dedicated advisor."
       }
     ]
   },
@@ -26,7 +26,7 @@
         },
         {
           "kind": "lead",
-          "text": "The more you tell us, the better we can search for you. An adviser will call you to refine the details."
+          "text": "The more you tell us, the better we can search for you. An advisor will call you to refine the details."
         },
         {
           "kind": "form",
@@ -110,7 +110,7 @@
             },
             {
               "name": "consent",
-              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+              "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending validation.)",
               "required": true,
               "full": true,
               "type": "consent",
@@ -149,7 +149,7 @@
         },
         {
           "kind": "h3",
-          "text": "Would you prefer to speak directly with an adviser?"
+          "text": "Would you prefer to speak directly with an advisor?"
         },
         {
           "kind": "buttons",
@@ -180,7 +180,7 @@
           "kind": "buttons",
           "items": [
             {
-              "label": "About the property personal shopper service",
+              "label": "About the real estate personal shopper service",
               "href": "service:personal-shopper",
               "solid": false
             }

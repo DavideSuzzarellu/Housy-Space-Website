@@ -752,7 +752,7 @@
                     },
                     {
                       "value": "Exterior",
-                      "label": "Exterior"
+                      "label": "Exterior-facing"
                     },
                     {
                       "value": "Ascensor",
@@ -951,7 +951,7 @@
                 },
                 {
                   "name": "c_comercial",
-                  "label": "**I wish to receive commercial communications from HousySpace about listings, services and news, via the channels I select below.**Optional. Not ticking this does not affect your search.",
+                  "label": "**I would like to receive commercial communications from HousySpace about listings, services and news, via the channels I select below.**Optional. Not ticking this does not affect your search.",
                   "required": false,
                   "full": false,
                   "type": "consent",
@@ -982,7 +982,7 @@
                 },
                 {
                   "name": "c_newsletter",
-                  "label": "**I want to subscribe to the HousySpace newsletter and articles (Barcelona property market, advice and news) by email.**Optional. Not ticking this does not affect your search.",
+                  "label": "**I would like to subscribe to the HousySpace newsletter and articles (Barcelona property market, advice and news) by email.**Optional. Not ticking this does not affect your search.",
                   "required": false,
                   "full": false,
                   "type": "consent",
