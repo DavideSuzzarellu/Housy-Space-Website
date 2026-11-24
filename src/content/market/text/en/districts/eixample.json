@@ -1,39 +1,39 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "Cerdà, chaflanes y modernismo: la Barcelona de las manzanas regulares y los edificios señoriales.",
+  "translated": true,
+  "lead": "Cerdà, chamfered corners and Modernisme: the Barcelona of regular blocks and stately buildings.",
   "history": [
-    "El Eixample nació a mediados del siglo XIX, cuando Ildefons Cerdà proyectó la ampliación de la ciudad más allá de las murallas: una cuadrícula de manzanas con las esquinas recortadas en chaflán, calles anchas y patios interiores pensados para dar luz y aire. La burguesía de la época lo llenó de edificios modernistas, como la Casa Batlló o La Pedrera, y más tarde llegó la Sagrada Família, que acabó siendo el símbolo de Barcelona.",
-    "Sus seis barrios se reparten a ambos lados de la calle Balmes, en la Dreta y la Esquerra, y cada uno tiene su carácter, de la elegancia del Passeig de Gràcia al ambiente de mercado de Sant Antoni. Quien busca piso en el Eixample suele encontrar techos altos, suelos hidráulicos, balcones y galerías, y una vida diaria en la que casi todo queda a pocos pasos: comercio, colegios, transporte y servicios.",
-    "Entre sus 6 barrios, el precio medio de compraventa va de 4.603 €/m² en Sant Antoni a 6.224 €/m² en la Dreta de l'Eixample, y el alquiler medio, de 1.107 €/mes en la Sagrada Família a 1.596 €/mes en la Dreta de l'Eixample.",
-    "Aquí pesan mucho la planta, la orientación, si el piso da a la calle o al interior de manzana, la altura y el estado de la finca y de su comunidad. Por eso conviene estudiar cada inmueble con detalle antes de decidir."
+    "The Eixample was born in the mid-19th century, when Ildefons Cerdà designed the city's expansion beyond its walls: a grid of blocks with chamfered corners, wide streets and inner courtyards designed to bring in light and air. The bourgeoisie of the day filled it with Modernista buildings such as Casa Batlló and La Pedrera, and later came the Sagrada Família, which ended up as the symbol of Barcelona.",
+    "Its six neighbourhoods lie on either side of Carrer de Balmes, in the Dreta and the Esquerra, and each has its own character, from the elegance of Passeig de Gràcia to the market atmosphere of Sant Antoni. Anyone looking for a flat in the Eixample will usually find high ceilings, hydraulic tile floors, balconies and glazed galleries, and a daily life in which almost everything is a few steps away: shops, schools, transport and services.",
+    "Across its 6 neighbourhoods, the average sale price ranges from 4,603 €/m² in Sant Antoni to 6,224 €/m² in La Dreta de l'Eixample, and the average rent from 1,107 €/month in La Sagrada Família to 1,596 €/month in La Dreta de l'Eixample.",
+    "Here the floor, the orientation, whether the flat faces the street or the inside of the block, and the height and condition of the building and its owners' association all weigh heavily. That is why each property deserves a close look before you decide."
   ],
-  "summary": "Eixample tiene 277.353 habitantes en 7,46 km² y 6 barrios. Es el distrito más poblado de Barcelona. Su precio medio de compraventa fue de 5.323 €/m² en 2025, un 25 % por encima de la media de la ciudad. El alquiler medio, 1.284 €/mes.",
+  "summary": "The Eixample has 277,353 inhabitants in 7.46 km² and 6 neighbourhoods. It is the most populated district in Barcelona. Its average sale price was 5,323 €/m² in 2025, 25% above the city average. The average rent is 1,284 €/month.",
   "landmarks": [
     {
       "name": "Sagrada Família",
       "where": "La Sagrada Família",
-      "text": "El templo de Antoni Gaudí, en obras desde 1882."
+      "text": "Antoni Gaudí's temple, under construction since 1882."
     },
     {
       "name": "Passeig de Gràcia",
       "where": "La Dreta de l'Eixample",
-      "text": "Con la Casa Batlló y la Casa Milà, La Pedrera."
+      "text": "Home to Casa Batlló and Casa Milà, La Pedrera."
     },
     {
       "name": "Rambla de Catalunya",
       "where": "La Dreta de l'Eixample",
-      "text": "Paseo arbolado paralelo al Passeig de Gràcia."
+      "text": "A tree-lined promenade running parallel to Passeig de Gràcia."
     },
     {
       "name": "Mercat de Sant Antoni",
       "where": "Sant Antoni",
-      "text": "Mercado de hierro del siglo XIX, rehabilitado en 2018."
+      "text": "A 19th-century iron market, renovated in 2018."
     },
     {
       "name": "Universitat de Barcelona",
       "where": "L'Antiga Esquerra de l'Eixample",
-      "text": "El edificio histórico de la universidad, en la plaza Universitat."
+      "text": "The university's historic building, on Plaça Universitat."
     }
   ]
 }

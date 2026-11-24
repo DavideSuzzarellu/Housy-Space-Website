@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El antiguo pueblo de Les Corts: plazas, mercado y vida de barrio junto a la Diagonal.",
+  "translated": true,
+  "lead": "The old village of Les Corts: squares, a market and neighbourhood life beside the Diagonal.",
   "text": [
-    "Les Corts conserva el trazado de su antiguo núcleo, con la plaça de la Concòrdia como corazón y el mercado de les Corts como punto de encuentro, y se abre al norte a la avenida Diagonal, con sus oficinas y sus centros comerciales.",
-    "Con 46.672 habitantes en 1,41 km², es un barrio vivido y bien equipado, de comercio local, colegios y buenas comunicaciones. Con 5.162 €/m² y 1.299 €/mes, es el segundo barrio más caro del distrito, por detrás de Pedralbes."
+    "Les Corts keeps the layout of its old centre, with Plaça de la Concòrdia at its heart and the Mercat de les Corts as a meeting point, and opens to the north onto Avinguda Diagonal, with its offices and shopping centres.",
+    "With 46,672 inhabitants in 1.41 km², it is a lived-in, well-equipped neighbourhood, with local shops, schools and good transport links. At 5,162 €/m² and 1,299 €/month, it is the second most expensive neighbourhood in the district, behind Pedralbes."
   ],
-  "housing": "Casas bajas del antiguo núcleo y bloques de pisos más altos, sobre todo junto a la Diagonal.",
+  "housing": "Low-rise houses in the old centre and taller blocks of flats, especially beside the Diagonal.",
   "places": ["Plaça de la Concòrdia", "Mercat de les Corts", "Avinguda Diagonal"]
 }

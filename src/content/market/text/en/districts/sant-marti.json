@@ -1,39 +1,39 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "Del Poblenou industrial a la Vila Olímpica: playas, innovación y barrios nuevos junto al mar.",
+  "translated": true,
+  "lead": "From industrial Poblenou to the Vila Olímpica: beaches, innovation and new neighbourhoods by the sea.",
   "history": [
-    "Sant Martí de Provençals fue un municipio independiente hasta 1897. Su barrio más conocido, el Poblenou, fue a finales del siglo XIX la zona con más industria de Cataluña, el «Manchester catalán», y hoy acoge el distrito de innovación 22@, con antiguas fábricas recuperadas como lofts, estudios y oficinas.",
-    "Los Juegos Olímpicos de 1992 abrieron la ciudad al mar con la Vila Olímpica y las playas, y Diagonal Mar y el Fòrum completaron la transformación de la costa. Sus diez barrios combinan fábricas reconvertidas, obra nueva, torres frente al mar y los bloques de pisos de los barrios interiores.",
-    "Entre sus 10 barrios, el precio medio de compraventa va de 2.837 €/m² en el Besòs i el Maresme a 5.528 €/m² en Diagonal Mar i el Front Marítim del Poblenou, y el alquiler medio, de 756 €/mes en el Besòs i el Maresme a 1.732 €/mes en Diagonal Mar i el Front Marítim del Poblenou.",
-    "El precio y el ambiente cambian mucho entre el frente marítimo y los barrios del interior, y por eso conviene comparar bien cada zona."
+    "Sant Martí de Provençals was an independent municipality until 1897. Its best-known neighbourhood, El Poblenou, was the most industrial area in Catalonia in the late 19th century, the \"Catalan Manchester\", and today it is home to the 22@ innovation district, with old factories reborn as lofts, studios and offices.",
+    "The 1992 Olympic Games opened the city to the sea with the Vila Olímpica and the beaches, and Diagonal Mar and the Fòrum completed the transformation of the coast. Its ten neighbourhoods combine converted factories, new-build developments, seafront towers and the blocks of flats of the inland neighbourhoods.",
+    "Across its 10 neighbourhoods, the average sale price ranges from 2,837 €/m² in El Besòs i el Maresme to 5,528 €/m² in Diagonal Mar i el Front Marítim del Poblenou, and the average rent from 756 €/month in El Besòs i el Maresme to 1,732 €/month in Diagonal Mar i el Front Marítim del Poblenou.",
+    "Prices and atmosphere change a great deal between the seafront and the inland neighbourhoods, so it is worth comparing each area carefully."
   ],
-  "summary": "Sant Martí tiene 252.625 habitantes en 10,44 km² y 10 barrios. Su precio medio de compraventa fue de 4.115 €/m² en 2025, un 3 % por debajo de la media de la ciudad. El alquiler medio, 1.094 €/mes.",
+  "summary": "Sant Martí has 252,625 inhabitants in 10.44 km² and 10 neighbourhoods. Its average sale price was 4,115 €/m² in 2025, 3% below the city average. The average rent is 1,094 €/month.",
   "landmarks": [
     {
       "name": "Rambla del Poblenou",
       "where": "El Poblenou",
-      "text": "El paseo central del antiguo barrio industrial."
+      "text": "The central promenade of the old industrial neighbourhood."
     },
     {
       "name": "Las playas",
-      "where": "Litoral del distrito",
-      "text": "Nova Icària, Bogatell, Mar Bella, Nova Mar Bella y Llevant."
+      "where": "The district's coastline",
+      "text": "Nova Icària, Bogatell, Mar Bella, Nova Mar Bella and Llevant."
     },
     {
       "name": "Torre Glòries",
       "where": "El Parc i la Llacuna del Poblenou",
-      "text": "La torre de Jean Nouvel junto a la plaza de les Glòries."
+      "text": "Jean Nouvel's tower, beside Plaça de les Glòries."
     },
     {
       "name": "Parc del Centre del Poblenou",
       "where": "Provençals del Poblenou",
-      "text": "Parque de Jean Nouvel en la avenida Diagonal."
+      "text": "A park by Jean Nouvel on Avinguda Diagonal."
     },
     {
       "name": "Museu del Disseny",
       "where": "Plaça de les Glòries",
-      "text": "El museo del diseño, en la plaza de les Glòries."
+      "text": "The design museum, on Plaça de les Glòries."
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El barrio más poblado de Ciutat Vella, al oeste de La Rambla, con museos, mercados y calles de todos los orígenes.",
+  "translated": true,
+  "lead": "The most populated neighbourhood in Ciutat Vella, west of La Rambla, with museums, markets and streets of every origin.",
   "text": [
-    "El nombre lo dice: raval significa arrabal, la parte de la ciudad que crecía junto al casco antiguo con conventos, hospitales y talleres. Hoy lo definen la Rambla del Raval, con el gato de Botero, el MACBA, el CCCB y la Biblioteca de Catalunya, instalada en el antiguo Hospital de la Santa Creu, y una población muy diversa que llena la calle a casi cualquier hora.",
-    "Los pisos son pequeños y antiguos, sobre todo en las calles más estrechas, y muchos se han rehabilitado en los últimos años. Con 3.499 €/m², es el precio medio de compraventa más bajo de Ciutat Vella. Conviene visitar la finca de día y de noche antes de decidir, porque el ambiente cambia de una calle a otra."
+    "The name says it all: raval means suburb, the part of the city that grew up beside the old town with convents, hospitals and workshops. Today it is defined by Rambla del Raval, with Botero's cat, the MACBA, the CCCB and the Biblioteca de Catalunya, housed in the former Hospital de la Santa Creu, and by a very diverse population that fills the streets at almost any hour.",
+    "The flats are small and old, especially on the narrowest streets, and many have been renovated in recent years. At 3,499 €/m², it has the lowest average sale price in Ciutat Vella. It is worth visiting the building by day and by night before deciding, because the atmosphere changes from one street to the next."
   ],
-  "housing": "Fincas antiguas con pisos pequeños, muchas ya rehabilitadas.",
+  "housing": "Old buildings with small flats, many already renovated.",
   "places": [
     "Rambla del Raval",
     "MACBA",

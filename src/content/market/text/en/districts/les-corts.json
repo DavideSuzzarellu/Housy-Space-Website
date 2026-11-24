@@ -1,39 +1,39 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "Avenida Diagonal, jardines y calles tranquilas: el distrito residencial del oeste, con el Camp Nou y Pedralbes.",
+  "translated": true,
+  "lead": "Avinguda Diagonal, gardens and quiet streets: the residential district of the west, home to Camp Nou and Pedralbes.",
   "history": [
-    "Les Corts fue un municipio independiente hasta 1897 y hoy es un distrito de tres barrios, les Corts, la Maternitat i Sant Ramon y Pedralbes, que la avenida Diagonal atraviesa de lado a lado, con oficinas, comercio y la Zona Universitària.",
-    "Es un distrito sobre todo residencial, con zonas verdes y buenas comunicaciones: pisos amplios, casas con jardín en Pedralbes y un ambiente más tranquilo que el del centro. Aquí están el Camp Nou y las instalaciones del FC Barcelona, que forman parte de la vida diaria de la Maternitat i Sant Ramon.",
-    "Entre sus 3 barrios, el precio medio de compraventa va de 4.399 €/m² en la Maternitat i Sant Ramon a 6.079 €/m² en Pedralbes, y el alquiler medio, de 1.160 €/mes en la Maternitat i Sant Ramon a 1.948 €/mes en Pedralbes.",
-    "Entre el casco antiguo de les Corts, las zonas más populares de la Maternitat y las villas de Pedralbes hay mucha diferencia de precios, y conviene valorar cada calle por separado."
+    "Les Corts was an independent municipality until 1897 and today is a district of three neighbourhoods, Les Corts, La Maternitat i Sant Ramon and Pedralbes, crossed from end to end by Avinguda Diagonal, with offices, shops and the Zona Universitària.",
+    "It is above all a residential district, with green spaces and good transport links: spacious flats, houses with gardens in Pedralbes and a calmer atmosphere than in the centre. Camp Nou and FC Barcelona's training facilities are here, and they are part of everyday life in La Maternitat i Sant Ramon.",
+    "Across its 3 neighbourhoods, the average sale price ranges from 4,399 €/m² in La Maternitat i Sant Ramon to 6,079 €/m² in Pedralbes, and the average rent from 1,160 €/month in La Maternitat i Sant Ramon to 1,948 €/month in Pedralbes.",
+    "Between the old centre of Les Corts, the more working-class parts of La Maternitat and the villas of Pedralbes, prices vary a great deal, so each street should be assessed separately."
   ],
-  "summary": "Les Corts tiene 83.773 habitantes en 6,01 km² y 3 barrios. Su precio medio de compraventa fue de 5.102 €/m² en 2025, un 20 % por encima de la media de la ciudad. El alquiler medio, 1.335 €/mes.",
+  "summary": "Les Corts has 83,773 inhabitants in 6.01 km² and 3 neighbourhoods. Its average sale price was 5,102 €/m² in 2025, 20% above the city average. The average rent is 1,335 €/month.",
   "landmarks": [
     {
       "name": "Spotify Camp Nou",
       "where": "La Maternitat i Sant Ramon",
-      "text": "El estadio del FC Barcelona."
+      "text": "FC Barcelona's stadium."
     },
     {
       "name": "Monestir de Pedralbes",
       "where": "Pedralbes",
-      "text": "Monasterio gótico fundado por la reina Elisenda de Montcada en el siglo XIV."
+      "text": "A Gothic monastery founded by Queen Elisenda de Montcada in the 14th century."
     },
     {
       "name": "Palau Reial de Pedralbes",
       "where": "Pedralbes",
-      "text": "Palacio y jardines junto a la Diagonal."
+      "text": "A palace and gardens beside the Diagonal."
     },
     {
       "name": "Pavellons Güell",
       "where": "Pedralbes",
-      "text": "Los pabellones de la finca Güell, de Gaudí, con su puerta del dragón."
+      "text": "The pavilions of the Güell estate, by Gaudí, with their dragon gate."
     },
     {
       "name": "Zona Universitària",
       "where": "Pedralbes",
-      "text": "El campus de la Diagonal, con facultades de la UB y de la UPC."
+      "text": "The Diagonal campus, with faculties of the UB and the UPC."
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Collserola en la puerta de casa: casas con jardín, masías y vistas sobre toda la ciudad.",
+  "translated": true,
+  "lead": "Collserola on your doorstep: houses with gardens, farmhouses and views over the whole city.",
   "text": [
-    "Es uno de los barrios más extensos de Barcelona (11,33 km²) y de los menos densos (430 hab./km²), porque casi todo su territorio es la sierra de Collserola. Agrupa tres zonas muy distintas, Vallvidrera, el Tibidabo y les Planes, con el templo del Sagrat Cor y el parque de atracciones en la cima y la Torre de Collserola, de Norman Foster, como referencia visible desde media ciudad.",
-    "Vivir aquí es vivir dentro del parque natural: casas con jardín, calles tranquilas y vistas, con el funicular de Vallvidrera y los trenes de FGC para bajar a la ciudad. Su precio de compraventa, 3.766 €/m², es el más bajo de Sarrià-Sant Gervasi, mientras que el alquiler medio, 1.614 €/mes, está entre los más altos de Barcelona, una cifra que se apoya en pocas operaciones."
+    "It is one of the largest neighbourhoods in Barcelona (11.33 km²) and one of the least dense (430 inhabitants/km²), because almost all its territory is the Collserola range. It brings together three very different areas, Vallvidrera, Tibidabo and Les Planes, with the Sagrat Cor church and the amusement park at the top and Norman Foster's Torre de Collserola as a landmark visible from half the city.",
+    "Living here means living inside the natural park: houses with gardens, quiet streets and views, with the Vallvidrera funicular and the FGC trains to take you down to the city. Its sale price, 3,766 €/m², is the lowest in Sarrià-Sant Gervasi, while the average rent, 1,614 €/month, is among the highest in Barcelona, a figure based on very few transactions."
   ],
-  "housing": "Casas unifamiliares con jardín y algunas masías, entre pinares y con vistas.",
+  "housing": "Detached houses with gardens and a few farmhouses, among pine woods and with views.",
   "places": [
     "Tibidabo",
     "Torre de Collserola",

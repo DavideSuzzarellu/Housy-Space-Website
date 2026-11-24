@@ -1,15 +1,15 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Mercado, libros de domingo y vida de calle, en el límite del Eixample con el Raval y el Poble-sec.",
+  "translated": true,
+  "lead": "A market, Sunday books and street life, where the Eixample meets El Raval and El Poble-sec.",
   "text": [
-    "Su nombre viene de la iglesia de Sant Antoni, que se alzaba junto a la puerta de la muralla del Raval y hoy ya no existe. El barrio empezó a edificarse hacia 1880 y fue durante buena parte del siglo XX un barrio obrero; muchos de los edificios actuales datan de los años veinte y treinta.",
-    "El Mercat de Sant Antoni, obra de Antoni Rovira i Trias, se levantó entre 1872 y 1882 y reabrió en 2018 tras una larga rehabilitación; los domingos por la mañana lo rodean los puestos de libros y de coleccionismo. Alrededor, la calle Parlament y su entorno suman bares, restaurantes y terrazas. Con 4.603 €/m², es el barrio con el precio de compraventa más bajo del Eixample."
+    "Its name comes from the church of Sant Antoni, which stood beside the gate in the Raval wall and no longer exists. The neighbourhood began to be built around 1880 and was a working-class area for much of the 20th century; many of today's buildings date from the 1920s and 1930s.",
+    "The Mercat de Sant Antoni, designed by Antoni Rovira i Trias, was built between 1872 and 1882 and reopened in 2018 after a long renovation; on Sunday mornings it is surrounded by book and collectors' stalls. Around it, Carrer del Parlament and its surroundings add bars, restaurants and terraces. At 4,603 €/m², it has the lowest sale price in the Eixample."
   ],
-  "housing": "Pisos de principios del siglo XX en la trama de Cerdà, con vida a pie de calle.",
+  "housing": "Flats from the early 20th century on the Cerdà grid, with life at street level.",
   "places": [
     "Mercat de Sant Antoni",
-    "Mercat dominical del llibre",
+    "Sunday book market",
     "Carrer Parlament",
     "Ronda de Sant Antoni"
   ]
