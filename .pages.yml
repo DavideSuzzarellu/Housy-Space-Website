@@ -197,6 +197,7 @@ content:
               required: true,
               description: "Pon entre *asteriscos* la parte más fina.",
             }
+          - { name: sub, label: Entradilla, type: text, required: true }
           - { name: ctaLabel, label: Botón al mapa, type: string, required: true }
       - name: blog
         label: Blog

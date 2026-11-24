@@ -89,7 +89,7 @@ export function homeContentSchema() {
         })
         .strict(),
       reviews: z.object({ heading: text, ctaLabel: text, mapsUrl: z.url() }).strict(),
-      districts: z.object({ heading, ctaLabel: text }).strict(),
+      districts: z.object({ heading, sub: text, ctaLabel: text }).strict(),
       blog: z.object({ heading, ctaLabel: text }).strict(),
       contact: z
         .object({
