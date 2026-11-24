@@ -8,7 +8,7 @@ test.describe("brand intro", () => {
   test("shows once per session, is skippable with Escape and not shown again", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.goto(home);
-    const intro = page.locator("[data-intro]");
+    const intro = page.locator("div[data-intro]");
     await expect(intro).toBeVisible();
     await expect(intro).toHaveAttribute("aria-hidden", "true");
     // Content stays in the DOM underneath.
@@ -25,7 +25,7 @@ test.describe("brand intro", () => {
   test("can be skipped with a click and never blocks content for long", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.goto(home);
-    const intro = page.locator("[data-intro]");
+    const intro = page.locator("div[data-intro]");
     await expect(intro).toBeVisible();
     await intro.click();
     await expect(intro).toBeHidden();
@@ -34,7 +34,7 @@ test.describe("brand intro", () => {
   test("ends on its own within the time cap", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.goto(home);
-    await expect(page.locator("[data-intro]")).toBeHidden({ timeout: 5_000 });
+    await expect(page.locator("div[data-intro]")).toBeHidden({ timeout: 5_000 });
   });
 
   test("is not shown on a client-side navigation back to home", async ({ page }) => {
@@ -42,13 +42,13 @@ test.describe("brand intro", () => {
     await page.goto("/es/this-page-does-not-exist");
     await page.locator(`main a[href="${home}"]`).click();
     await expect(page).toHaveURL(home);
-    await expect(page.locator("[data-intro]")).toBeHidden();
+    await expect(page.locator("div[data-intro]")).toBeHidden();
   });
 
   test("is disabled under prefers-reduced-motion", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto(home);
-    await expect(page.locator("[data-intro]")).toBeHidden();
+    await expect(page.locator("div[data-intro]")).toBeHidden();
     await expect(page.locator("html")).not.toHaveClass(/intro-active/);
   });
 });

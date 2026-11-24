@@ -43,7 +43,7 @@ export function isIntroActive(): boolean {
 
 export function initIntro(): void {
   const html = document.documentElement;
-  const overlay = document.querySelector<HTMLElement>("[data-intro]");
+  const overlay = document.querySelector<HTMLElement>("div[data-intro]");
   if (overlay === null || !isIntroActive()) {
     html.classList.remove(INTRO_ACTIVE_CLASS);
     return;

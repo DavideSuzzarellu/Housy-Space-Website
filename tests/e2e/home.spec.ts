@@ -178,8 +178,8 @@ for (const locale of LOCALES) {
           .evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).viewTransitionName));
         expect(names).toEqual([
           `property-${ref}-image`,
-          `property-${ref}-price`,
           `property-${ref}-title`,
+          `property-${ref}-price`,
         ]);
       }
     });
