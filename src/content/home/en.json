@@ -54,18 +54,6 @@
     "heading": "Discover *our services*",
     "ctaLabel": "See all services"
   },
-  "gallery": {
-    "heading": "Barcelona, a way of life",
-    "lead": "Modernist architecture, Mediterranean light and distinctive period buildings that define the character of the city.",
-    "item1Title": "Eixample Dret",
-    "item1Subtitle": "High ceilings with original mouldings and restored hydraulic floors.",
-    "item2Title": "Sarrià - Sant Gervasi",
-    "item2Subtitle": "Detached houses with large gardens and natural light all day long.",
-    "item3Title": "Ciutat Vella & Born",
-    "item3Subtitle": "Reclaimed timber beams and original Gothic stone arches.",
-    "item4Title": "Gràcia & Pedralbes",
-    "item4Subtitle": "Modern spaces, refurbished with respect for the historic architecture."
-  },
   "philosophy": {
     "heading": "Our *philosophy*",
     "lead": "We get involved",
@@ -87,14 +75,5 @@
   "blog": {
     "heading": "Blog *and news*",
     "ctaLabel": "See all articles"
-  },
-  "contact": {
-    "heading": "Private *consultation*",
-    "lead": "A HousySpace advisor will be with you from your very first message.",
-    "fieldNameLabel": "Full name",
-    "fieldEmailLabel": "Email address",
-    "fieldMessageLabel": "Tell us what you need",
-    "fieldConsentLabel": "I have read and accept HousySpace's privacy policy and consent to the processing of my data to manage my request.",
-    "submitLabel": "Send enquiry"
   }
 }

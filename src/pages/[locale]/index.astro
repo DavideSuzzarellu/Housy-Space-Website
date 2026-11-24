@@ -2,8 +2,6 @@
 import type { GetStaticPaths } from "astro";
 import { getHomeContent } from "@/features/agency/application/homeContent";
 import BlogTeaser from "@/features/blog/ui/BlogTeaser.astro";
-import HomeContact from "@/features/agency/ui/HomeContact.astro";
-import HomeEditorialGallery from "@/features/agency/ui/HomeEditorialGallery.astro";
 import HomeHero from "@/features/agency/ui/HomeHero.astro";
 import HomeReviews from "@/features/agency/ui/HomeReviews.astro";
 import HomeStats from "@/features/agency/ui/HomeStats.astro";
@@ -78,8 +76,6 @@ const ogImage = await getOgImagePath(heroPoster);
   <HomePhilosophy locale={locale} content={content.philosophy} />
   <FeaturedProperties locale={locale} properties={featured} content={content.featured} />
   <HomeReviews locale={locale} content={content.reviews} testimonials={testimonials} />
-  <HomeEditorialGallery content={content.gallery} />
   <LivingInBarcelona locale={locale} content={content.districts} />
   <BlogTeaser locale={locale} content={content.blog} posts={posts} />
-  <HomeContact locale={locale} content={content.contact} />
 </BaseLayout>

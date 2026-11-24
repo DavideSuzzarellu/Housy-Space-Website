@@ -18,7 +18,7 @@ interface Props {
    * `tile`: blog index card of the reference (`rv-tjc`): 3:2 photo with a colour block over its
    * lower edge holding category and title, then excerpt, read link and date.
    * `teaser`: home layout of the reference, a row (image 42%) with a hairline under 900 px
-   * that stacks from 900 px, with the meta line in uppercase.
+   * that stacks from 900 px (16:10 photo), with the category in uppercase and no date.
    */
   layout?: "tile" | "teaser";
   /** `tile` only: position in the grid; the block colour cycles stone, petrol, paper, sand. */
@@ -54,7 +54,10 @@ const tone = TONES[index % TONES.length];
 >
   <div class:list={[!teaser && "relative"]}>
     <div
-      class:list={["overflow-hidden bg-stone", teaser ? "aspect-4/3" : "aspect-3/2"]}
+      class:list={[
+        "overflow-hidden bg-stone",
+        teaser ? "aspect-4/3 min-[900px]:aspect-16/10" : "aspect-3/2",
+      ]}
       transition:name={postTransitionName(post.id, "image")}
       transition:animate={morph}
     >
@@ -79,11 +82,8 @@ const tone = TONES[index % TONES.length];
   </div>
   {teaser ? (
     <div>
-      <p class="mb-1.5 grid gap-[3px] text-[0.6875rem] tracking-[0.14em] uppercase">
-        <span class="text-accent">{copy.categories[post.data.category]}</span>
-        <time datetime={post.data.date.toISOString()} class="text-muted">
-          {formatDate(post.data.date, locale)}
-        </time>
+      <p class="mb-1.5 text-[0.6875rem] tracking-[0.14em] text-accent uppercase">
+        {copy.categories[post.data.category]}
       </p>
       <h3 lang={post.data.language} class="m-0 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12]">
         {post.data.title}

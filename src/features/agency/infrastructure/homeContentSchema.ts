@@ -64,20 +64,6 @@ export function homeContentSchema() {
         })
         .strict(),
       services: z.object({ heading, ctaLabel: text }).strict(),
-      gallery: z
-        .object({
-          heading: text,
-          lead: text,
-          item1Title: text,
-          item1Subtitle: text,
-          item2Title: text,
-          item2Subtitle: text,
-          item3Title: text,
-          item3Subtitle: text,
-          item4Title: text,
-          item4Subtitle: text,
-        })
-        .strict(),
       philosophy: z
         .object({
           heading,
@@ -91,17 +77,6 @@ export function homeContentSchema() {
       reviews: z.object({ heading: text, ctaLabel: text, mapsUrl: z.url() }).strict(),
       districts: z.object({ heading, sub: text, ctaLabel: text }).strict(),
       blog: z.object({ heading, ctaLabel: text }).strict(),
-      contact: z
-        .object({
-          heading,
-          lead: text,
-          fieldNameLabel: text,
-          fieldEmailLabel: text,
-          fieldMessageLabel: text,
-          fieldConsentLabel: text,
-          submitLabel: text,
-        })
-        .strict(),
     })
     .strict();
 }

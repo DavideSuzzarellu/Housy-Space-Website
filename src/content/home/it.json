@@ -54,18 +54,6 @@
     "heading": "Scopri *i nostri servizi*",
     "ctaLabel": "Vedi tutti i servizi"
   },
-  "gallery": {
-    "heading": "Barcellona, un modo di vivere",
-    "lead": "Architettura modernista, luce mediterranea e immobili singolari che definiscono il carattere della città.",
-    "item1Title": "Eixample Dret",
-    "item1Subtitle": "Soffitti alti con modanature originali e pavimenti idraulici restaurati.",
-    "item2Title": "Sarrià - Sant Gervasi",
-    "item2Subtitle": "Ville unifamiliari con ampi giardini e luce naturale tutto il giorno.",
-    "item3Title": "Ciutat Vella & Born",
-    "item3Subtitle": "Travi in legno recuperate e archi in pietra gotica originale.",
-    "item4Title": "Gràcia & Pedralbes",
-    "item4Subtitle": "Ambienti moderni, ristrutturati nel rispetto dell'architettura storica."
-  },
   "philosophy": {
     "heading": "La nostra *filosofia*",
     "lead": "Ci impegniamo",
@@ -87,14 +75,5 @@
   "blog": {
     "heading": "Blog *e notizie*",
     "ctaLabel": "Vedi tutti gli articoli"
-  },
-  "contact": {
-    "heading": "Consulenza *privata*",
-    "lead": "Un consulente di HousySpace ti seguirà dal primo messaggio.",
-    "fieldNameLabel": "Nome e cognome",
-    "fieldEmailLabel": "Indirizzo e-mail",
-    "fieldMessageLabel": "Raccontaci di cosa hai bisogno",
-    "fieldConsentLabel": "Ho letto e accetto l'informativa sulla privacy di HousySpace e acconsento al trattamento dei miei dati per gestire la mia richiesta.",
-    "submitLabel": "Invia richiesta"
   }
 }

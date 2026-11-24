@@ -54,18 +54,6 @@
     "heading": "Descobreix *els nostres serveis*",
     "ctaLabel": "Veure tots els serveis"
   },
-  "gallery": {
-    "heading": "Barcelona, una manera de viure",
-    "lead": "Arquitectura modernista, llum mediterrània i finques singulars que defineixen el caràcter de la ciutat.",
-    "item1Title": "Eixample Dret",
-    "item1Subtitle": "Sostres alts amb motllures originals i paviments hidràulics restaurats.",
-    "item2Title": "Sarrià - Sant Gervasi",
-    "item2Subtitle": "Finques unifamiliars amb jardins amplis i llum natural ininterrompuda.",
-    "item3Title": "Ciutat Vella & Born",
-    "item3Subtitle": "Bigues de fusta recuperades i arcs de pedra gòtica original.",
-    "item4Title": "Gràcia & Pedralbes",
-    "item4Subtitle": "Espais moderns rehabilitats respectant l'arquitectura històrica."
-  },
   "philosophy": {
     "heading": "La nostra *filosofia*",
     "lead": "Ens impliquem",
@@ -85,16 +73,7 @@
     "ctaLabel": "Explorar el mapa interactiu"
   },
   "blog": {
-    "heading": "Blogs *i notícies*",
+    "heading": "Blog *i notícies*",
     "ctaLabel": "Veure tots els articles"
-  },
-  "contact": {
-    "heading": "Consulta *privada*",
-    "lead": "Un consultor de HousySpace t'acompanya des del primer missatge.",
-    "fieldNameLabel": "Nom i cognoms",
-    "fieldEmailLabel": "Correu electrònic",
-    "fieldMessageLabel": "Explica'ns què necessites",
-    "fieldConsentLabel": "He llegit i accepto la política de privacitat de HousySpace i consento el tractament de les meves dades per gestionar la meva sol·licitud.",
-    "submitLabel": "Enviar consulta"
   }
 }
