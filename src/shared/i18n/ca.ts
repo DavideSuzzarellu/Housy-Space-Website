@@ -129,7 +129,7 @@ const ca = {
       concierge: "Conserge",
     },
     detail: {
-      metaTitle: "{title} · Ref. {ref} | HousySpace",
+      metaTitle: "{title} · Ref. {ref} · HousySpace",
       metaDescriptionFallback:
         "{title} · {operation} · Ref. {ref}. HousySpace Property Solutions, Barcelona.",
       breadcrumb: "Camí de navegació",
@@ -188,8 +188,8 @@ const ca = {
   },
   catalog: {
     metaTitle: {
-      sale: "Immobles en venda a Barcelona | HousySpace",
-      rent: "Immobles de lloguer a Barcelona | HousySpace",
+      sale: "Pisos en venda a Barcelona · HousySpace",
+      rent: "Pisos de lloguer a Barcelona · HousySpace",
     },
     metaDescription: {
       sale: "Pisos, àtics i cases en venda a Barcelona seleccionats per HousySpace, amb cercador, llistat i mapa.",
@@ -304,9 +304,9 @@ const ca = {
       "Les imatges d'arquitectura són il·lustracions generades amb IA que se substituiran per fotografia autèntica amb llicència.",
   },
   home: {
-    metaTitle: "HousySpace · Property Solutions",
+    metaTitle: "Immobiliària a Barcelona · HousySpace",
     metaDescription:
-      "Immobiliària boutique a Barcelona: compravenda, lloguer, cerca personalitzada, reformes, interiorisme i assessorament, amb atenció personal.",
+      "HousySpace, immobiliària a Barcelona amb ànima de consultoria: t'assessorem per vendre, valorar, comprar o llogar el teu habitatge, amb un mateix assessor en cada pas.",
     hero: {
       label: "Barcelona",
       videoCredit:
@@ -443,9 +443,13 @@ const ca = {
     barrioTag: "Barri · districte {district}",
     barrioLead:
       "Les xifres oficials del barri: compravenda, lloguer i població, comparades amb {district} i Barcelona.",
-    barrioMeta: "Dades del barri",
-    barrioDescription:
-      "Dades oficials del barri {name} (Barcelona): preu de compravenda, lloguer, densitat i la seva evolució.",
+    metaTitle: "Barris de Barcelona: preus i com és viure-hi · HousySpace",
+    metaDescription:
+      "Els 10 districtes i 73 barris de Barcelona amb mapa interactiu, preu de compravenda i lloguer, densitat de població i com és viure a cada zona.",
+    districtMetaTitle: "Viure a {name}: barris, preus i ambient · HousySpace",
+    districtMetaSuffix: "Preus de compravenda i lloguer i com és cada un dels seus barris.",
+    barrioMetaTitle: "{name}, {district}: preu i ambient · HousySpace",
+    barrioMetaSuffix: "Preu de l'habitatge, serveis i com és viure al barri.",
     methodNote:
       "Compravenda: preu mitjà per m² dels habitatges transmesos (Consell General del Notariat). Lloguer: renda mitjana mensual dels contractes registrats (fiances de l'INCASÒL). Tots dos els publica l'Ajuntament de Barcelona al Portal de Dades; la xifra és la de l'últim any complet (2025) i, als gràfics, l'any en curs apareix com a provisional. Densitat: Padró municipal 2026 i superfície oficial de CartoBCN.",
     flat80Note:

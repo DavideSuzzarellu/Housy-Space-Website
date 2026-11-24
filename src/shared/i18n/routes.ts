@@ -143,23 +143,21 @@ export function getLocalizedPath<K extends RouteKey>(
   ...args: ParamsArgs<K>
 ): string {
   const [params] = args;
-  const path = buildPath(routeKey, locale, params ?? {});
+  return withBase(buildPath(routeKey, locale, params ?? {}));
+}
 
-  // Vite always adds a trailing slash to BASE_URL — strip it so we don't get double slashes.
+/** Prefixes the site base (`astro.config` `base`, "" in production at the domain root). */
+function withBase(path: string): string {
+  // Vite always adds a trailing slash to BASE_URL: strip it so we never get double slashes.
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-
-  // Si el path ya tiene el base (raro, pero por las dudas), lo devolvemos
-  if (base && path.startsWith(base)) return path;
-
-  // Le pegamos el nombre del repo adelante a TODOS los links
-  return `${base}${path}`;
+  return base && !path.startsWith(`${base}/`) ? `${base}${path}` : path;
 }
 
 export interface Alternate {
   /** BCP 47 tag for `hreflang`, or `x-default`. */
   readonly hreflang: string;
   readonly locale: Locale;
-  /** Root-relative path; make it absolute with the site URL when rendering. */
+  /** Root-relative path including the site base; make it absolute with the site URL when rendering. */
   readonly path: string;
 }
 
@@ -173,7 +171,9 @@ export function getAlternates<K extends RouteKey>(
 ): Alternate[] {
   const [params] = args;
   const pathFor = (locale: Locale): string =>
-    buildPath(routeKey, locale, typeof params === "function" ? params(locale) : (params ?? {}));
+    withBase(
+      buildPath(routeKey, locale, typeof params === "function" ? params(locale) : (params ?? {})),
+    );
 
   const alternates = LOCALES.map((locale): Alternate => ({
     hreflang: LOCALE_META[locale].langTag,

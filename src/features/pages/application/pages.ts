@@ -1,5 +1,6 @@
 import { getEntry, type CollectionEntry } from "astro:content";
 import { DEFAULT_LOCALE, type Locale } from "@/shared/i18n/config";
+import { plainInline } from "@/shared/lib/inline";
 
 /** Pages rendered from `src/content/pages`, by route key. */
 export const EDITORIAL = [
@@ -11,7 +12,6 @@ export const EDITORIAL = [
   "cookies",
   "dataSources",
   "internationalGuide",
-  "customSearch",
   "mySearch",
   "valuation",
   "blog",
@@ -88,4 +88,16 @@ export async function getPage(key: string, locale: Locale): Promise<LoadedPage> 
   const base = await getEntry("pages", `${key}.${DEFAULT_LOCALE}`);
   if (base === undefined) throw new Error(`Missing page content "${key}"`);
   return { content: base.data, fallback: locale !== DEFAULT_LOCALE };
+}
+
+/**
+ * The questions a page shows as FAQ (`faq` items, rendered in full by the service layout), as
+ * plain text for the FAQPage structured data. Only what is visible on the page may go there.
+ */
+export function getFaqEntries(content: PageContent): { question: string; answer: string }[] {
+  return content.sections
+    .flatMap((section) => section.items)
+    .flatMap((item) =>
+      item.kind === "faq" ? [{ question: plainInline(item.q), answer: plainInline(item.a) }] : [],
+    );
 }

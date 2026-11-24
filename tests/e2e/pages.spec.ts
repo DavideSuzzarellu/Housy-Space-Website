@@ -7,7 +7,6 @@ const PAGES = [
   ["/es/nosotros", "Mucho más que una inmobiliaria"],
   ["/es/contacto", "Hablemos"],
   ["/es/mi-busqueda", "Tu próximo hogar empieza aquí"],
-  ["/es/busqueda-a-medida", "Búsqueda a medida"],
   ["/es/valoracion", "El valor de tu vivienda"],
   ["/es/blog", "El Blog"],
   ["/es/guia-internacional", "Comprar en Barcelona desde el extranjero"],

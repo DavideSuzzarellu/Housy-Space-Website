@@ -1,6 +1,7 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
+import { sitemapFromHeads } from "./scripts/sitemap-integration";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
 import { getRetiredRedirects } from "./src/shared/i18n/retiredRoutes";
@@ -87,6 +88,8 @@ export default defineConfig({
         locales: sitemapLocales,
       },
     }),
+    // Rewrites sitemap-0.xml from the emitted heads (translated slugs need real alternates).
+    sitemapFromHeads(),
   ],
 
   vite: {

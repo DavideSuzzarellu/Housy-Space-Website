@@ -10,8 +10,10 @@ import { DETAIL_OPERATIONS, type DetailOperation } from "@/features/properties/d
 import PropertyCatalog from "@/features/properties/ui/PropertyCatalog.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
-import { LOCALES, type Locale } from "@/shared/i18n/config";
+import { LOCALE_META, LOCALES, type Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
+import { buildPageJsonLd, getSiteUrl, toAbsoluteUrl } from "@/shared/lib/seo/structuredData";
+import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import Eyebrow from "@/shared/ui/molecules/Eyebrow.astro";
 
@@ -39,14 +41,30 @@ const crumbs = [
   { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
   { label: operation === "sale" ? dictionary.nav.forSale : dictionary.nav.forRent },
 ];
+const alternates = getListingAlternates(operation);
+const site = Astro.site ?? new URL(Astro.url.origin);
+const pageUrl = toAbsoluteUrl(getLocalizedPath(operation, locale), site);
+const pageJsonLd = buildPageJsonLd({
+  siteUrl: getSiteUrl(site, import.meta.env.BASE_URL),
+  url: pageUrl,
+  language: LOCALE_META[locale].langTag,
+  name: t.metaTitle[operation],
+  description: t.metaDescription[operation],
+  pageType: "CollectionPage",
+  breadcrumbs: crumbs.map((crumb) => ({
+    name: crumb.label,
+    url: crumb.href === undefined ? pageUrl : toAbsoluteUrl(crumb.href, site),
+  })),
+});
 ---
 
 <BaseLayout
   locale={locale}
   title={t.metaTitle[operation]}
   description={t.metaDescription[operation]}
-  alternates={getListingAlternates(operation)}
+  alternates={alternates}
 >
+  <JsonLd slot="head" data={pageJsonLd} />
   <PropertyCatalog locale={locale} operation={operation} model={model}>
     <Breadcrumbs
       items={crumbs}

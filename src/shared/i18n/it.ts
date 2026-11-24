@@ -129,7 +129,7 @@ const it = {
       concierge: "Portineria",
     },
     detail: {
-      metaTitle: "{title} · Rif. {ref} | HousySpace",
+      metaTitle: "{title} · Rif. {ref} · HousySpace",
       metaDescriptionFallback:
         "{title} · {operation} · Rif. {ref}. HousySpace Property Solutions, Barcellona.",
       breadcrumb: "Percorso di navigazione",
@@ -188,8 +188,8 @@ const it = {
   },
   catalog: {
     metaTitle: {
-      sale: "Immobili in vendita a Barcellona | HousySpace",
-      rent: "Immobili in affitto a Barcellona | HousySpace",
+      sale: "Appartamenti in vendita a Barcellona · HousySpace",
+      rent: "Appartamenti in affitto a Barcellona · HousySpace",
     },
     metaDescription: {
       sale: "Appartamenti, attici e case in vendita a Barcellona selezionati da HousySpace, con ricerca, elenco e mappa.",
@@ -304,9 +304,9 @@ const it = {
       "Le immagini di architettura sono illustrazioni generate con IA che verranno sostituite da fotografie autentiche con licenza.",
   },
   home: {
-    metaTitle: "HousySpace · Property Solutions",
+    metaTitle: "Agenzia immobiliare a Barcellona · HousySpace",
     metaDescription:
-      "Agenzia immobiliare boutique a Barcellona: compravendita, affitto, ricerca personalizzata, ristrutturazioni, interior design e consulenza, con attenzione personale.",
+      "HousySpace, agenzia immobiliare a Barcellona con l'anima di una consulenza: ti assistiamo per vendere, valutare, comprare o affittare casa, con lo stesso consulente in ogni passo.",
     hero: {
       label: "Barcellona",
       videoCredit:
@@ -443,9 +443,14 @@ const it = {
     barrioTag: "Quartiere · distretto {district}",
     barrioLead:
       "I dati ufficiali del quartiere: vendita, affitto e popolazione, confrontati con {district} e Barcellona.",
-    barrioMeta: "Dati del quartiere",
-    barrioDescription:
-      "Dati ufficiali del quartiere {name} (Barcellona): prezzo di vendita, affitto, densità e andamento.",
+    metaTitle: "Quartieri di Barcellona: prezzi e vita di zona · HousySpace",
+    metaDescription:
+      "I 10 distretti e i 73 quartieri di Barcellona con mappa interattiva, prezzi di vendita e affitto, densità di popolazione e come si vive in ogni zona.",
+    districtMetaTitle: "Vivere a {name}: quartieri, prezzi e atmosfera · HousySpace",
+    districtMetaSuffix:
+      "Prezzi di vendita e affitto e come si vive in ciascuno dei suoi quartieri.",
+    barrioMetaTitle: "{name}, {district}: prezzi e atmosfera · HousySpace",
+    barrioMetaSuffix: "Prezzi delle case, servizi e come si vive nel quartiere.",
     methodNote:
       "Vendita: prezzo medio al m² delle abitazioni trasferite (Consiglio Generale del Notariato). Affitto: canone medio mensile dei contratti registrati (depositi cauzionali INCASÒL). Entrambi pubblicati dal Comune di Barcellona nel Portal de Dades; il dato è dell'ultimo anno completo (2025) e, nei grafici, l'anno in corso è provvisorio. Densità: anagrafe comunale 2026 e superficie ufficiale CartoBCN.",
     flat80Note:

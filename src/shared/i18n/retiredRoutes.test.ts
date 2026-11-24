@@ -1,5 +1,6 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { getRetiredRedirects } from "./retiredRoutes";
+import { getRetiredRedirectRules, getRetiredRedirects, renderRedirectRules } from "./retiredRoutes";
 
 describe("getRetiredRedirects", () => {
   const redirects = getRetiredRedirects();
@@ -49,5 +50,51 @@ describe("getRetiredRedirects", () => {
     expect(redirects["/en/barcelona-province/sitges"]).toBe("/en/zones/barcelona");
     expect(redirects["/it/provincia-di-barcellona"]).toBe("/it/zone/barcelona");
     expect(redirects["/ca/provincia-de-barcelona/badalona"]).toBe("/ca/zones/barcelona");
+  });
+});
+
+describe("custom search", () => {
+  it("is folded into My search in every locale", () => {
+    const redirects = getRetiredRedirects();
+    expect(redirects["/es/busqueda-a-medida"]).toBe("/es/mi-busqueda");
+    expect(redirects["/en/property-search-service"]).toBe("/en/my-search");
+    expect(redirects["/it/ricerca-su-misura"]).toBe("/it/la-mia-ricerca");
+    expect(redirects["/ca/cerca-a-mida"]).toBe("/ca/la-meva-cerca");
+  });
+});
+
+describe("host redirect rules", () => {
+  const rules = getRetiredRedirectRules();
+
+  it("starts with the root redirect and collapses the municipality pages into one splat per locale", () => {
+    expect(rules[0]).toEqual({ from: "/", to: "/es", status: 301 });
+    const splats = rules.filter((rule) => rule.from.endsWith("/*"));
+    expect(splats.map((rule) => rule.from)).toEqual([
+      "/es/provincia-de-barcelona/*",
+      "/en/barcelona-province/*",
+      "/it/provincia-di-barcellona/*",
+      "/ca/provincia-de-barcelona/*",
+    ]);
+    expect(rules.length).toBeLessThan(500);
+  });
+
+  it("keeps the old root URLs of the previous site", () => {
+    expect(rules).toContainEqual({ from: "/politica-cookies", to: "/es/cookies", status: 301 });
+    expect(rules).toContainEqual({ from: "/housyspace", to: "/es/nosotros", status: 301 });
+  });
+
+  it("never sends a URL to itself and every source is unique", () => {
+    expect(rules.filter((rule) => rule.from === rule.to)).toEqual([]);
+    expect(new Set(rules.map((rule) => rule.from)).size).toBe(rules.length);
+  });
+
+  it("prefixes the deploy base on both sides", () => {
+    const text = renderRedirectRules([{ from: "/", to: "/es", status: 301 }], "/repo/");
+    expect(text).toBe("/repo/ /repo/es 301\n");
+  });
+
+  it("matches the committed docs/redirects.generated.txt (run `bun run redirects`)", () => {
+    const committed = readFileSync("docs/redirects.generated.txt", "utf8").replaceAll("\r\n", "\n");
+    expect(committed).toBe(renderRedirectRules(rules));
   });
 });
