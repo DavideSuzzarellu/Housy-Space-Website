@@ -5,7 +5,6 @@ import BlogTeaser from "@/features/blog/ui/BlogTeaser.astro";
 import HomeContact from "@/features/agency/ui/HomeContact.astro";
 import HomeEditorialGallery from "@/features/agency/ui/HomeEditorialGallery.astro";
 import HomeHero from "@/features/agency/ui/HomeHero.astro";
-import HomePresentation from "@/features/agency/ui/HomePresentation.astro";
 import HomeStats from "@/features/agency/ui/HomeStats.astro";
 import HomePhilosophy from "@/features/agency/ui/HomePhilosophy.astro";
 import ServicesAccordion from "@/features/agency/ui/ServicesAccordion.astro";
@@ -48,7 +47,7 @@ const featured = await getFeaturedProperties();
 const content = await getHomeContent(locale);
 const testimonials = (await getLatestTestimonials()).map((entry) => entry.data);
 const posts = (await getPosts()).slice(0, 3);
-const PRESENTATION_ID = "presentacion";
+const FIRST_SECTION_ID = "servicios";
 const site = Astro.site ?? new URL(Astro.url.origin);
 const siteUrl = getSiteUrl(site, import.meta.env.BASE_URL);
 // Described once here; every other page references the agency by @id.
@@ -72,8 +71,7 @@ const ogImage = await getOgImagePath(heroPoster);
   <IntroGate slot="head" />
   <JsonLd slot="head" data={homeJsonLd} />
   <IntroOverlay locale={locale} />
-  <HomeHero locale={locale} nextSectionId={PRESENTATION_ID} />
-  <HomePresentation locale={locale} id={PRESENTATION_ID} content={content.hero} />
+  <HomeHero locale={locale} content={content.hero} nextSectionId={FIRST_SECTION_ID} />
   <HomeStats locale={locale} id="stats" content={content.stats} />
   <ValuationExplainer locale={locale} content={content.valuation} />
   <FeaturedProperties locale={locale} properties={featured} content={content.featured} />

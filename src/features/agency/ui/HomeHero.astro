@@ -3,20 +3,24 @@ import type { ImageMetadata, ImageOutputFormat } from "astro";
 import { getImage } from "astro:assets";
 import posterLandscape from "@/assets/home/hero-poster.jpg";
 import posterPortrait from "@/assets/home/hero-poster-v.jpg";
+import type { HomeContent } from "@/features/agency/application/homeContent";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Button from "@/shared/ui/atoms/Button.astro";
 
 /**
- * Hero: full-viewport video only (no text overlay).
- * The heading lives in the HomePresentation section below (§11.1 reference structure).
+ * Hero (reference `.hero3`): full-viewport video with the page H1, a two-line claim and the two
+ * main CTAs bottom-left over a dark gradient; the scroll cue sits bottom-right.
  */
 interface Props {
   locale: Locale;
+  content: HomeContent["hero"];
   /** Id of the section the scroll cue jumps to. */
   nextSectionId: string;
 }
 
-const { locale, nextSectionId } = Astro.props;
+const { locale, content, nextSectionId } = Astro.props;
 const t = getDictionary(locale);
 
 const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
@@ -42,7 +46,7 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
 
 <section
   id="hero"
-  aria-label={t.home.hero.label}
+  aria-labelledby="home-hero-heading"
   data-hero
   class="group surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
 >
@@ -105,11 +109,36 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
   <!-- Gradient shade: darker at the top for the header, a clean cut at the bottom -->
   <div aria-hidden="true" class="hero-shade pointer-events-none absolute inset-0"></div>
 
+  <!-- Text block: heading, claim and CTAs over a gradient that darkens towards the bottom -->
+  <div class="hero-text pointer-events-none absolute inset-x-0 bottom-0 z-2 pb-[calc(74px+env(safe-area-inset-bottom,0px))] min-[760px]:pb-[clamp(4.5rem,10vh,7rem)]">
+    <div class="pointer-events-auto px-5.5 min-[760px]:pl-[clamp(1.5rem,4.5vw,4.5rem)]">
+      <h1
+        id="home-hero-heading"
+        class="mb-[clamp(0.75rem,1.8vh,1.125rem)] text-[clamp(1.6875rem,7.6vw,2.125rem)] leading-[1.05] font-extrabold tracking-[0.03em] text-paper min-[760px]:text-[clamp(1.875rem,4.2vw,3.75rem)]"
+      >
+        <span class="block">{content.headingFirst}</span>
+        <span class="block font-normal">{content.headingSecond}</span>
+      </h1>
+      <p class="mb-[clamp(1.5rem,3.4vh,2.375rem)] text-[clamp(0.875rem,1.5vw,1.3125rem)] leading-normal tracking-[0.02em] text-paper/92 min-[900px]:whitespace-nowrap">
+        <span class="block font-bold min-[900px]:inline">{content.subFirst}</span>{" "}
+        <span class="block min-[900px]:inline">{content.subSecond}</span>
+      </p>
+      <div class="flex flex-wrap gap-3 max-[759px]:gap-2">
+        <Button href={getLocalizedPath("valuation", locale)} variant="heroSolid" size="hero" arrow>
+          {content.primaryCta}
+        </Button>
+        <Button href={getLocalizedPath("about", locale)} variant="heroGhost" size="hero" arrow>
+          {content.ctaLabel}
+        </Button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scroll cue: hairline with an accent segment sliding down it -->
   <a
     href={`#${nextSectionId}`}
     aria-label={t.a11y.scrollDown}
-    class="absolute bottom-14.5 left-1/2 z-2 -ml-3.5 h-13.5 w-7 md:bottom-5.5"
+    class="absolute right-[clamp(1.375rem,4.5vw,4.5rem)] bottom-5.5 z-2 hidden h-13.5 w-7 min-[760px]:block"
   >
     <span class="absolute top-0 left-3.25 h-13.5 w-px overflow-hidden bg-fg/30">
       <span class="animate-scroll-cue absolute -top-4 left-0 h-4 w-px bg-turquoise motion-reduce:animate-none"></span>
@@ -118,6 +147,18 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
 </section>
 
 <style>
+  .hero-text::before {
+    content: "";
+    position: absolute;
+    inset: -34vh 0 0;
+    z-index: -1;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-ink) 50%, transparent) 46%,
+      color-mix(in srgb, var(--color-ink) 82%, transparent) 100%
+    );
+  }
   .hero-shade {
     --shade: var(--color-ink);
     background: linear-gradient(

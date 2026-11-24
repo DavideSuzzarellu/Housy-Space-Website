@@ -1,8 +1,10 @@
 {
   "hero": {
-    "eyebrow": "HousySpace · Property Solutions",
-    "headingFirst": "Ogni angolo ha una storia",
-    "headingSecond": "Ogni persona, un nuovo inizio",
+    "headingFirst": "Consulenti immobiliari",
+    "headingSecond": "a Barcellona",
+    "subFirst": "Ogni angolo ha una storia.",
+    "subSecond": "Ogni persona, un nuovo inizio.",
+    "primaryCta": "Valuta la mia casa",
     "ctaLabel": "Chi siamo"
   },
   "stats": {

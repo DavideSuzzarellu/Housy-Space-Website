@@ -6,9 +6,9 @@ import ArrowUpRight from "./ArrowUpRight.astro";
  * Turquoise fill sweeps in from the left on hover/focus with ink text (reference `.btn`).
  */
 interface Common {
-  variant?: "outline" | "solid" | "paper" | "accent";
+  variant?: "outline" | "solid" | "paper" | "accent" | "heroSolid" | "heroGhost";
   /** `sm`: compact control of proposal v3 (newsletter, 34 px); `big`: 61.5 px (reference `.btn.big`, "Mi búsqueda"); `xl`: 68 px home CTA; `wide`: block CTA (label left, arrow pushed right, arrow slides on hover). */
-  size?: "sm" | "md" | "lg" | "big" | "xl" | "wide";
+  size?: "sm" | "md" | "lg" | "big" | "xl" | "hero" | "wide";
   /** Trailing up-right arrow (main CTAs of proposal v3). */
   arrow?: boolean;
   class?: string;
@@ -54,6 +54,11 @@ const VARIANTS = {
   solid: "border-fg bg-fg text-canvas",
   /** Paper fill with dark text on any dark block or photo, whatever the surface roles say. */
   paper: "border-paper bg-paper text-dark",
+  /** Home hero (reference `.hero3-act`): paper fill / paper outline that swap on hover, no turquoise sweep. */
+  heroSolid:
+    "border-paper bg-paper text-dark before:hidden hover:border-paper! hover:bg-transparent hover:text-paper! focus-visible:border-paper! focus-visible:bg-transparent focus-visible:text-paper!",
+  heroGhost:
+    "border-paper/70 text-paper before:hidden hover:border-paper! hover:bg-paper hover:text-dark! focus-visible:border-paper! focus-visible:bg-paper focus-visible:text-dark!",
 } as const;
 
 const SIZES = {
@@ -63,6 +68,8 @@ const SIZES = {
   big: "justify-center min-h-11 gap-3.5 px-10 py-5 text-[0.8125rem] leading-[1.5]",
   /** Home CTAs: 68 px tall, padding and type scale with the viewport. */
   xl: "justify-center min-h-17 gap-3.5 px-[clamp(1.625rem,3.4vw,3.25rem)] py-[1.3125rem] text-[clamp(0.75rem,1.05vw,0.875rem)] leading-[1.35]",
+  /** Home hero buttons: 60 px tall, 52 px and full-width rows below 760 px. */
+  hero: "justify-center min-h-15 gap-3.5 px-[clamp(1.5rem,3vw,2.75rem)] py-4 text-[clamp(0.75rem,1.05vw,0.875rem)] leading-none max-[759px]:min-h-13 max-[759px]:flex-1",
   wide: "min-h-11 justify-between gap-4 py-4.5 pr-6 pl-7 text-xs leading-[1.2] [&_svg]:h-3 [&_svg]:w-6.5 [&_svg]:transition-transform [&_svg]:duration-500 [&:hover_svg]:translate-x-1.5 [&:focus-visible_svg]:translate-x-1.5",
 } as const;
 

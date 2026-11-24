@@ -45,10 +45,17 @@ content:
               type: image,
               options: { media: images },
             }
-          - { name: eyebrow, label: Texto de marca, type: string, required: true }
           - { name: headingFirst, label: Titular · primera línea, type: string, required: true }
           - { name: headingSecond, label: Titular · segunda línea, type: string, required: true }
-          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
+          - {
+              name: subFirst,
+              label: Frase · primera parte (en negrita),
+              type: string,
+              required: true,
+            }
+          - { name: subSecond, label: Frase · segunda parte, type: string, required: true }
+          - { name: primaryCta, label: Botón principal (valoración), type: string, required: true }
+          - { name: ctaLabel, label: Botón secundario (nosotros), type: string, required: true }
       - name: stats
         label: Estadísticas
         type: object

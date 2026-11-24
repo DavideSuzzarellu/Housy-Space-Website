@@ -1,8 +1,10 @@
 {
   "hero": {
-    "eyebrow": "HousySpace · Property Solutions",
-    "headingFirst": "Every corner has a story",
-    "headingSecond": "Every person, a new beginning",
+    "headingFirst": "Real estate consultants",
+    "headingSecond": "in Barcelona",
+    "subFirst": "Every corner has a story.",
+    "subSecond": "Every person, a new beginning.",
+    "primaryCta": "Value my home",
     "ctaLabel": "About us"
   },
   "stats": {

@@ -20,9 +20,11 @@ export function homeContentSchema<I extends z.ZodType>(image: () => I) {
     .object({
       hero: z
         .object({
-          eyebrow: text,
           headingFirst: text,
           headingSecond: text,
+          subFirst: text,
+          subSecond: text,
+          primaryCta: text,
           ctaLabel: text,
         })
         .strict(),
