@@ -13,6 +13,20 @@ export async function skipIntro(page: Page): Promise<void> {
   }, INTRO_SEEN_KEY);
 }
 
+/** Every WCAG 2.0 to 2.2 A/AA violation, any impact: contrast exceptions are not allowed. */
+export async function wcagViolations(page: Page): Promise<string[]> {
+  const results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+    .exclude("iframe")
+    .analyze();
+  return results.violations.map(
+    (violation) =>
+      `${violation.id} (${violation.impact ?? "n/a"}): ${violation.nodes
+        .map((node) => node.target.join(" "))
+        .join(", ")}`,
+  );
+}
+
 /** Serious/critical axe violations as readable strings (expect an empty array). */
 export async function blockingAxeViolations(page: Page): Promise<string[]> {
   const results = await new AxeBuilder({ page }).analyze();

@@ -20,12 +20,14 @@ interface PageBudget {
 }
 
 const BUDGETS = {
-  home: { totalKB: 520, scriptKB: 12, imageKB: 380, fontFiles: 3, requests: 22 },
+  // Measured 2026-11-24 (mobile, es): 712 KB total, 631 KB images, 23 requests. The home grew with
+  // the services accordion (9 panel photos load in the viewport) and the presentation photos.
+  home: { totalKB: 890, scriptKB: 12, imageKB: 790, fontFiles: 3, requests: 29 },
   // Shared by sale and rent: photo weight depends on the live Mobilia listing.
   detail: { totalKB: 220, scriptKB: 8, imageKB: 160, fontFiles: 3, requests: 16 },
-  // Estimate, not yet measured: the filter island bundles full Zod (`astro/zod`, decision
-  // 2026-10-22) for §8.1 URL parsing. Re-measure and tighten per docs/performance.md.
-  catalog: { totalKB: 320, scriptKB: 30, imageKB: 200, fontFiles: 3, requests: 22 },
+  // Measured 2026-11-24 (mobile, es): 342 KB total, 34 KB JS, 241 KB images. The filter island
+  // bundles full Zod (`astro/zod`, decision 2026-10-22) for §8.1 URL parsing.
+  catalog: { totalKB: 430, scriptKB: 43, imageKB: 300, fontFiles: 3, requests: 22 },
 } as const satisfies Record<string, PageBudget>;
 
 const LCP_BUDGET_MS = 2500;
