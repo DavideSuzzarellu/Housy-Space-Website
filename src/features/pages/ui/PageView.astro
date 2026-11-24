@@ -159,7 +159,7 @@ const SURFACES = {
         /* "Mi búsqueda" (reference `escala.css`): intro steps / form / closing call, one rule set each. */
         hero
           ? index === content.sections.length - 1
-            ? "py-[clamp(2.75rem,7.4svh,4.5rem)] [&_h2]:mb-6 [&_h2]:text-[clamp(1.75rem,3vw,2.75rem)] [&_h2]:leading-[1.08] [&_p]:mb-8.5 [&_p]:max-w-[52ch] [&_p]:text-[clamp(0.9375rem,1.12vw,1.03125rem)] [&_p]:leading-[1.62] [&_p]:text-fg/85"
+            ? "py-[clamp(2.75rem,7.4svh,4.5rem)] [&>div>div:last-child]:mb-0 [&_h2]:mb-6 [&_h2]:text-[clamp(1.75rem,3vw,2.75rem)] [&_h2]:leading-[1.08] [&_p]:mb-8.5 [&_p]:max-w-[52ch] [&_p]:text-[clamp(0.9375rem,1.12vw,1.03125rem)] [&_p]:leading-[1.62] [&_p]:text-fg/85"
             : section.id !== undefined
               ? "py-[clamp(2.75rem,7.4svh,4.5rem)] [&_h2]:mb-3.5 [&_h2]:text-[clamp(1.5625rem,2.65vw,2.375rem)] [&_h2]:leading-[1.08] [&>div>p]:mb-7 [&>div>p]:max-w-[62ch] [&>div>p]:text-[0.84375rem] [&>div>p]:leading-[1.7] [&>div>p]:tracking-[0.28px] [&>div>p]:text-fg/85"
               : "py-[clamp(2.375rem,6.2svh,3.625rem)] [&_ol]:mt-[clamp(1.875rem,4vw,3.375rem)] [&_h2]:text-[clamp(1.625rem,3vw,2.5rem)] [&_h2]:leading-[1.08]"
