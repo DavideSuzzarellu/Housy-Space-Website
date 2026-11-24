@@ -40,7 +40,7 @@ test.describe("brand intro", () => {
   test("is not shown on a client-side navigation back to home", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.goto("/es/this-page-does-not-exist");
-    await page.locator('main a[hreflang="es-ES"]').click();
+    await page.locator(`main a[href="${home}"]`).click();
     await expect(page).toHaveURL(home);
     await expect(page.locator("[data-intro]")).toBeHidden();
   });
@@ -107,8 +107,11 @@ test.describe("reduced motion", () => {
     const servicesHeading = page.locator("#services-heading");
     await expect(servicesHeading).toHaveCSS("opacity", "1");
     await expect(servicesHeading).toHaveCSS("transform", "none");
-    // No word splitting without motion: the headline stays one plain text.
-    await expect(page.locator("#presentation-heading .w")).toHaveCount(0);
+    // The headline words are static markup; without motion none of them is hidden or shifted.
+    for (const word of await page.locator("#presentation-heading .w").all()) {
+      await expect(word).toHaveCSS("opacity", "1");
+      await expect(word).toHaveCSS("transform", "none");
+    }
     await expect(page.locator('[data-reveal="lines"] [data-line]').first()).toHaveCSS(
       "transform",
       "none",
