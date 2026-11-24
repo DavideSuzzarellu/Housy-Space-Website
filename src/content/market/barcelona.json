@@ -198,6 +198,242 @@
       ]
     },
     {
+      "slug": "sants-montjuic",
+      "name": "Sants-Montjuïc",
+      "sale": 3867,
+      "rent": 1001,
+      "density": 8568,
+      "population": 196040,
+      "area": 22.88,
+      "barrioCount": 8,
+      "rentPerM2": 16.41,
+      "lead": "De la montaña de Montjuïc al puerto, con barrios de tradición obrera y mucha vida de calle.",
+      "history": [
+        "Sants-Montjuïc reúne la montaña de Montjuïc, el puerto y la Zona Franca con ocho barrios residenciales, como Sants, Hostafrancs, la Bordeta, el Poble-sec o la Font de la Guatlla. Sants fue un municipio independiente hasta 1897 y conserva su eje comercial y su vida de barrio.",
+        "Montjuïc concentra museos, jardines y las instalaciones de los Juegos Olímpicos de 1992. La vivienda combina edificios de principios del siglo XX con bloques de los años sesenta y setenta, y la estación de Sants conecta el distrito con toda Cataluña y el resto de España."
+      ],
+      "summary": "Sants-Montjuïc tiene 196.040 habitantes en 22,88 km² y 8 barrios. Es el distrito más extenso de la ciudad. Su precio medio de compraventa fue de 3.867 €/m² en 2025, un 9 % por debajo de la media de la ciudad. El alquiler medio, 1.001 €/mes.",
+      "landmarks": [
+        {
+          "name": "Montjuïc",
+          "where": "Parque de Montjuïc",
+          "text": "La montaña con el castillo, jardines y miradores sobre el puerto."
+        },
+        {
+          "name": "MNAC y la Font Màgica",
+          "where": "Parque de Montjuïc",
+          "text": "El Palau Nacional, sede del Museu Nacional d'Art de Catalunya, y la fuente de Carles Buïgas."
+        },
+        {
+          "name": "Anella Olímpica",
+          "where": "Parque de Montjuïc",
+          "text": "El Estadi Olímpic Lluís Companys y las instalaciones de 1992."
+        },
+        {
+          "name": "Plaça d'Espanya",
+          "where": "A los pies de Montjuïc",
+          "text": "La gran plaza de la Exposición de 1929, con sus torres venecianas."
+        },
+        {
+          "name": "Poble Espanyol",
+          "where": "Parque de Montjuïc",
+          "text": "Recinto de la Exposición de 1929 con arquitectura de toda España."
+        },
+        {
+          "name": "Estació de Sants",
+          "where": "Sants",
+          "text": "La principal estación de tren de Barcelona."
+        }
+      ],
+      "image": "sants-montjuic",
+      "saleSeries": [
+        [2012, 1965],
+        [2013, 1739],
+        [2014, 1843],
+        [2015, 2186],
+        [2016, 2354],
+        [2017, 2815],
+        [2018, 3137],
+        [2019, 3153],
+        [2020, 3092],
+        [2021, 3112],
+        [2022, 3220],
+        [2023, 3305],
+        [2024, 3446],
+        [2025, 3867]
+      ],
+      "rentSeries": [
+        [2012, 633],
+        [2013, 596],
+        [2014, 598],
+        [2015, 625],
+        [2016, 679],
+        [2017, 763],
+        [2018, 804],
+        [2019, 841],
+        [2020, 847],
+        [2021, 800],
+        [2022, 917],
+        [2023, 1032],
+        [2024, 981],
+        [2025, 1001]
+      ]
+    },
+    {
+      "slug": "les-corts",
+      "name": "Les Corts",
+      "sale": 5102,
+      "rent": 1335,
+      "density": 13937,
+      "population": 83773,
+      "area": 6.01,
+      "barrioCount": 3,
+      "rentPerM2": 17.66,
+      "lead": "Avenida Diagonal, jardines y calles tranquilas: un distrito residencial al oeste de la ciudad.",
+      "history": [
+        "Les Corts fue un municipio independiente hasta 1897. Hoy tiene tres barrios, les Corts, la Maternitat i Sant Ramon y Pedralbes, y lo cruza la avenida Diagonal, con oficinas, la zona universitaria y centros comerciales.",
+        "Es un distrito sobre todo residencial, con pisos amplios, zonas verdes y, en Pedralbes, casas unifamiliares y edificios de alto nivel. Su situación junto a la Diagonal y las rondas facilita la salida de la ciudad."
+      ],
+      "summary": "Les Corts tiene 83.773 habitantes en 6,01 km² y 3 barrios. Su precio medio de compraventa fue de 5.102 €/m² en 2025, un 20 % por encima de la media de la ciudad. El alquiler medio, 1.335 €/mes.",
+      "landmarks": [
+        {
+          "name": "Spotify Camp Nou",
+          "where": "La Maternitat i Sant Ramon",
+          "text": "El estadio del FC Barcelona."
+        },
+        {
+          "name": "Monestir de Pedralbes",
+          "where": "Pedralbes",
+          "text": "Monasterio gótico fundado en 1327 por la reina Elisenda de Montcada."
+        },
+        {
+          "name": "Palau Reial de Pedralbes",
+          "where": "Pedralbes",
+          "text": "Palacio y jardines junto a la Diagonal."
+        },
+        {
+          "name": "Pavellons Güell",
+          "where": "Pedralbes",
+          "text": "Los pabellones de la finca Güell, de Gaudí, con su puerta del dragón."
+        },
+        {
+          "name": "Zona Universitària",
+          "where": "Pedralbes",
+          "text": "El campus de la Diagonal, con facultades de la UB y de la UPC."
+        }
+      ],
+      "image": "les-corts",
+      "saleSeries": [
+        [2012, 2974],
+        [2013, 2857],
+        [2014, 2981],
+        [2015, 3076],
+        [2016, 3284],
+        [2017, 3880],
+        [2018, 4204],
+        [2019, 3980],
+        [2020, 4161],
+        [2021, 4001],
+        [2022, 4152],
+        [2023, 4260],
+        [2024, 4666],
+        [2025, 5102]
+      ],
+      "rentSeries": [
+        [2012, 867],
+        [2013, 827],
+        [2014, 853],
+        [2015, 925],
+        [2016, 986],
+        [2017, 1052],
+        [2018, 1090],
+        [2019, 1157],
+        [2020, 1112],
+        [2021, 1054],
+        [2022, 1186],
+        [2023, 1294],
+        [2024, 1345],
+        [2025, 1335]
+      ]
+    },
+    {
+      "slug": "sarria-sant-gervasi",
+      "name": "Sarrià-Sant Gervasi",
+      "sale": 5635,
+      "rent": 1604,
+      "density": 7679,
+      "population": 152943,
+      "area": 19.92,
+      "barrioCount": 6,
+      "rentPerM2": 19.06,
+      "lead": "La parte alta de la ciudad, entre Collserola y la Diagonal, con antiguas villas y calles residenciales.",
+      "history": [
+        "Sarrià-Sant Gervasi une dos antiguos municipios: Sant Gervasi de Cassoles, que pasó a ser Barcelona en 1897, y Sarrià, en 1921. Sus seis barrios van desde la sierra de Collserola y el Tibidabo hasta Galvany y el Putxet, y combinan núcleos antiguos, como el de Sarrià, con calles de edificios residenciales y casas con jardín.",
+        "Es un distrito tranquilo, con muchos colegios, parques y acceso directo a Collserola. Hay mucha demanda de pisos grandes y de casas, y cada calle tiene un precio distinto: por eso es importante valorar bien cada inmueble."
+      ],
+      "summary": "Sarrià-Sant Gervasi tiene 152.943 habitantes en 19,92 km² y 6 barrios. Es el distrito con el precio de compraventa más alto de Barcelona: 5.635 €/m² en 2025. El alquiler medio, 1.604 €/mes.",
+      "landmarks": [
+        {
+          "name": "Tibidabo",
+          "where": "Vallvidrera, el Tibidabo i les Planes",
+          "text": "La cima de Collserola, con el templo del Sagrat Cor y el parque de atracciones."
+        },
+        {
+          "name": "Torre de Collserola",
+          "where": "Vallvidrera, el Tibidabo i les Planes",
+          "text": "La torre de comunicaciones de Norman Foster, con mirador."
+        },
+        {
+          "name": "Núcleo antiguo de Sarrià",
+          "where": "Sarrià",
+          "text": "La plaza y la calle Major de Sarrià, el centro del antiguo pueblo."
+        },
+        {
+          "name": "CosmoCaixa",
+          "where": "Sant Gervasi-la Bonanova",
+          "text": "El museo de la ciencia de la Fundación \"la Caixa\"."
+        },
+        {
+          "name": "Turó Parc",
+          "where": "Sant Gervasi-Galvany",
+          "text": "Jardín de los años treinta, de Nicolau Maria Rubió i Tudurí."
+        }
+      ],
+      "image": "sarria-sant-gervasi",
+      "saleSeries": [
+        [2012, 3339],
+        [2013, 3105],
+        [2014, 3108],
+        [2015, 3509],
+        [2016, 3752],
+        [2017, 4330],
+        [2018, 4755],
+        [2019, 4497],
+        [2020, 4387],
+        [2021, 4563],
+        [2022, 4811],
+        [2023, 5055],
+        [2024, 5200],
+        [2025, 5635]
+      ],
+      "rentSeries": [
+        [2012, 984],
+        [2013, 935],
+        [2014, 978],
+        [2015, 1051],
+        [2016, 1145],
+        [2017, 1228],
+        [2018, 1269],
+        [2019, 1317],
+        [2020, 1306],
+        [2021, 1246],
+        [2022, 1384],
+        [2023, 1551],
+        [2024, 1616],
+        [2025, 1604]
+      ]
+    },
+    {
       "slug": "gracia",
       "name": "Gràcia",
       "sale": 4818,
@@ -350,83 +586,6 @@
         }
       ],
       "image": "horta-guinardo"
-    },
-    {
-      "slug": "les-corts",
-      "name": "Les Corts",
-      "sale": 5102,
-      "rent": 1335,
-      "density": 13937,
-      "population": 83773,
-      "area": 6.01,
-      "barrioCount": 3,
-      "rentPerM2": 17.66,
-      "lead": "Avenida Diagonal, jardines y calles tranquilas: un distrito residencial al oeste de la ciudad.",
-      "history": [
-        "Les Corts fue un municipio independiente hasta 1897. Hoy tiene tres barrios, les Corts, la Maternitat i Sant Ramon y Pedralbes, y lo cruza la avenida Diagonal, con oficinas, la zona universitaria y centros comerciales.",
-        "Es un distrito sobre todo residencial, con pisos amplios, zonas verdes y, en Pedralbes, casas unifamiliares y edificios de alto nivel. Su situación junto a la Diagonal y las rondas facilita la salida de la ciudad."
-      ],
-      "summary": "Les Corts tiene 83.773 habitantes en 6,01 km² y 3 barrios. Su precio medio de compraventa fue de 5.102 €/m² en 2025, un 20 % por encima de la media de la ciudad. El alquiler medio, 1.335 €/mes.",
-      "landmarks": [
-        {
-          "name": "Spotify Camp Nou",
-          "where": "La Maternitat i Sant Ramon",
-          "text": "El estadio del FC Barcelona."
-        },
-        {
-          "name": "Monestir de Pedralbes",
-          "where": "Pedralbes",
-          "text": "Monasterio gótico fundado en 1327 por la reina Elisenda de Montcada."
-        },
-        {
-          "name": "Palau Reial de Pedralbes",
-          "where": "Pedralbes",
-          "text": "Palacio y jardines junto a la Diagonal."
-        },
-        {
-          "name": "Pavellons Güell",
-          "where": "Pedralbes",
-          "text": "Los pabellones de la finca Güell, de Gaudí, con su puerta del dragón."
-        },
-        {
-          "name": "Zona Universitària",
-          "where": "Pedralbes",
-          "text": "El campus de la Diagonal, con facultades de la UB y de la UPC."
-        }
-      ],
-      "image": "les-corts",
-      "saleSeries": [
-        [2012, 2974],
-        [2013, 2857],
-        [2014, 2981],
-        [2015, 3076],
-        [2016, 3284],
-        [2017, 3880],
-        [2018, 4204],
-        [2019, 3980],
-        [2020, 4161],
-        [2021, 4001],
-        [2022, 4152],
-        [2023, 4260],
-        [2024, 4666],
-        [2025, 5102]
-      ],
-      "rentSeries": [
-        [2012, 867],
-        [2013, 827],
-        [2014, 853],
-        [2015, 925],
-        [2016, 986],
-        [2017, 1052],
-        [2018, 1090],
-        [2019, 1157],
-        [2020, 1112],
-        [2021, 1054],
-        [2022, 1186],
-        [2023, 1294],
-        [2024, 1345],
-        [2025, 1335]
-      ]
     },
     {
       "slug": "nou-barris",
@@ -658,165 +817,6 @@
         }
       ],
       "image": "sant-marti"
-    },
-    {
-      "slug": "sants-montjuic",
-      "name": "Sants-Montjuïc",
-      "sale": 3867,
-      "rent": 1001,
-      "density": 8568,
-      "population": 196040,
-      "area": 22.88,
-      "barrioCount": 8,
-      "rentPerM2": 16.41,
-      "lead": "De la montaña de Montjuïc al puerto, con barrios de tradición obrera y mucha vida de calle.",
-      "history": [
-        "Sants-Montjuïc reúne la montaña de Montjuïc, el puerto y la Zona Franca con ocho barrios residenciales, como Sants, Hostafrancs, la Bordeta, el Poble-sec o la Font de la Guatlla. Sants fue un municipio independiente hasta 1897 y conserva su eje comercial y su vida de barrio.",
-        "Montjuïc concentra museos, jardines y las instalaciones de los Juegos Olímpicos de 1992. La vivienda combina edificios de principios del siglo XX con bloques de los años sesenta y setenta, y la estación de Sants conecta el distrito con toda Cataluña y el resto de España."
-      ],
-      "summary": "Sants-Montjuïc tiene 196.040 habitantes en 22,88 km² y 8 barrios. Es el distrito más extenso de la ciudad. Su precio medio de compraventa fue de 3.867 €/m² en 2025, un 9 % por debajo de la media de la ciudad. El alquiler medio, 1.001 €/mes.",
-      "landmarks": [
-        {
-          "name": "Montjuïc",
-          "where": "Parque de Montjuïc",
-          "text": "La montaña con el castillo, jardines y miradores sobre el puerto."
-        },
-        {
-          "name": "MNAC y la Font Màgica",
-          "where": "Parque de Montjuïc",
-          "text": "El Palau Nacional, sede del Museu Nacional d'Art de Catalunya, y la fuente de Carles Buïgas."
-        },
-        {
-          "name": "Anella Olímpica",
-          "where": "Parque de Montjuïc",
-          "text": "El Estadi Olímpic Lluís Companys y las instalaciones de 1992."
-        },
-        {
-          "name": "Plaça d'Espanya",
-          "where": "A los pies de Montjuïc",
-          "text": "La gran plaza de la Exposición de 1929, con sus torres venecianas."
-        },
-        {
-          "name": "Poble Espanyol",
-          "where": "Parque de Montjuïc",
-          "text": "Recinto de la Exposición de 1929 con arquitectura de toda España."
-        },
-        {
-          "name": "Estació de Sants",
-          "where": "Sants",
-          "text": "La principal estación de tren de Barcelona."
-        }
-      ],
-      "image": "sants-montjuic",
-      "saleSeries": [
-        [2012, 1965],
-        [2013, 1739],
-        [2014, 1843],
-        [2015, 2186],
-        [2016, 2354],
-        [2017, 2815],
-        [2018, 3137],
-        [2019, 3153],
-        [2020, 3092],
-        [2021, 3112],
-        [2022, 3220],
-        [2023, 3305],
-        [2024, 3446],
-        [2025, 3867]
-      ],
-      "rentSeries": [
-        [2012, 633],
-        [2013, 596],
-        [2014, 598],
-        [2015, 625],
-        [2016, 679],
-        [2017, 763],
-        [2018, 804],
-        [2019, 841],
-        [2020, 847],
-        [2021, 800],
-        [2022, 917],
-        [2023, 1032],
-        [2024, 981],
-        [2025, 1001]
-      ]
-    },
-    {
-      "slug": "sarria-sant-gervasi",
-      "name": "Sarrià-Sant Gervasi",
-      "sale": 5635,
-      "rent": 1604,
-      "density": 7679,
-      "population": 152943,
-      "area": 19.92,
-      "barrioCount": 6,
-      "rentPerM2": 19.06,
-      "lead": "La parte alta de la ciudad, entre Collserola y la Diagonal, con antiguas villas y calles residenciales.",
-      "history": [
-        "Sarrià-Sant Gervasi une dos antiguos municipios: Sant Gervasi de Cassoles, que pasó a ser Barcelona en 1897, y Sarrià, en 1921. Sus seis barrios van desde la sierra de Collserola y el Tibidabo hasta Galvany y el Putxet, y combinan núcleos antiguos, como el de Sarrià, con calles de edificios residenciales y casas con jardín.",
-        "Es un distrito tranquilo, con muchos colegios, parques y acceso directo a Collserola. Hay mucha demanda de pisos grandes y de casas, y cada calle tiene un precio distinto: por eso es importante valorar bien cada inmueble."
-      ],
-      "summary": "Sarrià-Sant Gervasi tiene 152.943 habitantes en 19,92 km² y 6 barrios. Es el distrito con el precio de compraventa más alto de Barcelona: 5.635 €/m² en 2025. El alquiler medio, 1.604 €/mes.",
-      "landmarks": [
-        {
-          "name": "Tibidabo",
-          "where": "Vallvidrera, el Tibidabo i les Planes",
-          "text": "La cima de Collserola, con el templo del Sagrat Cor y el parque de atracciones."
-        },
-        {
-          "name": "Torre de Collserola",
-          "where": "Vallvidrera, el Tibidabo i les Planes",
-          "text": "La torre de comunicaciones de Norman Foster, con mirador."
-        },
-        {
-          "name": "Núcleo antiguo de Sarrià",
-          "where": "Sarrià",
-          "text": "La plaza y la calle Major de Sarrià, el centro del antiguo pueblo."
-        },
-        {
-          "name": "CosmoCaixa",
-          "where": "Sant Gervasi-la Bonanova",
-          "text": "El museo de la ciencia de la Fundación \"la Caixa\"."
-        },
-        {
-          "name": "Turó Parc",
-          "where": "Sant Gervasi-Galvany",
-          "text": "Jardín de los años treinta, de Nicolau Maria Rubió i Tudurí."
-        }
-      ],
-      "image": "sarria-sant-gervasi",
-      "saleSeries": [
-        [2012, 3339],
-        [2013, 3105],
-        [2014, 3108],
-        [2015, 3509],
-        [2016, 3752],
-        [2017, 4330],
-        [2018, 4755],
-        [2019, 4497],
-        [2020, 4387],
-        [2021, 4563],
-        [2022, 4811],
-        [2023, 5055],
-        [2024, 5200],
-        [2025, 5635]
-      ],
-      "rentSeries": [
-        [2012, 984],
-        [2013, 935],
-        [2014, 978],
-        [2015, 1051],
-        [2016, 1145],
-        [2017, 1228],
-        [2018, 1269],
-        [2019, 1317],
-        [2020, 1306],
-        [2021, 1246],
-        [2022, 1384],
-        [2023, 1551],
-        [2024, 1616],
-        [2025, 1604]
-      ]
     }
   ],
   "barrios": [
