@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Tiendas, restaurantes y vida nocturna en torno a la calle Tuset: el Sant Gervasi más animado.",
+  "translated": true,
+  "lead": "Botigues, restaurants i vida nocturna al voltant del carrer de Tuset: el Sant Gervasi més animat.",
   "text": [
-    "El Camp d'en Galvany empezó a urbanizarse en 1866 por iniciativa de Josep Castelló i Galvany, y el barrio se acabó llamando así por el mercado de Galvany, entre las calles Santaló, Calaf, Amigó y Madrazo. Su núcleo más antiguo está en torno a las calles Sagués y Amigó, y desde los años cincuenta se levantaron muchos edificios nuevos.",
-    "Su vecindario, de clase media-alta y alta, convive con una gran vida comercial y de ocio, sobre todo en la calle Tuset y sus alrededores: tiendas, restaurantes y locales. Con 49.202 habitantes, es el barrio más poblado de Sarrià-Sant Gervasi, y las viviendas más lujosas se concentran entre las calles Alfons XII y Muntaner."
+    "El Camp d'en Galvany va començar a urbanitzar-se el 1866 per iniciativa de Josep Castelló i Galvany, i el barri va acabar dient-se així pel mercat de Galvany, entre els carrers de Santaló, Calaf, Amigó i Madrazo. El seu nucli més antic és al voltant dels carrers de Sagués i d'Amigó, i des dels anys cinquanta es van aixecar molts edificis nous.",
+    "El seu veïnat, de classe mitjana-alta i alta, conviu amb una gran vida comercial i d'oci, sobretot al carrer de Tuset i els seus voltants: botigues, restaurants i locals. Amb 49.202 habitants, és el barri més poblat de Sarrià-Sant Gervasi, i els habitatges més luxosos es concentren entre els carrers d'Alfons XII i de Muntaner."
   ],
-  "housing": "Fincas más antiguas y edificios construidos desde los años cincuenta, con las viviendas más lujosas entre Alfons XII y Muntaner.",
-  "places": ["Mercat de Galvany", "Carrer Tuset", "Plaça de Castelló", "Turó Parc"]
+  "housing": "Finques més antigues i edificis construïts des dels anys cinquanta, amb els habitatges més luxosos entre Alfons XII i Muntaner.",
+  "places": ["Mercat de Galvany", "Carrer de Tuset", "Plaça de Castelló", "Turó Parc"]
 }
