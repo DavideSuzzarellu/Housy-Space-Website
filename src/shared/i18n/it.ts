@@ -483,11 +483,13 @@ const it = {
       "La tua email si è aperta con la richiesta già scritta. Non arriverà a HousySpace finché non la invii.",
   },
   notFound: {
+    kicker: "Errore 404",
+    viewProperties: "Vedi le proprietà",
     metaTitle: "Pagina non trovata · HousySpace",
     metaDescription: "La pagina che cerchi non esiste o è stata spostata.",
     heading: "Pagina non trovata",
     body: "La pagina che cerchi non esiste o è stata spostata.",
-    backHome: "Torna alla home",
+    backHome: "Vai alla home",
   },
   about: {
     stats: {

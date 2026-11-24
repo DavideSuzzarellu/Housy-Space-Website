@@ -484,11 +484,13 @@ const ca = {
       "S'ha obert el teu correu amb la sol·licitud ja escrita. Fins que no l'enviïs, no haurà arribat a HousySpace.",
   },
   notFound: {
+    kicker: "Error 404",
+    viewProperties: "Veure propietats",
     metaTitle: "Pàgina no trobada · HousySpace",
     metaDescription: "La pàgina que cerques no existeix o s'ha mogut.",
     heading: "Pàgina no trobada",
     body: "La pàgina que cerques no existeix o s'ha mogut.",
-    backHome: "Torna a l'inici",
+    backHome: "Anar a l'inici",
   },
   about: {
     stats: {

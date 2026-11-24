@@ -490,11 +490,13 @@ const es = {
       "Se ha abierto tu correo con la solicitud ya escrita. Hasta que no la envíes, no habrá llegado a HousySpace.",
   },
   notFound: {
+    kicker: "Error 404",
+    viewProperties: "Ver propiedades",
     metaTitle: "Página no encontrada · HousySpace",
     metaDescription: "La página que buscas no existe o se ha movido.",
     heading: "Esta página no existe",
     body: "Puede que el inmueble ya no esté disponible o que el enlace haya cambiado.",
-    backHome: "Volver al inicio",
+    backHome: "Ir al inicio",
   },
   about: {
     stats: {

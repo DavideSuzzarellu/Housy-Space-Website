@@ -482,11 +482,13 @@ const en = {
       "Your email app has opened with your request written. It will not reach HousySpace until you send it.",
   },
   notFound: {
+    kicker: "Error 404",
+    viewProperties: "View properties",
     metaTitle: "Page not found · HousySpace",
     metaDescription: "The page you are looking for does not exist or has moved.",
     heading: "Page not found",
     body: "The page you are looking for does not exist or has moved.",
-    backHome: "Back to home",
+    backHome: "Go to home",
   },
   about: {
     stats: {

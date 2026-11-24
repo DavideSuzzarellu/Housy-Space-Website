@@ -5,7 +5,7 @@ import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
-import PaperHero from "@/shared/ui/organisms/PaperHero.astro";
+import PageHeader from "@/shared/ui/molecules/PageHeader.astro";
 
 // Static output serves one 404 document; it is rendered in the default locale with
 // links to every locale's home. Per-locale 404 bodies need on-demand rendering (adapter TODO).
@@ -24,27 +24,29 @@ const homeLinks = LOCALES.map((locale) => ({
   description={t.notFound.metaDescription}
   noindex
 >
-  <PaperHero
-    locale={DEFAULT_LOCALE}
-    title={t.notFound.heading}
-    kicker="404"
-    subtitle={t.notFound.body}
-    crumbs={[
-      { label: t.property.detail.home, href: getLocalizedPath("home", DEFAULT_LOCALE) },
-      { label: "404" },
-    ]}
-  />
-  <section class="surface-stone bg-canvas py-[clamp(2.75rem,5vw,4.125rem)]">
+  <PageHeader
+    crumbs={[{ label: t.property.detail.home, href: getLocalizedPath("home", DEFAULT_LOCALE) }]}
+    breadcrumbLabel={t.property.detail.breadcrumb}
+    tag={t.notFound.kicker}
+    heading={t.notFound.heading}
+  >
+    <p class="mt-4 pb-3">{t.notFound.body}</p>
+  </PageHeader>
+  <section class="surface-stone bg-canvas py-[clamp(2.375rem,6.2vh,3.625rem)]">
     <Container>
-      <ul class="flex flex-wrap gap-3">
+      <ul class="mt-5.5 flex flex-wrap gap-3">
         <li>
-          <Button href={getLocalizedPath("sale", DEFAULT_LOCALE)} variant="solid">
-            {t.nav.allProperties}
+          <Button
+            href={getLocalizedPath("sale", DEFAULT_LOCALE)}
+            variant="solid"
+            class="leading-[1.2] py-[0.9375rem]!"
+          >
+            {t.notFound.viewProperties}
           </Button>
         </li>
         {homeLinks.map((link) => (
           <li lang={link.langTag}>
-            <Button href={link.href} variant="outline">
+            <Button href={link.href} variant="outline" class="leading-[1.2] py-[0.9375rem]!">
               {link.label}
             </Button>
           </li>
