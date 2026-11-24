@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Residencial, sin industria y con una de las vidas vecinales más intensas de Horta-Guinardó.",
+  "translated": true,
+  "lead": "Residential, with no industry and one of the most intense community lives in Horta-Guinardó.",
   "text": [
-    "Hasta finales del siglo XIX fue zona de campos, canteras y casas de labor, y su nombre procede del Mas Guinardó. La urbanización empezó en 1896: en los años treinta predominaban las casitas con huerto de familias de clase media, y desde los sesenta se levantaron bloques de pisos que cambiaron por completo su fisonomía.",
-    "Es un barrio sin industrias, que mantiene un aire residencial, con una intensa vida asociativa y dos grandes espacios verdes, el parque del Guinardó y el de les Aigües. Aquí se abrió el primer centro cívico de Barcelona. Con 39.144 habitantes, es el más poblado del distrito."
+    "Until the end of the 19th century it was an area of fields, quarries and farmhouses, and its name comes from the Mas Guinardó. Development began in 1896: in the 1930s it was dominated by small houses with vegetable plots belonging to middle-class families, and from the 1960s blocks of flats were built that completely changed its appearance.",
+    "It is a neighbourhood without industry that keeps a residential feel, with a lively association scene and two large green spaces, the Parc del Guinardó and the Parc de les Aigües. The first civic centre in Barcelona opened here. With 39,144 inhabitants, it is the most populous in the district."
   ],
-  "housing": "Bloques de pisos construidos desde los sesenta, junto a algunas casas bajas con huerto.",
+  "housing": "Blocks of flats built from the 1960s, alongside a few low-rise houses with vegetable plots.",
   "places": ["Parc del Guinardó", "Parc de les Aigües", "Centre Cívic del Guinardó"]
 }

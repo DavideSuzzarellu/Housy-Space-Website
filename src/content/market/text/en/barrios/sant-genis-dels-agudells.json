@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Una parroquia con más de mil años en las laderas de Collserola, con mucho verde y poca densidad.",
+  "translated": true,
+  "lead": "A parish more than a thousand years old on the slopes of Collserola, with plenty of greenery and low density.",
   "text": [
-    "Fue una de las primeras parroquias del llano de Barcelona, con un acta de dotación del 4 de julio de 931, y desde 1359 dependió del monasterio de la Vall d'Hebron. Es un barrio pequeño y residencial, en las laderas de la sierra de Collserola. El nombre Agudells ya aparece en documentos del siglo X, y el acta de 931 registra 55 hogares. El Pla de Barris 2025-2028 lo incluye entre los barrios de montaña, con actuaciones en espacio público y accesibilidad.",
-    "Con 7.890 habitantes en 1,68 km², tiene una densidad de 4.694 hab./km², muy baja para Barcelona, grandes espacios verdes y buena comunicación por transporte público. Con 2.456 €/m², es el barrio con el precio medio de compraventa más bajo de Horta-Guinardó. Si vendes, el precio medio de compraventa está un 29 % por debajo de la media de Horta-Guinardó. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 196.000 €, y el barrio está uno de los más asequibles de Horta-Guinardó (11.º de 11 por precio). Si inviertes, el alquiler medio (831 €/mes) está un 9 % por debajo del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "It was one of the first parishes on the Barcelona plain, with an endowment deed dated 4 July 931, and from 1359 it belonged to the monastery of la Vall d'Hebron. It is a small, residential neighbourhood on the slopes of the Collserola range. The name Agudells already appears in documents from the 10th century, and the 931 deed records 55 households. The Pla de Barris 2025-2028 includes it among the mountain neighbourhoods, with work on public space and accessibility.",
+    "With 7,890 inhabitants in 1.68 km², it has a density of 4,694 inhabitants/km², very low for Barcelona, large green spaces and good public transport links. At 2,456 €/m², it has the lowest average sale price in Horta-Guinardó. If you are selling, the average sale price is 29% below the Horta-Guinardó average. Within the neighbourhood, the price of each flat depends on its condition, its floor and its building, so it is best to compare it with nearby sales rather than with the district average. If you are buying, an 80 m² flat costs about 196,000 € on average, and this is one of the most affordable neighbourhoods in Horta-Guinardó (11th of 11 by price). If you are investing, the average rent (831 €/month) is 9% below the district; before deciding, it is worth studying each deal with real figures for purchase, renovation and rental income."
   ],
-  "housing": "Bloques residenciales y casas en la ladera, con mucho verde alrededor.",
+  "housing": "Residential blocks and houses on the hillside, with plenty of greenery around.",
   "places": ["Església de Sant Genís dels Agudells", "Hospital de Sant Rafael"]
 }
