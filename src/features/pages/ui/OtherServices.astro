@@ -21,7 +21,7 @@ const { heading, links } = Astro.props;
   {links.map((link) => (
     <a
       href={link.href}
-      class="flex items-baseline justify-between gap-3 border-b border-line py-3.25 font-heading text-[18px] leading-6 no-underline transition-[color,padding] duration-300 hover:pl-2 hover:text-accent focus-visible:pl-2 focus-visible:text-accent motion-reduce:transition-none"
+      class="flex items-baseline justify-between gap-3 border-b border-line py-3.25 font-heading text-[18px] leading-[1.05] no-underline transition-[color,padding] duration-300 hover:pl-2 hover:text-accent focus-visible:pl-2 focus-visible:text-accent motion-reduce:transition-none"
     >
       <span>{link.label}</span>
       <i aria-hidden="true" class="text-accent">

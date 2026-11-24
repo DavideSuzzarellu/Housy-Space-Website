@@ -19,7 +19,7 @@ const count = item.items.length;
 const THREE_COLUMNS = new Set([3, 5, 6]);
 const list = variant === "list";
 const SLAB =
-  "relative bg-fg/5 px-5.5 pt-5 pb-5.5 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-fg/[0.085] motion-reduce:transition-none before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:origin-left before:bg-turquoise before:transition-transform before:duration-1100 before:ease-brand motion-reduce:before:transition-none [.motion-ready_&:not(.is-revealed)]:before:scale-x-0 last:bg-dark last:text-paper";
+  "relative bg-fg/5 px-5.5 pt-5 pb-5.5 min-[900px]:py-4 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-fg/[0.085] motion-reduce:transition-none before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:origin-left before:bg-turquoise before:transition-transform before:duration-1100 before:ease-brand motion-reduce:before:transition-none [.motion-ready_&:not(.is-revealed)]:before:scale-x-0 last:bg-dark last:text-paper";
 ---
 
 <ol
@@ -58,7 +58,7 @@ const SLAB =
           "wrap-break-word",
           list
             ? "mb-2 text-[26px] min-[860px]:text-[18px]"
-            : "mb-2 font-sans text-[clamp(14.5px,1.2vw,17px)] leading-[1.25] font-extrabold tracking-[0.04em]",
+            : "mb-2 font-sans text-[clamp(14.5px,1.2vw,17px)] leading-[1.25] font-bold tracking-[0.03em]",
         ]}
       >
         {entry.title}

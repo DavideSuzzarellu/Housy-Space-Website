@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { itemsOf, type PageItem } from "@/features/pages/application/pages";
 import type { Locale } from "@/shared/i18n/config";
 import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import Inline from "@/shared/ui/atoms/Inline.astro";
 import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import BlockHead from "./BlockHead.astro";
@@ -16,39 +17,50 @@ interface Props {
 
 const { locale, head, body } = Astro.props;
 const button = itemsOf(body, "buttons")[0]?.items[0];
+const why = itemsOf(body, "p")[0];
 const partners = itemsOf(body, "list")[0];
 ---
 
 <div class="grid gap-x-16 gap-y-2.5 min-[960px]:grid-cols-[5fr_6fr] min-[960px]:items-start">
-  <div class="mb-11.5">
+  <div class="mb-7 min-[960px]:mb-11.5">
     <BlockHead locale={locale} items={head} spaced={false} />
+    {why && (
+      <p class="mt-[clamp(14px,2.4vh,20px)] max-w-159 border-l-2 border-turquoise pl-4 text-[clamp(15px,1.12vw,16.5px)] leading-[1.62] tracking-[0.02em] text-fg normal-case">
+        <Inline text={why.text} locale={locale} />
+      </p>
+    )}
     {button && (
-      <Button href={resolveContentHref(button.href, locale)} arrow class="mt-10 leading-none!">
+      <Button href={resolveContentHref(button.href, locale)} arrow class="mt-6.5 leading-none!">
         {button.label}
       </Button>
     )}
   </div>
-  <ul class="grid gap-3.5">
+  <ul class="grid gap-3.5 min-[620px]:grid-cols-2">
     {partners?.items.map((entry) => (
-      <li data-reveal class="border-l-2 border-turquoise bg-card px-7 pt-7 pb-6.5">
+      <li
+        data-reveal
+        class="bg-fg/5 pb-5.5 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] [&>:not(.logo)]:mx-5.5"
+      >
+        <span class="logo mb-4.5 grid h-[clamp(96px,11vw,128px)] place-items-center border-b-[3px] border-turquoise bg-white px-6.5 py-4.5">
+          {entry.logo && (
+            <Image
+              src={entry.logo}
+              alt={entry.title}
+              widths={[240, 480]}
+              sizes="242px"
+              loading="lazy"
+              decoding="async"
+              class="block h-[clamp(44px,5vw,62px)] w-auto max-w-full object-contain"
+            />
+          )}
+        </span>
         <span class="mb-2.5 block text-[11px] leading-[normal] font-medium tracking-[0.16em] text-accent">
           {entry.kicker}
         </span>
-        {entry.logo && (
-          <Image
-            src={entry.logo}
-            alt=""
-            widths={[240, 480]}
-            sizes="242px"
-            loading="lazy"
-            decoding="async"
-            class="mt-1 mb-3 block h-[clamp(42px,4.6vw,58px)] w-auto max-w-full"
-          />
-        )}
-        <b class="mb-2.5 block font-heading text-[clamp(22px,calc(2.2vw-2px),28px)] leading-[1.1] font-normal">
+        <b class="mb-2.5 block font-sans text-[clamp(18px,1.65vw,24px)] leading-[1.2] font-extrabold tracking-[0.03em]">
           {entry.title}
         </b>
-        <p class="text-[13px] leading-[1.6] text-muted">{entry.text}</p>
+        <p class="text-sm leading-[1.6] text-muted normal-case">{entry.text}</p>
         {entry.href && (
           <a
             href={resolveContentHref(entry.href, locale)}
