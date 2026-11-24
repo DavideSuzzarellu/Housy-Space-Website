@@ -1,44 +1,44 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "Donde empezó Barcelona: calles estrechas, plazas con siglos de historia y el mar a un paso.",
+  "translated": true,
+  "lead": "Dove è nata Barcellona: vicoli stretti, piazze con secoli di storia e il mare a due passi.",
   "history": [
-    "Ciutat Vella es el origen de la ciudad. Aquí estuvo la colonia romana de Barcino y aquí creció la Barcelona medieval, encerrada entre murallas hasta mediados del siglo XIX. Hoy se reparte en cuatro barrios muy distintos entre sí: el Raval, el Barri Gòtic, la Barceloneta y Sant Pere, Santa Caterina i la Ribera.",
-    "Vivir en Ciutat Vella es hacerlo entre calles estrechas, muchas de ellas peatonales, y edificios que pueden tener varios siglos. Los pisos suelen ser pequeños y con mucho carácter: techos altos, paredes gruesas y, con frecuencia, patios de luces en lugar de grandes vistas. Casi todo se resuelve a pie, y la actividad comercial, cultural y turística acompaña cada día del año.",
-    "Entre sus 4 barrios, el precio medio de compraventa va de 3.499 €/m² en el Raval a 5.183 €/m² en la Barceloneta, y el alquiler medio, de 881 €/mes en la Barceloneta a 1.172 €/mes en el Barri Gòtic.",
-    "Antes de comprar o alquilar conviene estudiar cada finca con detalle: su estado, la comunidad de propietarios, la documentación y el ruido real de la calle a distintas horas."
+    "Ciutat Vella è l'origine della città. Qui sorgeva la colonia romana di Barcino e qui è cresciuta la Barcellona medievale, chiusa entro le mura fino alla metà dell'Ottocento. Oggi si divide in quattro quartieri molto diversi tra loro: il Raval, il Barri Gòtic, la Barceloneta e Sant Pere, Santa Caterina i la Ribera.",
+    "Vivere a Ciutat Vella significa vivere tra strade strette, molte delle quali pedonali, e palazzi che possono avere diversi secoli. Gli appartamenti sono spesso piccoli e pieni di carattere: soffitti alti, muri spessi e, di frequente, cortili interni al posto di grandi viste. Quasi tutto si fa a piedi, e la vita commerciale, culturale e turistica ti accompagna ogni giorno dell'anno.",
+    "Tra i suoi 4 quartieri, il prezzo medio di compravendita va dai 3.499 €/m² del Raval ai 5.183 €/m² della Barceloneta, e l'affitto medio dagli 881 €/mese della Barceloneta ai 1.172 €/mese del Barri Gòtic.",
+    "Prima di comprare o affittare conviene studiare ogni stabile nel dettaglio: il suo stato, il condominio, la documentazione e il rumore reale della strada a diverse ore del giorno."
   ],
-  "summary": "Ciutat Vella tiene 115.829 habitantes en 4,21 km² y 4 barrios. Su precio medio de compraventa fue de 4.126 €/m² en 2025, un 3 % por debajo de la media de la ciudad. El alquiler medio, 1.019 €/mes.",
+  "summary": "Ciutat Vella conta 115.829 abitanti su 4,21 km² e 4 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 4.126 €/m², il 3% sotto la media della città. L'affitto medio è di 1.019 €/mese.",
   "landmarks": [
     {
       "name": "La Rambla",
-      "where": "El Raval y el Barri Gòtic",
-      "text": "El paseo que une la plaza de Catalunya con el puerto."
+      "where": "Il Raval e il Barri Gòtic",
+      "text": "Il viale che collega plaça de Catalunya al porto."
     },
     {
       "name": "Catedral de Barcelona",
       "where": "Barri Gòtic",
-      "text": "La catedral gótica, junto a los restos de la Barcino romana."
+      "text": "La cattedrale gotica, accanto ai resti della Barcino romana."
     },
     {
       "name": "Santa Maria del Mar",
       "where": "La Ribera",
-      "text": "Basílica gótica del siglo XIV, levantada por los vecinos del barrio."
+      "text": "Basilica gotica del Trecento, costruita dagli abitanti del quartiere."
     },
     {
       "name": "Mercat de la Boqueria",
-      "where": "El Raval",
-      "text": "Mercado histórico abierto a La Rambla."
+      "where": "Il Raval",
+      "text": "Storico mercato che si apre sulla Rambla."
     },
     {
       "name": "Palau de la Música Catalana",
       "where": "Sant Pere",
-      "text": "Obra modernista de Lluís Domènech i Montaner, Patrimonio Mundial."
+      "text": "Opera modernista di Lluís Domènech i Montaner, Patrimonio dell'Umanità."
     },
     {
-      "name": "La Barceloneta y el Port Vell",
+      "name": "La Barceloneta e il Port Vell",
       "where": "La Barceloneta",
-      "text": "El antiguo barrio de pescadores, con su playa y el puerto."
+      "text": "L'antico quartiere di pescatori, con la sua spiaggia e il porto."
     }
   ]
 }

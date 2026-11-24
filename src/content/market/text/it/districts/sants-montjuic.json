@@ -1,44 +1,44 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "De la montaña de Montjuïc al puerto: barrios de tradición obrera, vida de calle y la estación de Sants.",
+  "translated": true,
+  "lead": "Dalla montagna di Montjuïc al porto: quartieri di tradizione operaia, vita di strada e la stazione di Sants.",
   "history": [
-    "Sants-Montjuïc es el distrito más extenso de Barcelona y el más variado: reúne la montaña de Montjuïc, el puerto y la Zona Franca con ocho barrios muy distintos entre sí. Santa Maria de Sants fue un municipio independiente hasta que Barcelona lo anexionó en 1897, y de aquel pasado conserva su eje comercial y su vida de barrio.",
-    "En el distrito conviven barrios de raíz obrera y comercial, como Sants, Hostafrancs, la Bordeta o el Poble-sec, con la Barcelona de las exposiciones y los Juegos Olímpicos en Montjuïc y con zonas casi sin viviendas, como la Zona Franca. La estación de Sants conecta la ciudad con el tren de alta velocidad y con el resto de España, y la plaça d'Espanya hace de puerta de entrada a Montjuïc.",
-    "Entre sus 8 barrios, el precio medio de compraventa va de 2.724 €/m² en la Marina del Prat Vermell a 4.310 €/m² en Sants, y el alquiler medio, de 885 €/mes en la Marina de Port a 1.390 €/mes en la Marina del Prat Vermell.",
-    "Cada barrio tiene su ritmo y sus precios, así que conviene comparar calles y fincas con calma antes de elegir."
+    "Sants-Montjuïc è il distretto più esteso di Barcellona e il più vario: riunisce la montagna di Montjuïc, il porto e la Zona Franca in otto quartieri molto diversi tra loro. Santa Maria de Sants fu un comune indipendente fino all'annessione a Barcellona nel 1897, e di quel passato conserva il suo asse commerciale e la sua vita di quartiere.",
+    "Nel distretto convivono quartieri di radici operaie e commerciali, come Sants, Hostafrancs, la Bordeta o il Poble-sec, la Barcellona delle esposizioni e dei Giochi Olimpici a Montjuïc e zone quasi prive di abitazioni, come la Zona Franca. La stazione di Sants collega la città all'alta velocità e al resto della Spagna, e plaça d'Espanya fa da porta d'ingresso a Montjuïc.",
+    "Tra i suoi 8 quartieri, il prezzo medio di compravendita va dai 2.724 €/m² della Marina del Prat Vermell ai 4.310 €/m² di Sants, e l'affitto medio dagli 885 €/mese della Marina de Port ai 1.390 €/mese della Marina del Prat Vermell.",
+    "Ogni quartiere ha il suo ritmo e i suoi prezzi, quindi conviene confrontare con calma strade e stabili prima di scegliere."
   ],
-  "summary": "Sants-Montjuïc tiene 196.040 habitantes en 22,88 km² y 8 barrios. Es el distrito más extenso de la ciudad. Su precio medio de compraventa fue de 3.867 €/m² en 2025, un 9 % por debajo de la media de la ciudad. El alquiler medio, 1.001 €/mes.",
+  "summary": "Sants-Montjuïc conta 196.040 abitanti su 22,88 km² e 8 quartieri. È il distretto più esteso della città. Il suo prezzo medio di compravendita nel 2025 è stato di 3.867 €/m², il 9% sotto la media della città. L'affitto medio è di 1.001 €/mese.",
   "landmarks": [
     {
       "name": "Montjuïc",
-      "where": "Parque de Montjuïc",
-      "text": "La montaña con el castillo, jardines y miradores sobre el puerto."
+      "where": "Parco di Montjuïc",
+      "text": "La montagna con il castello, i giardini e i belvedere sul porto."
     },
     {
-      "name": "MNAC y la Font Màgica",
-      "where": "Parque de Montjuïc",
-      "text": "El Palau Nacional, sede del Museu Nacional d'Art de Catalunya, y la fuente de Carles Buïgas."
+      "name": "MNAC e la Font Màgica",
+      "where": "Parco di Montjuïc",
+      "text": "Il Palau Nacional, sede del Museu Nacional d'Art de Catalunya, e la fontana di Carles Buïgas."
     },
     {
       "name": "Anella Olímpica",
-      "where": "Parque de Montjuïc",
-      "text": "El Estadi Olímpic Lluís Companys y las instalaciones de 1992."
+      "where": "Parco di Montjuïc",
+      "text": "L'Estadi Olímpic Lluís Companys e gli impianti del 1992."
     },
     {
       "name": "Plaça d'Espanya",
-      "where": "A los pies de Montjuïc",
-      "text": "La gran plaza de la Exposición de 1929, con sus torres venecianas."
+      "where": "Ai piedi di Montjuïc",
+      "text": "La grande piazza dell'Esposizione del 1929, con le sue torri veneziane."
     },
     {
       "name": "Poble Espanyol",
-      "where": "Parque de Montjuïc",
-      "text": "Recinto de la Exposición de 1929 con arquitectura de toda España."
+      "where": "Parco di Montjuïc",
+      "text": "Recinto dell'Esposizione del 1929 con architetture di tutta la Spagna."
     },
     {
       "name": "Estació de Sants",
       "where": "Sants",
-      "text": "La principal estación de tren de Barcelona."
+      "text": "La principale stazione ferroviaria di Barcellona."
     }
   ]
 }
