@@ -1,3 +1,4 @@
+import { BASE_PATH } from "../lib/basePath";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "./config";
 
 /**
@@ -156,7 +157,7 @@ export function getLocalizedPath<K extends RouteKey>(
   const path = buildPath(routeKey, locale, params ?? {});
 
   // Limpiamos el BASE_URL por si viene con una barra al final
-  const base = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+  const base = BASE_PATH;
 
   // Si el path ya tiene el base (raro, pero por las dudas), lo devolvemos
   if (base && path.startsWith(base)) return path;

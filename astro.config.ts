@@ -8,11 +8,16 @@ const sitemapLocales = Object.fromEntries(
   LOCALES.map((locale) => [locale, LOCALE_META[locale].langTag]),
 );
 
+// GitHub Pages serves the site under the repository name; the e2e build overrides it with
+// ASTRO_BASE="/" (and ASTRO_SITE to the production origin the specs assert) so tests run against the site root.
+const BASE = process.env["ASTRO_BASE"] ?? "/Housy-Space-Website";
+const BASE_PREFIX = BASE === "/" ? "" : BASE;
+
 // Hosting/adapter is not decided yet (AGENTS.md §2): keep this config adapter-agnostic.
 export default defineConfig({
-  site: "https://DavideSuzzarellu.github.io",
+  site: process.env["ASTRO_SITE"] ?? "https://DavideSuzzarellu.github.io",
   // Reemplazá con el nombre exacto de tu repositorio
-  base: "/Housy-Space-Website",
+  base: BASE,
   output: "static",
   trailingSlash: "never",
   i18n: {
@@ -30,7 +35,7 @@ export default defineConfig({
   //   "/": `/${DEFAULT_LOCALE}`,
   // },
   redirects: {
-    "/": `/Housy-Space-Website/${DEFAULT_LOCALE}/`,
+    "/": `${BASE_PREFIX}/${DEFAULT_LOCALE}/`,
   },
 
   image: {

@@ -26,6 +26,8 @@ export default defineConfig({
     command: `bun run build && bun run preview --port ${PORT} --ignore-lock`,
     url: `http://localhost:${PORT}/es`,
     reuseExistingServer: !isCI,
+    // Production deploys under a repository sub-path; tests use the site root.
+    env: { ASTRO_BASE: "/", ASTRO_SITE: "https://www.housyspace.com" },
     timeout: 180_000,
   },
 });
