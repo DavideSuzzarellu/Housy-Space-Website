@@ -79,22 +79,6 @@ export interface RedirectRule {
 }
 
 /**
- * Old URLs of the previous WordPress site and of the reference site that sit at the domain root
- * (no locale prefix). They only exist on production, so they are host rules, never Astro pages.
- * Source: reference `_redirects` (2026-11); each goes to the Spanish page that replaced it.
- */
-const LEGACY_ROOT_URLS: readonly (readonly [string, string])[] = [
-  ["/vende", `/es/${routes.services.es}/${getServiceSlug("saleBrokerage", "es")}`],
-  ["/busco-vivienda", `/es/${routes.mySearch.es}`],
-  ["/busqueda-a-medida", `/es/${routes.mySearch.es}`],
-  ["/politica-cookies", `/es/${routes.cookies.es}`],
-  ["/politica-de-privacidad", `/es/${routes.privacy.es}`],
-  ["/housyspace", `/es/${routes.about.es}`],
-  ["/atico-en-ensanche-derecho", `/es/${routes.sale.es}`],
-  ["/housyspace-venta-compra-y-alquiler-de-inmuebles", `/es`],
-];
-
-/**
  * Every permanent (301) redirect the site needs, for the host (Cloudflare/Netlify `_redirects`).
  * Same source as `getRetiredRedirects()`, with the 311 retired municipality pages of each locale
  * collapsed into one splat rule.
@@ -109,19 +93,22 @@ export function getRetiredRedirectRules(): RedirectRule[] {
     to: `/${locale}/${routes.living[locale]}`,
     status: 301,
   }));
-  const legacy = LEGACY_ROOT_URLS.map(([from, to]): RedirectRule => ({ from, to, status: 301 }));
-  return [
-    { from: "/", to: `/${DEFAULT_LOCALE}`, status: 301 },
-    ...explicit,
-    ...provinceSplats,
-    ...legacy,
-  ];
+  return [{ from: "/", to: `/${DEFAULT_LOCALE}`, status: 301 }, ...explicit, ...provinceSplats];
 }
 
-/** `_redirects` file text (`from to status` per line), with the deploy base prefixed. */
-export function renderRedirectRules(rules: readonly RedirectRule[], base = ""): string {
+/**
+ * `_redirects` file text (`from to status` per line), with the deploy base prefixed. With an `origin`
+ * the destinations are absolute, so a request on any host reaches the final URL in one hop.
+ */
+export function renderRedirectRules(
+  rules: readonly RedirectRule[],
+  base = "",
+  origin = "",
+): string {
   const prefix = base.replace(/\/$/, "");
   const withBase = (path: string): string => (path === "/" ? `${prefix}/` : `${prefix}${path}`);
-  const lines = rules.map((rule) => `${withBase(rule.from)} ${withBase(rule.to)} ${rule.status}`);
+  const lines = rules.map(
+    (rule) => `${withBase(rule.from)} ${origin}${withBase(rule.to)} ${rule.status}`,
+  );
   return `${lines.join("\n")}\n`;
 }

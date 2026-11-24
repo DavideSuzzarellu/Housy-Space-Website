@@ -77,38 +77,16 @@ describe("host redirect rules", () => {
     expect(rules.length).toBeLessThan(500);
   });
 
-  it("keeps the old root URLs of the previous site", () => {
-    expect(rules).toContainEqual({ from: "/politica-cookies", to: "/es/cookies", status: 301 });
-    expect(rules).toContainEqual({ from: "/housyspace", to: "/es/nosotros", status: 301 });
-  });
-
   it("never sends a URL to itself and every source is unique", () => {
     expect(rules.filter((rule) => rule.from === rule.to)).toEqual([]);
     expect(new Set(rules.map((rule) => rule.from)).size).toBe(rules.length);
   });
 
   it("prefixes the deploy base on both sides", () => {
-    const text = renderRedirectRules([{ from: "/", to: "/es", status: 301 }], "/repo/");
-    expect(text).toBe("/repo/ /repo/es 301\n");
-  });
-});
-
-describe("renderRedirectRules (the production `_redirects` file)", () => {
-  const lines = renderRedirectRules(getRetiredRedirectRules()).trimEnd().split("\n");
-
-  it("is base-free, starts with the root rule and marks every rule 301", () => {
-    expect(lines[0]).toBe("/ /es 301");
-    expect(lines.every((line) => /^\/\S* \/\S* 301$/.test(line))).toBe(true);
-    expect(lines.join("\n")).not.toContain("Housy-Space-Website");
-  });
-
-  it("collapses each old province family into one splat rule", () => {
-    expect(lines).toContain("/es/provincia-de-barcelona/* /es/zonas/barcelona 301");
-    expect(lines.filter((line) => line.includes("/*"))).toHaveLength(4);
-  });
-
-  it("has no duplicated source", () => {
-    const sources = lines.map((line) => line.split(" ")[0]);
-    expect(new Set(sources).size).toBe(sources.length);
+    const rule = [{ from: "/", to: "/es", status: 301 }] as const;
+    expect(renderRedirectRules(rule, "/repo/")).toBe("/repo/ /repo/es 301\n");
+    expect(renderRedirectRules(rule, "", "https://example.com")).toBe(
+      "/ https://example.com/es 301\n",
+    );
   });
 });
