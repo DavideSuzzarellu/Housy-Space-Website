@@ -7,7 +7,7 @@
     "items": [
       {
         "kind": "tag",
-        "text": "Presentació d'HousySpace"
+        "text": "Presentació de HousySpace"
       },
       {
         "kind": "p",
@@ -89,7 +89,7 @@
         },
         {
           "kind": "h2",
-          "text": "Cada propietat és diferent. Cada persona, també."
+          "text": "Cada immoble és diferent. Cada persona, també."
         },
         {
           "kind": "p",
@@ -219,7 +219,7 @@
               "cta": "Veure el servei"
             },
             {
-              "title": "Bròquer financer",
+              "title": "Broker financer",
               "text": "Estudia la viabilitat de cada operació amb finançament i compara les condicions de diferents entitats.",
               "kicker": "Finançament",
               "href": "service:asesoramiento-financiero",

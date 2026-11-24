@@ -23,7 +23,7 @@
       "items": [
         {
           "kind": "tag",
-          "text": "Newsletter"
+          "text": "Butlletí"
         },
         {
           "kind": "h2",
@@ -52,7 +52,7 @@
             },
             {
               "name": "consent",
-              "label": "**Vull rebre la newsletter i els articles de HousySpace per correu electrònic.** He llegit la [política de privacitat](route:privacy).",
+              "label": "**Vull rebre el butlletí i els articles de HousySpace per correu electrònic.** He llegit la [política de privacitat](route:privacy).",
               "required": true,
               "full": false,
               "type": "consent",
@@ -60,7 +60,7 @@
             },
             {
               "kind": "note",
-              "text": "**Informació bàsica.** Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: enviar-te la newsletter i els articles. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal; els proveïdors de correu actuen per compte nostre. Drets: accés, rectificació, supressió, oposició, limitació i portabilitat, i donar-te de baixa quan vulguis amb l'enllaç de cada correu o escrivint a [info@housyspace.com](mailto:info@housyspace.com). Més informació a la [política de privacitat](route:privacy). (Esborrany: encara no hi ha cap eina de newsletter connectada; en fer clic s'obrirà el teu client de correu amb la sol·licitud ja redactada i no estaràs subscrit fins que l'enviïs.)"
+              "text": "**Informació bàsica.** Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: enviar-te el butlletí i els articles. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal; els proveïdors de correu actuen per compte nostre. Drets: accés, rectificació, supressió, oposició, limitació i portabilitat, i donar-te de baixa quan vulguis amb l'enllaç de cada correu o escrivint a [info@housyspace.com](mailto:info@housyspace.com). Més informació a la [política de privacitat](route:privacy). (Esborrany: encara no hi ha cap eina de butlletí connectada; en fer clic s'obrirà el teu client de correu amb la sol·licitud ja redactada i no estaràs subscrit fins que l'enviïs.)"
             }
           ],
           "mode": "email"

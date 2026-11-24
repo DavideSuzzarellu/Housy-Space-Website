@@ -84,7 +84,7 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Email"
+              "text": "Correu"
             },
             {
               "kind": "p",
@@ -94,7 +94,7 @@
               "kind": "buttons",
               "items": [
                 {
-                  "label": "Escriure un email",
+                  "label": "Escriure un correu",
                   "href": "mailto:info@housyspace.com",
                   "solid": false
                 }
