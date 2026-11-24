@@ -7,10 +7,22 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { auditRedirects, auditSite } from "../src/shared/lib/seo/headAudit.ts";
+import { blocksWholeSite } from "../src/shared/lib/seo/robotsTxt.ts";
 import { readDistPages } from "./seo-dist.ts";
 
 const DIST = fileURLToPath(new URL("../dist/", import.meta.url));
 const HREFLANGS = ["es-ES", "en", "it-IT", "ca-ES"] as const;
+
+// A staging build (any origin but the production one) is noindex and blocked in robots.txt: there
+// is nothing to audit, and an empty "0 problems" would be a false pass.
+const robots = readFileSync(path.join(DIST, "robots.txt"), "utf8");
+if (blocksWholeSite(robots)) {
+  console.log(
+    "dist is a non-indexable build (robots.txt blocks the site: origin is not the production one).\n" +
+      "The SEO audit needs the production build: run `bun run build:production && bun run check:seo`.",
+  );
+  process.exit(0);
+}
 
 const pages = readDistPages(DIST);
 const problems = [...auditSite(pages, { hreflangs: HREFLANGS }), ...auditRedirects(pages)];
@@ -33,7 +45,6 @@ for (const url of listed) {
   }
 }
 
-const robots = readFileSync(path.join(DIST, "robots.txt"), "utf8");
 if (!/^Sitemap: \S*sitemap-index\.xml$/m.test(robots)) problems.push("robots.txt: no Sitemap line");
 if (/^Disallow:\s*\/(_astro|brand|media)?\/?$/m.test(robots)) {
   problems.push("robots.txt: blocks the site or its assets");

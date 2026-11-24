@@ -1,6 +1,7 @@
 ---
 import { LOCALE_META, type Locale } from "@/shared/i18n/config";
 import type { Alternate } from "@/shared/i18n/routes";
+import { isIndexableSite, robotsMetaContent } from "@/shared/lib/seo/indexability";
 import { LOGO_PNG_FILE, publicPath } from "@/shared/lib/seo/structuredData";
 
 interface Props {
@@ -30,6 +31,8 @@ const {
 } = Astro.props;
 
 const site = Astro.site ?? new URL(Astro.url.origin);
+// Only the production origin is indexable; any other copy of the site is noindex,nofollow.
+const robots = robotsMetaContent(isIndexableSite(Astro.site), noindex);
 const toAbsolute = (path: string): string => new URL(path, site).href;
 
 const canonicalAlternate = alternates.find(
@@ -44,7 +47,7 @@ const ogLocaleAlternates = alternates
 
 <title>{title}</title>
 <meta name="description" content={description} />
-{noindex && <meta name="robots" content="noindex,follow" />}
+{robots && <meta name="robots" content={robots} />}
 {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 {alternates.map((alternate) => (
   <link rel="alternate" hreflang={alternate.hreflang} href={toAbsolute(alternate.path)} />
