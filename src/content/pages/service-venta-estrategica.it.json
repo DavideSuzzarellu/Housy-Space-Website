@@ -156,7 +156,7 @@
                 },
                 {
                   "name": "consent",
-                  "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
+                  "label": "Ho letto l'informativa sulla privacy e acconsento al trattamento di questi dati da parte di HousySpace per gestire la mia richiesta.",
                   "required": true,
                   "full": true,
                   "type": "consent",

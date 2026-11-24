@@ -158,7 +158,7 @@ const ca = {
         "Ubicació aproximada: per privacitat, el cercle indica la zona i no l'adreça exacta.",
       mapLoading: "El mapa es carrega quan arribes a aquesta secció.",
       contactHeading: "T'interessa aquest immoble?",
-      contactText: "Un assessor de HousySpace t'atendrà personalment.",
+      contactText: "Un assessor d'HousySpace t'atendrà personalment.",
       advisorLabel: "El teu assessor",
       advisorFallback: "Equip HousySpace",
       requestVisit: "Sol·licitar visita",
@@ -178,7 +178,7 @@ const ca = {
         "Documents disponibles a petició. Per defecte no es publiquen notes simples ni documentació privada de tercers.",
       consultationHeading: "Una consulta privada.",
       consultationText:
-        "Indica la referència {ref}: un assessor de HousySpace et respondrà personalment.",
+        "Indica la referència {ref}: un assessor d'HousySpace et respondrà personalment.",
       viewOnline: "Veure al web",
       qrLabel: "Escaneja per veure l'immoble al web",
       disclaimer: "Fitxa informativa sense valor contractual. Dades subjectes a verificació.",
@@ -251,7 +251,7 @@ const ca = {
     talk: "Parlem",
     /** Online valuator pop-up and adviser form pop-up of the valuation service. */
     valuator: {
-      title: "Valorador en línia de HousySpace",
+      title: "Valorador en línia d'HousySpace",
       loading: "Carregant el valorador…",
       close: "Tanca el valorador",
     },
@@ -263,18 +263,18 @@ const ca = {
   newsletter: {
     formLabel: "Subscripció al butlletí",
     heading: "Butlletí i articles",
-    text: "Mercat, consells i novetats de HousySpace al teu correu.",
+    text: "Mercat, consells i novetats d'HousySpace al teu correu.",
     emailLabel: "Correu electrònic",
     emailPlaceholder: "El teu correu electrònic",
     submit: "Subscriure'm",
     consentLabel: "Consentiment",
-    consent: "Accepto rebre el butlletí de HousySpace.",
+    consent: "Accepto rebre el butlletí d'HousySpace.",
     privacyLink: "Política de privacitat",
     infoSummary: "Informació bàsica sobre protecció de dades",
     info: "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: enviar-te el butlletí i els articles. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal; els proveïdors de correu actuen per compte nostre. Drets: accés, rectificació, supressió, oposició, limitació i portabilitat, i donar-te de baixa quan vulguis amb l'enllaç de cada correu o escrivint a [{email}](mailto:{email}). Més informació a la [política de privacitat](route:privacy).",
     draftNote:
       "(Esborrany: encara no hi ha cap eina de butlletí connectada; en prémer el botó s'obrirà el teu correu amb la sol·licitud ja escrita i no estaràs subscrit/a fins que l'enviïs.)",
-    intro: "Hola, vull subscriure'm al butlletí i als articles de HousySpace.",
+    intro: "Hola, vull subscriure'm al butlletí i als articles d'HousySpace.",
     subject: "Alta al butlletí",
     sent: "La teva sol·licitud està preparada al teu correu, però encara no s'ha enviat ni t'has subscrit. Prem «Envia» al teu programa de correu.",
   },
@@ -378,7 +378,7 @@ const ca = {
         title: "Valoració en línia",
         text: "Introdueix les dades del teu habitatge al nostre valorador i rep una estimació orientativa del seu valor.",
         cta: "Valorar en línia ara",
-        alt: "Balcó d'una finca modernista de Barcelona amb el pin de HousySpace",
+        alt: "Balcó d'una finca modernista de Barcelona amb el pin d'HousySpace",
       },
       advisor: {
         tag: "Amb visita",
@@ -569,7 +569,7 @@ const ca = {
     },
     step: "Pas {n} de {total}",
     progress: "Progrés de la teva cerca",
-    emailSubject: "Sol·licitud des del web de HousySpace",
+    emailSubject: "Sol·licitud des del web d'HousySpace",
     sentWhatsapp:
       "S'ha obert WhatsApp amb la teva sol·licitud ja escrita. Fins que no l'enviïs, no haurà arribat a HousySpace.",
     sentEmail:

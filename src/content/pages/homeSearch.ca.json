@@ -951,7 +951,7 @@
                 },
                 {
                   "name": "c_comercial",
-                  "label": "**Vull rebre comunicacions comercials de HousySpace sobre immobles, serveis i novetats, pels canals que triï a continuació.**Opcional. No marcar-ho no afecta la teva cerca.",
+                  "label": "**Vull rebre comunicacions comercials d'HousySpace sobre immobles, serveis i novetats, pels canals que triï a continuació.**Opcional. No marcar-ho no afecta la teva cerca.",
                   "required": false,
                   "full": false,
                   "type": "consent",
@@ -982,7 +982,7 @@
                 },
                 {
                   "name": "c_newsletter",
-                  "label": "**Vull subscriure'm al butlletí i als articles de HousySpace (mercat immobiliari de Barcelona, consells i novetats) per correu electrònic.**Opcional. No marcar-ho no afecta la teva cerca.",
+                  "label": "**Vull subscriure'm al butlletí i als articles d'HousySpace (mercat immobiliari de Barcelona, consells i novetats) per correu electrònic.**Opcional. No marcar-ho no afecta la teva cerca.",
                   "required": false,
                   "full": false,
                   "type": "consent",

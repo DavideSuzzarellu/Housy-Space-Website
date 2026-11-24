@@ -107,7 +107,7 @@
             },
             {
               "kind": "lead",
-              "text": "Deixa'ns les teves dades i un assessor de HousySpace et trucarà per valorar el teu habitatge en persona."
+              "text": "Deixa'ns les teves dades i un assessor d'HousySpace et trucarà per valorar el teu habitatge en persona."
             },
             {
               "kind": "form",
@@ -156,7 +156,7 @@
                 },
                 {
                   "name": "consent",
-                  "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud. (Text legal pendent d'aprovació.)",
+                  "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud.",
                   "required": true,
                   "full": true,
                   "type": "consent",
@@ -164,7 +164,7 @@
                 },
                 {
                   "name": "mkt",
-                  "label": "Vull rebre comunicacions comercials de HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
+                  "label": "Vull rebre comunicacions comercials d'HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
                   "required": false,
                   "full": true,
                   "type": "consent",
@@ -172,7 +172,7 @@
                 },
                 {
                   "name": "news",
-                  "label": "Vull subscriure'm al butlletí i als articles de HousySpace per correu electrònic. (Opcional.)",
+                  "label": "Vull subscriure'm al butlletí i als articles d'HousySpace per correu electrònic. (Opcional.)",
                   "required": false,
                   "full": true,
                   "type": "consent",
@@ -645,7 +645,7 @@
         {
           "kind": "faq",
           "q": "Puc vendre si el pis té hipoteca, està llogat o l'he heretat?",
-          "a": "Sí. Cada situació té els seus passos: cancel·lar la hipoteca a la signatura, tenir en compte els drets de l'inquilí o completar l'herència abans de vendre. Els estudiem al principi, amb el despatx d'advocats amb qui col·laborem, perquè no apareguin sorpreses a mitja operació."
+          "a": "Sí. Cada situació té els seus passos: cancel·lar la hipoteca a la signatura, tenir en compte els drets de l'arrendatari o completar l'herència abans de vendre. Els estudiem al principi, amb el despatx d'advocats amb qui col·laborem, perquè no apareguin sorpreses a mitja operació."
         },
         {
           "kind": "faq",

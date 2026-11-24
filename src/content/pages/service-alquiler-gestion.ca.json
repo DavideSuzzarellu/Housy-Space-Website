@@ -42,7 +42,7 @@
       "items": [
         {
           "kind": "big",
-          "text": "Llogar amb tranquil·litat comença per triar bé l'inquilí."
+          "text": "Llogar amb tranquil·litat comença per triar bé l'arrendatari."
         },
         {
           "kind": "p",
@@ -68,7 +68,7 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Et trobem un inquilí"
+              "text": "Et trobem un arrendatari"
             },
             {
               "kind": "p",
@@ -119,7 +119,7 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Atenció a l'inquilí i incidències"
+                  "text": "Atenció a l'arrendatari i incidències"
                 },
                 {
                   "title": "",
@@ -201,7 +201,7 @@
         },
         {
           "kind": "faq",
-          "q": "Com trieu l'inquilí?",
+          "q": "Com trieu l'arrendatari?",
           "a": "Revisem la seva solvència i la documentació, i et presentem els candidats que encaixen. Sempre decideixes tu."
         },
         {

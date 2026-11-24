@@ -84,7 +84,7 @@
     "fieldNameLabel": "Full name",
     "fieldEmailLabel": "Email address",
     "fieldMessageLabel": "Tell us what you need",
-    "fieldConsentLabel": "I have read and accept HousySpace's privacy policy and consent to the processing of my data to manage my request. (Legal text pending validation.)",
+    "fieldConsentLabel": "I have read and accept HousySpace's privacy policy and consent to the processing of my data to manage my request.",
     "submitLabel": "Send enquiry"
   }
 }

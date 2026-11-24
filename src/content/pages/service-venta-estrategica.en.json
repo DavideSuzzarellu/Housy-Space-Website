@@ -156,7 +156,7 @@
                 },
                 {
                   "name": "consent",
-                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending validation.)",
+                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request.",
                   "required": true,
                   "full": true,
                   "type": "consent",

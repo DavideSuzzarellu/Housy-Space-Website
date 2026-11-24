@@ -132,7 +132,7 @@
       "items": [
         {
           "kind": "valuator",
-          "title": "Valorador en línia de HousySpace"
+          "title": "Valorador en línia d'HousySpace"
         },
         {
           "kind": "p",
@@ -140,7 +140,7 @@
         },
         {
           "kind": "note",
-          "text": "L'estimació del valorador és orientativa; no és una taxació oficial. El valorador el proporciona un proveïdor extern, Lystos: les dades que hi introdueixis es tractaran segons la seva informació de privacitat i la de HousySpace (text legal pendent d'aprovació)."
+          "text": "L'estimació del valorador és orientativa; no és una taxació oficial. El valorador el proporciona un proveïdor extern, Lystos: les dades que hi introdueixis es tractaran segons la seva informació de privacitat i la d'HousySpace"
         }
       ]
     },
@@ -155,7 +155,7 @@
         },
         {
           "kind": "lead",
-          "text": "Deixa'ns les teves dades i un assessor de HousySpace et trucarà per valorar el teu habitatge en persona."
+          "text": "Deixa'ns les teves dades i un assessor d'HousySpace et trucarà per valorar el teu habitatge en persona."
         },
         {
           "kind": "form",
@@ -212,7 +212,7 @@
             },
             {
               "name": "mkt",
-              "label": "Vull rebre comunicacions comercials de HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
+              "label": "Vull rebre comunicacions comercials d'HousySpace sobre immobles, serveis i novetats, per correu electrònic, WhatsApp o telèfon. (Opcional.)",
               "required": false,
               "full": true,
               "type": "consent",
@@ -220,7 +220,7 @@
             },
             {
               "name": "news",
-              "label": "Vull subscriure'm al butlletí i als articles de HousySpace per correu electrònic. (Opcional.)",
+              "label": "Vull subscriure'm al butlletí i als articles d'HousySpace per correu electrònic. (Opcional.)",
               "required": false,
               "full": true,
               "type": "consent",

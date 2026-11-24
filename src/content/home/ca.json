@@ -84,7 +84,7 @@
     "fieldNameLabel": "Nom i cognoms",
     "fieldEmailLabel": "Correu electrònic",
     "fieldMessageLabel": "Explica'ns què necessites",
-    "fieldConsentLabel": "He llegit i accepto la política de privacitat de HousySpace i consento el tractament de les meves dades per gestionar la meva sol·licitud. (Text legal pendent de validació.)",
+    "fieldConsentLabel": "He llegit i accepto la política de privacitat de HousySpace i consento el tractament de les meves dades per gestionar la meva sol·licitud.",
     "submitLabel": "Enviar consulta"
   }
 }

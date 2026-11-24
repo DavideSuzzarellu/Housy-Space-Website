@@ -1,6 +1,6 @@
 {
   "title": "Blog · HousySpace",
-  "description": "Blog de HousySpace sobre barris, arquitectura, mercat i normativa immobiliària a Barcelona.",
+  "description": "Blog d'HousySpace sobre barris, arquitectura, mercat i normativa immobiliària a Barcelona.",
   "head": {
     "heading": "El *Blog*",
     "photo": false,
@@ -31,7 +31,7 @@
         },
         {
           "kind": "p",
-          "text": "Mercat immobiliari de Barcelona, consells per comprar, vendre i llogar, i novetats de HousySpace."
+          "text": "Mercat immobiliari de Barcelona, consells per comprar, vendre i llogar, i novetats d'HousySpace."
         },
         {
           "kind": "form",
@@ -52,7 +52,7 @@
             },
             {
               "name": "consent",
-              "label": "**Vull rebre el butlletí i els articles de HousySpace per correu electrònic.** He llegit la [política de privacitat](route:privacy).",
+              "label": "**Vull rebre el butlletí i els articles d'HousySpace per correu electrònic.** He llegit la [política de privacitat](route:privacy).",
               "required": true,
               "full": false,
               "type": "consent",

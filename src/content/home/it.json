@@ -84,7 +84,7 @@
     "fieldNameLabel": "Nome e cognome",
     "fieldEmailLabel": "Indirizzo e-mail",
     "fieldMessageLabel": "Raccontaci di cosa hai bisogno",
-    "fieldConsentLabel": "Ho letto e accetto l'informativa sulla privacy di HousySpace e acconsento al trattamento dei miei dati per gestire la mia richiesta. (Testo legale in attesa di approvazione.)",
+    "fieldConsentLabel": "Ho letto e accetto l'informativa sulla privacy di HousySpace e acconsento al trattamento dei miei dati per gestire la mia richiesta.",
     "submitLabel": "Invia richiesta"
   }
 }
