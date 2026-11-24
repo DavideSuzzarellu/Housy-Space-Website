@@ -84,7 +84,7 @@
                 },
                 {
                   "title": "",
-                  "text": "Deposit contract and purchase agreement"
+                  "text": "Deposit contract (arras) and sale and purchase contract"
                 },
                 {
                   "title": "",
@@ -177,7 +177,7 @@
                 },
                 {
                   "title": "",
-                  "text": "Holding companies"
+                  "text": "Asset-holding companies"
                 },
                 {
                   "title": "",
@@ -227,7 +227,7 @@
               "items": [
                 {
                   "title": "Municipal capital gains tax (plusvalía)",
-                  "text": "Municipal Council."
+                  "text": "City Council."
                 },
                 {
                   "title": "Income tax: capital gain (IRPF)",
@@ -285,7 +285,7 @@
                 },
                 {
                   "title": "Municipal capital gains tax (plusvalía)",
-                  "text": "Municipal Council."
+                  "text": "City Council."
                 }
               ]
             }
@@ -308,7 +308,7 @@
               "items": [
                 {
                   "title": "Municipal property tax (IBI)",
-                  "text": "Municipal Council. Every year."
+                  "text": "City Council. Every year."
                 },
                 {
                   "title": "Income tax: rental income (IRPF)",
@@ -396,7 +396,7 @@
           "items": [
             {
               "title": "ADV Advocats",
-              "text": "Law firm in Barcelona: inheritances, income and taxes, civil, labour and business law.",
+              "text": "Law firm in Barcelona: inheritance, income tax and other taxes, civil, labour and company law.",
               "kicker": "Legal and tax firm",
               "href": "https://advadvocats.cat/es/",
               "cta": "Visit advadvocats.cat",
@@ -404,7 +404,7 @@
             },
             {
               "title": "Asesoría Edac",
-              "text": "Tax, accounting and payroll advisory in Barcelona: taxes, returns and dealings with the tax authorities.",
+              "text": "Tax, accounting and labour advisory in Barcelona: taxes, returns and dealings with the tax authorities.",
               "kicker": "Tax advisory",
               "href": "https://www.serviciosdac.com/",
               "cta": "Visit serviciosdac.com",
