@@ -32,7 +32,7 @@ const crumbs = [
     <Container>
       <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-7" />
       <p class="flex flex-wrap gap-x-3.5 text-[0.6875rem] tracking-[0.14em]">
-        <span class="text-accent">{post.data.category}</span>
+        <span class="text-accent">{dictionary.blog.categories[post.data.category]}</span>
         <time datetime={post.data.date.toISOString()} class="text-muted">
           {formatDate(post.data.date, locale)}
         </time>

@@ -305,6 +305,36 @@ const ca = {
     all: "Totes",
     filterLabel: "Filtra per categoria",
     back: "Tornar al blog",
+    categories: {
+      valoracion: "Valoració",
+      venta: "Venda",
+      "gastos-impuestos": "Despeses i impostos",
+      herencias: "Herències",
+      "contratos-documentacion": "Contractes i documentació",
+      "mercado-barcelona": "Mercat de Barcelona",
+    },
+    updated: "Actualitzat el {date}",
+    readingTime: "{minutes} min de lectura",
+    tocTitle: "En aquest article",
+    sourcesTitle: "Fonts",
+    sourceChecked: "consultada el {date}",
+    cta: {
+      valoracion: {
+        heading: "Quant val el teu habitatge?",
+        text: "Explica'ns les dades del teu pis i t'ajudem a conèixer-ne el valor de mercat.",
+        button: "Demanar una valoració",
+      },
+      venta: {
+        heading: "Vols vendre el teu habitatge?",
+        text: "T'acompanyem en tota l'operació, de la valoració a la signatura.",
+        button: "Veure com venem",
+      },
+      consulta: {
+        heading: "Tens dubtes sobre el teu cas?",
+        text: "Explica'ns la teva situació i t'orientem sense compromís.",
+        button: "Enviar una consulta",
+      },
+    },
   },
   zones: {
     saleLabel: "Preu de compravenda",

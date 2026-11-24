@@ -306,6 +306,36 @@ const it = {
     all: "Tutte",
     filterLabel: "Filtra per categoria",
     back: "Torna al blog",
+    categories: {
+      valoracion: "Valutazione",
+      venta: "Vendita",
+      "gastos-impuestos": "Spese e imposte",
+      herencias: "Eredità",
+      "contratos-documentacion": "Contratti e documentazione",
+      "mercado-barcelona": "Mercato di Barcellona",
+    },
+    updated: "Aggiornato il {date}",
+    readingTime: "{minutes} min di lettura",
+    tocTitle: "In questo articolo",
+    sourcesTitle: "Fonti",
+    sourceChecked: "consultata il {date}",
+    cta: {
+      valoracion: {
+        heading: "Quanto vale la tua casa?",
+        text: "Raccontaci i dati del tuo appartamento e ti aiutiamo a conoscerne il valore di mercato.",
+        button: "Richiedi una valutazione",
+      },
+      venta: {
+        heading: "Vuoi vendere la tua casa?",
+        text: "Ti accompagniamo in tutta l'operazione, dalla valutazione al rogito.",
+        button: "Scopri come vendiamo",
+      },
+      consulta: {
+        heading: "Hai dubbi sul tuo caso?",
+        text: "Raccontaci la tua situazione e ti orientiamo senza impegno.",
+        button: "Invia una richiesta",
+      },
+    },
   },
   zones: {
     saleLabel: "Prezzo di vendita",

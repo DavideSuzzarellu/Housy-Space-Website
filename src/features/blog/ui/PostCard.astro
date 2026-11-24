@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import type { BlogPost } from "@/features/blog/application/posts";
+import { getDictionary } from "@/shared/i18n";
 import { formatDate } from "@/shared/lib/format";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
@@ -32,7 +33,7 @@ const { post, locale } = Astro.props;
     />
   </div>
   <p class="mt-4 flex flex-wrap gap-x-3.5 gap-y-1 text-[0.6875rem] tracking-[0.14em]">
-    <span class="text-accent">{post.data.category}</span>
+    <span class="text-accent">{getDictionary(locale).blog.categories[post.data.category]}</span>
     <time datetime={post.data.date.toISOString()} class="text-muted">
       {formatDate(post.data.date, locale)}
     </time>

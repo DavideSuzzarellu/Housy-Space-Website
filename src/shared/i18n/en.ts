@@ -304,6 +304,36 @@ const en = {
     all: "All",
     filterLabel: "Filter by category",
     back: "Back to the blog",
+    categories: {
+      valoracion: "Valuation",
+      venta: "Selling",
+      "gastos-impuestos": "Costs and taxes",
+      herencias: "Inheritance",
+      "contratos-documentacion": "Contracts and paperwork",
+      "mercado-barcelona": "Barcelona market",
+    },
+    updated: "Updated {date}",
+    readingTime: "{minutes} min read",
+    tocTitle: "In this article",
+    sourcesTitle: "Sources",
+    sourceChecked: "checked on {date}",
+    cta: {
+      valoracion: {
+        heading: "How much is your home worth?",
+        text: "Tell us about your flat and we will help you find out its market value.",
+        button: "Request a valuation",
+      },
+      venta: {
+        heading: "Thinking of selling your home?",
+        text: "We guide you through the whole operation, from valuation to signing.",
+        button: "See how we sell",
+      },
+      consulta: {
+        heading: "Questions about your situation?",
+        text: "Tell us about your case and we will point you in the right direction, no strings attached.",
+        button: "Send an enquiry",
+      },
+    },
   },
   zones: {
     saleLabel: "Sale price",

@@ -195,13 +195,23 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      fields: [title, category, language, date, draft]
+      fields: [articleId, status, category, language, date]
       sort: [date, title]
       default: { sort: date, order: desc }
     fields:
-      - { name: title, label: Titular, type: string, required: true }
-      - { name: description, label: Entradilla (también para Google), type: text, required: true }
-      - { name: date, label: Fecha de publicación, type: date, required: true }
+      - { name: title, label: Titular (H1), type: string, required: true }
+      - {
+          name: description,
+          label: Meta descripción (140-155 caracteres si no es borrador),
+          type: text,
+          required: true,
+        }
+      - {
+          name: date,
+          label: Fecha de publicación (una fecha futura programa el artículo),
+          type: date,
+          required: true,
+        }
       - {
           name: category,
           label: Categoría,
@@ -209,7 +219,15 @@ content:
           required: true,
           options:
             {
-              values: [Actualidad y normativa, Consejos, Mercado, Reformas y arquitectura, Barrios],
+              values:
+                [
+                  valoracion,
+                  venta,
+                  gastos-impuestos,
+                  herencias,
+                  contratos-documentacion,
+                  mercado-barcelona,
+                ],
             },
         }
       - {
@@ -233,7 +251,67 @@ content:
           type: string,
           required: true,
         }
-      - { name: draft, label: Borrador (no se publica), type: boolean, default: false }
+      - { name: author, label: Autor (vacío = HousySpace), type: string }
+      - { name: articleId, label: Identificador (HS-AAAA-MM-NN), type: string, required: true }
+      - {
+          name: status,
+          label: Estado editorial (solo "publicado" sale en la web),
+          type: select,
+          required: true,
+          default: borrador,
+          options: { values: [borrador, revisado, aprobado, publicado] },
+        }
+      - { name: keyword, label: Palabra clave principal, type: string, required: true }
+      - {
+          name: intent,
+          label: Intención de búsqueda,
+          type: select,
+          required: true,
+          options: { values: [informacional, comercial, transaccional] },
+        }
+      - { name: secondaryKeywords, label: Palabras clave secundarias, type: string, list: true }
+      - {
+          name: cluster,
+          label: "Grupo temático (A valoración y precio, B gastos e impuestos, C proceso de venta, D situaciones especiales)",
+          type: select,
+          required: true,
+          options: { values: [A, B, C, D] },
+        }
+      - { name: pillar, label: Artículo pilar del grupo, type: boolean, default: false }
+      - {
+          name: cta,
+          label: Objetivo comercial (adónde lleva la llamada a la acción),
+          type: select,
+          required: true,
+          options: { values: [valoracion, venta, consulta] },
+        }
+      - {
+          name: legalFiscal,
+          label: Contiene afirmaciones legales,
+          fiscales o económicas,
+          type: boolean,
+          required: true,
+          default: false,
+        }
+      - {
+          name: legalReview,
+          label: Revisión legal-fiscal,
+          type: select,
+          required: true,
+          default: no_aplica,
+          options: { values: [no_aplica, pendiente, aprobada] },
+        }
+      - name: sources
+        label: Fuentes oficiales (obligatorias si es legal-fiscal)
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nombre de la fuente, type: string, required: true }
+          - { name: url, label: Enlace (https), type: string, required: true }
+          - { name: checkedAt, label: Fecha de comprobación, type: date, required: true }
+      - { name: reviewedAt, label: Fecha de la revisión editorial, type: date }
+      - { name: updatedAt, label: Fecha de última actualización real, type: date }
+      - { name: seoTitle, label: Título SEO (máx. 60 caracteres), type: string }
       - { name: body, label: Texto, type: rich-text, required: true, options: { media: images } }
   - name: testimonials
     label: Reseñas de clientes

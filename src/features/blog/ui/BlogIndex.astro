@@ -1,6 +1,6 @@
 ---
 import type { BlogPost } from "@/features/blog/application/posts";
-import { BLOG_CATEGORIES } from "@/features/blog/infrastructure/blogSchema";
+import { BLOG_CATEGORIES } from "@/features/blog/domain/articleModel";
 import type { PageContent } from "@/features/pages/application/pages";
 import { groupItems } from "@/features/pages/application/pages";
 import PageItems from "@/features/pages/ui/PageItems.astro";
@@ -46,7 +46,7 @@ const CHIP =
         </button>
         {categories.map((category) => (
           <button type="button" data-filter={category} aria-pressed="false" class={CHIP}>
-            {category}
+            {t.blog.categories[category]}
           </button>
         ))}
       </div>

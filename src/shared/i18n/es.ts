@@ -311,6 +311,36 @@ const es = {
     all: "Todas",
     filterLabel: "Filtrar por categoría",
     back: "Volver al blog",
+    categories: {
+      valoracion: "Valoración",
+      venta: "Venta",
+      "gastos-impuestos": "Gastos e impuestos",
+      herencias: "Herencias",
+      "contratos-documentacion": "Contratos y documentación",
+      "mercado-barcelona": "Mercado de Barcelona",
+    },
+    updated: "Actualizado el {date}",
+    readingTime: "{minutes} min de lectura",
+    tocTitle: "En este artículo",
+    sourcesTitle: "Fuentes",
+    sourceChecked: "consultada el {date}",
+    cta: {
+      valoracion: {
+        heading: "¿Cuánto vale tu vivienda?",
+        text: "Cuéntanos los datos de tu piso y te ayudamos a conocer su valor de mercado.",
+        button: "Pedir una valoración",
+      },
+      venta: {
+        heading: "¿Quieres vender tu vivienda?",
+        text: "Te acompañamos en toda la operación, de la valoración a la firma.",
+        button: "Ver cómo vendemos",
+      },
+      consulta: {
+        heading: "¿Tienes dudas sobre tu caso?",
+        text: "Cuéntanos tu situación y te orientamos sin compromiso.",
+        button: "Enviar consulta",
+      },
+    },
   },
   zones: {
     saleLabel: "Precio de compraventa",
