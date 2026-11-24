@@ -6,6 +6,7 @@
  * `list`: label over value with a top rule (official data of barrios).
  * `boxed`: bordered tiles on a 1 px line grid, 2 columns on phones and 4 from 760 px (district data).
  * `plain`: ruleless 12 px row of the catalog card, "**148** m²   **3** habitaciones".
+ * `compact`: 10.5 px row of the home card (reference `.pf-f`).
  */
 export interface Fact {
   readonly value: string;
@@ -14,7 +15,7 @@ export interface Fact {
 
 interface Props {
   facts: readonly Fact[];
-  variant?: "inline" | "grid" | "list" | "plain" | "boxed";
+  variant?: "inline" | "grid" | "list" | "plain" | "boxed" | "compact";
   tone?: "dark" | "light";
   class?: string;
 }
@@ -39,6 +40,14 @@ const tile = TILE_TONES[tone];
 {facts.length > 0 &&
   (variant === "plain" ? (
     <ul class:list={["flex flex-wrap gap-x-5.5 gap-y-1 text-xs text-muted", className]}>
+      {facts.map((fact) => (
+        <li>
+          <b class="font-medium text-fg">{fact.value}</b> {fact.label}
+        </li>
+      ))}
+    </ul>
+  ) : variant === "compact" ? (
+    <ul class:list={["flex flex-wrap gap-x-3 gap-y-1 text-[0.65625rem] text-muted", className]}>
       {facts.map((fact) => (
         <li>
           <b class="font-medium text-fg">{fact.value}</b> {fact.label}

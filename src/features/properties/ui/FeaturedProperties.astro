@@ -5,8 +5,8 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import Button from "@/shared/ui/atoms/Button.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
 import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
-import Section from "@/shared/ui/molecules/Section.astro";
 import PropertyGrid from "./PropertyGrid.astro";
 
 /** Featured properties: real Mobilia listings (`portadaWeb`, else latest). */
@@ -20,26 +20,23 @@ const { locale, properties, content } = Astro.props;
 const copy = getDictionary(locale).home.featured;
 ---
 
-<Section
+<section
   id="propiedades"
-  labelledBy="featured-heading"
-  name="featured"
-  surface="stone"
-  class="defer-render"
+  aria-labelledby="featured-heading"
+  data-section="featured"
+  class="defer-render surface-stone bg-canvas py-[clamp(2.375rem,6.2vh,3.625rem)]"
 >
-  <SectionHeading
-    id="featured-heading"
-    heading={content.heading}
-    class="mb-[clamp(1.25rem,2.4vw,2rem)]"
-  />
-  {properties.length > 0 ? (
-    <PropertyGrid locale={locale} properties={properties} ctaLabel={copy.cardCta} />
-  ) : (
-    <p class="border-l-2 border-accent py-1 pl-3 text-sm text-muted">{copy.empty}</p>
-  )}
-  <div class="mt-10.5 flex justify-center">
-    <Button href={getLocalizedPath("sale", locale)} variant="solid" size="lg" arrow>
-      {content.ctaLabel}
-    </Button>
-  </div>
-</Section>
+  <Container>
+    <SectionHeading id="featured-heading" heading={content.heading} size="home" class="mb-5" />
+    {properties.length > 0 ? (
+      <PropertyGrid locale={locale} properties={properties} ctaLabel={copy.cardCta} />
+    ) : (
+      <p class="border-l-2 border-accent py-1 pl-3 text-sm text-muted">{copy.empty}</p>
+    )}
+    <div class="mt-[clamp(1.25rem,3vh,1.875rem)] flex justify-center">
+      <Button href={getLocalizedPath("sale", locale)} variant="solid" size="big" arrow>
+        {content.ctaLabel}
+      </Button>
+    </div>
+  </Container>
+</section>

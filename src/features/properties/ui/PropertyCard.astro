@@ -167,7 +167,7 @@ if (property.bathrooms !== undefined && property.bathrooms > 0) {
     class="group flex flex-col bg-card text-inherit no-underline transition duration-400 hover:-translate-y-1 hover:bg-card-hover focus-visible:bg-card-hover"
   >
     <div
-      class="relative aspect-4/3 overflow-hidden bg-bg-deep"
+      class="relative aspect-4/3 overflow-hidden bg-bg-deep min-[900px]:aspect-16/10"
       transition:name={names.image}
       transition:animate={morph}
       style={`view-transition-class: ${PROPERTY_IMAGE_TRANSITION_CLASS}`}
@@ -180,7 +180,7 @@ if (property.bathrooms !== undefined && property.bathrooms > 0) {
           width={800}
           height={600}
           widths={[480, 800]}
-          sizes="(min-width: 1000px) 22rem, (min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 1000px) 22rem, (min-width: 700px) 50vw, 84vw"
           priority={priority}
           class="block size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105 group-focus-visible:scale-105"
         />
@@ -190,34 +190,34 @@ if (property.bathrooms !== undefined && property.bathrooms > 0) {
         {property.status === "reserved" && <Badge tone="accent">{t.reserved}</Badge>}
       </div>
     </div>
-    <div class="flex flex-1 flex-col gap-1.5 px-6.5 pt-6 pb-7">
-      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        {location !== undefined && (
-          <p class="text-[0.6875rem] tracking-[0.14em] text-accent">{location}</p>
-        )}
-        {price !== undefined && (
-          <div transition:name={names.price} transition:animate={morph}>
-            <PriceTag locale={locale} price={price} perMonth={operation === "rent"} />
-          </div>
-        )}
-      </div>
+    <div class="flex flex-1 flex-col gap-1 px-5.5 pt-5.5 pb-6">
+      {location !== undefined && (
+        <p class="text-[0.6875rem] tracking-[0.14em] text-accent">{location}</p>
+      )}
       <h3
-        class="mt-1 mb-1.5 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12] group-hover:text-teal"
+        class="mt-1 mb-4.5 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12] group-hover:text-teal"
         transition:name={names.title}
         transition:animate={morph}
       >
         {title}
       </h3>
-      <FactList facts={facts} class="mt-2.5 mb-2" />
+      <div class="flex flex-wrap items-center gap-x-4.5 gap-y-2 border-t border-line pt-4">
+        <FactList facts={facts} variant="compact" />
+        {price !== undefined && (
+          <div class="ml-auto" transition:name={names.price} transition:animate={morph}>
+            <PriceTag locale={locale} price={price} perMonth={operation === "rent"} />
+          </div>
+        )}
+      </div>
       {property.energyRating !== undefined && (
-        <p class="text-xs text-muted">
+        <p class="text-[0.65625rem] text-muted">
           {t.energyRating}:{" "}
           <span class="font-medium text-fg">
             {presentEnergyRating(property.energyRating, locale)}
           </span>
         </p>
       )}
-      <ArrowLabel class="mt-auto">{ctaLabel}</ArrowLabel>
+      <ArrowLabel class="mt-auto pt-4">{ctaLabel}</ArrowLabel>
     </div>
   </a>
 )}

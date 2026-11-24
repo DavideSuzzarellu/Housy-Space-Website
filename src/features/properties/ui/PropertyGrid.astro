@@ -25,11 +25,18 @@ const { locale, properties, ctaLabel, operation, variant = "feature" } = Astro.p
     "grid",
     variant === "catalog"
       ? "gap-7 min-[700px]:grid-cols-2 min-[1000px]:grid-cols-3"
-      : "gap-6.5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7.5",
+      : "gap-6.5 min-[640px]:grid-cols-2 min-[1000px]:grid-cols-3 min-[1000px]:gap-7.5 max-[699px]:-mx-5.5 max-[699px]:flex max-[699px]:snap-x max-[699px]:snap-mandatory max-[699px]:gap-3.5 max-[699px]:overflow-x-auto max-[699px]:overscroll-x-contain max-[699px]:scroll-px-5.5 max-[699px]:px-5.5 max-[699px]:pt-1 max-[699px]:pb-2.5 max-[699px]:[scrollbar-width:none] max-[699px]:[&::-webkit-scrollbar]:hidden",
   ]}
 >
   {properties.map((property, index) => (
-    <li data-reveal style={`--reveal-delay: ${index * 0.1}s`} class="flex">
+    <li
+      data-reveal
+      style={`--reveal-delay: ${index * 0.1}s`}
+      class:list={[
+        "flex",
+        variant !== "catalog" && "max-[699px]:w-[84%] max-[699px]:flex-none max-[699px]:snap-start",
+      ]}
+    >
       <PropertyCard
         property={property}
         locale={locale}
