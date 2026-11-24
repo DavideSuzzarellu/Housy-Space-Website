@@ -30,15 +30,15 @@
           "items": [
             {
               "title": "",
-              "text": "Popolazione e densità per quartiere (Padró municipal, Open Data BCN): 73 su 73 quartieri."
+              "text": "Popolazione e densità per quartiere (anagrafe comunale o Padró, Open Data BCN): 73 su 73 quartieri."
             },
             {
               "title": "",
-              "text": "Prezzo medio di compravendita (Portal de Dades del Ajuntament, Consejo General del Notariado): 73 su 73 quartieri."
+              "text": "Prezzo medio di compravendita (Portal de Dades dell'Ajuntament, Consiglio Generale del Notariato): 73 su 73 quartieri."
             },
             {
               "title": "",
-              "text": "Affitto medio (Portal de Dades del Ajuntament, depositi cauzionali INCASÒL): 73 su 73 quartieri."
+              "text": "Affitto medio (Portal de Dades dell'Ajuntament, depositi cauzionali INCASÒL): 73 su 73 quartieri."
             }
           ]
         },
@@ -48,18 +48,18 @@
         },
         {
           "kind": "table",
-          "head": ["Fonte", "Ultima esecuzione", "Data", "Ultima corretta", "Dettaglio"],
+          "head": ["Fonte", "Ultimo controllo", "Data", "Ultimo riuscito", "Dettaglio"],
           "rows": [
             [
               "Ajuntament de Barcelona · Open Data BCN (API CKAN)",
-              "nessuna esecuzione ancora",
+              "nessun controllo ancora",
               "—",
               "—",
               ""
             ],
             [
               "Ajuntament de Barcelona · CartoBCN (confini amministrativi)",
-              "nessuna esecuzione ancora",
+              "nessun controllo ancora",
               "—",
               "—",
               ""
@@ -91,15 +91,15 @@
             },
             {
               "title": "",
-              "text": "Prezzi: Ajuntament de Barcelona · Portal de Dades. Compravendita: prezzo medio per m² delle case trasferite secondo il Consejo General del Notariado; affitto: canone medio mensile dei contratti secondo i depositi cauzionali dell'INCASÒL. Cifra principale: ultimo anno completo (2025); nei grafici, l'anno in corso appare come provvisorio."
+              "text": "Prezzi: Ajuntament de Barcelona · Portal de Dades. Compravendita: prezzo medio per m² delle case trasferite secondo il Consiglio Generale del Notariato; affitto: canone medio mensile dei contratti secondo i depositi cauzionali dell'INCASÒL. Cifra principale: ultimo anno completo (2025); nei grafici, l'anno in corso appare come provvisorio."
             },
             {
               "title": "",
-              "text": "Densità: Padró municipal 2026 e superficie ufficiale di CartoBCN."
+              "text": "Densità: anagrafe comunale (Padró) 2026 e superficie ufficiale di CartoBCN."
             },
             {
               "title": "",
-              "text": "Immobili intermediati (Immobili): la posizione sulla mappa è approssimativa e non viene mostrato il numero civico. Il prezzo è quello dell'annuncio pubblicato, non il prezzo finale di vendita, e le cifre sommano quei prezzi di annuncio. La data è il mese in cui la casa ha smesso di essere pubblicizzata."
+              "text": "Immobili intermediati: la posizione sulla mappa è approssimativa e non viene mostrato il numero civico. Il prezzo è quello dell'annuncio pubblicato, non il prezzo finale di vendita, e le cifre sommano quei prezzi di annuncio. La data è il mese in cui la casa è stata tolta dagli annunci."
             }
           ]
         }
