@@ -1,39 +1,39 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "La parte alta de la ciudad, entre Collserola y la Diagonal: antiguas villas, colegios y calles residenciales.",
+  "translated": true,
+  "lead": "The upper part of the city, between Collserola and the Diagonal: old villas, schools and residential streets.",
   "history": [
-    "Sarrià-Sant Gervasi une dos antiguos municipios, Sant Gervasi de Cassoles, anexionado a Barcelona en 1897, y Sarrià, en 1921. Sus seis barrios suben desde la Diagonal hasta la sierra de Collserola y el Tibidabo, y combinan núcleos con historia, como el de Sarrià, con calles de edificios señoriales y casas con jardín.",
-    "Es un distrito de ambiente residencial, con muchos colegios, parques y acceso directo a Collserola. De un barrio a otro cambia mucho el paisaje: la vida de pueblo de Sarrià, el comercio y el ocio de Sant Gervasi-Galvany, las torres de les Tres Torres y la Bonanova, los pasajes del Putxet y el monte de Vallvidrera.",
-    "Entre sus 6 barrios, el precio medio de compraventa va de 3.766 €/m² en Vallvidrera, el Tibidabo i les Planes a 6.294 €/m² en Sarrià, y el alquiler medio, de 1.202 €/mes en el Putxet i el Farró a 2.014 €/mes en les Tres Torres.",
-    "Hay mucha demanda de pisos grandes y de casas, y cada calle tiene un precio distinto, por lo que conviene valorar con rigor cada inmueble."
+    "Sarrià-Sant Gervasi joins two former municipalities: Sant Gervasi de Cassoles, annexed to Barcelona in 1897, and Sarrià, in 1921. Its six neighbourhoods climb from the Diagonal to the Collserola range and Tibidabo, and combine historic centres, such as Sarrià, with streets of stately buildings and houses with gardens.",
+    "It is a district with a residential feel, with many schools, parks and direct access to Collserola. The landscape changes a lot from one neighbourhood to the next: the village life of Sarrià, the shops and leisure of Sant Gervasi-Galvany, the detached houses of Les Tres Torres and La Bonanova, the passageways of El Putxet and the hillside of Vallvidrera.",
+    "Across its 6 neighbourhoods, the average sale price ranges from 3,766 €/m² in Vallvidrera, el Tibidabo i les Planes to 6,294 €/m² in Sarrià, and the average rent from 1,202 €/month in El Putxet i el Farró to 2,014 €/month in Les Tres Torres.",
+    "There is strong demand for large flats and houses, and every street has a different price, so each property needs careful assessment."
   ],
-  "summary": "Sarrià-Sant Gervasi tiene 152.943 habitantes en 19,92 km² y 6 barrios. Es el distrito con el precio de compraventa más alto de Barcelona: 5.635 €/m² en 2025. El alquiler medio, 1.604 €/mes.",
+  "summary": "Sarrià-Sant Gervasi has 152,943 inhabitants in 19.92 km² and 6 neighbourhoods. It is the district with the highest sale price in Barcelona: 5,635 €/m² in 2025. The average rent is 1,604 €/month.",
   "landmarks": [
     {
       "name": "Tibidabo",
       "where": "Vallvidrera, el Tibidabo i les Planes",
-      "text": "La cima de Collserola, con el templo del Sagrat Cor y el parque de atracciones."
+      "text": "The summit of Collserola, with the Sagrat Cor church and the amusement park."
     },
     {
       "name": "Torre de Collserola",
       "where": "Vallvidrera, el Tibidabo i les Planes",
-      "text": "La torre de comunicaciones de Norman Foster, con mirador."
+      "text": "Norman Foster's communications tower, with a viewing platform."
     },
     {
       "name": "Núcleo antiguo de Sarrià",
       "where": "Sarrià",
-      "text": "La plaza y la calle Major de Sarrià, el centro del antiguo pueblo."
+      "text": "The square and Carrer Major de Sarrià, the heart of the old village."
     },
     {
       "name": "CosmoCaixa",
       "where": "Sant Gervasi-la Bonanova",
-      "text": "El museo de la ciencia de la Fundación \"la Caixa\"."
+      "text": "The \"la Caixa\" Foundation's science museum."
     },
     {
       "name": "Turó Parc",
       "where": "Sant Gervasi-Galvany",
-      "text": "Jardín de los años treinta, de Nicolau Maria Rubió i Tudurí."
+      "text": "A 1930s garden by Nicolau Maria Rubió i Tudurí."
     }
   ]
 }
