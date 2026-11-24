@@ -4,51 +4,172 @@
   "head": {
     "heading": "Compravenda *i intermediació immobiliària*",
     "photo": false,
+    "wide": true,
     "illustration": {
       "src": "../../assets/servicios/ill-compraventa-1000.webp",
-      "alt": "Il·lustració del servei: Dos volums crema que encaixen",
+      "alt": "Il·lustració del servei: dos volums crema que encaixen entre si",
       "scale": 0.737
     },
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/facade-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Servei"
+        "text": "Vendre el teu habitatge a Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Valoració, preparació, comercialització, negociació i acompanyament fins a la signatura."
+        "text": "Estudiem el teu habitatge i el seu mercat, definim el preu i l'estratègia, i un mateix assessor porta la venda fins a la signatura."
       }
     ]
   },
   "sections": [
     {
-      "layout": "introLined",
+      "id": "antes",
+      "layout": "salePoints",
       "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "big",
-          "text": "Vendre un habitatge és molt més que publicar-lo."
+          "kind": "tag",
+          "text": "Abans de sortir al mercat"
         },
         {
-          "kind": "p",
-          "text": "Abans de posar el teu habitatge a la venda, t'assessorem amb honestedat sobre si és el moment adequat, com fer-ho i quina estratègia seguir."
+          "kind": "h2",
+          "text": "Una bona venda comença *molt abans de publicar l'anunci*"
         },
         {
-          "kind": "p",
-          "text": "Estudiem el teu immoble, la seva documentació i el mercat perquè puguis prendre decisions amb seguretat i evitar sorpreses."
-        },
-        {
-          "kind": "p",
-          "text": "Tot comença amb un [informe de valoració](service:valoracion), on analitzem el valor de mercat del teu habitatge, recomanem un preu de sortida i definim la millor estratègia de venda."
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Un consell honest",
+              "text": "Abans de posar el teu habitatge a la venda, t'assessorem amb honestedat sobre si és el moment adequat, com fer-ho i quina estratègia seguir."
+            },
+            {
+              "title": "Un estudi previ",
+              "text": "Estudiem el teu immoble, la seva documentació i el mercat de la teva zona perquè decideixis amb informació i amb menys imprevistos pel camí."
+            },
+            {
+              "title": "Un informe de valoració",
+              "text": "Tot comença amb un [informe de valoració](service:valoracion), on analitzem el valor de mercat del teu habitatge, recomanem un preu de sortida i definim la millor estratègia de venda."
+            }
+          ]
         }
       ]
     },
     {
+      "id": "valoracion",
+      "layout": "valOptions",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Valoració"
+        },
+        {
+          "kind": "h2",
+          "text": "Quant val *el teu habitatge?*"
+        },
+        {
+          "kind": "p",
+          "text": "Demana una estimació orientativa en línia, al moment, o una valoració amb un assessor que estudia el teu habitatge a fons."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "kicker": "Al moment",
+              "title": "Valoració en línia",
+              "text": "Introdueix les dades del teu habitatge al nostre valorador i rep una estimació orientativa del seu valor.",
+              "cta": "Valorar en línia ara",
+              "href": "route:valuation"
+            },
+            {
+              "kicker": "Amb visita",
+              "title": "Valoració amb un assessor",
+              "text": "Visitem el teu habitatge, revisem la seva documentació i estudiem el mercat del teu barri per donar-te un informe complet.",
+              "cta": "Demanar valoració amb un assessor",
+              "href": "route:contact"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Si tries l'assessor, et truquem per concertar la visita, veiem l'habitatge i la seva documentació i et lliurem l'informe comentat. Pots demanar-la encara que estiguis decidint; si encara no saps si vendre, comença per una [consulta d'orientació](route:services#asesoramiento)."
+        }
+      ]
+    },
+    {
+      "id": "precio",
+      "layout": "salePrice",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Preu de sortida"
+        },
+        {
+          "kind": "h2",
+          "text": "Com fixem *el preu de sortida*"
+        },
+        {
+          "kind": "lead",
+          "text": "El preu no surt d'un portal ni d'una xifra per metre quadrat."
+        },
+        {
+          "kind": "p",
+          "text": "Te'l expliquem abans de publicar res: valor de mercat, preu aconsellat de sortida i l'oferta amb què competirà el teu habitatge."
+        },
+        {
+          "kind": "p",
+          "text": "Les operacions que hem intermediat són al mapa, districte per districte: [veure immobles intermediats](route:sale#pisos-vendidos)."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "El fixem amb un informe que reuneix"
+            },
+            {
+              "kind": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Habitatges similars venuts i en venda a la zona"
+                },
+                {
+                  "title": "",
+                  "text": "Les dades de compravendes del barri"
+                },
+                {
+                  "title": "",
+                  "text": "La situació cadastral i urbanística"
+                },
+                {
+                  "title": "",
+                  "text": "L'estat real de l'habitatge i de la finca"
+                }
+              ]
+            },
+            {
+              "kind": "tag",
+              "text": "El resultat"
+            },
+            {
+              "kind": "p",
+              "text": "Valor de mercat i preu aconsellat de sortida"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pasos",
+      "layout": "salePhases",
       "surface": "stone",
       "band": false,
       "items": [
@@ -58,49 +179,182 @@
         },
         {
           "kind": "h2",
-          "text": "Vuit passos, un sol assessor"
+          "text": "Cada pas importa. *Nosaltres ens en ocupem*"
         },
         {
-          "kind": "steps",
+          "kind": "lead",
+          "text": "Vuit passos en tres fases i un sol assessor de principi a fi. Tu decideixes; de la resta, ens n'encarreguem nosaltres."
+        },
+        {
+          "kind": "card",
           "items": [
             {
-              "title": "Valoració",
-              "text": "Estudiem l'immoble, el barri i el mercat per fixar un preu just i competitiu."
+              "kind": "tag",
+              "text": "Fase 1"
             },
             {
-              "title": "Preparació",
-              "text": "Reunim i revisem tota la documentació necessària per vendre."
+              "kind": "h3",
+              "text": "Abans de publicar"
             },
             {
-              "title": "Publicació",
-              "text": "Presentem l'habitatge al nostre web i als principals portals immobiliaris."
+              "kind": "p",
+              "text": "Preu i documentació, a punt abans de sortir al mercat."
             },
             {
-              "title": "Seguiment",
-              "text": "Cada dues setmanes t'informem de les gestions i de com respon el mercat."
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Valoració",
+                  "text": "Estudiem l'immoble, el barri i el mercat, amb estudi de comparables, per fixar el preu de mercat i un preu de sortida just i competitiu."
+                },
+                {
+                  "title": "Preparació",
+                  "text": "Reunim i revisem tota la documentació necessària per vendre."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Fase 2"
             },
             {
-              "title": "Visites",
-              "text": "Organitzem i acompanyem les visites amb compradors realment interessats."
+              "kind": "h3",
+              "text": "Al mercat"
             },
             {
-              "title": "Negociació",
-              "text": "Negociem en nom teu. La decisió d'acceptar una oferta sempre és teva."
+              "kind": "p",
+              "text": "El teu habitatge, ben presentat i amb seguiment constant."
             },
             {
-              "title": "Signatura",
-              "text": "Revisem la documentació de tancament i t'acompanyem fins a la notaria."
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Publicació",
+                  "text": "Presentem l'habitatge a la nostra web i als principals portals immobiliaris."
+                },
+                {
+                  "title": "Seguiment i informes de gestió",
+                  "text": "Cada dues setmanes et presentem un informe de gestió i ens reunim amb tu per analitzar la resposta del mercat."
+                },
+                {
+                  "title": "Visites",
+                  "text": "Organitzem, acompanyem i supervisem les visites amb compradors realment interessats."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Fase 3"
             },
             {
-              "title": "Després de la venda",
-              "text": "Canviem la titularitat dels subministraments i ens ocupem de liquidar els impostos de la venda."
+              "kind": "h3",
+              "text": "Fins a la signatura i després"
+            },
+            {
+              "kind": "p",
+              "text": "Negociem, tanquem i t'acompanyem també després de la venda."
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Negociació",
+                  "text": "Negociem en nom teu i defensem el teu preu i les teves condicions fins a la signatura. La decisió d'acceptar una oferta és sempre teva."
+                },
+                {
+                  "title": "Signatura",
+                  "text": "Revisem la documentació del tancament i t'acompanyem fins a la notaria."
+                },
+                {
+                  "title": "Després de la venda",
+                  "text": "Canviem la titularitat dels subministraments (llum, aigua i gas) i ens ocupem de liquidar els impostos de la venda."
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
-      "layout": "check",
+      "id": "seguimiento",
+      "layout": "saleReport",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Seguiment i transparència"
+        },
+        {
+          "kind": "h2",
+          "text": "Et fem partícip *de tot el procés*"
+        },
+        {
+          "kind": "p",
+          "text": "Vendre un habitatge no consisteix únicament a publicar-lo i organitzar visites. Durant tota la comercialització, analitzem com respon el mercat i preparem informes de gestió perquè coneguis l'evolució de la venda."
+        },
+        {
+          "kind": "p",
+          "text": "Et presentem els resultats dels anuncis, les gestions comercials fetes, les opinions dels compradors i la situació del teu habitatge davant d'altres propietats de la zona."
+        },
+        {
+          "kind": "p",
+          "text": "Ens reunim amb tu per revisar els informes, explicar les nostres conclusions i decidir junts els passos següents. Perquè volem que tinguis tota la informació per prendre decisions amb criteri."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Informe de gestió"
+            },
+            {
+              "kind": "p",
+              "text": "Exemple il·lustratiu"
+            },
+            {
+              "kind": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "title": "Visibilitat dels anuncis",
+                  "text": "Visualitzacions, contactes i evolució de l'interès en portals com Idealista, Fotocasa i Habitaclia."
+                },
+                {
+                  "title": "Activitat comercial",
+                  "text": "Trucades, correus, visites fetes, segones visites i ofertes rebudes."
+                },
+                {
+                  "title": "Resposta dels compradors",
+                  "text": "Quins aspectes valoren positivament, quines objeccions apareixen i què pot estar dificultant la venda."
+                },
+                {
+                  "title": "Mercat i estratègia",
+                  "text": "Comparació amb altres habitatges de la zona, conclusions de l'anàlisi i possibles ajustos per millorar els resultats."
+                }
+              ]
+            },
+            {
+              "kind": "note",
+              "text": "Els gràfics són un exemple: no representen dades reals."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "incluye",
+      "layout": "saleIcons",
       "surface": "paper",
       "band": false,
       "items": [
@@ -110,70 +364,76 @@
         },
         {
           "kind": "h2",
-          "text": "Tot el que cal per vendre"
+          "text": "El que afegim *a cada venda*"
         },
         {
           "kind": "lead",
-          "text": "El que inclou el nostre servei d'intermediació en una venda."
+          "text": "A més dels vuit passos, el nostre servei d'intermediació inclou:"
         },
         {
           "kind": "list",
           "ordered": false,
           "items": [
             {
-              "title": "Valoració actualitzada",
-              "text": "Preu de mercat i preu aconsellat de sortida, amb estudi de comparables."
-            },
-            {
               "title": "Lectura del mercat",
-              "text": "Com està la demanda a la teva zona i què esperar dels propers mesos."
+              "text": "Com està la demanda a la teva zona i què esperar dels propers mesos.",
+              "icon": ["M3 20h18", "M6 16l4-5 3 3 5-7"]
             },
             {
               "title": "Màrqueting i publicitat",
-              "text": "Anunci a portals immobiliaris, al nostre web i a altres canals."
+              "text": "Anunci a portals immobiliaris, a la nostra web i en altres canals.",
+              "icon": ["M4 10v4h3l7 4V6L7 10z", "M17 9a4 4 0 0 1 0 6"]
             },
             {
               "title": "Reportatge fotogràfic i tour virtual",
-              "text": "Un fotògraf professional i un recorregut virtual que filtra les visites per curiositat."
+              "text": "Un fotògraf professional i un recorregut virtual que filtra les visites per curiositat.",
+              "icon": ["M4 8h3l2-2h6l2 2h3v11H4z", "M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"]
             },
             {
               "title": "Documentació tècnica",
-              "text": "El nostre arquitecte tramita la cèdula d'habitabilitat i el certificat energètic, i fa el plànol de l'habitatge."
+              "text": "L'arquitecte amb qui col·laborem tramita la cèdula d'habitabilitat i el certificat energètic, i fa el plànol de l'habitatge.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
             },
             {
               "title": "Pressupostos d'obra",
-              "text": "Si l'habitatge necessita reforma, el comprador sap des del principi quant li costarà."
+              "text": "Si l'habitatge necessita reforma, el comprador sap des del principi quant li costarà.",
+              "icon": ["M4 17 17 4l3 3L7 20z", "M8 13l2 2", "M11 10l2 2", "M14 7l2 2"]
             },
             {
-              "title": "Gestió de visites",
-              "text": "Les organitzem i supervisem nosaltres."
-            },
-            {
-              "title": "Negociació i tancament",
-              "text": "Defensem el teu preu i les teves condicions fins a la signatura."
-            },
-            {
-              "title": "Assessorament jurídic i fiscal",
-              "text": "Cada pas de la venda revisat en l'àmbit legal i fiscal per especialistes. [Veure assessorament jurídic i fiscal](service:asesoramiento-juridico-fiscal)."
+              "title": "Assessorament legal i fiscal",
+              "text": "Cada pas de la venda revisat en l'àmbit legal i fiscal per especialistes. [Veure assessorament jurídic i fiscal](service:asesoramiento-juridico-fiscal).",
+              "icon": [
+                "M12 4v16",
+                "M7 20h10",
+                "M5 8h14",
+                "M5 8 3 14a2.5 2.5 0 0 0 4 0z",
+                "M19 8l-2 6a2.5 2.5 0 0 0 4 0z"
+              ]
             },
             {
               "title": "Finançament del comprador",
-              "text": "El nostre broker financer comprova que el comprador pot pagar perquè la venda no caigui per la hipoteca."
+              "text": "El broker financer amb qui col·laborem estudia la viabilitat del comprador, per reduir el risc que la venda caigui pel finançament.",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
             },
             {
               "title": "Buidatge de l'habitatge",
-              "text": "T'ajudem a planificar i organitzar el buidatge abans del lliurament."
-            },
-            {
-              "title": "Subministraments i impostos",
-              "text": "Després de la signatura, canvi de titularitat de llum, aigua i gas, i liquidació dels impostos de la venda."
+              "text": "T'ajudem a planificar i organitzar el buidatge abans del lliurament.",
+              "icon": ["M4 8l8-4 8 4v9l-8 4-8-4z", "M4 8l8 4 8-4", "M12 12v9"]
             }
           ]
         }
       ]
     },
     {
-      "layout": "split",
+      "id": "exclusiva",
+      "layout": "saleExclusive",
       "surface": "stone",
       "band": false,
       "items": [
@@ -183,18 +443,22 @@
         },
         {
           "kind": "h2",
-          "text": "Per què en exclusiva?"
+          "text": "Per què *en exclusiva?*"
+        },
+        {
+          "kind": "lead",
+          "text": "Quan diverses agències competeixen per vendre un habitatge, la rapidesa es pot imposar a la qualitat de l'operació. Amb l'exclusiva, prioritzem una estratègia curosa per defensar el preu del teu habitatge i reduir els riscos de l'operació."
         },
         {
           "kind": "card",
           "items": [
             {
-              "kind": "h3",
-              "text": "Sense curses entre immobiliàries"
+              "kind": "tag",
+              "text": "Sense exclusiva"
             },
             {
               "kind": "p",
-              "text": "Quan diverses agències competeixen per vendre un habitatge, la rapidesa pot imposar-se a la qualitat de l'operació. Amb l'exclusiva, prioritzem una estratègia acurada per aconseguir el millor preu i una venda segura."
+              "text": "Diverses agències, diversos missatges"
             }
           ]
         },
@@ -202,36 +466,94 @@
           "kind": "card",
           "items": [
             {
-              "kind": "h3",
-              "text": "Què guanyes tu"
+              "kind": "tag",
+              "text": "En exclusiva"
             },
             {
-              "kind": "list",
-              "ordered": false,
-              "items": [
-                {
-                  "title": "",
-                  "text": "Dedicació completa al teu habitatge durant tot el contracte."
-                },
-                {
-                  "title": "",
-                  "text": "Un màrqueting més acurat, perquè només una immobiliària el presenta."
-                },
-                {
-                  "title": "",
-                  "text": "Una negociació més ferma: coneixem el teu habitatge a fons."
-                },
-                {
-                  "title": "",
-                  "text": "Més seguretat: ningú més negocia en nom teu."
-                },
-                {
-                  "title": "",
-                  "text": "Menys complicacions i una comunicació clara amb els compradors."
-                }
-              ]
+              "kind": "p",
+              "text": "Un sol interlocutor, una estratègia"
             }
           ]
+        },
+        {
+          "kind": "note",
+          "text": "Esquema il·lustratiu."
+        },
+        {
+          "kind": "h3",
+          "text": "Què hi guanyes"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "",
+              "text": "Dedicació completa al teu habitatge durant tot el contracte."
+            },
+            {
+              "title": "",
+              "text": "Un màrqueting més acurat, perquè només una immobiliària el presenta."
+            },
+            {
+              "title": "",
+              "text": "Una negociació més ferma: coneixem el teu habitatge a fons."
+            },
+            {
+              "title": "",
+              "text": "Més seguretat: ningú més negocia en nom teu."
+            },
+            {
+              "title": "",
+              "text": "Menys complicacions i una comunicació clara amb els compradors."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "layout": "valFaq",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Preguntes freqüents"
+        },
+        {
+          "kind": "h2",
+          "text": "Què ens acostumen a preguntar quan es ven"
+        },
+        {
+          "kind": "faq",
+          "q": "Quant es triga a vendre un pis a Barcelona?",
+          "a": "Depèn del preu, la zona, l'estat de l'habitatge i la demanda de cada moment, per això no prometem terminis. El que més escurça una venda és sortir al mercat amb un preu de sortida ben estudiat i amb la documentació a punt. Amb els informes de gestió veiem cada dues setmanes com respon el mercat i decidim amb tu si cal ajustar alguna cosa."
+        },
+        {
+          "kind": "faq",
+          "q": "Quina documentació necessito per vendre el meu pis?",
+          "a": "La reunim i la revisem amb tu abans de publicar: escriptura i nota simple, cèdula d'habitabilitat, certificat d'eficiència energètica, últim rebut de l'IBI i certificat de la comunitat de propietaris, entre altres documents segons cada cas. L'arquitecte amb qui col·laborem tramita la cèdula i el certificat energètic."
+        },
+        {
+          "kind": "faq",
+          "q": "Què és l'informe de gestió i cada quan el rebo?",
+          "a": "Cada dues setmanes et presentem un informe amb la visibilitat dels anuncis, l'activitat comercial, les visites i les opinions dels compradors, i la posició del teu habitatge davant d'altres de la zona. Ens reunim amb tu per comentar-lo i decidir junts els passos següents."
+        },
+        {
+          "kind": "faq",
+          "q": "Quines despeses i impostos té el venedor?",
+          "a": "Els habituals són la plusvàlua municipal, la tributació del guany en l'IRPF, la cancel·lació de la hipoteca si n'hi ha i els certificats necessaris. Cada cas és diferent: abans de fixar el preu t'expliquem què et correspon, amb l'assessoria fiscal amb qui col·laborem."
+        },
+        {
+          "kind": "faq",
+          "q": "Puc vendre si el pis té hipoteca, està llogat o l'he heretat?",
+          "a": "Sí. Cada situació té els seus passos: cancel·lar la hipoteca a la signatura, tenir en compte els drets de l'inquilí o completar l'herència abans de vendre. Els estudiem al principi, amb el despatx d'advocats amb qui col·laborem, perquè no apareguin sorpreses a mitja operació."
+        },
+        {
+          "kind": "faq",
+          "q": "Em serveix una valoració en línia per posar el preu?",
+          "a": "És una bona primera referència, però no substitueix l'estudi del teu habitatge i de les vendes reals de la zona. Te n'expliquem els motius a l'article [És fiable la valoració en línia del teu pis?](route:blog) i, si vols una xifra raonada, comença per una [valoració amb un assessor](service:valoracion)."
         }
       ]
     },
@@ -246,80 +568,6 @@
         {
           "kind": "p",
           "text": "Moltes vendes cauen per un imprevist: una cèdula que falta, una hipoteca que no arriba, una documentació incompleta. Ens hi avancem i, quan apareixen, els resolem."
-        }
-      ]
-    },
-    {
-      "id": "valoracion",
-      "layout": "valuation",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Valoració"
-        },
-        {
-          "kind": "h2",
-          "text": "Quant val el teu habitatge?"
-        },
-        {
-          "kind": "p",
-          "text": "Demana la teva valoració com prefereixis: en línia, al moment, o presencial, amb un assessor que estudia el teu habitatge a fons."
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "p",
-              "text": "En línia"
-            },
-            {
-              "kind": "h3",
-              "text": "Al moment"
-            },
-            {
-              "kind": "p",
-              "text": "Introdueix les dades del teu habitatge al nostre valorador i rep al moment una referència orientativa del seu valor."
-            },
-            {
-              "kind": "buttons",
-              "items": [
-                {
-                  "label": "Valoració online",
-                  "href": "route:valuation#informe",
-                  "solid": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "p",
-              "text": "Presencial"
-            },
-            {
-              "kind": "h3",
-              "text": "Amb un assessor"
-            },
-            {
-              "kind": "p",
-              "text": "Visitem el teu habitatge, en revisem la documentació i estudiem el mercat del teu barri per donar-te un informe complet."
-            },
-            {
-              "kind": "buttons",
-              "items": [
-                {
-                  "label": "Valoració presencial",
-                  "href": "route:valuation#solicitud",
-                  "solid": false
-                }
-              ]
-            }
-          ]
         }
       ]
     },

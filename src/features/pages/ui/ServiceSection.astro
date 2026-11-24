@@ -21,6 +21,11 @@ import Intro from "./service/Intro.astro";
 import NumberedCards from "./service/NumberedCards.astro";
 import ReportDoc from "./service/ReportDoc.astro";
 import Route from "./service/Route.astro";
+import SaleExclusive from "./service/SaleExclusive.astro";
+import SalePhases from "./service/SalePhases.astro";
+import SalePoints from "./service/SalePoints.astro";
+import SalePrice from "./service/SalePrice.astro";
+import SaleReport from "./service/SaleReport.astro";
 import Situations from "./service/Situations.astro";
 import Steps from "./service/Steps.astro";
 import Swatches from "./service/Swatches.astro";
@@ -31,6 +36,7 @@ import ValCriteria from "./service/ValCriteria.astro";
 import ValObtain from "./service/ValObtain.astro";
 import ValOptions from "./service/ValOptions.astro";
 import ValProcess from "./service/ValProcess.astro";
+import ValTop from "./service/ValTop.astro";
 import Valuation from "./service/Valuation.astro";
 
 /**
@@ -174,6 +180,32 @@ const band = layout === "band";
     {layout === "valObtain" && <ValObtain items={section.items} id={`${section.id}-h`} />}
     {layout === "valProcess" && (
       <ValProcess locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "saleIcons" && lists[0] !== undefined && (
+      <>
+        <ValTop
+          locale={locale}
+          head={head.filter((item) => item.kind !== "lead")}
+          intro={itemsOf(head, "lead")[0]?.text}
+          id={`${section.id}-h`}
+        />
+        <IconTiles locale={locale} list={lists[0]} />
+      </>
+    )}
+    {layout === "salePoints" && (
+      <SalePoints locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "salePrice" && (
+      <SalePrice locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "salePhases" && (
+      <SalePhases locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "saleReport" && (
+      <SaleReport locale={locale} items={section.items} id={`${section.id}-h`} />
+    )}
+    {layout === "saleExclusive" && (
+      <SaleExclusive locale={locale} items={section.items} id={`${section.id}-h`} />
     )}
     {layout === "cta" && <Closing locale={locale} items={section.items} />}
   </Container>

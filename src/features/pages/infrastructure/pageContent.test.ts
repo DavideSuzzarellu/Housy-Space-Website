@@ -74,7 +74,8 @@ describe("service pages", () => {
     "personal-shopper": "intro - icons call cta",
     "reformas-obras": "intro stepsList swatches cards cards - colab cta",
     valoracion: "valOptions valCriteria valAnalysis valObtain valProcess valFaq cta",
-    "venta-estrategica": "introLined - check split - valuation cta",
+    "venta-estrategica":
+      "salePoints valOptions salePrice salePhases saleReport saleIcons saleExclusive valFaq - cta",
   };
 
   it.each(services)("%s declares the layout of every section", (file) => {

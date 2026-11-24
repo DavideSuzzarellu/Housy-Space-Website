@@ -95,6 +95,13 @@ export const SECTION_LAYOUTS = [
   "valObtain",
   "valProcess",
   "valFaq",
+  // Sale brokerage page (reference `.cv42-*`, `.p46`, `.cv41`, `.e46`).
+  "salePoints",
+  "salePrice",
+  "salePhases",
+  "saleReport",
+  "saleExclusive",
+  "saleIcons",
 ] as const;
 export type SectionLayout = (typeof SECTION_LAYOUTS)[number];
 

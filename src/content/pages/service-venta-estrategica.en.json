@@ -1,54 +1,175 @@
 {
   "title": "Property sales and brokerage · HousySpace",
-  "description": "Valuation, preparation, marketing, negotiation and support through to signing.",
+  "description": "Valuation, preparation, marketing, negotiation and support all the way to signing.",
   "head": {
     "heading": "Property sales *and brokerage*",
     "photo": false,
+    "wide": true,
     "illustration": {
       "src": "../../assets/servicios/ill-compraventa-1000.webp",
-      "alt": "Service illustration: Two cream volumes that fit together",
+      "alt": "Illustration of the service: two cream-coloured volumes that fit into each other",
       "scale": 0.737
     },
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/facade-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Service"
+        "text": "Selling your home in Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Valuation, preparation, marketing, negotiation and support through to signing."
+        "text": "We study your home and its market, set the price and the strategy, and one adviser takes the sale through to signing."
       }
     ]
   },
   "sections": [
     {
-      "layout": "introLined",
+      "id": "antes",
+      "layout": "salePoints",
       "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "big",
-          "text": "Selling a property is much more than just listing it."
+          "kind": "tag",
+          "text": "Before going to market"
         },
         {
-          "kind": "p",
-          "text": "Before putting your property on the market, we advise you honestly on whether the time is right, how to go about it and which strategy to follow."
+          "kind": "h2",
+          "text": "A good sale starts *long before the listing goes live*"
         },
         {
-          "kind": "p",
-          "text": "We study your property, its documentation and the market so that you can decide with confidence and avoid surprises."
-        },
-        {
-          "kind": "p",
-          "text": "It all begins with a [valuation report](service:valoracion), where we analyse your property's market value, recommend an asking price and define the best sales strategy."
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Honest advice",
+              "text": "Before you put your home on the market, we give you our honest view on whether the time is right, how to go about it and which strategy to follow."
+            },
+            {
+              "title": "A preliminary study",
+              "text": "We study your property, its paperwork and your local market so you can decide with the facts in hand and fewer surprises along the way."
+            },
+            {
+              "title": "A valuation report",
+              "text": "It all starts with a [valuation report](service:valoracion), where we analyse your home's market value, recommend an asking price and define the best sales strategy."
+            }
+          ]
         }
       ]
     },
     {
+      "id": "valoracion",
+      "layout": "valOptions",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Valuation"
+        },
+        {
+          "kind": "h2",
+          "text": "How much is *your home worth?*"
+        },
+        {
+          "kind": "p",
+          "text": "Ask for an instant online estimate, or for a valuation by an adviser who studies your home in depth."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "kicker": "Instant",
+              "title": "Online valuation",
+              "text": "Enter your home's details in our valuation tool and get an indicative estimate of its value.",
+              "cta": "Value it online now",
+              "href": "route:valuation"
+            },
+            {
+              "kicker": "With a visit",
+              "title": "Valuation with an adviser",
+              "text": "We visit your home, review its paperwork and study your neighbourhood's market to give you a complete report.",
+              "cta": "Request an adviser valuation",
+              "href": "route:contact"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "If you choose the adviser, we call you to arrange the visit, see the home and its paperwork, and give you the report with our comments. You can ask for it even while you are still deciding; if you are not sure yet whether to sell, start with an [orientation consultation](route:services#asesoramiento)."
+        }
+      ]
+    },
+    {
+      "id": "precio",
+      "layout": "salePrice",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Asking price"
+        },
+        {
+          "kind": "h2",
+          "text": "How we set *the asking price*"
+        },
+        {
+          "kind": "lead",
+          "text": "The price doesn't come from a portal or a figure per square metre."
+        },
+        {
+          "kind": "p",
+          "text": "We explain it before anything is published: market value, recommended asking price and the offers your home will compete against."
+        },
+        {
+          "kind": "p",
+          "text": "The deals we have brokered are on the map, district by district: [see the properties we have brokered](route:sale#pisos-vendidos)."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "We set it with a report that brings together"
+            },
+            {
+              "kind": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Similar homes sold and for sale in the area"
+                },
+                {
+                  "title": "",
+                  "text": "Sales data for the neighbourhood"
+                },
+                {
+                  "title": "",
+                  "text": "The cadastral and planning situation"
+                },
+                {
+                  "title": "",
+                  "text": "The real condition of the home and the building"
+                }
+              ]
+            },
+            {
+              "kind": "tag",
+              "text": "The result"
+            },
+            {
+              "kind": "p",
+              "text": "Market value and recommended asking price"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pasos",
+      "layout": "salePhases",
       "surface": "stone",
       "band": false,
       "items": [
@@ -58,49 +179,182 @@
         },
         {
           "kind": "h2",
-          "text": "Eight steps, one advisor"
+          "text": "Every step matters. *We take care of it*"
         },
         {
-          "kind": "steps",
+          "kind": "lead",
+          "text": "Eight steps in three phases and a single adviser from start to finish. You decide; we take care of the rest."
+        },
+        {
+          "kind": "card",
           "items": [
             {
-              "title": "Valuation",
-              "text": "We study the property, the neighbourhood and the market to set a fair and competitive price."
+              "kind": "tag",
+              "text": "Phase 1"
             },
             {
-              "title": "Preparation",
-              "text": "We gather and review all the documentation needed for the sale."
+              "kind": "h3",
+              "text": "Before listing"
             },
             {
-              "title": "Listing",
-              "text": "We present the property on our website and the main property portals."
+              "kind": "p",
+              "text": "Price and paperwork ready before you go to market."
             },
             {
-              "title": "Follow-up",
-              "text": "Every two weeks we update you on activity and how the market is responding."
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Valuation",
+                  "text": "We study the property, the neighbourhood and the market, with a comparables analysis, to set the market price and a fair, competitive asking price."
+                },
+                {
+                  "title": "Preparation",
+                  "text": "We gather and check all the paperwork needed to sell."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Phase 2"
             },
             {
-              "title": "Viewings",
-              "text": "We organise and accompany viewings with genuinely interested buyers."
+              "kind": "h3",
+              "text": "On the market"
             },
             {
-              "title": "Negotiation",
-              "text": "We negotiate on your behalf. The decision to accept an offer is always yours."
+              "kind": "p",
+              "text": "Your home, well presented and constantly monitored."
             },
             {
-              "title": "Signing",
-              "text": "We review the closing documentation and accompany you to the notary."
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Listing",
+                  "text": "We present your home on our website and on the main property portals."
+                },
+                {
+                  "title": "Monitoring and progress reports",
+                  "text": "Every two weeks we give you a progress report and meet you to review how the market is responding."
+                },
+                {
+                  "title": "Viewings",
+                  "text": "We organise, attend and supervise viewings with genuinely interested buyers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Phase 3"
             },
             {
-              "title": "After the sale",
-              "text": "We transfer utility contracts and handle the payment of sale taxes."
+              "kind": "h3",
+              "text": "Up to signing and beyond"
+            },
+            {
+              "kind": "p",
+              "text": "We negotiate, close and stay with you after the sale too."
+            },
+            {
+              "kind": "steps",
+              "items": [
+                {
+                  "title": "Negotiation",
+                  "text": "We negotiate on your behalf and defend your price and your terms up to signing. Whether to accept an offer is always your decision."
+                },
+                {
+                  "title": "Signing",
+                  "text": "We review the closing documents and go with you to the notary."
+                },
+                {
+                  "title": "After the sale",
+                  "text": "We transfer the utilities (electricity, water and gas) into the buyer's name and take care of settling the taxes on the sale."
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
-      "layout": "check",
+      "id": "seguimiento",
+      "layout": "saleReport",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Monitoring and transparency"
+        },
+        {
+          "kind": "h2",
+          "text": "We keep you *in the loop throughout*"
+        },
+        {
+          "kind": "p",
+          "text": "Selling a home isn't just about listing it and organising viewings. Throughout the marketing period, we analyse how the market responds and prepare progress reports so you can follow how the sale is going."
+        },
+        {
+          "kind": "p",
+          "text": "We show you how the listings are performing, the sales activity so far, the buyers' feedback and how your home compares with other properties in the area."
+        },
+        {
+          "kind": "p",
+          "text": "We meet you to go over the reports, explain our conclusions and decide on the next steps together. Because we want you to have all the information you need to make sound decisions."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Progress report"
+            },
+            {
+              "kind": "p",
+              "text": "Illustrative example"
+            },
+            {
+              "kind": "list",
+              "ordered": true,
+              "items": [
+                {
+                  "title": "Listing visibility",
+                  "text": "Views, enquiries and how interest is evolving on portals such as Idealista, Fotocasa and Habitaclia."
+                },
+                {
+                  "title": "Sales activity",
+                  "text": "Calls, emails, viewings held, second viewings and offers received."
+                },
+                {
+                  "title": "Buyer feedback",
+                  "text": "What buyers like, what objections come up and what may be holding the sale back."
+                },
+                {
+                  "title": "Market and strategy",
+                  "text": "Comparison with other homes in the area, the conclusions of the analysis and possible adjustments to improve results."
+                }
+              ]
+            },
+            {
+              "kind": "note",
+              "text": "The charts are an example: they do not show real data."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "incluye",
+      "layout": "saleIcons",
       "surface": "paper",
       "band": false,
       "items": [
@@ -110,70 +364,76 @@
         },
         {
           "kind": "h2",
-          "text": "Everything it takes to sell"
+          "text": "What we add *to every sale*"
         },
         {
           "kind": "lead",
-          "text": "What our brokerage service includes in a sale."
+          "text": "On top of the eight steps, our brokerage service includes:"
         },
         {
           "kind": "list",
           "ordered": false,
           "items": [
             {
-              "title": "Updated valuation",
-              "text": "Market value and recommended asking price, with a comparable sales study."
-            },
-            {
-              "title": "Market read",
-              "text": "How demand looks in your area and what to expect over the coming months."
+              "title": "Market reading",
+              "text": "How demand looks in your area and what to expect in the coming months.",
+              "icon": ["M3 20h18", "M6 16l4-5 3 3 5-7"]
             },
             {
               "title": "Marketing and advertising",
-              "text": "Listings on property portals, our website and other channels."
+              "text": "Listings on property portals, on our website and through other channels.",
+              "icon": ["M4 10v4h3l7 4V6L7 10z", "M17 9a4 4 0 0 1 0 6"]
             },
             {
-              "title": "Professional photography and virtual tour",
-              "text": "A professional photographer and a virtual walkthrough that filters out casual visitors."
+              "title": "Professional photos and virtual tour",
+              "text": "A professional photographer and a virtual walkthrough that filters out viewings made out of mere curiosity.",
+              "icon": ["M4 8h3l2-2h6l2 2h3v11H4z", "M12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"]
             },
             {
               "title": "Technical documentation",
-              "text": "Our architect handles the habitation certificate and energy certificate, and draws up the floor plan."
+              "text": "The architect we work with arranges the habitability certificate and the energy certificate, and draws up the floor plan.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
             },
             {
-              "title": "Renovation estimates",
-              "text": "If the property needs work, the buyer knows the cost from the start."
-            },
-            {
-              "title": "Viewings management",
-              "text": "We organise and supervise them."
-            },
-            {
-              "title": "Negotiation and closing",
-              "text": "We defend your price and your conditions through to signing."
+              "title": "Renovation quotes",
+              "text": "If the home needs renovating, the buyer knows from the start what it will cost.",
+              "icon": ["M4 17 17 4l3 3L7 20z", "M8 13l2 2", "M11 10l2 2", "M14 7l2 2"]
             },
             {
               "title": "Legal and tax advice",
-              "text": "Every step of the sale reviewed legally and fiscally by specialists. [See legal and tax advice](service:asesoramiento-juridico-fiscal)."
+              "text": "Every step of the sale reviewed by specialists on the legal and tax side. [See legal and tax advice](service:asesoramiento-juridico-fiscal).",
+              "icon": [
+                "M12 4v16",
+                "M7 20h10",
+                "M5 8h14",
+                "M5 8 3 14a2.5 2.5 0 0 0 4 0z",
+                "M19 8l-2 6a2.5 2.5 0 0 0 4 0z"
+              ]
             },
             {
               "title": "Buyer financing",
-              "text": "Our financial broker checks the buyer can pay, so the sale doesn't fall through on the mortgage."
+              "text": "The financial broker we work with checks the buyer's financing is viable, to reduce the risk of the sale falling through over the mortgage.",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
             },
             {
-              "title": "Property clearance",
-              "text": "We help you plan and organise the clearance before handover."
-            },
-            {
-              "title": "Utilities and taxes",
-              "text": "After signing, transfer of electricity, water and gas contracts, and settlement of sale taxes."
+              "title": "Clearing the home",
+              "text": "We help you plan and organise clearing the home before handover.",
+              "icon": ["M4 8l8-4 8 4v9l-8 4-8-4z", "M4 8l8 4 8-4", "M12 12v9"]
             }
           ]
         }
       ]
     },
     {
-      "layout": "split",
+      "id": "exclusiva",
+      "layout": "saleExclusive",
       "surface": "stone",
       "band": false,
       "items": [
@@ -183,18 +443,22 @@
         },
         {
           "kind": "h2",
-          "text": "Why exclusive?"
+          "text": "Why *exclusive?*"
+        },
+        {
+          "kind": "lead",
+          "text": "When several agencies compete to sell a home, speed can win out over the quality of the deal. With exclusivity, we prioritise a careful strategy to defend your home's price and reduce the risks of the transaction."
         },
         {
           "kind": "card",
           "items": [
             {
-              "kind": "h3",
-              "text": "No race between agencies"
+              "kind": "tag",
+              "text": "Non-exclusive"
             },
             {
               "kind": "p",
-              "text": "When several agencies compete to sell a property, speed can win out over the quality of the deal. With exclusivity, we prioritise a careful strategy to achieve the best price and a safe sale."
+              "text": "Several agencies, several messages"
             }
           ]
         },
@@ -202,36 +466,94 @@
           "kind": "card",
           "items": [
             {
-              "kind": "h3",
-              "text": "What you gain"
+              "kind": "tag",
+              "text": "Exclusive"
             },
             {
-              "kind": "list",
-              "ordered": false,
-              "items": [
-                {
-                  "title": "",
-                  "text": "Full dedication to your property throughout the contract."
-                },
-                {
-                  "title": "",
-                  "text": "More considered marketing, because only one agency presents it."
-                },
-                {
-                  "title": "",
-                  "text": "A stronger negotiation: we know your property inside out."
-                },
-                {
-                  "title": "",
-                  "text": "More security: no one else negotiates on your behalf."
-                },
-                {
-                  "title": "",
-                  "text": "Less complication and clear communication with buyers."
-                }
-              ]
+              "kind": "p",
+              "text": "One point of contact, one strategy"
             }
           ]
+        },
+        {
+          "kind": "note",
+          "text": "Illustrative diagram."
+        },
+        {
+          "kind": "h3",
+          "text": "What you gain"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "",
+              "text": "Full dedication to your home throughout the contract."
+            },
+            {
+              "title": "",
+              "text": "More careful marketing, because only one agency presents it."
+            },
+            {
+              "title": "",
+              "text": "Firmer negotiation: we know your home inside out."
+            },
+            {
+              "title": "",
+              "text": "More security: nobody else negotiates on your behalf."
+            },
+            {
+              "title": "",
+              "text": "Fewer complications and clear communication with buyers."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preguntas",
+      "layout": "valFaq",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Frequently asked questions"
+        },
+        {
+          "kind": "h2",
+          "text": "What people ask us when selling"
+        },
+        {
+          "kind": "faq",
+          "q": "How long does it take to sell a flat in Barcelona?",
+          "a": "It depends on the price, the area, the condition of the home and demand at the time, which is why we don't promise deadlines. What shortens a sale most is going to market with a well-studied asking price and the paperwork ready. With the progress reports we see every two weeks how the market is responding and decide with you whether anything needs adjusting."
+        },
+        {
+          "kind": "faq",
+          "q": "What paperwork do I need to sell my flat?",
+          "a": "We gather it and check it with you before listing: title deed and land registry extract, habitability certificate, energy performance certificate, the latest IBI property tax receipt and the community of owners' certificate, among other documents depending on the case. The architect we work with arranges the habitability certificate and the energy certificate."
+        },
+        {
+          "kind": "faq",
+          "q": "What is the progress report and how often do I get it?",
+          "a": "Every two weeks we give you a report on how the listings are performing, the sales activity, the viewings and buyers' feedback, and how your home compares with others in the area. We meet you to go through it and decide the next steps together."
+        },
+        {
+          "kind": "faq",
+          "q": "What costs and taxes does the seller pay?",
+          "a": "The usual ones are the municipal capital gains tax (plusvalía), income tax on the gain (IRPF), cancelling the mortgage if there is one, and the necessary certificates. Every case is different: before setting the price we explain what applies to you, together with the tax advisory firm we work with."
+        },
+        {
+          "kind": "faq",
+          "q": "Can I sell if the flat has a mortgage, is rented out or was inherited?",
+          "a": "Yes. Each situation has its own steps: cancelling the mortgage at signing, taking the tenant's rights into account or completing the inheritance before selling. We go through them at the start, with the law firm we work with, so no surprises appear halfway through the transaction."
+        },
+        {
+          "kind": "faq",
+          "q": "Is an online valuation good enough to set the price?",
+          "a": "It's a good first reference, but it doesn't replace a study of your home and of actual sales in the area. We explain why in the article [Is the online valuation of your flat reliable?](route:blog) and, if you want a reasoned figure, start with a [valuation with an adviser](service:valoracion)."
         }
       ]
     },
@@ -246,80 +568,6 @@
         {
           "kind": "p",
           "text": "Many sales fall through over an unexpected issue: a missing habitation certificate, a mortgage that doesn't come through, incomplete documentation. We anticipate them and, when they appear, we resolve them."
-        }
-      ]
-    },
-    {
-      "id": "valoracion",
-      "layout": "valuation",
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Valuation"
-        },
-        {
-          "kind": "h2",
-          "text": "What is your property worth?"
-        },
-        {
-          "kind": "p",
-          "text": "Request your valuation however you prefer: online, instantly, or in person, with an advisor who studies your property in depth."
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "p",
-              "text": "Online"
-            },
-            {
-              "kind": "h3",
-              "text": "Instantly"
-            },
-            {
-              "kind": "p",
-              "text": "Enter your property details in our valuation tool and receive an indicative reference value straight away."
-            },
-            {
-              "kind": "buttons",
-              "items": [
-                {
-                  "label": "Online valuation",
-                  "href": "route:valuation#informe",
-                  "solid": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "card",
-          "items": [
-            {
-              "kind": "p",
-              "text": "In person"
-            },
-            {
-              "kind": "h3",
-              "text": "With an advisor"
-            },
-            {
-              "kind": "p",
-              "text": "We visit your property, review its documentation and study your neighbourhood's market to give you a comprehensive report."
-            },
-            {
-              "kind": "buttons",
-              "items": [
-                {
-                  "label": "In-person valuation",
-                  "href": "route:valuation#solicitud",
-                  "solid": false
-                }
-              ]
-            }
-          ]
         }
       ]
     },
