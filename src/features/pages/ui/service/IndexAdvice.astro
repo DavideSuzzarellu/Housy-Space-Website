@@ -20,7 +20,7 @@ const intro = itemsOf(body, "p")[0];
 const steps = itemsOf(body, "steps")[0];
 ---
 
-<div class="mb-[clamp(30px,3.8vw,54px)] grid gap-[clamp(14px,2.4vh,22px)]">
+<div class="mb-[clamp(30px,3.8vw,54px)] grid gap-[clamp(24px,5vw,76px)] min-[900px]:gap-[clamp(14px,2.4vh,22px)]">
   <IndexHead items={head} id={id} stacked />
   {intro && (
     <p
