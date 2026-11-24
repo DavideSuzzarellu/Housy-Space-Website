@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de bloques en la ladera de Collserola, con parque, instalaciones olímpicas y el gran hospital de la zona.",
+  "translated": true,
+  "lead": "Un quartiere di palazzi sul versante di Collserola, con parco, impianti olimpici e il grande ospedale della zona.",
   "text": [
-    "Surgió del polígono Parc de la Vall d'Hebron, construido en 1968 sobre antiguas fincas del antiguo municipio de Horta, a partir del Plan Comarcal de 1953. Tras los Juegos Olímpicos de 1992 se reordenó la zona, se amplió el polígono y se destinaron algunos equipamientos deportivos. Con la ampliación olímpica llegaron también viviendas nuevas, y entre sus referencias está el Pavelló de la República.",
-    "Es un barrio pequeño, de 6.087 habitantes en 0,74 km², formado por bloques de vivienda en la esquina de la Ronda de Dalt y el paseo de la Vall d'Hebron, con el parque de la Vall d'Hebron como referencia. El gran complejo hospitalario que lleva su nombre queda en el barrio vecino de Montbau, al norte de la Ronda de Dalt. Si vendes, el precio medio de compraventa (3.866 €/m² en 2025) está un 12 % por encima de la media de Horta-Guinardó. Dentro del barrio, el precio de cada piso depende de su estado, su altura y su finca, así que conviene compararlo con ventas cercanas y no con la media del distrito. Si compras, un piso de 80 m² sale de media por unos 309.000 €, y el barrio está en la franja media de Horta-Guinardó (5.º de 11 por precio). Si inviertes, el alquiler medio (976 €/mes) está un 7 % por encima del distrito; antes de decidir, conviene estudiar cada operación con números reales de compra, reforma y renta."
+    "Nacque dal poligono Parc de la Vall d'Hebron, costruito nel 1968 su antichi terreni dell'ex comune di Horta, in base al Piano comarcale del 1953. Dopo i Giochi Olimpici del 1992 la zona fu riordinata, il poligono fu ampliato e alcune strutture sportive furono riconvertite. Con l'ampliamento olimpico arrivarono anche nuove abitazioni, e tra i suoi riferimenti c'è il Pavelló de la República.",
+    "È un quartiere piccolo, di 6.087 abitanti su 0,74 km², formato da palazzi residenziali all'angolo tra la Ronda de Dalt e il passeig de la Vall d'Hebron, con il parco della Vall d'Hebron come riferimento. Il grande complesso ospedaliero che porta il suo nome si trova nel quartiere vicino di Montbau, a nord della Ronda de Dalt. Se vendi, il prezzo medio di compravendita (3.866 €/m² nel 2025) è il 12% sopra la media di Horta-Guinardó. All'interno del quartiere, il prezzo di ogni appartamento dipende dal suo stato, dal piano e dallo stabile, quindi conviene confrontarlo con vendite vicine e non con la media del distretto. Se compri, un appartamento di 80 m² costa in media circa 309.000 €, e il quartiere si colloca nella fascia media di Horta-Guinardó (5º su 11 per prezzo). Se investi, l'affitto medio (976 €/mese) è il 7% sopra quello del distretto; prima di decidere conviene studiare ogni operazione con numeri reali di acquisto, ristrutturazione e rendita."
   ],
-  "housing": "Polígonos de bloques de vivienda construidos desde finales de los sesenta.",
+  "housing": "Poligoni di palazzi residenziali costruiti dalla fine degli anni Sessanta.",
   "places": ["Parc de la Vall d'Hebron", "Hospital Universitari Vall d'Hebron"]
 }

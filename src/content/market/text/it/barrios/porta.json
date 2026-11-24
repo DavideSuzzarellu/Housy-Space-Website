@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Un barrio de polígonos de vivienda con una identidad vecinal muy fuerte y varios parques.",
+  "translated": true,
+  "lead": "Un quartiere di poligoni residenziali con un'identità di vicinato molto forte e vari parchi.",
   "text": [
-    "Hasta el siglo XIX fue un territorio rural casi despoblado, parte de Santa Eulàlia de Vilapicina, y se urbanizó sobre todo en la segunda mitad del siglo XX con grandes polígonos de viviendas para inmigrantes, especialmente del sur de España. El Ayuntamiento atribuye su nombre a Pasqual Porta Margarit, maestro y director del Colegio Peninsular, que habría sido propietario de terrenos en Can Porta.",
-    "Tiene un fuerte sentido de identidad propia: su asociación de vecinos se creó en 1974 y su movimiento vecinal fue muy intenso entre 1977 y 1980. Entre sus puntos de referencia están la plaza de Sóller, el parque de Can Dragó, el cementerio de Sant Andreu, la plaça de la República y el centro comercial Heron City. Con 31.199 habitantes en 0,84 km², es el barrio más poblado del distrito."
+    "Fino all'Ottocento fu un territorio rurale quasi spopolato, parte di Santa Eulàlia de Vilapicina, e fu urbanizzato soprattutto nella seconda metà del Novecento con grandi poligoni di abitazioni per immigrati, in particolare del sud della Spagna. Il Comune attribuisce il suo nome a Pasqual Porta Margarit, maestro e direttore del Colegio Peninsular, che sarebbe stato proprietario di terreni a Can Porta.",
+    "Ha un forte senso di identità propria: la sua associazione di quartiere nacque nel 1974 e il suo movimento di vicinato fu molto intenso tra il 1977 e il 1980. Tra i suoi punti di riferimento ci sono la plaça de Sóller, il parco di Can Dragó, il cimitero di Sant Andreu, la plaça de la República e il centro commerciale Heron City. Con 31.199 abitanti su 0,84 km², è il quartiere più popoloso del distretto."
   ],
-  "housing": "Bloques de vivienda levantados en la segunda mitad del siglo XX, con alguna masía que recuerda el pasado rural.",
+  "housing": "Palazzi residenziali costruiti nella seconda metà del Novecento, con qualche masia che ricorda il passato rurale.",
   "places": ["Parc de Can Dragó", "Plaça de Sóller", "Plaça de la República", "Heron City"]
 }
