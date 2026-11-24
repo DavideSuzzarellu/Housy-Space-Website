@@ -1,0 +1,81 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import OtherServices from "../OtherServices.astro";
+
+/**
+ * Closing contact block of a service page (reference `.svp-cta`, id `hablemos`): title, line,
+ * the contact buttons, the provisional-content note and the links to the other services.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+}
+
+const { locale, items } = Astro.props;
+const title = itemsOf(items, "h2")[0];
+const lead = itemsOf(items, "lead")[0];
+/** Two groups: a main call (solid link with arrow) and then the contact row; one group: the row only. */
+const groups = itemsOf(items, "buttons");
+const note = itemsOf(items, "note")[0];
+const relatedTag = itemsOf(items, "tag")[0];
+const related = itemsOf(items, "list")[0];
+---
+
+<div data-service-cta class="grid gap-[clamp(40px,5vw,64px)]">
+  <div>
+    {title && (
+      <h2 data-reveal class="mb-3.5 text-[clamp(25px,2.8vw,38px)] [&_em]:block">
+        <Emphasis text={title.text} />
+      </h2>
+    )}
+    {lead && (
+      <p class="text-base leading-[1.7] text-fg normal-case">
+        <Inline text={lead.text} locale={locale} />
+      </p>
+    )}
+    {groups.map((group, index) => (
+      <div
+        class:list={[
+          "flex flex-wrap gap-x-3 gap-y-2.5",
+          groups.length > 1 && index === 0
+            ? "mt-[clamp(18px,3vh,28px)]"
+            : index > 0
+              ? "mt-3"
+              : "mt-6.5",
+        ]}
+      >
+        {group.items.map((button) => (
+          <Button
+            href={resolveContentHref(button.href, locale)}
+            variant={button.solid ? "solid" : "outline"}
+            arrow={groups.length > 1 && index === 0}
+            external={button.href.startsWith("https://")}
+            class="leading-none!"
+          >
+            {button.label}
+          </Button>
+        ))}
+      </div>
+    ))}
+    {note && (
+      <p class="my-3.5 max-w-[495px] border-l-2 border-turquoise py-1 pl-3 text-[11px] text-muted">
+        <Inline text={note.text} locale={locale} />
+      </p>
+    )}
+  </div>
+  {relatedTag && related && (
+    <OtherServices
+      heading={relatedTag.text}
+      links={related.items.flatMap((entry) =>
+        entry.href === undefined
+          ? []
+          : [{ label: entry.title, href: resolveContentHref(entry.href, locale) }],
+      )}
+    />
+  )}
+</div>

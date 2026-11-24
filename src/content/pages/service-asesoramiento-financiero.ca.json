@@ -1,0 +1,336 @@
+{
+  "title": "Assessorament hipotecari a Barcelona · HousySpace",
+  "description": "Finançament hipotecari a Barcelona amb xifres reals, amb el broker hipotecari amb qui col·laborem, que compara les ofertes de diferents entitats.",
+  "head": {
+    "heading": "Assessorament *financer*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-financiero-1000.webp",
+      "alt": "Il·lustració del servei: una estructura recolzada sobre tres suports sòlids",
+      "scale": 0.739
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servei"
+      },
+      {
+        "kind": "lead",
+        "text": "Hipoteca i finançament estudiats amb xifres reals, juntament amb el broker financer amb qui col·laborem."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Explica'ns el teu cas",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "La hipoteca, estudiada abans d'enamorar-te d'un pis."
+        },
+        {
+          "kind": "p",
+          "text": "Saber quant pots finançar, amb quina quota i en quines condicions t'estalvia disgustos. Ho estudiem amb tu i amb el broker financer amb qui col·laborem, que compara les condicions de diverses entitats."
+        },
+        {
+          "kind": "p",
+          "text": "I quan vens, comprovem que el comprador pot pagar perquè l'operació no s'enfonsi per culpa del finançament."
+        }
+      ]
+    },
+    {
+      "layout": "split",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Per a qui"
+        },
+        {
+          "kind": "h2",
+          "text": "Finançament en cada tipus d'operació"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Si compres"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Quant et poden prestar i amb quina quota"
+                },
+                {
+                  "title": "",
+                  "text": "Estalvi necessari per a l'entrada, les despeses i els impostos"
+                },
+                {
+                  "title": "",
+                  "text": "Comparació d'ofertes de diverses entitats"
+                },
+                {
+                  "title": "",
+                  "text": "Taxació i documentació fins a la signatura"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Si vens"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Abans de signar les arres, el broker estudia si el comprador pot finançar la compra"
+                },
+                {
+                  "title": "",
+                  "text": "Terminis de la hipoteca coordinats amb els del contracte d'arres"
+                },
+                {
+                  "title": "",
+                  "text": "Redueix el risc que la venda s'enfonsi per qüestions de finançament; no garanteix que el banc el concedeixi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Si inverteixes"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Finançament de la compra i de la reforma"
+                },
+                {
+                  "title": "",
+                  "text": "Xifres de la inversió amb la quota inclosa"
+                },
+                {
+                  "title": "",
+                  "text": "Veure [inversió immobiliària](service:inversion-inmobiliaria)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Com ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Pas a pas"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversa",
+              "text": "Ens expliques la teva situació i l'operació que tens en ment."
+            },
+            {
+              "title": "Estudi de viabilitat",
+              "text": "Ingressos, estalvi, despeses de la compra: les xifres reals."
+            },
+            {
+              "title": "Ofertes",
+              "text": "El broker busca i compara condicions entre entitats."
+            },
+            {
+              "title": "Taxació i documentació",
+              "text": "Coordinem la taxació i preparem el que demana el banc."
+            },
+            {
+              "title": "Signatura",
+              "text": "Revisem les condicions finals i t'acompanyem a la notaria."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Preguntes freqüents"
+        },
+        {
+          "kind": "h2",
+          "text": "El que ens solen preguntar"
+        },
+        {
+          "kind": "faq",
+          "q": "Quant necessito tenir estalviat?",
+          "a": "Depèn del preu, de la taxació i del teu perfil. A més de la part que no finança el banc, cal comptar amb els impostos i les despeses de la compra. T'ho calculem amb xifres reals abans de començar a buscar."
+        },
+        {
+          "kind": "faq",
+          "q": "Qui m'assessora en la hipoteca?",
+          "a": "El broker financer amb qui col·laborem en les operacions amb finançament. Nosaltres coordinem tot el procés amb tu."
+        },
+        {
+          "kind": "faq",
+          "q": "Em serveix si ja he trobat el pis?",
+          "a": "Sí. Com abans ho estudiem, millor: així sabràs quines condicions pots signar en el contracte d'arres."
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Amb qui ho fem"
+        },
+        {
+          "kind": "h2",
+          "text": "Finançament amb un especialista"
+        },
+        {
+          "kind": "lead",
+          "text": "Les operacions amb finançament les estudiem juntament amb un broker financer de confiança."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Per què confiem en ells",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Broker financer",
+              "text": "Estudia la viabilitat de cada operació amb finançament i compara les condicions de diverses entitats.",
+              "kicker": "Finançament"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parlem"
+        },
+        {
+          "kind": "lead",
+          "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Truca",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero",
+              "solid": false
+            },
+            {
+              "label": "Correu",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contacta'ns",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Serveis relacionats"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliari",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Compravenda i intermediació immobiliària",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Inversió immobiliària",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Veure tots els serveis",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

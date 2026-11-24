@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un monestir del segle XIV, avingudes arbrades i cases amb jardí en un dels barris amb més renda de la ciutat.",
+  "text": [
+    "El barri pren el nom del monestir de clarisses que la reina Elisenda de Montcada va fundar al segle XIV, amb un claustre de dos pisos i una església gòtica d'una sola nau; a la capella de Sant Miquel es conserven les pintures de Ferrer Bassa, del 1346.",
+    "Avui és un barri tranquil i verd, de cases unifamiliars amb jardí i edificis d'alt nivell, amb l'avinguda Pearson com a emblema. Amb 6.079 €/m² i 1.948 €/mes, té els preus més alts de les Corts. Al costat de la Diagonal hi ha, a més, el Palau Reial i els Pavellons Güell, de Gaudí."
+  ],
+  "housing": "Cases unifamiliars amb jardí i edificis residencials d'alt nivell, de superfícies àmplies.",
+  "places": [
+    "Monestir de Pedralbes",
+    "Palau Reial de Pedralbes",
+    "Pavellons Güell",
+    "Avinguda Pearson"
+  ]
+}

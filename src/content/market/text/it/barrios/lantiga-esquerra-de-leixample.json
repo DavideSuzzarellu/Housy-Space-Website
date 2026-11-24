@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Università, ospedale e mercati di quartiere, attorno al Ninot e alle antiche linee ferroviarie.",
+  "text": [
+    "Il suo nucleo originario è formato dalla parrocchia di Sant Josep Oriol, tra i carrers de la Diputació e d'Urgell, e dall'edificio neoromanico della Universitat de Barcelona, opera di Elies Rogent del 1882. Nel 1907 furono creati l'Hospital Clínic e la Facultat de Medicina, legati da allora al carattere del quartiere.",
+    "Si sviluppò sopra i binari della ferrovia, attorno al Ninot, nome nato negli anni Ottanta dell'Ottocento da una popolare taverna che decorava il locale con un ninot e finì per dare il nome a tutta la zona di ristorazione e svago attorno a un mercato all'aperto. Quando i binari del carrer d'Aragó e dell'avinguda de Roma furono interrati, negli anni Trenta fu possibile costruire abitazioni di stili diversi, pensate soprattutto per i ceti medi. Oggi è un quartiere di universitari e personale sanitario, con librerie, caffè, negozi locali, il Mercat del Ninot come centro della vita quotidiana e il carrer d'Enric Granados diventato asse civico. Con 5.849 €/m² e 1.389 €/mese, solo la Dreta ha prezzi più alti nell'Eixample."
+  ],
+  "housing": "Stabili di stili diversi, con appartamenti di buona metratura, in strade con molti negozi.",
+  "places": [
+    "Hospital Clínic",
+    "Facultat de Medicina de la UB",
+    "Universitat de Barcelona",
+    "Mercat del Ninot",
+    "Carrer d'Enric Granados"
+  ]
+}

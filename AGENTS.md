@@ -6,7 +6,7 @@
 ## 1. Project overview
 
 - **Client:** HousySpace Consultores Inmobiliarios, S.L. — CIF B26903419. Brand: **HousySpace · Property Solutions**.
-- **Domain:** www.housyspace.com
+- **Domain:** housyspace.com (apex = canonical origin, single constant in `deploy.config.json`; `www.housyspace.com` 301-redirects to it)
 - **Office:** Travessera de Gràcia 73, 2.º 3.ª · 08006 Barcelona (confirmed).
 - **AICAT:** 14032 (must appear in footer and legal notice).
 - **Goal:** Public website to showcase properties for sale and rent in Barcelona, capture leads into the CRM, and build a premium, trustworthy brand.
@@ -19,7 +19,7 @@
 | ------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | Framework           | Astro + TypeScript (strict)                                                   | Static by default, on-demand rendering where needed                          |
 | i18n                | Astro built-in i18n routing (`astro:i18n`)                                    | No third-party i18n routing library                                          |
-| Styling             | Tailwind CSS                                                                  | Brand tokens from section 11                                                 |
+| Styling             | Tailwind CSS                                                                  | Brand tokens from section 11 (`docs/design-system/tokens.json`)              |
 | Content             | Astro Content Collections (custom Mobilia loaders + `glob()` for local pages) | See section 3.2                                                              |
 | Content editing     | **Pages CMS** (hosted, free; `.pages.yml`) over the local JSON/Markdown files  | Client logs in by email invite (no GitHub account). Needs the repo on GitHub + the Pages CMS GitHub App. Listings stay in Mobilia |
 | Navigation & motion | Astro View Transitions (`<ClientRouter />` from `astro:transitions`)          | See section 3.3                                                              |
@@ -28,7 +28,7 @@
 | Reviews             | Typed by hand in Pages CMS                                                    | See section 6.1                                                              |
 | Maps                | Leaflet + own clustering (`features/properties/ui/mapClusters.ts`), ICGC WMTS colour tiles ("estandard") | No Leaflet.markercluster (UMD needs a global `L`). Listings = approximate zone circles only (§5); attribution "© ICGC (CC BY 4.0)" |
 | Charts              | Own typed SVG chart components (no chart library)                             | Line + bar charts for market data                                            |
-| Hosting + adapter   | `TODO` (Vercel / Netlify / Node) — not decided                                | Keep code adapter-agnostic: no provider-specific APIs outside `astro.config` |
+| Hosting + adapter   | Cloudflare Workers with static assets (replaces the reference site at the same domain); no adapter: the site stays fully static | Deploy files `wrangler.jsonc` + `worker.js` at the root, see `docs/deploy-cloudflare.md`. Code stays host-agnostic: no provider-specific APIs outside `astro.config` |
 | Analytics           | `TODO`                                                                        | Only after cookie consent                                                    |
 | Testing             | Vitest + Playwright + `@axe-core/playwright`                                  | Required by section 8                                                        |
 | Formatting          | Prettier + `prettier-plugin-tailwindcss`                                      | Automatic Tailwind class ordering                                            |
@@ -52,7 +52,7 @@ src/
       infrastructure/     # Mobilia adapter, Zod schemas, mappers
       ui/                 # .astro components + islands
     leads/                # contact, visit request, valuation (destination TODO)
-    agency/               # about, team, services, sell your property
+    agency/               # about, team, services
     valuation/            # external valuator iframe embed (no pricing logic)
     reviews/              # Google reviews (Places API adapter)
     blog/
@@ -68,7 +68,7 @@ Rules:
 
 - `domain` imports nothing from `infrastructure`, `ui`, or Astro.
 - Mobilia data enters ONLY through `features/properties/infrastructure`; it is validated with Zod and mapped to domain types. UI never sees Mobilia field names (`txtTituloWebEn`, `precioVenta`...).
-- Ship zero JS by default; hydrate islands only where interaction is required (`client:visible` preferred).
+- Ship zero JS by default; hydrate islands only where interaction is required (`client:visible` preferred). Interactions and animations the reference has are required interactions (UI parity rule, §11): reproduce them with the smallest lazy script, CSS first where it gives the identical result.
 
 ### 3.1 Componentization & no duplication (mandatory)
 
@@ -92,8 +92,9 @@ All content — remote and local — is accessed through Astro Content Collectio
   - Zod `schema` validates and maps Mobilia fields to the domain `Property` (locales flattened to `{ es, en, it, ca }`). Pages only see the mapped shape.
 - **`agents`** (build-time): custom loader over `GET /api/v1/agentes` for team pages and listing contacts.
 - **`pages`** (build-time, `glob()` loader): Markdown/MDX in `src/content/pages/{locale}/` for Services, Living in Barcelona, About us, and legal pages. Frontmatter schema includes `routeKey`, `title`, `description`, `locale`.
-- **`pages`** (build-time, `glob()` over `src/content/pages/{key}.{locale}.json`): every editorial page as a head plus sections of flat items (`features/pages/infrastructure/pageSchema.ts`). A missing locale falls back to Spanish with `lang="es"` and `noindex`.
+- **`pages`** (build-time, `glob()` over `src/content/pages/{key}.{locale}.json`): every editorial page as a head plus sections of flat items (`features/pages/infrastructure/pageSchema.ts`). Every page ships in the 4 locales (§4). The Spanish fallback (`lang="es"` + `noindex`) is only a safety net for a file not translated yet, never the intended state.
 - **`market`** (build-time, `src/content/market/barcelona.json`): official figures of the 10 districts and 73 barrios.
+- **`marketText`** (build-time, `glob()` over `src/content/market/text/{locale}/{districts|barrios}/{slug}.json`): the prose of each district and barrio, one file per locale and zone; figures never go here. Spanish is the source; `translated: false` falls back to it per entry (`lang="es"`, noindex). Progress: `bun run test:translations`; plan: `docs/translation-batches.md`.
 - **`home`** (build-time, `glob()` over `src/content/home/{locale}.json`): editorial copy and media of the home page (UI proposal v3), edited in Pages CMS. Schema: `features/agency/infrastructure/homeContentSchema.ts` (strict); read via `getHomeContent(locale)`.
 - **`blog`** (build-time, `glob()` over `src/content/blog/*.md`, one file per article, created in Pages CMS). Schema: `features/blog/infrastructure/blogSchema.ts`. The file name is the URL slug. An article is served under every locale; only its own `language` is indexed.
 - **CMS-editable content (Pages CMS):** one file per locale; every CMS content file lives at `src/content/<collection>/<file>` (two folders below `src/`), because images are written as `../../assets/...` relative to the file so Astro's `image()` optimizes them; videos go to `public/media`. Headings mark their light-weight part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML. Fixed parts of a layout are named fields (`step1`…`step3`), not lists. Every form field in `.pages.yml` must match the schema (tested). UI labels (buttons, aria, legal) stay in the i18n dictionaries.
@@ -126,6 +127,8 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 - Every page emits `hreflang` alternates + `x-default`.
 - UI strings live in `shared/i18n/{locale}.ts`; no hardcoded user-facing text. Missing keys fail the type check.
 - Property titles/descriptions come from Mobilia per locale (`txtTituloWeb{Ca|En|It}`, base field = es). Fallback order: requested locale → `es` → `en`.
+- **All site copy is translated into the 4 locales** (decision 2026-11-04): UI dictionaries, `home`, `pages`, district and barrio prose. The Spanish text of the UI proposal (§11.1) is the source; en/it/ca are translations pending client review (ROADMAP). Not translated: Mobilia data (comes per locale), client reviews (verbatim, §6.1) and blog articles (one language each). Legal texts are translated too (client decision 2026-11-04, exception to §13), marked as pending lawyer review (I11); they will be replaced by the validated versions.
+- **Translation style (client decision 2026-11-24):** the Spanish text is the source (verbatim from the reference, which exists only in Spanish) and en/it/ca are written by us as faithful but NOT literal translations: same meaning, facts, figures, tone and fixed phrases, but natural and idiomatic in each language, as a native copywriter would write it, never word-for-word calques (no Spanish syntax or false friends). Same register as §11.5 (warm, direct, informal "you"). Sentence length and headings may be reshaped when the target language needs it, keeping the `*asterisk*` emphasis on the equivalent part. Legal, tax and financial text stays faithful and precise (natural wording, no changed meaning, no added or dropped clauses) and keeps the pending-lawyer-review notice.
 - Localized slugs: yes (see section 4.1).
 
 ### 4.1 URL structure (SEO)
@@ -135,7 +138,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 - Translated path segments per locale (Astro i18n does not translate segments): one route map in `shared/i18n/routes.ts` + a helper `getLocalizedPath(routeKey, locale, params)`. Never build URLs by string concatenation in components.
 - Lowercase, hyphen-separated, ASCII only (strip accents: `gràcia` → `gracia`). `trailingSlash: "never"`, enforced.
 - Each page: self-referencing `canonical`, `hreflang` for the 4 locales + `x-default` → `/es/...`.
-- Real HTTP 301s require an adapter or host-level redirect rules; a static build without them emits meta-refresh redirects, which are NOT acceptable for SEO. Implement redirects only once hosting is decided.
+- Real HTTP 301s require an adapter or host-level redirect rules; a static build without them emits meta-refresh redirects, which are NOT acceptable for SEO. The production build (`bun run build:production`) emits `dist/_redirects` (real 301s on Cloudflare/Netlify, absolute destinations, from `retiredRoutes.ts` + `legacyRoutes.ts`); the meta-refresh pages stay as the fallback for hosts without it (GitHub Pages staging). Only the origin in `deploy.config.json` is indexable (`docs/seo.md`).
 
 | Route key           | es                       | en                        | it                         | ca                       |
 | ------------------- | ------------------------ | ------------------------- | -------------------------- | ------------------------ |
@@ -144,24 +147,20 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | rent listing        | `/es/alquiler`           | `/en/rent`                | `/it/affitto`              | `/ca/lloguer`            |
 | property detail     | `/es/venta/{slug}-{ref}` | `/en/sale/{slug}-{ref}`   | `/it/vendita/{slug}-{ref}` | `/ca/venda/{slug}-{ref}` |
 | services            | `/es/servicios`          | `/en/services`            | `/it/servizi`              | `/ca/serveis`            |
-| living in Barcelona | `/es/vivir-en-barcelona` | `/en/living-in-barcelona` | `/it/vivere-a-barcellona`  | `/ca/viure-a-barcelona`  |
+| living in Barcelona | `/es/zonas/barcelona` | `/en/zones/barcelona` | `/it/zone/barcelona` | `/ca/zones/barcelona` |
 | about               | `/es/nosotros`           | `/en/about-us`            | `/it/chi-siamo`            | `/ca/qui-som`            |
 | contact             | `/es/contacto`           | `/en/contact`             | `/it/contatti`             | `/ca/contacte`           |
 | legal notice        | `/es/aviso-legal`        | `/en/legal-notice`        | `/it/note-legali`          | `/ca/avis-legal`         |
 | privacy             | `/es/privacidad`         | `/en/privacy-policy`      | `/it/privacy`              | `/ca/privacitat`         |
 | cookies             | `/es/cookies`            | `/en/cookie-policy`       | `/it/cookie`               | `/ca/galetes`            |
-| sell                | `/es/vender`             | `/en/sell`                | `/it/vendere`              | `/ca/vendre`             |
 | valuation           | `/es/valoracion`         | `/en/valuation`           | `/it/valutazione`          | `/ca/valoracio`          |
 | blog                | `/es/blog`               | `/en/blog`                | `/it/blog`                 | `/ca/blog`               |
 | blog post           | `/es/blog/{slug}`        | `/en/blog/{slug}`         | `/it/blog/{slug}`          | `/ca/blog/{slug}`        |
-| district            | `/es/vivir-en-barcelona/{district}` | `/en/living-in-barcelona/{district}` | `/it/vivere-a-barcellona/{district}` | `/ca/viure-a-barcelona/{district}` |
-| barrio              | `/es/vivir-en-barcelona/{district}/{barrio}` | `/en/living-in-barcelona/{district}/{barrio}` | `/it/vivere-a-barcellona/{district}/{barrio}` | `/ca/viure-a-barcelona/{district}/{barrio}` |
-| municipalities      | `/es/provincia-de-barcelona` | `/en/barcelona-province` | `/it/provincia-di-barcellona` | `/ca/provincia-de-barcelona` |
-| municipality        | `/es/provincia-de-barcelona/{municipio}` | `/en/barcelona-province/{municipio}` | `/it/provincia-di-barcellona/{municipio}` | `/ca/provincia-de-barcelona/{municipio}` |
+| district            | `/es/zonas/barcelona/distritos/{district}` | `/en/zones/barcelona/districts/{district}` | `/it/zone/barcelona/distretti/{district}` | `/ca/zones/barcelona/districtes/{district}` |
+| barrio              | `/es/zonas/barcelona/{barrio}` | `/en/zones/barcelona/{barrio}` | `/it/zone/barcelona/{barrio}` | `/ca/zones/barcelona/{barrio}` |
 | service detail      | `/es/servicios/{service}` | `/en/services/{service}` | `/it/servizi/{service}` | `/ca/serveis/{service}` |
-| custom search       | `/es/busqueda-a-medida`  | `/en/property-search-service` | `/it/ricerca-su-misura` | `/ca/cerca-a-mida`  |
+| my search           | `/es/mi-busqueda`        | `/en/my-search`           | `/it/la-mia-ricerca`       | `/ca/la-meva-cerca`      |
 | international guide | `/es/guia-internacional` | `/en/international-guide` | `/it/guida-internazionale` | `/ca/guia-internacional` |
-| home search         | `/es/busco-vivienda`     | `/en/find-a-home`         | `/it/cerco-casa`           | `/ca/busco-habitatge`    |
 | data sources        | `/es/datos`              | `/en/data`                | `/it/dati`                 | `/ca/dades`              |
 
 `{service}`, `{district}`, `{barrio}`, `{municipio}` slugs are localized where a translation exists (official Catalan place names stay as-is, ASCII-slugified).
@@ -196,7 +195,7 @@ Property detail rules:
 
 ## 6. Pages / features (MVP)
 
-Main navigation (from brand manual): **Properties · Services · Living in Barcelona · About us · Contact**.
+Main navigation (UI proposal v3, 2026-11-02, supersedes the brand manual): **Properties · Services · Living in Barcelona · My search · About us · Blog · Where we are · Contact**. Submenus: Properties (all, for sale, for rent, on the map); Services (the services index page + the 9 services); Living in Barcelona (map and neighbourhood search + the 10 districts). "Where we are" links to the about page `#donde-estamos`. The services index is a real page, as in the reference site (decision 2026-11-24). The sell page and the advisory service were retired by the client (reference `_redirects`): `/vender` and the old advisory URL 301 to the sale brokerage service and to the services index (`shared/i18n/retiredRoutes.ts`, wired in `astro.config.ts`). "My search" merges home search and custom search into one page with its own route `mySearch` (§4.1, decision 2026-11-04); `homeSearch` and `customSearch` are retired (their 301s to `mySearch` are in the production `_redirects`).
 
 1. Home — hero (video/photo with negative logo), search, featured properties (`portadaWeb`), CTA valuation
 2. Properties — filters (operation, type, price, rooms, area, zone), list + map, shareable URL params
@@ -211,7 +210,7 @@ Main navigation (from brand manual): **Properties · Services · Living in Barce
    - Client + server validation with the same Zod schema; honeypot + rate limiting; success/error states translated in the 4 locales.
    - Submitted to a server endpoint in `src/pages/api/`. Delivery destination: `TODO` (Mobilia stays read-only).
 10. Property PDF sheet — in scope, see item 24.
-11. Sell your property — owner-focused page with CTA to valuation and `LeadForm`.
+11. (retired) Sell your property page: replaced by the sale brokerage service.
 12. Valuation tool — provided by an external valuator embedded via iframe; it computes and returns prices itself. This site NEVER calculates, stores, or alters valuation figures.
     - One `ValuationEmbed` component (`features/valuation/ui/`), configured by props; used on the valuation page and anywhere else it appears.
     - Valuator URL/provider: `TODO`. Store the URL and allowed origin in config (`astro:env`, public), never hardcoded in components.
@@ -225,10 +224,10 @@ Main navigation (from brand manual): **Properties · Services · Living in Barce
 15. Google reviews — see section 6.1.
 16. Contact CTAs — tap-to-call, WhatsApp with prefilled localized message, private consultation (`LeadForm`). Company phone/WhatsApp number: `TODO` confirm.
 
-17. Services — index + 9 service pages (rental & management, advisory, interior design, real estate investment, personal shopper, renovations, valuation, strategic sale; `reformas-interiorismo` in the prototype looks like a leftover — `TODO` confirm).
+17. Services — index page (design canvas layout, cards built from each service page) + 8 service pages: sale brokerage, valuation, legal & tax advice, renovations & interior design, financial advice, personal shopper, real estate investment, rental & management.
 18. Property catalog — filters synced with URL (operation, type, district/barrio, price and area ranges, bedrooms, bathrooms, features, sort, list/map view) with a synced clustered map.
 19. Living in Barcelona — choropleth map (sale price / rent / density), barrio search, sortable 73-barrio comparison table, 10 district pages + 73 barrio pages with market charts (sale €/m² 2012→, rent 2014→, barrio vs district vs city), population, density, income.
-20. Barcelona province — ~155 municipality pages with official data table (population, area, density, comarca, territorial code) + market data where available.
+20. ~~Barcelona province~~ — removed (client decision 2026-11-24): no municipality pages, no `municipalities` collection; the old `/provincia-de-barcelona*` URLs 301 to the zones index (`src/shared/i18n/retiredRoutes.ts`).
 21. Custom search ("búsqueda a medida") — `LeadForm` variant.
 22. International guide — NIE, taxes, financing; content pending review by the partner tax advisor/law firm (`TODO`).
 23. Data sources page — every dataset, provider, license, last update, and link (section 6.2).
@@ -243,8 +242,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
   - **Sale prices (€/m²)**: Portal de Dades, Ajuntament de Barcelona (Consejo General del Notariado data).
   - **Rents**: Portal de Dades / **INCASÒL** rental deposits (fianzas).
   - **Population, density**: Padró — Open Data BCN (CKAN API).
-  - **Boundaries**: CartoBCN (districts, barrios, CC BY 4.0); ICGC (municipalities, CC BY 4.0).
-  - **Province**: INE (Padrón), Idescat (area, density, comarca); Agència de l'Habitatge de Catalunya / Ministerio de Vivienda for market data where available.
+  - **Boundaries**: CartoBCN (districts, barrios, CC BY 4.0); ICGC (CC BY 4.0).
 - Exact dataset IDs, endpoints, and update frequency: `TODO` (confirm per source). License/reuse terms for Portal de Dades, Open Data BCN, Notariado, and INCASÒL: `TODO` verify before publishing.
 - Access ONLY through content collections (`marketStats`, `geo`) with loaders in `features/districts/infrastructure/`. Never hardcode figures in pages or components.
 - Every metric is typed: `{ value, unit, year, provisional?: { value, until }, source, sourceUrl }`. Every figure displayed shows its source and year; provisional values are labeled.
@@ -256,7 +254,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
 - Decision (client, 2026-10-30): reviews are typed by hand in Pages CMS (`testimonials` collection, one JSON file each in `src/content/testimonials`), so nothing is fetched from or stored through a Google API. Google's Places policy forbids storing its API content, which ruled out a cached API integration.
 - The home shows the latest 3 (`LATEST_TESTIMONIALS`) with a notice of that criterion and a link to the Google profile (`home.reviews.mapsUrl`), where all of them can be read.
 - Copy each text word for word, never improve it. Newest first, never picked to hide negative ones.
-- Author as first name and surname initial, no photos: personal data minimised, pending lawyer review (I24).
+- Author with the name, photo and review link shown on Google (client decision). The photo is linked from Google, never copied, and stops showing if Google changes its URL. These links come from a Places API response, so review them with Google's policy and the lawyer before launch (I24).
 - No reviews → the section hides. Never fake reviews.
 
 ## 7. Legal & compliance (Spain / Catalonia) — verify with the client's lawyer
@@ -272,7 +270,7 @@ All sections and pages of the UI proposal (section 11.1) are in scope.
 
 - **TDD:** failing test first. Vitest for domain/application/adapters (Mobilia mocked with fixtures from real responses), Playwright for search, detail, and lead submission in all 4 locales.
 - **Types:** end-to-end typing is mandatory — see section 8.1.
-- **Accessibility:** WCAG 2.2 AA; turquoise `#21CEC5` on white fails contrast. On light backgrounds: `turquoise-deep` `#058C93` (4.05:1) only for large text (≥24px, or ≥18.66px bold) and non-text UI (icons, borders, focus rings, 3:1); for normal-size text and links use `petrol` `#0F5A5E` (7.9:1) or `teal` `#08777B` (5.3:1).
+- **Accessibility:** WCAG 2.2 AA; turquoise `accent` `#21CEC5` on light paper fails contrast (1.9:1): use it only for fills and rules. Focus rings and text/links on light backgrounds use `accent-tx` `#08777B` (5.2:1) or `petrol` `#0F5A5E` (7.9:1); `accent-2` `#058C93` only for text ≥ 24px; `taupe-tx` is `#6b6155` (AA, §11.2). No colour exceptions "as in the reference": ours win. On dark blocks `accent-tx` becomes `#21CEC5` (7.6:1). Full ratios per token in `docs/design-system/tokens.json` (§11.2).
 - **Performance:** Lighthouse ≥ 90 mobile; LCP < 2.5s. Photos use `<Picture>` with the shared `PHOTO_PICTURE` config (AVIF + WebP); exactly one eager/priority image per page; first-load JS ≈ 6–8 KB; heavy assets (Leaflet, hero video) load on visibility/idle. Budgets enforced in `tests/e2e/performance.spec.ts`; details and how to re-measure in `docs/performance.md`.
 - **SEO:** per-page metadata, Open Graph, sitemap (`@astrojs/sitemap` with i18n), `robots.txt`, JSON-LD (`RealEstateAgent`, `Residence` + `Offer`), clean slugs including the property reference.
 - **Security:** server-side validation, rate limiting + honeypot/captcha on forms, secrets only in env vars, never expose CRM errors to users.
@@ -312,71 +310,103 @@ bun run check        # astro check (types)
 bun run build        # astro build + property sheet PDFs (needs Chromium)
 ```
 
-## 11. Brand & design (source: HousySpace brand manual 2026)
+## 11. Brand & design (source: HousySpace design system — decision 2026-11-09)
 
-**Colors**
+> The single visual reference is the **HousySpace design system** (Claude artifact `https://claude.ai/artifact/EGX5LwxCsGXaz29aYzsZtG`), generated from the client's static site `HOUSYSPACE-PS/housyspace-web@ef59e52`. A local copy lives in `docs/design-system/` and is what agents read:
+>
+> - `docs/design-system/README.md` — brand book (tone, colour, type, spacing, imagery, logos, icons). **Read it before any UI or copy work.**
+> - `docs/design-system/tokens.json` (source of truth) and `tokens.css` (generated, CSS variables) — every colour, text style, spacing, radius and shadow, with its usage note and contrast ratio.
+> - `docs/design-system/components/<Name>/README.md` — one per section of the reference site: where it appears, what it needs, rules.
+> - `docs/design-system/assets/<Group>/README.md` — logos, seals, icons, illustrations, photos.
+>
+> This **supersedes** the 2026-11-07 prototype system (Cormorant Garamond, gold accent, ink/graphite, sentence case) and the older v3 artifact.
+> **UI parity rule (client decision 2026-11-24, mandatory, wins over every other look/behaviour statement in this file and in the skills):** the UI of every page, section, component, state and breakpoint (1440, 820, 390) must be EXACTLY equal to the client's reference site (`C:\Users\Utente\Desktop\housyspace-web-ref`, always its current `HEAD`, served locally on port 4500). "Equal" means measured in Chrome, not "similar": same sections in the same order, same copy, same sizes, spacing, colours, weights, case, images, interactions, animations and transitions. When the reference changes, the project follows. When this file, the design system or a skill disagrees with the rendered reference on how something looks or behaves, the reference wins. Only these exceptions are allowed, each documented in the commit body: (1) WCAG 2.2 AA colour/contrast and focus (use the nearest passing token); (2) privacy and legal rules (§5 approximate location, §7 consent); (3) real data instead of the reference's demo data (Mobilia listings, client reviews, official figures); (4) the 4 locales and localized routes (§4); (5) `prefers-reduced-motion`; (6) **performance (client decision 2026-11-24):** the site is image- and video-heavy, so it must stay fast (§8: Lighthouse mobile ≥ 90, LCP < 2.5 s, budgets in `docs/performance.md`). Media must LOOK the same as the reference but never weigh like it: keep our own light encodes (e.g. the hero video stays `hero-corto-*` at 3-5 MB; the reference's 23 MB/12 MB AV1/H.264 files are NOT copied), every image through `<Picture {...PHOTO_PICTURE}>` (AVIF + WebP), one eager image per page, video only after idle and when visible, no extra scripts or fonts beyond what the reference's look requires. If parity and a budget collide, keep the budget and report the visual difference as an open item. Anything the reference does with JavaScript (steppers, popups, counters, parallax, animated SVG) is reproduced, with a small lazy script on `astro:page-load`; "not ported" is never an acceptable end state, only an interim one reported to the user as an open item.
+> The reference site is plain HTML/CSS/JS: never copy its CSS or markup verbatim. Rebuild every section with this project's Tailwind v4 tokens, Astro components, Content Collections and i18n, so that the rendered result is identical.
+> The component previews and the site's `css/` and image files are NOT in the repo; open the artifact when pixel-level detail is needed (layout at 1440 px, class names).
 
-| Token            | HEX                               | Use                                                               |
-| ---------------- | --------------------------------- | ----------------------------------------------------------------- |
-| `petrol-dark`    | `#14282B`                         | Headings, brand backgrounds                                       |
-| `petrol`         | `#0F5A5E`                         | Primary brand color                                               |
-| `green-grey`     | `#58706F`                         | Secondary text                                                    |
-| `grey`           | `#918F8F`                         | Muted text                                                        |
-| `turquoise`      | `#21CEC5`                         | Digital accents on dark backgrounds (links, buttons, map markers) |
-| `turquoise-deep` | `#058C93`                         | Large text / UI accents on light backgrounds (not small text, §8) |
-| `bg-dark-1/2/3`  | `#1A2A2D` / `#22363A` / `#2A4044` | Dark sections                                                     |
+### 11.1 Look & feel
 
-No other color combinations for the logo.
+Sober and editorial: light paper, petrol green, a turquoise accent, ONE type family (Montserrat), always uppercase. Large real photography of Barcelona. Straight corners, almost no shadows: separation comes from alternating backgrounds and 1 px `line` rules.
 
-**Typography**
+- **Uppercase:** all site text is displayed in capitals, but HTML and the i18n dictionaries stay in normal case. The capitals come from CSS (`text-transform: uppercase`) so screen readers and Google read normal sentences. Headings (`h1`–`h4`) add `letter-spacing: .03em`. Today `global.css` uppercases `h1`–`h4`; the rest is uppercased per component (`uppercase`) until the full migration (`TODO` decide body-wide).
+- **Shape:** `radius-0` by default (buttons, cards, photos, fields); `radius-4` only for pop-up windows and boxes; `radius-20` only for the district cards; `radius-full` for circles (carousel arrows, avatars). Shadows only on pop-ups (`sombra-ventana`), report sheets on dark (`sombra-ficha`) and the philosophy button (`sombra-boton`).
+- **Focus:** visible everywhere: 2 px outline, offset 3 px, in the `accent` role (teal on paper, `#21CEC5` on dark blocks). Pure turquoise on paper is 1.9:1 and fails the 3:1 non-text minimum, so the design system's "outline in accent" is applied with the AA role.
+- **Dark blocks** (video hero, photo headers, valuation, reviews, footer, mobile menu) use the `dark` theme: `.surface-dark` (or `data-theme="dark"`) on the block; components never branch on it, they use the role tokens below.
 
-- Montserrat — the ONLY text font (client decision 2026-10-30, overrides the brand manual), one variable file with weights 400–900. All site text is uppercase, tracking 0.02em, never italic. h1/h2 800 (900 when they contain an `em`), h3 700, the `em` part of a heading 400. The property PDF sheet stays in sentence case.
-- Objektiv Mk1 — logo only, never in text (use the SVG logo, never re-typeset it).
+### 11.2 Colour
 
-**Logo**
+Define the tokens ONCE in `@theme` (values from `docs/design-system/tokens.json`; do not retype them from this file). **Tailwind names differ from the design system in these places:** Tailwind `canvas` = DS `bg`; Tailwind `accent` = DS `accent-tx` (text, links, focus); Tailwind `turquoise` = DS `accent` (pure `#21CEC5`, fills and rules only); Tailwind `dark` = DS `c-bg-dark`; `.surface-stone` = DS `c-bg-alt`. The table below lists the design-system names.
 
-- Header: official logo on white. Over video/photos: negative version.
-- Clear space = height of the "o" in "Housy". Minimum size: full logo 140px, basic 100px, isotype 24px.
-- Isotype: favicon, map marker, social avatars. Never stretch, recolor, or rotate.
-- Source: `logo/housyspace-completo-oficial.svg` (official version). Groups by color: `#housy` (#14282B), `#tejado` (#0F5A5E), `#space` (#58706F), `#lema` (#918F8F). The other manual versions (negative, monochrome petrol/black/white) are derived ONLY by recoloring these groups with manual colors.
-- Isotype SVG: the UI proposal contains `isotipo.svg` and `logo-blanco.svg` — `TODO` confirm they are official before use. Until then use a neutral placeholder; do NOT crop or redraw the isotype from the full logo.
-- Media: the proposal's hero video and architecture images are AI-generated placeholders — replace with licensed footage/photos (author + license recorded) before launch.
-- Copy to `public/brand/` at scaffold time; PNGs are for social/OG only.
+| Role token | Light | Dark block | Use |
+| --- | --- | --- | --- |
+| `c-bg` / `bg` | `#FCFBF8` | `#162B2A` | Page / block background (paper) |
+| `c-bg-alt` / `bg-alt` | `#F3F1EB` | `#1B3331` | Alternate sections (`.bg-a` / `.bg-b`) |
+| `card`, `card-h` | `#F3F1EB`, `#ECE8DF` | `#1D3533`, `#23403D` | Card and card hover |
+| `fg`, `fg-2` | `#172B2B` | `#F7F5F1`, `#D8DEDC` | Main text |
+| `muted` | `#67716F` | `#B4BFBE` | Secondary text |
+| `line`, `line-2` | `rgba(23,43,43,.12/.2)` | `rgba(169,190,188,.16/.28)` | Rules, borders, fields |
+| `accent-tx` | `#08777B` | `#21CEC5` | Turquoise for TEXT and links |
+| `accent` | `#21CEC5` | `#21CEC5` | Turquoise for fills, rules and focus only |
+| `petrol` | `#0F5A5E` | — | Brand green: service-card perimeter, accent fills (white text on it, 7.9:1) |
+| `ok` `ko` `nd` `warn` `err` | see tokens | see tokens | States; ALWAYS with a word or icon, never colour alone |
+| `ch-a` `ch-b` `ch-c` `ch-bar` `ch-grid` `ch-ax` | see tokens | see tokens | Charts and maps (§6.2) |
 
-**Graphic resources**
+Brand constants (no theme): `ink` `#0B1214`, `teal` `#08777B`, `accent-2` `#058C93`, `stone` `#EBE5DC`, `taupe` `#A99F92`, `c-bg-dark` `#162B2A`.
 
-- Parallel lines at the roof angle (38.6°), petrol or grey, low presence.
-- Photography: real Barcelona architecture/streets, B&W or petrol-tinted, natural light.
+Rules:
 
-**Tone:** "Soluciones inmobiliarias a tu medida" — elegant, close, international.
+- Components use role tokens; never hardcode hex and never branch on the theme.
+- `accent` on light fails as text (1.9:1): text and links use `accent-tx`. `accent-2` only for text ≥ 24 px. `taupe-tx` is `#6b6155` on light (darker than the design system's `#857a6c`, which gives 3.4 to 4.1:1): AA for any text size. Chart series `ch-b` `#9a7b4c` and `ch-c` `#6f7c79` pass 3:1 on cards. `c-text-2` (`muted`) on `bg-deep` (4.2:1) not for small text.
+- Gold `#B8996A` and the Cormorant/ink/graphite system are **retired**. Remove them when touching a component; do not add new uses.
 
-### 11.1 UI proposal (visual reference)
+### 11.3 Typography
 
-- Source (current, **v3**): https://claude.ai/artifact/9boSsZEnH16FUL5ATJ78Pk — the site is being restyled to it in phases (ROADMAP). Its demo listings, photos and placeholder copy are never real content.
-- Previous reference (v1, superseded as each phase lands): https://claude.ai/artifact/U6AnjESPcJssjpZy9dDoz8.
-- Rebuild it with this project's components and tokens; do not copy its CSS/JS files.
-- **Look (v3):** light editorial design on warm paper (`#FCFBF8`) with dark `#162B2A` blocks (header bar, valuation, reviews, footer, text over photos), Montserrat only (all caps), large imagery.
-- **Extra UI tokens** (from the prototype, complementing section 11 — define once in `@theme`):
+- **Montserrat** only (variable 400–900, Google Fonts `family=Montserrat:wght@400..900&display=swap`, latin + latin-ext; self-hosting through Fontsource is allowed if performance needs it).
+- **Montserrat Titulares** = the same Montserrat declared with `size-adjust: 81.9%` for headings. The design system sizes were measured with it: where `size-adjust` is not available, multiply `titulares` sizes by 0.819. Implemented in `src/layouts/HeadingFontFace.astro` (`shared/lib/headingFont.ts`): the Fonts API cannot set `size-adjust`, so the heading `@font-face` reuses the body font's own files from `fontData` (no second download); use `font-heading`, never a hand-scaled size.
+- Styles come from `tokens.json` `type.groups` (Titulares, Texto, Interfaz): headings 800/900 (`presentacion-h1`, `cabecera-h1`, `seccion-h2`, `pagina-h1`, `h2`), subtitles 700 (`h3`, `h3-s`), body 400 (`cuerpo` = 14 px / 1.7), buttons 500 wide-tracked (`boton`), labels 700 very wide-tracked (`rotulo`). Sizes are for 1440 px; large headings use `clamp()` and shrink on mobile.
+- 10 px is the minimum size on the whole site (`legal`, `pie-enlace`).
+- Headings mark their light-weight part with `*asterisks*` (`shared/lib/emphasis.ts`), never HTML (§3.2).
+- **Objektiv Mk1**: logo SVG only, never re-typeset in HTML.
 
-| Token | HEX | Use |
-|-------|-----|-----|
-| `canvas` | `#FCFBF8` | Page background (role) |
-| `bg-deep` / `bg-soft` | `#EDEAE3` / `#F3F1EB` | Placeholders, alternate fills (role) |
-| `card` / `card-hover` | `#F3F1EB` / `#ECE8DF` | Cards (role) |
-| `line` | `rgb(23 43 43 / .12)` | Borders/dividers (role) |
-| `fg` / `muted` | `#172B2B` / `#5F6967` | Main / secondary text (role) |
-| `accent` | `#08777B` | Accent text and links (role) |
-| `ink` | `#0B1214` | Fixed dark ink (overlays, text on turquoise) |
-| `teal` | `#08777B` | Intermediate accent |
-| `stone` | `#EBE5DC` | Light warm sections |
-| `taupe` | `#A99F92` | Warm muted detail |
+### 11.4 Layout
 
-Role tokens are redefined by `.surface-dark` (canvas `#162B2A`, fg `#F7F5F1`, muted `#B4BFBE`, accent `#21CEC5`) and `.surface-stone` (canvas `#EBE5DC`, darker muted and accent for AA). Components use the roles and never branch on the theme.
+- Container `.wrap`: max `wrap-max` 1120 px, `wrap-pad` 22 px each side.
+- Sections `.sec`: vertical padding `seccion-y` 76 px, `seccion-y-movil` 54 px below 760 px (the mobile breakpoint is **760 px**).
+- Header height `cabecera-alto` 92 px desktop / `cabecera-alto-movil` 76 px mobile; anchors keep that gap (`scroll-padding-top`).
+- Header: two states: transparent with dark theme over the hero photo/video, and solid (`glass` background) elsewhere. Mobile menu is a drop-down panel. Footer is a dark block.
 
-- **Motion:** shared easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade/translate) on section content and line-by-line reveal on the hero heading, via ONE IntersectionObserver utility initialized on `astro:page-load`; slow image zoom on hover (≈1.2–1.6s); UI micro-transitions 250–350ms. All disabled under `prefers-reduced-motion`.
-- **Header (v3):** petrol bar with the negative logo (transparent over the home hero until scroll), main menu with dropdowns, language switcher, skip-to-content link. The menu stays **inline whenever it fits** (measured in three densities, `shared/ui/organisms/navFit.ts`, never by a fixed breakpoint, never clipped); only when it does not fit does it move behind the "Menu" button (light drawer from the right), shown together with the "Let's talk" CTA.
-- **Home sections:** 01 Hero (video + poster) · 02 Services (6 cards) · 03 Featured properties (Mobilia `portadaWeb`) · 04 Valuation explainer · 05 Google reviews · 06 Living in Barcelona (10 districts) · 07 Blog · Contact block · Footer (company data + AICAT).
-- **Scope:** EVERYTHING in the proposal is in scope (confirmed). See section 6 for the full feature list.
+### 11.5 Content & tone (Spanish is the source; en/it/ca keep the meaning)
+
+- Address the client informally (es: tuteo, «Te asesoramos», «tu vivienda»; en/it/ca: the equivalent warm, direct register, `TODO` client review). Present as **consultores inmobiliarios, not an agency**: «Consultores inmobiliarios, no solo vendedores». Never «agencia pequeña».
+- Fixed phrases, verbatim: «No te preocupes, yo me encargo» (always «yo», never «nos encargamos») and «UNA MILLA EXTRA» (never «una milla más»).
+- «Los mejores» appears only in two sentences: «Rodearnos de los mejores también forma parte de nuestra filosofía.» and «Nos rodeamos de los mejores para ofrecerte mucho más.»
+- Figures always rounded with «más de»: «+35 M€ intermediados», «+100 inmuebles», «+10 municipios», «9 años en el sector», «5 años de HousySpace». Never the exact figure.
+- No emoji, no italics, no full stop at the end of headings, no numbered kickers («01 /») above them.
+- Buttons use a clear verb: «Conócenos», «Enviar consulta», «Ver el mapa aquí».
+
+### 11.6 Imagery, logos, icons
+
+- **Photos:** real Barcelona architecture and streets (modernista facades, balconies, interiors); district photos are Shutterstock standard licence. Always `object-fit: cover`, straight corners. AI-generated placeholders must be replaced before launch.
+- **Illustrations:** own, transparent background, for services and About us. If one was AI-generated, the footer says «Imagen conceptual generada con IA».
+- **Logos:** `logo.svg` / `logo-oscuro.svg` on light paper; `logo-blanco.svg` on dark blocks and photos; isotype (`isotipo.svg`, `isotipo-blanco.svg`) only in small spaces and for favicon; `pin-housyspace.svg` is the map and valuation pin. Never stretch, recolour or rotate. Source: `logo/housyspace-completo-oficial.svg`; PNGs for social/OG only. Minimum size: full logo 140 px, isotype 24 px.
+- **Seals (footer):** AICAT with its logo only; APEI with its logo and «Experto nº 3261» below.
+- **Icons:** inline SVG, stroke only: `viewBox="0 0 24 24"`, `fill="none"`, `stroke="currentColor"`, `stroke-width="2.2"`, round caps and joins, `aria-hidden="true"` next to text. No emoji, no icon fonts.
+
+### 11.7 Page sections (components of the reference)
+
+Each section of the reference site has a README under `docs/design-system/components/<Name>/`: where it appears, what the caller provides and its rules. Build the matching Astro component from it (§3.1) instead of inventing a layout:
+
+- **Home:** `PortadaHero` (video, no text on it) · `Presentacion` · `Filosofia` · `InmueblesDestacados` · `DescubreBarcelona` · `CarruselServicios` · `Cifras` · `Valoracion` · `Resenas` · `BlogPortada`.
+- **Properties:** `CatalogoCabecera` · `TarjetaInmueble` · `InmueblesVendidos` · `FichaInmueble`.
+- **Services:** `ServicioCabecera` · `ServicioIncluye` · `ServicioPasos` · `Hablemos`.
+- **About / Contact / Living in Barcelona:** `NosotrosCabecera` · `NosotrosSeccion` · `MillaExtra` · `ServiciosIntegrales` · `ContactoFormas` · `ContactoFormulario` · `PreguntasFrecuentes` · `MiBusquedaFormulario` · `Distritos` · `BarrioCabecera` · `BarrioDatos`.
+- **Shared:** `Cabecera` · `Pie` · `Boton` · `Newsletter` · `TextoLegal`.
+
+Where the reference and this file disagree on behaviour (real listings from Mobilia instead of demo ones, 4 locales, approximate location, consent rules), this file wins (the exceptions of the UI parity rule above); where they disagree on look or interaction, the rendered reference wins, then the design system. Some parts of the reference are static or popups (e.g. the Lystos valuator opens in a popup there): measure how it renders and behaves before deciding.
+
+### 11.8 Motion
+
+Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px) on section content via ONE IntersectionObserver on `astro:page-load`; image zoom on hover (scale 1→1.05, 700 ms); UI micro-transitions 250–350 ms. All disabled under `prefers-reduced-motion`. The design system does not define the previous system's scroll progress bar or hero Ken Burns: the Ken Burns was removed on 2026-11-24 (the poster is the video's first frame and stays still); keep the progress bar only if already built, recoloured with `accent` (`TODO` confirm with the client).
 
 ## 12. Agent skills (local)
 
@@ -393,16 +423,19 @@ Role tokens are redefined by `.surface-dark` (canvas `#162B2A`, fg `#F7F5F1`, mu
 | `astro-best-practices` | Rendering mode, islands, images, env, endpoints, performance |
 | `seo-multilingual` | Metadata, canonical, hreflang, JSON-LD, sitemap, redirects |
 | `testing-tdd` | Writing tests (Vitest, Playwright) — always, with any code change |
+| `page-restyle` | Adapting a page to the client's reference site (texts + styles), CSS-first and measured in Chrome |
 | `commit-per-task` | Finishing any task: one conventional commit per tested task, explaining what and why |
 
 - Third-party skills: read the full content first (never import unreviewed scripts), then copy the folder into `.claude/skills/` or install via `/plugin marketplace add <owner/repo>` + `/plugin install <plugin>@<marketplace>` with project scope. Record the source in the skills index.
+- Project subagents live in `.claude/agents/` (`restyle-living`, `restyle-about-contact`, `restyle-my-search`, `restyle-blog`, `restyle-legal`, `restyle-sell-valuation`): each owns a group of pages and loads `page-restyle`. Run parallel ones in separate git worktrees and merge their branches one by one.
 - Claude Code entry point: `CLAUDE.md` contains `@AGENTS.md` so this file stays the single source of truth.
 
 ## 13. Agent rules
 
 - Read this file before any task. If a request conflicts with it, ask.
+- **UI = the reference site.** Any UI work ends only when the page is measured equal to the reference at 1440, 820 and 390 (§11 UI parity rule). Differences left over are listed as open items with the reason; never silently accepted as "by design".
 - `ROADMAP.md` tracks phases, status, and client inputs. Check it before starting work; update its checkboxes and decisions log when a task lands. Never start work marked 🔒 until its input is resolved.
-- Never invent listings, prices, legal text, company data, or translations of legal text.
+- Never invent listings, prices, legal text, company data, or translations of legal text. Exception (client, 2026-11-04): the legal drafts are machine-translated into en/it/ca and marked as pending lawyer review (§4).
 - Do not change the stack or architecture, or add dependencies, without approval.
 - Small, reviewable changes; tests and code ship together.
 - Never duplicate code: reuse or extend existing components and helpers (section 3.1). Duplicated markup or logic is a defect.

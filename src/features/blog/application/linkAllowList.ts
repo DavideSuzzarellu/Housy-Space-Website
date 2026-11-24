@@ -1,4 +1,4 @@
-import type { MarketData } from "@/features/districts/infrastructure/marketSchema";
+import type { MarketNumbers } from "@/features/districts/infrastructure/marketSchema";
 import { LOCALES, type Locale } from "@/shared/i18n/config";
 import { buildPath, routes, type RouteKey } from "@/shared/i18n/routes";
 import { getServiceSlug, SERVICE_KEYS } from "@/shared/i18n/services";
@@ -52,7 +52,7 @@ const FIXED_ROUTES = (Object.keys(routes) as RouteKey[]).filter(
  * the slugs of the articles themselves.
  */
 export function buildLinkAllowList(input: {
-  readonly market: MarketData;
+  readonly market: MarketNumbers;
   readonly articleSlugs: readonly string[];
 }): LinkAllowList {
   const targets = new Map<string, LinkTarget>();
@@ -75,7 +75,7 @@ export function buildLinkAllowList(input: {
       add(buildPath("district", locale, { district: district.slug }), { kind: "zone", locale });
     }
     for (const barrio of input.market.barrios) {
-      const path = buildPath("barrio", locale, { district: barrio.district, barrio: barrio.slug });
+      const path = buildPath("barrio", locale, { barrio: barrio.slug });
       add(path, { kind: "zone", locale });
     }
     for (const slug of input.articleSlugs) {

@@ -12,16 +12,19 @@
     "build": "astro build && node scripts/build-property-sheets.ts",
     "blog:check": "bun scripts/blog-check.ts",
     "blog:inventory": "bun scripts/blog-inventory.ts",
+    "build:production": "ASTRO_PRODUCTION=1 bun run build",
     "build:sheets": "node scripts/build-property-sheets.ts",
     "preview": "astro preview",
     "test": "vitest run",
+    "test:translations": "vitest run zoneTextCompleteness --silent=false",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "astro check",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:seo": "node scripts/check-seo.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

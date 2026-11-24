@@ -31,8 +31,18 @@ function parseNumber(raw: string): number {
   return Number(decimal?.[2] === undefined ? integerPart : `${integerPart}.${decimal[2]}`);
 }
 
+/** The "€3,499/m²" notation (currency first), also used by the zone prose. */
+const EURO_FIRST = new RegExp(
+  String.raw`€\s?(${NUMBER})\/(m²|m2|mes|month|mese)(?![\p{L}\p{N}])`,
+  "giu",
+);
+
+/** Figures per m² or per month in the text, in document order ("3.499 €/m²", "€3,499/m²", ...). */
 export function extractQuotedFigures(text: string): QuotedFigure[] {
-  return [...text.matchAll(QUOTED)].map((match) => ({
+  const matches = [...text.matchAll(QUOTED), ...text.matchAll(EURO_FIRST)].sort(
+    (a, b) => a.index - b.index,
+  );
+  return matches.map((match) => ({
     value: parseNumber(match[1] ?? ""),
     unit: /m[²2]$/i.test(match[2] ?? "") ? "perM2" : "perMonth",
     raw: match[0],

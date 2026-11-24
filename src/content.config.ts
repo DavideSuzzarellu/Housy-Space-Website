@@ -1,22 +1,17 @@
 import { marketSchema } from "./features/districts/infrastructure/marketSchema";
+import { zoneTextSchema } from "./features/districts/infrastructure/zoneTextSchema";
 import { pageSchema } from "./features/pages/infrastructure/pageSchema";
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
-import { CLIENT_ID, CLIENT_SECRET, MOBILIA_OFFLINE } from "astro:env/server";
+import { CLIENT_ID, CLIENT_SECRET } from "astro:env/server";
 import { homeContentSchema } from "@/features/agency/infrastructure/homeContentSchema";
 import { blogSchema } from "@/features/blog/infrastructure/blogSchema";
 import { testimonialSchema } from "@/features/reviews/infrastructure/testimonialSchema";
-import {
-  createMobiliaLoaders,
-  createOfflineMobiliaLoaders,
-} from "@/features/properties/infrastructure/mobilia/loaders";
+import { createMobiliaLoaders } from "@/features/properties/infrastructure/mobilia/loaders";
 
 // Build-time collections backed by the read-only Mobilia CRM (AGENTS.md §3.2, §5).
 // Incremental sync and CI caching: docs/content-sync.md.
-// MOBILIA_OFFLINE is only for CI checks that need no CRM (docs/blog/flujo-editorial.md).
-const mobilia = MOBILIA_OFFLINE
-  ? createOfflineMobiliaLoaders()
-  : createMobiliaLoaders({ clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
+const mobilia = createMobiliaLoaders({ clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
 
 export const collections = {
   properties: defineCollection({ loader: mobilia.properties }),
@@ -43,6 +38,16 @@ export const collections = {
   market: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/market" }),
     schema: marketSchema,
+  }),
+  // Prose of the districts and barrios, one file per locale and zone (translators never share a file).
+  // Spanish is the source; an entry with `translated: false` falls back to it (zoneText.ts).
+  marketText: defineCollection({
+    loader: glob({
+      pattern: "*/*/*.json",
+      base: "./src/content/market/text",
+      generateId: ({ entry }) => entry.replace(/.json$/, ""),
+    }),
+    schema: zoneTextSchema,
   }),
   home: defineCollection({
     loader: glob({ pattern: "*.json", base: "./src/content/home" }),

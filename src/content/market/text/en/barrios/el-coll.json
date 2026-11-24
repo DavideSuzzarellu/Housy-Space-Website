@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "A hillside neighbourhood with a Romanesque church, a strong community and a park in a former quarry.",
+  "text": [
+    "Its origin is the church of Nostra Senyora del Coll, from the 11th century, with written references from 1099, and until the early 20th century it remained a rural place. The Vallcarca bridge, built in 1923, improved its connections, and in the 1960s it grew at great speed and filled the remaining open spaces.",
+    "Today it is a small neighbourhood (0.35 km²) with a strong sense of community, and its best-known corner is the Parc de la Creueta del Coll, created in a former quarry and home to sculptures by Ellsworth Kelly and Eduardo Chillida. At 3,558 €/m² and 906 €/month, it is the most affordable neighbourhood in Gràcia."
+  ],
+  "housing": "Houses and blocks of flats on hillside streets, with areas of low-rise houses.",
+  "places": [
+    "Parc de la Creueta del Coll",
+    "Església de Nostra Senyora del Coll",
+    "Can Queralt (Josep Maria Jujol)"
+  ]
+}

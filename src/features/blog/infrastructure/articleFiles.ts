@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { z } from "astro/zod";
-import { parse } from "yaml";
+import { parseMiniYaml } from "./miniYaml";
 import { blogSchema } from "./blogSchema";
 
 /**
@@ -39,7 +39,7 @@ const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
 export function splitFrontmatter(raw: string): { data: unknown; body: string } {
   const match = FRONTMATTER.exec(raw);
   if (match?.[1] === undefined) return { data: undefined, body: raw };
-  return { data: parse(match[1]) as unknown, body: match[2] ?? "" };
+  return { data: parseMiniYaml(match[1]), body: match[2] ?? "" };
 }
 
 function issueKey(issue: z.core.$ZodIssue): string | undefined {
@@ -63,7 +63,15 @@ export function loadArticles(dir: string): {
   for (const name of names) {
     const file = path.join(dir, name);
     const slug = name.slice(0, -".md".length);
-    const { data, body } = splitFrontmatter(readFileSync(file, "utf8"));
+    let parsed: { data: unknown; body: string };
+    try {
+      parsed = splitFrontmatter(readFileSync(file, "utf8"));
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "cabecera ilegible";
+      errors.push({ slug, file, issues: [{ path: "(cabecera)", message }] });
+      continue;
+    }
+    const { data, body } = parsed;
     const result = schema.safeParse(data);
     if (result.success) {
       articles.push({ slug, file, data: result.data, body });

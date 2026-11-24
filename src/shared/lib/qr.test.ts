@@ -2,7 +2,7 @@ import QRCode from "qrcode";
 import { describe, expect, it } from "vitest";
 import { QR_QUIET_ZONE, toQrSvgPath } from "./qr";
 
-const URL_TEXT = "https://www.housyspace.com/es/venta/piso-en-venta-en-barcelona-1001";
+const URL_TEXT = "https://housyspace.com/es/venta/piso-en-venta-en-barcelona-1001";
 
 describe("toQrSvgPath", () => {
   const qr = toQrSvgPath(URL_TEXT);

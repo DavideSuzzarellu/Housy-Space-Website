@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "La Zona Franca i el port: el barri més extens de Barcelona i un dels menys habitats.",
+  "text": [
+    "Amb 14,24 km², és el barri més gran de la ciutat, però només hi viuen 3.174 persones: gairebé tot el seu sòl l'ocupen la Zona Franca, la logística i la indústria vinculada al port. El nom ve dels camps que ocupaven aquesta zona, a la part baixa de la Marina de Sants.",
+    "És un barri nou i en transformació, on s'aixequen promocions d'habitatge sobre antics sòls industrials, amb el parc de les Tretze Roses, inaugurat el 2024, com a pulmó verd i la línia 10 del metro com a connexió. Com que hi ha tan poc habitatge, les seves xifres de preu (2.724 €/m²) i de lloguer (1.390 €/mes) es basen en poques operacions i convé mirar-les amb cautela."
+  ],
+  "housing": "Habitatge nou i escàs, entre polígons industrials i logístics.",
+  "places": ["Zona Franca", "Port de Barcelona", "Parc de les Tretze Roses", "Mercabarna"]
+}

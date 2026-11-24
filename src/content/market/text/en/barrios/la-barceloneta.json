@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The old fishermen's quarter, with its beach, straight streets and small flats facing the port.",
+  "text": [
+    "La Barceloneta was planned in the mid-18th century, on sandy ground beside the port, to rehouse the residents of La Ribera who lost their homes when the Citadel was built. Its layout, with straight, narrow streets and elongated blocks, is unlike anything in the old town. Between the market, the church of Sant Miquel del Port and the beach, it still has the air of a seafaring village.",
+    "The flats are small, many under 50 m², and that helps explain its figures: the price per square metre (5,183 €/m²) is the highest in Ciutat Vella, but the average rent (881 €/month) is the lowest in the district. It is a neighbourhood much sought after for its closeness to the sea, so it is worth comparing each building carefully."
+  ],
+  "housing": "Small flats in low-rise blocks on straight streets, many under 50 m².",
+  "places": [
+    "Playa de la Barceloneta",
+    "Mercat de la Barceloneta",
+    "Sant Miquel del Port",
+    "Passeig Marítim"
+  ]
+}

@@ -41,7 +41,7 @@ export function getMainNavigation(locale: Locale): NavItem[] {
     },
     {
       label: nav.services,
-      href: withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" }),
+      href: getLocalizedPath("services", locale),
       children: SERVICE_KEYS.map((service) => ({
         label: serviceNames[service],
         href: getLocalizedPath("serviceDetail", locale, {
@@ -63,13 +63,14 @@ export function getMainNavigation(locale: Locale): NavItem[] {
       secondary: false,
     },
     {
-      label: nav.homeSearch,
-      href: getLocalizedPath("homeSearch", locale),
+      label: nav.mySearch,
+      href: getLocalizedPath("mySearch", locale),
       children: [],
       secondary: false,
     },
-    { label: nav.about, href: getLocalizedPath("about", locale), children: [], secondary: true },
+    { label: nav.about, href: getLocalizedPath("about", locale), children: [], secondary: false },
     { label: nav.blog, href: getLocalizedPath("blog", locale), children: [], secondary: true },
+    { label: nav.whereWeAre, href: whereWeAreHref(locale), children: [], secondary: true },
     {
       label: nav.contact,
       href: getLocalizedPath("contact", locale),
@@ -79,6 +80,13 @@ export function getMainNavigation(locale: Locale): NavItem[] {
   ];
 }
 
+/** "Where we are" is a section of the about page (proposal v3). */
+const WHERE_WE_ARE_ID = "donde-estamos";
+
+function whereWeAreHref(locale: Locale): string {
+  return withUrlExtras(getLocalizedPath("about", locale), { hash: WHERE_WE_ARE_ID });
+}
+
 export function getFooterNavigation(locale: Locale): NavColumn[] {
   const { nav, footer } = getDictionary(locale);
   return [
@@ -86,36 +94,26 @@ export function getFooterNavigation(locale: Locale): NavColumn[] {
       title: footer.columns.explore,
       links: [
         { label: nav.properties, href: getLocalizedPath("sale", locale) },
-        {
-          label: nav.services,
-          href: withUrlExtras(getLocalizedPath("home", locale), { hash: "servicios" }),
-        },
+        { label: nav.services, href: getLocalizedPath("services", locale) },
         { label: nav.living, href: getLocalizedPath("living", locale) },
-        { label: nav.homeSearch, href: getLocalizedPath("homeSearch", locale) },
+        { label: nav.mySearch, href: getLocalizedPath("mySearch", locale) },
         { label: footer.links.blog, href: getLocalizedPath("blog", locale) },
       ],
     },
     {
       title: footer.columns.owners,
-      links: [
-        {
-          label: nav.sell,
-          href: getLocalizedPath("serviceDetail", locale, {
-            service: getServiceSlug("saleBrokerage", locale),
-          }),
-        },
-        { label: footer.links.customSearch, href: getLocalizedPath("customSearch", locale) },
-        {
-          label: footer.links.internationalBuyers,
-          href: getLocalizedPath("internationalGuide", locale),
-        },
-      ],
+      links: [{ label: nav.valuation, href: getLocalizedPath("valuation", locale) }],
     },
     {
       title: footer.columns.company,
       links: [
         { label: nav.about, href: getLocalizedPath("about", locale) },
         { label: nav.contact, href: getLocalizedPath("contact", locale) },
+        { label: nav.whereWeAre, href: whereWeAreHref(locale) },
+        {
+          label: footer.links.internationalGuide,
+          href: getLocalizedPath("internationalGuide", locale),
+        },
         { label: footer.links.dataStatus, href: getLocalizedPath("dataSources", locale) },
         { label: footer.links.legalNotice, href: getLocalizedPath("legalNotice", locale) },
         { label: footer.links.privacy, href: getLocalizedPath("privacy", locale) },

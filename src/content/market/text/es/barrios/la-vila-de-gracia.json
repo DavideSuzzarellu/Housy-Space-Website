@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El corazón de Gràcia: plazas con terrazas, mercado de hierro y una fiesta mayor que llena las calles.",
+  "text": [
+    "Es el núcleo del antiguo municipio. Gràcia se constituyó como municipio independiente en 1850, con más de 13.000 habitantes; en 1877 ya eran 33.000 y en 1897, cuando volvió a unirse a Barcelona, casi 62.000. Su centro administrativo fue la plaça de la Vila, con la torre del reloj que levantó Antoni Rovira i Trias entre 1862 y 1864.",
+    "Buena parte de la urbanización la hicieron los propietarios de cada finca por su cuenta, y de ahí vienen las calles que cambian de nombre o se interrumpen y las muchas plazas, normalmente una por propiedad: la del Sol y la de la Virreina son los lugares de encuentro de los vecinos. El Mercat de la Llibertat, de hierro, es de 1893, y la Casa Vicens, de Gaudí, de 1883, está en la calle de les Carolines. Hoy la vida se hace en la calle: terrazas, comercio de barrio, cine y pequeños teatros, y cada agosto las Festes de Gràcia con las calles decoradas por los vecinos. Con 51.477 habitantes, es el barrio más poblado de Gràcia, y su precio de compraventa, 5.094 €/m², es el más alto del distrito."
+  ],
+  "housing": "Casas bajas, fincas antiguas y edificios de pisos, en calles estrechas.",
+  "places": [
+    "Plaça de la Vila de Gràcia",
+    "Plaça del Sol",
+    "Plaça de la Virreina",
+    "Mercat de la Llibertat",
+    "Casa Vicens"
+  ]
+}

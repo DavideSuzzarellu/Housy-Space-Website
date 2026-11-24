@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "A former village with a rambla, a labyrinth garden and low-rise houses, on the slopes of Collserola.",
+  "text": [
+    "Horta was an independent municipality until 1904, and its old centre, around Plaça d'Eivissa and the Rambla d'Horta, keeps a rural air that is unusual in today's Barcelona: low-rise houses, centuries-old farmhouses (masies) with vegetable gardens and carpentry, marble and blacksmith workshops. The meeting of several streams gave the area its reputation as the city's water reserve.",
+    "This is home to the Parc del Laberint d'Horta, a neoclassical garden whose construction began in 1794, and the Velòdrom d'Horta, which hosted events at the 1992 Olympic Games. With 31,116 inhabitants in 3.07 km², it offers village life with the centre of Barcelona connected by metro."
+  ],
+  "housing": "Low-rise houses and farmhouses with vegetable gardens in the old centre, and an extension of blocks of flats around it.",
+  "places": ["Parc del Laberint d'Horta", "Rambla d'Horta", "Plaça d'Eivissa", "Velòdrom d'Horta"]
+}

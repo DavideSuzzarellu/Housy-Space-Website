@@ -1,9 +1,14 @@
 {
-  "title": "Reformas e interiorismo · HousySpace",
-  "description": "Reformas para todo tipo de inmueble: proyecto, interiorismo y obra con un solo interlocutor.",
+  "title": "Reformas integrales en Barcelona · HousySpace",
+  "description": "Reformas integrales en Barcelona con un solo interlocutor: proyecto e interiorismo con el estudio con el que colaboramos, y seguimiento de plazos y presupuesto.",
   "head": {
-    "heading": "Reformas e interiorismo",
+    "heading": "Reformas *e interiorismo*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-reformas-1000.webp",
+      "alt": "Ilustración del servicio: Volúmenes crema y verde que se reordenan",
+      "scale": 0.652
+    },
     "items": [
       {
         "kind": "tag",
@@ -16,11 +21,22 @@
       {
         "kind": "image",
         "src": "../../assets/home/det-ventanal-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Cuéntanos tu reforma",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -30,16 +46,54 @@
         },
         {
           "kind": "p",
-          "text": "Hacemos reformas para todo tipo de inmueble. Pensamos la reforma y el interiorismo a la vez, para que la distribución, los materiales y la luz estén decididos antes de empezar la obra. Después coordinamos a los profesionales y seguimos plazos y presupuesto hasta la entrega."
+          "text": "Coordinamos reformas para todo tipo de inmueble. La reforma y el interiorismo se piensan a la vez, para que la distribución, los materiales y la luz estén decididos antes de empezar la obra. Después coordinamos a los profesionales y seguimos plazos y presupuesto hasta la entrega."
         },
         {
           "kind": "p",
-          "text": "El proyecto lo desarrollamos con el estudio de arquitectura e interiorismo con el que colaboramos, y tú tienes siempre a la misma persona de referencia."
+          "text": "El proyecto lo desarrollamos con el estudio de arquitectura e interiorismo con el que colaboramos, y tú tienes siempre a la misma persona de referencia. Las actuaciones técnicas y la ejecución de la obra corresponden a los profesionales y empresas que intervienen en cada proyecto."
         }
       ]
     },
     {
+      "layout": "cards",
       "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cuándo reformar"
+        },
+        {
+          "kind": "h2",
+          "text": "Cuándo tiene sentido una reforma"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Antes de vender",
+              "text": "No toda reforma compensa antes de vender. Estudiamos si una mejora concreta puede facilitar la venta o si basta con ofrecer al comprador un presupuesto de obra. [Ver compraventa](service:venta-estrategica)."
+            },
+            {
+              "title": "Al comprar",
+              "text": "La reforma estudiada antes de comprar, para conocer su coste antes de decidir. [Ver Personal Shopper](service:personal-shopper)."
+            },
+            {
+              "title": "Para alquilar",
+              "text": "Puesta a punto de la vivienda antes de ofrecerla en alquiler."
+            },
+            {
+              "title": "Para invertir",
+              "text": "Reformas pensadas con los números delante: coste, plazo y efecto esperado en la renta o en la venta."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "stepsList",
+      "surface": "stone",
       "band": false,
       "items": [
         {
@@ -59,7 +113,7 @@
             },
             {
               "title": "Proyecto e interiorismo",
-              "text": "Distribución, materiales, iluminación y mobiliario, en un mismo proyecto."
+              "text": "Distribución, materiales, iluminación y mobiliario a medida, en un mismo proyecto."
             },
             {
               "title": "Presupuesto",
@@ -67,11 +121,11 @@
             },
             {
               "title": "Licencias y permisos",
-              "text": "Tramitamos los permisos de obra que pida el Ayuntamiento."
+              "text": "Se tramitan los permisos de obra que pida el Ayuntamiento."
             },
             {
               "title": "Obra",
-              "text": "Coordinamos a los gremios y seguimos plazos y presupuesto en obra."
+              "text": "Coordinamos a los gremios (albañiles, instaladores, carpinteros) y seguimos plazos, presupuesto y calidad."
             },
             {
               "title": "Acabados y entrega",
@@ -83,7 +137,8 @@
     },
     {
       "id": "interiorismo",
-      "surface": "stone",
+      "layout": "swatches",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -92,7 +147,7 @@
         },
         {
           "kind": "h2",
-          "text": "La vivienda se elige también con las manos"
+          "text": "Materiales y acabados"
         },
         {
           "kind": "lead",
@@ -104,128 +159,41 @@
           "items": [
             {
               "title": "Madera natural",
-              "text": "Suelos, carpintería y mobiliario"
+              "text": "Suelos, carpintería y mobiliario",
+              "color": "#B98A5E"
             },
             {
               "title": "Piedra y mármol",
-              "text": "Encimeras, baños y detalles"
+              "text": "Encimeras, baños y detalles",
+              "color": "#D9D2C5"
             },
             {
               "title": "Microcemento",
-              "text": "Continuidad en suelos y paredes"
+              "text": "Continuidad en suelos y paredes",
+              "color": "#CDBFA9"
             },
             {
               "title": "Lino y algodón",
-              "text": "Textiles y cortinas"
+              "text": "Textiles y cortinas",
+              "color": "#ECE6DA"
             },
             {
               "title": "Latón",
-              "text": "Iluminación y herrajes"
+              "text": "Iluminación y herrajes",
+              "color": "#B48A45"
             },
             {
               "title": "Verde profundo",
-              "text": "Color y contraste"
+              "text": "Color y contraste",
+              "color": "#2C4A44"
             }
           ]
         }
       ]
     },
     {
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Qué incluye"
-        },
-        {
-          "kind": "h2",
-          "text": "Todo el proyecto, en las mismas manos"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "01DistribuciónCómo se mueve la luz y cómo te mueves tú por la casa."
-            },
-            {
-              "title": "",
-              "text": "02Materiales y acabadosUna paleta coherente para toda la vivienda."
-            },
-            {
-              "title": "",
-              "text": "03IluminaciónLuz natural y artificial pensadas para cada estancia."
-            },
-            {
-              "title": "",
-              "text": "04Mobiliario a medidaDiseño, selección y compra del mobiliario y los detalles."
-            },
-            {
-              "title": "",
-              "text": "05Licencias y gremiosPermisos, albañiles, instaladores y carpinteros, coordinados por nosotros."
-            },
-            {
-              "title": "",
-              "text": "06Seguimiento de obraPlazos, presupuesto y calidad controlados hasta el último detalle."
-            }
-          ]
-        }
-      ]
-    },
-    {
+      "layout": "colab",
       "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "tag",
-          "text": "Cuándo reformar"
-        },
-        {
-          "kind": "h2",
-          "text": "Una reforma para cada momento"
-        },
-        {
-          "kind": "list",
-          "ordered": false,
-          "items": [
-            {
-              "title": "",
-              "text": "01Antes de venderPresupuestos de obra para el comprador o pequeñas mejoras que ayudan a vender. [Ver compraventa](service:venta-estrategica)."
-            },
-            {
-              "title": "",
-              "text": "02Al comprarLa reforma estudiada antes de comprar y hecha por nosotros. [Ver Personal Shopper](service:personal-shopper)."
-            },
-            {
-              "title": "",
-              "text": "03Para alquilarPuesta a punto para alquilar antes y mejor."
-            },
-            {
-              "title": "",
-              "text": "04Para invertirReformas que suman valor y rentabilidad, con los números delante."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«No te preocupes, yo me encargo.»"
-        },
-        {
-          "kind": "p",
-          "text": "Licencias, gremios, imprevistos de obra: los gestionamos nosotros para que tú solo tengas que decidir."
-        }
-      ]
-    },
-    {
-      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -238,13 +206,13 @@
         },
         {
           "kind": "lead",
-          "text": "Para el proyecto, el interiorismo y la dirección de las reformas colaboramos con un estudio de arquitectura e interiorismo de Barcelona."
+          "text": "Para el proyecto, el interiorismo y la dirección de las reformas colaboramos con un estudio de arquitectura e interiorismo de Barcelona. HousySpace coordina y es tu interlocutor; el estudio desarrolla el proyecto y las empresas de obra lo ejecutan."
         },
         {
           "kind": "buttons",
           "items": [
             {
-              "label": "Conoce a nuestros colaboradores",
+              "label": "Por qué confiamos en ellos",
               "href": "route:about#colaboraciones",
               "solid": false
             }
@@ -256,14 +224,18 @@
           "items": [
             {
               "title": "Maria Guimerà Arquitectura",
-              "text": "Arquitectura e interiorismo Estudio de arquitectura e interiorismo en Barcelona, con reformas integrales de viviendas y pisos del Eixample. [Visitar mariaguimera.com](https://mariaguimera.com/es/inicio/)"
+              "text": "Estudio de arquitectura e interiorismo en Barcelona, con reformas integrales de viviendas y pisos del Eixample.",
+              "kicker": "Arquitectura e interiorismo",
+              "href": "https://mariaguimera.com/es/inicio/",
+              "cta": "Visitar mariaguimera.com"
             }
           ]
         }
       ]
     },
     {
-      "surface": "stone",
+      "layout": "cta",
+      "surface": "paper",
       "band": false,
       "items": [
         {
@@ -300,8 +272,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Compraventa e intermediación inmobiliaria",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Personal Shopper inmobiliario",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Valoración inmobiliaria",
+              "text": "",
+              "href": "service:valoracion"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

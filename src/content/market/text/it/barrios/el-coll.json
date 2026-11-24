@@ -1,0 +1,15 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un quartiere di pendio con una chiesa romanica, tanta vita di vicinato e un parco in un'antica cava.",
+  "text": [
+    "La sua origine è la chiesa di Nostra Senyora del Coll, dell'XI secolo, con riferimenti scritti dal 1099, e fino all'inizio del Novecento rimase un luogo rurale. Il ponte di Vallcarca, del 1923, migliorò i collegamenti, e negli anni Sessanta crebbe a gran velocità e riempì gli spazi liberi rimasti.",
+    "Oggi è un quartiere piccolo (0,35 km²), con un forte senso di vicinato, che ha nel parco della Creueta del Coll, creato in un'antica cava e con sculture di Ellsworth Kelly ed Eduardo Chillida, il suo angolo più noto. Con 3.558 €/m² e 906 €/mese, è il quartiere più accessibile di Gràcia."
+  ],
+  "housing": "Case e palazzi di appartamenti in strade di pendio, con zone di case basse.",
+  "places": [
+    "Parc de la Creueta del Coll",
+    "Església de Nostra Senyora del Coll",
+    "Can Queralt (Josep Maria Jujol)"
+  ]
+}

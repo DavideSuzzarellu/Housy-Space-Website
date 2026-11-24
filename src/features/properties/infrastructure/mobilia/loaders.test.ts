@@ -1,16 +1,24 @@
-import { describe, expect, it } from "vitest";
-import { createOfflineMobiliaLoaders } from "./loaders";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { createMobiliaLoaders } from "./loaders";
 
-describe("createOfflineMobiliaLoaders", () => {
-  it("loads nothing: it takes no credentials and never reaches the network or the store", async () => {
-    const loaders = createOfflineMobiliaLoaders();
-    await expect(loaders.properties.load()).resolves.toBeUndefined();
-    await expect(loaders.agents.load()).resolves.toBeUndefined();
-  });
+type LoadContext = Parameters<ReturnType<typeof createMobiliaLoaders>["properties"]["load"]>[0];
 
-  it("keeps the collection schemas, so types stay identical to the online loaders", () => {
-    const offline = createOfflineMobiliaLoaders();
-    expect(offline.properties.schema).toBeDefined();
-    expect(offline.agents.schema).toBeDefined();
+afterEach(() => vi.unstubAllGlobals());
+
+describe("createMobiliaLoaders with placeholder credentials", () => {
+  it("skips both syncs without touching the network and says so", async () => {
+    const fetchSpy = vi.fn(() => Promise.reject(new Error("network must not be used")));
+    vi.stubGlobal("fetch", fetchSpy);
+    const warn = vi.fn();
+    // Only the logger is read on the skip path: a partial context stands in for Astro's.
+    const context = { logger: { warn } } as unknown as LoadContext;
+
+    const loaders = createMobiliaLoaders({ clientId: "placeholder", clientSecret: "placeholder" });
+    await loaders.properties.load(context);
+    await loaders.agents.load(context);
+
+    expect(fetchSpy).not.toHaveBeenCalled();
+    expect(warn).toHaveBeenCalledTimes(2);
+    expect(warn.mock.calls.flat().join(" ")).toMatch(/placeholder credentials/i);
   });
 });

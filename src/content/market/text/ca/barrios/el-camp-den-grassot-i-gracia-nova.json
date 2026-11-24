@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "La Gràcia més densa i veïnal, amb eix comercial propi i festa major al setembre.",
+  "text": [
+    "Era zona rural al límit del municipi de Gràcia fins que, cap al 1860, els seus propietaris la van urbanitzar; el nom prové de Jeroni Grassot, un d'ells. Té un eix comercial propi, el de Gràcia Nova, i celebra la festa major a la primera quinzena de setembre.",
+    "Amb 55.948 hab./km², és el barri més dens de Gràcia, i es nota en un carrer molt viu, amb comerç local i blocs de pisos. Hi ha La Sedeta, l'antiga fàbrica tèxtil que va funcionar del 1899 al 1976 i avui acull un institut i un centre cívic, i l'església de l'Immaculat Cor de Maria. És una opció per a qui vol l'ambient de Gràcia amb un preu de compravenda (5.031 €/m²) una mica per sota del de la Vila."
+  ],
+  "housing": "Edificis de pisos de diferents èpoques en carrers rectes, amb zones més recents a Ca l'Alegre de Dalt.",
+  "places": ["La Sedeta", "Església de l'Immaculat Cor de Maria", "Ca l'Alegre de Dalt"]
+}

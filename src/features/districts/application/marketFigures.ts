@@ -1,14 +1,14 @@
 import type { AllowedFigures } from "@/features/districts/domain/marketFigures";
-import type { MarketData } from "@/features/districts/infrastructure/marketSchema";
+import type { MarketNumbers } from "@/features/districts/infrastructure/marketSchema";
 
 /**
  * Every "€/m²" and "€/mes" value the official market data contains: current figures, rents per
  * m², historical series and provisional values, for the city, its districts and its barrios.
  */
-export function allowedMarketFigures(market: MarketData): AllowedFigures {
+export function allowedMarketFigures(market: MarketNumbers): AllowedFigures {
   const perM2: number[] = [];
   const perMonth: number[] = [];
-  const series = (place: MarketData["city"] | MarketData["districts"][number]) => {
+  const series = (place: MarketNumbers["city"] | MarketNumbers["districts"][number]) => {
     perM2.push(place.sale, ...place.saleSeries.map(([, value]) => value));
     perMonth.push(place.rent, ...place.rentSeries.map(([, value]) => value));
   };

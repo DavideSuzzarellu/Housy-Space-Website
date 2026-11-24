@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un barri aixecat als anys cinquanta, amb una forta tradició veïnal i reivindicativa.",
+  "text": [
+    "Va sorgir a la dècada del 1950 per la gran demanda d'habitatge després de l'arribada massiva d'immigrants, i sense equipaments ni serveis. El seu nom al·ludeix als arbres que creixien a la vora dels rius, els verns, i a la Pau, el polígon d'habitatges inaugurat el 1966.",
+    "La lluita veïnal va agafar força des dels anys setanta, i el barri conserva aquesta tradició associativa. Entre els seus punts de referència hi ha la plaça de la Verneda, inaugurada el 1976, el Parc de Sant Martí, l'institut Salvador Seguí i la Rambla Prim. Amb 2.971 €/m², és el segon barri amb el preu de compravenda més baix del districte, només per darrere del Besòs i el Maresme."
+  ],
+  "housing": "Polígon d'habitatges de la Pau (1966) i blocs de protecció oficial, en un barri d'alta densitat.",
+  "places": ["Plaça de la Verneda", "Parc de Sant Martí", "Rambla Prim"]
+}

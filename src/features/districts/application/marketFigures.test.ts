@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { marketSchema, type MarketData } from "../infrastructure/marketSchema";
+import { marketSchema, type MarketNumbers } from "../infrastructure/marketSchema";
 import { allowedMarketFigures } from "./marketFigures";
 
-const market: MarketData = marketSchema.parse(
+const market: MarketNumbers = marketSchema.parse(
   JSON.parse(readFileSync("src/content/market/barcelona.json", "utf8")),
 );
 

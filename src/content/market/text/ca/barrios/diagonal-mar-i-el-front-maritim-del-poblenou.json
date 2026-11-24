@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Torres davant del mar i un parc gran: el barri més nou de la costa, nascut amb el Fòrum del 2004.",
+  "text": [
+    "Va sorgir del pla urbanístic del Fòrum Universal de les Cultures del 2004, en catorze hectàrees que en part ocupa avui el parc i que van pertànyer a l'empresa Can Girona. El seu nom es deu al fet que és a l'inici de l'avinguda Diagonal, vora la Mediterrània, i és un dels barris més nous de Barcelona.",
+    "És un barri residencial de torres, com la Illa de la Llum, la Illa del Bosc i la Illa del Cel, amb el parc de Diagonal Mar i la platja de Llevant com a grans espais oberts. Amb 5.528 €/m² i 1.732 €/mes, té el preu de compravenda i el lloguer més alts de Sant Martí."
+  ],
+  "housing": "Torres i edificis residencials d'obra nova, vora el mar.",
+  "places": ["Parc de Diagonal Mar", "Platja de Llevant"]
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Real estate blog in Barcelona · HousySpace",
+  "description": "Barcelona real estate blog: valuation, selling a home, costs, taxes and the market, explained calmly by consultants who work in the city every day.",
+  "head": {
+    "heading": "The *Blog*",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Property knowledge in Barcelona"
+      },
+      {
+        "kind": "lead",
+        "text": "Analysis, advice and property decisions in Barcelona, explained calmly by those who work in the city every day."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "newsletter",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Newsletter"
+        },
+        {
+          "kind": "h2",
+          "text": "Receive articles in your inbox"
+        },
+        {
+          "kind": "p",
+          "text": "Barcelona property market, tips for buying, selling and renting, and HousySpace news."
+        },
+        {
+          "kind": "form",
+          "id": "newsletter",
+          "fields": [
+            {
+              "name": "email",
+              "label": "Email address",
+              "required": true,
+              "full": false,
+              "type": "email",
+              "placeholder": "Your email address",
+              "kind": "field"
+            },
+            {
+              "kind": "submit",
+              "label": "Subscribe"
+            },
+            {
+              "name": "consent",
+              "label": "**I would like to receive the HousySpace newsletter and articles by email.** I have read the [privacy policy](route:privacy).",
+              "required": true,
+              "full": false,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "**Basic information.** Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: sending you the newsletter and articles. Legal basis: your consent. Recipients: we do not share your data, except where legally required; email providers act on our behalf. Rights: access, rectification, erasure, objection, restriction and portability, and you can unsubscribe at any time via the link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com). More information in the [privacy policy](route:privacy). (Draft: no newsletter tool is connected yet; clicking will open your email client with the request pre-filled and you will not be subscribed until you send it.)"
+            }
+          ],
+          "mode": "email"
+        }
+      ]
+    }
+  ]
+}

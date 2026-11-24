@@ -146,6 +146,9 @@ function init(root: HTMLElement): (() => void) | undefined {
   const onSubmit = (event: SubmitEvent) => {
     event.preventDefault();
     onInput();
+    // Buscar / Ver resultados: the list already filtered live, so bring it into view.
+    const behavior = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    root.querySelector("[data-catalog-results]")?.scrollIntoView({ behavior });
   };
   const onClick = (event: MouseEvent) => {
     if (!(event.target instanceof Element)) return;

@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Passaggi di case con cortile, un parco con vista e un'aria da paese di villeggiatura in piena città.",
+  "text": [
+    "Intorno al 1870 vi furono costruite le prime ville della borghesia barcellonese, che lo usava come zona di villeggiatura. El Farró prende il nome da Silvestre Farró, che costruì le prime case all'inizio dell'Ottocento, e nel 2007 le due zone sono state riunite in un unico quartiere.",
+    "La sua personalità sta nel parco del Putxet, che occupa buona parte della sua superficie, e in passaggi come Sant Felip o Mulet, con case basse con cortile e file di case a schiera, spesso attorno a ville di stile coloniale o modernista. Con 1.202 €/mese, ha l'affitto medio più basso del distretto."
+  ],
+  "housing": "Case basse con cortile, passaggi di case a schiera ed edifici di poca altezza.",
+  "places": ["Parc del Putxet", "Passatge de Sant Felip", "Passatge de Mulet"]
+}

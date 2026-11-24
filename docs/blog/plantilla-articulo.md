@@ -31,7 +31,7 @@ pillar: false # true solo para el artículo principal del grupo.
 category: valoracion # valoracion | venta | gastos-impuestos | herencias | contratos-documentacion | mercado-barcelona
 
 # ── Captación ─────────────────────────────────────────────────────────────
-cta: valoracion # valoracion → /valoracion · venta → /vender · consulta → /contacto. La web pinta el bloque final sola.
+cta: valoracion # valoracion → /valoracion · venta → /servicios/venta-estrategica · consulta → /contacto. La web pinta el bloque final sola.
 
 # ── Imagen principal (obligatoria) ────────────────────────────────────────
 image: ../../assets/blog/cuanto-vale-mi-piso.jpg # Archivo en src/assets/blog/. Barcelona real, luz natural; licencia comprobada.
@@ -54,7 +54,7 @@ en Barcelona depende de… Cierra la introducción con un [servicio relacionado]
 ## ¿Primera pregunta del lector?
 
 Un H2 por duda principal, redactado como la pregunta que haría el propietario. Respuesta concreta primero,
-matiz después. Enlaza donde aporte, no por rellenar: [los barrios](/es/vivir-en-barcelona).
+matiz después. Enlaza donde aporte, no por rellenar: [los barrios](/es/zonas/barcelona).
 
 ### Subapartado (solo si hace falta)
 
@@ -67,7 +67,7 @@ Si no está, no se cita en euros por m² ni por mes: se describe sin cifra.
 
 ## ¿Y en mi caso concreto?
 
-Cierre útil que lleve a la acción natural del artículo (sin promesas): [vender tu vivienda](/es/vender).
+Cierre útil que lleve a la acción natural del artículo (sin promesas): [vender tu vivienda](/es/servicios/venta-estrategica).
 ```
 
 ## Qué pinta la web sola (no lo escribas en el texto)
@@ -82,7 +82,7 @@ Cierre útil que lleve a la acción natural del artículo (sin promesas): [vende
 
 - Mínimo 2 enlaces internos, al menos 1 a un servicio (`/es/servicios/...`).
 - Rutas completas del idioma del artículo (`/es/...`), sin dominio ni `index.html`, solo páginas reales:
-  servicios, valoración, vender, contacto, Vivir en Barcelona (distritos y barrios del colección de mercado) y otros artículos que existan.
+  servicios, valoración, contacto, zonas (Barcelona, distritos y barrios de la colección de mercado) y otros artículos que existan.
 - Fuentes externas: solo en `sources` o como enlace contextual; siempre `https`.
 
 ## Frases que no puede llevar el texto

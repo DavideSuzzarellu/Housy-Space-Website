@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Il Camp Nou, l'antica Maternitat e il quartiere di Sant Ramon, tra la Diagonal e L'Hospitalet.",
+  "text": [
+    "Sono due quartieri in uno. La Maternitat nacque attorno alla Casa de la Maternitat i Expòsits, e Sant Ramon prende il nome dalla parrocchia di Sant Ramon Nonat ed è noto anche come Collblanc. Tra i due si trovano il Camp Nou e gli impianti dell'FC Barcelona, oltre al cimitero di Les Corts, e una parte del quartiere appartiene alla Zona Universitària.",
+    "Vivere qui significa avere lo stadio come vicino, ma anche un quartiere da vivere ogni giorno, con appartamenti in palazzi residenziali e un buon collegamento con la Diagonal. Con 4.399 €/m² e 1.160 €/mese è il più accessibile di Les Corts."
+  ],
+  "housing": "Appartamenti in palazzi residenziali, con grandi impianti sportivi intorno.",
+  "places": ["Camp Nou", "Maternitat", "Cementiri de les Corts", "Zona Universitària"]
+}

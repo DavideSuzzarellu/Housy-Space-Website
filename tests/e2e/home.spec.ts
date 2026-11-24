@@ -1,10 +1,14 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { DISTRICTS } from "../../src/features/districts/domain/districts";
 import { LOCALE_META, LOCALES } from "../../src/shared/i18n/config";
 import { getAlternates, getLocalizedPath } from "../../src/shared/i18n/routes";
 import { blockingAxeViolations, skipIntro } from "./support";
 
-const SITE = "https://www.housyspace.com";
+// Production origin: the same file the site and the Cloudflare worker read (deploy.config.json).
+const { productionOrigin: SITE } = JSON.parse(readFileSync("deploy.config.json", "utf8")) as {
+  productionOrigin: string;
+};
 
 for (const locale of LOCALES) {
   test.describe(`home (${locale})`, () => {
@@ -47,18 +51,20 @@ for (const locale of LOCALES) {
         .locator("main [data-section]")
         .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-section")));
       expect(sections).toEqual([
-        "hero",
-        "presentation",
-        "featured",
         "valuation",
+        "featured",
+        "gallery",
         "services",
         "philosophy",
         "reviews",
         "living",
         "blog",
+        "contact",
       ]);
-      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(9);
-      await expect(page.locator("[data-contact-block]")).toBeVisible();
+      // The hero and the presentation are not `data-section` blocks: check their headings.
+      await expect(page.locator("#presentation-heading")).toBeVisible();
+      await expect(page.locator('[data-section="services"] a[href*="/"] h3')).toHaveCount(8);
+      await expect(page.locator('[data-section="contact"]')).toBeVisible();
       await expect(
         page.locator("[data-blog-empty], [data-section=blog] [data-post-card]").first(),
       ).toBeVisible();
@@ -66,12 +72,84 @@ for (const locale of LOCALES) {
 
     test("services accordion opens a closed panel before following its link", async ({ page }) => {
       const panels = page.locator("[data-services-accordion] [data-panel]");
+      await page.locator("[data-rail-wrap]").scrollIntoViewIfNeeded();
+      await expect(page.locator("[data-services-accordion][data-ready]")).toHaveCount(1);
       await expect(panels.first()).toHaveAttribute("data-active", "true");
       const url = page.url();
       // A touch tap: no hover first (with a mouse, hover opens the panel and the click navigates).
       await panels.nth(2).locator("a").dispatchEvent("click");
       await expect(panels.nth(2)).toHaveAttribute("data-active", "true");
       expect(page.url()).toBe(url);
+    });
+
+    test("services carousel shows seven panels in a circle; the others are skipped by Tab", async ({
+      page,
+    }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      await expect(panels).toHaveCount(8);
+      await expect(panels.locator("a:visible")).toHaveCount(7);
+      await expect(panels.first()).toHaveAttribute("data-pos", "0");
+      await expect(panels.nth(4)).toHaveAttribute("data-pos", "hl");
+      await expect(panels.nth(4).locator("a")).toBeHidden();
+    });
+
+    test("services carousel turns round with its arrows and the keyboard", async ({ page }) => {
+      const panels = page.locator("[data-services-accordion] [data-panel]");
+      const rail = page.locator("[data-rail-wrap]");
+      await rail.scrollIntoViewIfNeeded();
+      await expect(rail.locator("[data-services-accordion][data-ready]")).toHaveCount(1);
+      await rail.locator("[data-rail-next]").click();
+      await expect(panels.nth(1)).toHaveAttribute("data-active", "true");
+      await rail.locator("[data-rail-prev]").click();
+      await rail.locator("[data-rail-prev]").click();
+      // Circular: before the first comes the last.
+      await expect(panels.nth(7)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(7)).toHaveAttribute("data-pos", "0");
+
+      await panels.nth(7).locator("a").focus();
+      await page.keyboard.press("ArrowRight");
+      await expect(panels.nth(0)).toHaveAttribute("data-active", "true");
+      await expect(panels.nth(0).locator("a")).toBeFocused();
+    });
+
+    test("services carousel can be paused and resumed (WCAG 2.2.2)", async ({ page }, testInfo) => {
+      test.skip(
+        testInfo.project.name.includes("reduced-motion"),
+        "No auto-advance, so no pause button, under reduced motion",
+      );
+      const rail = page.locator("[data-rail-wrap]");
+      const list = rail.locator("[data-services-accordion]");
+      const toggle = rail.locator("[data-rail-toggle]");
+      await rail.scrollIntoViewIfNeeded();
+      await expect(list).toHaveAttribute("data-ready", "true");
+      await expect(toggle).toBeVisible();
+      const pauseLabel = await toggle.getAttribute("aria-label");
+      await toggle.click();
+      await expect(list).toHaveAttribute("data-held", /.*/);
+      expect(await toggle.getAttribute("aria-label")).not.toBe(pauseLabel);
+      await toggle.click();
+      await expect(toggle).toHaveAttribute("aria-label", pauseLabel ?? "");
+    });
+
+    test("stats count up to the figures of the content (CSS counter, no script)", async ({
+      page,
+    }, testInfo) => {
+      // Scroll the whole row into view: the scroll-driven count ends once it has entered.
+      await page.locator("#stats ul").scrollIntoViewIfNeeded();
+      await page.evaluate(() => window.scrollBy(0, 300));
+      // The figures are in the markup either way (screen readers, no scroll timeline support).
+      await expect(page.locator(".stat-final")).toHaveText(["35", "100", "60", "9"]);
+      // Under reduced motion the counter is not animated: the final figures are shown as is.
+      if (testInfo.project.name.includes("reduced-motion")) return;
+      await expect
+        .poll(() =>
+          page
+            .locator(".stat-count")
+            .evaluateAll((nodes) =>
+              nodes.map((node) => getComputedStyle(node).getPropertyValue("--count").trim()),
+            ),
+        )
+        .toEqual(["35", "100", "60", "9"]);
     });
 
     test("districts carousel moves with its buttons", async ({ page }) => {
@@ -84,7 +162,7 @@ for (const locale of LOCALES) {
     test("shows the 3 latest client reviews, newest first", async ({ page }) => {
       const section = page.locator('[data-section="reviews"]');
       await expect(section.locator("li")).toHaveCount(3);
-      await expect(section.locator("li").first()).toContainText("Bruno S.");
+      await expect(section.locator("li").first()).toContainText("Bruno Sorrentini");
     });
 
     test("links to the 10 district pages", async ({ page }) => {
@@ -125,7 +203,8 @@ for (const locale of LOCALES) {
     test("shows the company data and AICAT number in the footer", async ({ page }) => {
       const footer = page.getByRole("contentinfo");
       await expect(footer).toContainText("B26903419");
-      await expect(footer).toContainText("14032");
+      // The AICAT number is the alt text of its seal (logo only, AGENTS.md section 11.6).
+      await expect(footer.locator('img[alt*="14032"]')).toHaveCount(1);
     });
 
     test("has no serious or critical axe violations", async ({ page }) => {

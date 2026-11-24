@@ -1,0 +1,289 @@
+{
+  "title": "Gestione di affitti a Barcellona · HousySpace",
+  "description": "Gestione degli affitti a Barcellona: selezioniamo l'inquilino, prepariamo il contratto e, se vuoi, ci occupiamo della gestione integrale dell'affitto.",
+  "head": {
+    "heading": "Affitto *e gestione di immobili*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-alquiler-1000.webp",
+      "alt": "Illustrazione del servizio: Un arco verde che protegge tre edifici",
+      "scale": 0.798
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
+      {
+        "kind": "lead",
+        "text": "Commercializzazione, selezione degli inquilini e gestione della locazione."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Voglio affittare la mia casa",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Affittare con tranquillità inizia dalla scelta dell'inquilino giusto."
+        },
+        {
+          "kind": "p",
+          "text": "Per i proprietari che vogliono affittare senza preoccupazioni: commercializziamo l'immobile, selezioniamo con cura gli inquilini e ti accompagniamo nel contratto. Se preferisci, gestiamo anche la locazione per tutta la durata del contratto."
+        }
+      ]
+    },
+    {
+      "layout": "split",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Due modi di lavorare"
+        },
+        {
+          "kind": "h2",
+          "text": "Sei tu a scegliere fin dove arriviamo"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Troviamo l'inquilino"
+            },
+            {
+              "kind": "p",
+              "text": "Dalla pubblicazione alla consegna delle chiavi."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Preparazione e pubblicazione dell'annuncio"
+                },
+                {
+                  "title": "",
+                  "text": "Risposta ai candidati e visite"
+                },
+                {
+                  "title": "",
+                  "text": "Verifica della solvibilità e della documentazione"
+                },
+                {
+                  "title": "",
+                  "text": "Contratto di locazione e deposito cauzionale"
+                },
+                {
+                  "title": "",
+                  "text": "Inventario e consegna delle chiavi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "E gestiamo la locazione"
+            },
+            {
+              "kind": "p",
+              "text": "Durante il contratto, come concordato."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Assistenza all'inquilino e gestione dei problemi"
+                },
+                {
+                  "title": "",
+                  "text": "Coordinamento delle riparazioni"
+                },
+                {
+                  "title": "",
+                  "text": "Controllo dei pagamenti e delle utenze"
+                },
+                {
+                  "title": "",
+                  "text": "Rinnovi, aggiornamento del canone e fine contratto"
+                },
+                {
+                  "title": "",
+                  "text": "Ispezione all'uscita dell'inquilino"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversazione iniziale",
+              "text": "Capiamo l'immobile e le condizioni che stai cercando."
+            },
+            {
+              "title": "Messa a punto",
+              "text": "Verifichiamo la documentazione e, se necessario, lo stato dell'appartamento."
+            },
+            {
+              "title": "Commercializzazione",
+              "text": "Presentiamo l'immobile e rispondiamo agli interessati."
+            },
+            {
+              "title": "Selezione",
+              "text": "Esaminiamo i candidati con te. La decisione è sempre tua."
+            },
+            {
+              "title": "Contratto e gestione",
+              "text": "Formalizziamo il contratto e, se lo scegli, gestiamo la locazione."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Domande frequenti"
+        },
+        {
+          "kind": "h2",
+          "text": "Le domande più frequenti"
+        },
+        {
+          "kind": "faq",
+          "q": "Quali documenti mi servono per affittare?",
+          "a": "In Catalogna servono il certificato di abitabilità (cédula de habitabilidad) e l'attestato di prestazione energetica. Se non li hai, se ne occupa l'architetto con cui collaboriamo."
+        },
+        {
+          "kind": "faq",
+          "q": "Come scegliete l'inquilino?",
+          "a": "Verifichiamo la sua solvibilità e la documentazione, e ti presentiamo i candidati che corrispondono al profilo. Decidi sempre tu."
+        },
+        {
+          "kind": "faq",
+          "q": "Vi occupate del contratto e del deposito cauzionale?",
+          "a": "Sì. Prepariamo il contratto e versiamo il deposito cauzionale all'INCASÒL, come previsto dalla normativa catalana."
+        },
+        {
+          "kind": "faq",
+          "q": "E se si verifica un problema durante il contratto?",
+          "a": "Se scegli la gestione, ci occupiamo noi dei problemi. E se sorge una controversia legale, la coordiniamo con lo studio legale con cui lavoriamo. [Vedi consulenza legale e fiscale](service:asesoramiento-juridico-fiscal)."
+        },
+        {
+          "kind": "p",
+          "text": "Non sai se ti conviene affittare o vendere? Lo valutiamo insieme in una [consulenza di orientamento](route:services#asesoramiento)."
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parliamone"
+        },
+        {
+          "kind": "lead",
+          "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Alquiler%20y%20gesti%C3%B3n%20de%20inmuebles",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Consulenza legale e fiscale",
+              "text": "",
+              "href": "service:asesoramiento-juridico-fiscal"
+            },
+            {
+              "title": "Ristrutturazioni e interior design",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

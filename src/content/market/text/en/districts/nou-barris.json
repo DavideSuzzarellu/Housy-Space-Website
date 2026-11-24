@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "The north of the city: thirteen neighbourhoods with their own identity, a strong community spirit and parks with views.",
+  "history": [
+    "Nou Barris occupies the northern edge of Barcelona, between the Collserola range and Avinguda Meridiana. Its thirteen neighbourhoods grew mainly between the 1950s and the 1970s, as thousands of people arrived from other regions of Spain, and many were transformed thanks to the efforts of their residents' associations, which campaigned for services, transport and facilities.",
+    "Today the district combines blocks from that era with neighbourhoods being renovated, large parks such as the Parc Central de Nou Barris, where the district offices are, hillsides with views over the city and several metro lines. Its prices are among the lowest in Barcelona, so it often appeals to those looking for a first home or an investment with a lower entry price.",
+    "Across its 13 neighbourhoods, the average sale price ranges from 1,697 €/m² in Vallbona to 3,569 €/m² in Vilapicina i la Torre Llobeta, and the average rent from 395 €/month in Can Peguera to 902 €/month in La Guineueta.",
+    "In blocks from the 1950s to the 1970s, it is worth checking the condition of the building and its owners' association thoroughly, along with possible defects such as aluminosis."
+  ],
+  "summary": "Nou Barris has 183,280 inhabitants in 8.06 km² and 13 neighbourhoods. It is the district with the lowest sale price in Barcelona: 2,952 €/m² in 2025. The average rent is 796 €/month.",
+  "landmarks": [
+    {
+      "name": "Parc Central de Nou Barris",
+      "where": "The centre of the district",
+      "text": "A large urban park beside the district offices."
+    },
+    {
+      "name": "Seu del Districte",
+      "where": "The centre of the district",
+      "text": "The former Institut Mental de la Santa Creu, now the district offices."
+    },
+    {
+      "name": "Castell de Torre Baró",
+      "where": "Torre Baró",
+      "text": "The castle that was never finished, now a viewpoint over the city."
+    },
+    {
+      "name": "Via Júlia",
+      "where": "La Prosperitat and Verdun",
+      "text": "A boulevard with shops and neighbourhood life."
+    },
+    {
+      "name": "Collserola",
+      "where": "The upper neighbourhoods of the district",
+      "text": "Paths and viewpoints in the range, a few minutes away."
+    }
+  ]
+}

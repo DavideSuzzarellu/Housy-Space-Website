@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Low-rise houses with gardens and streets named after flowers, on the slope of Montjuïc, beside Gran Via.",
+  "text": [
+    "It is a small neighbourhood, of 0.30 km², on the north-west side of Montjuïc, which was born with the vocation of a garden city. Hence its low-rise houses with gardens and its streets with flower names, such as Dàlia, Lotus, Hortènsia, Begònia and Crisantem, which contrast with the tall buildings of Gran Via.",
+    "Here you live beside Plaça d'Espanya and the hill, with two works by Josep Puig i Cadafalch as landmarks: the former Casarramona factory, now home to CaixaForum, and the Font del Gat restaurant. With 10,869 inhabitants, it is a neighbourhood on a human scale beside one of the city's great squares."
+  ],
+  "housing": "Low-rise houses with gardens on the slope and tall blocks beside Gran Via.",
+  "places": ["CaixaForum Barcelona", "Font del Gat", "Parc de Montjuïc"]
+}

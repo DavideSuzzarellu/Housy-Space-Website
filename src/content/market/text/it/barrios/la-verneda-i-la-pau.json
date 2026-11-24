@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un quartiere costruito negli anni Cinquanta, con una forte tradizione di vicinato e rivendicazione.",
+  "text": [
+    "Nacque negli anni Cinquanta per la grande domanda di abitazioni dopo l'arrivo massiccio di immigrati, e senza strutture né servizi. Il suo nome allude agli alberi che crescevano sulle rive dei fiumi, l'ontano, «vern» in catalano, e a La Pau, il poligono residenziale inaugurato nel 1966.",
+    "La lotta di vicinato prese forza dagli anni Settanta, e il quartiere conserva quella tradizione associativa. Tra i suoi punti di riferimento ci sono la plaça de la Verneda, inaugurata nel 1976, il Parc de Sant Martí, l'istituto Salvador Seguí e la Rambla Prim. Con 2.971 €/m², è il secondo quartiere con il prezzo di compravendita più basso del distretto, solo dopo El Besòs i el Maresme."
+  ],
+  "housing": "Poligono residenziale de La Pau (1966) e palazzi di edilizia popolare, in un quartiere ad alta densità.",
+  "places": ["Plaça de la Verneda", "Parc de Sant Martí", "Rambla Prim"]
+}

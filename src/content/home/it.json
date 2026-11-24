@@ -1,33 +1,62 @@
 {
   "hero": {
-    "videoLandscape": "/media/hero/hero-1280.mp4",
-    "videoPortrait": "/media/hero/hero-720v.mp4",
-    "posterLandscape": "../../assets/home/hero-poster.jpg",
-    "posterPortrait": "../../assets/home/hero-poster-v.jpg"
-  },
-  "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
     "headingFirst": "Ogni angolo ha una storia",
     "headingSecond": "Ogni persona, un nuovo inizio",
-    "linkLabel": "Conoscici"
+    "ctaLabel": "Chi siamo"
+  },
+  "stats": {
+    "eyebrow": "Cinque anni di HousySpace",
+    "heading": "Ciò che abbiamo ottenuto *con chi si è fidato di noi*",
+    "stat1Number": 35,
+    "stat1Plus": true,
+    "stat1Unit": "milioni €",
+    "stat1Label": "di volume d'affari intermediato in questi cinque anni",
+    "stat2Number": 100,
+    "stat2Plus": true,
+    "stat2Unit": "immobili",
+    "stat2Label": "intermediati a Barcellona e dintorni",
+    "stat3Number": 60,
+    "stat3Plus": true,
+    "stat3Unit": "appartamenti",
+    "stat3Label": "affittati con lo stesso supporto",
+    "stat4Number": 9,
+    "stat4Plus": false,
+    "stat4Unit": "su 10 distretti",
+    "stat4Label": "di Barcellona, e più di 10 comuni limitrofi",
+    "note": "Ogni operazione è sulla mappa, distretto per distretto, con il prezzo di annuncio e il mese di chiusura.",
+    "ctaLabel": "Immobili intermediati"
   },
   "featured": {
     "heading": "Trova qui *il tuo nuovo inizio*",
-    "ctaLabel": "Vedi altri immobili"
+    "ctaLabel": "Scopri altri immobili"
   },
   "valuation": {
-    "image": "../../assets/home/det-ventanal-1400.jpg",
-    "imageAlt": "Salone luminoso con portefinestre su un balcone",
+    "image": "../../assets/home/valoracion-fachada-2880.webp",
+    "imageAlt": "Immagine concettuale: facciata modernista di Barcellona con un balcone in ferro battuto contrassegnato con l'isotipo di HousySpace",
     "heading": "Scopri quanto *vale la tua casa*",
-    "lead": "All'istante e online, o con un consulente HousySpace.",
+    "lead": "In un attimo e online, oppure con un consulente HousySpace.",
     "ctaLabel": "Richiedi una valutazione"
   },
   "services": {
     "heading": "Scopri tutto *ciò che possiamo fare per te*"
   },
+  "gallery": {
+    "heading": "Barcellona, un modo di vivere",
+    "lead": "Architettura modernista, luce mediterranea e immobili singolari che definiscono il carattere della città.",
+    "item1Title": "Eixample Dret",
+    "item1Subtitle": "Soffitti alti con modanature originali e pavimenti idraulici restaurati.",
+    "item2Title": "Sarrià - Sant Gervasi",
+    "item2Subtitle": "Ville unifamiliari con ampi giardini e luce naturale tutto il giorno.",
+    "item3Title": "Ciutat Vella & Born",
+    "item3Subtitle": "Travi in legno recuperate e archi in pietra gotica originale.",
+    "item4Title": "Gràcia & Pedralbes",
+    "item4Subtitle": "Ambienti moderni, ristrutturati nel rispetto dell'architettura storica."
+  },
   "collaborators": {
-    "text": "Ci circondiamo dei migliori per offrirti molto di più.",
-    "ctaLabel": "Conosci i nostri collaboratori"
+    "lineFirst": "Ci circondiamo dei migliori",
+    "lineSecond": "per offrirti molto di più.",
+    "ctaLabel": "Perché ci fidiamo di loro"
   },
   "philosophy": {
     "quoteFirst": "Non preoccuparti,",
@@ -38,7 +67,7 @@
   },
   "reviews": {
     "heading": "Cosa dicono *di HousySpace*",
-    "ctaLabel": "Vedi le recensioni su Google",
+    "ctaLabel": "Leggi le recensioni su Google",
     "mapsUrl": "https://maps.app.goo.gl/9icgw2apDPv4Fy7J9"
   },
   "districts": {
@@ -48,5 +77,14 @@
   "blog": {
     "heading": "Blog *e notizie*",
     "ctaLabel": "Vedi tutti gli articoli"
+  },
+  "contact": {
+    "heading": "Consulenza *privata*",
+    "lead": "Un consulente di HousySpace ti seguirà dal primo messaggio.",
+    "fieldNameLabel": "Nome e cognome",
+    "fieldEmailLabel": "Indirizzo e-mail",
+    "fieldMessageLabel": "Raccontaci di cosa hai bisogno",
+    "fieldConsentLabel": "Ho letto e accetto l'informativa sulla privacy di HousySpace e acconsento al trattamento dei miei dati per gestire la mia richiesta.",
+    "submitLabel": "Invia richiesta"
   }
 }

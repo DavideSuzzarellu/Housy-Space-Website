@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Parks, housing estates and the old Mental hospital, now a library, next to the Parc Central de Nou Barris.",
+  "text": [
+    "Its name comes from Can Guineueta, a farmhouse (masia) at the junction of Passeig de Valldaura and Carrer de la Gasela. The neighbourhood began to be developed in the late 1960s, and in 1971 the Torrent de la Guineueta was turned into the Parc de la Guineueta.",
+    "The former Institut Mental de la Santa Creu, opened in 1889, is now home to services such as the Nou Barris library, next to the Parc Central. Housing is split between two large estates: low-rise buildings to the north and the Barcinova and Calinova blocks to the south. It is a neighbourhood with a long tradition of community campaigns for facilities and services."
+  ],
+  "housing": "Two housing estates: low-rise buildings to the north and the Barcinova and Calinova blocks to the south.",
+  "places": ["Parc de la Guineueta", "Parc Central de Nou Barris", "Antic Institut Mental"]
+}

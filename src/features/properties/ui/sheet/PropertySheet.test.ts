@@ -5,7 +5,7 @@ import { toAreaM2 } from "../../domain/property";
 import { amount, approximateIn, makeProperty } from "../../testing/makeProperty";
 import PropertySheet from "./PropertySheet.astro";
 
-const SITE = new URL("https://www.housyspace.com");
+const SITE = new URL("https://housyspace.com");
 const photo = (n: number) => ({
   url: `https://media.mobiliagestion.es/Portals/0/${n}.jpg`,
   caption: {},
@@ -43,7 +43,7 @@ async function render(
   });
 }
 
-const DETAIL_ES = "https://www.housyspace.com/es/venta/piso-senorial-con-balcon-demo-001";
+const DETAIL_ES = "https://housyspace.com/es/venta/piso-senorial-con-balcon-demo-001";
 
 describe("PropertySheet", () => {
   it("shows the real Mobilia data: reference, title, zone, price, facts and description", async () => {
@@ -91,7 +91,7 @@ describe("PropertySheet", () => {
     expect(html).toMatch(/href="https:\/\/wa\.me\/34613084804\?text=[^"]*DEMO-001/i);
     // The web CTA opens this property, not the home page.
     expect(html).toContain(`href="${DETAIL_ES}"`);
-    expect(html).not.toContain('href="https://www.housyspace.com/es"');
+    expect(html).not.toContain('href="https://housyspace.com/es"');
   });
 
   it("prints a QR code that opens this property's page", async () => {
@@ -111,7 +111,7 @@ describe("PropertySheet", () => {
     expect(html).toContain("Property sheet");
     expect(html).toContain("Stately flat");
     expect(html).not.toContain("Ficha del inmueble");
-    const detailEn = "https://www.housyspace.com/en/sale/stately-flat-demo-001";
+    const detailEn = "https://housyspace.com/en/sale/stately-flat-demo-001";
     expect(html).toContain(`d="${toQrSvgPath(detailEn).path}"`);
     expect(html).toContain(`href="${detailEn}"`);
   });

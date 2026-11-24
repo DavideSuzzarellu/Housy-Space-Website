@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Un antico paese con un carattere tutto suo, che cambia con la nuova stazione della Sagrera.",
+  "history": [
+    "Sant Andreu de Palomar è stato un comune indipendente, con oltre mille anni di storia documentata, fino all'annessione a Barcellona nel 1897, e conserva il suo nucleo storico, con strade strette, piazze e negozi di quartiere. Il distretto ha sette quartieri: Sant Andreu, la Sagrera, el Congrés i els Indians, Navas, el Bon Pastor, Baró de Viver e la Trinitat Vella.",
+    "Il suo passato industriale si legge nelle vecchie fabbriche trasformate in spazi pubblici, come Fabra i Coats, e nella Maquinista, oggi centro commerciale. I lavori della nuova stazione della Sagrera, in corso dal 2009, e del suo futuro parco lineare stanno cambiando questa parte della città.",
+    "Tra i suoi 7 quartieri, il prezzo medio di compravendita va dagli 1.801 €/m² di Baró de Viver ai 4.029 €/m² di Navas, e l'affitto medio dai 555 €/mese di Baró de Viver ai 980 €/mese di Navas.",
+    "È un distretto di contrasti, tra la vita da paese di Sant Andreu, i quartieri in trasformazione della Sagrera e del Bon Pastor e zone piccole come Baró de Viver. Conviene confrontare ogni quartiere e studiare bene lo stato di ogni stabile."
+  ],
+  "summary": "Sant Andreu conta 158.284 abitanti su 6,59 km² e 7 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 3.460 €/m², il 19% sotto la media della città. L'affitto medio è di 904 €/mese.",
+  "landmarks": [
+    {
+      "name": "Fabra i Coats",
+      "where": "Sant Andreu",
+      "text": "L'antica fabbrica tessile, oggi centro di creazione e spazio per la comunità."
+    },
+    {
+      "name": "Nucli antic de Sant Andreu",
+      "where": "Sant Andreu",
+      "text": "Il carrer Gran de Sant Andreu e la plaça d'Orfila, con la sua chiesa."
+    },
+    {
+      "name": "Passeig de Fabra i Puig",
+      "where": "Sant Andreu",
+      "text": "L'asse commerciale che porta all'avinguda Meridiana."
+    },
+    {
+      "name": "Estació de la Sagrera",
+      "where": "La Sagrera",
+      "text": "La grande stazione in costruzione e il suo futuro parco lineare."
+    },
+    {
+      "name": "Casa Bloc",
+      "where": "Sant Andreu",
+      "text": "Edificio residenziale razionalista degli anni Trenta."
+    }
+  ]
+}

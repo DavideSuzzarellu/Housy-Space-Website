@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un barri de classe mitjana, tranquil i comercial, amb parc i estació intermodal.",
+  "text": [
+    "Ja existia a l'edat mitjana amb el nom de «Clotus Melis», que vol dir «clot de la mel» i es documenta el 1208, i era una zona d'horts i molins vora la Sèquia Comtal. Va mantenir el caràcter rural fins al segle XIX, quan es va tornar industrial i obrer, i l'avinguda Meridiana, oberta el 1964, va fragmentar el territori.",
+    "Avui és un barri majoritàriament de classe mitjana, tranquil, amb activitat comercial i terrasses, on destaquen el Parc del Clot, el mercat municipal, al costat del qual s'organitza una fira d'artesans, i l'estació intermodal Clot-Aragó, amb metro i rodalies. Hi ha pisos i cases a preus assequibles per a la classe mitjana, d'altres de més barats i també cases d'alt valor. Amb 4.092 €/m² de compravenda, se situa molt a prop de la mitjana del districte, i el seu lloguer, 966 €/mes, queda per sota."
+  ],
+  "housing": "Pisos i cases de perfils molt diferents, amb zones de cases baixes.",
+  "places": ["Parc del Clot", "Mercat del Clot", "Estació del Clot-Aragó"]
+}

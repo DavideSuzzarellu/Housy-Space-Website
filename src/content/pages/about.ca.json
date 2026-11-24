@@ -1,0 +1,278 @@
+{
+  "title": "HousySpace · Consultors immobiliaris a Barcelona",
+  "description": "HousySpace, immobiliària a Barcelona: consultors amb 9 anys al sector que acompanyen cada client en tot el procés. Coneix la nostra història i la nostra manera de treballar.",
+  "head": {
+    "heading": "Molt més que una immobiliària",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Presentació d'HousySpace"
+      },
+      {
+        "kind": "p",
+        "text": "A HousySpace creiem que cada decisió immobiliària mereix temps, criteri i atenció personal. T'acompanyem per trobar la millor manera de fer el pas següent."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "historia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "La nostra història"
+        },
+        {
+          "kind": "h2",
+          "text": "Una idea molt simple: les persones, al centre."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace va néixer fa cinc anys. Els qui hi som al darrere ja portàvem temps treballant al sector i sabíem què es podia fer d'una altra manera: amb més proximitat, amb una atenció de debò personal i tractant les preocupacions de cada client com a pròpies."
+        },
+        {
+          "kind": "p",
+          "text": "Per això no vam voler ser una immobiliària més, sinó un projecte fidel a com entenem aquesta professió."
+        },
+        {
+          "kind": "p",
+          "text": "Ens segueix donant la mateixa satisfacció compartir la il·lusió de qui troba la seva primera llar, ajudar una família a començar una nova etapa o acompanyar un client a prendre la decisió correcta."
+        },
+        {
+          "kind": "quote",
+          "text": "Darrere de cada immoble hi ha una història, una decisió important i persones que confien en nosaltres."
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "En xifres"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "9",
+              "kicker": "anys",
+              "text": "d'experiència al sector immobiliari"
+            },
+            {
+              "title": "5",
+              "kicker": "anys",
+              "text": "des que va néixer HousySpace"
+            },
+            {
+              "title": "Avui",
+              "text": "seguim creixent amb qui torna a escollir-nos i ens recomana"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "filosofia",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "La nostra filosofia"
+        },
+        {
+          "kind": "h2",
+          "text": "Cada immoble és diferent. Cada persona, també."
+        },
+        {
+          "kind": "p",
+          "text": "No creiem que totes les operacions immobiliàries s'hagin d'abordar de la mateixa manera. Abans de plantejar una estratègia escoltem, estudiem les circumstàncies de cada immoble i valorem les diferents possibilitats."
+        },
+        {
+          "kind": "p",
+          "text": "La nostra feina no consisteix únicament a gestionar una operació, sinó a aportar criteri perquè decideixis si fer el pas, quan i com, amb coneixement, transparència i seguretat."
+        },
+        {
+          "kind": "quote",
+          "text": "Que estiguis content a cada pas, no només en signar."
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Com treballem"
+        },
+        {
+          "kind": "h2",
+          "text": "Quatre passos i un mateix assessor de principi a fi."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Escoltem",
+              "text": "Què necessites, quins terminis tens i en quina situació està l'immoble.",
+              "kicker": "01"
+            },
+            {
+              "title": "Estudiem",
+              "text": "Revisem la documentació i analitzem el mercat.",
+              "kicker": "02"
+            },
+            {
+              "title": "Definim l'estratègia",
+              "text": "Adaptada a cada situació i explicada abans de començar.",
+              "kicker": "03"
+            },
+            {
+              "title": "Coordinem",
+              "text": "Un mateix assessor porta les gestions, et manté informat i treballa amb els professionals especialitzats que calgui.",
+              "kicker": "04"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milla",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "*Sempre una* milla extra"
+        },
+        {
+          "kind": "p",
+          "text": "En una operació immobiliària poden sorgir situacions que ningú no havia previst: documentació pendent, dificultats de finançament, qüestions tècniques o gestions que requereixen la intervenció d'altres professionals."
+        },
+        {
+          "kind": "p",
+          "text": "Ens avancem quan és possible i, quan apareix un imprevist, ens impliquem a buscar una solució i a coordinar els qui poden ajudar a resoldre'l. Per a nosaltres, fer una milla extra vol dir no desentendre'ns d'una dificultat només perquè no formi part de la intermediació habitual."
+        },
+        {
+          "kind": "note",
+          "text": "És el que volem dir amb:"
+        },
+        {
+          "kind": "big",
+          "text": "No et preocupis, jo me n'encarrego."
+        }
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Col·laboracions professionals"
+        },
+        {
+          "kind": "h2",
+          "text": "Un equip de confiança per a cada necessitat."
+        },
+        {
+          "kind": "p",
+          "text": "Per a les necessitats jurídiques, fiscals, financeres i tècniques d'una operació treballem amb professionals especialitzats. Nosaltres coordinem la consulta i els seus terminis amb l'operació; la feina especialitzada la fa cada professional."
+        },
+        {
+          "kind": "p",
+          "text": "Si et recomanem algú és perquè el coneixem bé: fa anys que ens envoltem de professionals que treballen igual o millor que nosaltres i en qui confiem plenament."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Despatx d'advocats a Barcelona: herències, renda i impostos, dret civil, laboral i d'empresa.",
+              "kicker": "Despatx jurídic i fiscal",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Assessoria fiscal, comptable i laboral a Barcelona: impostos, declaracions i tràmits amb Hisenda.",
+              "kicker": "Assessoria fiscal",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Estudi d'arquitectura i interiorisme a Barcelona, amb reformes integrals d'habitatges i pisos de l'Eixample.",
+              "kicker": "Arquitectura i interiorisme",
+              "href": "service:reformas-obras",
+              "cta": "Veure el servei"
+            },
+            {
+              "title": "Broker financer",
+              "text": "Estudia la viabilitat de cada operació amb finançament i compara les condicions de diferents entitats.",
+              "kicker": "Finançament",
+              "href": "service:asesoramiento-financiero",
+              "cta": "Veure el servei"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Les bones decisions comencen amb una conversa."
+        },
+        {
+          "kind": "p",
+          "text": "Si estàs valorant vendre, comprar o llogar, explica'ns el teu cas. Estarem encantats d'escoltar-te."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Parlem-ne",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "Veure els serveis",
+              "href": "route:services",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opiniones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Opinions"
+        },
+        {
+          "kind": "p",
+          "text": "La nostra major satisfacció és saber que els qui han confiat en nosaltres ho tornarien a fer."
+        }
+      ]
+    }
+  ]
+}

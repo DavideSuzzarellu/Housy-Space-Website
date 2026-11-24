@@ -1,0 +1,261 @@
+{
+  "title": "Dove investire a Barcellona · HousySpace",
+  "description": "Dove investire a Barcellona? Studiamo ogni investimento immobiliare con numeri chiari: acquisto, ristrutturazione, affitto atteso, rendimento stimato e rischi.",
+  "head": {
+    "heading": "Investimento *immobiliare*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-inversion-1000.webp",
+      "alt": "Illustrazione del servizio: Una curva ascendente su gradini con una chiave, un rullo e delle monete",
+      "scale": 0.77
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Servizio"
+      },
+      {
+        "kind": "lead",
+        "text": "Analisi delle opportunità con numeri chiari: acquisto, ristrutturazione, affitto e rendimento."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Raccontaci il tuo obiettivo",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Non promettiamo rendimenti: mettiamo i numeri sul tavolo."
+        },
+        {
+          "kind": "p",
+          "text": "Analizziamo le opportunità di investimento residenziale con informazioni chiare, per farti decidere con criterio. Ti diciamo anche quando un'operazione non ti conviene."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Cosa analizziamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Un investimento visto da ogni angolazione"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Prezzo e costi di acquisto",
+              "text": "Prezzo, imposte, notaio, registro e pratiche: il costo reale di ingresso."
+            },
+            {
+              "title": "Ristrutturazione",
+              "text": "Quali lavori servono, quanto costano e che effetto possono avere sull'affitto o sulla vendita."
+            },
+            {
+              "title": "Canone atteso",
+              "text": "Ciò che si paga oggi per immobili simili nella zona."
+            },
+            {
+              "title": "Rendimento stimato",
+              "text": "Lordo e netto, con spese, imposte e periodi di sfitto."
+            },
+            {
+              "title": "Rischi",
+              "text": "Stato dello stabile, normativa sugli affitti e liquidità della zona."
+            },
+            {
+              "title": "Via d'uscita",
+              "text": "Cosa succede se vuoi vendere tra qualche anno."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Come lo facciamo"
+        },
+        {
+          "kind": "h2",
+          "text": "Passo dopo passo"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Obiettivi",
+              "text": "Definiamo cosa vuoi ottenere, con quale budget e in quale orizzonte temporale."
+            },
+            {
+              "title": "Ricerca",
+              "text": "Individuiamo le opzioni in linea con il tuo obiettivo."
+            },
+            {
+              "title": "Analisi",
+              "text": "Studiamo i numeri di ciascuna: costi, affitto atteso, rischi e uscita."
+            },
+            {
+              "title": "Acquisto",
+              "text": "Negoziamo e ti accompagniamo fino alla firma."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "route",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Un'unica porta"
+        },
+        {
+          "kind": "h2",
+          "text": "Dall'analisi al reddito da affitto, senza cambiare interlocutore"
+        },
+        {
+          "kind": "lead",
+          "text": "Se ne hai bisogno, ci occupiamo di ogni passo dopo l'acquisto."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "kicker": "Finanzia",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Personal Shopper immobiliare",
+              "text": "",
+              "kicker": "Acquista",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Ristrutturazioni e interior design",
+              "text": "",
+              "kicker": "Ristruttura",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Affitto e gestione di immobili",
+              "text": "",
+              "kicker": "Affitta",
+              "href": "service:alquiler-gestion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Parliamone"
+        },
+        {
+          "kind": "lead",
+          "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Scrivici",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Servizi correlati"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Personal shopper immobiliare",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Consulenza finanziaria",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Affitto e gestione di immobili",
+              "text": "",
+              "href": "service:alquiler-gestion"
+            },
+            {
+              "title": "Vedi tutti i servizi",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

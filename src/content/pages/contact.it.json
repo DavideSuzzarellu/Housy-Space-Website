@@ -1,0 +1,292 @@
+{
+  "title": "Immobiliare in Travessera de Gràcia · HousySpace",
+  "description": "HousySpace, agenzia immobiliare in Travessera de Gràcia 73, Barcellona. Vieni a trovarci o chiamaci al 613 084 804, dal lunedì al venerdì dalle 10:00 alle 19:00.",
+  "head": {
+    "heading": "Parliamo",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Contatti"
+      },
+      {
+        "kind": "lead",
+        "text": "Ogni buona decisione inizia con una conversazione. Parliamo della tua."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-salon-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "formas",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Scegli come parlare con noi"
+        },
+        {
+          "kind": "lead",
+          "text": "Puoi chiamarci, scriverci o venire a trovarci in ufficio. Usa la modalità che preferisci."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Chiamaci"
+            },
+            {
+              "kind": "p",
+              "text": "Parla direttamente con un consulente."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Chiama",
+                  "href": "tel:+34613084804",
+                  "solid": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "WhatsApp"
+            },
+            {
+              "kind": "p",
+              "text": "Raccontaci di cosa hai bisogno dal tuo cellulare."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Apri WhatsApp",
+                  "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Email"
+            },
+            {
+              "kind": "p",
+              "text": "Per scriverci con calma e con più dettagli."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Scrivi un'email",
+                  "href": "mailto:info@housyspace.com",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Vieni a trovarci"
+            },
+            {
+              "kind": "p",
+              "text": "Dal lunedì al venerdì, dalle 10:00 alle 19:00."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Come arrivare",
+                  "href": "#donde-estamos",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Preferisci lasciarci la tua richiesta per iscritto? [Compila il modulo](#formulario)."
+        }
+      ]
+    },
+    {
+      "id": "donde-estamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Dove siamo"
+        },
+        {
+          "kind": "lead",
+          "text": "Il nostro ufficio è a Barcellona. Puoi venire a trovarci durante l'orario d'ufficio."
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Dicci di cosa hai bisogno"
+        },
+        {
+          "kind": "lead",
+          "text": "Un consulente di HousySpace ti seguirà personalmente."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "È obbligatorio solo ciò che è contrassegnato con *: nome, telefono e la tua richiesta."
+            },
+            {
+              "title": "",
+              "text": "Il resto ci aiuta a seguirti meglio, ma è facoltativo."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Preferisci parlare adesso?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Chiama",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "form",
+          "id": "cf",
+          "intro": "Buongiorno, vorrei fare una richiesta.",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nome e cognome",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Telefono",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Indirizzo e-mail",
+              "required": false,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "interes",
+              "label": "Come possiamo aiutarti?",
+              "required": false,
+              "full": true,
+              "type": "select",
+              "options": [
+                "Comprare un immobile",
+                "Vendere il mio immobile",
+                "Affittare il mio immobile",
+                "Cercare una casa in affitto",
+                "Valutare il mio immobile",
+                "Ristrutturazione e interior design",
+                "Finanziamento o mutuo",
+                "Altra richiesta"
+              ],
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "La tua richiesta",
+              "required": true,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "Ho letto l'informativa sulla privacy e accetto che HousySpace tratti questi dati per gestire la mia richiesta.",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Desidero ricevere comunicazioni commerciali da HousySpace su immobili, servizi e novità via e-mail, WhatsApp o telefono. (Facoltativo.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Voglio iscrivermi alla newsletter e agli articoli di HousySpace via e-mail. (Facoltativo.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Titolare: HousySpace Consultores Inmobiliarios, S.L. Finalità: gestire la tua richiesta e, solo se lo selezioni, inviarti comunicazioni commerciali e la newsletter. Base giuridica: il tuo consenso. Destinatari: non cediamo i tuoi dati, salvo obbligo di legge. Diritti: accesso, rettifica, cancellazione, opposizione, limitazione, portabilità e revoca del consenso scrivendo a [info@housyspace.com](mailto:info@housyspace.com); puoi anche sporgere reclamo all'AEPD. Ulteriori informazioni nell'[informativa sulla privacy](route:privacy)."
+            },
+            {
+              "kind": "submit",
+              "label": "Invia richiesta"
+            },
+            {
+              "kind": "note",
+              "text": "Non è ancora presente un sistema per ricevere il modulo (CRM in attesa). Cliccando si aprirà WhatsApp con la tua richiesta già pronta da inviare; il messaggio non raggiungerà HousySpace finché non lo invierai lì."
+            }
+          ],
+          "mode": "whatsapp"
+        }
+      ]
+    }
+  ]
+}

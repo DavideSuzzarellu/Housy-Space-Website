@@ -29,6 +29,8 @@ import { morph } from "@/shared/ui/motion/transitions";
 /**
  * Listing card. Image, title and price carry the shared-element transition names
  * (AGENTS.md §3.3): render each ref at most once per page.
+ * `feature`: boxed card of the home and the similar listings; `catalog`: the reference
+ * `.pc3` card of the catalog (no box, 3:2 photo, ruled body, facts spelled out).
  */
 interface Props {
   property: Property;
@@ -38,9 +40,18 @@ interface Props {
   priority?: boolean;
   /** Link to (and price for) this operation's detail; defaults to the primary operation. */
   operation?: DetailOperation;
+  variant?: "feature" | "catalog";
 }
 
-const { property, locale, ctaLabel, priority = false, operation: forOperation } = Astro.props;
+const {
+  property,
+  locale,
+  ctaLabel,
+  priority = false,
+  operation: forOperation,
+  variant = "feature",
+} = Astro.props;
+const catalog = variant === "catalog";
 const t = getDictionary(locale).property;
 
 const title =
@@ -53,12 +64,19 @@ const cover = getCoverPhoto(property);
 const location = getLocationLabel(property);
 const names = propertyTransitionNames(property.ref);
 
+const MAX_FEATURES = 3;
+const featureLine = property.features
+  .slice(0, MAX_FEATURES)
+  .map((feature) => t.featureNames[feature])
+  .join(" · ");
+
 const facts: Fact[] = [];
 if (property.builtArea !== undefined) {
   facts.push({ value: formatNumber(property.builtArea, locale), label: t.areaUnit });
 }
 if (property.bedrooms !== undefined && property.bedrooms > 0) {
-  facts.push({ value: formatNumber(property.bedrooms, locale), label: t.bedrooms });
+  const label = !catalog ? t.bedrooms : property.bedrooms === 1 ? t.bedroomsOne : t.bedroomsOther;
+  facts.push({ value: formatNumber(property.bedrooms, locale), label });
 }
 if (property.bathrooms !== undefined && property.bathrooms > 0) {
   facts.push({
@@ -68,65 +86,138 @@ if (property.bathrooms !== undefined && property.bathrooms > 0) {
 }
 ---
 
-<a
-  href={href}
-  data-property-card
-  data-ref={property.ref}
-  data-morph-ref={property.ref}
-  data-astro-prefetch="viewport"
-  class="group flex flex-col bg-card text-inherit no-underline transition-colors duration-400 hover:bg-card-hover focus-visible:bg-card-hover"
->
-  <div
-    class="relative aspect-4/3 overflow-hidden bg-bg-deep"
-    transition:name={names.image}
-    transition:animate={morph}
-    style={`view-transition-class: ${PROPERTY_IMAGE_TRANSITION_CLASS}`}
+{catalog ? (
+  <a
+    href={href}
+    data-property-card
+    data-ref={property.ref}
+    data-morph-ref={property.ref}
+    data-astro-prefetch="viewport"
+    class="group flex w-full flex-col text-inherit no-underline"
   >
-    {cover !== undefined && (
-      <Picture
-        {...PHOTO_PICTURE}
-        src={cover.url}
-        alt={formatMessage(t.photoAlt, { title })}
-        width={800}
-        height={600}
-        widths={[480, 800]}
-        sizes="(min-width: 1000px) 22rem, (min-width: 640px) 50vw, 100vw"
-        priority={priority}
-        class="block size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105 group-focus-visible:scale-105"
-      />
-    )}
-    <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-      {operation !== undefined && <Badge>{t.operations[operation]}</Badge>}
-      {property.status === "reserved" && <Badge tone="accent">{t.reserved}</Badge>}
-    </div>
-  </div>
-  <div class="flex flex-1 flex-col gap-1.5 px-6.5 pt-6 pb-7">
-    <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-      {location !== undefined && (
-        <p class="text-[0.6875rem] tracking-[0.14em] text-accent">{location}</p>
-      )}
-      {price !== undefined && (
-        <div transition:name={names.price} transition:animate={morph}>
-          <PriceTag locale={locale} price={price} perMonth={operation === "rent"} />
-        </div>
-      )}
-    </div>
-    <h3
-      class="mt-1 mb-1.5 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12]"
-      transition:name={names.title}
+    <div
+      class="relative aspect-3/2 overflow-hidden bg-bg-deep"
+      transition:name={names.image}
       transition:animate={morph}
+      style={`view-transition-class: ${PROPERTY_IMAGE_TRANSITION_CLASS}`}
     >
-      {title}
-    </h3>
-    <FactList facts={facts} class="mt-2.5 mb-2" />
-    {property.energyRating !== undefined && (
-      <p class="text-xs text-muted">
-        {t.energyRating}:{" "}
-        <span class="font-medium text-fg">
-          {presentEnergyRating(property.energyRating, locale)}
-        </span>
-      </p>
-    )}
-    <ArrowLabel class="mt-auto">{ctaLabel}</ArrowLabel>
-  </div>
-</a>
+      {cover !== undefined && (
+        <Picture
+          {...PHOTO_PICTURE}
+          src={cover.url}
+          alt={formatMessage(t.photoAlt, { title })}
+          width={1040}
+          height={693}
+          widths={[480, 720, 1040]}
+          sizes="(min-width: 1200px) 33rem, (min-width: 700px) 50vw, 100vw"
+          priority={priority}
+          class="block size-full object-cover transition-transform duration-1300 ease-brand group-hover:scale-105 group-focus-visible:scale-105"
+        />
+      )}
+      <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+        {operation !== undefined && <Badge>{t.operations[operation]}</Badge>}
+        {property.status === "reserved" && <Badge tone="accent">{t.reserved}</Badge>}
+      </div>
+      {location !== undefined && (
+        <Badge tone="approx" class="absolute bottom-3 left-3">
+          {t.approximateLocation}
+        </Badge>
+      )}
+    </div>
+    <div class="flex flex-col gap-1.5 border-b border-line px-0.5 pt-5 pb-1.5 transition-colors duration-400 group-hover:border-accent group-focus-visible:border-accent">
+      <div class="flex flex-col items-start gap-1.5">
+        {location !== undefined && (
+          <p class="text-[0.6875rem] tracking-[0.14em] text-accent">{location}</p>
+        )}
+        {price !== undefined && (
+          <div transition:name={names.price} transition:animate={morph}>
+            <PriceTag locale={locale} price={price} perMonth={operation === "rent"} size="card" />
+          </div>
+        )}
+      </div>
+      <h3
+        class="my-1 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.15] font-extrabold"
+        transition:name={names.title}
+        transition:animate={morph}
+      >
+        {title}
+      </h3>
+      <FactList facts={facts} variant="plain" class="mt-1.5 leading-[1.7]" />
+      {featureLine !== "" && <p class="my-1 text-[0.6875rem] text-muted">{featureLine}</p>}
+      {property.energyRating !== undefined && (
+        <p class="text-[0.6875rem] text-muted">
+          {t.energyRating}:{" "}
+          <span class="font-medium text-fg">
+            {presentEnergyRating(property.energyRating, locale)}
+          </span>
+        </p>
+      )}
+      <ArrowLabel tight class="mb-3">
+        {ctaLabel}
+      </ArrowLabel>
+    </div>
+  </a>
+) : (
+  <a
+    href={href}
+    data-property-card
+    data-ref={property.ref}
+    data-morph-ref={property.ref}
+    data-astro-prefetch="viewport"
+    class="group flex flex-col bg-card text-inherit no-underline transition duration-400 hover:-translate-y-1 hover:bg-card-hover focus-visible:bg-card-hover"
+  >
+    <div
+      class="relative aspect-4/3 overflow-hidden bg-bg-deep"
+      transition:name={names.image}
+      transition:animate={morph}
+      style={`view-transition-class: ${PROPERTY_IMAGE_TRANSITION_CLASS}`}
+    >
+      {cover !== undefined && (
+        <Picture
+          {...PHOTO_PICTURE}
+          src={cover.url}
+          alt={formatMessage(t.photoAlt, { title })}
+          width={800}
+          height={600}
+          widths={[480, 800]}
+          sizes="(min-width: 1000px) 22rem, (min-width: 640px) 50vw, 100vw"
+          priority={priority}
+          class="block size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105 group-focus-visible:scale-105"
+        />
+      )}
+      <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+        {operation !== undefined && <Badge>{t.operations[operation]}</Badge>}
+        {property.status === "reserved" && <Badge tone="accent">{t.reserved}</Badge>}
+      </div>
+    </div>
+    <div class="flex flex-1 flex-col gap-1.5 px-6.5 pt-6 pb-7">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        {location !== undefined && (
+          <p class="text-[0.6875rem] tracking-[0.14em] text-accent">{location}</p>
+        )}
+        {price !== undefined && (
+          <div transition:name={names.price} transition:animate={morph}>
+            <PriceTag locale={locale} price={price} perMonth={operation === "rent"} />
+          </div>
+        )}
+      </div>
+      <h3
+        class="mt-1 mb-1.5 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12] group-hover:text-teal"
+        transition:name={names.title}
+        transition:animate={morph}
+      >
+        {title}
+      </h3>
+      <FactList facts={facts} class="mt-2.5 mb-2" />
+      {property.energyRating !== undefined && (
+        <p class="text-xs text-muted">
+          {t.energyRating}:{" "}
+          <span class="font-medium text-fg">
+            {presentEnergyRating(property.energyRating, locale)}
+          </span>
+        </p>
+      )}
+      <ArrowLabel class="mt-auto">{ctaLabel}</ArrowLabel>
+    </div>
+  </a>
+)}

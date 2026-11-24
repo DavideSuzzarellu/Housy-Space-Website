@@ -50,7 +50,7 @@ const CONTROL =
   "surface-dark grid min-h-11 min-w-11 cursor-pointer place-items-center border border-fg/40 bg-ink/60 px-4 text-xs font-medium tracking-[0.12em] text-fg uppercase transition-colors hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent";
 ---
 
-<div data-gallery class="mb-8">
+<div data-gallery class="mb-7.5">
   <div class:list={["grid gap-2", thumbs.length > 0 && "md:grid-cols-[2fr_1fr] md:grid-rows-2"]}>
     <div
       class="relative aspect-16/10 overflow-hidden bg-bg-deep md:row-span-2 md:aspect-auto md:min-h-110"
@@ -75,7 +75,7 @@ const CONTROL =
             src={hero.src}
             alt={hero.alt}
             width={1400}
-            height={875}
+            height={933}
             widths={[640, 828, 1000, 1400]}
             sizes="(min-width: 1120px) 46rem, (min-width: 768px) 66vw, 100vw"
             priority
@@ -106,7 +106,7 @@ const CONTROL =
             src={photo.src}
             alt={photo.alt}
             width={720}
-            height={540}
+            height={480}
             widths={[360, 720]}
             sizes="(min-width: 1120px) 23rem, 33vw"
             class="block size-full object-cover"
@@ -225,6 +225,8 @@ const CONTROL =
     const slideImages = slides.map((slide) => slide.querySelector("img"));
     const openers = [...gallery.querySelectorAll<HTMLElement>("[data-gallery-open]")];
     let current = 0;
+    /** Slide the visitor asked for last: steps count from here, not from the one still decoding. */
+    let wanted = 0;
     let request = 0;
     let preloadScheduled = false;
 
@@ -258,6 +260,7 @@ const CONTROL =
     /** Activates a slide once its photo is decoded (no half-painted frame); CSS cross-fades. */
     const show = async (index: number): Promise<void> => {
       const target = stepIndex(index, 0, slides.length);
+      wanted = target;
       const ticket = (request += 1);
       await loadWithTimeout(target);
       if (ticket !== request) return; // a newer step won (fast arrow presses)
@@ -319,7 +322,7 @@ const CONTROL =
     }
     for (const control of dialog.querySelectorAll<HTMLElement>("[data-gallery-step]")) {
       control.addEventListener("click", () => {
-        void show(stepIndex(current, Number(control.dataset["galleryStep"]), slides.length));
+        void show(stepIndex(wanted, Number(control.dataset["galleryStep"]), slides.length));
       });
     }
     dialog.querySelector("[data-gallery-close]")?.addEventListener("click", () => void close());
@@ -329,8 +332,8 @@ const CONTROL =
       void close();
     });
     dialog.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowRight") void show(stepIndex(current, 1, slides.length));
-      else if (event.key === "ArrowLeft") void show(stepIndex(current, -1, slides.length));
+      if (event.key === "ArrowRight") void show(stepIndex(wanted, 1, slides.length));
+      else if (event.key === "ArrowLeft") void show(stepIndex(wanted, -1, slides.length));
     });
     // A click on the empty stage around the photo closes the lightbox.
     const stage = dialog.querySelector("[data-gallery-stage]");

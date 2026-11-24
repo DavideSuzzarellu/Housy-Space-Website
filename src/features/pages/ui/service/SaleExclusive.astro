@@ -1,0 +1,157 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { CHECK_ICON, EXCLUSIVITY_SCHEMES } from "./saleGraphics";
+import ValTop from "./ValTop.astro";
+
+/**
+ * "Why exclusive?" (reference `.e46`): a cut-corner figure that sets a scatter of agencies against
+ * one point of contact, and the five benefits with a self-drawing check. The schemes are
+ * illustrative and carry no data.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const intro = itemsOf(head, "lead")[0]?.text;
+const cards = itemsOf(body, "card");
+const note = itemsOf(body, "note")[0];
+const gainsTitle = itemsOf(body, "h3")[0];
+const gains = itemsOf(body, "list")[0]?.items ?? [];
+---
+
+<ValTop locale={locale} head={head} intro={intro} id={id} />
+<div class="grid gap-[clamp(24px,4.4vh,40px)] min-[960px]:grid-cols-[6fr_5fr] min-[960px]:items-center min-[960px]:gap-[clamp(32px,5vw,76px)]">
+  <figure
+    data-reveal
+    class="m-0 bg-paper p-[clamp(18px,2.2vw,30px)] text-dark [clip-path:polygon(0_0,calc(100%-30px)_0,100%_30px,100%_100%,0_100%)]"
+  >
+    <div class="grid grid-cols-2 gap-[clamp(12px,2vw,24px)]">
+      {cards.map((card, index) => {
+        const label = itemsOf(card.items, "tag")[0];
+        const line = itemsOf(card.items, "p")[0];
+        const ok = index === 1;
+        return (
+          <div
+            class:list={[
+              "scheme min-w-0",
+              ok && "scheme-ok border-l border-dark/16 pl-[clamp(12px,2vw,24px)]",
+            ]}
+          >
+            <p class="mb-2.5 text-[clamp(12.5px,1.05vw,15px)] leading-[1.3] font-extrabold tracking-[0.06em]">
+              <span
+                class:list={[
+                  "mb-1 block text-[10px] leading-[1.4] font-semibold tracking-[0.2em]",
+                  ok ? "text-teal" : "text-taupe-tx",
+                ]}
+              >
+                {label?.text}
+              </span>
+              {line?.text}
+            </p>
+            <Fragment set:html={EXCLUSIVITY_SCHEMES[index] ?? ""} />
+          </div>
+        );
+      })}
+    </div>
+    {note && (
+      <figcaption class="mt-3.5 border-t border-dark/16 pt-3 text-[10.5px] leading-[1.5] tracking-[0.08em] text-taupe-tx">
+        {note.text}
+      </figcaption>
+    )}
+  </figure>
+  <div>
+    {gainsTitle && (
+      <p class="mb-1.5 text-[11px] leading-[1.4] font-semibold tracking-[0.2em] text-accent">
+        {gainsTitle.text}
+      </p>
+    )}
+    <ol data-reveal class="gains">
+      {gains.map((gain, index) => (
+        <li
+          style={`--i:${index}`}
+          class="relative border-b border-fg/16 py-[clamp(13px,2.2vh,18px)] pl-11 text-[clamp(14.5px,1.15vw,16.5px)] leading-[1.45] font-medium tracking-[0.02em] text-fg normal-case"
+        >
+          <Fragment set:html={CHECK_ICON} />
+          {gain.text}
+        </li>
+      ))}
+    </ol>
+  </div>
+</div>
+
+<style is:global>
+  .scheme svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .scheme .hs {
+    fill: var(--color-dark);
+  }
+  .scheme .ag {
+    fill: var(--color-paper);
+    stroke: var(--color-taupe-tx);
+    stroke-width: 1.6;
+    vector-effect: non-scaling-stroke;
+  }
+  .scheme.scheme-ok .ag {
+    fill: var(--color-turquoise);
+    stroke: var(--color-teal);
+  }
+  .scheme .by {
+    fill: var(--color-paper);
+    stroke: var(--color-dark);
+    stroke-width: 1.6;
+    vector-effect: non-scaling-stroke;
+  }
+  .scheme .ln {
+    fill: none;
+    stroke: var(--color-taupe-tx);
+    stroke-width: 1.4;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 4 5;
+  }
+  .scheme.scheme-ok .ln {
+    stroke: var(--color-teal);
+    stroke-width: 2.2;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1.6s var(--ease-brand) 0.4s;
+  }
+  .motion-ready figure:not(.is-revealed) .scheme-ok .ln {
+    stroke-dashoffset: 1;
+  }
+  .gains li > svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 26px;
+    height: 26px;
+    margin-top: -13px;
+    fill: none;
+    stroke: var(--color-teal);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .gains path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s var(--ease-brand) calc(var(--i, 0) * 0.12s + 0.3s);
+  }
+  .motion-ready .gains:not(.is-revealed) path {
+    stroke-dashoffset: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scheme.scheme-ok .ln,
+    .gains path {
+      transition: none;
+    }
+  }
+</style>

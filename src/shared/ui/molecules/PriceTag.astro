@@ -9,14 +9,20 @@ interface Props {
   price: { readonly kind: "amount"; readonly amount: number } | { readonly kind: "onRequest" };
   /** Appends "/month" (rentals). */
   perMonth?: boolean;
+  /** `card`: display price of the catalog card (fluid 21-27 px). */
+  size?: "md" | "card";
   class?: string;
 }
 
-const { locale, price, perMonth = false, class: className } = Astro.props;
+const { locale, price, perMonth = false, size = "md", class: className } = Astro.props;
+const SIZES = {
+  md: "text-2xl",
+  card: "font-heading text-[clamp(1.3125rem,calc(2vw-2px),1.6875rem)]",
+} as const;
 const t = getDictionary(locale).property;
 ---
 
-<p class:list={["text-2xl leading-none", className]}>
+<p class:list={[SIZES[size], "leading-none", className]}>
   {price.kind === "amount" ? (
     <>
       {formatPrice(price.amount, locale)}

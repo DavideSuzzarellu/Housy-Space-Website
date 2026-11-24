@@ -16,6 +16,15 @@ import {
 
 const count = z.number().int().nonnegative();
 
+/** Internal `/xx/...` path, prefixed by the deploy base (`base` in astro.config) when there is one. */
+export function hrefPattern(base: string): RegExp {
+  const prefix = (base.endsWith("/") ? base.slice(0, -1) : base).replace(
+    /[.*+?^${}()|[\]\\]/g,
+    "\\$&",
+  );
+  return new RegExp(`^${prefix}/[a-z]{2}/[a-z0-9/-]+$`);
+}
+
 export const catalogEntrySchema = z.object({
   ref: z.string().min(1).transform(toPropertyRef),
   price: z.number().nonnegative().transform(toPriceEUR).optional(),
@@ -28,8 +37,8 @@ export const catalogEntrySchema = z.object({
   updatedAt: z.string().transform(toIsoDateTime),
   title: z.string(),
   priceLabel: z.string(),
-  /** Root-relative internal link only. */
-  href: z.string().regex(/^\/[a-z]{2}\/[a-z0-9/-]+$/),
+  /** Root-relative internal link only, under the deploy base. */
+  href: z.string().regex(hrefPattern(import.meta.env.BASE_URL)),
   /** Approximate zone only (§5). */
   location: z
     .object({

@@ -40,7 +40,7 @@ const BODY = `Saber cuánto vale mi piso en Barcelona exige comparar viviendas p
 
 ## Qué factores pesan en el precio
 
-La ubicación manda, como se ve en [los barrios](/es/vivir-en-barcelona). ${FILLER}
+La ubicación manda, como se ve en [los barrios](/es/zonas/barcelona). ${FILLER}
 
 ### Detalle
 
@@ -48,7 +48,7 @@ Más texto.
 
 ## Cuándo pedir una valoración
 
-Antes de [vender](/es/vender).
+Antes de [consultarnos](/es/contacto).
 `;
 
 function article(
@@ -148,7 +148,7 @@ describe("checkArticle", () => {
       const noService = article(
         "a",
         {},
-        "cuánto vale mi piso en Barcelona: [a](/es/vender) y [b](/es/contacto).",
+        "cuánto vale mi piso en Barcelona: [a](/es/nosotros) y [b](/es/contacto).",
       );
       const found = rules(run(noService));
       expect(found).not.toContain("internal-links-min");
@@ -168,7 +168,7 @@ describe("checkArticle", () => {
     });
 
     it("accepts links to existing articles and warns about another locale or an unpublished target", () => {
-      const withArticle = article("a", {}, `${BODY}\n[más](/es/blog/otro) [en](/en/sell)`);
+      const withArticle = article("a", {}, `${BODY}\n[más](/es/blog/otro) [en](/en/contact)`);
       const draftTarget = article("otro", {
         status: "borrador",
         articleId: "HS-2026-12-09",
@@ -256,7 +256,7 @@ describe("checkArticle", () => {
 
     it("warns about a very short published article, but never a short draft", () => {
       const short =
-        "cuánto vale mi piso en Barcelona. [a](/es/vender) [b](/es/servicios/valoracion)";
+        "cuánto vale mi piso en Barcelona. [a](/es/contacto) [b](/es/servicios/valoracion)";
       expect(run(article("a", {}, short)).find((f) => f.rule === "short-article")?.severity).toBe(
         "warning",
       );

@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Vessants amb vistes, cases d'estiueig i el Park Güell a un pas.",
+  "text": [
+    "Va començar a urbanitzar-se a la segona meitat del segle XIX al voltant de l'església de Nostra Senyora de la Salut, quan aquí predominaven els camps i les masies. Amb l'arribada dels tramvies, el 1880 i el 1909, va passar a ser zona d'estiueig de la burgesia barcelonina, i d'aquella època són el Reial Santuari de Sant Josep de la Muntanya, del 1902, i moltes cases amb caràcter.",
+    "És als vessants meridionals del Carmel i de la Rovira, i es nota en les costeres i en les vistes. És un barri tranquil i residencial, amb el Park Güell, de Gaudí, al costat del seu front de muntanya i la Travessera de Dalt com a eix. El seu preu de compravenda, 4.487 €/m², queda entre el de Vallcarca i els Penitents i el de la Vila de Gràcia."
+  ],
+  "housing": "Cases d'estiueig i edificis de poques plantes, en carrers en pendent.",
+  "places": ["Park Güell", "Reial Santuari de Sant Josep de la Muntanya", "Travessera de Dalt"]
+}

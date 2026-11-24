@@ -37,22 +37,13 @@ describe("home content (Pages CMS files)", () => {
     },
   );
 
-  it.each(Object.entries(files))(
-    "%s only references images and videos that exist",
-    (_locale, data) => {
-      const parsed = schema.parse(data);
-      for (const image of [
-        parsed.hero.posterLandscape,
-        parsed.hero.posterPortrait,
-        parsed.valuation.image,
-      ]) {
-        expect(existsSync(path.join(CONTENT_DIR, image)), image).toBe(true);
-      }
-      for (const video of [parsed.hero.videoLandscape, parsed.hero.videoPortrait]) {
-        expect(existsSync(path.join("public", video)), video).toBe(true);
-      }
-    },
-  );
+  it.each(Object.entries(files))("%s only references images that exist", (_locale, data) => {
+    const parsed = schema.parse(data);
+    const images = [parsed.valuation.image].filter((img): img is string => img !== undefined);
+    for (const image of images) {
+      expect(existsSync(path.join(CONTENT_DIR, image)), image).toBe(true);
+    }
+  });
 
   it("has a Pages CMS form field for every content key, and one entry per locale", () => {
     const config = readFileSync(".pages.yml", "utf8");

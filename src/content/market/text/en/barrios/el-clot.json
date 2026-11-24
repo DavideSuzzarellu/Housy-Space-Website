@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "A middle-class neighbourhood, quiet and commercial, with a park and an interchange station.",
+  "text": [
+    "It already existed in the Middle Ages under the name \"Clotus Melis\", meaning \"honey pit\", documented in 1208, and was an area of vegetable gardens and mills beside the Séquia Comtal. It kept its rural character until the 19th century, when it became industrial and working-class, and Avinguda Meridiana, opened in 1964, split up the area.",
+    "Today it is a mostly middle-class neighbourhood, quiet, with shops and café terraces, where the Parc del Clot, the municipal market, next to which a craft fair is held, and the Clot-Aragó interchange station, with metro and commuter trains, stand out. There are flats and houses at prices affordable to the middle class, cheaper ones and also high-value houses. At 4,092 €/m², its sale price is very close to the district average, and its rent, 966 €/month, is below it."
+  ],
+  "housing": "Flats and houses of very different kinds, with areas of low-rise houses.",
+  "places": ["Parc del Clot", "Mercat del Clot", "Estació del Clot-Aragó"]
+}

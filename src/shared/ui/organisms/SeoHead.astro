@@ -1,6 +1,8 @@
 ---
 import { LOCALE_META, type Locale } from "@/shared/i18n/config";
 import type { Alternate } from "@/shared/i18n/routes";
+import { isIndexableSite, robotsMetaContent } from "@/shared/lib/seo/indexability";
+import { LOGO_PNG_FILE, publicPath } from "@/shared/lib/seo/structuredData";
 
 interface Props {
   locale: Locale;
@@ -10,6 +12,10 @@ interface Props {
   alternates?: readonly Alternate[];
   /** Open Graph image: root-relative path (PNG) or absolute URL. */
   ogImagePath?: string;
+  /** Open Graph type. Use `"article"` for blog posts. */
+  ogType?: string;
+  /** ISO 8601 string for `article:published_time` (only when `ogType="article"`). */
+  publishedTime?: string;
   noindex?: boolean;
 }
 
@@ -18,11 +24,15 @@ const {
   title,
   description,
   alternates = [],
-  ogImagePath = "/brand/housyspace-logo-oficial-fondo-blanco-3000.png",
+  ogImagePath = publicPath(import.meta.env.BASE_URL, LOGO_PNG_FILE),
+  ogType = "website",
+  publishedTime,
   noindex = false,
 } = Astro.props;
 
 const site = Astro.site ?? new URL(Astro.url.origin);
+// Only the production origin is indexable; any other copy of the site is noindex,nofollow.
+const robots = robotsMetaContent(isIndexableSite(Astro.site), noindex);
 const toAbsolute = (path: string): string => new URL(path, site).href;
 
 const canonicalAlternate = alternates.find(
@@ -37,13 +47,16 @@ const ogLocaleAlternates = alternates
 
 <title>{title}</title>
 <meta name="description" content={description} />
-{noindex && <meta name="robots" content="noindex,follow" />}
+{robots && <meta name="robots" content={robots} />}
 {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 {alternates.map((alternate) => (
   <link rel="alternate" hreflang={alternate.hreflang} href={toAbsolute(alternate.path)} />
 ))}
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
+{ogType === "article" && publishedTime && (
+  <meta property="article:published_time" content={publishedTime} />
+)}
 <meta property="og:site_name" content="HousySpace" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

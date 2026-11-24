@@ -33,41 +33,52 @@ content:
         type: object
         fields:
           - {
-              name: videoLandscape,
-              label: Vídeo horizontal (ordenador),
-              type: file,
-              required: true,
-              options: { media: videos },
-            }
-          - {
-              name: videoPortrait,
-              label: Vídeo vertical (móvil),
-              type: file,
-              required: true,
-              options: { media: videos },
-            }
-          - {
               name: posterLandscape,
-              label: Imagen de respaldo horizontal,
+              label: "Póster (paisaje)",
               type: image,
               required: true,
               options: { media: images },
             }
           - {
               name: posterPortrait,
-              label: Imagen de respaldo vertical,
+              label: "Póster (retrato, opcional)",
               type: image,
-              required: true,
               options: { media: images },
             }
-      - name: presentation
-        label: Presentación
+          - { name: eyebrow, label: Texto de marca, type: string, required: true }
+          - { name: headingFirst, label: Titular · primera línea, type: string, required: true }
+          - { name: headingSecond, label: Titular · segunda línea, type: string, required: true }
+          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
+      - name: stats
+        label: Estadísticas
         type: object
         fields:
           - { name: eyebrow, label: Antetítulo, type: string, required: true }
-          - { name: headingFirst, label: Titular · primera línea, type: string, required: true }
-          - { name: headingSecond, label: Titular · segunda línea, type: string, required: true }
-          - { name: linkLabel, label: Enlace a Nosotros, type: string, required: true }
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte más fina.",
+            }
+          - { name: stat1Number, label: "Dato 1 · número", type: number, required: true }
+          - { name: stat1Plus, label: "Dato 1 · con «+» delante", type: boolean }
+          - { name: stat1Unit, label: "Dato 1 · unidad", type: string, required: true }
+          - { name: stat1Label, label: "Dato 1 · descripción", type: string, required: true }
+          - { name: stat2Number, label: "Dato 2 · número", type: number, required: true }
+          - { name: stat2Plus, label: "Dato 2 · con «+» delante", type: boolean }
+          - { name: stat2Unit, label: "Dato 2 · unidad", type: string, required: true }
+          - { name: stat2Label, label: "Dato 2 · descripción", type: string, required: true }
+          - { name: stat3Number, label: "Dato 3 · número", type: number, required: true }
+          - { name: stat3Plus, label: "Dato 3 · con «+» delante", type: boolean }
+          - { name: stat3Unit, label: "Dato 3 · unidad", type: string, required: true }
+          - { name: stat3Label, label: "Dato 3 · descripción", type: string, required: true }
+          - { name: stat4Number, label: "Dato 4 · número", type: number, required: true }
+          - { name: stat4Plus, label: "Dato 4 · con «+» delante", type: boolean }
+          - { name: stat4Unit, label: "Dato 4 · unidad", type: string, required: true }
+          - { name: stat4Label, label: "Dato 4 · descripción", type: string, required: true }
+          - { name: note, label: Nota al pie, type: string, required: true }
+          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
       - name: featured
         label: Inmuebles destacados
         type: object
@@ -117,12 +128,27 @@ content:
               required: true,
               description: "Pon entre *asteriscos* la parte más fina.",
             }
+      - name: gallery
+        label: Galería editorial
+        type: object
+        fields:
+          - { name: heading, label: Titular, type: string, required: true }
+          - { name: lead, label: Subtítulo, type: string, required: true }
+          - { name: item1Title, label: Foto 1 · Título, type: string, required: true }
+          - { name: item1Subtitle, label: Foto 1 · Subtítulo, type: string, required: true }
+          - { name: item2Title, label: Foto 2 · Título, type: string, required: true }
+          - { name: item2Subtitle, label: Foto 2 · Subtítulo, type: string, required: true }
+          - { name: item3Title, label: Foto 3 · Título, type: string, required: true }
+          - { name: item3Subtitle, label: Foto 3 · Subtítulo, type: string, required: true }
+          - { name: item4Title, label: Foto 4 · Título, type: string, required: true }
+          - { name: item4Subtitle, label: Foto 4 · Subtítulo, type: string, required: true }
       - name: collaborators
         label: Colaboradores
         type: object
         fields:
-          - { name: text, label: Texto, type: string, required: true }
-          - { name: ctaLabel, label: Botón a Nosotros, type: string, required: true }
+          - { name: lineFirst, label: Frase · primera línea, type: string, required: true }
+          - { name: lineSecond, label: Frase · segunda línea, type: string, required: true }
+          - { name: ctaLabel, label: Texto del botón, type: string, required: true }
       - name: philosophy
         label: Filosofía
         type: object
@@ -169,6 +195,23 @@ content:
               description: "Pon entre *asteriscos* la parte más fina.",
             }
           - { name: ctaLabel, label: Botón al blog, type: string, required: true }
+      - name: contact
+        label: Consulta privada (home)
+        type: object
+        fields:
+          - {
+              name: heading,
+              label: Titular,
+              type: string,
+              required: true,
+              description: "Pon entre *asteriscos* la parte más fina.",
+            }
+          - { name: lead, label: Subtítulo, type: string, required: true }
+          - { name: fieldNameLabel, label: Campo · Nombre, type: string, required: true }
+          - { name: fieldEmailLabel, label: Campo · Email, type: string, required: true }
+          - { name: fieldMessageLabel, label: Campo · Mensaje, type: string, required: true }
+          - { name: fieldConsentLabel, label: Campo · Consentimiento, type: string, required: true }
+          - { name: submitLabel, label: Botón enviar, type: string, required: true }
   - name: home-en
     label: Inicio (EN)
     type: file
@@ -329,6 +372,8 @@ content:
       - { name: rating, label: Estrellas (1 a 5), type: number, required: true, default: 5 }
       - { name: text, label: Texto (copiado tal cual), type: text, required: true }
       - { name: date, label: Fecha de la reseña, type: date, required: true }
+      - { name: photoUrl, label: Enlace a la foto del autor (opcional), type: string }
+      - { name: reviewUrl, label: Enlace a la reseña en Google (opcional), type: string }
       - {
           name: language,
           label: Idioma de la reseña,
@@ -337,3 +382,441 @@ content:
           default: es,
           options: { values: [es, en, it, ca] },
         }
+
+  # ─── Editorial pages (src/content/pages/) ───────────────────────────────────
+  # Each page exposes the SEO fields (title, description) and the main heading.
+  # The sections body is structured JSON not suited for a form UI; edit it in code.
+  # Legal pages (legal, privacy, cookies) are excluded: pending lawyer review (I11).
+
+  - name: pages-about-es
+    label: "Nosotros (ES)"
+    type: file
+    path: src/content/pages/about.es.json
+    format: json
+    fields: &page_fields
+      - { name: title, label: "Título (Google)", type: string, required: true }
+      - { name: description, label: "Descripción (Google)", type: text, required: true }
+      - name: head
+        label: Cabecera
+        type: object
+        fields:
+          - { name: heading, label: Titular principal, type: string, required: true }
+  - name: pages-about-en
+    label: "About us (EN)"
+    type: file
+    path: src/content/pages/about.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-about-it
+    label: "Chi siamo (IT)"
+    type: file
+    path: src/content/pages/about.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-about-ca
+    label: "Qui som (CA)"
+    type: file
+    path: src/content/pages/about.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-contact-es
+    label: "Contacto (ES)"
+    type: file
+    path: src/content/pages/contact.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-contact-en
+    label: "Contact (EN)"
+    type: file
+    path: src/content/pages/contact.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-contact-it
+    label: "Contatti (IT)"
+    type: file
+    path: src/content/pages/contact.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-contact-ca
+    label: "Contacte (CA)"
+    type: file
+    path: src/content/pages/contact.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-services-es
+    label: "Servicios (ES)"
+    type: file
+    path: src/content/pages/services.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-services-en
+    label: "Services (EN)"
+    type: file
+    path: src/content/pages/services.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-services-it
+    label: "Servizi (IT)"
+    type: file
+    path: src/content/pages/services.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-services-ca
+    label: "Serveis (CA)"
+    type: file
+    path: src/content/pages/services.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-valuation-es
+    label: "Valoración (ES)"
+    type: file
+    path: src/content/pages/valuation.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-valuation-en
+    label: "Valuation (EN)"
+    type: file
+    path: src/content/pages/valuation.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-valuation-it
+    label: "Valutazione (IT)"
+    type: file
+    path: src/content/pages/valuation.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-valuation-ca
+    label: "Valoració (CA)"
+    type: file
+    path: src/content/pages/valuation.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-international-guide-es
+    label: "Guía internacional (ES)"
+    type: file
+    path: src/content/pages/internationalGuide.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-international-guide-en
+    label: "International guide (EN)"
+    type: file
+    path: src/content/pages/internationalGuide.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-international-guide-it
+    label: "Guida internazionale (IT)"
+    type: file
+    path: src/content/pages/internationalGuide.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-international-guide-ca
+    label: "Guia internacional (CA)"
+    type: file
+    path: src/content/pages/internationalGuide.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-custom-search-es
+    label: "Búsqueda a medida (ES)"
+    type: file
+    path: src/content/pages/customSearch.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-custom-search-en
+    label: "Custom search (EN)"
+    type: file
+    path: src/content/pages/customSearch.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-custom-search-it
+    label: "Ricerca su misura (IT)"
+    type: file
+    path: src/content/pages/customSearch.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-custom-search-ca
+    label: "Cerca a mida (CA)"
+    type: file
+    path: src/content/pages/customSearch.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-my-search-es
+    label: "Mi búsqueda (ES)"
+    type: file
+    path: src/content/pages/homeSearch.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-my-search-en
+    label: "My search (EN)"
+    type: file
+    path: src/content/pages/homeSearch.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-my-search-it
+    label: "La mia ricerca (IT)"
+    type: file
+    path: src/content/pages/homeSearch.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-my-search-ca
+    label: "La meva cerca (CA)"
+    type: file
+    path: src/content/pages/homeSearch.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-blog-index-es
+    label: "Blog · índice (ES)"
+    type: file
+    path: src/content/pages/blog.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-blog-index-en
+    label: "Blog · index (EN)"
+    type: file
+    path: src/content/pages/blog.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-blog-index-it
+    label: "Blog · indice (IT)"
+    type: file
+    path: src/content/pages/blog.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-blog-index-ca
+    label: "Blog · índex (CA)"
+    type: file
+    path: src/content/pages/blog.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-data-sources-es
+    label: "Estado de los datos (ES)"
+    type: file
+    path: src/content/pages/dataSources.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-data-sources-en
+    label: "Data status (EN)"
+    type: file
+    path: src/content/pages/dataSources.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-data-sources-it
+    label: "Stato dei dati (IT)"
+    type: file
+    path: src/content/pages/dataSources.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-data-sources-ca
+    label: "Estat de les dades (CA)"
+    type: file
+    path: src/content/pages/dataSources.ca.json
+    format: json
+    fields: *page_fields
+
+  # ─── Service detail pages ────────────────────────────────────────────────────
+  - name: pages-svc-sale-es
+    label: "Servicio: Compraventa (ES)"
+    type: file
+    path: src/content/pages/service-venta-estrategica.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-sale-en
+    label: "Service: Sale brokerage (EN)"
+    type: file
+    path: src/content/pages/service-venta-estrategica.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-sale-it
+    label: "Servizio: Compravendita (IT)"
+    type: file
+    path: src/content/pages/service-venta-estrategica.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-sale-ca
+    label: "Servei: Compravenda (CA)"
+    type: file
+    path: src/content/pages/service-venta-estrategica.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-valuation-es
+    label: "Servicio: Valoración (ES)"
+    type: file
+    path: src/content/pages/service-valoracion.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-valuation-en
+    label: "Service: Valuation (EN)"
+    type: file
+    path: src/content/pages/service-valoracion.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-valuation-it
+    label: "Servizio: Valutazione (IT)"
+    type: file
+    path: src/content/pages/service-valoracion.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-valuation-ca
+    label: "Servei: Valoració (CA)"
+    type: file
+    path: src/content/pages/service-valoracion.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-legal-es
+    label: "Servicio: Asesoramiento jurídico (ES)"
+    type: file
+    path: src/content/pages/service-asesoramiento-juridico-fiscal.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-legal-en
+    label: "Service: Legal & tax (EN)"
+    type: file
+    path: src/content/pages/service-asesoramiento-juridico-fiscal.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-legal-it
+    label: "Servizio: Consulenza legale (IT)"
+    type: file
+    path: src/content/pages/service-asesoramiento-juridico-fiscal.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-legal-ca
+    label: "Servei: Assessorament jurídic (CA)"
+    type: file
+    path: src/content/pages/service-asesoramiento-juridico-fiscal.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-financial-es
+    label: "Servicio: Asesoramiento financiero (ES)"
+    type: file
+    path: src/content/pages/service-asesoramiento-financiero.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-financial-en
+    label: "Service: Financial advice (EN)"
+    type: file
+    path: src/content/pages/service-asesoramiento-financiero.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-financial-it
+    label: "Servizio: Consulenza finanziaria (IT)"
+    type: file
+    path: src/content/pages/service-asesoramiento-financiero.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-financial-ca
+    label: "Servei: Assessorament financer (CA)"
+    type: file
+    path: src/content/pages/service-asesoramiento-financiero.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-shopper-es
+    label: "Servicio: Personal shopper (ES)"
+    type: file
+    path: src/content/pages/service-personal-shopper.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-shopper-en
+    label: "Service: Personal shopper (EN)"
+    type: file
+    path: src/content/pages/service-personal-shopper.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-shopper-it
+    label: "Servizio: Personal shopper (IT)"
+    type: file
+    path: src/content/pages/service-personal-shopper.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-shopper-ca
+    label: "Servei: Personal shopper (CA)"
+    type: file
+    path: src/content/pages/service-personal-shopper.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-renovations-es
+    label: "Servicio: Reformas e interiorismo (ES)"
+    type: file
+    path: src/content/pages/service-reformas-obras.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-renovations-en
+    label: "Service: Renovations (EN)"
+    type: file
+    path: src/content/pages/service-reformas-obras.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-renovations-it
+    label: "Servizio: Ristrutturazioni (IT)"
+    type: file
+    path: src/content/pages/service-reformas-obras.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-renovations-ca
+    label: "Servei: Reformes i interiorisme (CA)"
+    type: file
+    path: src/content/pages/service-reformas-obras.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-investment-es
+    label: "Servicio: Inversión inmobiliaria (ES)"
+    type: file
+    path: src/content/pages/service-inversion-inmobiliaria.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-investment-en
+    label: "Service: Real estate investment (EN)"
+    type: file
+    path: src/content/pages/service-inversion-inmobiliaria.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-investment-it
+    label: "Servizio: Investimento immobiliare (IT)"
+    type: file
+    path: src/content/pages/service-inversion-inmobiliaria.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-investment-ca
+    label: "Servei: Inversió immobiliària (CA)"
+    type: file
+    path: src/content/pages/service-inversion-inmobiliaria.ca.json
+    format: json
+    fields: *page_fields
+
+  - name: pages-svc-rental-es
+    label: "Servicio: Alquiler y gestión (ES)"
+    type: file
+    path: src/content/pages/service-alquiler-gestion.es.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-rental-en
+    label: "Service: Rental management (EN)"
+    type: file
+    path: src/content/pages/service-alquiler-gestion.en.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-rental-it
+    label: "Servizio: Affitto e gestione (IT)"
+    type: file
+    path: src/content/pages/service-alquiler-gestion.it.json
+    format: json
+    fields: *page_fields
+  - name: pages-svc-rental-ca
+    label: "Servei: Lloguer i gestió (CA)"
+    type: file
+    path: src/content/pages/service-alquiler-gestion.ca.json
+    format: json
+    fields: *page_fields

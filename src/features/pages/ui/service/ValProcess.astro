@@ -1,0 +1,20 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import NumberedSteps from "./NumberedSteps.astro";
+import ValTop from "./ValTop.astro";
+
+/** "How a valuation with an adviser works" (reference `.v42-pro`): top and four numbered steps. */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const steps = itemsOf(body, "steps")[0];
+---
+
+<ValTop locale={locale} head={head} intro={itemsOf(body, "p")[0]?.text} id={id} />
+{steps && <NumberedSteps item={steps} />}

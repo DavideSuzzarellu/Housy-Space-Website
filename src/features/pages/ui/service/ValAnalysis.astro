@@ -1,0 +1,186 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import ValTop from "./ValTop.astro";
+
+/**
+ * Four analyses on a timeline (reference `.v42-tl`): the line advances with the scroll and each
+ * step lights up when reached (small script, `valuationTimeline.client.ts`); the fourth step is
+ * the petrol conclusion block. Each step has its own line diagram, drawn in on reveal.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const intro = itemsOf(body, "p")[0]?.text;
+const rows = itemsOf(body, "card");
+/** Line diagrams of the four steps (`l` drawn lines, `a` accent fill, `d` dashed guide). */
+const DIAGRAMS = [
+  { l: ["M4 6h112v52H4z", "M46 6v20M46 38v20M46 32h70M4 36h24M82 32v26"], a: "M88 12h22v14H88z" },
+  {
+    l: [
+      "M10 4h20l6 6v14l-6 6H10l-6-6V10zM50 4h20l6 6v14l-6 6H50l-6-6V10zM90 4h20l6 6v14l-6 6H90l-6-6V10zM10 34h20l6 6v14l-6 6H10l-6-6V40zM90 34h20l6 6v14l-6 6H90l-6-6V40z",
+    ],
+    a: "M50 34h20l6 6v14l-6 6H50l-6-6V40z",
+  },
+  {
+    l: ["M4 60h112", "M12 60V30h12v30M32 60V20h12v40M72 60V26h12v34M92 60V36h12v24"],
+    a: "M52 60V14h12v46z",
+    d: "M4 22h112",
+  },
+  {
+    l: ["M4 40h112M4 34v12M32 36v8M60 36v8M88 36v8M116 34v12", "M64 12l8 8-8 8-8-8zM64 28v8"],
+    a: "M46 36h36v8H46z",
+  },
+] as const;
+---
+
+<ValTop locale={locale} head={head} intro={intro} id={id} />
+<ol data-timeline class="timeline relative m-0 list-none p-0">
+  {rows.map((row, index) => {
+    const title = itemsOf(row.items, "h3")[0];
+    const text = itemsOf(row.items, "p")[0];
+    const included = itemsOf(row.items, "list")[0]?.items ?? [];
+    const diagram = DIAGRAMS[index];
+    const conclusion = index === rows.length - 1;
+    return (
+      <li
+        data-reveal
+        class:list={[
+          "row relative grid gap-4 border-t border-fg/14 py-[clamp(22px,4.2vh,40px)] pl-9 first:border-t-0 min-[900px]:grid-cols-[clamp(170px,17vw,220px)_minmax(0,1.3fr)_minmax(0,1fr)] min-[900px]:items-center min-[900px]:gap-[clamp(24px,3.6vw,56px)] min-[900px]:pl-14.5",
+          conclusion &&
+            "surface-dark mt-[clamp(10px,2vh,18px)] border-t-0 bg-dark pr-[clamp(18px,2.6vw,36px)] [clip-path:polygon(0_0,calc(100%-30px)_0,100%_30px,100%_100%,0_100%)]",
+        ]}
+      >
+        <div class="flex items-end justify-between gap-4 min-[900px]:block">
+          <span class="block text-[clamp(32px,3.2vw,46px)] leading-none tracking-[0.02em] text-accent">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          {diagram && (
+            <svg
+              viewBox="0 0 120 64"
+              aria-hidden="true"
+              focusable="false"
+              class="dg block aspect-[120/64] h-auto w-[clamp(96px,10vw,132px)] overflow-visible min-[900px]:mt-[clamp(12px,2vh,18px)]"
+            >
+              {diagram.l.map((d) => (
+                <path class="l" pathLength="1" d={d} />
+              ))}
+              {"d" in diagram && <path class="g" d={diagram.d} />}
+              <path class="a" d={diagram.a} />
+            </svg>
+          )}
+        </div>
+        <div>
+          {title && (
+            <h3 class="mb-2.5 font-sans text-[clamp(17px,1.55vw,22px)] leading-[1.2] font-extrabold tracking-[0.04em]">
+              {title.text}
+            </h3>
+          )}
+          {text && (
+            <p class="max-w-[50ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case">
+              {text.text}
+            </p>
+          )}
+        </div>
+        <ul class="m-0 list-none p-0">
+          {included.map((entry) => (
+            <li class="relative border-t border-fg/14 py-2.25 pl-4.5 text-xs leading-[1.45] font-semibold tracking-[0.07em] text-fg before:absolute before:top-[1.3em] before:left-0 before:h-0.5 before:w-2.25 before:bg-turquoise last:border-b">
+              {entry.text}
+            </li>
+          ))}
+        </ul>
+      </li>
+    );
+  })}
+</ol>
+
+<script>
+  import "./valuationTimeline.client";
+</script>
+
+<style>
+  .timeline::before,
+  .timeline::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 1px;
+  }
+  .timeline::before {
+    bottom: 0;
+    background: color-mix(in srgb, var(--color-fg) 18%, transparent);
+  }
+  .timeline::after {
+    height: 100%;
+    background: var(--color-accent);
+    transform-origin: top;
+  }
+  .timeline.live::after {
+    height: calc(var(--p, 0) * 100%);
+  }
+  .row::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 2px;
+    top: calc(clamp(22px, 4.2vh, 40px) + 12px);
+    width: 11px;
+    height: 11px;
+    background: var(--color-turquoise);
+    transform: rotate(45deg);
+    transition:
+      background 0.45s,
+      box-shadow 0.45s;
+  }
+  .timeline.live .row:not(.on)::before {
+    background: var(--color-canvas);
+    box-shadow: inset 0 0 0 1.5px var(--color-taupe);
+  }
+  @media (min-width: 900px) {
+    .timeline::before,
+    .timeline::after {
+      left: 9px;
+    }
+    .row::before {
+      left: 4px;
+    }
+  }
+  .dg .l {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+  .dg .a {
+    fill: var(--color-turquoise);
+  }
+  .dg .g {
+    fill: none;
+    stroke: var(--color-taupe-tx);
+    stroke-width: 1.2;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 4 4;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .dg .l {
+      transition: stroke-dashoffset 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+    }
+    .dg .a {
+      transition: opacity 0.8s ease 1s;
+    }
+    :global(.motion-ready) .row:not(:global(.is-revealed)) .dg .l {
+      stroke-dashoffset: 1;
+    }
+    :global(.motion-ready) .row:not(:global(.is-revealed)) .dg .a {
+      opacity: 0;
+    }
+  }
+</style>

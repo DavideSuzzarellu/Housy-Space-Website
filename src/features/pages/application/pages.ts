@@ -1,8 +1,10 @@
 import { getEntry, type CollectionEntry } from "astro:content";
 import { DEFAULT_LOCALE, type Locale } from "@/shared/i18n/config";
+import { plainInline } from "@/shared/lib/inline";
 
 /** Pages rendered from `src/content/pages`, by route key. */
 export const EDITORIAL = [
+  "services",
   "about",
   "contact",
   "legalNotice",
@@ -10,14 +12,17 @@ export const EDITORIAL = [
   "cookies",
   "dataSources",
   "internationalGuide",
-  "customSearch",
-  "homeSearch",
+  "mySearch",
   "valuation",
   "blog",
 ] as const;
 export type EditorialKey = (typeof EDITORIAL)[number];
 /** Content file name when it differs from the route key. */
-export const CONTENT_FILE: Partial<Record<EditorialKey, string>> = { legalNotice: "legal" };
+export const CONTENT_FILE: Partial<Record<EditorialKey, string>> = {
+  legalNotice: "legal",
+  // TODO(ui-migration Phase 4): one merged "Mi búsqueda" page replaces both search pages.
+  mySearch: "homeSearch",
+};
 
 export type PageContent = CollectionEntry<"pages">["data"];
 export type PageSection = PageContent["sections"][number];
@@ -50,6 +55,27 @@ export function groupItems<T extends { readonly kind: string }>(
   return units;
 }
 
+export type ItemOf<K extends PageItem["kind"]> = Extract<PageItem, { readonly kind: K }>;
+
+/** The items of one kind, narrowed. */
+export function itemsOf<K extends PageItem["kind"]>(
+  items: readonly PageItem[],
+  kind: K,
+): ItemOf<K>[] {
+  return items.filter((item): item is ItemOf<K> => item.kind === kind);
+}
+
+const HEADING_KINDS = new Set(["tag", "h2", "lead"]);
+
+/** The leading tag / h2 / lead of a section (its heading block) and everything after it. */
+export function splitBlockHead<T extends { readonly kind: string }>(
+  items: readonly T[],
+): { readonly head: T[]; readonly body: T[] } {
+  const end = items.findIndex((item) => !HEADING_KINDS.has(item.kind));
+  const cut = end === -1 ? items.length : end;
+  return { head: items.slice(0, cut), body: items.slice(cut) };
+}
+
 export interface LoadedPage {
   readonly content: PageContent;
   /** Not translated yet: the Spanish text is shown and the page stays out of the index. */
@@ -62,4 +88,16 @@ export async function getPage(key: string, locale: Locale): Promise<LoadedPage> 
   const base = await getEntry("pages", `${key}.${DEFAULT_LOCALE}`);
   if (base === undefined) throw new Error(`Missing page content "${key}"`);
   return { content: base.data, fallback: locale !== DEFAULT_LOCALE };
+}
+
+/**
+ * The questions a page shows as FAQ (`faq` items, rendered in full by the service layout), as
+ * plain text for the FAQPage structured data. Only what is visible on the page may go there.
+ */
+export function getFaqEntries(content: PageContent): { question: string; answer: string }[] {
+  return content.sections
+    .flatMap((section) => section.items)
+    .flatMap((item) =>
+      item.kind === "faq" ? [{ question: plainInline(item.q), answer: plainInline(item.a) }] : [],
+    );
 }

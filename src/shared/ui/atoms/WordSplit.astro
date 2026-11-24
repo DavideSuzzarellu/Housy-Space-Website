@@ -1,0 +1,29 @@
+---
+import { tokenizeWords } from "@/shared/lib/words";
+
+/**
+ * Text with each word in its own `.w` span (index in `--i`), split at build time so a CSS
+ * scroll-driven animation can stagger them (motion.css) with no client script. Whitespace
+ * stays between the spans, so the text a screen reader announces is the original sentence.
+ */
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+let index = 0;
+const tokens = tokenizeWords(text).map((token) => ({
+  ...token,
+  index: token.isWord ? index++ : -1,
+}));
+---
+
+{tokens.map((token) =>
+  token.isWord ? (
+    <span class="w" style={`--i: ${token.index}`}>
+      {token.text}
+    </span>
+  ) : (
+    token.text
+  ),
+)}

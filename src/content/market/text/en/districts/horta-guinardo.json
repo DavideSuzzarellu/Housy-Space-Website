@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Hills, parks and viewpoints between the city and the Collserola range.",
+  "history": [
+    "Horta-Guinardó spreads across the slopes of Collserola and the hills of El Carmel and La Rovira. It brings together eleven neighbourhoods, from El Baix Guinardó to La Vall d'Hebron, among them Horta, which was an independent municipality until 1904 and still keeps its village feel.",
+    "It is a district with plenty of greenery and plenty of slopes, with quiet corners and views over the city, and with landmarks that shape its profile: the Recinte Modernista de Sant Pau, the Parc del Laberint d'Horta, the Búnkers del Carmel and the large Vall d'Hebron hospital complex. The housing ranges from the low-rise houses and farmhouses of the old village of Horta to neighbourhoods of blocks built between the 1950s and the 1970s.",
+    "Across its 11 neighbourhoods, the average sale price ranges from 2,456 €/m² in Sant Genís dels Agudells to 4,668 €/m² in La Clota, and the average rent from 781 €/month in El Carmel to 1,074 €/month in La Clota.",
+    "The neighbourhoods are very different from one another, prices included, and the exact area matters a great deal."
+  ],
+  "summary": "Horta-Guinardó has 183,006 inhabitants in 11.92 km² and 11 neighbourhoods. Its average sale price was 3,451 €/m² in 2025, 19% below the city average. The average rent is 909 €/month.",
+  "landmarks": [
+    {
+      "name": "Parc del Laberint d'Horta",
+      "where": "Horta",
+      "text": "An 18th-century neoclassical garden with a cypress maze."
+    },
+    {
+      "name": "Búnkers del Carmel",
+      "where": "El Carmel",
+      "text": "The former anti-aircraft batteries of Turó de la Rovira, now a viewpoint."
+    },
+    {
+      "name": "Recinte Modernista de Sant Pau",
+      "where": "El Baix Guinardó",
+      "text": "Lluís Domènech i Montaner's former hospital, a World Heritage Site."
+    },
+    {
+      "name": "Hospital Universitari Vall d'Hebron",
+      "where": "Montbau and La Vall d'Hebron",
+      "text": "One of the largest hospital complexes in Catalonia."
+    },
+    {
+      "name": "Collserola",
+      "where": "The upper neighbourhoods of the district",
+      "text": "Direct access to the range's natural park."
+    }
+  ]
+}

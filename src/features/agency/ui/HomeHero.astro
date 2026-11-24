@@ -1,185 +1,207 @@
 ---
+import type { ImageMetadata, ImageOutputFormat } from "astro";
 import { getImage } from "astro:assets";
-import { existsSync } from "node:fs";
-import type { HomeContent } from "@/features/agency/application/homeContent";
+import posterLandscape from "@/assets/home/hero-poster.jpg";
+import posterPortrait from "@/assets/home/hero-poster-v.jpg";
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
-import MediaCredit from "@/shared/ui/atoms/MediaCredit.astro";
 
 /**
- * 01 Hero: looping muted Barcelona video over an optimized poster (the LCP image).
- * AI-generated placeholder media (docs/media-credits.md): the credit line stays visible.
+ * Hero: full-viewport video only (no text overlay).
+ * The heading lives in the HomePresentation section below (§11.1 reference structure).
  */
 interface Props {
   locale: Locale;
-  content: HomeContent["hero"];
   /** Id of the section the scroll cue jumps to. */
   nextSectionId: string;
 }
 
-const { locale, content, nextSectionId } = Astro.props;
+const { locale, nextSectionId } = Astro.props;
 const t = getDictionary(locale);
 
-// Poster = LCP image: AVIF first (smallest), WebP fallback; portrait cut for phones.
-const [landscape, portrait, landscapeAvif, portraitAvif] = await Promise.all([
-  getImage({ src: content.posterLandscape, format: "webp", width: 1280 }),
-  getImage({ src: content.posterPortrait, format: "webp", width: 720 }),
-  getImage({ src: content.posterLandscape, format: "avif", width: 1280 }),
-  getImage({ src: content.posterPortrait, format: "avif", width: 720 }),
-]);
 const PORTRAIT_MEDIA = "(max-aspect-ratio: 4/5)";
+const LANDSCAPE_MEDIA = "(min-aspect-ratio: 4/5)";
+const LANDSCAPE_SMALL_MEDIA = `${LANDSCAPE_MEDIA} and (max-width: 1440px)`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-/** A CMS upload is mp4 only: its smaller webm cut is used when one sits next to it in public/. */
-function webmOf(mp4: string): string | undefined {
-  const webm = mp4.replace(/\.mp4$/, ".webm");
-  return existsSync(`public${webm}`) ? webm : undefined;
+/** The poster is the LCP image: AVIF first, WebP fallback, one width per viewport and density. */
+async function posterSet(src: ImageMetadata, widths: number[], format: ImageOutputFormat) {
+  const image = await getImage({ src, format, widths });
+  return { src: image.src, srcset: image.srcSet.attribute };
 }
+
+const LANDSCAPE_WIDTHS = [960, 1440, 1920];
+const PORTRAIT_WIDTHS = [480, 608];
+const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise.all([
+  posterSet(posterLandscape, LANDSCAPE_WIDTHS, "avif"),
+  posterSet(posterLandscape, LANDSCAPE_WIDTHS, "webp"),
+  posterSet(posterPortrait, PORTRAIT_WIDTHS, "avif"),
+  posterSet(posterPortrait, PORTRAIT_WIDTHS, "webp"),
+]);
 ---
 
 <section
   id="hero"
   aria-label={t.home.hero.label}
-  data-section="hero"
   data-hero
-  class="group/hero surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas text-white md:min-h-130"
+  class="group surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
 >
-  <div class="absolute inset-0">
-    <picture>
-      <source media={PORTRAIT_MEDIA} srcset={portraitAvif.src} type="image/avif" />
-      <source media={PORTRAIT_MEDIA} srcset={portrait.src} type="image/webp" />
-      <source srcset={landscapeAvif.src} type="image/avif" />
-      <img
-        src={landscape.src}
-        width={landscape.attributes["width"]}
-        height={landscape.attributes["height"]}
-        alt=""
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-        class="absolute inset-0 size-full origin-[60%_40%] animate-kenburns object-cover group-data-[playing=true]/hero:[animation-play-state:paused]"
-      />
-    </picture>
-    <video
-      data-hero-video
-      data-landscape-webm={webmOf(content.videoLandscape)}
-      data-landscape-mp4={content.videoLandscape}
-      data-portrait-webm={webmOf(content.videoPortrait)}
-      data-portrait-mp4={content.videoPortrait}
-      muted
-      loop
-      playsinline
-      preload="none"
-      aria-hidden="true"
-      tabindex="-1"
-      class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1600 group-data-[playing=true]/hero:opacity-100"
-    ></video>
-  </div>
-  <div
+  <!-- Poster = frame 0 of the video, pixel for pixel (the only eager image of the page; never animated, so the swap is invisible) -->
+  <picture class="absolute inset-0">
+    <source media={PORTRAIT_MEDIA} type="image/avif" srcset={portraitAvif.srcset} sizes="100vw" />
+    <source media={PORTRAIT_MEDIA} type="image/webp" srcset={portraitWebp.srcset} sizes="100vw" />
+    <source type="image/avif" srcset={landscapeAvif.srcset} sizes="100vw" />
+    <img
+      src={landscapeWebp.src}
+      srcset={landscapeWebp.srcset}
+      sizes="100vw"
+      width={posterLandscape.width}
+      height={posterLandscape.height}
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+      class="size-full object-cover"
+    />
+  </picture>
+
+  <!--
+    Video: starts after the page has loaded and the browser is idle; skipped on reduced motion,
+    Save-Data and 2G. Same cut as hero-corto.*, re-encoded smaller (no audio): 1280 px up to
+    1440 px wide, 1920 px above, 540 px for portrait screens. WebM first, MP4 fallback.
+  -->
+  <video
+    data-hero-video
+    muted
+    loop
+    playsinline
+    preload="none"
     aria-hidden="true"
-    class="pointer-events-none absolute inset-0 bg-linear-to-b from-ink/50 via-ink/0 via-55% to-ink/25"
-  ></div>
-  <p class="absolute right-4 bottom-4 z-2 max-w-[min(35rem,70vw)] text-right max-md:right-4 max-md:bottom-3 max-md:left-4 max-md:max-w-none max-md:text-left">
-    <MediaCredit tone="onImage">{t.home.hero.videoCredit}</MediaCredit>
-  </p>
+    class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[600ms] ease-in-out group-data-playing:opacity-100"
+  >
+    <source
+      src={`${base}/media/hero/hero-corto-1280.webm`}
+      type="video/webm"
+      media={LANDSCAPE_SMALL_MEDIA}
+    />
+    <source
+      src={`${base}/media/hero/hero-corto-1280.mp4`}
+      type="video/mp4"
+      media={LANDSCAPE_SMALL_MEDIA}
+    />
+    <source
+      src={`${base}/media/hero/hero-corto-1920.webm`}
+      type="video/webm"
+      media={LANDSCAPE_MEDIA}
+    />
+    <source
+      src={`${base}/media/hero/hero-corto-1920.mp4`}
+      type="video/mp4"
+      media={LANDSCAPE_MEDIA}
+    />
+    <source src={`${base}/media/hero/hero-corto-v-540.webm`} type="video/webm" />
+    <source src={`${base}/media/hero/hero-corto-v-540.mp4`} type="video/mp4" />
+  </video>
+
+  <!-- Gradient shade: darker at the top for the header, a clean cut at the bottom -->
+  <div aria-hidden="true" class="hero-shade pointer-events-none absolute inset-0"></div>
+
+  <!-- Scroll cue: hairline with an accent segment sliding down it -->
   <a
     href={`#${nextSectionId}`}
     aria-label={t.a11y.scrollDown}
     class="absolute bottom-14.5 left-1/2 z-2 -ml-3.5 h-13.5 w-7 md:bottom-5.5"
   >
-    <span class="absolute top-0 left-3.25 h-13.5 w-px overflow-hidden bg-white/35">
-      <span class="absolute top-0 left-0 h-4 w-px animate-scroll-cue bg-turquoise"></span>
+    <span class="absolute top-0 left-3.25 h-13.5 w-px overflow-hidden bg-fg/30">
+      <span class="animate-scroll-cue absolute -top-4 left-0 h-4 w-px bg-turquoise motion-reduce:animate-none"></span>
     </span>
   </a>
 </section>
 
+<style>
+  .hero-shade {
+    --shade: var(--color-ink);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--shade) 50%, transparent) 0%,
+      color-mix(in srgb, var(--shade) 8%, transparent) 26%,
+      transparent 55%,
+      color-mix(in srgb, var(--shade) 25%, transparent) 100%
+    );
+    mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  }
+</style>
+
 <script>
-  import { heroVideoSourceKey, shouldStreamHeroVideo } from "./heroVideo";
+  import { afterPaintedFrames } from "./heroReveal";
 
-  /**
-   * Progressive enhancement over the poster (the LCP image). The video never competes with the
-   * critical path: it starts only after the `load` event and an idle period. Never downloaded
-   * under reduced motion, Save-Data or 2G (heroVideo.ts). Pauses when off-screen or hidden.
-   */
-  let bound = false;
+  const PAINTED_FRAMES = 4;
 
-  function heroElements() {
-    const hero = document.querySelector<HTMLElement>("[data-hero]");
-    const video = hero?.querySelector<HTMLVideoElement>("[data-hero-video]") ?? null;
-    return hero === null || video === null ? undefined : { hero, video };
+  interface NetworkInformation {
+    saveData?: boolean;
+    effectiveType?: string;
+  }
+  const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection;
+  // Save-Data or a 2G link: keep the poster, never download megabytes of video.
+  const SAVE_DATA =
+    connection?.saveData === true || /(^|-)2g$/.test(connection?.effectiveType ?? "");
+
+  let observer: IntersectionObserver | undefined;
+  let active: { hero: HTMLElement; video: HTMLVideoElement } | undefined;
+  let visible = true;
+
+  /** Plays only while the hero is on screen and the tab is visible (saves battery and data). */
+  function sync(): void {
+    if (active === undefined) return;
+    if (visible && !document.hidden) void active.video.play().catch(() => undefined);
+    else active.video.pause();
   }
 
-  function connectionInfo(): { saveData: boolean; effectiveType: string | undefined } {
-    const connection: unknown = Reflect.get(navigator, "connection");
-    if (typeof connection !== "object" || connection === null) {
-      return { saveData: false, effectiveType: undefined };
-    }
-    const saveData = "saveData" in connection && connection.saveData === true;
-    const effectiveType =
-      "effectiveType" in connection && typeof connection.effectiveType === "string"
-        ? connection.effectiveType
-        : undefined;
-    return { saveData, effectiveType };
-  }
-
-  /** Runs `task` once the page has loaded and the main thread is idle. */
-  function afterLoadAndIdle(task: () => void): void {
-    const idle = (): void => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(task, { timeout: 2000 });
-      } else {
-        // Safari: no requestIdleCallback.
-        setTimeout(task, 200);
-      }
+  /** After the `load` event, when the browser is idle: the video never competes with the LCP. */
+  function whenIdle(callback: () => void): void {
+    const schedule = (): void => {
+      if (typeof window.requestIdleCallback === "function")
+        window.requestIdleCallback(callback, { timeout: 300 });
+      else window.setTimeout(callback, 200);
     };
-    if (document.readyState === "complete") idle();
-    else window.addEventListener("load", idle, { once: true });
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
   }
 
-  function syncPlayback(): void {
-    const elements = heroElements();
-    if (elements === undefined || elements.video.getAttribute("src") === null) return;
-    const { hero, video } = elements;
-    const visible = hero.getBoundingClientRect().bottom > 0 && !document.hidden;
-    if (visible) {
-      void video.play().catch(() => undefined);
-    } else {
-      video.pause();
-    }
+  function maybePlayVideo(): void {
+    const hero = document.querySelector<HTMLElement>("[data-hero]");
+    const video = hero?.querySelector<HTMLVideoElement>("[data-hero-video]");
+    if (hero == null || video == null) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || SAVE_DATA) return;
+    // Reveal only after real frames were painted, so poster and video are identical at the swap.
+    video.addEventListener(
+      "playing",
+      () => afterPaintedFrames(video, PAINTED_FRAMES, () => hero.setAttribute("data-playing", "")),
+      { once: true },
+    );
+    whenIdle(() => {
+      // The visitor may already have navigated away.
+      if (!hero.isConnected) return;
+      active = { hero, video };
+      // The first observer callback says whether the hero is on screen: nothing downloads before.
+      visible = false;
+      observer = new IntersectionObserver(
+        (entries) => {
+          visible = entries.some((entry) => entry.isIntersecting);
+          sync();
+        },
+        { threshold: 0.02 },
+      );
+      observer.observe(hero);
+    });
   }
 
-  function startVideo(video: HTMLVideoElement, hero: HTMLElement): void {
-    // The visitor may have navigated away (ClientRouter) before the idle callback fired.
-    if (!video.isConnected || video.getAttribute("src") !== null) return;
-    const key = heroVideoSourceKey({
-      portrait: matchMedia("(max-aspect-ratio: 4/5)").matches,
-      webm: video.canPlayType('video/webm; codecs="vp9"') !== "",
-    });
-    // Without a webm cut (CMS upload), the mp4 of the same orientation.
-    const source = video.dataset[key] ?? video.dataset[key.replace("Webm", "Mp4")];
-    if (source === undefined) return;
-    video.src = source;
-    void video.play().catch(() => {
-      hero.dataset["playing"] = "false";
-    });
-    if (!bound) {
-      bound = true;
-      window.addEventListener("scroll", syncPlayback, { passive: true });
-      document.addEventListener("visibilitychange", syncPlayback);
-    }
+  function stopVideo(): void {
+    observer?.disconnect();
+    active?.video.pause();
+    active = undefined;
   }
 
-  document.addEventListener("astro:page-load", () => {
-    const elements = heroElements();
-    if (elements === undefined) return;
-    const { hero, video } = elements;
-    video.addEventListener("playing", () => {
-      hero.dataset["playing"] = "true";
-    });
-    const stream = shouldStreamHeroVideo({
-      reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches,
-      ...connectionInfo(),
-    });
-    if (!stream) return;
-    afterLoadAndIdle(() => startVideo(video, hero));
-  });
+  document.addEventListener("astro:page-load", maybePlayVideo);
+  document.addEventListener("astro:before-preparation", stopVideo);
+  document.addEventListener("visibilitychange", sync);
 </script>

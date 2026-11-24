@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "La Zona Franca e il porto: il quartiere più esteso di Barcellona e uno dei meno abitati.",
+  "text": [
+    "Con 14,24 km² è il quartiere più grande della città, ma ci abitano appena 3.174 persone: quasi tutto il suo suolo è occupato dalla Zona Franca, dalla logistica e dall'industria legata al porto. Il suo nome viene dai campi che occupavano quest'area, nella parte bassa della Marina de Sants.",
+    "È un quartiere nuovo e in trasformazione, dove sorgono nuovi complessi residenziali su ex aree industriali, con il parc de les Trece Roses, inaugurato nel 2024, come polmone verde e la linea 10 della metropolitana come collegamento. Poiché le abitazioni sono così poche, le sue cifre di prezzo (2.724 €/m²) e di affitto (1.390 €/mese) si basano su poche operazioni e vanno considerate con cautela."
+  ],
+  "housing": "Abitazioni nuove e poche, tra aree industriali e logistiche.",
+  "places": ["Zona Franca", "Port de Barcelona", "Parc de les Trece Roses", "Mercabarna"]
+}

@@ -1,0 +1,24 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+
+/** Materials with their colour (reference `.sx-sw-l`); the colour is content, edited with the page. */
+interface Props {
+  list: ItemOf<"list">;
+}
+
+const { list } = Astro.props;
+---
+
+<ul class="grid grid-cols-2 gap-x-3.5 gap-y-6.5 min-[700px]:grid-cols-3 min-[1080px]:grid-cols-6">
+  {list.items.map((entry) => (
+    <li data-reveal>
+      <i
+        aria-hidden="true"
+        style={entry.color === undefined ? undefined : `background-color:${entry.color}`}
+        class="relative mb-3.5 block aspect-square bg-card shadow-[inset_0_0_0_1px_rgb(23_43_43/.08)] after:absolute after:inset-0 after:bg-linear-[135deg,rgb(255_255_255/.22),rgb(255_255_255/0)_45%,rgb(0_0_0/.1)]"
+      ></i>
+      <b class="mb-1 block font-heading text-[19px] leading-[1.15] font-normal">{entry.title}</b>
+      <span class="block text-xs leading-[1.5] text-muted normal-case">{entry.text}</span>
+    </li>
+  ))}
+</ul>

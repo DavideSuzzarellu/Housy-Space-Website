@@ -1,8 +1,10 @@
 ---
+import { withBase } from "@/shared/lib/basePath";
+
 /**
  * Brand logo from SVG files (never re-typeset, AGENTS.md §11).
  * - official: `logo/housyspace-completo-oficial.svg` (light backgrounds).
- * - negative: monochrome white, derived ONLY by recoloring the official groups.
+ * - negative: the client's own white version (petrol roof), copied from the reference site.
  */
 interface Props {
   variant?: "official" | "negative";
@@ -15,8 +17,14 @@ const { variant = "official", alt, class: className } = Astro.props;
 
 const SOURCES = {
   official: "/brand/housyspace-completo-oficial.svg",
-  negative: "/brand/housyspace-monocromo-blanco.svg",
+  negative: "/brand/housyspace-blanco-oficial.svg",
 } as const;
 ---
 
-<img src={SOURCES[variant]} alt={alt} width="295" height="99" class:list={["block", className]} />
+<img
+  src={withBase(SOURCES[variant])}
+  alt={alt}
+  width="295"
+  height="99"
+  class:list={["block", className]}
+/>

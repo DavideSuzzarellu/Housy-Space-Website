@@ -1,0 +1,40 @@
+---
+import { itemsOf, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+
+/**
+ * Top of a valuation section (reference `.v42-top`): tag and headline (light part on its own
+ * line) with the intro paragraph beside it from 900 px.
+ */
+interface Props {
+  locale: Locale;
+  head: readonly PageItem[];
+  intro?: string | undefined;
+  id: string;
+}
+
+const { locale, head, intro, id } = Astro.props;
+const tag = itemsOf(head, "tag")[0];
+const heading = itemsOf(head, "h2")[0];
+---
+
+<div class="mb-[clamp(26px,5vh,54px)] grid gap-[clamp(14px,2.6vh,24px)] min-[900px]:grid-cols-2 min-[900px]:items-end min-[900px]:gap-[clamp(24px,5vw,76px)]">
+  <div>
+    {tag && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+    {heading && (
+      <h2 id={id} data-reveal class="mt-2.5 text-[clamp(25px,2.65vw,38px)] [&_em]:block">
+        <Emphasis text={heading.text} />
+      </h2>
+    )}
+  </div>
+  {intro && (
+    <p
+      data-reveal
+      class="max-w-[60ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case"
+    >
+      <Inline text={intro} locale={locale} />
+    </p>
+  )}
+</div>

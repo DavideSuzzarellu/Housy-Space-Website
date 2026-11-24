@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Il nord della città: tredici quartieri con identità propria, molta vita di vicinato e parchi con vista.",
+  "history": [
+    "Nou Barris occupa l'estremo nord di Barcellona, tra la serra de Collserola e l'avinguda Meridiana. I suoi tredici quartieri sono cresciuti soprattutto tra gli anni Cinquanta e Settanta, con l'arrivo di migliaia di persone da altre regioni della Spagna, e molti si sono trasformati grazie alla lotta delle loro associazioni di quartiere, che chiedevano servizi, trasporti e infrastrutture.",
+    "Oggi il distretto unisce i palazzoni di quell'epoca a quartieri in via di riqualificazione, grandi parchi come il Parc Central de Nou Barris, dove ha sede il distretto, pendii con vista sulla città e diverse linee della metropolitana. I suoi prezzi sono tra i più contenuti di Barcellona, per questo di solito interessa a chi cerca una prima casa o un investimento con un ingresso più basso.",
+    "Tra i suoi 13 quartieri, il prezzo medio di compravendita va dai 1.697 €/m² di Vallbona ai 3.569 €/m² di Vilapicina i la Torre Llobeta, e l'affitto medio dai 395 €/mese di Can Peguera ai 902 €/mese della Guineueta.",
+    "Nei palazzi degli anni Cinquanta-Settanta conviene controllare a fondo lo stato dell'edificio e del suo condominio, ed eventuali patologie come l'aluminosi."
+  ],
+  "summary": "Nou Barris conta 183.280 abitanti su 8,06 km² e 13 quartieri. È il distretto con il prezzo di compravendita più basso di Barcellona: 2.952 €/m² nel 2025. L'affitto medio è di 796 €/mese.",
+  "landmarks": [
+    {
+      "name": "Parc Central de Nou Barris",
+      "where": "Centro del distretto",
+      "text": "Grande parco urbano accanto alla sede del distretto."
+    },
+    {
+      "name": "Seu del Districte",
+      "where": "Centro del distretto",
+      "text": "L'antico Institut Mental de la Santa Creu, oggi sede del distretto."
+    },
+    {
+      "name": "Castell de Torre Baró",
+      "where": "Torre Baró",
+      "text": "Il castello mai terminato, trasformato in belvedere sulla città."
+    },
+    {
+      "name": "Via Júlia",
+      "where": "La Prosperitat e Verdun",
+      "text": "Rambla con negozi e vita di quartiere."
+    },
+    {
+      "name": "Collserola",
+      "where": "Quartieri alti del distretto",
+      "text": "Sentieri e belvedere nella serra, a pochi minuti."
+    }
+  ]
+}

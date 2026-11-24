@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The most populated neighbourhood in the Eixample, between the Joan Miró park and Gran Via.",
+  "text": [
+    "Well into the 20th century it was an almost rural area, with clusters of shacks housing people who worked on the 1929 Exhibition, and development did not really take off until the 1930s. For decades it formed a single unit with L'Antiga Esquerra and was only separated because of its size and density. Its streets keep traces of another Barcelona: Casa Golferichs, which was saved from demolition in 1972 by public pressure and is now a civic centre; the Joan Miró park, built on the site of the old slaughterhouse and opened in 1983 with the sculpture Dona i ocell; Las Arenas, a bullring turned shopping centre; and the former Model prison, from 1904, the first building in Barcelona built expressly as a prison.",
+    "With 59,117 inhabitants, it is the most populated in the Eixample, and that shows in an intense street life, with plenty of local shops and neighbours of all ages. Its average sale price, 5,211 €/m², is below that of L'Antiga Esquerra and La Dreta, while offering the same Cerdà grid."
+  ],
+  "housing": "Buildings from several periods on the Cerdà grid, with lower prices than in L'Antiga Esquerra.",
+  "places": [
+    "Parc de Joan Miró",
+    "Casa Golferichs",
+    "Arenas de Barcelona",
+    "Former Model prison",
+    "Escola Industrial"
+  ]
+}

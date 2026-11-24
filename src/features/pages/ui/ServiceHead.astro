@@ -1,0 +1,222 @@
+---
+import { Picture } from "astro:assets";
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
+import { itemsOf, type PageContent } from "@/features/pages/application/pages";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import { splitEmphasis } from "@/shared/lib/emphasis";
+import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+import { PHOTO_PICTURE } from "@/shared/lib/images";
+
+/**
+ * Head of a service page (reference `.sv5-hero`): paper with the Cerdà street grid, a big
+ * headline (second half light) and the service illustration floating on the right (centred
+ * above the text on phones). The illustration is the one eager image of the page. Without an
+ * illustration (the services index) the headline runs on one line, followed by the in-page jump
+ * links (a `list` head item) instead of the contact button.
+ */
+interface Props {
+  locale: Locale;
+  head: PageContent["head"];
+  crumbs: readonly { readonly label: string; readonly href?: string }[];
+  /** Label of the button that scrolls to the closing contact block; none on the index. */
+  talk?: string;
+}
+
+const { locale, head, crumbs, talk } = Astro.props;
+const t = getDictionary(locale);
+const lead = head.items.find((item) => item.kind === "lead");
+const tag = head.items.find((item) => item.kind === "tag");
+const { illustration } = head;
+const wide = head.wide === true;
+/** Index head: no illustration, no `wide` headline. */
+const plain = illustration === undefined && !wide;
+/** Sale brokerage head: wide headline, small illustration beside the lead (reference `.cv42-hero-row`). */
+const heroRow = wide && illustration !== undefined;
+const jump = itemsOf(head.items, "list")[0];
+const cta = itemsOf(head.items, "buttons")[0]?.items[0];
+---
+
+<section
+  data-page-head
+  class:list={[
+    "relative isolate overflow-clip border-b border-fg/10 bg-canvas",
+    "pt-[clamp(22px,4.2vh,42px)] pb-[clamp(32px,5.4vh,56px)] min-[761px]:max-[899px]:pt-[calc(clamp(22px,4.2vh,42px)-16px)]",
+  ]}
+>
+  <StreetGrid placement="heading" />
+  <Container
+    class:list={[
+      "grid grid-cols-1 items-center gap-x-[clamp(1rem,2.4vw,2.5rem)]",
+      illustration !== undefined &&
+        !heroRow &&
+        "min-[761px]:grid-cols-[minmax(0,1fr)_clamp(18.75rem,34vw,28.75rem)]",
+    ]}
+  >
+    <Breadcrumbs
+      items={crumbs}
+      label={t.property.detail.breadcrumb}
+      tone="compact"
+      class:list={[
+        "col-span-full row-start-1",
+        wide ? "mb-[clamp(18px,4vh,44px)]" : "mb-[clamp(1.875rem,4.4vw,3.625rem)]",
+      ]}
+    />
+    <div class="row-start-3 min-w-0 @container min-[761px]:row-start-2">
+      {tag?.kind === "tag" && (
+        <p class="mb-3.5 text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>
+      )}
+      <h1
+        class:list={[
+          "wrap-break-word",
+          wide &&
+            "mt-0.75 mb-[clamp(18px,3.4vh,34px)] text-[clamp(30px,8.2vw,44px)] leading-[1.05] min-[760px]:text-[clamp(40px,4.7vw,68px)] [&_em]:block",
+          plain &&
+            "mb-[clamp(24px,3.4vw,28px)] text-[clamp(36px,4.7vw,68px)] leading-[1.05] min-[900px]:text-[clamp(30px,4.3vw,62px)] min-[900px]:whitespace-nowrap min-[1200px]:mb-px",
+          illustration !== undefined &&
+            !heroRow &&
+            "mt-0.75 mb-[clamp(23px,3.4vw,41px)] text-[clamp(32px,3.61vw,52px)] leading-[1.08] [&_em]:block",
+        ]}
+      >
+        {wide ? (
+          splitEmphasis(head.heading).map((part) =>
+            part.emphasis ? (
+              <em class="ln">
+                <span>{part.text}</span>
+              </em>
+            ) : (
+              <>
+                <span class="ln">
+                  <span>{part.text.trim()}</span>
+                </span>
+                {/* The block lines are visually apart; the text must still read "a b", not "ab". */}{" "}
+              </>
+            ),
+          )
+        ) : (
+          <Emphasis text={head.heading} />
+        )}
+      </h1>
+      <div
+        class:list={[
+          heroRow &&
+            "grid gap-[clamp(18px,3vh,28px)] items-end min-[760px]:grid-cols-[minmax(0,1fr)_auto] min-[760px]:items-center min-[760px]:gap-[clamp(24px,5vw,80px)]",
+        ]}
+      >
+        {lead?.kind === "lead" && (
+          <p
+            class:list={[
+              "tracking-[0.28px] text-mid normal-case",
+              wide && "lead-in text-[clamp(16px,1.3vw,19px)] leading-[1.6]",
+              plain &&
+                "text-sm leading-[1.6] min-[900px]:max-w-[70ch] min-[1200px]:max-w-none min-[1200px]:text-[clamp(10.8px,0.9vw,13px)] min-[1200px]:whitespace-nowrap",
+              illustration !== undefined &&
+                !heroRow &&
+                "mb-[clamp(30px,4vw,46px)] text-[clamp(14px,1.18vw,17px)] leading-[1.6]",
+            ]}
+          >
+            {lead.text}
+          </p>
+        )}
+        {heroRow && (
+          <figure
+            data-reveal
+            style={`--w:${illustration.scale}`}
+            class="m-0 w-[min(62%,260px)] justify-self-end min-[760px]:w-[clamp(170px,calc(20vh*1.37),250px)]"
+          >
+            <Picture
+              {...PHOTO_PICTURE}
+              src={illustration.src}
+              alt={illustration.alt}
+              widths={[260, 500]}
+              sizes="250px"
+              priority
+              class="block h-auto w-full"
+            />
+          </figure>
+        )}
+      </div>
+      {jump !== undefined && (
+        <ul class="mt-7.5 flex flex-wrap gap-x-6.5 gap-y-2.5">
+          {jump.items.map((entry) => (
+            <li>
+              <a
+                href={entry.href === undefined ? undefined : resolveContentHref(entry.href, locale)}
+                class="inline-flex min-h-11 items-center border-b border-line-strong text-xs font-semibold tracking-[0.16em] text-fg no-underline hover:border-accent hover:text-accent focus-visible:border-accent focus-visible:text-accent"
+              >
+                {entry.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+      {(cta !== undefined || (talk !== undefined && !wide)) && (
+        <Button
+          href="#hablemos"
+          size="lg"
+          variant="solid"
+          arrow
+          class="leading-[1.35]! max-[520px]:w-full"
+        >
+          {cta?.label ?? talk}
+        </Button>
+      )}
+    </div>
+    {illustration !== undefined && !heroRow && (
+      <figure
+        data-reveal
+        style={`--w:${illustration.scale}`}
+        class="row-start-2 m-0 mx-auto mt-[-6px] mb-[clamp(0.625rem,3vw,1.25rem)] w-[min(84%,400px)] min-w-0 min-[761px]:row-start-2 min-[761px]:mt-0 min-[761px]:mb-0 min-[761px]:ml-0 min-[761px]:w-auto min-[900px]:max-w-90 min-[900px]:justify-self-end"
+      >
+        <Picture
+          {...PHOTO_PICTURE}
+          src={illustration.src}
+          alt={illustration.alt}
+          widths={[400, 600, 920]}
+          sizes="(max-width: 760px) 80vw, 400px"
+          priority
+          class="mx-auto block h-auto w-[calc(100%*var(--w))]"
+        />
+      </figure>
+    )}
+  </Container>
+</section>
+
+<style>
+  /* Headline lines slide up from a clip, then the lead fades in (reference v42-up / v42-fade). */
+  .ln {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+  }
+  .ln > span {
+    display: block;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .ln > span {
+      animation: ln-up 1.05s cubic-bezier(0.2, 0.7, 0.2, 1) 0.08s both;
+    }
+    em.ln > span {
+      animation-delay: 0.22s;
+    }
+    .lead-in {
+      animation: lead-fade 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.55s both;
+    }
+  }
+  @keyframes ln-up {
+    from {
+      transform: translateY(108%);
+    }
+  }
+  @keyframes lead-fade {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El antiguo Manchester catalán, hoy entre fábricas reconvertidas, rambla y playa.",
+  "text": [
+    "Nació como núcleo de Sant Martí de Provençals y llegó a ser, a finales del siglo XIX, la zona con más industria de Cataluña, el «Manchester catalán». Las fábricas abandonadas se han recuperado como lofts, estudios y sedes de entidades, y el proyecto 22@ impulsa gran parte de la transformación actual.",
+    "Su eje más popular es la rambla del Poblenou, antes Passeig del Triomf, y su centro cultural más relevante, el Teatre Casino l'Aliança del Poblenou. El Cementiri del Poblenou, del siglo XVIII, tiene un valor artístico considerable, y el parque del Poblenou es uno de sus espacios verdes. Con 5.448 €/m², es el segundo barrio más caro de Sant Martí, solo por detrás de Diagonal Mar."
+  ],
+  "housing": "Viviendas de los siglos XIX y XX en el núcleo de la rambla, junto a lofts en antiguas fábricas y edificios nuevos.",
+  "places": [
+    "Rambla del Poblenou",
+    "Cementiri del Poblenou",
+    "Parc del Poblenou",
+    "Teatre Casino l'Aliança del Poblenou"
+  ]
+}

@@ -1,0 +1,483 @@
+{
+  "title": "Real estate legal advice in Barcelona · HousySpace",
+  "description": "Legal and tax advice for selling, buying or inheriting in Barcelona, with the law firm and tax advisers we work with.",
+  "head": {
+    "heading": "Legal *and tax advice*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-juridico-fiscal-1000.webp",
+      "alt": "Service illustration: A schematic balance scale in equilibrium",
+      "scale": 0.684
+    },
+    "items": [
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-hierro-720.jpg"
+      },
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
+      {
+        "kind": "lead",
+        "text": "When the transaction requires it, we coordinate with trusted independent professionals."
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us about your case",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "Every step reviewed by specialists."
+        },
+        {
+          "kind": "p",
+          "text": "Buying, selling, inheriting or renting a property has legal and tax consequences. We review them with the law firm and tax advisors we collaborate with, explain the options in plain language, and make sure everything is in order before signing."
+        }
+      ]
+    },
+    {
+      "layout": "split",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we can help"
+        },
+        {
+          "kind": "h2",
+          "text": "Depending on where you are"
+        },
+        {
+          "kind": "lead",
+          "text": "The law firm and the tax advisory firm we work with carry out these procedures. We coordinate the consultation and its timing with your transaction."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Buying or selling"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Land registry search, encumbrances and registration status"
+                },
+                {
+                  "title": "",
+                  "text": "Deposit contract (arras) and sale and purchase contract"
+                },
+                {
+                  "title": "",
+                  "text": "Review of the deed before the notary"
+                },
+                {
+                  "title": "",
+                  "text": "Transaction taxes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Inheriting a property"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Documentation to accept or renounce the inheritance"
+                },
+                {
+                  "title": "",
+                  "text": "Inheritance tax and municipal capital gains tax"
+                },
+                {
+                  "title": "",
+                  "text": "Registration at the Land Registry"
+                },
+                {
+                  "title": "",
+                  "text": "Agreements between heirs to sell or divide the property"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Renting"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Tenancy agreement"
+                },
+                {
+                  "title": "",
+                  "text": "Deposit and guarantees"
+                },
+                {
+                  "title": "",
+                  "text": "Unpaid rent and evictions"
+                },
+                {
+                  "title": "",
+                  "text": "Rental income in tax returns"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Companies and businesses"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Commercial contracts"
+                },
+                {
+                  "title": "",
+                  "text": "Asset-holding companies"
+                },
+                {
+                  "title": "",
+                  "text": "Commercial property leases"
+                },
+                {
+                  "title": "",
+                  "text": "Licences and permits"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "tax",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Taxation"
+        },
+        {
+          "kind": "h2",
+          "text": "Which taxes arise at each stage"
+        },
+        {
+          "kind": "lead",
+          "text": "A general guide. Working out the tax in each case is up to the tax advisory firm."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "When selling"
+            },
+            {
+              "kind": "p",
+              "text": "Selling a home"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Municipal capital gains tax (plusvalía)",
+                  "text": "City Council."
+                },
+                {
+                  "title": "Income tax: capital gain (IRPF)",
+                  "text": "State. If you sell at a profit."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "When buying"
+            },
+            {
+              "kind": "p",
+              "text": "Buying a home"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Property transfer tax (ITP)",
+                  "text": "Generalitat. Second-hand homes."
+                },
+                {
+                  "title": "Stamp duty (AJD)",
+                  "text": "Generalitat. New builds or signing a mortgage."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "When inheriting or receiving"
+            },
+            {
+              "kind": "p",
+              "text": "Inheritance and gifts"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Inheritance and gift tax",
+                  "text": "Generalitat."
+                },
+                {
+                  "title": "Municipal capital gains tax (plusvalía)",
+                  "text": "City Council."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "As an owner"
+            },
+            {
+              "kind": "p",
+              "text": "While you own the home"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "Municipal property tax (IBI)",
+                  "text": "City Council. Every year."
+                },
+                {
+                  "title": "Income tax: rental income (IRPF)",
+                  "text": "State. If you rent the property out."
+                },
+                {
+                  "title": "Wealth tax",
+                  "text": "State. Depending on the value of your assets."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Step by step"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Tell us what concerns you",
+              "text": "We talk calmly about your transaction and your questions."
+            },
+            {
+              "title": "We study your case",
+              "text": "We review it with the specialists and explain the options."
+            },
+            {
+              "title": "We decide together",
+              "text": "What we will do, how and when."
+            },
+            {
+              "title": "We coordinate it",
+              "text": "We coordinate the review with the specialists right up to signing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Who we work with"
+        },
+        {
+          "kind": "h2",
+          "text": "We work with ADV Advocats and Asesoría Edac"
+        },
+        {
+          "kind": "lead",
+          "text": "A law firm and a tax advisory firm in Barcelona with whom we review the legal and tax aspects of our transactions, and much more."
+        },
+        {
+          "kind": "p",
+          "text": "We recommend them because we know them well: for years we have surrounded ourselves with professionals who work as well as we do, or better, and whom we trust completely."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Why we trust them",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Law firm in Barcelona: inheritance, income tax and other taxes, civil, labour and company law.",
+              "kicker": "Legal and tax firm",
+              "href": "https://advadvocats.cat/es/",
+              "cta": "Visit advadvocats.cat",
+              "logo": "../../assets/colaboradores/adv-advocats.jpg"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Tax, accounting and labour advisory in Barcelona: taxes, returns and dealings with the tax authorities.",
+              "kicker": "Tax advisory",
+              "href": "https://www.serviciosdac.com/",
+              "cta": "Visit serviciosdac.com",
+              "logo": "../../assets/colaboradores/edac.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
+        {
+          "kind": "lead",
+          "text": "Every good decision starts with a conversation. Let's talk about yours."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20jur%C3%ADdico%20y%20fiscal",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Property sales and brokerage",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Financial advice",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

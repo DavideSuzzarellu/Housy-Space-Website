@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "A village with history inside Barcelona: its square, its church and its Carrer Major, at the foot of Collserola.",
+  "text": [
+    "Sarrià was an independent village until 1921, when Barcelona annexed it despite the opposition of its residents, and its first written records date from the 10th century. It keeps its old centre, with Plaça de Sarrià, which was a cemetery until 1850, the church of Sant Vicenç, documented since 980 and rebuilt in neoclassical style in 1781, and Plaça del Consell de la Vila, with the old town hall of 1895.",
+    "The local saying sums it up: \"Sarrià: vents, torrents, torres i convents\" (winds, streams, villas and convents). Living in Sarrià means living in a residential area of quiet streets, schools, local shops and houses with gardens, with quick access to Collserola. At 6,294 €/m², it has the highest sale price in the district."
+  ],
+  "housing": "Houses with gardens and flats in low-rise buildings, on quiet streets.",
+  "places": [
+    "Plaça de Sarrià",
+    "Església de Sant Vicenç",
+    "Plaça del Consell de la Vila",
+    "Carrer Major de Sarrià"
+  ]
+}

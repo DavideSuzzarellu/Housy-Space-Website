@@ -1,29 +1,44 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { buildBlogJsonLd } from "@/features/blog/application/blogJsonLd";
 import { getPosts, type BlogPost } from "@/features/blog/application/posts";
 import BlogIndex from "@/features/blog/ui/BlogIndex.astro";
 import PostView from "@/features/blog/ui/PostView.astro";
 import { getMarket } from "@/features/districts/application/market";
-import type {
-  MarketBarrio,
-  MarketDistrict,
-} from "@/features/districts/infrastructure/marketSchema";
+import { barrioMeta, districtMeta } from "@/features/districts/application/zoneMeta";
+import { DISTRICT_IMAGES } from "@/features/districts/ui/districtImages";
 import BarrioView from "@/features/districts/ui/BarrioView.astro";
 import DistrictView from "@/features/districts/ui/DistrictView.astro";
 import LivingView from "@/features/districts/ui/LivingView.astro";
 import {
   CONTENT_FILE,
   EDITORIAL,
+  getFaqEntries,
   getPage,
   type EditorialKey,
 } from "@/features/pages/application/pages";
-import OtherServices from "@/features/pages/ui/OtherServices.astro";
+import ContactView from "@/features/agency/ui/ContactView.astro";
+import AboutView from "@/features/agency/ui/AboutView.astro";
 import PageView from "@/features/pages/ui/PageView.astro";
+import ValuationView from "@/features/valuation/ui/ValuationView.astro";
+import ServiceView from "@/features/pages/ui/ServiceView.astro";
+import ServicesIndexView from "@/features/pages/ui/ServicesIndexView.astro";
+import aboutImage from "@/assets/home/oficina-1672.jpg";
+import { COMPANY } from "@/features/agency/domain/company";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
-import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/shared/i18n/config";
+import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "@/shared/i18n/config";
 import { getAlternates, getLocalizedPath } from "@/shared/i18n/routes";
 import { getServiceSlug, SERVICE_KEYS, type ServiceKey } from "@/shared/i18n/services";
+import { getOgImagePath } from "@/shared/lib/seo/ogImage";
+import {
+  buildPageJsonLd,
+  getSiteUrl,
+  toAbsoluteUrl,
+  type PageJsonLdInput,
+  type WebPageType,
+} from "@/shared/lib/seo/structuredData";
+import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
 
 /**
  * Every page that is not home or a listing: editorial pages from `src/content/pages` and the
@@ -35,13 +50,18 @@ type View =
   | { readonly view: "service"; readonly service: ServiceKey }
   | { readonly view: "living" }
   | { readonly view: "post"; readonly post: BlogPost }
-  | { readonly view: "district"; readonly district: MarketDistrict }
-  | { readonly view: "barrio"; readonly barrio: MarketBarrio };
+  | { readonly view: "district"; readonly slug: string }
+  | { readonly view: "barrio"; readonly slug: string };
 
 export const getStaticPaths = (async () => {
   const market = await getMarket();
   const posts = await getPosts();
-  const paramOf = (path: string, locale: Locale) => path.slice(`/${locale}/`.length);
+  // Strip base URL before slicing so params are just route segments (Astro handles the base).
+  const _base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const paramOf = (path: string, locale: Locale) => {
+    const p = _base && path.startsWith(_base) ? path.slice(_base.length) : path;
+    return p.slice(`/${locale}/`.length);
+  };
   return LOCALES.flatMap((locale) => {
     const entry = (path: string, view: View) => ({
       params: { locale, page: paramOf(path, locale) },
@@ -62,31 +82,25 @@ export const getStaticPaths = (async () => {
       ...market.districts.map((district) =>
         entry(getLocalizedPath("district", locale, { district: district.slug }), {
           view: "district",
-          district,
+          slug: district.slug,
         }),
       ),
       ...market.barrios.map((barrio) =>
-        entry(
-          getLocalizedPath("barrio", locale, { district: barrio.district, barrio: barrio.slug }),
-          { view: "barrio", barrio },
-        ),
+        entry(getLocalizedPath("barrio", locale, { barrio: barrio.slug }), {
+          view: "barrio",
+          slug: barrio.slug,
+        }),
       ),
     ];
   });
 }) satisfies GetStaticPaths;
 
-interface Props {
-  locale: Locale;
-  target: View;
-}
-
 const { locale, target } = Astro.props;
 const dictionary = getDictionary(locale);
 const home = { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) };
-const market = await getMarket();
+const market = await getMarket(locale);
 const posts = await getPosts();
 const zones = dictionary.zones;
-const isSpanish = locale === DEFAULT_LOCALE;
 
 const editorial =
   target.view === "editorial"
@@ -94,6 +108,37 @@ const editorial =
     : target.view === "service"
       ? await getPage(`service-${getServiceSlug(target.service, DEFAULT_LOCALE)}`, locale)
       : undefined;
+
+const isMySearch = target.view === "editorial" && target.key === "mySearch";
+const isAbout = target.view === "editorial" && target.key === "about";
+/** Long text pages: legal (reference `.lg`, also the guide) and the data sources page. */
+const longText =
+  target.view !== "editorial"
+    ? undefined
+    : target.key === "dataSources"
+      ? ("data" as const)
+      : target.key === "legalNotice" ||
+          target.key === "privacy" ||
+          target.key === "cookies" ||
+          target.key === "internationalGuide"
+        ? ("legal" as const)
+        : undefined;
+
+// Prose of the zone pages comes in the page locale, or in Spanish per entry (`proseFallback`).
+const district =
+  target.view === "district"
+    ? market.districts.find((candidate) => candidate.slug === target.slug)
+    : undefined;
+const barrio =
+  target.view === "barrio"
+    ? market.barrios.find((candidate) => candidate.slug === target.slug)
+    : undefined;
+if (target.view === "district" && district === undefined) throw new Error(target.slug);
+if (target.view === "barrio" && barrio === undefined) throw new Error(target.slug);
+const barrioDistrict =
+  barrio === undefined
+    ? undefined
+    : market.districts.find((candidate) => candidate.slug === barrio.district);
 
 function metaOf(): {
   title: string;
@@ -117,51 +162,182 @@ function metaOf(): {
     };
   }
   if (target.view === "post") {
+    // A post is written in one language: hreflang lists that version, and x-default points to it too.
+    const own = getAlternates("blogPost", { slug: target.post.id }).find(
+      (candidate) =>
+        candidate.locale === target.post.data.language && candidate.hreflang !== "x-default",
+    );
     return {
       title: `${target.post.data.seoTitle ?? target.post.data.title} · HousySpace`,
       description: target.post.data.description,
-      alternates: getAlternates("blogPost", { slug: target.post.id }),
+      alternates: own === undefined ? [] : [own, { ...own, hreflang: "x-default" }],
     };
   }
-  if (target.view === "district") {
+  if (district !== undefined) {
     return {
-      title: `${target.district.name} · ${dictionary.nav.living} · HousySpace`,
-      description: target.district.lead,
-      alternates: getAlternates("district", { district: target.district.slug }),
+      ...districtMeta(zones, district),
+      alternates: getAlternates("district", { district: district.slug }),
     };
   }
-  if (target.view === "barrio") {
+  if (barrio !== undefined) {
     return {
-      title: `${target.barrio.name} · ${zones.barrioMeta} · HousySpace`,
-      description: zones.barrioDescription.replace("{name}", target.barrio.name),
-      alternates: getAlternates("barrio", {
-        district: target.barrio.district,
-        barrio: target.barrio.slug,
+      ...barrioMeta(zones, {
+        name: barrio.name,
+        district: barrioDistrict?.name ?? "",
+        lead: barrio.lead,
       }),
+      alternates: getAlternates("barrio", { barrio: barrio.slug }),
     };
   }
   return {
-    title: `${zones.livingHeading} · HousySpace`,
-    description: zones.livingLead,
+    title: zones.metaTitle,
+    description: zones.metaDescription,
     alternates: getAlternates("living"),
   };
 }
 
 const meta = metaOf();
+const isPost = target.view === "post";
+const site = Astro.site ?? new URL(Astro.url.origin);
+const siteUrl = getSiteUrl(site, import.meta.env.BASE_URL);
+// Photo of the page for social cards: the post's own, the district's, or the office (about).
+const zonePhoto = district?.slug ?? barrio?.district;
+const ogPhoto =
+  zonePhoto !== undefined
+    ? DISTRICT_IMAGES[zonePhoto]
+    : target.view === "editorial" && target.key === "about"
+      ? aboutImage
+      : undefined;
+// All head props of the page grouped so none is `string | undefined` in a spread.
+const headProps = isPost
+  ? {
+      ogImage: target.post.data.image.src,
+      ogType: "article" as const,
+      publishedTime: target.post.data.date.toISOString(),
+    }
+  : ogPhoto !== undefined
+    ? { ogImage: await getOgImagePath(ogPhoto) }
+    : {};
+const blogJsonLd = isPost
+  ? buildBlogJsonLd({
+      post: target.post,
+      url: new URL(getLocalizedPath("blogPost", locale, { slug: target.post.id }), site).href,
+      siteUrl,
+      company: COMPANY,
+    })
+  : undefined;
 // Prose not translated yet: shown in Spanish, kept out of the index until it is (see ROADMAP).
 const proseFallback =
   (editorial?.fallback ?? false) ||
-  (!isSpanish && (target.view === "district" || target.view === "living")) ||
+  (target.view === "living" && market.districts.some((candidate) => candidate.proseFallback)) ||
+  (district?.proseFallback ?? false) ||
+  (barrio?.proseFallback ?? false) ||
   (target.view === "post" && target.post.data.language !== locale);
+// Kept out of the index and the sitemap by decision of the client (reference `excluir_siempre`).
+const noindex = proseFallback || (target.view === "editorial" && target.key === "dataSources");
+// The valuation page hangs from the services like the reference's valuation service page.
 const serviceCrumb =
-  target.view === "service" ? dictionary.serviceNames[target.service] : undefined;
+  target.view === "service"
+    ? dictionary.serviceNames[target.service]
+    : target.view === "editorial" && target.key === "valuation"
+      ? dictionary.serviceNames.valuation
+      : undefined;
 const crumbs = [
   home,
   ...(serviceCrumb === undefined
     ? []
-    : [{ label: dictionary.nav.services, href: `${getLocalizedPath("home", locale)}#servicios` }]),
-  { label: serviceCrumb ?? editorial?.content.head.heading ?? "" },
+    : [{ label: dictionary.nav.services, href: getLocalizedPath("services", locale) }]),
+  {
+    label:
+      serviceCrumb ??
+      (isMySearch
+        ? dictionary.nav.mySearch
+        : target.view === "editorial" && target.key === "blog"
+          ? dictionary.nav.blog
+          : target.view === "editorial" && target.key === "services"
+            ? dictionary.nav.services
+            : editorial?.content.head.heading.replaceAll("*", "")) ??
+      "",
+  },
 ];
+
+// Structured data: the page, its visible breadcrumb trail, and a Service / FAQ / Place when it is one.
+const canonicalPath =
+  meta.alternates.find(
+    (alternate) => alternate.locale === locale && alternate.hreflang !== "x-default",
+  )?.path ?? Astro.url.pathname;
+const pageUrl = toAbsoluteUrl(canonicalPath, site);
+const livingCrumb = { label: dictionary.nav.living, href: getLocalizedPath("living", locale) };
+const trail: readonly { readonly label: string; readonly href?: string }[] =
+  target.view === "living"
+    ? [home, { label: dictionary.nav.living }]
+    : district !== undefined
+      ? [home, livingCrumb, { label: district.name }]
+      : barrio !== undefined
+        ? [
+            home,
+            livingCrumb,
+            {
+              label: barrioDistrict?.name ?? "",
+              href: getLocalizedPath("district", locale, { district: barrio.district }),
+            },
+            { label: barrio.name },
+          ]
+        : target.view === "post"
+          ? [
+              home,
+              { label: dictionary.nav.blog, href: getLocalizedPath("blog", locale) },
+              { label: target.post.data.title },
+            ]
+          : crumbs;
+const PAGE_TYPE: Partial<Record<EditorialKey, WebPageType>> = {
+  about: "AboutPage",
+  contact: "ContactPage",
+  services: "CollectionPage",
+  blog: "CollectionPage",
+};
+const pageJsonLdInput: PageJsonLdInput = {
+  siteUrl,
+  url: pageUrl,
+  language: LOCALE_META[locale].langTag,
+  name: meta.title,
+  description: meta.description,
+  breadcrumbs: trail.map((item) => ({
+    name: item.label,
+    url: item.href === undefined ? pageUrl : toAbsoluteUrl(item.href, site),
+  })),
+  ...(target.view === "editorial" && PAGE_TYPE[target.key] !== undefined
+    ? { pageType: PAGE_TYPE[target.key] }
+    : {}),
+  ...(target.view === "service" && editorial !== undefined
+    ? {
+        service: { name: dictionary.serviceNames[target.service] },
+        faq: getFaqEntries(editorial.content),
+      }
+    : {}),
+  ...(district !== undefined
+    ? {
+        place: {
+          kind: "district" as const,
+          name: district.name,
+          cityName: COMPANY.address.city,
+          description: district.lead,
+        },
+      }
+    : {}),
+  ...(barrio !== undefined
+    ? {
+        place: {
+          kind: "barrio" as const,
+          name: barrio.name,
+          cityName: COMPANY.address.city,
+          districtName: barrioDistrict?.name ?? "",
+          description: barrio.lead,
+        },
+      }
+    : {}),
+};
+const pageJsonLd = buildPageJsonLd(pageJsonLdInput);
 ---
 
 <BaseLayout
@@ -169,13 +345,38 @@ const crumbs = [
   title={meta.title}
   description={meta.description}
   alternates={meta.alternates}
-  noindex={proseFallback}
+  noindex={noindex}
+  {...headProps}
 >
-  {target.view === "editorial" &&
-  target.key === "blog" &&
-  posts.length > 0 &&
-  editorial !== undefined ? (
+  <JsonLd slot="head" data={pageJsonLd} />
+  {blogJsonLd !== undefined && <JsonLd slot="head" data={blogJsonLd} />}
+  {target.view === "editorial" && target.key === "blog" && editorial !== undefined ? (
     <BlogIndex locale={locale} content={editorial.content} posts={posts} crumbs={crumbs} />
+  ) : isAbout && editorial !== undefined ? (
+    <AboutView locale={locale} content={editorial.content} crumbs={crumbs} />
+  ) : target.view === "editorial" && target.key === "contact" && editorial !== undefined ? (
+    <ContactView locale={locale} content={editorial.content} crumbs={crumbs} />
+  ) : target.view === "editorial" && target.key === "services" && editorial !== undefined ? (
+    <ServicesIndexView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
+  ) : target.view === "editorial" && target.key === "valuation" && editorial !== undefined ? (
+    <ValuationView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
+  ) : target.view === "service" && editorial !== undefined ? (
+    <ServiceView
+      locale={locale}
+      content={editorial.content}
+      crumbs={crumbs}
+      fallback={editorial.fallback}
+    />
   ) : (
     editorial !== undefined && (
       <PageView
@@ -183,21 +384,13 @@ const crumbs = [
         content={editorial.content}
         crumbs={crumbs}
         fallback={editorial.fallback}
+        hero={isMySearch}
+        longText={longText}
       />
     )
   )}
   {target.view === "post" && <PostView post={target.post} locale={locale} />}
-  {target.view === "service" && <OtherServices locale={locale} current={target.service} />}
-  {target.view === "living" && <LivingView locale={locale} market={market} fallback={!isSpanish} />}
-  {target.view === "district" && (
-    <DistrictView
-      locale={locale}
-      district={target.district}
-      market={market}
-      fallback={!isSpanish}
-    />
-  )}
-  {target.view === "barrio" && (
-    <BarrioView locale={locale} barrio={target.barrio} market={market} />
-  )}
+  {target.view === "living" && <LivingView locale={locale} market={market} />}
+  {district !== undefined && <DistrictView locale={locale} district={district} market={market} />}
+  {barrio !== undefined && <BarrioView locale={locale} barrio={barrio} market={market} />}
 </BaseLayout>

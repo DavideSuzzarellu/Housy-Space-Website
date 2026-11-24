@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un monastero del Trecento, viali alberati e ville con giardino in uno dei quartieri più ricchi della città.",
+  "text": [
+    "Il quartiere prende il nome dal monastero di clarisse che la regina Elisenda de Montcada fondò nel Trecento, con un chiostro a due piani e una chiesa gotica a navata unica; nella cappella di Sant Miquel si conservano le pitture di Ferrer Bassa, del 1346.",
+    "Oggi è un quartiere tranquillo e verde, di ville unifamiliari con giardino e palazzi di alto livello, con l'avinguda Pearson come emblema. Con 6.079 €/m² e 1.948 €/mese ha i prezzi più alti di Les Corts. Accanto alla Diagonal si trovano inoltre il Palau Reial e i Pavellons Güell, di Gaudí."
+  ],
+  "housing": "Ville unifamiliari con giardino e palazzi residenziali di alto livello, di ampia metratura.",
+  "places": [
+    "Monestir de Pedralbes",
+    "Palau Reial de Pedralbes",
+    "Pavellons Güell",
+    "Avinguda Pearson"
+  ]
+}

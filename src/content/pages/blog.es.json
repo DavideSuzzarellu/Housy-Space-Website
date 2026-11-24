@@ -1,188 +1,21 @@
 {
-  "title": "Blog y noticias · HousySpace",
-  "description": "Blog de HousySpace sobre barrios, arquitectura, mercado y normativa inmobiliaria en Barcelona.",
+  "title": "Blog inmobiliario en Barcelona · HousySpace",
+  "description": "Blog inmobiliario de Barcelona: valoración, venta de viviendas, gastos, impuestos y mercado, explicados con calma por consultores que trabajan cada día en la ciudad.",
   "head": {
-    "heading": "Blog y noticias",
+    "heading": "El *Blog*",
     "photo": false,
     "items": [
       {
-        "kind": "p",
-        "text": "Blog y noticias"
-      },
-      {
-        "kind": "p",
-        "text": "HousySpace · Barcelona"
+        "kind": "tag",
+        "text": "Conocimiento inmobiliario en Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Barrios, arquitectura, mercado y normativa, explicados con calma por quienes trabajan cada día en la ciudad."
+        "text": "Análisis, consejos y decisiones inmobiliarias en Barcelona, explicados con calma por quienes trabajan cada día en la ciudad."
       }
     ]
   },
   "sections": [
-    {
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "article",
-          "items": [
-            {
-              "kind": "image",
-              "src": "../../assets/home/det-balcon-1400.jpg"
-            },
-            {
-              "kind": "p",
-              "text": "Tema principal"
-            },
-            {
-              "kind": "p",
-              "text": "Reformas y arquitectura"
-            },
-            {
-              "kind": "p",
-              "text": "Fecha pendiente"
-            },
-            {
-              "kind": "h2",
-              "text": "Reformar una finca regia sin perder su carácter"
-            },
-            {
-              "kind": "p",
-              "text": "Arquitectura, reformas e interiorismo. Tema propuesto, pendiente de redactar."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "paper",
-      "band": false,
-      "items": [
-        {
-          "kind": "article",
-          "items": [
-            {
-              "kind": "image",
-              "src": "../../assets/home/det-cielo-1400.jpg"
-            },
-            {
-              "kind": "p",
-              "text": "Mercado"
-            },
-            {
-              "kind": "p",
-              "text": "Fecha pendiente"
-            },
-            {
-              "kind": "h2",
-              "text": "El mercado residencial de Barcelona este trimestre"
-            },
-            {
-              "kind": "p",
-              "text": "Cómo se mueven precios y demanda en la ciudad. Tema propuesto, pendiente de redactar."
-            }
-          ]
-        },
-        {
-          "kind": "article",
-          "items": [
-            {
-              "kind": "image",
-              "src": "../../assets/home/det-terraza-1400.jpg"
-            },
-            {
-              "kind": "p",
-              "text": "Barrios"
-            },
-            {
-              "kind": "p",
-              "text": "Fecha pendiente"
-            },
-            {
-              "kind": "h2",
-              "text": "Cómo elegir barrio en Barcelona"
-            },
-            {
-              "kind": "p",
-              "text": "Información de interés sobre barrios y distritos. Tema propuesto, pendiente de redactar."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "surface": "stone",
-      "band": false,
-      "items": [
-        {
-          "kind": "p",
-          "text": "En preparación"
-        },
-        {
-          "kind": "article",
-          "items": [
-            {
-              "kind": "p",
-              "text": "01"
-            },
-            {
-              "kind": "p",
-              "text": "Consejos"
-            },
-            {
-              "kind": "p",
-              "text": "Fecha pendiente"
-            },
-            {
-              "kind": "h2",
-              "text": "Qué conviene preparar antes de vender tu vivienda"
-            },
-            {
-              "kind": "p",
-              "text": "Consejos prácticos para propietarios y compradores. Tema propuesto, pendiente de redactar."
-            },
-            {
-              "kind": "image",
-              "src": "../../assets/home/det-salon-1400.jpg"
-            }
-          ]
-        },
-        {
-          "kind": "article",
-          "items": [
-            {
-              "kind": "p",
-              "text": "02"
-            },
-            {
-              "kind": "p",
-              "text": "Actualidad y normativa"
-            },
-            {
-              "kind": "p",
-              "text": "Fecha pendiente"
-            },
-            {
-              "kind": "h2",
-              "text": "Normativa inmobiliaria: lo que conviene saber al comprar o vender"
-            },
-            {
-              "kind": "p",
-              "text": "Novedades legales explicadas con claridad. Tema propuesto, pendiente de redactar."
-            },
-            {
-              "kind": "image",
-              "src": "../../assets/home/det-hierro-720.jpg"
-            }
-          ]
-        },
-        {
-          "kind": "note",
-          "text": "Las entradas se publicarán desde el CMS, con imagen, titular, categoría, fecha y autor. No hay artículos reales todavía: estos son los temas propuestos."
-        }
-      ]
-    },
     {
       "id": "newsletter",
       "surface": "paper",

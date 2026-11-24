@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Cases barates del 1929, amb teulades rústegues i jardí: el barri més petit de Barcelona.",
+  "text": [
+    "Entre el 1929 i el 1932 es van habilitar aquí 534 cases per a treballadors que vivien en barraques a Montjuïc, coincidint amb l'Exposició Internacional. El seu nom ve de la masia Can Peguera, coneguda per fabricar cola amb la resina de la pineda propera, i durant molts anys el barri es va dir Ramon Albó.",
+    "Amb 0,12 km², és el barri més petit de Barcelona, i també el més ben conservat dels quatre grups de cases barates, perquè els seus mateixos veïns les han anat millorant. Els seus carrers són de cases unifamiliars d'una sola planta, amb teulades rústegues i petits jardins al davant, i l'única plaça, la de Sant Francesc Xavier, s'organitza al voltant de l'antiga capella de la masia."
+  ],
+  "housing": "Cases unifamiliars d'una planta amb jardí al davant, al costat d'algun bloc d'habitatge social.",
+  "places": ["Plaça de Sant Francesc Xavier", "Església de Sant Francesc Xavier"]
+}

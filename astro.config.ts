@@ -1,28 +1,33 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
-import { isIndexableArticleUrl } from "./src/features/blog/application/articleUrls";
-import { loadArticles } from "./src/features/blog/infrastructure/articleFiles";
+import { hostFiles } from "./scripts/host-files-integration";
+import { sitemapFromHeads } from "./scripts/sitemap-integration";
 import { PROPERTY_SHEET_SOURCE_DIR } from "./src/features/properties/application/propertySheetBuild";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES } from "./src/shared/i18n/config";
+import { PRODUCTION_ORIGIN } from "./src/shared/lib/seo/indexability";
+import { getRetiredRedirects } from "./src/shared/i18n/retiredRoutes";
 
 const sitemapLocales = Object.fromEntries(
   LOCALES.map((locale) => [locale, LOCALE_META[locale].langTag]),
 );
 
-// Language of every article: its pages are indexed only under that locale (articleUrls.ts).
-const articleLanguages = new Map(
-  loadArticles("./src/content/blog").articles.map((article) => [
-    article.slug,
-    article.data.language,
-  ]),
-);
+// GitHub Pages serves the site under the repository name; the e2e build overrides it with
+// ASTRO_BASE="/" (and ASTRO_SITE to the production origin the specs assert) so tests run against the site root.
+// `bun run build:production` (ASTRO_PRODUCTION=1): the final domain, at its root.
+const IS_PRODUCTION = process.env["ASTRO_PRODUCTION"] === "1";
+const BASE = IS_PRODUCTION ? "/" : (process.env["ASTRO_BASE"] ?? "/Housy-Space-Website");
+const BASE_PREFIX = BASE === "/" ? "" : BASE;
+// Default = GitHub Pages staging (noindex). `bun run build:production` sets the production origin.
+const SITE = IS_PRODUCTION
+  ? PRODUCTION_ORIGIN
+  : (process.env["ASTRO_SITE"] ?? "https://DavideSuzzarellu.github.io");
 
 // Hosting/adapter is not decided yet (AGENTS.md §2): keep this config adapter-agnostic.
 export default defineConfig({
-  site: "https://DavideSuzzarellu.github.io",
+  site: SITE,
   // Reemplazá con el nombre exacto de tu repositorio
-  base: "/Housy-Space-Website",
+  base: BASE,
   output: "static",
   trailingSlash: "never",
   i18n: {
@@ -40,7 +45,11 @@ export default defineConfig({
   //   "/": `/${DEFAULT_LOCALE}`,
   // },
   redirects: {
-    "/": `/Housy-Space-Website/${DEFAULT_LOCALE}/`,
+    "/": `${BASE_PREFIX}/${DEFAULT_LOCALE}/`,
+    // Pages retired in the reference site: sell page, advisory service (same meta-refresh caveat).
+    ...Object.fromEntries(
+      Object.entries(getRetiredRedirects()).map(([from, to]) => [from, `${BASE_PREFIX}${to}`]),
+    ),
   },
 
   image: {
@@ -51,8 +60,6 @@ export default defineConfig({
     schema: {
       CLIENT_ID: envField.string({ context: "server", access: "secret" }),
       CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
-      // true = empty Mobilia collections, no credentials or network (CI checks only).
-      MOBILIA_OFFLINE: envField.boolean({ context: "server", access: "public", default: false }),
       PUBLIC_VALUATOR_URL: envField.string({
         context: "client",
         access: "public",
@@ -69,7 +76,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: "Montserrat",
       cssVariable: "--font-montserrat",
-      // One variable file covers every weight the v3 design uses (400 body to 900 headings).
+      // Body 400, buttons 500, labels 700, headings 800/900 (design system, AGENTS.md §11.3).
       weights: ["400 900"],
       styles: ["normal"],
       // latin-ext covers Catalan/Italian/Spanish edge glyphs; unicode-range means its files are
@@ -85,18 +92,16 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Property sheet sources are internal: printed to PDF and removed after the build.
-      filter: (page) => {
-        const { pathname } = new URL(page);
-        return (
-          !pathname.startsWith(`/${PROPERTY_SHEET_SOURCE_DIR}/`) &&
-          isIndexableArticleUrl(pathname, articleLanguages)
-        );
-      },
+      filter: (page) => !new URL(page).pathname.startsWith(`/${PROPERTY_SHEET_SOURCE_DIR}/`),
       i18n: {
         defaultLocale: DEFAULT_LOCALE,
         locales: sitemapLocales,
       },
     }),
+    // Rewrites sitemap-0.xml from the emitted heads (translated slugs need real alternates).
+    sitemapFromHeads(),
+    // Production build only: `_redirects` (real 301s) and `_headers`.
+    hostFiles(SITE, BASE),
   ],
 
   vite: {

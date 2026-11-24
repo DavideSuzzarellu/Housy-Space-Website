@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "L'antico quartiere di pescatori, con spiaggia, strade dritte e piccoli appartamenti di fronte al porto.",
+  "text": [
+    "La Barceloneta fu progettata a metà Settecento, su terreni sabbiosi accanto al porto, per dare una nuova casa agli abitanti della Ribera che avevano perso le loro abitazioni con la costruzione della Ciutadella. Il suo impianto, con strade dritte e strette e isolati allungati, non assomiglia a nulla del centro storico. Tra il mercato, la chiesa di Sant Miquel del Port e la spiaggia, conserva ancora l'aria di un borgo marinaro.",
+    "Gli appartamenti sono piccoli, molti sotto i 50 m², e questo aiuta a capire i suoi numeri: il prezzo al metro quadro (5.183 €/m²) è il più alto di Ciutat Vella, ma l'affitto medio (881 €/mese) è il più basso del distretto. È un quartiere molto ricercato per la vicinanza al mare, quindi conviene confrontare bene ogni stabile."
+  ],
+  "housing": "Appartamenti piccoli in palazzine basse su strade dritte, molti sotto i 50 m².",
+  "places": [
+    "Platja de la Barceloneta",
+    "Mercat de la Barceloneta",
+    "Sant Miquel del Port",
+    "Passeig Marítim"
+  ]
+}

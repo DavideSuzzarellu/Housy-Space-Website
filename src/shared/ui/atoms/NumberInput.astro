@@ -6,10 +6,27 @@ interface Props {
   placeholder?: string;
   min?: number;
   step?: number;
+  /** `glass`: outlined field on the glass panel of the catalog search bar. */
+  variant?: "field" | "glass";
   class?: string;
 }
 
-const { id, name, placeholder, min = 0, step = 1, class: className } = Astro.props;
+const {
+  id,
+  name,
+  placeholder,
+  min = 0,
+  step = 1,
+  variant = "field",
+  class: className,
+} = Astro.props;
+
+const VARIANTS = {
+  field:
+    "min-h-11 w-full border border-line bg-canvas px-3.5 py-2.5 text-sm text-fg transition-colors placeholder:text-muted/70 hover:border-muted",
+  glass:
+    "h-11.5 w-full min-w-0 border border-white/28 bg-transparent px-3 text-[0.8125rem] text-fg placeholder:text-muted",
+} as const;
 ---
 
 <input
@@ -20,8 +37,5 @@ const { id, name, placeholder, min = 0, step = 1, class: className } = Astro.pro
   min={min}
   step={step}
   placeholder={placeholder}
-  class:list={[
-    "min-h-11 w-full border border-line bg-canvas px-3.5 py-2.5 text-sm text-fg transition-colors placeholder:text-muted/70 hover:border-muted",
-    className,
-  ]}
+  class:list={[VARIANTS[variant], className]}
 />

@@ -1,0 +1,55 @@
+---
+import StreetGrid from "@/features/agency/ui/StreetGrid.astro";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Breadcrumbs, { type Crumb } from "@/shared/ui/molecules/Breadcrumbs.astro";
+
+/**
+ * Head of a district or barrio page (reference `hgx-dist` / `hgx-barrio`): street grid, crumbs, tag,
+ * h1 and a one-line lead written as in the reference (no capitals). The default slot goes under the lead,
+ * the `after` slot below the container (district photo).
+ */
+interface Props {
+  crumbs: readonly Crumb[];
+  breadcrumbLabel: string;
+  tag?: string;
+  heading: string;
+  lead: string;
+  /** The lead is Spanish client copy on another locale. */
+  fallback: boolean;
+  variant: "district" | "barrio";
+}
+
+const { crumbs, breadcrumbLabel, tag, heading, lead, fallback, variant } = Astro.props;
+const district = variant === "district";
+---
+
+<section
+  class:list={[
+    "relative isolate overflow-clip bg-canvas pt-[clamp(1.375rem,4.2vh,2.625rem)]",
+    !district && "pb-[34px]",
+  ]}
+>
+  <StreetGrid placement="heading" />
+  <Container>
+    <Breadcrumbs items={crumbs} label={breadcrumbLabel} tone="compact" />
+    {tag !== undefined && (
+      <p class="mt-[22px] text-[0.6875rem] tracking-[0.16em] text-accent">{tag}</p>
+    )}
+    <h1
+      class:list={[
+        "leading-[1.08]",
+        district
+          ? "mt-3.5 mb-[18px] text-[clamp(2rem,3.7vw,3.25rem)]"
+          : "mt-2.5 mb-3.5 text-[clamp(2rem,3.47vw,3.125rem)]",
+        tag === undefined && "mt-[22px]",
+      ]}
+    >
+      {heading}
+    </h1>
+    <p lang={fallback ? "es" : undefined} class="mb-3.5 normal-case">
+      {lead}
+    </p>
+    <slot />
+  </Container>
+  <slot name="after" />
+</section>

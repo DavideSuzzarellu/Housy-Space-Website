@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Cerdà, xamfrans i modernisme: la Barcelona de les illes regulars i els edificis senyorials.",
+  "history": [
+    "L'Eixample va néixer a mitjan segle XIX, quan Ildefons Cerdà va projectar l'ampliació de la ciutat més enllà de les muralles: una quadrícula d'illes amb les cantonades tallades en xamfrà, carrers amplis i patis interiors pensats per donar llum i aire. La burgesia de l'època el va omplir d'edificis modernistes, com la Casa Batlló o la Pedrera, i més tard va arribar la Sagrada Família, que va acabar convertint-se en el símbol de Barcelona.",
+    "Els seus sis barris es reparteixen a banda i banda del carrer de Balmes, a la Dreta i a l'Esquerra, i cadascun té el seu caràcter, de l'elegància del passeig de Gràcia a l'ambient de mercat de Sant Antoni. Qui busca pis a l'Eixample sol trobar sostres alts, mosaics hidràulics, balcons i galeries, i una vida diària en què gairebé tot queda a pocs passos: comerç, escoles, transport i serveis.",
+    "Entre els 6 barris, el preu mitjà de compravenda va dels 4.603 €/m² a Sant Antoni als 6.224 €/m² a la Dreta de l'Eixample, i el lloguer mitjà, dels 1.107 €/mes a la Sagrada Família als 1.596 €/mes a la Dreta de l'Eixample.",
+    "Aquí pesen molt la planta, l'orientació, si el pis dona al carrer o a l'interior d'illa, l'alçada i l'estat de la finca i de la comunitat. Per això convé estudiar cada immoble amb detall abans de decidir."
+  ],
+  "summary": "L'Eixample té 277.353 habitants en 7,46 km² i 6 barris. És el districte més poblat de Barcelona. El seu preu mitjà de compravenda va ser de 5.323 €/m² el 2025, un 25 % per sobre de la mitjana de la ciutat. El lloguer mitjà, 1.284 €/mes.",
+  "landmarks": [
+    {
+      "name": "Sagrada Família",
+      "where": "La Sagrada Família",
+      "text": "El temple d'Antoni Gaudí, en obres des del 1882."
+    },
+    {
+      "name": "Passeig de Gràcia",
+      "where": "La Dreta de l'Eixample",
+      "text": "Amb la Casa Batlló i la Casa Milà, la Pedrera."
+    },
+    {
+      "name": "Rambla de Catalunya",
+      "where": "La Dreta de l'Eixample",
+      "text": "Passeig arbrat paral·lel al passeig de Gràcia."
+    },
+    {
+      "name": "Mercat de Sant Antoni",
+      "where": "Sant Antoni",
+      "text": "Mercat de ferro del segle XIX, rehabilitat el 2018."
+    },
+    {
+      "name": "Universitat de Barcelona",
+      "where": "L'Antiga Esquerra de l'Eixample",
+      "text": "L'edifici històric de la universitat, a la plaça de la Universitat."
+    }
+  ]
+}

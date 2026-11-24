@@ -23,11 +23,18 @@ const SOURCE_ROOT = path.join(DIST, PROPERTY_SHEET_SOURCE_DIR);
 const ORIGIN = "http://property-sheets.localhost";
 const CONCURRENCY = 4;
 const NAVIGATION_TIMEOUT_MS = 60_000;
+/** How long to wait for remote map tiles before printing without them. */
+const REMOTE_TIMEOUT_MS = 8_000;
 
 /** `dist` file for a URL path (`/a/b` → `a/b/index.html` or `a/b.html`), never outside `dist`. */
 function distFile(urlPath: string): string | undefined {
   const relative = decodeURIComponent(urlPath).replace(/^\/+/, "");
-  const candidates = [relative, `${relative}/index.html`, `${relative}.html`];
+  // Pages reference assets under the deploy `base` (e.g. `/Housy-Space-Website/_astro/…`) but
+  // `dist` has no such folder: retry without the first segment. shortcut: assumes a one-segment base.
+  const unbased = relative.split("/").slice(1).join("/");
+  const candidates = [relative, `${relative}/index.html`, `${relative}.html`].concat(
+    unbased === "" ? [] : [unbased, `${unbased}/index.html`, `${unbased}.html`],
+  );
   for (const candidate of candidates) {
     const file = path.resolve(DIST, candidate);
     if (!file.startsWith(DIST)) return undefined;
@@ -63,16 +70,23 @@ async function serveDist(context: BrowserContext): Promise<void> {
 async function printSheet(
   context: BrowserContext,
   urlPath: string,
-): Promise<{ pdf: string; brokenImages: number }> {
+): Promise<{ pdf: string; brokenImages: string[] }> {
   const page = await context.newPage();
   try {
     await page.goto(`${ORIGIN}${urlPath}`, {
-      waitUntil: "networkidle",
+      waitUntil: "domcontentloaded",
       timeout: NAVIGATION_TIMEOUT_MS,
     });
+    // Remote tiles may hang: wait for them a while, then print what has loaded (the rest is
+    // reported as broken images below) instead of failing the build on the navigation timeout.
+    await page.waitForLoadState("load", { timeout: REMOTE_TIMEOUT_MS }).catch(() => undefined);
     await page.evaluate(async () => {
       await document.fonts.ready;
-      await Promise.all([...document.images].map((image) => image.decode().catch(() => undefined)));
+      await Promise.all(
+        [...document.images]
+          .filter((image) => image.complete)
+          .map((image) => image.decode().catch(() => undefined)),
+      );
     });
     const pdf = await page
       .locator(`meta[name="${PROPERTY_SHEET_PDF_META}"]`)
@@ -80,8 +94,10 @@ async function printSheet(
     if (pdf === null || !PROPERTY_SHEET_PDF_PATH.test(pdf)) {
       throw new Error(`${urlPath}: missing or invalid ${PROPERTY_SHEET_PDF_META} meta (${pdf})`);
     }
-    const brokenImages = await page.evaluate(
-      () => [...document.images].filter((image) => image.naturalWidth === 0).length,
+    const brokenImages = await page.evaluate(() =>
+      [...document.images]
+        .filter((image) => image.naturalWidth === 0)
+        .map((image) => image.currentSrc || image.src),
     );
     const target = path.join(DIST, ...pdf.split("/"));
     await mkdir(path.dirname(target), { recursive: true });
@@ -113,8 +129,10 @@ async function main(): Promise<void> {
       for (let urlPath = queue.shift(); urlPath !== undefined; urlPath = queue.shift()) {
         const { pdf, brokenImages } = await printSheet(context, urlPath);
         // A missing photo or map tile must not block a deploy, but it must be visible.
-        if (brokenImages > 0) {
-          console.warn(`[property-sheets] ${pdf}: ${brokenImages} image(s) failed to load`);
+        if (brokenImages.length > 0) {
+          console.warn(
+            `[property-sheets] ${pdf}: ${brokenImages.length} image(s) failed to load: ${brokenImages.join(", ")}`,
+          );
         }
       }
     };

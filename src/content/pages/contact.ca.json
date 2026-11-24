@@ -1,0 +1,292 @@
+{
+  "title": "Immobiliària a la Travessera de Gràcia · HousySpace",
+  "description": "HousySpace, immobiliària a la Travessera de Gràcia 73, Barcelona. Vine a veure'ns o truca'ns al 613 084 804, de dilluns a divendres de 10:00 a 19:00.",
+  "head": {
+    "heading": "Parlem",
+    "photo": true,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Contacte"
+      },
+      {
+        "kind": "lead",
+        "text": "Tota bona decisió comença amb una conversa. Parlem de la teva."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/det-salon-1400.jpg"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "formas",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Tria com parlar amb nosaltres"
+        },
+        {
+          "kind": "lead",
+          "text": "Pots trucar-nos, escriure'ns o venir a veure'ns a l'oficina. Fes servir la manera que et resulti més còmoda."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Truca'ns"
+            },
+            {
+              "kind": "p",
+              "text": "Parla directament amb un assessor."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Trucar",
+                  "href": "tel:+34613084804",
+                  "solid": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "WhatsApp"
+            },
+            {
+              "kind": "p",
+              "text": "Explica'ns què necessites des del teu mòbil."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Obrir WhatsApp",
+                  "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Correu"
+            },
+            {
+              "kind": "p",
+              "text": "Per escriure'ns amb calma i més detall."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Escriure un correu",
+                  "href": "mailto:info@housyspace.com",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "Vine a veure'ns"
+            },
+            {
+              "kind": "p",
+              "text": "De dilluns a divendres, de 10:00 a 19:00."
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Com arribar",
+                  "href": "#donde-estamos",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prefereixes deixar-nos la teva consulta per escrit? [Omple el formulari](#formulario)."
+        }
+      ]
+    },
+    {
+      "id": "donde-estamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "On som"
+        },
+        {
+          "kind": "lead",
+          "text": "La nostra oficina és a Barcelona. Pots venir a veure'ns en horari d'oficina."
+        }
+      ]
+    },
+    {
+      "id": "formulario",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Explica'ns què necessites"
+        },
+        {
+          "kind": "lead",
+          "text": "Un assessor d'HousySpace t'atendrà personalment."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "Només és obligatori el que està marcat amb *: nom, telèfon i la teva consulta."
+            },
+            {
+              "title": "",
+              "text": "La resta ens ajuda a atendre't millor, però és opcional."
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prefereixes parlar ara?"
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Trucar",
+              "href": "tel:+34613084804",
+              "solid": false
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n.",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "form",
+          "id": "cf",
+          "intro": "Hola, m'agradaria fer una consulta.",
+          "fields": [
+            {
+              "name": "nombre",
+              "label": "Nom i cognoms",
+              "required": true,
+              "full": false,
+              "type": "text",
+              "kind": "field"
+            },
+            {
+              "name": "telefono",
+              "label": "Telèfon",
+              "required": true,
+              "full": false,
+              "type": "tel",
+              "kind": "field"
+            },
+            {
+              "name": "email",
+              "label": "Adreça electrònica",
+              "required": false,
+              "full": true,
+              "type": "email",
+              "kind": "field"
+            },
+            {
+              "name": "interes",
+              "label": "Com podem ajudar-te?",
+              "required": false,
+              "full": true,
+              "type": "select",
+              "options": [
+                "Comprar un habitatge",
+                "Vendre el meu habitatge",
+                "Llogar el meu habitatge",
+                "Cercar un lloguer",
+                "Valorar el meu habitatge",
+                "Reformes i interiorisme",
+                "Finançament o hipoteca",
+                "Altra consulta"
+              ],
+              "kind": "field"
+            },
+            {
+              "name": "mensaje",
+              "label": "La teva consulta",
+              "required": true,
+              "full": true,
+              "type": "textarea",
+              "kind": "field"
+            },
+            {
+              "name": "consent",
+              "label": "He llegit la informació de privacitat i accepto que HousySpace tracti aquestes dades per atendre la meva sol·licitud.",
+              "required": true,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "mkt",
+              "label": "Vull rebre comunicacions comercials d'HousySpace sobre immobles, serveis i novetats per correu electrònic, WhatsApp o telèfon. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "name": "news",
+              "label": "Vull subscriure'm al butlletí i als articles d'HousySpace per correu electrònic. (Opcional.)",
+              "required": false,
+              "full": true,
+              "type": "consent",
+              "kind": "field"
+            },
+            {
+              "kind": "note",
+              "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalitat: atendre la teva sol·licitud i, només si ho marques, enviar-te comunicacions comercials i el butlletí. Legitimació: el teu consentiment. Destinataris: no cedim les teves dades, llevat d'obligació legal. Drets: accés, rectificació, supressió, oposició, limitació, portabilitat i retirada del consentiment a [info@housyspace.com](mailto:info@housyspace.com); pots reclamar davant l'AEPD. Més informació a la [política de privacitat](route:privacy)."
+            },
+            {
+              "kind": "submit",
+              "label": "Enviar consulta"
+            },
+            {
+              "kind": "note",
+              "text": "Encara no hi ha cap sistema per rebre el formulari (CRM pendent). En prémer, s'obrirà WhatsApp amb la teva sol·licitud ja escrita perquè tu l'enviïs; fins que no l'enviïs allà, no haurà arribat a HousySpace."
+            }
+          ],
+          "mode": "whatsapp"
+        }
+      ]
+    }
+  ]
+}

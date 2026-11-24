@@ -1,0 +1,32 @@
+---
+import type { ItemOf } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import { resolveContentHref } from "@/shared/i18n/contentLinks";
+
+/** Everyday situations, each linking to the service that answers it (reference `.sx-sit-l`). */
+interface Props {
+  locale: Locale;
+  list: ItemOf<"list">;
+}
+
+const { locale, list } = Astro.props;
+---
+
+<ul class="grid gap-3.5 min-[700px]:grid-cols-2 min-[1000px]:grid-cols-3">
+  {list.items.map((entry) => (
+    <li data-reveal>
+      <a
+        href={entry.href === undefined ? undefined : resolveContentHref(entry.href, locale)}
+        class="flex h-full flex-col bg-card px-6.5 pt-6.5 pb-5.5 text-inherit no-underline transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] hover:bg-card-hover focus-visible:-translate-y-[3px] focus-visible:bg-card-hover motion-reduce:transition-none"
+      >
+        <b class="mb-2.5 block font-heading text-[clamp(20px,calc(1.9vw-2px),24px)] leading-[1.15] font-normal">
+          {entry.title}
+        </b>
+        <span class="mb-4.5 block flex-1 text-[13px] leading-[1.6] text-muted">{entry.text}</span>
+        <i class="text-[11px] leading-[1.4] font-medium tracking-[0.12em] text-accent">
+          {entry.cta}
+        </i>
+      </a>
+    </li>
+  ))}
+</ul>

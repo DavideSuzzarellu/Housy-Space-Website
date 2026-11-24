@@ -21,6 +21,17 @@ describe("extractQuotedFigures", () => {
     ]);
   });
 
+  it("reads the units of every locale and the currency-first notation", () => {
+    const text = "3.499 €/m², 1.234 €/mes, 1,234 €/month, 1.234 €/mese and €3,499/m²";
+    expect(extractQuotedFigures(text).map((figure) => [figure.value, figure.unit])).toEqual([
+      [3499, "perM2"],
+      [1234, "perMonth"],
+      [1234, "perMonth"],
+      [1234, "perMonth"],
+      [3499, "perM2"],
+    ]);
+  });
+
   it("ignores plain prices and numbers without a market unit", () => {
     expect(extractQuotedFigures("Un piso de 300.000 € con 80 m² y 3 habitaciones.")).toEqual([]);
   });

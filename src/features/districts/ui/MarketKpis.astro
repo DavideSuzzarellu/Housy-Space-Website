@@ -9,39 +9,42 @@ export interface Kpi {
   readonly value: number;
   readonly unit: string;
   readonly comparisons: readonly { readonly diff: number; readonly against: string }[];
-  readonly rank: string;
+  /** Empty when the rank is already part of the unit line (districts). */
+  readonly rank?: string;
 }
 
 interface Props {
   locale: Locale;
   items: readonly Kpi[];
+  class?: string;
 }
 
-const { locale, items } = Astro.props;
+const { locale, items, class: className } = Astro.props;
 const t = getDictionary(locale).zones;
 const format = figureFormat(locale);
 const signed = (diff: number) => `${diff > 0 ? "+" : "−"}${Math.abs(diff)} %`;
 ---
 
-<div class="grid gap-4 md:grid-cols-3">
+<div class:list={["grid gap-px border border-line bg-line min-[481px]:grid-cols-3", className]}>
   {items.map((item) => (
-    <div class="bg-card p-5">
-      <p class="text-xs tracking-[0.06em] text-muted">{item.label}</p>
-      <p class="mt-2 text-[clamp(1.75rem,3.2vw,2.5rem)] leading-none font-extrabold">
+    <div class="flex min-w-0 flex-col gap-0.5 bg-canvas px-3.5 pt-3.5 pb-3">
+      <span class="text-[0.625rem] leading-[1.3] tracking-[0.12em] text-muted">{item.label}</span>
+      <b class="mt-1 font-heading text-[clamp(1.1875rem,calc(1.9vw-2px),1.5rem)] leading-[1.05] font-normal">
         {format.format(item.value)}
-      </p>
-      <p class="mt-1 text-xs text-muted">{item.unit}</p>
+      </b>
+      <span class="text-[0.625rem] text-muted">{item.unit}</span>
       {item.comparisons.map((comparison) => (
-        <p
-          class:list={[
-            "mt-2 text-xs font-medium",
-            comparison.diff >= 0 ? "text-accent" : "text-fg",
-          ]}
+        <small
+          class:list={["text-[0.625rem]", "mt-1", comparison.diff >= 0 ? "text-ok" : "text-ko"]}
         >
           {formatMessage(t.versus, { diff: signed(comparison.diff), against: comparison.against })}
-        </p>
+        </small>
       ))}
-      <p class="mt-3 text-[0.6875rem] text-muted">{item.rank}</p>
+      {item.rank !== undefined && (
+        <span class="mt-2.5 block border-t border-line pt-[9px] text-[0.625rem] text-taupe-tx">
+          {item.rank}
+        </span>
+      )}
     </div>
   ))}
 </div>

@@ -1,0 +1,278 @@
+{
+  "title": "HousySpace · Real estate consultants in Barcelona",
+  "description": "HousySpace, real estate agency in Barcelona: consultants with 9 years in the sector who support every client through the whole process. Discover our story and way of working.",
+  "head": {
+    "heading": "Much more than a real estate agency",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Introducing HousySpace"
+      },
+      {
+        "kind": "p",
+        "text": "At HousySpace we believe every property decision deserves time, judgement and personal attention. We go with you to find the best way to take the next step."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "historia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Our story"
+        },
+        {
+          "kind": "h2",
+          "text": "A very simple idea: people, at the centre."
+        },
+        {
+          "kind": "p",
+          "text": "HousySpace was born five years ago. Those of us behind it had already been working in the sector for some time and knew what could be done differently: with more closeness, truly personal attention, and treating each client's concerns as our own."
+        },
+        {
+          "kind": "p",
+          "text": "That is why we did not want to be just another estate agency, but a project true to how we understand this profession."
+        },
+        {
+          "kind": "p",
+          "text": "We still get the same satisfaction from sharing the joy of someone finding their first home, helping a family start a new chapter or accompanying a client in making the right decision."
+        },
+        {
+          "kind": "quote",
+          "text": "Behind every property there is a story, an important decision and people who trust us."
+        }
+      ]
+    },
+    {
+      "id": "experiencia",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "In figures"
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "9",
+              "kicker": "years",
+              "text": "of experience in the real estate sector"
+            },
+            {
+              "title": "5",
+              "kicker": "years",
+              "text": "since HousySpace was born"
+            },
+            {
+              "title": "Today",
+              "text": "we keep growing with those who choose us again and recommend us"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "filosofia",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Our philosophy"
+        },
+        {
+          "kind": "h2",
+          "text": "Every property is different. So is every person."
+        },
+        {
+          "kind": "p",
+          "text": "We do not believe every property transaction should be approached in the same way. Before proposing a strategy we listen, study the circumstances of each property and weigh the different possibilities."
+        },
+        {
+          "kind": "p",
+          "text": "Our job is not just to manage a transaction, but to provide judgement so that you can decide whether to take the step, when and how, with knowledge, transparency and security."
+        },
+        {
+          "kind": "quote",
+          "text": "That you are happy at every step, not only when you sign."
+        }
+      ]
+    },
+    {
+      "id": "como-trabajamos",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we work"
+        },
+        {
+          "kind": "h2",
+          "text": "Four steps and the same advisor from start to finish."
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "We listen",
+              "text": "What you need, what deadlines you have and the condition of the property.",
+              "kicker": "01"
+            },
+            {
+              "title": "We study",
+              "text": "We review the documentation and analyse the market.",
+              "kicker": "02"
+            },
+            {
+              "title": "We define the strategy",
+              "text": "Tailored to each situation and explained before we start.",
+              "kicker": "03"
+            },
+            {
+              "title": "We coordinate",
+              "text": "The same advisor handles the paperwork, keeps you informed and works with the specialised professionals who are needed.",
+              "kicker": "04"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milla",
+      "surface": "dark",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "*Always an* extra mile"
+        },
+        {
+          "kind": "p",
+          "text": "In a property transaction, situations nobody had foreseen can arise: pending documents, financing difficulties, technical issues or procedures that require other professionals to step in."
+        },
+        {
+          "kind": "p",
+          "text": "We anticipate when we can and, when something unexpected comes up, we get involved in finding a solution and in coordinating those who can help resolve it. For us, going the extra mile means not walking away from a difficulty just because it is not part of the usual brokerage."
+        },
+        {
+          "kind": "note",
+          "text": "That is what we mean by:"
+        },
+        {
+          "kind": "big",
+          "text": "Don't worry, I'll take care of it."
+        }
+      ]
+    },
+    {
+      "id": "colaboraciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Professional collaborations"
+        },
+        {
+          "kind": "h2",
+          "text": "A trusted team for every need."
+        },
+        {
+          "kind": "p",
+          "text": "For the legal, tax, financial and technical needs of a transaction we work with specialised professionals. We coordinate the consultation and its timing with the transaction; the specialised work is carried out by each professional."
+        },
+        {
+          "kind": "p",
+          "text": "If we recommend someone, it is because we know them well: for years we have surrounded ourselves with professionals who work as well as or better than we do and whom we trust fully."
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "ADV Advocats",
+              "text": "Law firm in Barcelona: inheritance, income tax and other taxes, civil, labour and company law.",
+              "kicker": "Legal and tax firm",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "See the service"
+            },
+            {
+              "title": "Asesoría Edac",
+              "text": "Tax, accounting and labour advisory in Barcelona: taxes, returns and procedures with the tax authorities.",
+              "kicker": "Tax advisory",
+              "href": "service:asesoramiento-juridico-fiscal",
+              "cta": "See the service"
+            },
+            {
+              "title": "Maria Guimerà Arquitectura",
+              "text": "Architecture and interior design studio in Barcelona, specialising in full renovations of homes and Eixample flats.",
+              "kicker": "Architecture and interior design",
+              "href": "service:reformas-obras",
+              "cta": "See the service"
+            },
+            {
+              "title": "Financial broker",
+              "text": "Assesses the viability of each transaction involving financing and compares conditions from different lenders.",
+              "kicker": "Financing",
+              "href": "service:asesoramiento-financiero",
+              "cta": "See the service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cierre",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Good decisions start with a conversation."
+        },
+        {
+          "kind": "p",
+          "text": "If you are thinking about selling, buying or renting, tell us your case. We will be glad to listen."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Let's talk",
+              "href": "route:contact",
+              "solid": true
+            },
+            {
+              "label": "See the services",
+              "href": "route:services",
+              "solid": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opiniones",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Reviews"
+        },
+        {
+          "kind": "p",
+          "text": "Our greatest satisfaction is knowing that those who have trusted us would do so again."
+        }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,14 @@
+import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
 import { LOCALE_META, LOCALES, type Locale } from "../../src/shared/i18n/config";
 import { getLocalizedPath } from "../../src/shared/i18n/routes";
 import { SITE_HEADER_TRANSITION_NAME } from "../../src/shared/lib/transitionNames";
 import { blockingAxeViolations, skipIntro } from "./support";
 
-const SITE = "https://www.housyspace.com";
+// Production origin: the same file the site and the Cloudflare worker read (deploy.config.json).
+const { productionOrigin: SITE } = JSON.parse(readFileSync("deploy.config.json", "utf8")) as {
+  productionOrigin: string;
+};
 const PARTS = ["image", "title", "price"] as const;
 
 test.beforeEach(async ({ page }) => {
@@ -240,4 +244,27 @@ test.describe("reduced motion", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "ca-ES");
     expect(errors).toEqual([]);
   });
+});
+
+test("the side box carries the price and the actions; the price is not repeated under the title", async ({
+  page,
+}) => {
+  const { path } = await firstDetailPath(page, "es");
+  await page.goto(path);
+  const box = page.locator("[data-property-contact]");
+  await expect(box.getByRole("link", { name: "Solicitar visita" })).toBeVisible();
+  await expect(box.getByRole("link", { name: "WhatsApp" })).toBeVisible();
+  await expect(box.getByRole("link", { name: "Llamar", exact: true })).toBeVisible();
+  await expect(box.locator("a[download]")).toContainText("Descargar ficha PDF");
+  // Description, features, location and energy follow the reference order.
+  const ids = await page
+    .locator("[data-property-detail] section[aria-labelledby]")
+    .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("aria-labelledby")));
+  const order = [
+    "detail-description",
+    "detail-features",
+    "detail-location",
+    "detail-energy",
+  ].filter((id) => ids.includes(id));
+  expect(ids.filter((id) => id !== null && order.includes(id))).toEqual(order);
 });

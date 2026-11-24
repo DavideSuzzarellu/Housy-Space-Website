@@ -1,23 +1,39 @@
 {
   "hero": {
-    "videoLandscape": "/media/hero/hero-1280.mp4",
-    "videoPortrait": "/media/hero/hero-720v.mp4",
-    "posterLandscape": "../../assets/home/hero-poster.jpg",
-    "posterPortrait": "../../assets/home/hero-poster-v.jpg"
-  },
-  "presentation": {
     "eyebrow": "HousySpace · Property Solutions",
     "headingFirst": "Cada rincón tiene una historia",
     "headingSecond": "Cada persona, un nuevo comienzo",
-    "linkLabel": "Conócenos"
+    "ctaLabel": "Conócenos"
+  },
+  "stats": {
+    "eyebrow": "Cinco años de HousySpace",
+    "heading": "Lo que hemos conseguido *con quienes confiaron en nosotros*",
+    "stat1Number": 35,
+    "stat1Plus": true,
+    "stat1Unit": "millones €",
+    "stat1Label": "de volumen intermediado en estos cinco años",
+    "stat2Number": 100,
+    "stat2Plus": true,
+    "stat2Unit": "inmuebles",
+    "stat2Label": "intermediados en Barcelona y alrededores",
+    "stat3Number": 60,
+    "stat3Plus": true,
+    "stat3Unit": "pisos",
+    "stat3Label": "alquilados con el mismo acompañamiento",
+    "stat4Number": 9,
+    "stat4Plus": false,
+    "stat4Unit": "de 10 distritos",
+    "stat4Label": "de Barcelona, y más de 10 municipios del entorno",
+    "note": "Cada operación está en el mapa, distrito a distrito, con el precio de anuncio y el mes en que se cerró.",
+    "ctaLabel": "Inmuebles intermediados"
   },
   "featured": {
     "heading": "Encuentra aquí *tu nuevo comienzo*",
     "ctaLabel": "Ver más inmuebles"
   },
   "valuation": {
-    "image": "../../assets/home/det-ventanal-1400.jpg",
-    "imageAlt": "Salón luminoso con ventanales a un balcón",
+    "image": "../../assets/home/valoracion-fachada-2880.webp",
+    "imageAlt": "Imagen conceptual: fachada modernista de Barcelona con un balcón de forja marcado con el isotipo de HousySpace",
     "heading": "Descubre cuánto *vale tu vivienda*",
     "lead": "Al momento y online, o con un asesor de HousySpace.",
     "ctaLabel": "Solicitar valoración"
@@ -25,9 +41,22 @@
   "services": {
     "heading": "Descubre todo *lo que podemos hacer por ti*"
   },
+  "gallery": {
+    "heading": "Barcelona, una forma de vivir",
+    "lead": "Arquitectura modernista, luz mediterránea y fincas singulares que definen el carácter de la ciudad.",
+    "item1Title": "Eixample Dret",
+    "item1Subtitle": "Techos altos con molduras originales y suelos hidráulicos restaurados.",
+    "item2Title": "Sarrià - Sant Gervasi",
+    "item2Subtitle": "Fincas unifamiliares con amplios jardines y luz natural ininterrumpida.",
+    "item3Title": "Ciutat Vella & Born",
+    "item3Subtitle": "Vigas de madera recuperadas y arcos de piedra gótica original.",
+    "item4Title": "Gràcia & Pedralbes",
+    "item4Subtitle": "Espacios modernos rehabilitados respetando la arquitectura histórica."
+  },
   "collaborators": {
-    "text": "Nos rodeamos de los mejores para ofrecerte mucho más.",
-    "ctaLabel": "Conoce a nuestros colaboradores"
+    "lineFirst": "Nos rodeamos de los mejores",
+    "lineSecond": "para ofrecerte mucho más.",
+    "ctaLabel": "Por qué confiamos en ellos"
   },
   "philosophy": {
     "quoteFirst": "¡No te preocupes,",
@@ -48,5 +77,14 @@
   "blog": {
     "heading": "Blogs *y noticias*",
     "ctaLabel": "Ver todos los artículos"
+  },
+  "contact": {
+    "heading": "Consulta *privada*",
+    "lead": "Un consultor de HousySpace te acompaña desde el primer mensaje.",
+    "fieldNameLabel": "Nombre y apellidos",
+    "fieldEmailLabel": "Correo electrónico",
+    "fieldMessageLabel": "Cuéntanos qué necesitas",
+    "fieldConsentLabel": "He leído y acepto la política de privacidad de HousySpace y consiento el tratamiento de mis datos para gestionar mi solicitud.",
+    "submitLabel": "Enviar consulta"
   }
 }

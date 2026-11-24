@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un racó de l'Eixample de ritme pausat, amb teatre nacional, auditori, mercat i biblioteca propis.",
+  "text": [
+    "El nom ve del Fort Pius, que Felip V va manar aixecar després del 1714 i que es va batejar amb el nom del capità general Francesc Pius de Savoia; el fort i la Ciutadella es van enderrocar el 1869. El 1861 s'hi va construir l'estació de ferrocarril de la línia de Lleida, que va donar identitat a un barri entre la via del tren i la Gran Via, i molts transportistes es van instal·lar al costat de l'antiga carretera de Ribes. L'estació va tancar en l'últim quart del segle XX i avui el seu edifici, ampliat el 1910 amb una gran coberta de ferro, és la principal estació d'autobusos de la ciutat.",
+    "Al costat de l'estació es va fer un parc urbà i, a l'altra banda, un conjunt amb llar d'infants, apartaments tutelats per a gent gran, mercat i biblioteca que el mateix districte presenta com a model d'integració d'equipaments i espai públic. Avui és un barri residencial, amb el Teatre Nacional de Catalunya i L'Auditori com a grans referents culturals. És una bona opció per a qui vol l'Eixample sense el bullici dels seus grans eixos comercials: carrers més tranquils, comerç de proximitat i el centre a un passeig. Amb 4.806 €/m² de preu mitjà de compravenda, queda per sota de la Dreta, l'Antiga Esquerra i la Nova Esquerra."
+  ],
+  "housing": "Pisos en finques de la trama de Cerdà, en carrers de poc trànsit.",
+  "places": [
+    "Teatre Nacional de Catalunya",
+    "L'Auditori",
+    "Mercat del Fort Pienc",
+    "Estació d'Autobusos Barcelona Nord"
+  ]
+}

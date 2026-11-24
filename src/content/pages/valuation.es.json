@@ -1,64 +1,161 @@
 {
-  "title": "Valorador · HousySpace",
-  "description": "Solicita la valoración profesional de tu vivienda en Barcelona.",
+  "title": "Valorador online de tu vivienda · HousySpace",
+  "description": "Calcula al momento cuánto vale tu vivienda en Barcelona con el valorador online y, si quieres, pide después una valoración personalizada a un asesor.",
   "head": {
-    "heading": "La próxima propiedad podría ser la tuya",
-    "photo": true,
+    "heading": "El valor de tu vivienda *merece algo más que una cifra*",
+    "photo": false,
     "items": [
       {
-        "kind": "image",
-        "src": "../../assets/home/det-balcon-1400.jpg"
-      },
-      {
         "kind": "tag",
-        "text": "Valoración inmobiliaria"
+        "text": "Valoración inmobiliaria en Barcelona"
       },
       {
         "kind": "lead",
-        "text": "Descubre el valor real de tu vivienda con un análisis inmobiliario profesional, basado en el mercado y las características de tu propiedad."
+        "text": "Cada vivienda es diferente, y su valor también. Estudiamos sus características, su ubicación y las condiciones del mercado para ofrecerte una valoración razonada y ayudarte a tomar decisiones con criterio."
       }
     ]
   },
   "sections": [
+    {
+      "id": "opciones",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Dos formas de valorar"
+        },
+        {
+          "kind": "h2",
+          "text": "Elige cómo conocer *el valor de tu vivienda*"
+        },
+        {
+          "kind": "p",
+          "text": "Puedes empezar por una estimación online y, cuando quieras, pedir que un asesor estudie tu vivienda. Son dos pasos que se complementan."
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Al momento"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoración online"
+            },
+            {
+              "kind": "p",
+              "text": "Una primera estimación orientativa a partir de los datos que introduces. Es útil como referencia inicial, pero no sustituye el análisis individual de la vivienda."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Resultado al momento"
+                },
+                {
+                  "title": "",
+                  "text": "Con los datos que introduces"
+                },
+                {
+                  "title": "",
+                  "text": "Estimación orientativa"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Valorar online ahora",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "tag",
+              "text": "Estudio personalizado"
+            },
+            {
+              "kind": "h3",
+              "text": "Valoración con un asesor"
+            },
+            {
+              "kind": "p",
+              "text": "Analizamos tu vivienda, sus particularidades y las condiciones del mercado, y te explicamos qué factores influyen en su valor."
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Visita a la vivienda"
+                },
+                {
+                  "title": "",
+                  "text": "Revisión de la documentación"
+                },
+                {
+                  "title": "",
+                  "text": "Estudio de mercado comentado"
+                }
+              ]
+            },
+            {
+              "kind": "buttons",
+              "items": [
+                {
+                  "label": "Pedir valoración con un asesor",
+                  "href": "route:contact",
+                  "solid": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "informe",
       "surface": "paper",
       "band": false,
       "items": [
         {
-          "kind": "h2",
-          "text": "Tu informe de valoración, al momento"
-        },
-        {
-          "kind": "lead",
-          "text": "Introduce los datos de tu vivienda en el valorador y recibirás al instante tu informe de valoración. Si lo deseas, un asesor lo revisa después contigo."
-        },
-        {
           "kind": "valuator",
           "title": "Valorador online de HousySpace"
         },
         {
           "kind": "p",
-          "text": "¿No se ve el valorador? [Ábrelo en una pestaña nueva](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31) o pide la valoración a un asesor con el [formulario de abajo](#solicitud)."
+          "text": "¿No se ve el valorador? [Ábrelo en una pestaña nueva](https://valuation.lystos.com?clientId=0cf1b7eb-0479-481f-9d1d-61a1697d5b31)."
         },
         {
           "kind": "note",
-          "text": "La estimación del valorador es orientativa; no es una tasación oficial. El valorador lo presta un proveedor externo, Lystos: los datos que introduzcas en él se tratarán según su información de privacidad y la de HousySpace (texto legal pendiente de aprobación)."
+          "text": "La estimación del valorador es orientativa; no es una tasación oficial. El valorador lo presta un proveedor externo, Lystos: los datos que introduzcas en él se tratarán según su información de privacidad y la de HousySpace"
         }
       ]
     },
     {
       "id": "solicitud",
-      "surface": "stone",
+      "surface": "paper",
       "band": false,
       "items": [
         {
           "kind": "h2",
-          "text": "¿Prefieres que te llame un asesor?"
+          "text": "Valoración con un asesor"
         },
         {
           "kind": "lead",
-          "text": "Déjanos tus datos y un asesor de HousySpace se pondrá en contacto contigo para valorar tu vivienda en persona."
+          "text": "Déjanos tus datos y un asesor de HousySpace te llamará para valorar tu vivienda en persona."
         },
         {
           "kind": "form",
@@ -107,7 +204,7 @@
             },
             {
               "name": "consent",
-              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud. (Texto legal pendiente de aprobación.)",
+              "label": "He leído la información de privacidad y acepto que HousySpace trate estos datos para atender mi solicitud.",
               "required": true,
               "full": true,
               "type": "consent",
@@ -130,7 +227,8 @@
               "kind": "field"
             },
             {
-              "kind": "note",
+              "kind": "details",
+              "summary": "Información básica sobre protección de datos",
               "text": "Responsable: HousySpace Consultores Inmobiliarios, S.L. Finalidad: atender tu solicitud y, solo si lo marcas, enviarte comunicaciones comerciales y la newsletter. Legitimación: tu consentimiento. Destinatarios: no cedemos tus datos, salvo obligación legal. Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad y retirar tu consentimiento en [info@housyspace.com](mailto:info@housyspace.com); puedes reclamar ante la AEPD. Más información en la [política de privacidad](route:privacy). (Texto legal en borrador.)"
             },
             {
@@ -143,21 +241,6 @@
             }
           ],
           "mode": "whatsapp"
-        },
-        {
-          "kind": "buttons",
-          "items": [
-            {
-              "label": "Sobre el servicio de valoración",
-              "href": "service:valoracion",
-              "solid": false
-            },
-            {
-              "label": "Hablar con un asesor",
-              "href": "route:contact",
-              "solid": false
-            }
-          ]
         }
       ]
     }

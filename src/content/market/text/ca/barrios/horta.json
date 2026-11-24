@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Un antic poble amb rambla, laberint i cases baixes, al vessant de Collserola.",
+  "text": [
+    "Horta va ser un municipi independent fins al 1904, i el seu nucli antic, al voltant de la plaça d'Eivissa i de la rambla d'Horta, conserva un aire rural poc habitual a la Barcelona actual: cases baixes, masies centenàries amb hort i tallers de fusteria, marmoleria o ferreria. La confluència de torrents va donar a la zona fama de reserva d'aigua de la ciutat.",
+    "Aquí hi ha el Parc del Laberint d'Horta, un jardí neoclàssic que es va començar a construir el 1794, i el Velòdrom d'Horta, que va acollir proves dels Jocs Olímpics del 1992. Amb 31.116 habitants en 3,07 km², ofereix una vida de poble amb el centre de Barcelona connectat per metro."
+  ],
+  "housing": "Cases baixes i masies amb hort al nucli antic, i un eixample de pisos al voltant.",
+  "places": ["Parc del Laberint d'Horta", "Rambla d'Horta", "Plaça d'Eivissa", "Velòdrom d'Horta"]
+}

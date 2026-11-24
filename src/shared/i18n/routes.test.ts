@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { LOCALES } from "./config";
 import { getAlternates, getLocalizedPath, ROUTE_KEYS, routes, withUrlExtras } from "./routes";
 
@@ -18,10 +18,10 @@ describe("getLocalizedPath", () => {
     [
       "living",
       {
-        es: "/es/vivir-en-barcelona",
-        en: "/en/living-in-barcelona",
-        it: "/it/vivere-a-barcellona",
-        ca: "/ca/viure-a-barcelona",
+        es: "/es/zonas/barcelona",
+        en: "/en/zones/barcelona",
+        it: "/it/zone/barcelona",
+        ca: "/ca/zones/barcelona",
       },
     ],
     ["about", { es: "/es/nosotros", en: "/en/about-us", it: "/it/chi-siamo", ca: "/ca/qui-som" }],
@@ -36,6 +36,15 @@ describe("getLocalizedPath", () => {
         en: "/en/property-search-service",
         it: "/it/ricerca-su-misura",
         ca: "/ca/cerca-a-mida",
+      },
+    ],
+    [
+      "mySearch",
+      {
+        es: "/es/mi-busqueda",
+        en: "/en/my-search",
+        it: "/it/la-mia-ricerca",
+        ca: "/ca/la-meva-cerca",
       },
     ],
     ["dataSources", { es: "/es/datos", en: "/en/data", it: "/it/dati", ca: "/ca/dades" }],
@@ -59,11 +68,8 @@ describe("getLocalizedPath", () => {
   });
 
   it("fills nested district and barrio params", () => {
-    expect(getLocalizedPath("barrio", "en", { district: "gracia", barrio: "vila-de-gracia" })).toBe(
-      "/en/living-in-barcelona/gracia/vila-de-gracia",
-    );
-    expect(getLocalizedPath("municipality", "it", { municipio: "sitges" })).toBe(
-      "/it/provincia-di-barcellona/sitges",
+    expect(getLocalizedPath("barrio", "en", { barrio: "la-vila-de-gracia" })).toBe(
+      "/en/zones/barcelona/la-vila-de-gracia",
     );
     expect(getLocalizedPath("serviceDetail", "ca", { service: "lloguer-i-gestio" })).toBe(
       "/ca/serveis/lloguer-i-gestio",
@@ -99,6 +105,23 @@ describe("getAlternates", () => {
       { hreflang: "ca-ES", locale: "ca", path: "/ca/serveis" },
       { hreflang: "x-default", locale: "es", path: "/es/servicios" },
     ]);
+  });
+
+  it("prefixes the deploy base exactly like getLocalizedPath (language switcher and canonical)", () => {
+    vi.stubEnv("BASE_URL", "/repo/");
+    try {
+      const alternates = getAlternates("services");
+      expect(alternates.map((alternate) => alternate.path)).toEqual([
+        "/repo/es/servicios",
+        "/repo/en/services",
+        "/repo/it/servizi",
+        "/repo/ca/serveis",
+        "/repo/es/servicios",
+      ]);
+      expect(alternates[1]?.path).toBe(getLocalizedPath("services", "en"));
+    } finally {
+      vi.unstubAllEnvs();
+    }
   });
 
   it("applies the same params to every locale", () => {
@@ -143,5 +166,24 @@ describe("withUrlExtras", () => {
 
   it("returns the path untouched when there are no extras", () => {
     expect(withUrlExtras("/es", {})).toBe("/es");
+  });
+});
+
+describe("site base (staging under a sub-path)", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  it("puts the base on alternates exactly as on getLocalizedPath, so canonical and hreflang match the links", () => {
+    vi.stubEnv("BASE_URL", "/repo/");
+    const alternates = getAlternates("services");
+    expect(alternates.map((alternate) => alternate.path)).toEqual([
+      "/repo/es/servicios",
+      "/repo/en/services",
+      "/repo/it/servizi",
+      "/repo/ca/serveis",
+      "/repo/es/servicios",
+    ]);
+    expect(getLocalizedPath("services", "en")).toBe("/repo/en/services");
   });
 });

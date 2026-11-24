@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The heart of Gràcia: squares with café terraces, an iron market and a festa major that fills the streets.",
+  "text": [
+    "This is the core of the old municipality. Gràcia was established as an independent municipality in 1850, with more than 13,000 inhabitants; by 1877 it had 33,000 and by 1897, when it rejoined Barcelona, almost 62,000. Its administrative centre was Plaça de la Vila, with the clock tower that Antoni Rovira i Trias built between 1862 and 1864.",
+    "Much of the development was carried out by the owners of each estate on their own, which explains the streets that change name or stop short and the many squares, usually one per estate: Plaça del Sol and Plaça de la Virreina are where residents meet. The iron Mercat de la Llibertat dates from 1893, and Gaudí's Casa Vicens, from 1883, stands on Carrer de les Carolines. Today life is lived on the street: café terraces, neighbourhood shops, cinemas and small theatres, and every August the Festes de Gràcia, with streets decorated by the residents. With 51,477 inhabitants, it is the most populous neighbourhood in Gràcia, and its sale price, 5,094 €/m², is the highest in the district."
+  ],
+  "housing": "Low-rise houses, older buildings and blocks of flats, on narrow streets.",
+  "places": [
+    "Plaça de la Vila de Gràcia",
+    "Plaça del Sol",
+    "Plaça de la Virreina",
+    "Mercat de la Llibertat",
+    "Casa Vicens"
+  ]
+}

@@ -1,0 +1,145 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import { REPORT_CHARTS } from "./saleGraphics";
+
+/**
+ * Transparency block of the sale page (reference `.cv41`, on a dark section): text on one side and
+ * an illustrative management report on the other (cut-corner sheet, four areas with a chart each).
+ * The charts carry no data: the note says so.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const tag = itemsOf(head, "tag")[0];
+const heading = itemsOf(head, "h2")[0];
+const paragraphs = itemsOf(body, "p");
+const doc = itemsOf(body, "card")[0]?.items ?? [];
+const docTitle = itemsOf(doc, "h3")[0];
+const docNote = itemsOf(doc, "p")[0];
+const areas = itemsOf(doc, "list")[0]?.items ?? [];
+const footnote = itemsOf(doc, "note")[0];
+---
+
+<div class="grid gap-[clamp(28px,5vh,46px)] min-[900px]:grid-cols-[11fr_13fr] min-[900px]:items-center min-[900px]:gap-[clamp(28px,4.2vw,60px)]">
+  <div class="min-w-0">
+    {tag && <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{tag.text}</p>}
+    {heading && (
+      <h2 id={id} data-reveal class="mt-2.5 text-[clamp(25px,2.65vw,38px)] [&_em]:block">
+        <Emphasis text={heading.text} />
+      </h2>
+    )}
+    {paragraphs.map((line, index) => (
+      <p
+        data-reveal
+        class:list={[
+          "max-w-[56ch] text-[clamp(15px,1.12vw,16.5px)] leading-[1.68] tracking-[0.03em] text-fg-2 normal-case",
+          index === 0 ? "mt-[clamp(16px,2.8vh,26px)]" : "mt-[clamp(12px,2.2vh,18px)]",
+        ]}
+      >
+        {line.text}
+      </p>
+    ))}
+  </div>
+  <figure
+    data-reveal
+    class="m-0 border-t-[3px] border-turquoise bg-paper px-[clamp(18px,2.4vw,34px)] pt-[clamp(18px,2.2vw,32px)] pb-[clamp(16px,1.8vw,24px)] text-dark [clip-path:polygon(0_0,100%_0,100%_calc(100%-26px),calc(100%-26px)_100%,0_100%)]"
+  >
+    <div class="flex justify-between gap-4 border-b border-dark/20 pb-3 text-[10.5px] leading-[1.4] font-semibold tracking-[0.2em]">
+      <span>{docTitle?.text}</span>
+      <span class="text-teal">{docNote?.text}</span>
+    </div>
+    <ol class="grid grid-cols-1 min-[560px]:grid-cols-2 min-[560px]:gap-x-[clamp(18px,2.4vw,32px)]">
+      {areas.map((area, index) => (
+        <li class="grid grid-cols-[auto_minmax(0,1fr)] content-start gap-x-3 border-b border-dark/14 py-[clamp(16px,2.8vh,24px)]">
+          <span class="row-span-2 text-[clamp(20px,1.8vw,26px)] leading-none tracking-[0.02em] text-teal">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 class="mb-[5px] font-sans text-[clamp(13px,1.05vw,14.5px)] leading-[1.3] font-extrabold tracking-[0.05em] text-dark">
+            {area.title}
+          </h3>
+          <p class="text-[12.5px] leading-[1.6] tracking-[0.04em] text-dark/72 normal-case">
+            {area.text}
+          </p>
+          <Fragment set:html={REPORT_CHARTS[index] ?? ""} />
+        </li>
+      ))}
+    </ol>
+    {footnote && (
+      <p class="mt-3 text-[10.5px] leading-[1.5] tracking-[0.08em] text-dark/70">{footnote.text}</p>
+    )}
+  </figure>
+</div>
+
+<style is:global>
+  .cv41-ch {
+    grid-column: 2;
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-top: 14px;
+    overflow: visible;
+  }
+  .cv41-ch path,
+  .cv41-ch circle {
+    fill: none;
+    stroke-width: 1.4;
+    vector-effect: non-scaling-stroke;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .cv41-ch .g {
+    stroke: rgb(23 43 43 / 0.28);
+    stroke-width: 1;
+  }
+  .cv41-ch .l {
+    stroke: var(--color-teal);
+    stroke-width: 1.8;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1.8s var(--ease-brand) 0.3s;
+  }
+  .cv41-ch .l2 {
+    stroke: var(--color-taupe);
+    stroke-dasharray: 3 4;
+  }
+  .cv41-ch .b {
+    fill: var(--color-ch-bar);
+    stroke: none;
+  }
+  .cv41-ch .a {
+    fill: var(--color-turquoise);
+    stroke: var(--color-teal);
+    stroke-width: 1.4;
+  }
+  .cv41-ch path.a[d^="M0 38"] {
+    stroke: none;
+  }
+  .cv41-ch .t {
+    stroke: var(--color-teal);
+    stroke-width: 2;
+  }
+  .cv41-ch .m,
+  .cv41-ch .t2 {
+    stroke: var(--color-taupe);
+    stroke-width: 2;
+  }
+  .cv41-ch .o {
+    stroke: var(--color-taupe-tx);
+    fill: var(--color-paper);
+  }
+  .motion-ready figure:not(.is-revealed) .cv41-ch .l {
+    stroke-dashoffset: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cv41-ch .l {
+      transition: none;
+    }
+  }
+</style>

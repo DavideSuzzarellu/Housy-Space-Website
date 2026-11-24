@@ -1,0 +1,336 @@
+{
+  "title": "Mortgage advice in Barcelona · HousySpace",
+  "description": "Mortgage financing in Barcelona with real numbers, together with the mortgage broker we work with, who compares offers from different banks.",
+  "head": {
+    "heading": "Financial *advice*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-financiero-1000.webp",
+      "alt": "Service illustration: A structure resting on three solid supports",
+      "scale": 0.739
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
+      {
+        "kind": "lead",
+        "text": "Mortgage and financing studied with real numbers, together with the financial broker we work with."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/oficina-1672.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us about your case",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "The mortgage, studied before you fall in love with a flat."
+        },
+        {
+          "kind": "p",
+          "text": "Knowing how much you can borrow, what the monthly payment will be and on what terms saves you a lot of headaches. We study it with you and with the financial broker we work with, who compares the conditions offered by different lenders."
+        },
+        {
+          "kind": "p",
+          "text": "And when you sell, we check that the buyer can pay, so the transaction doesn't fall through over the financing."
+        }
+      ]
+    },
+    {
+      "layout": "split",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Who it's for"
+        },
+        {
+          "kind": "h2",
+          "text": "Financing for each type of transaction"
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "If you're buying"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "How much you can borrow and at what monthly payment"
+                },
+                {
+                  "title": "",
+                  "text": "Savings needed for the down payment, costs and taxes"
+                },
+                {
+                  "title": "",
+                  "text": "Comparison of offers from different lenders"
+                },
+                {
+                  "title": "",
+                  "text": "Appraisal and documentation through to signing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "If you're selling"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Before the deposit contract is signed, the broker checks whether the buyer can finance the purchase"
+                },
+                {
+                  "title": "",
+                  "text": "Mortgage timelines coordinated with those of the deposit contract"
+                },
+                {
+                  "title": "",
+                  "text": "Reduces the risk of the sale falling through over financing; it does not guarantee that the bank will grant it"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "items": [
+            {
+              "kind": "h3",
+              "text": "If you're investing"
+            },
+            {
+              "kind": "list",
+              "ordered": false,
+              "items": [
+                {
+                  "title": "",
+                  "text": "Financing for the purchase and renovation"
+                },
+                {
+                  "title": "",
+                  "text": "Investment figures with the monthly payment included"
+                },
+                {
+                  "title": "",
+                  "text": "See [property investment](service:inversion-inmobiliaria)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Step by step"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Conversation",
+              "text": "You tell us your situation and the transaction you have in mind."
+            },
+            {
+              "title": "Viability study",
+              "text": "Income, savings, purchase costs: the real numbers."
+            },
+            {
+              "title": "Offers",
+              "text": "The broker searches and compares conditions across lenders."
+            },
+            {
+              "title": "Appraisal and documentation",
+              "text": "We coordinate the appraisal and prepare what the bank requires."
+            },
+            {
+              "title": "Signing",
+              "text": "We review the final conditions and accompany you to the notary."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Frequently asked questions"
+        },
+        {
+          "kind": "h2",
+          "text": "What people ask us"
+        },
+        {
+          "kind": "faq",
+          "q": "How much do I need saved?",
+          "a": "It depends on the price, the appraisal and your profile. In addition to the part the bank doesn't finance, you need to allow for taxes and purchase costs. We calculate it with real numbers before you start looking."
+        },
+        {
+          "kind": "faq",
+          "q": "Who advises me on the mortgage?",
+          "a": "The financial broker we work with on transactions that involve financing. We coordinate the whole process with you."
+        },
+        {
+          "kind": "faq",
+          "q": "Is it useful if I've already found the flat?",
+          "a": "Yes. The sooner we study it, the better: that way you'll know what conditions you can commit to in the deposit contract."
+        }
+      ]
+    },
+    {
+      "layout": "colab",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "Who we work with"
+        },
+        {
+          "kind": "h2",
+          "text": "Financing with a specialist"
+        },
+        {
+          "kind": "lead",
+          "text": "For transactions involving financing, we work alongside a trusted financial broker."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Why we trust them",
+              "href": "route:about#colaboraciones",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Financial broker",
+              "text": "Assesses the viability of each transaction involving financing and compares conditions from different lenders.",
+              "kicker": "Financing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
+        {
+          "kind": "lead",
+          "text": "Every good decision starts with a conversation. Let's talk about yours."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Asesoramiento%20financiero",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Real estate personal shopper",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Property sales and brokerage",
+              "text": "",
+              "href": "service:venta-estrategica"
+            },
+            {
+              "title": "Real estate investment",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

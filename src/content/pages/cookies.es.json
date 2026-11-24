@@ -1,6 +1,6 @@
 {
   "title": "Política de cookies · HousySpace",
-  "description": "Política de cookies de HousySpace (pendiente).",
+  "description": "Política de cookies de HousySpace: qué cookies usa el sitio web y cómo gestionar tus preferencias.",
   "head": {
     "heading": "Política de cookies",
     "photo": false,
@@ -17,16 +17,120 @@
       "band": false,
       "items": [
         {
-          "kind": "pending",
-          "text": "**Texto pendiente de aprobación.** El texto legal definitivo debe redactarlo y aprobarlo HousySpace con su asesoría antes del lanzamiento."
+          "kind": "note",
+          "text": "Última actualización: 21 de noviembre de 2026"
+        },
+        {
+          "kind": "h2",
+          "text": "1. Qué son las cookies"
         },
         {
           "kind": "p",
-          "text": "Titular: HousySpace Consultores Inmobiliarios, S.L. CIF B26903419 Registro de Agentes Inmobiliarios de Cataluña: AICAT nº 14032 Teléfono 613 084 804"
+          "text": "Una cookie es un pequeño archivo que un sitio web guarda en tu dispositivo cuando lo visitas. Otras tecnologías similares, como el almacenamiento local o de sesión del navegador, hacen algo parecido. Sirven para que la web funcione, recuerde tus preferencias o mida cómo se usa."
         },
         {
-          "kind": "note",
-          "text": "Pendientes: Domicilio fiscal, Registro Mercantil, Correo electrónico de contacto y de privacidad, Horario y dirección de la oficina."
+          "kind": "h2",
+          "text": "2. Responsable"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.**, CIF B26903419. Travessera de Gràcia 73, 2º-3ª, 08006 Barcelona. Correo: [info@housyspace.com](mailto:info@housyspace.com). Más datos en el [aviso legal](route:legal)."
+        },
+        {
+          "kind": "h2",
+          "text": "3. Qué usa hoy esta web"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Cookies propias: ninguna.** La web de HousySpace no instala cookies en tu dispositivo."
+            },
+            {
+              "title": "",
+              "text": "**Almacenamiento técnico de sesión.** Usamos el almacenamiento de sesión del navegador para recordar si has abierto el menú («hs_menu») y para no repetir la animación de entrada durante tu visita («hs_intro»). No contiene datos personales y se borra al cerrar la pestaña. Es necesario para que la web funcione como esperas, por lo que no requiere tu consentimiento (artículo 22.2 de la LSSI)."
+            },
+            {
+              "title": "",
+              "text": "**Sin analítica ni publicidad.** Esta web no usa cookies de analítica, de publicidad ni de seguimiento."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "4. Servicios de terceros que se cargan en la web"
+        },
+        {
+          "kind": "p",
+          "text": "Algunas funciones se prestan con servicios de otras empresas. Al cargarlos, esas empresas reciben tu dirección IP y datos básicos de tu navegador y, según el servicio, pueden instalar cookies o usar almacenamiento local. HousySpace no instala ni controla esas cookies. Cada empresa las trata según su propia política."
+        },
+        {
+          "kind": "table",
+          "head": ["Servicio", "Para qué", "Cuándo se carga", "Qué puede ocurrir"],
+          "rows": [
+            [
+              "Google Maps (Google)",
+              "Mapas de Propiedades, de los inmuebles intermediados y de las fichas de inmueble.",
+              "Al abrir esas páginas.",
+              "Google recibe tu dirección IP y datos de uso del mapa y puede instalar cookies o usar almacenamiento local. [Cookies de Google](https://policies.google.com/technologies/cookies)."
+            ],
+            [
+              "Mapa base del ICGC",
+              "Cartografía de los mapas cuando el de Google no se carga.",
+              "Al abrir las páginas con mapa.",
+              "El Institut Cartogràfic i Geològic de Catalunya recibe tu dirección IP al servir los mapas. HousySpace no instala cookies con este servicio."
+            ],
+            [
+              "Mapa de «Dónde estamos» (Google)",
+              "Mostrar la oficina en un mapa.",
+              "Solo cuando pulsas «Ver el mapa aquí». Hasta entonces no hay conexión con Google.",
+              "Google recibe tu dirección IP y puede instalar cookies."
+            ],
+            [
+              "Valorador online (Lystos)",
+              "Calcular el valor orientativo de tu vivienda al momento.",
+              "Solo cuando abres el valorador desde «Al momento».",
+              "Lystos recibe los datos que introduces y puede usar cookies o tecnologías similares. Consulta su política de privacidad."
+            ],
+            [
+              "WhatsApp (Meta)",
+              "Abrir una conversación con nosotros.",
+              "Solo cuando pulsas un botón o enlace de WhatsApp.",
+              "Te lleva a WhatsApp, que tiene su propia política de privacidad."
+            ],
+            [
+              "Instagram y LinkedIn",
+              "Enlaces a nuestros perfiles.",
+              "Solo cuando pulsas el enlace. La web no incrusta contenido de estas redes.",
+              "Te lleva a su sitio, que tiene sus propias cookies y política."
+            ]
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "5. Cómo desactivar o borrar las cookies"
+        },
+        {
+          "kind": "p",
+          "text": "Puedes permitir, bloquear o borrar las cookies desde los ajustes de privacidad de tu navegador (Chrome, Firefox, Safari, Edge u otro). Si bloqueas las de los servicios de terceros, los mapas o el valorador podrían no funcionar. La Agencia Española de Protección de Datos explica cómo hacerlo en [www.aepd.es](https://www.aepd.es)."
+        },
+        {
+          "kind": "h2",
+          "text": "6. Si añadimos otras cookies"
+        },
+        {
+          "kind": "p",
+          "text": "Si en el futuro usamos cookies de analítica, de publicidad o de otro tipo no necesarias, actualizaremos esta política y te pediremos tu consentimiento antes de instalarlas. Podrás aceptarlas, rechazarlas y cambiar de opinión cuando quieras."
+        },
+        {
+          "kind": "h2",
+          "text": "7. Más información"
+        },
+        {
+          "kind": "p",
+          "text": "Para saber cómo tratamos tus datos personales, consulta la [política de privacidad](route:privacy). Si tienes dudas sobre esta política, escríbenos a [info@housyspace.com](mailto:info@housyspace.com)."
         }
       ]
     }

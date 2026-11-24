@@ -1,0 +1,98 @@
+---
+import { itemsOf, splitBlockHead, type PageItem } from "@/features/pages/application/pages";
+import type { Locale } from "@/shared/i18n/config";
+import Inline from "@/shared/ui/atoms/Inline.astro";
+import ValTop from "./ValTop.astro";
+
+/**
+ * The eight sale steps grouped in three phases (reference `.p46`): a vertical line that advances
+ * with the scroll (`valuationTimeline.client.ts` sets `--p` and the `on` class), a diamond per
+ * phase and the numbered slabs of each phase. The last slab of the last phase is petrol.
+ */
+interface Props {
+  locale: Locale;
+  items: readonly PageItem[];
+  id: string;
+}
+
+const { locale, items, id } = Astro.props;
+const { head, body } = splitBlockHead(items);
+const intro = itemsOf(head, "lead")[0]?.text;
+const phases = itemsOf(body, "card");
+let number = 0;
+const SLAB =
+  "relative px-5.5 pt-5 pb-5.5 [clip-path:polygon(0_0,calc(100%-22px)_0,100%_22px,100%_100%,0_100%)] transition-[background-color,translate] duration-400 ease-brand hover:-translate-y-[3px] motion-reduce:transition-none before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:origin-left before:bg-turquoise before:transition-transform before:duration-1100 before:ease-brand motion-reduce:before:transition-none [.motion-ready_&:not(.is-revealed)]:before:scale-x-0";
+---
+
+<ValTop locale={locale} head={head} intro={intro} id={id} />
+<div
+  data-timeline
+  class="group/tl relative mt-[clamp(24px,4.4vh,44px)] grid gap-[clamp(18px,3vh,28px)] before:absolute before:top-2 before:bottom-2 before:left-1.5 before:w-px before:bg-fg/20 after:absolute after:top-2 after:left-1.5 after:h-[calc(100%-16px)] after:w-px after:origin-top after:bg-accent [&.live]:after:h-[calc(var(--p,0)*(100%-16px))]"
+>
+  {phases.map((phase, phaseIndex) => {
+    const tag = itemsOf(phase.items, "tag")[0];
+    const title = itemsOf(phase.items, "h3")[0];
+    const sub = itemsOf(phase.items, "p")[0];
+    const steps = itemsOf(phase.items, "steps")[0]?.items ?? [];
+    const last = phaseIndex === phases.length - 1;
+    return (
+      <div class="group/ph relative grid gap-3 pl-8.5 before:absolute before:top-1.5 before:left-px before:z-1 before:size-[11px] before:rotate-45 before:bg-turquoise before:transition-[background-color,box-shadow] before:duration-450 group-[.live]/tl:[&:not(.on)]:before:bg-stone group-[.live]/tl:[&:not(.on)]:before:shadow-[inset_0_0_0_1.5px_var(--color-taupe)] min-[960px]:grid-cols-[clamp(170px,17vw,220px)_minmax(0,1fr)] min-[960px]:items-start min-[960px]:gap-[clamp(18px,2.4vw,32px)] min-[960px]:pl-11">
+        <p class="text-[clamp(15px,1.3vw,18px)] leading-[1.25] font-extrabold tracking-[0.05em] text-fg">
+          {tag && (
+            <span class="mb-[5px] block text-[10.5px] leading-[1.4] font-semibold tracking-[0.2em] text-accent">
+              {tag.text}
+            </span>
+          )}
+          {title?.text}
+          {sub && (
+            <small class="mt-2 block max-w-[26ch] text-[13px] leading-[1.5] font-normal tracking-[0.02em] text-muted normal-case">
+              {sub.text}
+            </small>
+          )}
+        </p>
+        <ol
+          class:list={[
+            "grid grid-cols-1 gap-3 min-[620px]:grid-cols-2",
+            steps.length === 2 ? "min-[960px]:grid-cols-2" : "min-[960px]:grid-cols-3",
+          ]}
+        >
+          {steps.map((step, stepIndex) => {
+            number += 1;
+            const dark = last && stepIndex === steps.length - 1;
+            return (
+              <li
+                data-reveal
+                class:list={[SLAB, dark ? "bg-dark text-paper" : "bg-fg/5 hover:bg-fg/[0.085]"]}
+              >
+                <b
+                  aria-hidden="true"
+                  class:list={[
+                    "mb-[clamp(10px,1.8vh,16px)] block font-sans text-[clamp(34px,3.2vw,46px)] leading-none font-light tracking-[0.01em]",
+                    dark ? "text-turquoise" : "text-accent",
+                  ]}
+                >
+                  {String(number).padStart(2, "0")}
+                </b>
+                <h3 class="mb-2 font-sans text-[clamp(14.5px,1.2vw,17px)] leading-[1.25] font-extrabold tracking-[0.04em] wrap-break-word">
+                  {step.title}
+                </h3>
+                <p
+                  class:list={[
+                    "text-sm leading-[1.6] tracking-[0.02em] normal-case",
+                    dark ? "text-paper/85" : "text-mid",
+                  ]}
+                >
+                  <Inline text={step.text} locale={locale} />
+                </p>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    );
+  })}
+</div>
+
+<script>
+  import "./valuationTimeline.client.ts";
+</script>

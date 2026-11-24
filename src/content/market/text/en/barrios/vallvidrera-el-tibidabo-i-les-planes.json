@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "Collserola on your doorstep: houses with gardens, farmhouses and views over the whole city.",
+  "text": [
+    "It is one of the largest neighbourhoods in Barcelona (11.33 km²) and one of the least dense (430 inhabitants/km²), because almost all its territory is the Collserola range. It brings together three very different areas, Vallvidrera, Tibidabo and Les Planes, with the Sagrat Cor church and the amusement park at the top and Norman Foster's Torre de Collserola as a landmark visible from half the city.",
+    "Living here means living inside the natural park: houses with gardens, quiet streets and views, with the Vallvidrera funicular and the FGC trains to take you down to the city. Its sale price, 3,766 €/m², is the lowest in Sarrià-Sant Gervasi, while the average rent, 1,614 €/month, is among the highest in Barcelona, a figure based on very few transactions."
+  ],
+  "housing": "Detached houses with gardens and a few farmhouses, among pine woods and with views.",
+  "places": [
+    "Tibidabo",
+    "Torre de Collserola",
+    "Funicular de Vallvidrera",
+    "Parc Natural de la Serra de Collserola"
+  ]
+}

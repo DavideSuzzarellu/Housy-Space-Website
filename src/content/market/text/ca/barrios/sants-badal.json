@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El barri més dens de Barcelona, a un pas de l'estació de Sants.",
+  "text": [
+    "Amb 25.243 habitants en només 0,41 km², Sants-Badal és el barri més densament poblat de la ciutat, amb uns 60.827 habitants per km². El nom ve de la rambla de Badal, i històricament va formar part de Sants, tot i que amb la nova divisió territorial de Barcelona va obtenir categoria pròpia. La modificació del pla general de l'entorn de la Rambla de Badal i els Jardins de la Rambla de Sants, aprovada inicialment el novembre del 2025, reserva 5.000 m² de sòl per a equipaments públics; en falta l'aprovació definitiva.",
+    "L'avinguda de Madrid i la rambla de Badal en són les referències, i a un costat queda la Riera Blanca, que marca el límit amb l'Hospitalet. La densitat es nota en carrers molt viscuts, amb blocs de pisos, comerç de proximitat i tot a peu, i manté els vincles veïnals amb la resta dels barris de Sants. Si vens, el preu mitjà de compravenda (3.958 €/m² el 2025) és pràcticament a la mitjana de Sants-Montjuïc. Dins del barri, el preu de cada pis depèn de l'estat, l'alçada i la finca, així que convé comparar-lo amb vendes properes i no amb la mitjana del districte. Si compres, un pis de 80 m² surt de mitjana per uns 317.000 €, i el barri és a la franja mitjana de Sants-Montjuïc (5è de 8 per preu). Si inverteixes, el lloguer mitjà (943 €/mes) és un 6 % per sota del districte; abans de decidir, convé estudiar cada operació amb xifres reals de compra, reforma i lloguer."
+  ],
+  "housing": "Blocs d'habitatges en carrers molt poblats, amb molt de comerç de proximitat.",
+  "places": ["Rambla de Badal", "Avinguda de Madrid", "Estació de Sants"]
+}

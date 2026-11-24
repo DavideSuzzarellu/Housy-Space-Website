@@ -1,0 +1,62 @@
+---
+import advisorPhoto from "@/assets/valoracion/asesor-960.webp";
+import onlinePhoto from "@/assets/valoracion/online-960.webp";
+import { getDictionary } from "@/shared/i18n";
+import type { Locale } from "@/shared/i18n/config";
+import { getLocalizedPath } from "@/shared/i18n/routes";
+import Container from "@/shared/ui/atoms/Container.astro";
+import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
+import ValuationOption from "@/features/valuation/ui/ValuationOption.astro";
+
+/**
+ * Valuation block at the end of EVERY article (reference `pr-val`): two option rows, online
+ * valuation and valuation with an advisor. Both are plain links; this site never computes figures
+ * (AGENTS.md §6 item 12).
+ */
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = getDictionary(locale).blog.valuation;
+const rows = [
+  {
+    photo: onlinePhoto,
+    href: getLocalizedPath("valuation", locale),
+    dark: false,
+    ...copy.online,
+  },
+  {
+    photo: advisorPhoto,
+    href: getLocalizedPath("contact", locale),
+    dark: true,
+    ...copy.advisor,
+  },
+] as const;
+---
+
+<section
+  id="valoracion"
+  aria-labelledby="post-valuation-heading"
+  class="surface-stone mt-10 bg-canvas py-[clamp(2.75rem,4vw,3.5rem)]"
+>
+  <Container>
+    <div class="mb-[clamp(1.625rem,5vh,3.375rem)] grid items-end gap-x-[clamp(1.5rem,5vw,4.75rem)] gap-y-[clamp(0.875rem,2.6vh,1.5rem)] min-[900px]:grid-cols-2">
+      <div>
+        <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{copy.tag}</p>
+        <h2
+          id="post-valuation-heading"
+          class="mt-2.5 text-[clamp(1.75rem,2.64vw,2.375rem)] after:mt-4 after:block after:h-0.5 after:w-16 after:bg-turquoise after:content-[''] [&_em]:block"
+        >
+          <Emphasis text={copy.heading} />
+        </h2>
+      </div>
+      <p class="max-w-[60ch] leading-[1.68] tracking-[0.03em] text-mid normal-case">{copy.lead}</p>
+    </div>
+    <div class="grid gap-4 min-[900px]:grid-cols-2">
+      {rows.map((row) => (
+        <ValuationOption {...row} />
+      ))}
+    </div>
+  </Container>
+</section>

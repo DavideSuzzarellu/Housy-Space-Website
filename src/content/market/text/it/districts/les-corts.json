@@ -1,0 +1,39 @@
+{
+  "kind": "district",
+  "translated": true,
+  "lead": "Avinguda Diagonal, giardini e strade tranquille: il distretto residenziale dell'ovest, con il Camp Nou e Pedralbes.",
+  "history": [
+    "Les Corts è stato un comune indipendente fino al 1897 e oggi è un distretto di tre quartieri, Les Corts, la Maternitat i Sant Ramon e Pedralbes, attraversato da parte a parte dall'avinguda Diagonal, con uffici, negozi e la Zona Universitària.",
+    "È un distretto soprattutto residenziale, con zone verdi e buoni collegamenti: appartamenti spaziosi, ville con giardino a Pedralbes e un'atmosfera più tranquilla di quella del centro. Qui si trovano il Camp Nou e gli impianti dell'FC Barcelona, che fanno parte della vita quotidiana della Maternitat i Sant Ramon.",
+    "Tra i suoi 3 quartieri, il prezzo medio di compravendita va dai 4.399 €/m² della Maternitat i Sant Ramon ai 6.079 €/m² di Pedralbes, e l'affitto medio dai 1.160 €/mese della Maternitat i Sant Ramon ai 1.948 €/mese di Pedralbes.",
+    "Tra il centro storico di Les Corts, le zone più popolari della Maternitat e le ville di Pedralbes c'è molta differenza di prezzi, e conviene valutare ogni strada separatamente."
+  ],
+  "summary": "Les Corts conta 83.773 abitanti su 6,01 km² e 3 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 5.102 €/m², il 20% sopra la media della città. L'affitto medio è di 1.335 €/mese.",
+  "landmarks": [
+    {
+      "name": "Spotify Camp Nou",
+      "where": "La Maternitat i Sant Ramon",
+      "text": "Lo stadio dell'FC Barcelona."
+    },
+    {
+      "name": "Monestir de Pedralbes",
+      "where": "Pedralbes",
+      "text": "Monastero gotico fondato dalla regina Elisenda de Montcada nel Trecento."
+    },
+    {
+      "name": "Palau Reial de Pedralbes",
+      "where": "Pedralbes",
+      "text": "Palazzo e giardini lungo la Diagonal."
+    },
+    {
+      "name": "Pavellons Güell",
+      "where": "Pedralbes",
+      "text": "I padiglioni della tenuta Güell, opera di Gaudí, con il celebre cancello del drago."
+    },
+    {
+      "name": "Zona Universitària",
+      "where": "Pedralbes",
+      "text": "Il campus della Diagonal, con facoltà della UB e della UPC."
+    }
+  ]
+}

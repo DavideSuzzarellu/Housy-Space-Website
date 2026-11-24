@@ -17,11 +17,10 @@ jobs:
   blog-check:
     runs-on: ubuntu-latest
     env:
-      # No Mobilia secrets here. MOBILIA_OFFLINE makes the content sync of `astro check` skip the
-      # CRM (empty property collections); the two variables below only satisfy the env schema.
-      MOBILIA_OFFLINE: "true"
-      CLIENT_ID: offline
-      CLIENT_SECRET: offline
+      # No Mobilia secrets here. The placeholder credentials make the content sync of `astro check`
+      # skip the CRM (loaders.ts: CLIENT_ID=placeholder), so the property collections stay empty.
+      CLIENT_ID: placeholder
+      CLIENT_SECRET: placeholder
     steps:
       - name: Checkout
         uses: actions/checkout@v4

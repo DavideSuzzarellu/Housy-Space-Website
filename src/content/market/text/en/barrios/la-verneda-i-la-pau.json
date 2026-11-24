@@ -1,0 +1,11 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "A neighbourhood built in the 1950s, with a strong community and campaigning tradition.",
+  "text": [
+    "It arose in the 1950s from the huge demand for housing after the mass arrival of immigrants, with no facilities or services. Its name alludes to the trees that grew on the riverbanks, the alder, \"vern\" in Catalan, and to La Pau, the housing estate opened in 1966.",
+    "Community campaigning gained strength from the 1970s, and the neighbourhood keeps that associative tradition. Its landmarks include Plaça de la Verneda, opened in 1976, the Parc de Sant Martí, the Salvador Seguí secondary school and the Rambla Prim. At 2,971 €/m², it has the second-lowest sale price in the district, behind only El Besòs i el Maresme."
+  ],
+  "housing": "The La Pau housing estate (1966) and subsidised blocks, in a high-density neighbourhood.",
+  "places": ["Plaça de la Verneda", "Parc de Sant Martí", "Rambla Prim"]
+}

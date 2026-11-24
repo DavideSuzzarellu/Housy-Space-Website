@@ -6,14 +6,18 @@ import { DETAIL_OPERATIONS, type DetailOperation } from "@/features/properties/d
 import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { formatMessage } from "@/shared/lib/format";
+import Button from "@/shared/ui/atoms/Button.astro";
 import NumberInput from "@/shared/ui/atoms/NumberInput.astro";
 import Select, { type SelectOption } from "@/shared/ui/atoms/Select.astro";
 import FormField from "@/shared/ui/molecules/FormField.astro";
 
 /**
- * Catalog search form. Control names are the URL params (`catalogQuery.ts`), so the island
- * reads the form and the URL with the same parser. Extra filters sit in a native <details>
- * (no JS needed to open it). Without JS the full listing stays visible.
+ * Catalog search bar (reference `.qs`): glass cells for zone, operation, "more filters" and
+ * Buscar, with the extra filters in a panel under them. Control names are the URL params
+ * (`catalogQuery.ts`), so the island reads the form and the URL with the same parser.
+ * The panel opens with a checkbox kept OUTSIDE the form (the island rebuilds the query from
+ * the form's controls and would otherwise reset or serialise it): CSS only, no JS to open it.
+ * Without JS the full listing stays visible.
  */
 interface Props {
   locale: Locale;
@@ -35,109 +39,166 @@ const roomOptions: SelectOption[] = [
 ];
 const priceStep = operation === "rent" ? 100 : 10000;
 const fieldId = (name: string) => `${formId}-${name}`;
+
+const CELL =
+  "grid gap-0.5 bg-panel/85 px-4.5 leading-tight pt-3 pb-2.5 text-[0.625rem] font-medium tracking-[0.16em] text-accent uppercase focus-within:bg-header/90 focus-within:shadow-[inset_0_-2px_0_var(--color-accent)]";
 ---
 
-<form
-  id={formId}
-  data-catalog-form
-  role="search"
-  aria-label={t.searchLabel}
-  class="border border-line bg-canvas/90 p-5 md:p-6"
->
-  <div class="grid gap-4 md:grid-cols-[auto_minmax(0,1fr)_minmax(0,1fr)] md:items-end">
-    <div class="flex flex-col gap-1.5">
-      <p id={fieldId("operation")} class="text-xs tracking-[0.08em] text-muted">
-        {t.operationLabel}
-      </p>
-      <div role="group" aria-labelledby={fieldId("operation")} class="flex border border-line">
-        {DETAIL_OPERATIONS.map((candidate) => (
-          <a
-            href={getListingPath(candidate, locale)}
-            aria-current={candidate === operation ? "page" : undefined}
-            class="flex min-h-11 flex-1 items-center justify-center px-5 text-xs tracking-[0.12em] text-muted uppercase no-underline transition-colors hover:text-fg aria-[current=page]:bg-fg aria-[current=page]:text-canvas"
-          >
-            {t.operations[candidate]}
-          </a>
-        ))}
+<div class="group/qs mt-7 max-w-245">
+  <input type="checkbox" id={fieldId("more")} data-more-toggle class="peer sr-only" />
+  <form id={formId} data-catalog-form role="search" aria-label={t.searchLabel}>
+    <div class="grid grid-cols-2 gap-px border border-white/22 bg-white/14 shadow-[0_30px_70px_rgb(0_0_0/0.35)] backdrop-blur-[14px] md:grid-cols-[1.5fr_1fr_auto_auto]">
+      <div class:list={[CELL, "col-span-2 md:col-span-1"]}>
+        <label for={fieldId("zone")}>{t.zone}</label>
+        <Select
+          id={fieldId("zone")}
+          name={CATALOG_PARAMS.zone}
+          variant="bare"
+          options={[{ value: "", label: t.anyZone }, ...options.zones]}
+        />
       </div>
-    </div>
-    <FormField label={t.zone} controlId={fieldId("zone")}>
-      <Select
-        id={fieldId("zone")}
-        name={CATALOG_PARAMS.zone}
-        options={[{ value: "", label: t.anyZone }, ...options.zones]}
-      />
-    </FormField>
-    <FormField label={t.type} controlId={fieldId("type")}>
-      <Select
-        id={fieldId("type")}
-        name={CATALOG_PARAMS.type}
-        options={[{ value: "", label: t.anyType }, ...options.types]}
-      />
-    </FormField>
-  </div>
-
-  <details class="group/more mt-5 border-t border-line pt-4">
-    <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 text-xs tracking-[0.12em] uppercase marker:hidden">
-      {t.moreFilters}
-      <span aria-hidden="true" class="transition-transform group-open/more:rotate-180">
-        ⌄
-      </span>
-    </summary>
-    <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <FormField label={t.priceMin} controlId={fieldId("price-min")}>
-        <NumberInput
-          id={fieldId("price-min")}
-          name={CATALOG_PARAMS.priceMin}
-          step={priceStep}
-          placeholder={t.noMin}
-        />
-      </FormField>
-      <FormField label={t.priceMax} controlId={fieldId("price-max")}>
-        <NumberInput
-          id={fieldId("price-max")}
-          name={CATALOG_PARAMS.priceMax}
-          step={priceStep}
-          placeholder={t.noMax}
-        />
-      </FormField>
-      <FormField label={t.bedrooms} controlId={fieldId("bedrooms")}>
-        <Select id={fieldId("bedrooms")} name={CATALOG_PARAMS.bedrooms} options={roomOptions} />
-      </FormField>
-      <FormField label={t.areaMin} controlId={fieldId("area-min")}>
-        <NumberInput id={fieldId("area-min")} name={CATALOG_PARAMS.areaMin} placeholder={t.noMin} />
-      </FormField>
-      <FormField label={t.areaMax} controlId={fieldId("area-max")}>
-        <NumberInput id={fieldId("area-max")} name={CATALOG_PARAMS.areaMax} placeholder={t.noMax} />
-      </FormField>
-      <FormField label={t.bathrooms} controlId={fieldId("bathrooms")}>
-        <Select id={fieldId("bathrooms")} name={CATALOG_PARAMS.bathrooms} options={roomOptions} />
-      </FormField>
-    </div>
-    {options.features.length > 0 && (
-      <fieldset class="mt-5">
-        <legend class="mb-2.5 text-xs tracking-[0.08em] text-muted">{t.features}</legend>
-        <div class="flex flex-wrap gap-x-5 gap-y-2">
-          {options.features.map((feature) => (
-            <label class="flex min-h-11 items-center gap-2 text-sm">
-              <input
-                type="checkbox"
-                name={CATALOG_PARAMS.features}
-                value={feature.value}
-                class="size-4 accent-turquoise"
-              />
-              {feature.label}
-            </label>
+      <div class:list={CELL}>
+        <p id={fieldId("operation")}>{t.operationLabel}</p>
+        <div
+          role="group"
+          aria-labelledby={fieldId("operation")}
+          class="flex h-8.5 items-center gap-5 text-sm font-normal tracking-[0.04em]"
+        >
+          {DETAIL_OPERATIONS.map((candidate) => (
+            <a
+              href={getListingPath(candidate, locale)}
+              aria-current={candidate === operation ? "page" : undefined}
+              class="border-b-2 border-transparent py-1 text-muted no-underline transition-colors hover:text-fg aria-[current=page]:border-accent aria-[current=page]:text-fg"
+            >
+              {t.operations[candidate]}
+            </a>
           ))}
         </div>
-      </fieldset>
-    )}
-    <button
-      type="button"
-      data-catalog-clear
-      class="mt-5 min-h-11 border border-line px-5 text-xs tracking-[0.12em] uppercase transition-colors hover:border-accent hover:text-accent"
+      </div>
+      <label
+        for={fieldId("more")}
+        data-more-label
+        class:list={[
+          "flex min-h-14.5 cursor-pointer items-center justify-center gap-2.5 bg-panel/85 px-5.5 text-[0.6875rem] font-medium tracking-[0.14em] text-fg uppercase transition-colors hover:bg-header/95 hover:text-accent",
+          "group-has-[[data-more-toggle]:checked]/qs:bg-header/95 group-has-[[data-more-toggle]:checked]/qs:text-accent",
+          "group-has-[[data-more-toggle]:focus-visible]/qs:outline-2 group-has-[[data-more-toggle]:focus-visible]/qs:-outline-offset-2 group-has-[[data-more-toggle]:focus-visible]/qs:outline-accent",
+        ]}
+      >
+        {t.moreFilters}
+        <i
+          aria-hidden="true"
+          class:list={[
+            "size-1.75 -translate-y-0.5 rotate-45 border-r-[1.4px] border-b-[1.4px] border-current transition-transform duration-350 ease-brand",
+            "group-has-[[data-more-toggle]:checked]/qs:translate-y-0.5 group-has-[[data-more-toggle]:checked]/qs:-rotate-135",
+          ]}
+        ></i>
+      </label>
+      <Button type="submit" variant="solid" class="col-span-2 min-h-14.5 md:col-span-1">
+        {t.search}
+      </Button>
+    </div>
+
+    <div
+      class:list={[
+        "grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-brand motion-reduce:transition-none",
+        "group-has-[[data-more-toggle]:checked]/qs:grid-rows-[1fr]",
+      ]}
     >
-      {t.clear}
-    </button>
-  </details>
-</form>
+      <div
+        class:list={[
+          "invisible min-h-0 overflow-hidden border border-t-0 border-white/14 bg-header/90 px-5 backdrop-blur-[14px] transition-[visibility] delay-500",
+          "group-has-[[data-more-toggle]:checked]/qs:visible group-has-[[data-more-toggle]:checked]/qs:pt-5 group-has-[[data-more-toggle]:checked]/qs:pb-4.5 group-has-[[data-more-toggle]:checked]/qs:delay-0",
+        ]}
+      >
+        <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+          <FormField tone="glass" label={t.priceMin} controlId={fieldId("price-min")}>
+            <NumberInput
+              id={fieldId("price-min")}
+              name={CATALOG_PARAMS.priceMin}
+              variant="glass"
+              step={priceStep}
+              placeholder={t.noMin}
+            />
+          </FormField>
+          <FormField tone="glass" label={t.priceMax} controlId={fieldId("price-max")}>
+            <NumberInput
+              id={fieldId("price-max")}
+              name={CATALOG_PARAMS.priceMax}
+              variant="glass"
+              step={priceStep}
+              placeholder={t.noMax}
+            />
+          </FormField>
+          <FormField tone="glass" label={t.areaMin} controlId={fieldId("area-min")}>
+            <NumberInput
+              id={fieldId("area-min")}
+              name={CATALOG_PARAMS.areaMin}
+              variant="glass"
+              placeholder={t.noMin}
+            />
+          </FormField>
+          <FormField tone="glass" label={t.areaMax} controlId={fieldId("area-max")}>
+            <NumberInput
+              id={fieldId("area-max")}
+              name={CATALOG_PARAMS.areaMax}
+              variant="glass"
+              placeholder={t.noMax}
+            />
+          </FormField>
+          <FormField tone="glass" label={t.bedrooms} controlId={fieldId("bedrooms")}>
+            <Select
+              id={fieldId("bedrooms")}
+              name={CATALOG_PARAMS.bedrooms}
+              variant="glass"
+              options={roomOptions}
+            />
+          </FormField>
+          <FormField tone="glass" label={t.bathrooms} controlId={fieldId("bathrooms")}>
+            <Select
+              id={fieldId("bathrooms")}
+              name={CATALOG_PARAMS.bathrooms}
+              variant="glass"
+              options={roomOptions}
+            />
+          </FormField>
+          <FormField tone="glass" label={t.type} controlId={fieldId("type")}>
+            <Select
+              id={fieldId("type")}
+              name={CATALOG_PARAMS.type}
+              variant="glass"
+              options={[{ value: "", label: t.anyType }, ...options.types]}
+            />
+          </FormField>
+        </div>
+        {options.features.length > 0 && (
+          <fieldset class="mt-4 border-t border-white/14 pt-3.5">
+            <legend class="float-left mb-1.5 w-full text-[0.625rem] font-medium tracking-[0.14em] text-accent uppercase">
+              {t.features}
+            </legend>
+            <div class="clear-both flex flex-wrap gap-x-4.5 gap-y-1">
+              {options.features.map((feature) => (
+                <label class="flex min-h-11 cursor-pointer items-center gap-2 text-xs">
+                  <input
+                    type="checkbox"
+                    name={CATALOG_PARAMS.features}
+                    value={feature.value}
+                    class="size-4.5 accent-accent"
+                  />
+                  {feature.label}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        )}
+        <div class="mt-3.5 flex flex-wrap justify-end gap-2.5">
+          <span data-catalog-clear class="contents">
+            <Button type="button">{t.clear}</Button>
+          </span>
+          <Button type="submit" variant="solid">
+            {t.showResults}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

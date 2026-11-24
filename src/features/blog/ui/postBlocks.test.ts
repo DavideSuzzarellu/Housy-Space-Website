@@ -52,7 +52,7 @@ describe("PostToc", () => {
 describe("PostCta", () => {
   it.each([
     ["valoracion", "/es/valoracion"],
-    ["venta", "/es/vender"],
+    ["venta", "/es/servicios/venta-estrategica"],
     ["consulta", "/es/contacto"],
   ] as const)("sends the %s objective to %s", async (objective, path) => {
     const html = await container.renderToString(PostCta, { props: { locale: "es", objective } });

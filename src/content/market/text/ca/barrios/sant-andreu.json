@@ -1,0 +1,17 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "El nucli històric del districte: carrer Gran, antiga fàbrica Fabra i Coats i vida de poble.",
+  "text": [
+    "Va ser un municipi independent amb més de mil anys d'història documentada, annexionat a Barcelona el 20 d'abril del 1897. El seu origen és agrícola: al voltant de l'església neogòtica de Sant Andreu, del 1881, es va formar el carrer Gran, antiga via romana de la qual pengen els altres carrers, i de la seva parròquia van sortir el 1640 els segadors del Corpus de Sang.",
+    "Avui té 59.330 habitants en 1,87 km², amb una vida de barri molt activa, sobretot en l'esport, amb entitats com la UE Sant Andreu, i un comerç de proximitat que s'estén fins al passeig de Fabra i Puig. L'antiga fàbrica Fabra i Coats es va recuperar el 1995 com a centre cultural i biblioteca, i la Casa Bloc, dels anys trenta, és un dels grans exemples d'habitatge racionalista de la ciutat."
+  ],
+  "housing": "Cases baixes del nucli antic i edificis de pisos de diferents èpoques.",
+  "places": [
+    "Carrer Gran de Sant Andreu",
+    "Fabra i Coats",
+    "Església de Sant Andreu",
+    "Passeig de Fabra i Puig",
+    "Casa Bloc"
+  ]
+}

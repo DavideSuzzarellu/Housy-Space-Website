@@ -1,13 +1,22 @@
 ---
-import { COMPANY_EMAIL, CONTACT_PHONE, whatsappHref } from "@/features/agency/domain/contact";
-import type { FormField } from "@/features/pages/infrastructure/pageSchema";
+import {
+  COMPANY_EMAIL,
+  CONTACT_PHONE,
+  mailtoHref as plainMailtoHref,
+  whatsappHref,
+} from "@/features/agency/domain/contact";
+import type { FormField, FormLeaf } from "@/features/pages/infrastructure/pageSchema";
 import type { Locale } from "@/shared/i18n/config";
 import { getDictionary } from "@/shared/i18n";
+import Button from "@/shared/ui/atoms/Button.astro";
+import Inline from "@/shared/ui/atoms/Inline.astro";
 import LeadField from "./LeadField.astro";
 
 /**
  * The one lead form: fields come from content. Until the CRM receives forms (ROADMAP I3) it opens
  * WhatsApp or the mail client with the request already written; the visitor sends it.
+ * With groups it is the "Mi búsqueda" wizard of the reference: every group is a step (all visible
+ * without JavaScript), `searchWizard.client.ts` shows one at a time and fills the live summary.
  */
 interface Props {
   locale: Locale;
@@ -19,108 +28,221 @@ interface Props {
 
 const { locale, id, mode, intro, fields } = Astro.props;
 const t = getDictionary(locale).forms;
-const target = mode === "whatsapp" ? whatsappHref(CONTACT_PHONE) : `mailto:${COMPANY_EMAIL}`;
-const isGrouped = fields.some((field) => field.kind === "group");
+const target = mode === "whatsapp" ? whatsappHref(CONTACT_PHONE) : plainMailtoHref(COMPANY_EMAIL);
+const groups = fields.filter((field) => field.kind === "group");
+const isGrouped = groups.length > 0;
+const total = groups.length;
+
+/** Consecutive leaves that share a layout: pairs, the data-protection rows, the consents. */
+type Unit =
+  | { type: "one"; item: FormLeaf }
+  | { type: "pair"; items: FormLeaf[] }
+  | { type: "info"; items: FormLeaf[] }
+  | { type: "consents"; items: { consent: FormLeaf; channels?: FormLeaf | undefined }[] };
+
+const isRow = (leaf: FormLeaf) => leaf.kind === "note" && /^\*\*[^*]+?:\*\*/.test(leaf.text);
+const isConsent = (leaf: FormLeaf) => leaf.kind === "field" && leaf.type === "consent";
+const isPaired = (leaf: FormLeaf) =>
+  (leaf.kind === "field" &&
+    !leaf.full &&
+    leaf.type !== "check" &&
+    leaf.type !== "consent" &&
+    leaf.type !== "textarea") ||
+  (leaf.kind === "chips" && leaf.half === true);
+
+function toUnits(leaves: readonly FormLeaf[]): Unit[] {
+  const units: Unit[] = [];
+  let at = 0;
+  while (at < leaves.length) {
+    const leaf = leaves[at];
+    if (leaf === undefined) break;
+    const last = units.at(-1);
+    if (isConsent(leaf)) {
+      const next = leaves[at + 1];
+      const channels = next?.kind === "chips" && next.whenChecked !== undefined ? next : undefined;
+      const entry = { consent: leaf, channels };
+      if (last?.type === "consents") last.items.push(entry);
+      else units.push({ type: "consents", items: [entry] });
+      at += channels === undefined ? 1 : 2;
+      continue;
+    }
+    if (isRow(leaf)) {
+      if (last?.type === "info") last.items.push(leaf);
+      else units.push({ type: "info", items: [leaf] });
+    } else if (isPaired(leaf)) {
+      const sameKind = last?.type === "pair" && last.items[0]?.kind === leaf.kind;
+      if (last?.type === "pair" && sameKind) last.items.push(leaf);
+      else units.push({ type: "pair", items: [leaf] });
+    } else {
+      units.push({ type: "one", item: leaf });
+    }
+    at += 1;
+  }
+  return units;
+}
+const FIELDSET =
+  "m-0 min-w-0 border-0 p-0 [&>legend~*]:clear-both [&>legend+*>p:first-child]:mt-0 [&>legend+p]:mt-0 [&>legend+div>p:first-child]:mt-0 [&[data-step-off]]:hidden";
 ---
 
-<form
-  id={id}
-  data-lead-form
-  data-mode={mode}
-  data-target={target}
-  data-intro={intro}
-  data-subject={t.emailSubject}
-  data-sent={mode === "whatsapp" ? t.sentWhatsapp : t.sentEmail}
-  novalidate
-  class:list={["mt-6 grid gap-5", !isGrouped && "sm:grid-cols-2"]}
->
-  {fields.map((field) =>
-    field.kind === "group" ? (
-      <fieldset class="grid gap-4 border-t border-line pt-6 sm:grid-cols-2">
-        <legend class="float-left mb-1 w-full text-base font-bold text-fg sm:col-span-2">
-          {field.title}
-          {field.hint !== undefined && (
-            <small class="mt-1 block text-xs font-normal tracking-[0.04em] text-muted">
-              {field.hint}
-            </small>
-          )}
-        </legend>
-        {field.fields.map((leaf) => (
-          <LeadField locale={locale} field={leaf} />
-        ))}
-      </fieldset>
-    ) : (
-      <LeadField locale={locale} field={field} />
-    ),
-  )}
-  <p
-    data-lead-status
-    role="status"
-    aria-live="polite"
-    hidden
-    class="border-l-2 border-accent py-1 pl-3 text-sm sm:col-span-2"
-  ></p>
-</form>
+{isGrouped ? (
+  <div
+    data-wizard
+    class="grid gap-y-[clamp(2.375rem,5vw,3.5rem)] min-[900px]:gap-x-12 min-[900px]:gap-y-7 min-[1000px]:grid-cols-[minmax(0,1fr)_20.625rem] min-[1000px]:items-start"
+  >
+    <form
+      id={id}
+      data-lead-form
+      data-mode={mode}
+      data-target={target}
+      data-intro={intro}
+      data-subject={t.emailSubject}
+      data-sent={mode === "whatsapp" ? t.sentWhatsapp : t.sentEmail}
+      data-step-template={t.step}
+      novalidate
+      class="grid max-w-200 min-w-0 gap-y-3.5"
+    >
+      <script
+        is:inline
+        type="application/json"
+        data-wizard-strings
+        set:html={JSON.stringify({ summary: t.summary, zones: t.zones, errors: t.errors })}
+      />
+      <div data-wizard-top hidden class="mb-[clamp(1.875rem,4vw,3rem)]">
+        <div class="mb-3 flex justify-between gap-4 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.18em] max-[560px]:tracking-[0.12em]">
+          <span data-wizard-count aria-live="polite" class="whitespace-nowrap"></span>
+          <span data-wizard-title aria-hidden="true" class="text-right text-muted"></span>
+        </div>
+        <i
+          role="progressbar"
+          aria-label={t.progress}
+          aria-valuemin="1"
+          aria-valuemax={total}
+          class="relative block h-0.5 bg-line"
+        >
+          <b class="absolute inset-y-0 left-0 w-0 bg-petrol transition-[width] duration-[550ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none"></b>
+        </i>
+      </div>
+      {fields.map((field) =>
+        field.kind === "group" ? (
+          <fieldset data-step class={FIELDSET}>
+            <legend class="float-left mb-[clamp(1.375rem,3vw,2.125rem)] w-full p-0">
+              <h3 class="text-[clamp(1.125rem,1.65vw,1.5rem)] leading-[1.18] focus:outline-0">
+                {field.title}
+              </h3>
+            </legend>
+            {field.hint !== undefined && (
+              <p class="mb-6.5 max-w-[62ch] text-sm leading-[1.75] text-fg/85 [&_strong]:font-bold [&_strong]:text-fg">
+                <Inline text={field.hint} locale={locale} />
+              </p>
+            )}
+            {toUnits(field.fields).map((unit) =>
+              unit.type === "one" ? (
+                <LeadField locale={locale} field={unit.item} grouped />
+              ) : unit.type === "pair" ? (
+                <div class="grid gap-x-6 gap-y-4.5 min-[640px]:grid-cols-2">
+                  {unit.items.map((leaf) => (
+                    <LeadField locale={locale} field={leaf} grouped />
+                  ))}
+                </div>
+              ) : unit.type === "info" ? (
+                <div class="mt-7.5 border-t border-line">
+                  {unit.items.map((leaf) => (
+                    <LeadField locale={locale} field={leaf} grouped />
+                  ))}
+                </div>
+              ) : (
+                <div class="mt-7 grid gap-5">
+                  {unit.items.map(({ consent, channels }) => (
+                    <div>
+                      <LeadField locale={locale} field={consent} grouped />
+                      {channels !== undefined && (
+                        <LeadField locale={locale} field={channels} grouped />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ),
+            )}
+          </fieldset>
+        ) : (
+          <LeadField locale={locale} field={field} grouped />
+        ),
+      )}
+      <div aria-hidden="true" class="absolute -left-[9999px] size-px overflow-hidden">
+        <input name="web" tabindex="-1" autocomplete="off" data-honeypot />
+      </div>
+      <div
+        data-wizard-nav
+        hidden
+        class="mt-[clamp(2.125rem,4.4vw,3.25rem)] flex items-center justify-between gap-4 border-t border-line pt-6"
+      >
+        <button
+          type="button"
+          data-prev
+          class="cursor-pointer appearance-none border-0 border-b border-taupe bg-transparent py-2 text-[0.6875rem] leading-[1.2] font-medium tracking-[0.16em] text-fg transition-colors hover:border-fg"
+        >
+          {t.prev}
+        </button>
+        <span data-next class="ml-auto">
+          <Button type="button" variant="solid" size="md" arrow class="leading-none">
+            {t.next}
+          </Button>
+        </span>
+      </div>
+      <p
+        data-lead-status
+        role="status"
+        aria-live="polite"
+        hidden
+        class="border-l-2 border-accent py-1 pl-3 text-sm"
+      ></p>
+    </form>
+    <aside
+      data-wizard-summary
+      hidden
+      aria-label={t.summary.ariaLabel}
+      class="min-w-0 border-t border-line-strong pt-4.5 min-[1000px]:sticky min-[1000px]:top-30 min-[1000px]:border-t-0 min-[1000px]:border-l min-[1000px]:pt-0 min-[1000px]:pl-[clamp(1.75rem,3vw,2.75rem)]"
+    >
+      <details class="group border-b border-line py-4">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-3 after:text-[1.625rem] after:leading-none after:font-light after:text-taupe after:content-['+'] group-open:after:content-['–'] min-[1000px]:cursor-default min-[1000px]:after:hidden [&::-webkit-details-marker]:hidden">
+          <h3 class="text-[clamp(1.125rem,1.65vw,1.5rem)] leading-[1.18]">{t.summary.title}</h3>
+        </summary>
+        <dl data-summary-list class="mt-4.5 grid"></dl>
+        <p data-summary-empty class="mt-4 text-[0.78125rem] leading-[1.7] text-muted">
+          {t.summary.empty}
+        </p>
+      </details>
+    </aside>
+  </div>
+) : (
+  <form
+    id={id}
+    data-lead-form
+    data-mode={mode}
+    data-target={target}
+    data-intro={intro}
+    data-subject={t.emailSubject}
+    data-sent={mode === "whatsapp" ? t.sentWhatsapp : t.sentEmail}
+    novalidate
+    class="mt-6 grid gap-5 sm:grid-cols-2"
+  >
+    {fields.map((field) => field.kind !== "group" && <LeadField locale={locale} field={field} />)}
+    <p
+      data-lead-status
+      role="status"
+      aria-live="polite"
+      hidden
+      class="border-l-2 border-accent py-1 pl-3 text-sm sm:col-span-2"
+    ></p>
+  </form>
+)}
 
 <script>
-  import {
-    buildLeadMessage,
-    mailtoHref,
-    type LeadEntry,
-  } from "@/features/leads/domain/leadMessage";
+  import "./leadForm.client";
 
-  function entriesOf(form: HTMLFormElement): LeadEntry[] {
-    const entries: LeadEntry[] = [];
-    form.querySelectorAll<HTMLElement>("[data-lead-field]").forEach((node) => {
-      if (node.closest("[hidden]") !== null) return;
-      const label = node.dataset["label"] ?? "";
-      const controls = [...node.querySelectorAll<HTMLInputElement>("input, select, textarea")];
-      const checkable = controls.filter(
-        (control) => control.type === "checkbox" || control.type === "radio",
-      );
-      const value =
-        checkable.length > 0
-          ? checkable
-              .filter((control) => control.checked)
-              .map((control) => control.dataset["label"] ?? control.value)
-              .join(", ")
-          : (controls[0]?.value ?? "");
-      entries.push({ label, value });
-    });
-    return entries;
-  }
-
-  function syncConditional(form: HTMLFormElement): void {
-    const chosen = new Set(
-      [...form.querySelectorAll<HTMLInputElement>('input[name="distrito"]:checked')].map(
-        (input) => input.value,
-      ),
-    );
-    form.querySelectorAll<HTMLElement>("[data-when]").forEach((node) => {
-      node.hidden = !chosen.has(node.dataset["when"] ?? "");
-    });
-  }
-
+  /** The wizard script only loads on a page that has one (the "Mi búsqueda" form). */
   document.addEventListener("astro:page-load", () => {
-    document.querySelectorAll<HTMLFormElement>("[data-lead-form]").forEach((form) => {
-      syncConditional(form);
-      form.addEventListener("change", () => syncConditional(form));
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (!form.reportValidity()) return;
-        const message = buildLeadMessage(form.dataset["intro"], entriesOf(form));
-        const target = form.dataset["target"] ?? "";
-        const href =
-          form.dataset["mode"] === "whatsapp"
-            ? `${target}?text=${encodeURIComponent(message)}`
-            : mailtoHref(target.replace("mailto:", ""), form.dataset["subject"] ?? "", message);
-        window.open(href, "_blank", "noopener");
-        const status = form.querySelector<HTMLElement>("[data-lead-status]");
-        if (status !== null) {
-          status.textContent = form.dataset["sent"] ?? "";
-          status.hidden = false;
-        }
-      });
-    });
+    if (document.querySelector("[data-wizard]") === null) return;
+    void import("./searchWizard.client").then((wizard) => wizard.initWizard());
   });
 </script>

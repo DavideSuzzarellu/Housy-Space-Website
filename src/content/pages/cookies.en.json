@@ -1,0 +1,142 @@
+{
+  "title": "Cookie policy · HousySpace",
+  "description": "HousySpace cookie policy: which cookies the website uses and how to manage your preferences.",
+  "head": {
+    "heading": "Cookie policy",
+    "photo": false,
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Legal"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "pending",
+          "text": "**Machine translation, pending lawyer review.** Translated from the approved Spanish text."
+        },
+        {
+          "kind": "note",
+          "text": "Last updated: 21 November 2026"
+        },
+        {
+          "kind": "h2",
+          "text": "1. What cookies are"
+        },
+        {
+          "kind": "p",
+          "text": "A cookie is a small file that a website stores on your device when you visit it. Other similar technologies, such as the browser's local or session storage, work in a similar way. They are used so that the website works, remembers your preferences or measures how it is used."
+        },
+        {
+          "kind": "h2",
+          "text": "2. Controller"
+        },
+        {
+          "kind": "p",
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.**, CIF B26903419. Travessera de Gràcia 73, 2º-3ª, 08006 Barcelona. Email: [info@housyspace.com](mailto:info@housyspace.com). More details in the [legal notice](route:legal)."
+        },
+        {
+          "kind": "h2",
+          "text": "3. What this website uses today"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "",
+              "text": "**Own cookies: none.** The HousySpace website does not install cookies on your device."
+            },
+            {
+              "title": "",
+              "text": "**Technical session storage.** We use the browser's session storage to remember whether you have opened the menu (“hs_menu”) and to avoid repeating the entry animation during your visit (“hs_intro”). It contains no personal data and is deleted when you close the tab. It is necessary for the website to work as you expect, so it does not require your consent (Article 22.2 of the LSSI)."
+            },
+            {
+              "title": "",
+              "text": "**No analytics or advertising.** This website does not use analytics, advertising or tracking cookies."
+            }
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "4. Third-party services loaded on the website"
+        },
+        {
+          "kind": "p",
+          "text": "Some features are provided with services from other companies. When they are loaded, those companies receive your IP address and basic data about your browser and, depending on the service, may install cookies or use local storage. HousySpace does not install or control those cookies. Each company processes them according to its own policy."
+        },
+        {
+          "kind": "table",
+          "head": ["Service", "Purpose", "When it is loaded", "What may happen"],
+          "rows": [
+            [
+              "Google Maps (Google)",
+              "Maps on the properties page, the brokered properties page and the individual property pages.",
+              "When you open those pages.",
+              "Google receives your IP address and map usage data and may install cookies or use local storage. [Google cookies](https://policies.google.com/technologies/cookies)."
+            ],
+            [
+              "ICGC base map",
+              "Base map for the maps when Google's is not loaded.",
+              "When you open the pages with a map.",
+              "The Institut Cartogràfic i Geològic de Catalunya receives your IP address when serving the maps. HousySpace does not install cookies with this service."
+            ],
+            [
+              "“Where we are” map (Google)",
+              "Showing the office on a map.",
+              "Only when you press “See the map here”. Until then there is no connection with Google.",
+              "Google receives your IP address and may install cookies."
+            ],
+            [
+              "Online valuator (Lystos)",
+              "Calculating an indicative value of your home instantly.",
+              "Only when you open the valuator from “Instant”.",
+              "Lystos receives the data you enter and may use cookies or similar technologies. See its privacy policy."
+            ],
+            [
+              "WhatsApp (Meta)",
+              "Opening a conversation with us.",
+              "Only when you press a WhatsApp button or link.",
+              "It takes you to WhatsApp, which has its own privacy policy."
+            ],
+            [
+              "Instagram and LinkedIn",
+              "Links to our profiles.",
+              "Only when you press the link. The website does not embed content from these networks.",
+              "It takes you to their site, which has its own cookies and policy."
+            ]
+          ]
+        },
+        {
+          "kind": "h2",
+          "text": "5. How to disable or delete cookies"
+        },
+        {
+          "kind": "p",
+          "text": "You can allow, block or delete cookies from your browser's privacy settings (Chrome, Firefox, Safari, Edge or another). If you block cookies from third-party services, the maps or the valuator may not work. The Spanish Data Protection Agency explains how to do it at [www.aepd.es](https://www.aepd.es)."
+        },
+        {
+          "kind": "h2",
+          "text": "6. If we add other cookies"
+        },
+        {
+          "kind": "p",
+          "text": "If in the future we use analytics, advertising or other non-necessary cookies, we will update this policy and ask for your consent before installing them. You will be able to accept or reject them, and change your mind whenever you want."
+        },
+        {
+          "kind": "h2",
+          "text": "7. More information"
+        },
+        {
+          "kind": "p",
+          "text": "To find out how we process your personal data, see the [privacy policy](route:privacy). If you have any questions about this policy, write to us at [info@housyspace.com](mailto:info@housyspace.com)."
+        }
+      ]
+    }
+  ]
+}

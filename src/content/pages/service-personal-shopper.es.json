@@ -1,9 +1,14 @@
 {
-  "title": "Personal Shopper inmobiliario · HousySpace",
-  "description": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también lo reformamos.",
+  "title": "Personal Shopper Inmobiliario en Barcelona · HousySpace",
+  "description": "Personal shopper inmobiliario en Barcelona: buscamos por ti, visitamos contigo solo lo que encaja y estudiamos el inmueble a fondo antes de que compres.",
   "head": {
-    "heading": "Personal Shopper inmobiliario",
+    "heading": "Personal Shopper *inmobiliario*",
     "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-personal-shopper-1000.webp",
+      "alt": "Ilustración del servicio: Una lupa sobre una opción destacada entre varios volúmenes",
+      "scale": 0.797
+    },
     "items": [
       {
         "kind": "tag",
@@ -11,7 +16,7 @@
       },
       {
         "kind": "lead",
-        "text": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también lo reformamos."
+        "text": "Buscamos y visitamos contigo solo lo que encaja y, si hace falta, también coordinamos la reforma."
       },
       {
         "kind": "image",
@@ -24,11 +29,22 @@
       {
         "kind": "image",
         "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Cuéntanos qué buscas",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
       }
     ]
   },
   "sections": [
     {
+      "layout": "intro",
       "surface": "stone",
       "band": false,
       "items": [
@@ -38,11 +54,15 @@
         },
         {
           "kind": "p",
-          "text": "Defines lo que necesitas y nosotros hacemos el resto: buscamos, filtramos y visitamos contigo solo lo que encaja. Antes de que decidas, estudiamos a fondo el inmueble para que compres sin sorpresas."
+          "text": "Defines lo que necesitas y nosotros nos ocupamos de la búsqueda: localizamos, filtramos y visitamos contigo solo lo que encaja. Antes de que decidas, estudiamos a fondo el inmueble para que compres sin sorpresas."
         },
         {
           "kind": "p",
-          "text": "Y si el piso que te gusta necesita una reforma, también la hacemos nosotros."
+          "text": "Y si el piso que te gusta necesita una reforma, también la coordinamos con el estudio con el que colaboramos."
+        },
+        {
+          "kind": "p",
+          "text": "Es un servicio de búsqueda activa que se contrata. Si solo quieres que te avisemos cuando entre una vivienda que encaje, puedes [dejar tu búsqueda registrada](route:mySearch)."
         }
       ]
     },
@@ -67,7 +87,7 @@
             },
             {
               "title": "Búsqueda activa",
-              "text": "Rastreamos el mercado según tus criterios, también lo que aún no está publicado."
+              "text": "Rastreamos el mercado según tus criterios, y, cuando lo hay, producto que todavía no se ha publicado."
             },
             {
               "title": "Selección",
@@ -83,13 +103,14 @@
             },
             {
               "title": "Reforma",
-              "text": "Si hace falta, proyectamos y hacemos la obra para que entres a vivir."
+              "text": "Si hace falta, coordinamos el proyecto y la obra con el estudio con el que colaboramos para que entres a vivir."
             }
           ]
         }
       ]
     },
     {
+      "layout": "icons",
       "surface": "stone",
       "band": false,
       "items": [
@@ -106,48 +127,61 @@
           "ordered": false,
           "items": [
             {
-              "title": "",
-              "text": "01El inmuebleEstado real de la vivienda, instalaciones y posibles reformas con su coste."
+              "title": "El inmueble",
+              "text": "Estado real de la vivienda, instalaciones y posibles reformas con su coste.",
+              "icon": ["M4 11l8-7 8 7", "M6 10v10h12V10", "M10 20v-6h4v6"]
             },
             {
-              "title": "",
-              "text": "02El edificioEstado de la finca, ITE y obras previstas o derramas de la comunidad."
+              "title": "El edificio",
+              "text": "Estado de la finca, ITE y obras previstas o derramas de la comunidad.",
+              "icon": ["M6 21V4h9v17", "M15 9h4v12", "M3 21h18", "M9 8h3", "M9 12h3", "M9 16h3"]
             },
             {
-              "title": "",
-              "text": "03La documentaciónNota simple del Registro, cargas, cédula de habitabilidad y certificado energético."
+              "title": "La documentación",
+              "text": "Nota simple del Registro, cargas, cédula de habitabilidad y certificado energético.",
+              "icon": ["M7 3h7l4 4v14H7z", "M14 3v4h4", "M10 12h5", "M10 16h5"]
             },
             {
-              "title": "",
-              "text": "04El precioComparación con ventas recientes de la zona para no pagar de más."
+              "title": "El precio",
+              "text": "Comparación con ventas recientes de la zona para no pagar de más.",
+              "icon": ["M3 12V4h8l10 10-8 8z", "M7 8h1"]
             },
             {
-              "title": "",
-              "text": "05La financiaciónCon nuestro bróker financiero, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero)."
+              "title": "La financiación",
+              "text": "Con el bróker financiero con el que colaboramos, la hipoteca estudiada antes de comprometerte. [Ver asesoramiento financiero](service:asesoramiento-financiero).",
+              "icon": [
+                "M3 10l9-6 9 6",
+                "M5 10v8",
+                "M9.5 10v8",
+                "M14.5 10v8",
+                "M19 10v8",
+                "M3 20h18"
+              ]
             },
             {
-              "title": "",
-              "text": "06El entornoServicios, transporte, ruido y evolución del barrio."
+              "title": "El entorno",
+              "text": "Servicios, transporte, ruido y evolución del barrio.",
+              "icon": [
+                "M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z",
+                "M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              ]
             }
           ]
         }
       ]
     },
     {
+      "layout": "call",
       "surface": "paper",
       "band": false,
       "items": [
-        {
-          "kind": "image",
-          "src": "../../assets/home/det-salon-1400.jpg"
-        },
         {
           "kind": "tag",
           "text": "Reformas"
         },
         {
           "kind": "h2",
-          "text": "¿El piso necesita una reforma? También la hacemos"
+          "text": "¿El piso necesita una reforma? También la coordinamos"
         },
         {
           "kind": "p",
@@ -184,20 +218,7 @@
       ]
     },
     {
-      "surface": "dark",
-      "band": true,
-      "items": [
-        {
-          "kind": "bandQuote",
-          "text": "«No te preocupes, yo me encargo.»"
-        },
-        {
-          "kind": "p",
-          "text": "Desde la primera visita hasta el día en que entras a vivir, tienes un solo asesor de referencia."
-        }
-      ]
-    },
-    {
+      "layout": "cta",
       "surface": "stone",
       "band": false,
       "items": [
@@ -235,8 +256,34 @@
           ]
         },
         {
-          "kind": "note",
-          "text": "Contenido provisional pendiente de revisión por HousySpace. Honorarios y condiciones: pendientes de confirmar."
+          "kind": "tag",
+          "text": "Servicios relacionados"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Asesoramiento financiero",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Reformas e interiorismo",
+              "text": "",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Inversión inmobiliaria",
+              "text": "",
+              "href": "service:inversion-inmobiliaria"
+            },
+            {
+              "title": "Ver todos los servicios",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
         }
       ]
     }

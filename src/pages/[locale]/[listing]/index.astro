@@ -10,8 +10,10 @@ import { DETAIL_OPERATIONS, type DetailOperation } from "@/features/properties/d
 import PropertyCatalog from "@/features/properties/ui/PropertyCatalog.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDictionary } from "@/shared/i18n";
-import { LOCALES, type Locale } from "@/shared/i18n/config";
+import { LOCALE_META, LOCALES, type Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
+import { buildPageJsonLd, getSiteUrl, toAbsoluteUrl } from "@/shared/lib/seo/structuredData";
+import JsonLd from "@/shared/ui/atoms/JsonLd.astro";
 import Breadcrumbs from "@/shared/ui/molecules/Breadcrumbs.astro";
 import Eyebrow from "@/shared/ui/molecules/Eyebrow.astro";
 
@@ -39,18 +41,41 @@ const crumbs = [
   { label: dictionary.property.detail.home, href: getLocalizedPath("home", locale) },
   { label: operation === "sale" ? dictionary.nav.forSale : dictionary.nav.forRent },
 ];
+const alternates = getListingAlternates(operation);
+const site = Astro.site ?? new URL(Astro.url.origin);
+const pageUrl = toAbsoluteUrl(getLocalizedPath(operation, locale), site);
+const pageJsonLd = buildPageJsonLd({
+  siteUrl: getSiteUrl(site, import.meta.env.BASE_URL),
+  url: pageUrl,
+  language: LOCALE_META[locale].langTag,
+  name: t.metaTitle[operation],
+  description: t.metaDescription[operation],
+  pageType: "CollectionPage",
+  breadcrumbs: crumbs.map((crumb) => ({
+    name: crumb.label,
+    url: crumb.href === undefined ? pageUrl : toAbsoluteUrl(crumb.href, site),
+  })),
+});
 ---
 
 <BaseLayout
   locale={locale}
   title={t.metaTitle[operation]}
   description={t.metaDescription[operation]}
-  alternates={getListingAlternates(operation)}
+  alternates={alternates}
 >
+  <JsonLd slot="head" data={pageJsonLd} />
   <PropertyCatalog locale={locale} operation={operation} model={model}>
-    <Breadcrumbs items={crumbs} label={dictionary.property.detail.breadcrumb} class="mb-8" />
+    <Breadcrumbs
+      items={crumbs}
+      label={dictionary.property.detail.breadcrumb}
+      tone="onImage"
+      class="mb-5.5"
+    />
     <Eyebrow tag={t.eyebrow} />
-    <h1 class="mt-4 text-[clamp(2rem,4.8vw,3.5rem)]">{t.heading[operation]}</h1>
-    <p class="mt-4 mb-9 max-w-[60ch] text-fg/90">{t.lead}</p>
+    <h1 class="mt-3.5 mb-4 max-w-[16ch] text-[clamp(1.9375rem,4.3vw,3.625rem)] leading-none text-balance">
+      {t.heading}
+    </h1>
+    <p class="mb-3.5 max-w-[56ch] text-fg-2">{t.lead}</p>
   </PropertyCatalog>
 </BaseLayout>

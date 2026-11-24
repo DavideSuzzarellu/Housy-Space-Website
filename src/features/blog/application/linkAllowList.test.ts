@@ -14,22 +14,20 @@ describe("buildLinkAllowList", () => {
   it("resolves fixed pages in every locale", () => {
     expect(links.resolve("/es/contacto")?.kind).toBe("page");
     expect(links.resolve("/en/valuation")?.kind).toBe("page");
-    expect(links.resolve("/it/vendere")?.kind).toBe("page");
+    expect(links.resolve("/it/contatti")?.kind).toBe("page");
     expect(links.resolve("/ca/blog")?.kind).toBe("page");
   });
 
   it("classifies services and resolves their detail pages", () => {
     expect(links.resolve("/es/servicios")?.kind).toBe("service");
     expect(links.resolve("/es/servicios/valoracion")?.kind).toBe("service");
-    expect(links.resolve("/en/services/venta-estrategica")?.kind).toBe("service");
+    expect(links.resolve("/en/services/property-sales-brokerage")?.kind).toBe("service");
   });
 
   it("resolves zones from the market collection", () => {
-    expect(links.resolve("/es/vivir-en-barcelona")?.kind).toBe("zone");
-    expect(links.resolve(`/es/vivir-en-barcelona/${district?.slug}`)?.kind).toBe("zone");
-    expect(links.resolve(`/ca/viure-a-barcelona/${barrio?.district}/${barrio?.slug}`)?.kind).toBe(
-      "zone",
-    );
+    expect(links.resolve("/es/zonas/barcelona")?.kind).toBe("zone");
+    expect(links.resolve(`/es/zonas/barcelona/distritos/${district?.slug}`)?.kind).toBe("zone");
+    expect(links.resolve(`/ca/zones/barcelona/${barrio?.slug}`)?.kind).toBe("zone");
   });
 
   it("resolves other articles by slug only", () => {
@@ -40,11 +38,11 @@ describe("buildLinkAllowList", () => {
     expect(links.resolve("/es/blog/no-existe")).toBeUndefined();
   });
 
-  it("rejects routes that do not exist, wrong segments and a barrio of another district", () => {
+  it("rejects routes that do not exist, wrong segments and a retired living path", () => {
     expect(links.resolve("/es/servicios/inventado")).toBeUndefined();
     expect(links.resolve("/es/services")).toBeUndefined();
-    expect(links.resolve("/es/vivir-en-barcelona/inventado")).toBeUndefined();
-    expect(links.resolve("/es/vivir-en-barcelona/gracia/inventado")).toBeUndefined();
+    expect(links.resolve("/es/zonas/barcelona/inventado")).toBeUndefined();
+    expect(links.resolve("/es/zonas/barcelona/distritos/inventado")).toBeUndefined();
     expect(links.resolve("/contacto")).toBeUndefined();
   });
 });

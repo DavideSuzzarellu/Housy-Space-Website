@@ -6,39 +6,131 @@ import { formatDate } from "@/shared/lib/format";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { PHOTO_PICTURE } from "@/shared/lib/images";
+import { postTransitionName } from "@/shared/lib/transitionNames";
+import ArrowUpRight from "@/shared/ui/atoms/ArrowUpRight.astro";
+import { morph } from "@/shared/ui/motion/transitions";
 
 /** Article card of the home teaser and the blog index. */
 interface Props {
   post: BlogPost;
   locale: Locale;
+  /**
+   * `tile`: blog index card of the reference (`rv-tjc`): 3:2 photo with a colour block over its
+   * lower edge holding category and title, then excerpt, read link and date.
+   * `teaser`: home layout of the reference, a row (image 42%) with a hairline under 900 px
+   * that stacks from 900 px, with the meta line in uppercase.
+   */
+  layout?: "tile" | "teaser";
+  /** `tile` only: position in the grid; the block colour cycles stone, petrol, paper, sand. */
+  index?: number;
+  /** `tile` only: the "New" label and the wider card of the two newest posts. */
+  fresh?: boolean;
 }
 
-const { post, locale } = Astro.props;
+const { post, locale, layout = "tile", index = 0, fresh = false } = Astro.props;
+const teaser = layout === "teaser";
+const copy = getDictionary(locale).blog;
+// Block colours of the reference; the sand one swaps the turquoise label for petrol (AA on it).
+const TONES = [
+  "bg-card",
+  "surface-dark bg-canvas",
+  "bg-canvas inset-ring inset-ring-line-strong",
+  "bg-stone [&_.tile-cat]:text-petrol",
+] as const;
+const tone = TONES[index % TONES.length];
 ---
 
 <a
   href={getLocalizedPath("blogPost", locale, { slug: post.id })}
   data-post-card
+  data-new={fresh ? "" : undefined}
   data-category={post.data.category}
-  class="group block text-inherit no-underline"
+  class:list={[
+    "group text-inherit no-underline",
+    teaser
+      ? "grid grid-cols-[42%_1fr] items-center gap-5 border-b border-line pb-6.5 last:border-b-0 min-[900px]:grid-cols-1 min-[900px]:items-start min-[900px]:gap-4.5 min-[900px]:border-b-0 min-[900px]:pb-0"
+      : "flex flex-col",
+  ]}
 >
-  <div class="aspect-4/3 overflow-hidden bg-bg-deep">
-    <Picture
-      {...PHOTO_PICTURE}
-      src={post.data.image}
-      alt={post.data.imageAlt}
-      widths={[480, 800]}
-      sizes="(min-width: 768px) 24rem, 100vw"
-      class="size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105"
-    />
+  <div class:list={[!teaser && "relative"]}>
+    <div
+      class:list={["overflow-hidden bg-stone", teaser ? "aspect-4/3" : "aspect-3/2"]}
+      transition:name={postTransitionName(post.id, "image")}
+      transition:animate={morph}
+    >
+      <Picture
+        {...PHOTO_PICTURE}
+        src={post.data.image}
+        alt={post.data.imageAlt}
+        widths={[480, 800, 1040]}
+        sizes={
+          teaser
+            ? "(min-width: 768px) 24rem, 100vw"
+            : "(min-width: 1100px) 33vw, (min-width: 700px) 50vw, 100vw"
+        }
+        class="size-full object-cover transition-transform duration-1200 ease-brand group-hover:scale-105"
+      />
+    </div>
+    {!teaser && fresh && (
+      <span class="absolute top-3.5 left-3.5 z-2 bg-turquoise px-3 pt-[0.4375rem] pb-1.5 text-[0.625rem] leading-none font-extrabold tracking-[0.18em] text-ink group-data-filtered/grid:hidden">
+        {copy.fresh}
+      </span>
+    )}
   </div>
-  <p class="mt-4 flex flex-wrap gap-x-3.5 gap-y-1 text-[0.6875rem] tracking-[0.14em]">
-    <span class="text-accent">{getDictionary(locale).blog.categories[post.data.category]}</span>
-    <time datetime={post.data.date.toISOString()} class="text-muted">
-      {formatDate(post.data.date, locale)}
-    </time>
-  </p>
-  <h3 lang={post.data.language} class="mt-2 text-[clamp(1.125rem,1.7vw,1.375rem)]">
-    {post.data.title}
-  </h3>
+  {teaser ? (
+    <div>
+      <p class="mb-1.5 grid gap-[3px] text-[0.6875rem] tracking-[0.14em] uppercase">
+        <span class="text-accent">{copy.categories[post.data.category]}</span>
+        <time datetime={post.data.date.toISOString()} class="text-muted">
+          {formatDate(post.data.date, locale)}
+        </time>
+      </p>
+      <h3 lang={post.data.language} class="m-0 text-[clamp(1.25rem,1.7vw,1.5rem)] leading-[1.12]">
+        {post.data.title}
+      </h3>
+    </div>
+  ) : (
+    <>
+      <div
+        class:list={[
+          "relative z-1 -mt-11 px-[clamp(1rem,1.6vw,1.375rem)] pt-[clamp(0.875rem,1.4vw,1.125rem)] pb-[clamp(1rem,1.6vw,1.25rem)] text-fg max-[699px]:-mt-12 min-[700px]:-mt-[clamp(2.75rem,4.6vw,4rem)]",
+          fresh
+            ? "w-[calc(100%-clamp(1.25rem,2.4vw,2.25rem))] min-[1100px]:w-[calc(100%-clamp(2.5rem,4vw,4rem))] group-data-filtered/grid:min-[1100px]:w-[calc(100%-clamp(1.25rem,2.4vw,2.25rem))]"
+            : "w-[calc(100%-clamp(1.25rem,2.4vw,2.25rem))] min-[700px]:min-h-[calc(4*1.24*clamp(15px,1.22vw,17.5px)+62px)]",
+          index % 2 === 1 && "ml-auto",
+          tone,
+        ]}
+      >
+        <span class="tile-cat block text-[0.625rem] leading-[1.3] font-bold tracking-[0.16em] text-accent before:mb-2 before:block before:h-0.5 before:w-6 before:bg-turquoise before:content-['']">
+          {copy.categories[post.data.category]}
+        </span>
+        <h3
+          lang={post.data.language}
+          class:list={[
+            "mt-2.5 line-clamp-4 leading-[1.24] font-extrabold",
+            fresh
+              ? "text-[clamp(1.1875rem,1.6vw,1.4375rem)]"
+              : "text-[clamp(0.9375rem,1.22vw,1.09375rem)]",
+          ]}
+        >
+          {post.data.title}
+        </h3>
+      </div>
+      <div class="pt-3.5">
+        <p class="mt-2 line-clamp-3 text-sm leading-[1.6] text-muted normal-case">
+          {post.data.description}
+        </p>
+        <span class="mt-4 inline-flex items-center gap-2 text-[0.6875rem] leading-[1.3] font-semibold tracking-[0.16em] text-accent">
+          {copy.read}
+          <ArrowUpRight />
+        </span>
+        <time
+          datetime={post.data.date.toISOString()}
+          class="mt-3.5 block border-t border-line pt-2.5 text-[0.6875rem] leading-[1.3] font-semibold tracking-[0.14em] text-muted"
+        >
+          {formatDate(post.data.date, locale)}
+        </time>
+      </div>
+    </>
+  )}
 </a>

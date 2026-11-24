@@ -29,7 +29,7 @@
 | I20 | ⚠️ **Renew housyspace.com before 2026-12-19** (expiry date per the .com registry): confirm auto-renewal at Webempresa. If it lapses, website and email go down | Everything | ⏳ urgent |
 | I21 | Email (`mail.housyspace.com`) is hosted on the Webempresa plan of the old WordPress: keep that plan for email, or migrate email first. Never cancel the hosting before deciding | Retiring the old WordPress | ⏳ pending |
 | I22 | Put the repo on GitHub (private), install the Pages CMS GitHub App on it and invite the client by email at app.pagescms.org | Client editing | ⏳ pending (repo push not authorized yet) |
-| I24 | Lawyer: confirm publishing client reviews with first name + initial on the website, and any consumer-law notice required | Launch | ⏳ pending |
+| I24 | Before launch: confirm publishing client reviews with full name and photo, any consumer-law notice, loading Google-hosted photos before cookie consent, and that the links copied from the Places API response comply with Google's policy | Launch | ⏳ pending |
 | I23 | Confirm the company facts taken from proposal v3: "9 years" of activity, partners (ADV Advocats, Maria Guimerà Arquitectura, Asesoría Edac), APEI membership no. 3261, services list (adds legal/tax and financial advice). en/it/ca of the v3 home copy are machine translations | Home copy | ⏳ pending |
 
 ## B. Phases
@@ -61,6 +61,9 @@
 - [x] Home page: all 7 sections + contact block, real featured properties, en/it/ca machine-translated (pending client review)
 - [x] Home restyled to proposal v3: order, accordion, carousel, philosophy, copy from Pages CMS. Valuation popup and its form wait for I3; reviews stay hidden until I6; services accordion shows the 8 confirmed services (legal/tax and financial wait for I23)
 - [ ] Confirm the white logo derived from the official SVG
+- [~] Sync with proposal v3 as of 2026-11-02 (`docs/ui-migration.md`): Phase 2 layout
+  - [x] Navigation of v3: My search (new `mySearch` route, shows the home search page until Phase 4 merges both searches), Where we are (about `#donde-estamos`, section added in Phase 4), footer columns
+  - [x] Contact actions Call · WhatsApp · Email · Tell us (drawer, footer, mobile bar), footer of v3 (social links, newsletter that opens the visitor's email, hours, email, AICAT white seal and APEI seal with "Experto nº 3261" as logos), header without "Let's talk". Kept against v3 for AA (§8): muted `#5F6967` (v3 `#67716F` fails on cards) and petrol hover on the drawer CTA (v3 taupe hover 3.9:1)
 
 ### Phase 3 — Catalog & property detail
 - [~] Catalog with URL-synced filters, sort, list/map view, clustered Leaflet map (ICGC tiles) — implemented + unit tests; `tests/e2e/catalog.spec.ts` and the catalog performance budget still to run against a build (🔒 I1 for `bun run build`). Map-area search ("buscar en esta zona") and district/barrio filters wait for Phase 5 geo data
@@ -86,9 +89,8 @@
 - [ ] 10 district pages + 73 barrio pages with typed SVG charts
 - [ ] Source/year/attribution on every figure
 
-### Phase 6 — Barcelona province 🔒 I8
-- [ ] Municipality data loader (INE, Idescat, ICGC boundaries)
-- [ ] ~155 municipality pages + index
+### Phase 6 — Barcelona province (removed 2026-11-24)
+- Removed by client decision: no province pages, collection, loader or data; old URLs redirect to the zones index.
 
 ### Phase 7 — Content pages (Spanish built from the proposal)
 - [x] Service pages (no index: Services links to the home accordion, as the proposal)
@@ -147,4 +149,6 @@
 | 2026-10-30 | Forms open WhatsApp or email with the request written, as the proposal does, until I3 and the CRM exist: nothing is stored or sent by the site. Legal drafts stay marked as pending exactly as in the proposal (I11) |
 | 2026-10-30 | Prose exists in Spanish only: other locales show it with `lang="es"` and `noindex` until translated. Barrio pages are fully translated |
 | 2026-10-30 | Typography follows the live proposal v3, overriding the brand manual: Montserrat only, one variable file (400–900), all site text uppercase, no italics. Cormorant Garamond removed. The property PDF sheet stays in sentence case |
+| 2026-11-04 | UI sync with proposal v3 as edited up to 2026-11-02 (layout, styles and copy). The Claude Design canvas "Web HousySpace" (2026-10-25) is an earlier iteration and not a reference. All copy translated into es/en/it/ca (pending client review). Plan and gaps in `docs/ui-migration.md` |
 | 2026-10-30 | Light theme via role tokens (`fg`, `muted`, `line`, `card`, `canvas`, `accent`) redefined by `.surface-dark` and `.surface-stone`, as the proposal does. Stone needs darker muted/accent to pass AA. Newsletter and APEI seal from the proposal left out of the footer: no delivery destination (I3) and membership unconfirmed (I23) |
+| 2026-11-09 | The HousySpace design system (Claude artifact `EGX5LwxCsGXaz29aYzsZtG`, copy in `docs/design-system/`) replaces the 2026-11-07 prototype as the visual reference (AGENTS.md §11): Montserrat uppercase, turquoise `accent`/`accent-tx`, petrol dark blocks, straight corners. Gold/Cormorant/ink are retired. Only docs and AGENTS.md changed: the code (`@theme`, components, tests, `tailwind-css` skill, `docs/ui-migration.md`) still uses the old tokens and must be migrated in a separate task |

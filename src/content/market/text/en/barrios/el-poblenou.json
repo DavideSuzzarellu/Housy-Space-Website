@@ -1,0 +1,16 @@
+{
+  "kind": "barrio",
+  "translated": true,
+  "lead": "The former \"Catalan Manchester\", now a mix of converted factories, a rambla and a beach.",
+  "text": [
+    "It began as a settlement of Sant Martí de Provençals and by the end of the 19th century had become the most industrial area in Catalonia, the \"Catalan Manchester\". The abandoned factories have been reclaimed as lofts, studios and headquarters of organisations, and the 22@ project is driving much of the current transformation.",
+    "Its most popular axis is the Rambla del Poblenou, formerly Passeig del Triomf, and its most important cultural centre is the Teatre Casino l'Aliança del Poblenou. The Cementiri del Poblenou, from the 18th century, has considerable artistic value, and the Parc del Poblenou is one of its green spaces. At 5,448 €/m², it is the second most expensive neighbourhood in Sant Martí, behind only Diagonal Mar."
+  ],
+  "housing": "Homes from the 19th and 20th centuries around the rambla, alongside lofts in former factories and new buildings.",
+  "places": [
+    "Rambla del Poblenou",
+    "Cementiri del Poblenou",
+    "Parc del Poblenou",
+    "Teatre Casino l'Aliança del Poblenou"
+  ]
+}

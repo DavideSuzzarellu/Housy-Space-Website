@@ -1,0 +1,261 @@
+{
+  "title": "Where to invest in Barcelona · HousySpace",
+  "description": "Where to invest in Barcelona? We study each real estate investment with clear numbers: purchase, renovation, expected rent, estimated return and risks.",
+  "head": {
+    "heading": "Real estate *investment*",
+    "photo": false,
+    "illustration": {
+      "src": "../../assets/servicios/ill-inversion-1000.webp",
+      "alt": "Service illustration: A rising curve over steps with a key, a roller and coins",
+      "scale": 0.77
+    },
+    "items": [
+      {
+        "kind": "tag",
+        "text": "Service"
+      },
+      {
+        "kind": "lead",
+        "text": "Opportunity analysis with clear numbers: purchase, renovation, rental and returns."
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/sky-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/facade-1400.jpg"
+      },
+      {
+        "kind": "image",
+        "src": "../../assets/home/salon-1400.jpg"
+      },
+      {
+        "kind": "buttons",
+        "items": [
+          {
+            "label": "Tell us your goal",
+            "href": "#hablemos",
+            "solid": true
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "layout": "intro",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "big",
+          "text": "We don't promise returns: we put the numbers on the table."
+        },
+        {
+          "kind": "p",
+          "text": "We analyse residential investment opportunities with clear information so you can decide with confidence. We also tell you when a deal doesn't make sense for you."
+        }
+      ]
+    },
+    {
+      "layout": "cards",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "What we analyse"
+        },
+        {
+          "kind": "h2",
+          "text": "An investment viewed from every angle"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Purchase price and costs",
+              "text": "Price, taxes, notary, Land Registry and agency fees: the real cost of entry."
+            },
+            {
+              "title": "Renovation",
+              "text": "What work it needs, what it costs and what effect it can have on the rent or the sale."
+            },
+            {
+              "title": "Expected rental income",
+              "text": "Current rent for similar properties in the area."
+            },
+            {
+              "title": "Estimated return",
+              "text": "Gross and net, with costs, taxes and void periods."
+            },
+            {
+              "title": "Risks",
+              "text": "Building condition, rental regulations and area liquidity."
+            },
+            {
+              "title": "Exit strategy",
+              "text": "What happens if you want to sell in a few years."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "How we do it"
+        },
+        {
+          "kind": "h2",
+          "text": "Step by step"
+        },
+        {
+          "kind": "steps",
+          "items": [
+            {
+              "title": "Objectives",
+              "text": "We define what you want to achieve, with what budget and over what timeframe."
+            },
+            {
+              "title": "Search",
+              "text": "We find options that fit your goal."
+            },
+            {
+              "title": "Analysis",
+              "text": "We study the numbers of each one: costs, expected rent, risks and exit."
+            },
+            {
+              "title": "Purchase",
+              "text": "We negotiate and accompany you to completion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "route",
+      "surface": "paper",
+      "band": false,
+      "items": [
+        {
+          "kind": "tag",
+          "text": "One single door"
+        },
+        {
+          "kind": "h2",
+          "text": "From analysis to rental income, with one advisor throughout"
+        },
+        {
+          "kind": "lead",
+          "text": "If you need it, we handle every step after the purchase."
+        },
+        {
+          "kind": "list",
+          "ordered": true,
+          "items": [
+            {
+              "title": "Financial advice",
+              "text": "",
+              "kicker": "Finance",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Real estate personal shopper",
+              "text": "",
+              "kicker": "Buy",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Renovations and interior design",
+              "text": "",
+              "kicker": "Renovate",
+              "href": "service:reformas-obras"
+            },
+            {
+              "title": "Rentals and property management",
+              "text": "",
+              "kicker": "Rent out",
+              "href": "service:alquiler-gestion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "cta",
+      "surface": "stone",
+      "band": false,
+      "items": [
+        {
+          "kind": "h2",
+          "text": "Let's talk"
+        },
+        {
+          "kind": "lead",
+          "text": "Every good decision starts with a conversation. Let's talk about yours."
+        },
+        {
+          "kind": "buttons",
+          "items": [
+            {
+              "label": "Call",
+              "href": "tel:+34613084804",
+              "solid": true
+            },
+            {
+              "label": "WhatsApp",
+              "href": "https://wa.me/34613084804?text=Hola%2C%20me%20interesa%20el%20servicio%3A%20Inversi%C3%B3n%20inmobiliaria",
+              "solid": false
+            },
+            {
+              "label": "Email",
+              "href": "mailto:info@housyspace.com",
+              "solid": false
+            },
+            {
+              "label": "Contact us",
+              "href": "route:contact",
+              "solid": false
+            }
+          ]
+        },
+        {
+          "kind": "tag",
+          "text": "Related services"
+        },
+        {
+          "kind": "list",
+          "ordered": false,
+          "items": [
+            {
+              "title": "Real estate personal shopper",
+              "text": "",
+              "href": "service:personal-shopper"
+            },
+            {
+              "title": "Financial advice",
+              "text": "",
+              "href": "service:asesoramiento-financiero"
+            },
+            {
+              "title": "Rentals and property management",
+              "text": "",
+              "href": "service:alquiler-gestion"
+            },
+            {
+              "title": "See all services",
+              "text": "",
+              "href": "route:services"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

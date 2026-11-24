@@ -4,7 +4,7 @@ import { toAreaM2 } from "../domain/property";
 import { amount, approximateIn, makeProperty } from "../testing/makeProperty";
 import { buildPropertyJsonLd } from "./propertyJsonLd";
 
-const SITE = "https://www.housyspace.com";
+const SITE = "https://housyspace.com";
 const URL_ES = `${SITE}/es/venta/piso-en-el-clot-1001`;
 
 const property = makeProperty("1001", {
@@ -128,5 +128,17 @@ describe("buildPropertyJsonLd", () => {
     expect(offer).not.toHaveProperty("price");
     expect(offer).not.toHaveProperty("priceCurrency");
     expect(offer["availability"]).toBe("https://schema.org/LimitedAvailability");
+  });
+
+  it("adds the visible breadcrumb trail when given", () => {
+    const graph = build({
+      breadcrumbs: [
+        { name: "Inicio", url: `${SITE}/es` },
+        { name: "En venta", url: `${SITE}/es/venta` },
+        { name: "Piso en El Clot", url: URL_ES },
+      ],
+    });
+    const trail = nodeOfType(graph, "BreadcrumbList");
+    expect(trail["itemListElement"]).toHaveLength(3);
   });
 });
