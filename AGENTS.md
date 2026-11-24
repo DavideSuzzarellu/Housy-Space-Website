@@ -146,7 +146,7 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | rent listing        | `/es/alquiler`           | `/en/rent`                | `/it/affitto`              | `/ca/lloguer`            |
 | property detail     | `/es/venta/{slug}-{ref}` | `/en/sale/{slug}-{ref}`   | `/it/vendita/{slug}-{ref}` | `/ca/venda/{slug}-{ref}` |
 | services            | `/es/servicios`          | `/en/services`            | `/it/servizi`              | `/ca/serveis`            |
-| living in Barcelona | `/es/vivir-en-barcelona` | `/en/living-in-barcelona` | `/it/vivere-a-barcellona`  | `/ca/viure-a-barcelona`  |
+| living in Barcelona | `/es/zonas/barcelona` | `/en/zones/barcelona` | `/it/zone/barcelona` | `/ca/zones/barcelona` |
 | about               | `/es/nosotros`           | `/en/about-us`            | `/it/chi-siamo`            | `/ca/qui-som`            |
 | contact             | `/es/contacto`           | `/en/contact`             | `/it/contatti`             | `/ca/contacte`           |
 | legal notice        | `/es/aviso-legal`        | `/en/legal-notice`        | `/it/note-legali`          | `/ca/avis-legal`         |
@@ -155,8 +155,8 @@ The site must feel like an app: smooth, continuous navigation using Astro View T
 | valuation           | `/es/valoracion`         | `/en/valuation`           | `/it/valutazione`          | `/ca/valoracio`          |
 | blog                | `/es/blog`               | `/en/blog`                | `/it/blog`                 | `/ca/blog`               |
 | blog post           | `/es/blog/{slug}`        | `/en/blog/{slug}`         | `/it/blog/{slug}`          | `/ca/blog/{slug}`        |
-| district            | `/es/vivir-en-barcelona/{district}` | `/en/living-in-barcelona/{district}` | `/it/vivere-a-barcellona/{district}` | `/ca/viure-a-barcelona/{district}` |
-| barrio              | `/es/vivir-en-barcelona/{district}/{barrio}` | `/en/living-in-barcelona/{district}/{barrio}` | `/it/vivere-a-barcellona/{district}/{barrio}` | `/ca/viure-a-barcelona/{district}/{barrio}` |
+| district            | `/es/zonas/barcelona/distritos/{district}` | `/en/zones/barcelona/districts/{district}` | `/it/zone/barcelona/distretti/{district}` | `/ca/zones/barcelona/districtes/{district}` |
+| barrio              | `/es/zonas/barcelona/{barrio}` | `/en/zones/barcelona/{barrio}` | `/it/zone/barcelona/{barrio}` | `/ca/zones/barcelona/{barrio}` |
 | service detail      | `/es/servicios/{service}` | `/en/services/{service}` | `/it/servizi/{service}` | `/ca/serveis/{service}` |
 | my search           | `/es/mi-busqueda`        | `/en/my-search`           | `/it/la-mia-ricerca`       | `/ca/la-meva-cerca`      |
 | international guide | `/es/guia-internacional` | `/en/international-guide` | `/it/guida-internazionale` | `/ca/guia-internacional` |

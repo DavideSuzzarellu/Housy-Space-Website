@@ -26,7 +26,7 @@ const stops = Array.from({ length: TONES }, (_, i) => i);
     <svg viewBox={map.viewBox} class="absolute inset-0 size-full">
       {map.barrios.map((barrio) => (
         <a
-          href={getLocalizedPath("barrio", locale, { district, barrio: barrio.slug })}
+          href={getLocalizedPath("barrio", locale, { barrio: barrio.slug })}
           aria-label={barrio.name}
           class="zbm outline-none"
         >

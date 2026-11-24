@@ -78,10 +78,10 @@ export const getStaticPaths = (async () => {
         }),
       ),
       ...market.barrios.map((barrio) =>
-        entry(
-          getLocalizedPath("barrio", locale, { district: barrio.district, barrio: barrio.slug }),
-          { view: "barrio", barrio },
-        ),
+        entry(getLocalizedPath("barrio", locale, { barrio: barrio.slug }), {
+          view: "barrio",
+          barrio,
+        }),
       ),
     ];
   });
@@ -166,7 +166,6 @@ function metaOf(): {
       title: `${target.barrio.name} · ${zones.barrioMeta} · HousySpace`,
       description: zones.barrioDescription.replace("{name}", target.barrio.name),
       alternates: getAlternates("barrio", {
-        district: target.barrio.district,
         barrio: target.barrio.slug,
       }),
     };

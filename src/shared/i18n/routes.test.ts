@@ -18,10 +18,10 @@ describe("getLocalizedPath", () => {
     [
       "living",
       {
-        es: "/es/vivir-en-barcelona",
-        en: "/en/living-in-barcelona",
-        it: "/it/vivere-a-barcellona",
-        ca: "/ca/viure-a-barcelona",
+        es: "/es/zonas/barcelona",
+        en: "/en/zones/barcelona",
+        it: "/it/zone/barcelona",
+        ca: "/ca/zones/barcelona",
       },
     ],
     ["about", { es: "/es/nosotros", en: "/en/about-us", it: "/it/chi-siamo", ca: "/ca/qui-som" }],
@@ -68,8 +68,8 @@ describe("getLocalizedPath", () => {
   });
 
   it("fills nested district and barrio params", () => {
-    expect(getLocalizedPath("barrio", "en", { district: "gracia", barrio: "vila-de-gracia" })).toBe(
-      "/en/living-in-barcelona/gracia/vila-de-gracia",
+    expect(getLocalizedPath("barrio", "en", { barrio: "la-vila-de-gracia" })).toBe(
+      "/en/zones/barcelona/la-vila-de-gracia",
     );
     expect(getLocalizedPath("serviceDetail", "ca", { service: "lloguer-i-gestio" })).toBe(
       "/ca/serveis/lloguer-i-gestio",

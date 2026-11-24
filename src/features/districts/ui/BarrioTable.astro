@@ -69,7 +69,6 @@ const LINK = "inline-flex items-center gap-3 text-[1.0625rem] leading-tight font
             ) : (
               <a
                 href={getLocalizedPath("barrio", locale, {
-                  district: barrio.district,
                   barrio: barrio.slug,
                 })}
                 class:list={[LINK, "no-underline hover:text-accent"]}

@@ -15,9 +15,9 @@ const PAGES = [
   ["/es/aviso-legal", "Aviso legal"],
   ["/es/privacidad", "Política de privacidad"],
   ["/es/cookies", "Política de cookies"],
-  ["/es/vivir-en-barcelona", "Barcelona, barrio a barrio"],
-  ["/es/vivir-en-barcelona/gracia", "Gràcia"],
-  ["/es/vivir-en-barcelona/nou-barris/verdun", "Verdun"],
+  ["/es/zonas/barcelona", "Barcelona, barrio a barrio"],
+  ["/es/zonas/barcelona/distritos/gracia", "Gràcia"],
+  ["/es/zonas/barcelona/verdun", "Verdun"],
 ] as const;
 
 for (const [url, heading] of PAGES) {
@@ -111,7 +111,7 @@ test("service pages are translated: the head keeps its illustration in every loc
 });
 
 test("barrio figures match the official data, with their source", async ({ page }) => {
-  await page.goto("/es/vivir-en-barcelona/nou-barris/verdun");
+  await page.goto("/es/zonas/barcelona/verdun");
   await expect(page.getByText("2.736", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("−36 % vs. Barcelona")).toBeVisible();
   await expect(page.getByText("62.º de 73 barrios", { exact: false })).toBeVisible();
@@ -119,7 +119,7 @@ test("barrio figures match the official data, with their source", async ({ page 
 });
 
 test("barrios are shown in the locale of the page", async ({ page }) => {
-  await page.goto("/en/living-in-barcelona/nou-barris/verdun");
+  await page.goto("/en/zones/barcelona/verdun");
   await expect(page.getByText("Average rent")).toBeVisible();
   await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
 });
@@ -133,7 +133,7 @@ test("untranslated prose stays out of the index and is marked as Spanish", async
 test("the district map recolours by metric, shows a district and search lists the matching barrios", async ({
   page,
 }) => {
-  await page.goto("/es/vivir-en-barcelona");
+  await page.goto("/es/zonas/barcelona");
   const first = page.locator(".zs").first();
   const before = await first.evaluate((node) => getComputedStyle(node).fill);
   await page.locator('label[for="zm-m-density"]').click();
@@ -143,7 +143,7 @@ test("the district map recolours by metric, shows a district and search lists th
   await expect(page.locator(".zp-all")).toBeHidden();
   await expect(page.locator(".zk-eixample")).toHaveAttribute(
     "href",
-    /\/vivir-en-barcelona\/eixample$/,
+    /\/zonas\/barcelona\/distritos\/eixample$/,
   );
   await page.locator("#barrio-search").fill("verdun");
   await expect(page.locator('#barrio-results li[data-kind="b"]:visible')).toHaveCount(1);

@@ -46,7 +46,7 @@ const rows = [
     keys: norm(`${barrio.name} ${districtName.get(barrio.district) ?? ""}`),
     sale: barrio.sale,
     rent: barrio.rent,
-    href: getLocalizedPath("barrio", locale, { district: barrio.district, barrio: barrio.slug }),
+    href: getLocalizedPath("barrio", locale, { barrio: barrio.slug }),
   })),
 ];
 ---
