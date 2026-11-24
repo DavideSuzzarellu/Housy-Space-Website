@@ -13,7 +13,11 @@ import { getDictionary } from "@/shared/i18n";
 import type { Locale } from "@/shared/i18n/config";
 import { getLocalizedPath } from "@/shared/i18n/routes";
 import { figureFormat, formatMessage } from "@/shared/lib/format";
+import { percentDiff } from "@/features/districts/domain/marketStats";
 import Button from "@/shared/ui/atoms/Button.astro";
+import BarChart from "@/shared/ui/organisms/charts/BarChart.astro";
+import LineChart from "@/shared/ui/organisms/charts/LineChart.astro";
+import { SOURCES } from "./marketSources";
 
 /**
  * Living in Barcelona index map: 10 districts, server-rendered SVG, no JavaScript. The metric tabs and
@@ -35,6 +39,7 @@ const METRICS: Readonly<Record<MetricKey, { tab: string; label: string; unit: st
   density: { tab: t.metricDensity, label: t.densityLabel, unit: t.densityUnit },
 };
 const total = model.districts.length;
+const signed = (diff: number): string => `${diff > 0 ? "+" : "−"}${Math.abs(diff)} %`;
 const show = (value: number | null): string =>
   value === null ? dictionary.province.notAvailable : format.format(value);
 const tone = (metric: MapMetric): string => (metric.tone < 0 ? "nd" : String(metric.tone));
@@ -52,9 +57,9 @@ const sorted = (key: MetricKey) =>
   [...model.districts].sort((a, b) => (b.metrics[key].value ?? 0) - (a.metrics[key].value ?? 0));
 ---
 
-<div class="zm min-[1280px]:-mx-20" data-district-map>
+<div class="zm" data-district-map>
   <style is:inline set:html={districtCss}></style>
-  <div class="mb-6 flex flex-wrap items-end justify-between gap-5">
+  <div class="mb-[22px] flex flex-wrap items-end justify-between gap-x-8 gap-y-[18px]">
     <div>
       <slot />
     </div>
@@ -71,7 +76,7 @@ const sorted = (key: MetricKey) =>
           />
           <label
             for={`zm-m-${key}`}
-            class="block min-h-11 border border-line-strong px-4 py-3.5 text-[0.6875rem] tracking-[0.14em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+            class="block min-h-11.5 border border-line-strong px-4 py-3.25 text-[0.6875rem] font-medium tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
           >
             {METRICS[key].tab}
           </label>
@@ -80,7 +85,7 @@ const sorted = (key: MetricKey) =>
     </fieldset>
   </div>
 
-  <fieldset class="m-0 mb-6 flex flex-wrap gap-2 border-0 p-0">
+  <fieldset class="m-0 mb-3 flex flex-wrap gap-2 border-0 p-0">
     <legend class="sr-only">{t.chooseZone}</legend>
     {[{ slug: "all", name: t.allCity }, ...model.districts].map((zone, index) => (
       <span class="relative">
@@ -93,7 +98,7 @@ const sorted = (key: MetricKey) =>
         />
         <label
           for={`zd-${zone.slug}`}
-          class="block min-h-9 border border-line-strong px-3.5 py-2.5 text-[0.65625rem] tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+          class="block min-h-9 border border-line-strong px-3.5 py-2.5 text-[0.65625rem] font-medium tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
         >
           {zone.name}
         </label>
@@ -106,7 +111,7 @@ const sorted = (key: MetricKey) =>
       <div
         role="group"
         aria-label={t.mapLabel}
-        class="zm-stage relative mx-auto w-[min(100%,43rem)]"
+        class="zm-stage relative mx-auto w-[min(100%,39.75rem)]"
         style={`aspect-ratio:${model.viewBox.width}/${model.viewBox.height}`}
       >
         <svg
@@ -183,7 +188,7 @@ const sorted = (key: MetricKey) =>
             people,
           }),
           figures: model.city,
-          ranks: null,
+          cityFigures: null,
           href: null,
         },
         ...model.districts.map((district) => ({
@@ -199,49 +204,97 @@ const sorted = (key: MetricKey) =>
             rent: district.metrics.rent,
             density: district.metrics.density,
           },
-          ranks: district.metrics,
+          cityFigures: model.city,
           href: getLocalizedPath("district", locale, { district: district.slug }),
         })),
       ].map((zone) => (
         <div class:list={["zp", `zp-${zone.slug}`]} hidden={false}>
-          <p class="mb-1 text-[0.6875rem] tracking-[0.16em] text-accent">{zone.tag}</p>
-          <h2 class="mb-3 text-[clamp(1.75rem,3.2vw,2.875rem)]">{zone.name}</h2>
-          <p class="mb-2 border-t border-line pt-3 text-[0.71875rem] text-muted">{zone.meta}</p>
-          <dl class="m-0">
+          <p class="mb-3.5 text-[0.625rem] text-muted">
+            {zone.href === null ? (
+              market.city.name
+            ) : (
+              <>
+                <label
+                  for="zd-all"
+                  class="cursor-pointer text-accent underline-offset-2 hover:underline"
+                >
+                  {market.city.name}
+                </label>
+                <span aria-hidden="true" class="mx-1.5 opacity-50">
+                  ›
+                </span>
+                <span class="text-fg">{zone.name}</span>
+              </>
+            )}
+          </p>
+          <p class="text-[0.6875rem] tracking-[0.16em] text-taupe-tx">{zone.tag}</p>
+          <h2 class="mt-2 mb-3 text-[clamp(1.5625rem,2.65vw,2.375rem)] after:mt-4 after:block after:h-0.5 after:w-16 after:bg-turquoise after:content-['']">
+            {zone.name}
+          </h2>
+          <p class="mb-1 text-[0.71875rem] text-muted">{zone.meta}</p>
+          <dl class="m-0 mt-[18px] mb-2">
             {METRIC_KEYS.map((key) => {
               const figure = zone.figures[key];
+              const against = zone.cityFigures?.[key].value ?? null;
               return (
-                <div data-on={key} class="zf border-t border-line py-3">
-                  <dt class="text-[0.65625rem] tracking-[0.16em] text-muted">
+                <div data-on={key} class="zf pt-2.5 pb-2">
+                  <dt class="text-[0.65625rem] leading-[1.3] tracking-[0.16em] text-muted">
                     {METRICS[key].label}
                   </dt>
                   <dd class="m-0">
-                    <b class="block text-[2.5rem] leading-none font-bold">{show(figure.value)}</b>
-                    <span class="text-[0.65625rem] tracking-[0.16em] text-muted">
+                    <b class="text-[2.5rem] leading-none font-bold">{show(figure.value)}</b>
+                    <span class="ml-2 text-[0.65625rem] text-muted">
                       {METRICS[key].unit}
                       {figure.year !== null && ` · ${figure.year}`}
                     </span>
-                    {zone.ranks !== null && zone.ranks[key].rank !== null && (
-                      <span class="mt-1 block text-[0.65625rem] tracking-[0.08em] text-muted">
-                        {formatMessage(t.rankDistrict, { rank: zone.ranks[key].rank ?? 0, total })}
-                      </span>
+                    {figure.value !== null && against !== null && (
+                      <small
+                        class:list={[
+                          "mt-1 block text-[0.625rem]",
+                          figure.value >= against ? "text-ok" : "text-ko",
+                        ]}
+                      >
+                        {formatMessage(t.versus, {
+                          diff: signed(percentDiff(figure.value, against)),
+                          against: market.city.name,
+                        })}
+                      </small>
                     )}
                   </dd>
                 </div>
               );
             })}
           </dl>
-          <div class="mt-5 flex flex-wrap gap-3">
+          {zone.href === null && (
+            <p class="mt-3 mb-3.5 border-l-2 border-taupe pl-3 text-[0.6875rem] leading-[1.7] text-muted">
+              {t.mapHint}
+            </p>
+          )}
+          <div class="mt-3.5 mb-1.5 grid gap-2.5">
             {zone.href !== null ? (
-              <Button href={zone.href} variant="solid" arrow>
+              <Button
+                href={zone.href}
+                variant="solid"
+                arrow
+                class="w-full justify-center gap-3 px-4! py-3.75! leading-3"
+              >
                 {formatMessage(t.discover, { name: zone.name })}
               </Button>
             ) : (
               <>
-                <Button href={getLocalizedPath("valuation", locale)} variant="solid" arrow>
+                <Button
+                  href={getLocalizedPath("valuation", locale)}
+                  variant="solid"
+                  arrow
+                  class="w-full justify-center gap-3 px-4! py-3.75! leading-3"
+                >
                   {t.valueHere}
                 </Button>
-                <Button href={getLocalizedPath("sale", locale)} arrow>
+                <Button
+                  href={getLocalizedPath("sale", locale)}
+                  arrow
+                  class="w-full justify-center gap-3 px-4! py-3.75! leading-3"
+                >
                   {t.searchHere}
                 </Button>
               </>
@@ -249,38 +302,49 @@ const sorted = (key: MetricKey) =>
           </div>
         </div>
       ))}
-      <p class="mt-4 text-xs text-muted">{t.mapHint}</p>
     </aside>
   </div>
 
-  <!-- Text alternative of the map: the 10 districts with their figure, ordered by the chosen metric. -->
-  <div class="mt-10 border-t border-line pt-6">
-    {METRIC_KEYS.map((key) => (
-      <div data-show={key}>
-        <h3 class="mb-4 text-[0.75rem] tracking-[0.14em]">
-          {formatMessage(t.byDistrict, { metric: METRICS[key].label, unit: METRICS[key].unit })}
-        </h3>
-        <ol class="m-0 grid list-none gap-x-10 gap-y-2 p-0 min-[760px]:grid-cols-2">
-          {sorted(key).map((district) => (
-            <li class="grid grid-cols-[minmax(0,9rem)_minmax(0,1fr)_4.5rem] items-center gap-3 text-xs">
-              <a
-                href={getLocalizedPath("district", locale, { district: district.slug })}
-                class="hover:text-accent"
-              >
-                {district.name}
-              </a>
-              <span aria-hidden="true" class="block h-2.5 bg-ch-bar">
-                <span
-                  class="block h-full bg-ch-a"
-                  style={`width:${(((district.metrics[key].value ?? 0) / model.range[key].max) * 100).toFixed(1)}%`}
-                />
-              </span>
-              <b class="text-right font-bold">{show(district.metrics[key].value)}</b>
-            </li>
-          ))}
-        </ol>
-      </div>
-    ))}
+  <!-- The same figures as text and charts: districts by price, then the city trends (reference `vv-charts`). -->
+  <div class="mt-6 grid gap-x-[13.5px] gap-y-6 min-[900px]:grid-cols-3">
+    <BarChart
+      variant="rule"
+      title={t.saleByDistrict}
+      unit={t.saleUnit}
+      locale={locale}
+      sourcePrefix={t.sourcePrefix}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      items={[
+        ...sorted("sale").map((district) => ({
+          label: district.name,
+          value: district.metrics.sale.value ?? 0,
+        })),
+        { label: market.city.name, value: market.city.sale, tone: "third" as const },
+      ]}
+    />
+    <LineChart
+      variant="rule"
+      title={t.saleEvolution}
+      unit={t.saleUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      sourcePrefix={t.sourcePrefix}
+      source={SOURCES.sale(t)}
+      sourceUrl={SOURCES.saleUrl}
+      series={[{ name: market.city.name, points: market.city.saleSeries, tone: "main" }]}
+    />
+    <LineChart
+      variant="rule"
+      title={t.rentEvolution}
+      unit={t.rentUnit}
+      locale={locale}
+      provisionalLabel={t.provisional}
+      sourcePrefix={t.sourcePrefix}
+      source={SOURCES.rent(t)}
+      sourceUrl={SOURCES.rentUrl}
+      series={[{ name: market.city.name, points: market.city.rentSeries, tone: "main" }]}
+    />
   </div>
 </div>
 
@@ -322,12 +386,12 @@ const sorted = (key: MetricKey) =>
     font-size: 0.5625rem;
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     white-space: nowrap;
     color: var(--ink-sale);
     paint-order: stroke fill;
-    -webkit-text-stroke: 3px var(--halo-sale);
+    -webkit-text-stroke: 3.2px var(--halo-sale);
     pointer-events: none;
   }
   .zk {
@@ -338,7 +402,7 @@ const sorted = (key: MetricKey) =>
   }
   @media (min-width: 520px) {
     .zl {
-      font-size: 0.78125rem;
+      font-size: 0.58125rem;
     }
     .zl-nn {
       display: block;
@@ -377,13 +441,6 @@ const sorted = (key: MetricKey) =>
   .zm:has(#zm-m-density:checked) .zl {
     color: var(--ink-density);
     -webkit-text-stroke-color: var(--halo-density);
-  }
-  .zm:has(#zm-m-sale:checked) .zf[data-on="sale"],
-  .zm:has(#zm-m-rent:checked) .zf[data-on="rent"],
-  .zm:has(#zm-m-density:checked) .zf[data-on="density"] {
-    background: var(--color-card);
-    margin-inline: -0.75rem;
-    padding-inline: 0.75rem;
   }
   @media (prefers-reduced-motion: reduce) {
     .zs,

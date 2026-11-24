@@ -47,24 +47,37 @@ const panels = market.districts.flatMap((district, index) => {
 });
 ---
 
-<Section id="mapa" labelledBy="living-heading" name="living-map" class="overflow-clip">
+<Section
+  id="mapa"
+  labelledBy="living-heading"
+  name="living-map"
+  spacing="hero"
+  class="overflow-clip"
+>
   <div slot="background" class="absolute inset-x-0 top-0 h-[clamp(18.75rem,34vw,29.375rem)]">
     <StreetGrid placement="heading" />
   </div>
-  <Breadcrumbs
-    items={crumbs}
-    label={dictionary.property.detail.breadcrumb}
-    tone="compact"
-    class="mb-6"
-  />
-  <DistrictMap locale={locale} market={market}>
-    <p class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{dictionary.nav.living}</p>
-    <h1 id="living-heading" class="text-[clamp(1.875rem,4vw,3.625rem)]">
-      {t.livingHeading}
-    </h1>
-    <p class="mt-3">{t.livingLead}</p>
-  </DistrictMap>
-  <p class="mt-4 max-w-[90ch] text-xs text-muted">{t.attribution}</p>
+  <div class="min-[1280px]:-mx-20">
+    <Breadcrumbs
+      items={crumbs}
+      label={dictionary.property.detail.breadcrumb}
+      tone="compact"
+      class="mt-2 mb-[22px]"
+    />
+    <DistrictMap locale={locale} market={market}>
+      <p class="text-[0.6875rem] tracking-[0.16em] text-accent">{dictionary.nav.living}</p>
+      <h1
+        id="living-heading"
+        class="mt-3 mb-3.5 text-[clamp(2rem,3.7vw,3.25rem)] leading-[1.08] text-balance"
+      >
+        {t.livingHeading}
+      </h1>
+      <p class="max-w-[58ch] text-[clamp(0.84375rem,calc(1.4vw-2px),0.96875rem)] normal-case">
+        {t.livingLead}
+      </p>
+    </DistrictMap>
+    <p class="mt-4 max-w-[90ch] text-xs text-muted">{t.attribution}</p>
+  </div>
 </Section>
 
 <section

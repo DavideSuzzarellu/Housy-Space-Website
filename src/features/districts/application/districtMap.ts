@@ -143,7 +143,7 @@ const lastYear = (series: readonly (readonly [number, number])[]): number | null
   series.at(-1)?.[0] ?? null;
 
 /** Stage widths (px) of the map on desktop and on a phone, and the label size on each. */
-const WIDE = { stage: 688, font: 12.5 } as const;
+const WIDE = { stage: 636, font: 9.3 } as const;
 const NARROW = { stage: 330, font: 9 } as const;
 
 export function buildDistrictMap(
