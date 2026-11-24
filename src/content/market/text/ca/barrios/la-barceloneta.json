@@ -1,14 +1,14 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El antiguo barrio de pescadores, con playa, calles rectas y pisos pequeños frente al puerto.",
+  "translated": true,
+  "lead": "L'antic barri de pescadors, amb platja, carrers rectes i pisos petits davant del port.",
   "text": [
-    "La Barceloneta se planificó a mediados del siglo XVIII, sobre terrenos arenosos junto al puerto, para realojar a los vecinos de la Ribera que perdieron sus casas con la construcción de la Ciutadella. Su trazado, con calles rectas, estrechas y manzanas alargadas, no se parece a nada del casco antiguo. Entre el mercado, la iglesia de Sant Miquel del Port y la playa, conserva aún aire de pueblo marinero.",
-    "Los pisos son pequeños, muchos de menos de 50 m², y eso ayuda a entender sus cifras: el precio por metro cuadrado (5.183 €/m²) es el más alto de Ciutat Vella, pero el alquiler medio (881 €/mes) es el más bajo del distrito. Es un barrio muy buscado por su cercanía al mar, así que conviene comparar bien cada finca."
+    "La Barceloneta es va planificar a mitjan segle XVIII, sobre terrenys sorrencs vora el port, per reallotjar els veïns de la Ribera que van perdre les cases amb la construcció de la Ciutadella. El seu traçat, amb carrers rectes i estrets i illes allargades, no s'assembla a res del nucli antic. Entre el mercat, l'església de Sant Miquel del Port i la platja, encara conserva aire de poble mariner.",
+    "Els pisos són petits, molts de menys de 50 m², i això ajuda a entendre'n les xifres: el preu per metre quadrat (5.183 €/m²) és el més alt de Ciutat Vella, però el lloguer mitjà (881 €/mes) és el més baix del districte. És un barri molt buscat per la proximitat al mar, així que convé comparar bé cada finca."
   ],
-  "housing": "Pisos pequeños en bloques bajos de calles rectas, muchos de menos de 50 m².",
+  "housing": "Pisos petits en blocs baixos de carrers rectes, molts de menys de 50 m².",
   "places": [
-    "Playa de la Barceloneta",
+    "Platja de la Barceloneta",
     "Mercat de la Barceloneta",
     "Sant Miquel del Port",
     "Passeig Marítim"

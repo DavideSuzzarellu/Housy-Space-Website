@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Collserola en la puerta de casa: casas con jardín, masías y vistas sobre toda la ciudad.",
+  "translated": true,
+  "lead": "Collserola a la porta de casa: cases amb jardí, masies i vistes sobre tota la ciutat.",
   "text": [
-    "Es uno de los barrios más extensos de Barcelona (11,33 km²) y de los menos densos (430 hab./km²), porque casi todo su territorio es la sierra de Collserola. Agrupa tres zonas muy distintas, Vallvidrera, el Tibidabo y les Planes, con el templo del Sagrat Cor y el parque de atracciones en la cima y la Torre de Collserola, de Norman Foster, como referencia visible desde media ciudad.",
-    "Vivir aquí es vivir dentro del parque natural: casas con jardín, calles tranquilas y vistas, con el funicular de Vallvidrera y los trenes de FGC para bajar a la ciudad. Su precio de compraventa, 3.766 €/m², es el más bajo de Sarrià-Sant Gervasi, mientras que el alquiler medio, 1.614 €/mes, está entre los más altos de Barcelona, una cifra que se apoya en pocas operaciones."
+    "És un dels barris més extensos de Barcelona (11,33 km²) i dels menys densos (430 hab./km²), perquè gairebé tot el seu territori és la serra de Collserola. Agrupa tres zones molt diferents, Vallvidrera, el Tibidabo i les Planes, amb el temple del Sagrat Cor i el parc d'atraccions al cim i la Torre de Collserola, de Norman Foster, com a referència visible des de mitja ciutat.",
+    "Viure aquí és viure dins del parc natural: cases amb jardí, carrers tranquils i vistes, amb el funicular de Vallvidrera i els trens de FGC per baixar a la ciutat. El seu preu de compravenda, 3.766 €/m², és el més baix de Sarrià-Sant Gervasi, mentre que el lloguer mitjà, 1.614 €/mes, és dels més alts de Barcelona, una xifra que es basa en poques operacions."
   ],
-  "housing": "Casas unifamiliares con jardín y algunas masías, entre pinares y con vistas.",
+  "housing": "Cases unifamiliars amb jardí i algunes masies, entre pinedes i amb vistes.",
   "places": [
     "Tibidabo",
     "Torre de Collserola",

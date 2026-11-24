@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Universidad, hospital y mercados de barrio, en torno al Ninot y a las antiguas vías del tren.",
+  "translated": true,
+  "lead": "Universitat, hospital i mercats de barri, al voltant del Ninot i de les antigues vies del tren.",
   "text": [
-    "Su núcleo original lo forman la parroquia de Sant Josep Oriol, entre las calles de la Diputació y d'Urgell, y el edificio neorrománico de la Universitat de Barcelona, obra de Elies Rogent de 1882. En 1907 se crearon el Hospital Clínic y la Facultat de Medicina, ligados desde entonces al carácter del barrio.",
-    "Se desarrolló sobre las vías del ferrocarril, alrededor del Ninot, nombre que nació en los años ochenta del siglo XIX de una popular taberna que decoraba su local con un ninot y acabó dando nombre a toda la zona de restauración y ocio en torno a un mercado al aire libre. Al soterrarse las vías de la calle d'Aragó y de la avinguda de Roma se pudieron construir, en los años treinta, viviendas de estilos diversos pensadas sobre todo para las clases medias. Hoy es un barrio de universitarios y personal sanitario, con librerías, cafés, comercio local, el Mercat del Ninot como centro de la vida diaria y la calle d'Enric Granados convertida en eje cívico. Con 5.849 €/m² y 1.389 €/mes, solo la Dreta tiene precios más altos dentro del Eixample."
+    "El nucli original el formen la parròquia de Sant Josep Oriol, entre els carrers de la Diputació i d'Urgell, i l'edifici neoromànic de la Universitat de Barcelona, obra d'Elies Rogent del 1882. El 1907 es van crear l'Hospital Clínic i la Facultat de Medicina, lligats des d'aleshores al caràcter del barri.",
+    "Es va desenvolupar sobre les vies del ferrocarril, al voltant del Ninot, nom que va néixer als anys vuitanta del segle XIX d'una popular taverna que decorava el local amb un ninot i va acabar donant nom a tota la zona de restauració i oci al voltant d'un mercat a l'aire lliure. Quan es van soterrar les vies del carrer d'Aragó i de l'avinguda de Roma es van poder construir, als anys trenta, habitatges d'estils diversos pensats sobretot per a les classes mitjanes. Avui és un barri d'universitaris i personal sanitari, amb llibreries, cafès, comerç local, el Mercat del Ninot com a centre de la vida diària i el carrer d'Enric Granados convertit en eix cívic. Amb 5.849 €/m² i 1.389 €/mes, només la Dreta té preus més alts dins de l'Eixample."
   ],
-  "housing": "Fincas de estilos diversos, con pisos de buen tamaño, en calles con mucho comercio.",
+  "housing": "Finques d'estils diversos, amb pisos de bona mida, en carrers amb molt de comerç.",
   "places": [
     "Hospital Clínic",
     "Facultat de Medicina de la UB",
