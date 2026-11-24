@@ -19,9 +19,13 @@ jobs:
       # INSTALAMOS BUN PRIMERO
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+      # PRIMERO LAS DEPENDENCIAS: así Playwright es el del bun.lock y Chromium es su misma versión
+      # (con `bunx` sin instalar antes se descarga el Playwright más reciente y el script de PDFs no encuentra su navegador)
+      - name: Instalar dependencias
+        run: bun install --frozen-lockfile
       # AHORA SÍ, DESCARGAMOS CHROMIUM
       - name: Instalar Chromium para generar PDFs
-        run: bunx playwright install chromium
+        run: bunx playwright install --with-deps chromium
 
       # COMPILAMOS ASTRO
       - name: Instalar, buildear y subir el sitio
