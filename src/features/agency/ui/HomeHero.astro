@@ -46,7 +46,7 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
   data-hero
   class="group surface-dark relative h-svh min-h-120 overflow-hidden bg-canvas md:min-h-130"
 >
-  <!-- Poster (the only eager image of the page; Ken Burns until the video plays, static on reduced motion / Save-Data / no-JS) -->
+  <!-- Poster = frame 0 of the video, pixel for pixel (the only eager image of the page; never animated, so the swap is invisible) -->
   <picture class="absolute inset-0">
     <source media={PORTRAIT_MEDIA} type="image/avif" srcset={portraitAvif.srcset} sizes="100vw" />
     <source media={PORTRAIT_MEDIA} type="image/webp" srcset={portraitWebp.srcset} sizes="100vw" />
@@ -60,7 +60,7 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
       alt=""
       fetchpriority="high"
       decoding="async"
-      class="animate-kenburns size-full origin-[60%_40%] object-cover group-data-playing:[animation-play-state:paused] motion-reduce:animate-none"
+      class="size-full object-cover"
     />
   </picture>
 
@@ -76,7 +76,7 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
     playsinline
     preload="none"
     aria-hidden="true"
-    class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[1600ms] ease-in-out group-data-playing:opacity-100"
+    class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[600ms] ease-in-out group-data-playing:opacity-100"
   >
     <source
       src={`${base}/media/hero/hero-corto-1280.webm`}
@@ -132,6 +132,10 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
 </style>
 
 <script>
+  import { afterPaintedFrames } from "./heroReveal";
+
+  const PAINTED_FRAMES = 4;
+
   interface NetworkInformation {
     saveData?: boolean;
     effectiveType?: string;
@@ -156,7 +160,7 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
   function whenIdle(callback: () => void): void {
     const schedule = (): void => {
       if (typeof window.requestIdleCallback === "function")
-        window.requestIdleCallback(callback, { timeout: 3000 });
+        window.requestIdleCallback(callback, { timeout: 300 });
       else window.setTimeout(callback, 200);
     };
     if (document.readyState === "complete") schedule();
@@ -168,7 +172,12 @@ const [landscapeAvif, landscapeWebp, portraitAvif, portraitWebp] = await Promise
     const video = hero?.querySelector<HTMLVideoElement>("[data-hero-video]");
     if (hero == null || video == null) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || SAVE_DATA) return;
-    video.addEventListener("playing", () => hero.setAttribute("data-playing", ""), { once: true });
+    // Reveal only after real frames were painted, so poster and video are identical at the swap.
+    video.addEventListener(
+      "playing",
+      () => afterPaintedFrames(video, PAINTED_FRAMES, () => hero.setAttribute("data-playing", "")),
+      { once: true },
+    );
     whenIdle(() => {
       // The visitor may already have navigated away.
       if (!hero.isConnected) return;
