@@ -408,7 +408,7 @@ Where the reference and this file disagree on behaviour (real listings from Mobi
 
 ### 11.8 Motion
 
-Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px) on section content via ONE IntersectionObserver on `astro:page-load`; image zoom on hover (scale 1→1.05, 700 ms); UI micro-transitions 250–350 ms. All disabled under `prefers-reduced-motion`. The design system does not define the previous system's scroll progress bar or hero Ken Burns: keep them only if already built, recoloured with `accent` (`TODO` confirm with the client).
+Brand easing `cubic-bezier(.2,.7,.2,1)`; scroll-reveal (fade + translateY 28 px) on section content via ONE IntersectionObserver on `astro:page-load`; image zoom on hover (scale 1→1.05, 700 ms); UI micro-transitions 250–350 ms. All disabled under `prefers-reduced-motion`. The design system does not define the previous system's scroll progress bar or hero Ken Burns: the Ken Burns was removed on 2026-11-24 (the poster is the video's first frame and stays still); keep the progress bar only if already built, recoloured with `accent` (`TODO` confirm with the client).
 
 ## 12. Agent skills (local)
 
