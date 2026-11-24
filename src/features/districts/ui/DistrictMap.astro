@@ -63,10 +63,10 @@ const sorted = (key: MetricKey) =>
     <div>
       <slot />
     </div>
-    <fieldset class="m-0 flex border-0 p-0">
+    <fieldset class="m-0 flex w-full border-0 p-0 min-[600px]:w-auto">
       <legend class="sr-only">{t.metricLabel}</legend>
       {METRIC_KEYS.map((key, index) => (
-        <span class="relative -ml-px first:ml-0">
+        <span class="relative -ml-px flex-auto first:ml-0 min-[600px]:flex-none">
           <input
             type="radio"
             name="zm-metric"
@@ -76,7 +76,7 @@ const sorted = (key: MetricKey) =>
           />
           <label
             for={`zm-m-${key}`}
-            class="block min-h-11.5 border border-line-strong px-4 py-3.25 text-[0.6875rem] font-medium tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
+            class="block min-h-11.5 border border-line-strong px-2 py-3 text-center text-[0.625rem] font-medium tracking-[0.08em] whitespace-nowrap min-[600px]:px-4 min-[600px]:py-3.25 min-[600px]:text-[0.6875rem] min-[600px]:tracking-[0.12em] peer-checked:border-fg peer-checked:bg-fg peer-checked:text-canvas peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent"
           >
             {METRICS[key].tab}
           </label>
@@ -85,10 +85,10 @@ const sorted = (key: MetricKey) =>
     </fieldset>
   </div>
 
-  <fieldset class="m-0 mb-3 flex flex-wrap gap-2 border-0 p-0">
+  <fieldset class="m-0 mb-3 flex gap-2 overflow-x-auto border-0 p-0 pt-0.5 pb-1.5 [scrollbar-width:thin] min-[1000px]:flex-wrap min-[1000px]:overflow-visible">
     <legend class="sr-only">{t.chooseZone}</legend>
     {[{ slug: "all", name: t.allCity }, ...model.districts].map((zone, index) => (
-      <span class="relative">
+      <span class="relative flex-none">
         <input
           type="radio"
           name="zm-district"
