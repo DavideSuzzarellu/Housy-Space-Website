@@ -3,22 +3,22 @@ import type { HomeContent } from "@/features/agency/application/homeContent";
 import type { Locale } from "@/shared/i18n/config";
 import { getDictionary } from "@/shared/i18n";
 import { getLocalizedPath } from "@/shared/i18n/routes";
-import Emphasis from "@/shared/ui/atoms/Emphasis.astro";
 import Button from "@/shared/ui/atoms/Button.astro";
 import Container from "@/shared/ui/atoms/Container.astro";
+import SectionHeading from "@/shared/ui/molecules/SectionHeading.astro";
 
 /**
- * Stats section: five-year achievements as a 4-column hairline table (number, optional "+",
- * unit, caption) that counts up on scroll, a note, and a CTA to the sold-properties listing.
+ * "Cinco años" figures (reference `#cifras`): heading and intro with a CTA to the sold-properties
+ * listing, then the five-year achievements as a 4-column hairline table (number, optional "+",
+ * unit, caption) that counts up on scroll, and a note.
  * The final figure is in the HTML: the count-up only restarts the visible digits.
  */
 interface Props {
   locale: Locale;
-  id: string;
   content: HomeContent["stats"];
 }
 
-const { locale, id, content } = Astro.props;
+const { locale, content } = Astro.props;
 const moreThan = getDictionary(locale).home.stats.moreThan;
 
 const stats = [
@@ -50,23 +50,35 @@ const stats = [
 ---
 
 <section
-  id={id}
+  id="cifras"
   aria-labelledby="stats-heading"
-  class="defer-render surface-stone bg-canvas pt-[clamp(3rem,5.6vw,5rem)] pb-[clamp(3.25rem,6vw,5.25rem)]"
+  class="defer-render surface-stone bg-canvas py-[clamp(2.375rem,6.2vh,3.625rem)]"
 >
   <Container>
-    <div class="mb-[clamp(1.625rem,3.4vw,2.75rem)]">
-      <p data-reveal class="mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent uppercase">
-        {content.eyebrow}
-      </p>
-      <h2
-        id="stats-heading"
-        data-reveal
-        data-no-rule
-        class="max-w-[24em] text-[clamp(1.875rem,3.5vw,3.125rem)] leading-[1.06] text-balance"
+    <div class="mb-[clamp(1.125rem,2.2vw,1.75rem)] flex flex-wrap items-end justify-between gap-x-10 gap-y-3.5">
+      <div class="max-w-161">
+        <SectionHeading
+          id="stats-heading"
+          heading={content.heading}
+          size="home"
+          rule={false}
+          class="[&_em]:block"
+        />
+        <p
+          data-reveal
+          class="mt-[clamp(0.75rem,1.3vw,1.125rem)] text-[clamp(0.9375rem,1.12vw,1.03125rem)] leading-[1.6] tracking-[0.03em] text-fg-2 normal-case"
+        >
+          {content.intro}
+        </p>
+      </div>
+      <Button
+        href={`${getLocalizedPath("sale", locale)}#pisos-vendidos`}
+        variant="solid"
+        arrow
+        class="leading-none! max-[759px]:w-full"
       >
-        <Emphasis text={content.heading} />
-      </h2>
+        {content.ctaLabel}
+      </Button>
     </div>
 
     <ul class="m-0 grid list-none grid-cols-2 gap-px border-y border-line-strong bg-line-strong p-0 min-[900px]:grid-cols-4">
@@ -74,9 +86,9 @@ const stats = [
         <li
           data-reveal
           style={`--reveal-delay: ${index * 0.1}s`}
-          class="flex min-w-0 flex-col gap-2.5 bg-stone px-[clamp(0.875rem,3vw,1.375rem)] py-4.5 max-[899px]:odd:pl-0 max-[899px]:even:pr-0 min-[900px]:px-[clamp(1rem,2.2vw,1.875rem)] min-[900px]:pt-[clamp(1.375rem,2.6vw,2.25rem)] min-[900px]:pb-[clamp(1.25rem,2.4vw,2rem)] min-[900px]:first:pl-0 min-[900px]:last:pr-0"
+          class="flex min-w-0 flex-col gap-1.5 bg-stone px-[clamp(0.875rem,3vw,1.375rem)] pt-[clamp(1rem,1.8vw,1.5rem)] pb-[clamp(0.875rem,1.6vw,1.375rem)] max-[899px]:odd:pl-0 max-[899px]:even:pr-0 min-[900px]:px-[clamp(1rem,2.2vw,1.875rem)] min-[900px]:first:pl-0 min-[900px]:last:pr-0"
         >
-          <p class="m-0 flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-[clamp(2.125rem,9vw,3.375rem)] leading-none font-black tracking-[-0.02em] text-fg min-[900px]:text-[clamp(2.5rem,4.8vw,4.25rem)]">
+          <p class="m-0 flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-[clamp(2.125rem,3.6vw,3.25rem)] leading-none font-black tracking-[-0.02em] text-fg">
             <span aria-hidden="true">
               {stat.plus && <span class="mr-[0.02em] font-normal">+</span>}
               <span class="stat-count" style={`--target: ${stat.number}`}>
@@ -91,32 +103,19 @@ const stats = [
               {stat.unit}
             </span>
           </p>
-          <p class="m-0 max-w-[26ch] text-[clamp(0.719rem,0.95vw,0.8125rem)] leading-[1.65] tracking-[0.05em] text-muted">
+          <p class="m-0 max-w-[26ch] text-[clamp(0.719rem,0.95vw,0.8125rem)] leading-[1.65] tracking-[0.05em] text-muted normal-case">
             {stat.label}
           </p>
         </li>
       ))}
     </ul>
 
-    <div class="mt-[clamp(1.625rem,3.2vw,2.5rem)] flex flex-wrap items-center justify-between gap-x-7 gap-y-4">
-      <p
-        data-reveal
-        class="m-0 max-w-[52ch] text-[clamp(0.75rem,1vw,0.875rem)] leading-[1.7] tracking-[0.04em] text-fg"
-      >
-        {content.note}
-      </p>
-      <div data-reveal class="max-[560px]:w-full">
-        <Button
-          href={`${getLocalizedPath("sale", locale)}#pisos-vendidos`}
-          variant="solid"
-          size="lg"
-          arrow
-          class="max-[560px]:w-full"
-        >
-          {content.ctaLabel}
-        </Button>
-      </div>
-    </div>
+    <p
+      data-reveal
+      class="mt-[clamp(0.875rem,1.6vw,1.25rem)] max-w-[62ch] text-[clamp(0.719rem,0.95vw,0.8125rem)] leading-[1.65] tracking-[0.05em] text-muted normal-case"
+    >
+      {content.note}
+    </p>
   </Container>
 </section>
 

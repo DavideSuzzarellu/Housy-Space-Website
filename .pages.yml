@@ -60,7 +60,6 @@ content:
         label: Estadísticas
         type: object
         fields:
-          - { name: eyebrow, label: Antetítulo, type: string, required: true }
           - {
               name: heading,
               label: Titular,
@@ -68,6 +67,7 @@ content:
               required: true,
               description: "Pon entre *asteriscos* la parte más fina.",
             }
+          - { name: intro, label: Entradilla, type: text, required: true }
           - { name: stat1Number, label: "Dato 1 · número", type: number, required: true }
           - { name: stat1Plus, label: "Dato 1 · con «+» delante", type: boolean }
           - { name: stat1Unit, label: "Dato 1 · unidad", type: string, required: true }

@@ -6,10 +6,12 @@ interface Props {
   id: string;
   heading: string;
   size?: "md" | "lg" | "data" | "xl" | "home";
+  /** Short accent rule under the heading (default); `false` for headings that sit in a head row. */
+  rule?: boolean;
   class?: string;
 }
 
-const { id, heading, size = "md", class: className } = Astro.props;
+const { id, heading, size = "md", rule = true, class: className } = Astro.props;
 
 const SIZES = {
   md: "text-[clamp(1.5625rem,2.8vw,2.375rem)]",
@@ -22,6 +24,6 @@ const SIZES = {
 } as const;
 ---
 
-<h2 id={id} data-reveal class:list={[SIZES[size], className]}>
+<h2 id={id} data-reveal data-no-rule={rule ? undefined : ""} class:list={[SIZES[size], className]}>
   <Emphasis text={heading} />
 </h2>

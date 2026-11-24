@@ -31,8 +31,8 @@ export function homeContentSchema() {
       // heading line or a fourth step that the layout has no room for (and that would fail the build).
       stats: z
         .object({
-          eyebrow: text,
           heading,
+          intro: text,
           stat1Number: z.number().int().nonnegative(),
           stat1Plus: z.boolean(),
           stat1Unit: text,
