@@ -20,12 +20,12 @@ const MARK =
 
 <div class="grid gap-x-16 gap-y-2.5 min-[960px]:grid-cols-[4fr_7fr] min-[960px]:items-start">
   <BlockHead locale={locale} items={head} spaced={false} />
-  <div class="border-b border-line-strong">
+  <div class="border-b border-line-strong min-[960px]:col-start-2 min-[960px]:row-start-1">
     {questions.map((item) => (
       <details data-reveal class="group border-t border-line-strong pt-4 pb-4.25">
         <summary
           class:list={[
-            "relative cursor-pointer list-none py-5.5 pr-11 font-heading text-[clamp(18px,calc(1.8vw-2px),22px)] leading-[1.25] transition-colors duration-250 marker:hidden hover:text-accent focus-visible:text-accent [&::-webkit-details-marker]:hidden",
+            "relative cursor-pointer list-none py-5.5 pr-11 font-heading text-[clamp(15px,1.25vw,18px)] leading-[1.25] transition-colors duration-250 marker:hidden hover:text-accent focus-visible:text-accent [&::-webkit-details-marker]:hidden",
             MARK,
           ]}
         >
@@ -36,10 +36,10 @@ const MARK =
         </p>
       </details>
     ))}
-    {more.map((line) => (
-      <p class="mt-[clamp(18px,2vw,26px)] text-[15px] leading-[1.6] text-fg-2 [&_a]:text-inherit [&_a]:underline-offset-3">
-        <Inline text={line.text} locale={locale} />
-      </p>
-    ))}
   </div>
+  {more.map((line) => (
+    <p class="mt-[clamp(18px,2vw,26px)] text-[15px] leading-[1.6] normal-case text-fg-2 min-[960px]:col-start-1 min-[960px]:row-start-2 [&_a]:text-inherit [&_a]:underline-offset-3">
+      <Inline text={line.text} locale={locale} />
+    </p>
+  ))}
 </div>
