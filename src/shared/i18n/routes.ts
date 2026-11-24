@@ -1,3 +1,4 @@
+import { withBase } from "@/shared/lib/basePath";
 import { DEFAULT_LOCALE, LOCALE_META, LOCALES, type Locale } from "./config";
 
 /**
@@ -143,16 +144,7 @@ export function getLocalizedPath<K extends RouteKey>(
   ...args: ParamsArgs<K>
 ): string {
   const [params] = args;
-  const path = buildPath(routeKey, locale, params ?? {});
-
-  // Vite always adds a trailing slash to BASE_URL — strip it so we don't get double slashes.
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-
-  // Si el path ya tiene el base (raro, pero por las dudas), lo devolvemos
-  if (base && path.startsWith(base)) return path;
-
-  // Le pegamos el nombre del repo adelante a TODOS los links
-  return `${base}${path}`;
+  return withBase(buildPath(routeKey, locale, params ?? {}));
 }
 
 export interface Alternate {
@@ -173,7 +165,9 @@ export function getAlternates<K extends RouteKey>(
 ): Alternate[] {
   const [params] = args;
   const pathFor = (locale: Locale): string =>
-    buildPath(routeKey, locale, typeof params === "function" ? params(locale) : (params ?? {}));
+    withBase(
+      buildPath(routeKey, locale, typeof params === "function" ? params(locale) : (params ?? {})),
+    );
 
   const alternates = LOCALES.map((locale): Alternate => ({
     hreflang: LOCALE_META[locale].langTag,

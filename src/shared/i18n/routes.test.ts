@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { LOCALES } from "./config";
 import { getAlternates, getLocalizedPath, ROUTE_KEYS, routes, withUrlExtras } from "./routes";
 
@@ -105,6 +105,23 @@ describe("getAlternates", () => {
       { hreflang: "ca-ES", locale: "ca", path: "/ca/serveis" },
       { hreflang: "x-default", locale: "es", path: "/es/servicios" },
     ]);
+  });
+
+  it("prefixes the deploy base exactly like getLocalizedPath (language switcher and canonical)", () => {
+    vi.stubEnv("BASE_URL", "/repo/");
+    try {
+      const alternates = getAlternates("services");
+      expect(alternates.map((alternate) => alternate.path)).toEqual([
+        "/repo/es/servicios",
+        "/repo/en/services",
+        "/repo/it/servizi",
+        "/repo/ca/serveis",
+        "/repo/es/servicios",
+      ]);
+      expect(alternates[1]?.path).toBe(getLocalizedPath("services", "en"));
+    } finally {
+      vi.unstubAllEnvs();
+    }
   });
 
   it("applies the same params to every locale", () => {
