@@ -260,6 +260,71 @@ html body ::placeholder {
   }
 }
 
+/*
+ * Chamfered blocks of the reference (the cut corner of an Eixample block): .cut-a cuts the
+ * top-left and bottom-right corners, .cut-b the top-right and bottom-left; --cut is the size.
+ * .cut-line adds a 1px turquoise outline that follows the cut (a clipped edge cannot carry a border).
+ */
+.cut-a {
+  clip-path: polygon(
+    var(--cut) 0,
+    100% 0,
+    100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,
+    0 100%,
+    0 var(--cut)
+  );
+}
+
+.cut-b {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+}
+
+.cut-line {
+  position: relative;
+  isolation: isolate;
+}
+
+.cut-line::before,
+.cut-line::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+.cut-line::before {
+  inset: 0;
+  background: color-mix(in srgb, var(--color-turquoise) 60%, transparent);
+  clip-path: polygon(
+    var(--cut) 0,
+    100% 0,
+    100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,
+    0 100%,
+    0 var(--cut)
+  );
+}
+
+.cut-line::after {
+  inset: 1px;
+  background: var(--color-white);
+  clip-path: polygon(
+    calc(var(--cut) - 0.6px) 0,
+    100% 0,
+    100% calc(100% - var(--cut) + 0.6px),
+    calc(100% - var(--cut) + 0.6px) 100%,
+    0 100%,
+    0 calc(var(--cut) - 0.6px)
+  );
+}
+
 /* Article body written in Pages CMS: plain Markdown, so its elements are styled here. */
 .blog-body > * + * {
   margin-top: 1.1em;
