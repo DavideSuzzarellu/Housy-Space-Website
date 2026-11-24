@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Canteras, cuestas y una larga tradición de autoconstrucción y lucha vecinal.",
+  "translated": true,
+  "lead": "Quarries, steep slopes and a long tradition of self-building and community action.",
   "text": [
-    "Su nombre procede de las canteras de roca de la colina, que dieron materiales para construir la ciudad, y calles como Cantera o Camí Vell de la Pedrera lo recuerdan. Hasta mediados del siglo XX la zona casi no estaba urbanizada, y en los años cincuenta llegaron oleadas de inmigrantes: muchas casas de la ladera se autoconstruyeron, y entre 1964 y 1967 los vecinos hicieron el alcantarillado y el agua corriente con la iniciativa «Urbanizar en domingo».",
-    "Ese carácter vecinal se mantiene, con el Ateneu Popular de Nou Barris, centrado en el circo, el parque del Pla de Fornells, en un antiguo emplazamiento industrial, y la estación de Roquetes, de la línea 3. Con 2.465 €/m² y 701 €/mes, es un barrio de precios contenidos."
+    "Its name comes from the rock quarries on the hill, which supplied the materials used to build the city, and streets such as Carrer de la Cantera and Camí Vell de la Pedrera recall them. Until the mid-20th century the area was barely developed, and in the 1950s waves of immigrants arrived: many houses on the hillside were self-built, and between 1964 and 1967 residents laid the sewers and running water themselves through the \"Urbanizar en domingo\" (Developing on Sundays) initiative.",
+    "That community spirit lives on, with the Ateneu Popular de Nou Barris, centred on circus arts, the Parc del Pla de Fornells, on a former industrial site, and Roquetes station on line 3. At 2,465 €/m² and 701 €/month, it is a neighbourhood with moderate prices."
   ],
-  "housing": "Casas de ladera, algunas autoconstruidas, y bloques de vivienda pequeña de los años cincuenta.",
+  "housing": "Hillside houses, some of them self-built, and blocks of small flats from the 1950s.",
   "places": [
     "Ateneu Popular de Nou Barris",
     "Parc del Pla de Fornells",
