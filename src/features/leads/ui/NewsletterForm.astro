@@ -62,14 +62,14 @@ const headingId = "newsletter-heading";
     <label
       data-lead-field
       data-label={t.consentLabel}
-      class="mt-1.5 grid grid-cols-[0.875rem_minmax(0,1fr)] gap-x-2 text-[0.625rem] leading-[1.4]"
+      class="mt-1.5 grid grid-cols-[1.5rem_minmax(0,1fr)] gap-x-1.5 text-[0.625rem] leading-[1.4]"
     >
       <input
         type="checkbox"
         name="consent"
         required
         data-label={t.consent}
-        class="mt-px size-3.5 accent-accent"
+        class="-mt-1 size-6 accent-accent"
       />
       <span>
         <Inline text={`**${t.consent}** [${t.privacyLink}](route:privacy).`} locale={locale} />

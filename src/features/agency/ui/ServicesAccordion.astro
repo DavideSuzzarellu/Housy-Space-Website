@@ -77,15 +77,9 @@ const ARROW =
     >
       {panels.map((panel) => (
         <li data-panel style={`--cl:${panel.tint}`} class="ac3-p">
-          <button
-            type="button"
-            data-tab
-            aria-expanded="false"
-            aria-label={`${copy.open}: ${panel.title}`}
-          >
-            <span class="n" aria-hidden="true">
-              {panel.number}
-            </span>
+          <button type="button" data-tab aria-expanded="false">
+            <span class="sr-only">{copy.open}: </span>
+            <span class="n">{panel.number}</span>
             <span class="vt">{panel.title}</span>
           </button>
           <a data-card href={panel.href} class="ac3-card">
