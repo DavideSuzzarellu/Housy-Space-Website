@@ -51,9 +51,14 @@ const TONES = { main: "bg-ch-a", second: "bg-ch-b", third: "bg-ch-c" } as const;
   >
     {title} ({unit})
   </figcaption>
-  <ul class="grid gap-2.5">
+  <ul class:list={["grid", variant === "card" ? "gap-2.5" : "gap-1"]}>
     {items.map((item) => (
-      <li class="grid grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-2.5 text-[0.625rem]">
+      <li
+        class:list={[
+          "grid grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-2.5 text-[0.625rem]",
+          variant === "card" ? "min-h-5.5" : "min-h-4",
+        ]}
+      >
         <span class="text-right leading-tight">{item.label}</span>
         <span class="flex items-center gap-2">
           <span
@@ -68,16 +73,19 @@ const TONES = { main: "bg-ch-a", second: "bg-ch-b", third: "bg-ch-c" } as const;
   <p class="mt-1.5 text-[0.625rem] text-muted">
     {sourcePrefix !== undefined && `${sourcePrefix} `}
     {sourceUrl === undefined ? (
-      source
+      `${source}.`
     ) : (
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2"
-      >
-        {source}
-      </a>
+      <>
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-2"
+        >
+          {source.split(" (")[0]}
+        </a>
+        {source.includes(" (") ? ` (${source.split(" (").slice(1).join(" (")}.` : "."}
+      </>
     )}
   </p>
 </figure>

@@ -161,16 +161,19 @@ const latest = series
   <p class="mt-1.5 text-[0.625rem] text-muted">
     {sourcePrefix !== undefined && `${sourcePrefix} `}
     {sourceUrl === undefined ? (
-      source
+      `${source}.`
     ) : (
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2"
-      >
-        {source}
-      </a>
+      <>
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-2"
+        >
+          {source.split(" (")[0]}
+        </a>
+        {source.includes(" (") ? ` (${source.split(" (").slice(1).join(" (")}.` : "."}
+      </>
     )}
   </p>
 </figure>
