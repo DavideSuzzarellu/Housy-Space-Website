@@ -5,6 +5,8 @@ import { COMPANY } from "@/features/agency/domain/company";
 import { getDictionary } from "@/shared/i18n";
 import { LOCALE_META, type Locale } from "@/shared/i18n/config";
 import type { Alternate } from "@/shared/i18n/routes";
+import { withBase } from "@/shared/lib/basePath";
+import { THEME_COLOR } from "@/shared/lib/seo/webManifest";
 import { MOTION_READY_CLASS } from "@/shared/ui/motion/reveal";
 import ScrollProgress from "@/shared/ui/motion/ScrollProgress.astro";
 import Footer from "@/shared/ui/organisms/Footer.astro";
@@ -51,6 +53,12 @@ const t = getDictionary(locale);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Icons and manifest of the reference site (brand files in public/brand/icons). -->
+    <link rel="icon" href={withBase("/favicon.ico")} sizes="32x32" />
+    <link rel="icon" href={withBase("/brand/icons/favicon.svg")} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={withBase("/brand/icons/apple-touch-icon.png")} />
+    <link rel="manifest" href={withBase("/site.webmanifest")} />
+    <meta name="theme-color" content={THEME_COLOR} />
     <!-- Preload only the latin file; latin-ext loads on demand. -->
     <Font
       cssVariable="--font-montserrat"
