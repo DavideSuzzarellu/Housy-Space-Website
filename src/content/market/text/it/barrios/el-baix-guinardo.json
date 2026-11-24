@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "La parte baja del Guinardó, junto al Recinte Modernista de Sant Pau y el parque de les Aigües.",
+  "translated": true,
+  "lead": "La parte bassa del Guinardó, accanto al Recinte Modernista de Sant Pau e al parco de les Aigües.",
   "text": [
-    "Es el Guinardó más próximo al Eixample, con el Recinte Modernista de Sant Pau, obra de Lluís Domènech i Montaner, y el parque de les Aigües como grandes referencias. Aquí están también Can Móra, sede actual del distrito de Horta-Guinardó, y la biblioteca Guinardó-Mercè Rodoreda.",
-    "Con 26.277 habitantes en 0,56 km², es un barrio denso y muy vivido, con comercio local y buena conexión con el Eixample y con la Sagrada Família. Su precio de compraventa, 4.160 €/m², es de los más altos de Horta-Guinardó."
+    "È il Guinardó più vicino all'Eixample, con il Recinte Modernista de Sant Pau, opera di Lluís Domènech i Montaner, e il parco de les Aigües come grandi riferimenti. Qui si trovano anche Can Móra, attuale sede del distretto di Horta-Guinardó, e la biblioteca Guinardó-Mercè Rodoreda.",
+    "Con 26.277 abitanti su 0,56 km², è un quartiere denso e molto vissuto, con commercio locale e buoni collegamenti con l'Eixample e con la Sagrada Família. Il suo prezzo di compravendita, 4.160 €/m², è tra i più alti di Horta-Guinardó."
   ],
-  "housing": "Edificios de pisos de distintas épocas, en la zona más próxima al Eixample.",
+  "housing": "Palazzi di appartamenti di epoche diverse, nella zona più vicina all'Eixample.",
   "places": [
     "Recinte Modernista de Sant Pau",
     "Parc de les Aigües",

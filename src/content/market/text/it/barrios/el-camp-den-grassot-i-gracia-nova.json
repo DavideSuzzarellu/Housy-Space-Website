@@ -1,11 +1,11 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "La Gràcia más densa y vecinal, con eje comercial propio y fiesta mayor en septiembre.",
+  "translated": true,
+  "lead": "La Gràcia più densa e di vicinato, con un asse commerciale proprio e la festa maggiore a settembre.",
   "text": [
-    "Era zona rural en el límite del municipio de Gràcia hasta que, hacia 1860, sus propietarios la urbanizaron; el nombre procede de Jeroni Grassot, uno de ellos. Tiene un eje comercial propio, el de Gràcia Nova, y celebra su fiesta mayor en la primera quincena de septiembre.",
-    "Con 55.948 hab./km², es el barrio más denso de Gràcia, y se nota en una calle muy viva, con comercio local y bloques de pisos. En él están La Sedeta, la antigua fábrica textil que funcionó de 1899 a 1976 y hoy acoge un instituto y un centro cívico, y la iglesia del Immaculat Cor de Maria. Es una opción para quien quiere el ambiente de Gràcia con un precio de compraventa (5.031 €/m²) algo por debajo del de la Vila."
+    "Era zona rurale al confine del comune di Gràcia finché, intorno al 1860, i suoi proprietari la urbanizzarono; il nome deriva da Jeroni Grassot, uno di loro. Ha un asse commerciale proprio, quello di Gràcia Nova, e celebra la sua festa maggiore nella prima quindicina di settembre.",
+    "Con 55.948 ab./km², è il quartiere più denso di Gràcia, e si nota in una strada molto viva, con commercio locale e palazzi di appartamenti. Qui si trovano La Sedeta, l'antica fabbrica tessile attiva dal 1899 al 1976 e oggi sede di un istituto e di un centro civico, e la chiesa dell'Immaculat Cor de Maria. È una scelta per chi vuole l'atmosfera di Gràcia con un prezzo di compravendita (5.031 €/m²) un po' inferiore a quello della Vila."
   ],
-  "housing": "Edificios de pisos de distintas épocas en calles rectas, con zonas más recientes en Ca l'Alegre de Dalt.",
+  "housing": "Palazzi di appartamenti di epoche diverse in strade rettilinee, con zone più recenti a Ca l'Alegre de Dalt.",
   "places": ["La Sedeta", "Església de l'Immaculat Cor de Maria", "Ca l'Alegre de Dalt"]
 }
