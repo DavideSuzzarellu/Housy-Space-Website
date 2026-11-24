@@ -7,10 +7,18 @@ import { ZONE_TEXT_FILES } from "./zoneTextFiles";
 import { zoneTextId } from "./zoneTextSchema";
 
 /** Prose quotes official figures; they must be the ones of the collection (AGENTS.md 6.2). */
+const UNIT = "m²|mes|month|mese";
+const unitKey = (unit: string): string => (unit === "m²" ? "m²" : "mes");
+
 function quoted(text: string): string[] {
-  return [...text.matchAll(/(\d[\d.,]*\d|\d) €\/(m²|mes)/g)].map(
-    (match) => `${match[1]} ${match[2]}`,
+  // "3.499 €/m²" (any locale unit) and "€3,499/m²"
+  const after = [...text.matchAll(new RegExp(`(\\d[\\d.,]*\\d|\\d) €/(${UNIT})`, "g"))].map(
+    (match) => `${match[1]} ${unitKey(match[2] ?? "")}`,
   );
+  const before = [...text.matchAll(new RegExp(`€\\s?(\\d[\\d.,]*\\d|\\d)/(${UNIT})`, "g"))].map(
+    (match) => `${match[1]} ${unitKey(match[2] ?? "")}`,
+  );
+  return [...after, ...before];
 }
 
 /** A figure may be written in Spanish format or in the locale's own ("1.234" / "1,234"). */
@@ -24,7 +32,7 @@ function formats(locale: Locale): Intl.NumberFormat[] {
 function proseOf(locale: Locale, kind: "district" | "barrio", slug: string): string[] {
   const text = ZONE_TEXT_FILES.get(zoneTextId(locale, kind, slug));
   if (text?.kind === "district") return text.history;
-  if (text?.kind === "barrio") return [text.lead, ...text.text];
+  if (text?.kind === "barrio") return [text.lead, ...text.text, text.housing];
   throw new Error(`Missing prose: ${locale}/${kind}/${slug}`);
 }
 
@@ -35,6 +43,16 @@ describe("market prose", () => {
     expect(data.districts.map((district) => district.name)).toEqual(
       DISTRICTS.map((district) => district.name),
     );
+  });
+
+  it("the figure guard reads the units of every locale", () => {
+    expect(quoted("3.499 €/m², 1.234 €/mes, 1,234 €/month, 1.234 €/mese and €3,499/m²")).toEqual([
+      "3.499 m²",
+      "1.234 mes",
+      "1,234 mes",
+      "1.234 mes",
+      "3,499 m²",
+    ]);
   });
 
   it("the figures file holds numbers only, no prose", () => {
