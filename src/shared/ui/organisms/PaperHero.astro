@@ -16,7 +16,7 @@ interface Props {
   kicker?: string | undefined;
   subtitle?: string | undefined;
   crumbs: readonly { readonly label: string; readonly href?: string }[];
-  size?: "lg" | "xl" | "about";
+  size?: "lg" | "xl" | "about" | "service";
 }
 
 const { locale, title, kicker, subtitle, crumbs, size = "lg" } = Astro.props;
@@ -34,6 +34,7 @@ const gridded = size !== "lg";
     size === "xl" &&
       "bg-canvas pt-7 pb-[clamp(2.75rem,6vw,5.625rem)] min-h-[calc(clamp(27.5rem,66svh,45rem)-76px)] min-[760px]:min-h-[calc(clamp(27.5rem,66svh,45rem)-92px)]",
     size === "lg" && "min-h-[clamp(24rem,52svh,34rem)] bg-canvas py-[clamp(2.25rem,5vw,4.375rem)]",
+    size === "service" && "bg-canvas pt-9 pb-[clamp(2.875rem,3.5vw,3.125rem)]",
   ]}
 >
   <Container width={size === "about" ? "editorial" : "page"}>
@@ -41,12 +42,17 @@ const gridded = size !== "lg";
       items={crumbs}
       label={t.property.detail.breadcrumb}
       tone={gridded ? "compact" : "default"}
-      class="mb-[clamp(1.125rem,2.6vw,1.875rem)]"
+      class={
+        size === "service"
+          ? "mb-[clamp(1.125rem,4vh,2.75rem)]"
+          : "mb-[clamp(1.125rem,2.6vw,1.875rem)]"
+      }
     />
     {kicker !== undefined && (
       <p
         class:list={[
-          "font-bold tracking-[0.24em] text-accent",
+          "text-accent",
+          size === "service" ? "font-normal tracking-[0.16em]" : "font-bold tracking-[0.24em]",
           size === "xl" ? "text-[clamp(0.75rem,1.1vw,0.9375rem)]" : "text-[0.6875rem]",
         ]}
       >
@@ -62,6 +68,8 @@ const gridded = size !== "lg";
           "mt-[0.34em] text-[clamp(2rem,10.2vw,3.125rem)] leading-none tracking-[0.005em] min-[760px]:text-[clamp(3.125rem,6.6vw,6rem)]",
         size === "lg" &&
           "mt-[0.4em] max-w-[10.5em] text-[clamp(2.75rem,7.4vw,6.75rem)] leading-[0.98]",
+        size === "service" &&
+          "mt-3.5 mb-[clamp(1.125rem,3.4vh,2.125rem)] text-[clamp(1.875rem,8.2vw,2.75rem)] leading-[1.05] min-[760px]:text-[clamp(2.5rem,4.7vw,4.25rem)] [&_em]:block",
       ]}
     >
       <Emphasis text={title} />
@@ -73,6 +81,8 @@ const gridded = size !== "lg";
             "mt-[clamp(1rem,2vw,1.75rem)] text-[clamp(1.1875rem,1.9vw,1.6875rem)] leading-[1.28] font-semibold tracking-[0.03em] text-balance text-fg normal-case",
           size === "about" &&
             "mt-[clamp(0.875rem,2.6vh,1.625rem)] max-w-[52ch] text-[clamp(0.96875rem,1.2vw,1.09375rem)] leading-[1.6] tracking-normal text-muted normal-case",
+          size === "service" &&
+            "text-[clamp(1rem,1.3vw,1.1875rem)] leading-[1.6] tracking-[0.02em] text-mid normal-case",
           size === "lg" &&
             "mt-[clamp(1.125rem,2vw,1.75rem)] max-w-[42ch] text-[clamp(0.8125rem,1.15vw,1rem)] leading-[1.65] font-medium tracking-[0.09em] text-muted",
         ]}
