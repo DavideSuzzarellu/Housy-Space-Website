@@ -218,6 +218,48 @@ html body ::placeholder {
   --color-muted: #5a6462;
 }
 
+/*
+ * Block grid of the reference page heads (about, contact): the Eixample octagons as a repeated SVG
+ * tile (`hg-box`), faint in the middle and stronger at the sides, fading out at top and bottom.
+ * Static: the reference draws the route in with a script, which is not ported. Zero JS.
+ */
+.hero-grid {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360' fill='none' stroke='%23172B2B' stroke-linejoin='round'%3E%3Cpath d='M25 10H95L110 25V95L95 110H25L10 95V25ZM145 10H215L230 25V95L215 110H145L130 95V25ZM265 10H335L350 25V95L335 110H265L250 95V25ZM25 130H95L110 145V215L95 230H25L10 215V145ZM145 130H215L230 145V215L215 230H145L130 215V145ZM265 130H335L350 145V215L335 230H265L250 215V145ZM25 250H95L110 265V335L95 350H25L10 335V265ZM145 250H215L230 265V335L215 350H145L130 335V265ZM265 250H335L350 265V335L335 350H265L250 335V265Z' stroke-opacity='.14' stroke-width='.9'/%3E%3Cpath d='M44 36H76L84 44V76L76 84H44L36 76V44ZM284 156H316L324 164V196L316 204H284L276 196V164ZM164 276H196L204 284V316L196 324H164L156 316V284Z' stroke-opacity='.08' stroke-width='.8'/%3E%3C/svg%3E")
+    center / min(30vw, 450px) repeat;
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 2%,
+      #000 14%,
+      #000 22%,
+      rgb(0 0 0 / 0.16) 33%,
+      rgb(0 0 0 / 0.16) 67%,
+      #000 78%,
+      #000 86%,
+      transparent 98%
+    ),
+    linear-gradient(180deg, transparent 0, #000 24%, #000 74%, transparent 100%);
+  mask-composite: intersect;
+}
+
+@media (width < 760px) {
+  .hero-grid::before {
+    background-size: 54vw;
+    background-position: center bottom;
+  }
+}
+
 /* Article body written in Pages CMS: plain Markdown, so its elements are styled here. */
 .blog-body > * + * {
   margin-top: 1.1em;
