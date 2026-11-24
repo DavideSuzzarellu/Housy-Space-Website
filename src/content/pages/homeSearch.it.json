@@ -72,7 +72,7 @@
           "fields": [
             {
               "kind": "group",
-              "title": "Cosa cerchi?",
+              "title": "Che tipo di casa cerchi?",
               "fields": [
                 {
                   "kind": "chips",
@@ -83,13 +83,11 @@
                   "options": [
                     {
                       "value": "venta",
-                      "label": "Acquistare",
-                      "hint": "Voglio acquistare un immobile"
+                      "label": "Acquistare"
                     },
                     {
                       "value": "alquiler",
-                      "label": "Affittare",
-                      "hint": "Voglio affittare un immobile"
+                      "label": "Affittare"
                     }
                   ]
                 },
@@ -125,13 +123,13 @@
                       "label": "Monolocale"
                     }
                   ],
-                  "label": "Tipo di immobile (puoi selezionarne più di uno)"
+                  "label": "Tipo di casa (puoi sceglierne più di uno)"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "Dove?",
+              "title": "Dove ti piacerebbe vivere?",
               "fields": [
                 {
                   "kind": "chips",
@@ -834,7 +832,7 @@
             },
             {
               "kind": "group",
-              "title": "Come contattarti",
+              "title": "Parliamo?",
               "fields": [
                 {
                   "name": "nombre",

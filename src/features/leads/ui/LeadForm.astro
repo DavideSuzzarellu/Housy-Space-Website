@@ -35,7 +35,7 @@ const stepLabel = (n: number) => t.step.replace("{n}", String(n)).replace("{tota
  * Inactive labels stay in the accessibility tree (visually hidden), so a screen reader hears all steps.
  */
 const SHOW =
-  "position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal";
+  "position:static;display:flex;justify-content:space-between;gap:1rem;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal";
 const progressCss = isGrouped
   ? `#${id} .progress-step{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}` +
     `#${id}:not(:has(fieldset:focus-within)){--p:${1 / total}}#${id}:not(:has(fieldset:focus-within)) [data-step="1"]{${SHOW}}` +
@@ -59,7 +59,7 @@ const progressCss = isGrouped
   novalidate
   class:list={[
     "mt-6 grid gap-5",
-    isGrouped ? "max-w-200 grid-cols-1 *:sm:col-span-1!" : "sm:grid-cols-2",
+    isGrouped ? "max-w-174.5 grid-cols-1 *:sm:col-span-1!" : "sm:grid-cols-2",
   ]}
 >
   {isGrouped && (
@@ -71,7 +71,8 @@ const progressCss = isGrouped
       <ol class="m-0 mb-3 list-none p-0 text-[0.6875rem] leading-[1.4] font-medium tracking-[0.18em] text-fg">
         {groups.map((group, i) => (
           <li data-step={i + 1} class="progress-step">
-            {stepLabel(i + 1)} <span class="text-muted">· {group.title}</span>
+            <span class="whitespace-nowrap">{stepLabel(i + 1)}</span>
+            <span class="text-right text-muted">{group.title}</span>
           </li>
         ))}
       </ol>
@@ -82,11 +83,11 @@ const progressCss = isGrouped
   )}
   {fields.map((field) =>
     field.kind === "group" ? (
-      <fieldset class="grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
-        <legend class="float-left mb-2 w-full text-[clamp(1.5rem,3vw,2.375rem)] leading-[1.12] font-bold text-fg sm:col-span-2">
-          {field.title}
+      <fieldset class="grid gap-x-6 gap-y-4.5 border-t border-line pt-8 first-of-type:border-t-0 first-of-type:pt-0 sm:grid-cols-2">
+        <legend class="float-left mb-[calc(clamp(1.375rem,3vw,2.125rem)-1.125rem)] w-full text-fg sm:col-span-2">
+          <h3 class="text-[clamp(1.125rem,1.65vw,1.5rem)] leading-[1.18]">{field.title}</h3>
           {field.hint !== undefined && (
-            <small class="mt-2 block text-xs leading-[1.7] font-normal tracking-[0.04em] text-muted">
+            <small class="mt-3.5 block max-w-[62ch] text-sm leading-[1.75] font-normal tracking-[0.02em] text-fg/85">
               {field.hint}
             </small>
           )}

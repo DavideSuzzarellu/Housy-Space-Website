@@ -72,7 +72,7 @@
           "fields": [
             {
               "kind": "group",
-              "title": "What are you looking for?",
+              "title": "What type of home are you looking for?",
               "fields": [
                 {
                   "kind": "chips",
@@ -83,13 +83,11 @@
                   "options": [
                     {
                       "value": "venta",
-                      "label": "Buy",
-                      "hint": "I want to buy a property"
+                      "label": "Buy"
                     },
                     {
                       "value": "alquiler",
-                      "label": "Rent",
-                      "hint": "I want to rent a property"
+                      "label": "Rent"
                     }
                   ]
                 },
@@ -125,13 +123,13 @@
                       "label": "Studio"
                     }
                   ],
-                  "label": "Property type (you can select more than one)"
+                  "label": "Type of home (you can choose several)"
                 }
               ]
             },
             {
               "kind": "group",
-              "title": "Where?",
+              "title": "Where would you like to live?",
               "fields": [
                 {
                   "kind": "chips",
@@ -575,11 +573,11 @@
                 },
                 {
                   "name": "zona_libre",
-                  "label": "Other areas, streets or landmarks",
+                  "label": "Other area, street or landmark",
                   "required": false,
                   "full": true,
                   "type": "text",
-                  "placeholder": "E.g.: near the Diagonal, next to a school…",
+                  "placeholder": "E.g.: Badalona, near the sea…",
                   "kind": "field"
                 }
               ],
@@ -830,7 +828,7 @@
             },
             {
               "kind": "group",
-              "title": "How to contact you",
+              "title": "Shall we talk?",
               "fields": [
                 {
                   "name": "nombre",

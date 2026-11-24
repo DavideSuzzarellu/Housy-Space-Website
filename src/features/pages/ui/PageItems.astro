@@ -19,10 +19,10 @@ interface Props {
   /** Size of the page-level buttons (the "Mi búsqueda" landing uses large ones). */
   buttonSize?: "md" | "lg";
   /** Reference look of "Mi búsqueda": sentence-case lead and step texts, no turquoise rule under the h2. */
-  plain?: boolean;
+  plain?: "head" | "body" | undefined;
 }
 
-const { locale, units, buttonSize = "md", plain = false } = Astro.props;
+const { locale, units, buttonSize = "md", plain } = Astro.props;
 const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
 ---
 
@@ -64,7 +64,10 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
       return <p class="mt-1 mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{item.text}</p>;
     case "h2":
       return (
-        <h2 data-no-rule={plain ? "" : undefined} class="mb-4 text-[clamp(1.5rem,3.6vw,2.5rem)]">
+        <h2
+          data-no-rule={plain !== undefined ? "" : undefined}
+          class="mb-4 text-[clamp(1.5rem,3.6vw,2.5rem)]"
+        >
           <Emphasis text={item.text} />
         </h2>
       );
@@ -81,7 +84,7 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
         <p
           class:list={[
             "mb-4 max-w-[62ch] text-[clamp(1rem,1.3vw,1.125rem)] text-muted",
-            plain && "normal-case",
+            plain === "head" && "normal-case",
           ]}
         >
           <Inline text={item.text} locale={locale} />
@@ -155,7 +158,7 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
               <p
                 class:list={[
                   "max-w-[38ch] text-[0.84375rem] leading-[1.75]",
-                  plain ? "text-fg/85 normal-case" : "text-muted",
+                  plain !== undefined ? "text-fg/85 normal-case" : "text-muted",
                 ]}
               >
                 <Inline text={entry.text} locale={locale} />
