@@ -1,39 +1,39 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "Colinas, parques y miradores entre la ciudad y la sierra de Collserola.",
+  "translated": true,
+  "lead": "Colline, parchi e belvedere tra la città e la serra de Collserola.",
   "history": [
-    "Horta-Guinardó se extiende por las laderas de Collserola y de los turons del Carmel y de la Rovira. Reúne once barrios, del Baix Guinardó a la Vall d'Hebron, y entre ellos Horta, que fue un municipio independiente hasta 1904 y aún conserva su aire de pueblo.",
-    "Es un distrito con mucho verde y muchas cuestas, de zonas tranquilas y vistas sobre la ciudad, con equipamientos que marcan su perfil: el Recinte Modernista de Sant Pau, el Parc del Laberint d'Horta, los Búnkers del Carmel y el gran complejo hospitalario de la Vall d'Hebron. La vivienda va de las casas bajas y masías del antiguo pueblo de Horta a barrios de bloques levantados entre los años cincuenta y setenta.",
-    "Entre sus 11 barrios, el precio medio de compraventa va de 2.456 €/m² en Sant Genís dels Agudells a 4.668 €/m² en la Clota, y el alquiler medio, de 781 €/mes en el Carmel a 1.074 €/mes en la Clota.",
-    "Hay barrios muy distintos entre sí, también en precios, y la zona exacta importa mucho."
+    "Horta-Guinardó si estende sui pendii di Collserola e dei turons del Carmel e della Rovira. Riunisce undici quartieri, dal Baix Guinardó alla Vall d'Hebron, tra cui Horta, che è stato un comune indipendente fino al 1904 e conserva ancora un'aria da paese.",
+    "È un distretto con molto verde e molte salite, di zone tranquille e viste sulla città, con strutture che ne definiscono il profilo: il Recinte Modernista de Sant Pau, il Parc del Laberint d'Horta, i Búnkers del Carmel e il grande complesso ospedaliero della Vall d'Hebron. Le abitazioni vanno dalle case basse e dalle masies dell'antico paese di Horta ai quartieri di palazzoni costruiti tra gli anni Cinquanta e Settanta.",
+    "Tra i suoi 11 quartieri, il prezzo medio di compravendita va dai 2.456 €/m² di Sant Genís dels Agudells ai 4.668 €/m² della Clota, e l'affitto medio dai 781 €/mese del Carmel ai 1.074 €/mese della Clota.",
+    "I quartieri sono molto diversi tra loro, anche per i prezzi, e la zona esatta conta moltissimo."
   ],
-  "summary": "Horta-Guinardó tiene 183.006 habitantes en 11,92 km² y 11 barrios. Su precio medio de compraventa fue de 3.451 €/m² en 2025, un 19 % por debajo de la media de la ciudad. El alquiler medio, 909 €/mes.",
+  "summary": "Horta-Guinardó conta 183.006 abitanti su 11,92 km² e 11 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 3.451 €/m², il 19% sotto la media della città. L'affitto medio è di 909 €/mese.",
   "landmarks": [
     {
       "name": "Parc del Laberint d'Horta",
       "where": "Horta",
-      "text": "Jardín neoclásico del siglo XVIII con un laberinto de cipreses."
+      "text": "Giardino neoclassico del Settecento con un labirinto di cipressi."
     },
     {
       "name": "Búnkers del Carmel",
-      "where": "El Carmel",
-      "text": "Las antiguas baterías antiaéreas del Turó de la Rovira, hoy mirador."
+      "where": "Il Carmel",
+      "text": "Le antiche batterie antiaeree del Turó de la Rovira, oggi belvedere."
     },
     {
       "name": "Recinte Modernista de Sant Pau",
-      "where": "El Baix Guinardó",
-      "text": "El antiguo hospital de Lluís Domènech i Montaner, Patrimonio Mundial."
+      "where": "Il Baix Guinardó",
+      "text": "L'antico ospedale di Lluís Domènech i Montaner, Patrimonio dell'Umanità."
     },
     {
       "name": "Hospital Universitari Vall d'Hebron",
-      "where": "Montbau y la Vall d'Hebron",
-      "text": "Uno de los grandes complejos hospitalarios de Cataluña."
+      "where": "Montbau e la Vall d'Hebron",
+      "text": "Uno dei grandi complessi ospedalieri della Catalogna."
     },
     {
       "name": "Collserola",
-      "where": "Barrios altos del distrito",
-      "text": "Acceso directo al parque natural de la sierra."
+      "where": "Quartieri alti del distretto",
+      "text": "Accesso diretto al parco naturale della serra."
     }
   ]
 }

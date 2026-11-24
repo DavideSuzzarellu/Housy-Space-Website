@@ -1,12 +1,12 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "Collserola en la puerta de casa: casas con jardín, masías y vistas sobre toda la ciudad.",
+  "translated": true,
+  "lead": "Collserola a due passi da casa: ville con giardino, masies e viste su tutta la città.",
   "text": [
-    "Es uno de los barrios más extensos de Barcelona (11,33 km²) y de los menos densos (430 hab./km²), porque casi todo su territorio es la sierra de Collserola. Agrupa tres zonas muy distintas, Vallvidrera, el Tibidabo y les Planes, con el templo del Sagrat Cor y el parque de atracciones en la cima y la Torre de Collserola, de Norman Foster, como referencia visible desde media ciudad.",
-    "Vivir aquí es vivir dentro del parque natural: casas con jardín, calles tranquilas y vistas, con el funicular de Vallvidrera y los trenes de FGC para bajar a la ciudad. Su precio de compraventa, 3.766 €/m², es el más bajo de Sarrià-Sant Gervasi, mientras que el alquiler medio, 1.614 €/mes, está entre los más altos de Barcelona, una cifra que se apoya en pocas operaciones."
+    "È uno dei quartieri più estesi di Barcellona (11,33 km²) e dei meno densi (430 ab./km²), perché quasi tutto il suo territorio è la serra de Collserola. Raggruppa tre zone molto diverse, Vallvidrera, il Tibidabo e les Planes, con il tempio del Sagrat Cor e il parco divertimenti sulla cima e la Torre de Collserola, di Norman Foster, come punto di riferimento visibile da mezza città.",
+    "Vivere qui significa vivere dentro il parco naturale: ville con giardino, strade tranquille e panorami, con la funicolare di Vallvidrera e i treni FGC per scendere in città. Il suo prezzo di compravendita, 3.766 €/m², è il più basso di Sarrià-Sant Gervasi, mentre l'affitto medio, 1.614 €/mese, è tra i più alti di Barcellona, una cifra basata su poche operazioni."
   ],
-  "housing": "Casas unifamiliares con jardín y algunas masías, entre pinares y con vistas.",
+  "housing": "Ville unifamiliari con giardino e qualche masia, tra le pinete e con vista.",
   "places": [
     "Tibidabo",
     "Torre de Collserola",

@@ -1,17 +1,17 @@
 {
   "kind": "barrio",
-  "translated": false,
-  "lead": "El barrio más poblado del Eixample, entre el parque de Joan Miró y la Gran Via.",
+  "translated": true,
+  "lead": "Il quartiere più popoloso dell'Eixample, tra il parco di Joan Miró e la Gran Via.",
   "text": [
-    "Hasta bien entrado el siglo XX fue una zona casi rural, con grupos de barracas de gente que trabajaba en las obras de la Exposición de 1929, y la urbanización no arrancó con fuerza hasta los años treinta. Durante décadas formó una sola unidad con la Antiga Esquerra y solo se separó por su tamaño y su densidad. Sus calles guardan huellas de otra Barcelona: la Casa Golferichs, que en 1972 se salvó del derribo por la presión popular y hoy es centro cívico; el parque de Joan Miró, levantado sobre el antiguo matadero e inaugurado en 1983 con la escultura Dona i ocell; las Arenas, una plaza de toros convertida en centro comercial, y la antigua cárcel Modelo, de 1904, el primer edificio de Barcelona construido expresamente como prisión.",
-    "Con 59.117 habitantes, es el más poblado del Eixample, y se nota en una vida de calle intensa, con mucho comercio local y vecinos de todas las edades. Su precio medio de compraventa, 5.211 €/m², queda por debajo del de la Antiga Esquerra y la Dreta, y a cambio ofrece la misma trama de Cerdà."
+    "Fino a ben dentro il Novecento fu una zona quasi rurale, con gruppi di baracche di gente che lavorava ai cantieri dell'Esposizione del 1929, e l'urbanizzazione non decollò davvero fino agli anni Trenta. Per decenni formò un'unica unità con l'Antiga Esquerra e se ne separò solo per le sue dimensioni e la sua densità. Le sue strade custodiscono tracce di un'altra Barcellona: Casa Golferichs, che nel 1972 si salvò dalla demolizione grazie alla pressione popolare e oggi è un centro civico; il parco di Joan Miró, costruito sull'antico mattatoio e inaugurato nel 1983 con la scultura Dona i ocell; las Arenas, un'arena per corride trasformata in centro commerciale, e l'ex carcere Modelo, del 1904, il primo edificio di Barcellona costruito appositamente come prigione.",
+    "Con 59.117 abitanti è il più popoloso dell'Eixample, e si vede: una vita di strada intensa, con molti negozi locali e vicini di tutte le età. Il suo prezzo medio di compravendita, 5.211 €/m², è inferiore a quello dell'Antiga Esquerra e della Dreta, e in cambio offre lo stesso impianto di Cerdà."
   ],
-  "housing": "Fincas de varias épocas en la trama de Cerdà, con precios más contenidos que en la Antiga Esquerra.",
+  "housing": "Stabili di epoche diverse nell'impianto di Cerdà, con prezzi più contenuti che nell'Antiga Esquerra.",
   "places": [
     "Parc de Joan Miró",
     "Casa Golferichs",
     "Arenas de Barcelona",
-    "Antigua cárcel Modelo",
+    "Ex carcere Modelo",
     "Escola Industrial"
   ]
 }

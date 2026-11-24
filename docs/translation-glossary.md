@@ -159,3 +159,23 @@ Standard IEC norm, tuteo (`tu`) everywhere, voseo-free. The goal is a faithful b
 | Ajuntament                                                 | Comune di Barcellona (dictionary) / Ajuntament (proper name in data-source tables) |                                                             |
 
 Legal pages stay machine-translated and carry the "pending lawyer review" notice (AGENTS.md §4, I11).
+
+## Zone prose (districts and barrios, it)
+
+| ES                              | IT                                                   | Note                                          |
+| ------------------------------- | ---------------------------------------------------- | --------------------------------------------- |
+| barrio / distrito               | quartiere / distretto                                |                                               |
+| finca (edificio)                | stabile                                              | "palazzo" for large residential blocks        |
+| casco antiguo                   | centro storico                                       |                                               |
+| plan general / plan de acción   | piano regolatore generale / piano d'azione           |                                               |
+| manzana (Eixample)              | isolato                                              |                                               |
+| chaflán                         | angolo smussato                                      |                                               |
+| suelos hidráulicos              | pavimenti in cementine                               |                                               |
+| masía                           | masia                                                | Catalan farmhouse, kept as a loanword         |
+| Ayuntamiento / Generalitat      | Comune / Generalitat                                 |                                               |
+| Patrimonio Mundial              | Patrimonio dell'Umanità                              |                                               |
+| calle X / avenida X / plaza X   | carrer / avinguda / plaça as official, else "strada" | Official street names keep their Catalan form |
+| precio por m² / alquiler        | `€/m²` / `€/mese`                                    | Figure unchanged                              |
+| Si vendes / compras / inviertes | Se vendi / compri / investi                          | Formulaic paragraphs, `tu`                    |
+| «un 4 % por encima»             | «il 4% sopra»                                        | No space before %                             |
+| Subcomisión de Urbanismo        | Subcomisión de Urbanismo                             | Official body name, kept                      |

@@ -1,39 +1,39 @@
 {
   "kind": "district",
-  "translated": false,
-  "lead": "Un antiguo pueblo con carácter propio que cambia con la nueva estación de La Sagrera.",
+  "translated": true,
+  "lead": "Un antico paese con un carattere tutto suo, che cambia con la nuova stazione della Sagrera.",
   "history": [
-    "Sant Andreu de Palomar fue un municipio independiente, con más de mil años de historia documentada, hasta que Barcelona lo anexionó en 1897, y conserva su núcleo antiguo, con calles estrechas, plazas y comercio de barrio. El distrito tiene siete barrios: Sant Andreu, la Sagrera, el Congrés i els Indians, Navas, el Bon Pastor, Baró de Viver y la Trinitat Vella.",
-    "Su pasado industrial se ve en antiguas fábricas convertidas en equipamientos, como Fabra i Coats, y en La Maquinista, hoy centro comercial. Las obras de la nueva estación de La Sagrera, en marcha desde 2009, y de su futuro parque lineal están cambiando esta parte de la ciudad.",
-    "Entre sus 7 barrios, el precio medio de compraventa va de 1.801 €/m² en Baró de Viver a 4.029 €/m² en Navas, y el alquiler medio, de 555 €/mes en Baró de Viver a 980 €/mes en Navas.",
-    "Es un distrito de contrastes, entre la vida de pueblo de Sant Andreu, los barrios en transformación de la Sagrera y el Bon Pastor y zonas pequeñas como Baró de Viver. Conviene comparar cada barrio y estudiar bien el estado de cada finca."
+    "Sant Andreu de Palomar è stato un comune indipendente, con oltre mille anni di storia documentata, fino all'annessione a Barcellona nel 1897, e conserva il suo nucleo storico, con strade strette, piazze e negozi di quartiere. Il distretto ha sette quartieri: Sant Andreu, la Sagrera, el Congrés i els Indians, Navas, el Bon Pastor, Baró de Viver e la Trinitat Vella.",
+    "Il suo passato industriale si legge nelle vecchie fabbriche trasformate in spazi pubblici, come Fabra i Coats, e nella Maquinista, oggi centro commerciale. I lavori della nuova stazione della Sagrera, in corso dal 2009, e del suo futuro parco lineare stanno cambiando questa parte della città.",
+    "Tra i suoi 7 quartieri, il prezzo medio di compravendita va dagli 1.801 €/m² di Baró de Viver ai 4.029 €/m² di Navas, e l'affitto medio dai 555 €/mese di Baró de Viver ai 980 €/mese di Navas.",
+    "È un distretto di contrasti, tra la vita da paese di Sant Andreu, i quartieri in trasformazione della Sagrera e del Bon Pastor e zone piccole come Baró de Viver. Conviene confrontare ogni quartiere e studiare bene lo stato di ogni stabile."
   ],
-  "summary": "Sant Andreu tiene 158.284 habitantes en 6,59 km² y 7 barrios. Su precio medio de compraventa fue de 3.460 €/m² en 2025, un 19 % por debajo de la media de la ciudad. El alquiler medio, 904 €/mes.",
+  "summary": "Sant Andreu conta 158.284 abitanti su 6,59 km² e 7 quartieri. Il suo prezzo medio di compravendita nel 2025 è stato di 3.460 €/m², il 19% sotto la media della città. L'affitto medio è di 904 €/mese.",
   "landmarks": [
     {
       "name": "Fabra i Coats",
       "where": "Sant Andreu",
-      "text": "La antigua fábrica textil, hoy centro de creación y equipamientos."
+      "text": "L'antica fabbrica tessile, oggi centro di creazione e spazio per la comunità."
     },
     {
-      "name": "Núcleo antiguo de Sant Andreu",
+      "name": "Nucli antic de Sant Andreu",
       "where": "Sant Andreu",
-      "text": "La calle Gran de Sant Andreu y la plaza de Orfila, con su iglesia."
+      "text": "Il carrer Gran de Sant Andreu e la plaça d'Orfila, con la sua chiesa."
     },
     {
       "name": "Passeig de Fabra i Puig",
       "where": "Sant Andreu",
-      "text": "El eje comercial que lleva hasta la avenida Meridiana."
+      "text": "L'asse commerciale che porta all'avinguda Meridiana."
     },
     {
-      "name": "Estación de La Sagrera",
+      "name": "Estació de la Sagrera",
       "where": "La Sagrera",
-      "text": "La gran estación en obras y su futuro parque lineal."
+      "text": "La grande stazione in costruzione e il suo futuro parco lineare."
     },
     {
       "name": "Casa Bloc",
       "where": "Sant Andreu",
-      "text": "Edificio de viviendas racionalista de los años treinta."
+      "text": "Edificio residenziale razionalista degli anni Trenta."
     }
   ]
 }
