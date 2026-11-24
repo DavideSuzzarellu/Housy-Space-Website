@@ -123,7 +123,7 @@
           "items": [
             {
               "title": "We listen",
-              "text": "What you need, what deadlines you have and what state the property is in.",
+              "text": "What you need, what deadlines you have and the condition of the property.",
               "kicker": "01"
             },
             {
@@ -199,7 +199,7 @@
           "items": [
             {
               "title": "ADV Advocats",
-              "text": "Law firm in Barcelona: inheritance, income tax and taxes, civil, labour and company law.",
+              "text": "Law firm in Barcelona: inheritance, income tax and other taxes, civil, labour and company law.",
               "kicker": "Legal and tax firm",
               "href": "service:asesoramiento-juridico-fiscal",
               "cta": "See the service"
@@ -213,14 +213,14 @@
             },
             {
               "title": "Maria Guimerà Arquitectura",
-              "text": "Architecture and interior design studio in Barcelona, with full renovations of homes and Eixample flats.",
+              "text": "Architecture and interior design studio in Barcelona, specialising in full renovations of homes and Eixample flats.",
               "kicker": "Architecture and interior design",
               "href": "service:reformas-obras",
               "cta": "See the service"
             },
             {
               "title": "Financial broker",
-              "text": "Studies the viability of each transaction with financing and compares the conditions of different lenders.",
+              "text": "Assesses the viability of each transaction involving financing and compares conditions from different lenders.",
               "kicker": "Financing",
               "href": "service:asesoramiento-financiero",
               "cta": "See the service"

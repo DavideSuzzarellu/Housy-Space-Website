@@ -33,7 +33,7 @@
         },
         {
           "kind": "p",
-          "text": "You can start with an online estimate and, whenever you like, ask an adviser to study your home. The two steps complement each other."
+          "text": "You can start with an online estimate and, whenever you like, ask an advisor to study your home. The two steps complement each other."
         },
         {
           "kind": "list",
@@ -48,7 +48,7 @@
               "href": "route:valuation"
             },
             {
-              "title": "Valuation with an adviser",
+              "title": "Valuation with an advisor",
               "text": "We analyse your home, its particulars and market conditions, and explain which factors affect its value.",
               "kicker": "Personal study",
               "facts": [
@@ -56,7 +56,7 @@
                 "Review of the documents",
                 "Market study, explained to you"
               ],
-              "cta": "Request a valuation with an adviser",
+              "cta": "Request a valuation with an advisor",
               "href": "route:contact"
             }
           ]
@@ -66,15 +66,15 @@
           "items": [
             {
               "kind": "h3",
-              "text": "Valuation with an adviser"
+              "text": "Valuation with an advisor"
             },
             {
               "kind": "lead",
-              "text": "Leave us your details and a HousySpace adviser will call you to value your home in person."
+              "text": "Leave us your details and a HousySpace advisor will call you to value your home in person."
             },
             {
               "kind": "form",
-              "id": "valuation-adviser-form",
+              "id": "valuation-advisor-form",
               "fields": [
                 {
                   "name": "nombre",
@@ -119,7 +119,7 @@
                 },
                 {
                   "name": "consent",
-                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending validation.)",
                   "required": true,
                   "full": true,
                   "type": "consent",
@@ -222,7 +222,7 @@
         },
         {
           "kind": "p",
-          "text": "A valuation with an adviser goes through these four steps. When we hand it over, we explain what we studied in each one and how we reached the conclusion."
+          "text": "A valuation with an advisor goes through these four steps. When we hand it over, we explain what we studied in each one and how we reached the conclusion."
         },
         {
           "kind": "card",
@@ -412,7 +412,7 @@
         },
         {
           "kind": "h2",
-          "text": "What a valuation *with an adviser* looks like"
+          "text": "What a valuation *with an advisor* looks like"
         },
         {
           "kind": "p",
@@ -458,7 +458,7 @@
         {
           "kind": "faq",
           "q": "What's the difference between an online valuation and a professional one?",
-          "a": "The online valuation gives you an indicative estimate instantly, based on the details you enter. The valuation with an adviser studies your home individually — its condition, its documents and its market — and explains which factors affect its value. We go into more detail in the article [Is the online valuation of your flat reliable?](route:blog)"
+          "a": "The online valuation gives you an indicative estimate instantly, based on the details you enter. The valuation with an advisor studies your home individually — its condition, its documents and its market — and explains which factors affect its value. We go into more detail in the article [Is the online valuation of your flat reliable?](route:blog)"
         },
         {
           "kind": "faq",
@@ -478,7 +478,7 @@
         {
           "kind": "faq",
           "q": "What happens after I request a valuation?",
-          "a": "With the online valuation you get the estimate instantly. If you ask for one with an adviser, we call you to arrange the visit and follow the four steps above. If you then decide to sell, the valuation is the starting point of our [sales brokerage](service:venta-estrategica) service."
+          "a": "With the online valuation you get the estimate instantly. If you ask for one with an advisor, we call you to arrange the visit and follow the four steps above. If you then decide to sell, the valuation is the starting point of our [sales brokerage](service:venta-estrategica) service."
         }
       ]
     },

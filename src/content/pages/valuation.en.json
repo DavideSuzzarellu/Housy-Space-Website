@@ -31,7 +31,7 @@
         },
         {
           "kind": "p",
-          "text": "You can start with an online estimate and, whenever you like, ask an adviser to look at your home. The two steps complement each other."
+          "text": "You can start with an online estimate and, whenever you like, ask an advisor to look at your home. The two steps complement each other."
         },
         {
           "kind": "card",
@@ -87,11 +87,11 @@
             },
             {
               "kind": "h3",
-              "text": "Valuation with an adviser"
+              "text": "Valuation with an advisor"
             },
             {
               "kind": "p",
-              "text": "We look at your home, its particularities and market conditions, and explain what drives its value."
+              "text": "We look at your home, its specific features and market conditions, and explain what drives its value."
             },
             {
               "kind": "list",
@@ -107,7 +107,7 @@
                 },
                 {
                   "title": "",
-                  "text": "Commented market study"
+                  "text": "Market study, explained to you"
                 }
               ]
             },
@@ -115,7 +115,7 @@
               "kind": "buttons",
               "items": [
                 {
-                  "label": "Request a valuation with an adviser",
+                  "label": "Request a valuation with an advisor",
                   "href": "route:contact",
                   "solid": false
                 }
@@ -140,7 +140,7 @@
         },
         {
           "kind": "note",
-          "text": "The valuation tool estimate is indicative; it is not an official appraisal. The tool is provided by an external supplier, Lystos: data you enter will be processed according to their privacy information and that of HousySpace (legal text pending approval)."
+          "text": "The valuation tool estimate is indicative; it is not an official appraisal. The tool is provided by an external supplier, Lystos: data you enter will be processed according to their privacy information and that of HousySpace (legal text pending validation)."
         }
       ]
     },
@@ -151,11 +151,11 @@
       "items": [
         {
           "kind": "h2",
-          "text": "Valuation with an adviser"
+          "text": "Valuation with an advisor"
         },
         {
           "kind": "lead",
-          "text": "Leave us your details and a HousySpace adviser will call you to value your home in person."
+          "text": "Leave us your details and a HousySpace advisor will call you to value your home in person."
         },
         {
           "kind": "form",

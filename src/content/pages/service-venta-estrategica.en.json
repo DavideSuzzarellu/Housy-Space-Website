@@ -17,7 +17,7 @@
       },
       {
         "kind": "lead",
-        "text": "We study your home and its market, set the price and the strategy, and one adviser takes the sale through to signing."
+        "text": "We study your home and its market, set the price and the strategy, and one advisor takes the sale through to signing."
       }
     ]
   },
@@ -72,7 +72,7 @@
         },
         {
           "kind": "p",
-          "text": "Ask for an instant online estimate, or for a valuation by an adviser who studies your home in depth."
+          "text": "Ask for an instant online estimate, or for a valuation by an advisor who studies your home in depth."
         },
         {
           "kind": "list",
@@ -87,31 +87,31 @@
             },
             {
               "kicker": "With a visit",
-              "title": "Valuation with an adviser",
+              "title": "Valuation with an advisor",
               "text": "We visit your home, review its paperwork and study your neighbourhood's market to give you a complete report.",
-              "cta": "Request an adviser valuation",
+              "cta": "Request a valuation with an advisor",
               "href": "route:contact"
             }
           ]
         },
         {
           "kind": "p",
-          "text": "If you choose the adviser, we call you to arrange the visit, see the home and its paperwork, and give you the report with our comments. You can ask for it even while you are still deciding; if you are not sure yet whether to sell, start with an [orientation consultation](route:services#asesoramiento)."
+          "text": "If you choose the advisor, we call you to arrange the visit, see the home and its paperwork, and give you the report with our comments. You can ask for it even while you are still deciding; if you are not sure yet whether to sell, start with an [initial consultation](route:services#asesoramiento)."
         },
         {
           "kind": "card",
           "items": [
             {
               "kind": "h3",
-              "text": "Valuation with an adviser"
+              "text": "Valuation with an advisor"
             },
             {
               "kind": "lead",
-              "text": "Leave us your details and a HousySpace adviser will call you to value your home in person."
+              "text": "Leave us your details and a HousySpace advisor will call you to value your home in person."
             },
             {
               "kind": "form",
-              "id": "valuation-adviser-form",
+              "id": "valuation-advisor-form",
               "fields": [
                 {
                   "name": "nombre",
@@ -156,7 +156,7 @@
                 },
                 {
                   "name": "consent",
-                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending approval.)",
+                  "label": "I have read the privacy information and consent to HousySpace processing this data to handle my request. (Legal text pending validation.)",
                   "required": true,
                   "full": true,
                   "type": "consent",
@@ -280,7 +280,7 @@
         },
         {
           "kind": "lead",
-          "text": "Eight steps in three phases and a single adviser from start to finish. You decide; we take care of the rest."
+          "text": "Eight steps in three phases and a single advisor from start to finish. You decide; we take care of the rest."
         },
         {
           "kind": "card",
@@ -508,8 +508,8 @@
               ]
             },
             {
-              "title": "Buyer financing",
-              "text": "The financial broker we work with checks the buyer's financing is viable, to reduce the risk of the sale falling through over the mortgage.",
+              "title": "Buyer finance",
+              "text": "The financial broker we work with checks that the buyer's financing is viable, to reduce the risk of the sale falling through over the mortgage.",
               "icon": [
                 "M3 10l9-6 9 6",
                 "M5 10v8",
@@ -520,8 +520,8 @@
               ]
             },
             {
-              "title": "Clearing the home",
-              "text": "We help you plan and organise clearing the home before handover.",
+              "title": "Home clearance",
+              "text": "We help you plan and organise the clearance of the home before handover.",
               "icon": ["M4 8l8-4 8 4v9l-8 4-8-4z", "M4 8l8 4 8-4", "M12 12v9"]
             }
           ]
@@ -650,7 +650,7 @@
         {
           "kind": "faq",
           "q": "Is an online valuation good enough to set the price?",
-          "a": "It's a good first reference, but it doesn't replace a study of your home and of actual sales in the area. We explain why in the article [Is the online valuation of your flat reliable?](route:blog) and, if you want a reasoned figure, start with a [valuation with an adviser](service:valoracion)."
+          "a": "It's a good first reference, but it doesn't replace a study of your home and of actual sales in the area. We explain why in the article [Is the online valuation of your flat reliable?](route:blog) and, if you want a reasoned figure, start with a [valuation with an advisor](service:valoracion)."
         }
       ]
     },
@@ -664,7 +664,7 @@
         },
         {
           "kind": "p",
-          "text": "Many sales fall through over an unexpected issue: a missing habitation certificate, a mortgage that doesn't come through, incomplete documentation. We anticipate them and, when they appear, we resolve them."
+          "text": "Many sales fall through over an unexpected issue: a missing habitability certificate, a mortgage that doesn't come through, incomplete documentation. We anticipate them and, when they appear, we resolve them."
         }
       ]
     },

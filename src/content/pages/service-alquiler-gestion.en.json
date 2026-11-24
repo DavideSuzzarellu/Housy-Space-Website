@@ -1,8 +1,8 @@
 {
-  "title": "Lettings and property management · HousySpace",
+  "title": "Rentals and property management · HousySpace",
   "description": "Marketing, tenant selection and rental management.",
   "head": {
-    "heading": "Lettings *and property management*",
+    "heading": "Rentals *and property management*",
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-alquiler-1000.webp",
@@ -80,11 +80,11 @@
               "items": [
                 {
                   "title": "",
-                  "text": "Preparation and listing of the advertisement"
+                  "text": "Preparing and publishing the listing"
                 },
                 {
                   "title": "",
-                  "text": "Responding to candidates and viewings"
+                  "text": "Replying to enquiries and arranging viewings"
                 },
                 {
                   "title": "",
@@ -168,7 +168,7 @@
             },
             {
               "title": "Marketing",
-              "text": "We list the property and respond to interested parties."
+              "text": "We list the property and reply to everyone who gets in touch."
             },
             {
               "title": "Selection",
@@ -197,7 +197,7 @@
         {
           "kind": "faq",
           "q": "What documents do I need to let my property?",
-          "a": "In Catalonia, the habitability certificate and the energy performance certificate. If you don't have them, the architect we work with arranges them."
+          "a": "In Catalonia, you need the habitability certificate and the energy performance certificate. If you don't have them, the architect we work with arranges them."
         },
         {
           "kind": "faq",
@@ -216,7 +216,7 @@
         },
         {
           "kind": "p",
-          "text": "Not sure whether to rent or sell? We'll work it out with you in an [orientation consultation](route:services#asesoramiento)."
+          "text": "Not sure whether to rent or sell? We'll work it out with you in an [initial consultation](route:services#asesoramiento)."
         }
       ]
     },

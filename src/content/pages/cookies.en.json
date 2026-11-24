@@ -30,7 +30,7 @@
         },
         {
           "kind": "p",
-          "text": "A cookie is a small file that a website stores on your device when you visit it. Other similar technologies, such as the browser's local or session storage, do something similar. They are used so that the website works, remembers your preferences or measures how it is used."
+          "text": "A cookie is a small file that a website stores on your device when you visit it. Other similar technologies, such as the browser's local or session storage, work in a similar way. They are used so that the website works, remembers your preferences or measures how it is used."
         },
         {
           "kind": "h2",
@@ -76,13 +76,13 @@
           "rows": [
             [
               "Google Maps (Google)",
-              "Maps of Properties, of brokered properties and of the property pages.",
+              "Maps on the properties page, the brokered properties page and the individual property pages.",
               "When you open those pages.",
               "Google receives your IP address and map usage data and may install cookies or use local storage. [Google cookies](https://policies.google.com/technologies/cookies)."
             ],
             [
               "ICGC base map",
-              "Mapping for the maps when Google's is not loaded.",
+              "Base map for the maps when Google's is not loaded.",
               "When you open the pages with a map.",
               "The Institut Cartogràfic i Geològic de Catalunya receives your IP address when serving the maps. HousySpace does not install cookies with this service."
             ],
@@ -118,7 +118,7 @@
         },
         {
           "kind": "p",
-          "text": "You can allow, block or delete cookies from your browser's privacy settings (Chrome, Firefox, Safari, Edge or another). If you block those of third-party services, the maps or the valuator may not work. The Spanish Data Protection Agency explains how to do it at [www.aepd.es](https://www.aepd.es)."
+          "text": "You can allow, block or delete cookies from your browser's privacy settings (Chrome, Firefox, Safari, Edge or another). If you block cookies from third-party services, the maps or the valuator may not work. The Spanish Data Protection Agency explains how to do it at [www.aepd.es](https://www.aepd.es)."
         },
         {
           "kind": "h2",
@@ -126,7 +126,7 @@
         },
         {
           "kind": "p",
-          "text": "If in the future we use analytics, advertising or other non-necessary cookies, we will update this policy and ask for your consent before installing them. You will be able to accept them, reject them and change your mind whenever you want."
+          "text": "If in the future we use analytics, advertising or other non-necessary cookies, we will update this policy and ask for your consent before installing them. You will be able to accept or reject them, and change your mind whenever you want."
         },
         {
           "kind": "h2",

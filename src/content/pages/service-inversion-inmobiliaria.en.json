@@ -77,7 +77,7 @@
           "items": [
             {
               "title": "Purchase price and costs",
-              "text": "Price, taxes, notary, Land Registry and agent fees: the real cost of entry."
+              "text": "Price, taxes, notary, Land Registry and agency fees: the real cost of entry."
             },
             {
               "title": "Renovation",
@@ -149,7 +149,7 @@
         },
         {
           "kind": "h2",
-          "text": "From analysis to rental income, with one adviser throughout"
+          "text": "From analysis to rental income, with one advisor throughout"
         },
         {
           "kind": "lead",
@@ -166,21 +166,21 @@
               "href": "service:asesoramiento-financiero"
             },
             {
-              "title": "Property Personal Shopper",
+              "title": "Real estate personal shopper",
               "text": "",
               "kicker": "Buy",
               "href": "service:personal-shopper"
             },
             {
-              "title": "Renovations & interior design",
+              "title": "Renovations and interior design",
               "text": "",
               "kicker": "Renovate",
               "href": "service:reformas-obras"
             },
             {
-              "title": "Lettings and property management",
+              "title": "Rentals and property management",
               "text": "",
-              "kicker": "Let",
+              "kicker": "Rent out",
               "href": "service:alquiler-gestion"
             }
           ]

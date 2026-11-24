@@ -60,7 +60,7 @@
             },
             {
               "kind": "note",
-              "text": "**Basic information.** Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: sending you the newsletter and articles. Legal basis: your consent. Recipients: we do not share your data, except where legally required; email providers act on our behalf. Rights: access, rectification, erasure, objection, restriction and portability, and unsubscribe at any time via the link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com). More information in the [privacy policy](route:privacy). (Draft: no newsletter tool is connected yet; clicking will open your email client with the request pre-filled and you will not be subscribed until you send it.)"
+              "text": "**Basic information.** Controller: HousySpace Consultores Inmobiliarios, S.L. Purpose: sending you the newsletter and articles. Legal basis: your consent. Recipients: we do not share your data, except where legally required; email providers act on our behalf. Rights: access, rectification, erasure, objection, restriction and portability, and you can unsubscribe at any time via the link in each email or by writing to [info@housyspace.com](mailto:info@housyspace.com). More information in the [privacy policy](route:privacy). (Draft: no newsletter tool is connected yet; clicking will open your email client with the request pre-filled and you will not be subscribed until you send it.)"
             }
           ],
           "mode": "email"

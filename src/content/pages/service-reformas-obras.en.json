@@ -1,8 +1,8 @@
 {
-  "title": "Renovations & interior design · HousySpace",
+  "title": "Renovations and interior design · HousySpace",
   "description": "Renovations for all types of property: project, interior design and works with one single point of contact.",
   "head": {
-    "heading": "Renovations *& interior design*",
+    "heading": "Renovations *and interior design*",
     "photo": false,
     "illustration": {
       "src": "../../assets/servicios/ill-reformas-1000.webp",
@@ -77,7 +77,7 @@
             },
             {
               "title": "When buying",
-              "text": "The renovation costed before you buy, so you know what it will cost before you decide. [See Personal Shopper](service:personal-shopper)."
+              "text": "The renovation costed before you buy, so you know the full price before you decide. [See Personal Shopper](service:personal-shopper)."
             },
             {
               "title": "For renting",
@@ -121,7 +121,7 @@
             },
             {
               "title": "Permits and planning consent",
-              "text": "Any works permits the council requires are applied for."
+              "text": "We apply for any works permits the council requires."
             },
             {
               "title": "Works",
