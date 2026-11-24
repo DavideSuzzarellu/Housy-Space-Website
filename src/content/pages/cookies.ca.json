@@ -1,8 +1,8 @@
 {
-  "title": "Política de cookies · HousySpace",
-  "description": "Política de cookies de HousySpace.",
+  "title": "Política de galetes · HousySpace",
+  "description": "Política de galetes de HousySpace.",
   "head": {
-    "heading": "Política de cookies",
+    "heading": "Política de galetes",
     "photo": false,
     "items": [
       {
@@ -38,7 +38,7 @@
         },
         {
           "kind": "p",
-          "text": "**HousySpace Consultores Inmobiliarios, S.L.**, CIF B26903419. Travessera de Gràcia 73, 2º-3ª, 08006 Barcelona. Correu: [info@housyspace.com](mailto:info@housyspace.com). Més dades a l'[avís legal](route:legal)."
+          "text": "**HousySpace Consultores Inmobiliarios, S.L.**, CIF B26903419. Travessera de Gràcia 73, 2n 3a, 08006 Barcelona. Correu: [info@housyspace.com](mailto:info@housyspace.com). Més dades a l'[avís legal](route:legal)."
         },
         {
           "kind": "h2",
@@ -50,7 +50,7 @@
           "items": [
             {
               "title": "",
-              "text": "**Galetes pròpies: cap.** El web d'HousySpace no instal·la galetes al teu dispositiu."
+              "text": "**Galetes pròpies: cap.** El web de HousySpace no instal·la galetes al teu dispositiu."
             },
             {
               "title": "",
@@ -76,7 +76,7 @@
           "rows": [
             [
               "Google Maps (Google)",
-              "Mapes de Propietats, dels immobles intermediats i de les fitxes d'immoble.",
+              "Mapes d'Immobles, dels immobles intermediats i de les fitxes d'immoble.",
               "En obrir aquestes pàgines.",
               "Google rep la teva adreça IP i dades d'ús del mapa i pot instal·lar galetes o usar emmagatzematge local. [Galetes de Google](https://policies.google.com/technologies/cookies)."
             ],
