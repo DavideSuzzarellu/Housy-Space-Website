@@ -398,6 +398,26 @@ const es = {
       "Te decimos con honestidad si te conviene, cuándo y cómo. El primer paso es saber cuánto vale.",
     ctaValue: "Valorar mi vivienda",
     ctaTalk: "Hablemos de tu venta",
+    /** Valuation block at the end of every article (reference `pr-val`). */
+    valuation: {
+      tag: "Valoración",
+      heading: "¿Cuánto vale *tu vivienda?*",
+      lead: "Empieza con una estimación online o pide que estudiemos tu vivienda con el método que acabas de leer.",
+      online: {
+        tag: "Al momento",
+        title: "Valoración online",
+        text: "Introduce los datos de tu vivienda en nuestro valorador y recibe una estimación orientativa de su valor.",
+        cta: "Valorar online ahora",
+        alt: "Balcón de una finca modernista de Barcelona con el pin de HousySpace",
+      },
+      advisor: {
+        tag: "Con visita",
+        title: "Valoración con un asesor",
+        text: "Visitamos tu vivienda, revisamos su documentación y estudiamos el mercado de tu barrio para darte un informe completo.",
+        cta: "Pedir valoración con un asesor",
+        alt: "Un asesor señala un plano sobre una mesa con un portátil",
+      },
+    },
   },
   zones: {
     saleLabel: "Precio de compraventa",

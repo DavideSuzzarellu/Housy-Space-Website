@@ -392,6 +392,25 @@ const it = {
       "Ti diciamo con onestà se ti conviene, quando e come. Il primo passo è sapere quanto vale.",
     ctaValue: "Valuta la mia casa",
     ctaTalk: "Parliamo della tua vendita",
+    valuation: {
+      tag: "Valutazione",
+      heading: "Quanto vale *la tua casa?*",
+      lead: "Inizia con una stima online o chiedici di studiare la tua casa con il metodo che hai appena letto.",
+      online: {
+        tag: "Subito",
+        title: "Valutazione online",
+        text: "Inserisci i dati della tua casa nel nostro valutatore e ricevi una stima orientativa del suo valore.",
+        cta: "Valuta online ora",
+        alt: "Balcone di un edificio modernista di Barcellona con il pin di HousySpace",
+      },
+      advisor: {
+        tag: "Con sopralluogo",
+        title: "Valutazione con un consulente",
+        text: "Visitiamo la tua casa, esaminiamo la documentazione e studiamo il mercato del tuo quartiere per darti un rapporto completo.",
+        cta: "Richiedi una valutazione con un consulente",
+        alt: "Un consulente indica una planimetria su un tavolo accanto a un portatile",
+      },
+    },
   },
   zones: {
     saleLabel: "Prezzo di vendita",

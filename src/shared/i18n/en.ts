@@ -391,6 +391,25 @@ const en = {
       "We tell you honestly whether it makes sense, when and how. The first step is knowing what it is worth.",
     ctaValue: "Value my home",
     ctaTalk: "Let's talk about your sale",
+    valuation: {
+      tag: "Valuation",
+      heading: "How much is *your home worth?*",
+      lead: "Start with an online estimate or ask us to study your home with the method you have just read about.",
+      online: {
+        tag: "Instant",
+        title: "Online valuation",
+        text: "Enter your home's details in our valuation tool and get an indicative estimate of its value.",
+        cta: "Value online now",
+        alt: "Balcony of a Barcelona modernista building with the HousySpace pin",
+      },
+      advisor: {
+        tag: "With a visit",
+        title: "Valuation with an advisor",
+        text: "We visit your home, review its documents and study your neighbourhood's market to give you a complete report.",
+        cta: "Ask for a valuation with an advisor",
+        alt: "An advisor points at a plan on a table next to a laptop",
+      },
+    },
   },
   zones: {
     saleLabel: "Sale price",
