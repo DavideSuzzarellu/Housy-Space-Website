@@ -68,7 +68,7 @@ const SURFACES = {
       class:list={[
         "relative isolate overflow-hidden",
         hero
-          ? "pt-[clamp(1.625rem,4vw,3.25rem)] pb-[clamp(3.5rem,8vw,7rem)]"
+          ? "hero-grid pt-[clamp(1.375rem,4.2svh,2.625rem)] pb-[clamp(2rem,5.4svh,3.5rem)]"
           : legal
             ? headRest.length > 0
               ? "pt-8 pb-8.5"
@@ -103,6 +103,7 @@ const SURFACES = {
         <Breadcrumbs
           items={crumbs}
           label={t.property.detail.breadcrumb}
+          tone={hero ? "compact" : "default"}
           class:list={[hero ? "mb-[clamp(1.875rem,4.4vw,3.625rem)]" : "mb-7"]}
         />
         {headItems
@@ -120,7 +121,7 @@ const SURFACES = {
         <h1
           class:list={[
             hero
-              ? "mt-4 mb-[clamp(1.5rem,3.4vw,2.5rem)] text-[clamp(2.375rem,6.4vw,5.75rem)] leading-none text-balance [&_em]:block"
+              ? "mt-4 mb-[clamp(1.5rem,3.4vw,2.5rem)] text-[clamp(2.25rem,4.7vw,4.25rem)] leading-[1.02] text-balance [&_em]:block"
               : legal
                 ? "max-w-[22ch] text-[clamp(1.875rem,3.8vw,3.125rem)]"
                 : "max-w-[22ch] text-[clamp(1.875rem,4.8vw,3.5rem)]",
@@ -133,12 +134,19 @@ const SURFACES = {
           class:list={[
             legal
               ? "mt-3.5 max-w-none normal-case [&_p]:mb-3.5 [&_p]:max-w-none [&_p]:text-base [&_p]:leading-[1.7] [&_p]:text-fg"
-              : "mt-4 max-w-[62ch] text-fg/90",
+              : hero
+                ? "mt-4 text-fg/90"
+                : "mt-4 max-w-[62ch] text-fg/90",
             hero &&
-              "[&>:last-child]:mb-0 [&_p]:mb-[clamp(1.875rem,4vw,2.875rem)] [&_p]:max-w-[58ch] [&_p]:text-[clamp(0.875rem,1.35vw,1.0625rem)] [&_p]:leading-[1.8] [&_p]:text-fg/85",
+              "[&>:last-child]:mb-0 [&_p]:mb-[clamp(1.875rem,4vw,2.875rem)] [&_p]:max-w-none [&_p]:text-[clamp(0.875rem,1.35vw,1.0625rem)] [&_p]:leading-[1.6] [&_p]:text-fg/85",
           ]}
         >
-          <PageItems locale={locale} buttonSize={hero ? "lg" : "md"} units={groupItems(headRest)} />
+          <PageItems
+            locale={locale}
+            buttonSize={hero ? "lg" : "md"}
+            plain={hero}
+            units={groupItems(headRest)}
+          />
         </div>
       </Container>
     </section>
@@ -148,19 +156,21 @@ const SURFACES = {
     <section
       id={section.id}
       class:list={[
+        /* "Mi búsqueda" (reference `escala.css`): intro steps / form / closing call, one rule set each. */
         hero
-          ? "py-[clamp(3.5rem,7vw,6rem)]"
+          ? index === content.sections.length - 1
+            ? "py-[clamp(2.75rem,7.4svh,4.5rem)] [&_h2]:mb-6 [&_h2]:text-[clamp(1.75rem,3vw,2.75rem)] [&_h2]:leading-[1.08] [&_p]:mb-8.5 [&_p]:max-w-[52ch] [&_p]:text-[clamp(0.9375rem,1.12vw,1.03125rem)] [&_p]:leading-[1.62] [&_p]:text-fg/85"
+            : section.id !== undefined
+              ? "py-[clamp(2.75rem,7.4svh,4.5rem)] [&_h2]:mb-3.5 [&_h2]:text-[clamp(1.5625rem,2.65vw,2.375rem)] [&_h2]:leading-[1.08] [&>div>p]:mb-7 [&>div>p]:max-w-[62ch] [&>div>p]:text-[0.84375rem] [&>div>p]:leading-[1.7] [&>div>p]:tracking-[0.28px] [&>div>p]:text-fg/85"
+              : "py-[clamp(2.375rem,6.2svh,3.625rem)] [&_ol]:mt-[clamp(1.875rem,4vw,3.375rem)] [&_h2]:text-[clamp(1.625rem,3vw,2.5rem)] [&_h2]:leading-[1.08]"
           : legal
             ? "py-[clamp(3.25rem,7vw,3.5rem)]"
             : "py-[clamp(2.75rem,5vw,4.125rem)]",
-        hero && "[&_ol]:mt-[clamp(1.875rem,4vw,3.375rem)]",
-        hero && section.id !== undefined && "[&_h2]:text-[clamp(1.75rem,3.6vw,3rem)]",
-        hero &&
-          index === content.sections.length - 1 &&
-          "py-[clamp(4rem,9vw,8.75rem)] [&_h2]:max-w-[680px] [&_h2]:text-[clamp(2.25rem,4.2vw,3.75rem)] [&_h2]:leading-[1.08] [&_h2]:mb-6 [&_p]:mb-8.5 [&_p]:max-w-[32.25rem] [&_p]:text-[0.9375rem] [&_p]:text-fg/85",
         section.band
           ? "surface-dark bg-canvas py-[clamp(3.5rem,8vw,6.5rem)] text-center"
-          : SURFACES[section.surface],
+          : hero && section.surface === "stone"
+            ? "bg-bg-soft"
+            : SURFACES[section.surface],
       ]}
     >
       <Container>
@@ -177,6 +187,7 @@ const SURFACES = {
           <PageItems
             locale={locale}
             buttonSize={hero ? "lg" : "md"}
+            plain={hero}
             units={groupItems(section.items)}
           />
         )}

@@ -18,9 +18,11 @@ interface Props {
   units: readonly RenderUnit<PageItem>[];
   /** Size of the page-level buttons (the "Mi búsqueda" landing uses large ones). */
   buttonSize?: "md" | "lg";
+  /** Reference look of "Mi búsqueda": sentence-case lead and step texts, no turquoise rule under the h2. */
+  plain?: boolean;
 }
 
-const { locale, units, buttonSize = "md" } = Astro.props;
+const { locale, units, buttonSize = "md", plain = false } = Astro.props;
 const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
 ---
 
@@ -62,7 +64,7 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
       return <p class="mt-1 mb-2.5 text-[0.6875rem] tracking-[0.16em] text-accent">{item.text}</p>;
     case "h2":
       return (
-        <h2 class="mb-4 text-[clamp(1.5rem,3.6vw,2.5rem)]">
+        <h2 data-no-rule={plain ? "" : undefined} class="mb-4 text-[clamp(1.5rem,3.6vw,2.5rem)]">
           <Emphasis text={item.text} />
         </h2>
       );
@@ -76,7 +78,12 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
       );
     case "lead":
       return (
-        <p class="mb-4 max-w-[62ch] text-[clamp(1rem,1.3vw,1.125rem)] text-muted">
+        <p
+          class:list={[
+            "mb-4 max-w-[62ch] text-[clamp(1rem,1.3vw,1.125rem)] text-muted",
+            plain && "normal-case",
+          ]}
+        >
           <Inline text={item.text} locale={locale} />
         </p>
       );
@@ -145,7 +152,12 @@ const NOTE = "mt-3 border-l-2 border-turquoise pl-3 text-xs text-muted";
                 {String(index + 1).padStart(2, "0")}
               </b>
               <h3 class="mb-2.5 text-[clamp(1.0625rem,1.6vw,1.3125rem)]">{entry.title}</h3>
-              <p class="max-w-[38ch] text-[0.84375rem] leading-[1.75] text-muted">
+              <p
+                class:list={[
+                  "max-w-[38ch] text-[0.84375rem] leading-[1.75]",
+                  plain ? "text-fg/85 normal-case" : "text-muted",
+                ]}
+              >
                 <Inline text={entry.text} locale={locale} />
               </p>
             </li>
