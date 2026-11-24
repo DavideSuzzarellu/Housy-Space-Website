@@ -7,7 +7,8 @@ interface Props {
   labelledBy: string;
   /** Stable hook for tests/analytics (e.g. "services"). */
   name: string;
-  spacing?: "default" | "roomy" | "spacious";
+  /** `scale`/`hero`: the reference's height-based rhythm (escala.css), used by the zones pages. */
+  spacing?: "default" | "roomy" | "spacious" | "scale" | "hero";
   surface?: "paper" | "stone" | "dark";
   class?: string;
 }
@@ -25,6 +26,8 @@ const SPACING = {
   default: "py-[clamp(2.75rem,5vw,4.125rem)]",
   roomy: "py-[clamp(4rem,7.4vw,7rem)]",
   spacious: "py-[clamp(4.5rem,8vw,7.5rem)]",
+  scale: "py-[clamp(2.375rem,6.2vh,3.625rem)]",
+  hero: "pt-[clamp(1.375rem,4.2vh,2.625rem)] pb-[clamp(2.375rem,6.2vh,3.625rem)]",
 } as const;
 
 const SURFACES = {

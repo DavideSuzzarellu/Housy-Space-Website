@@ -5,7 +5,7 @@ describe("resolveContentHref", () => {
   it("resolves routes, services and districts per locale", () => {
     expect(resolveContentHref("route:contact", "en")).toBe("/en/contact");
     expect(resolveContentHref("service:valoracion", "es")).toBe("/es/servicios/valoracion");
-    expect(resolveContentHref("district:gracia", "it")).toBe("/it/vivere-a-barcellona/gracia");
+    expect(resolveContentHref("district:gracia", "it")).toBe("/it/zone/barcelona/distretti/gracia");
   });
 
   it("keeps the fragment", () => {

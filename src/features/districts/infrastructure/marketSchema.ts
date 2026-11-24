@@ -26,6 +26,11 @@ const barrio = z
     saleProvisional: provisional.nullable().optional(),
     rentSeries: z.array(point),
     rentProvisional: provisional.nullable().optional(),
+    /** Client prose of the reference barrio page (Spanish only, verbatim). */
+    lead: z.string(),
+    text: z.array(z.string()),
+    housing: z.string(),
+    places: z.array(z.string()),
   })
   .strict();
 

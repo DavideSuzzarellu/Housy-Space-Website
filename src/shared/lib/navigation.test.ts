@@ -33,8 +33,8 @@ describe("getMainNavigation", () => {
     ]);
     expect(services?.children).toHaveLength(8);
     expect(living?.children).toHaveLength(11);
-    expect(living?.children[0]?.href).toBe("/es/vivir-en-barcelona");
-    expect(living?.children[2]?.href).toBe("/es/vivir-en-barcelona/eixample");
+    expect(living?.children[0]?.href).toBe("/es/zonas/barcelona");
+    expect(living?.children[2]?.href).toBe("/es/zonas/barcelona/distritos/eixample");
   });
 
   it("marks Blog, Where we are and Contact as secondary (one smaller row in the drawer)", () => {
@@ -65,7 +65,7 @@ describe("getFooterNavigation", () => {
     expect(columns[0]?.links.map((link) => link.href)).toEqual([
       "/es/venta",
       "/es/servicios",
-      "/es/vivir-en-barcelona",
+      "/es/zonas/barcelona",
       "/es/mi-busqueda",
       "/es/blog",
     ]);

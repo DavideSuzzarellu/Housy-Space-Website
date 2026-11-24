@@ -14,21 +14,51 @@ interface Props {
   source: string;
   sourceUrl?: string | undefined;
   locale: string;
+  /** `card`: paper box on a stone block; `rule`: open figure under a 1 px rule (reference index). */
+  variant?: "card" | "rule";
+  /** Word before the source line ("Source:"), shown when given. */
+  sourcePrefix?: string | undefined;
 }
 
-const { title, unit, items, source, sourceUrl, locale } = Astro.props;
+const {
+  title,
+  unit,
+  items,
+  source,
+  sourceUrl,
+  locale,
+  variant = "card",
+  sourcePrefix,
+} = Astro.props;
 const max = Math.max(...items.map((item) => item.value));
 const format = figureFormat(locale);
 const TONES = { main: "bg-ch-a", second: "bg-ch-b", third: "bg-ch-c" } as const;
 ---
 
-<figure class="m-0 border border-line bg-card px-3.5 pt-3.5 pb-2.5">
-  <figcaption class="mb-1.5 text-[0.6875rem] font-medium tracking-[0.04em]">
+<figure
+  class:list={[
+    "m-0",
+    variant === "card"
+      ? "border border-line bg-card px-3.5 pt-3.5 pb-2.5"
+      : "border-t border-line-strong pt-[18px]",
+  ]}
+>
+  <figcaption
+    class:list={[
+      "font-medium tracking-[0.04em]",
+      variant === "card" ? "mb-1.5 text-[0.6875rem]" : "mb-2.5 text-xs",
+    ]}
+  >
     {title} ({unit})
   </figcaption>
-  <ul class="grid gap-2.5">
+  <ul class:list={["grid", variant === "card" ? "gap-2.5" : "gap-1"]}>
     {items.map((item) => (
-      <li class="grid grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-2.5 text-[0.625rem]">
+      <li
+        class:list={[
+          "grid grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-2.5 text-[0.625rem]",
+          variant === "card" ? "min-h-5.5" : "min-h-4",
+        ]}
+      >
         <span class="text-right leading-tight">{item.label}</span>
         <span class="flex items-center gap-2">
           <span
@@ -41,17 +71,21 @@ const TONES = { main: "bg-ch-a", second: "bg-ch-b", third: "bg-ch-c" } as const;
     ))}
   </ul>
   <p class="mt-1.5 text-[0.625rem] text-muted">
+    {sourcePrefix !== undefined && `${sourcePrefix} `}
     {sourceUrl === undefined ? (
-      source
+      `${source}.`
     ) : (
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2"
-      >
-        {source}
-      </a>
+      <>
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-2"
+        >
+          {source.split(" (")[0]}
+        </a>
+        {source.includes(" (") ? ` (${source.split(" (").slice(1).join(" (")}.` : "."}
+      </>
     )}
   </p>
 </figure>

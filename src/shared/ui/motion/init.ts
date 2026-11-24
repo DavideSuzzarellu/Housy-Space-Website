@@ -1,4 +1,5 @@
 import { initIntro } from "./intro";
+import { initParallax } from "./parallax";
 import { initScrollProgress } from "./progress";
 import { initReveal, MOTION_READY_CLASS, motionAllowed, revealMorphTargets } from "./reveal";
 
@@ -17,6 +18,7 @@ document.addEventListener("astro:page-load", () => {
   initIntro();
   initReveal();
   initScrollProgress();
+  initParallax();
   window.__hsBooted = true;
 });
 
